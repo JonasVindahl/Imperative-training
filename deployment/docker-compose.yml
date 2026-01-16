@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  c-practice:
+    build: .
+    container_name: c-programming-practice
+    ports:
+      - "5067:5067"
+    volumes:
+      # Persist database
+      - ./instance:/app/instance
+      # Persist temp files (optional)
+      - ./temp:/app/temp
+    environment:
+      - FLASK_SECRET_KEY=${FLASK_SECRET_KEY:-your-secret-key-change-me}
+      - DATABASE_URL=sqlite:///instance/practice.db
+      - MAX_CODE_EXECUTION_TIME=3
+      - MAX_MEMORY_MB=50
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5067/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

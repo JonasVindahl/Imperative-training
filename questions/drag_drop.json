@@ -1,0 +1,1604 @@
+{
+  "questions": [
+    {
+      "id": "drag_001",
+      "category": "linked_lists",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "title": "Complete find_last Function",
+      "description": "Drag the correct tokens into the blanks to complete the find_last function that finds the last node with a matching key:",
+      "code_template": "node_t* find_last(node_t* node, int k) {\n    node_t* r = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    \n    while (node <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span>) {\n        if (<span class='drop-zone' data-blank-id='blank4'>[___]</span><span class='drop-zone' data-blank-id='blank5'>[___]</span> == <span class='drop-zone' data-blank-id='blank6'>[___]</span>) {\n            <span class='drop-zone' data-blank-id='blank7'>[___]</span> = <span class='drop-zone' data-blank-id='blank8'>[___]</span>;\n        }\n        <span class='drop-zone' data-blank-id='blank9'>[___]</span> = node->next;\n    }\n    \n    return <span class='drop-zone' data-blank-id='blank10'>[___]</span>;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "node",
+            "r",
+            "k"
+          ]
+        },
+        "blank2": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">",
+            "->"
+          ]
+        },
+        "blank3": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "node",
+            "r",
+            "0",
+            "k"
+          ]
+        },
+        "blank4": {
+          "correct": "node",
+          "options": [
+            "node",
+            "r",
+            "k",
+            "NULL"
+          ]
+        },
+        "blank5": {
+          "correct": "->key",
+          "options": [
+            "->key",
+            ".key",
+            "->next",
+            "->name",
+            ".next"
+          ]
+        },
+        "blank6": {
+          "correct": "k",
+          "options": [
+            "k",
+            "node",
+            "r",
+            "NULL",
+            "0"
+          ]
+        },
+        "blank7": {
+          "correct": "r",
+          "options": [
+            "r",
+            "node",
+            "k",
+            "NULL"
+          ]
+        },
+        "blank8": {
+          "correct": "node",
+          "options": [
+            "node",
+            "r",
+            "NULL",
+            "k"
+          ]
+        },
+        "blank9": {
+          "correct": "node",
+          "options": [
+            "node",
+            "r",
+            "k",
+            "NULL"
+          ]
+        },
+        "blank10": {
+          "correct": "r",
+          "options": [
+            "r",
+            "node",
+            "NULL",
+            "k"
+          ]
+        }
+      },
+      "explanation": "We initialize r to NULL to track the last matching node. We traverse the list while node is not NULL, check if the current node's key matches k, and update r when we find a match. Finally, we return r which points to the last matching node (or NULL if none found).",
+      "hints": [
+        "Initialize r to NULL since we haven't found any matches yet",
+        "Use != to check if node is not NULL",
+        "Use -> to access struct members through a pointer",
+        "Update r to point to the current node when keys match"
+      ],
+      "tags": [
+        "linked_lists",
+        "pointers",
+        "traversal"
+      ]
+    },
+    {
+      "id": "drag_002",
+      "category": "loops",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete While Loop",
+      "description": "Drag the correct tokens to complete a while loop that sums numbers from 1 to n:",
+      "code_template": "int sum_to_n(int n) {\n    int sum = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n    \n    while (i <span class='drop-zone' data-blank-id='blank3'>[___]</span> n) {\n        sum <span class='drop-zone' data-blank-id='blank4'>[___]</span> i;\n        i<span class='drop-zone' data-blank-id='blank5'>[___]</span>;\n    }\n    \n    return sum;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "NULL"
+          ]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": [
+            "1",
+            "0",
+            "n",
+            "-1"
+          ]
+        },
+        "blank3": {
+          "correct": "<=",
+          "options": [
+            "<=",
+            "<",
+            ">=",
+            ">",
+            "=="
+          ]
+        },
+        "blank4": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "*=",
+            "=="
+          ]
+        },
+        "blank5": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "*=2"
+          ]
+        }
+      },
+      "explanation": "Initialize sum to 0, start i at 1, loop while i <= n, add i to sum each iteration, and increment i by 1.",
+      "hints": [
+        "Sum starts at 0",
+        "Loop from 1 to n inclusive",
+        "+= adds to the sum",
+        "++ increments by 1"
+      ],
+      "tags": [
+        "loops",
+        "while",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_003",
+      "category": "arrays",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Find Max in Array",
+      "description": "Drag the correct tokens to complete a function that finds the maximum element in an array:",
+      "code_template": "int max_in(int *arr, int n) {\n    int max = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n\n    for (int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>; i < <span class='drop-zone' data-blank-id='blank3'>[___]</span>; i<span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        if (<span class='drop-zone' data-blank-id='blank5'>[___]</span> > max) {\n            max = <span class='drop-zone' data-blank-id='blank6'>[___]</span>;\n        }\n    }\n\n    return max;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "arr[0]",
+          "options": [
+            "arr[0]",
+            "arr[1]",
+            "0",
+            "n"
+          ]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "arr[0]"
+          ]
+        },
+        "blank3": {
+          "correct": "n",
+          "options": [
+            "n",
+            "n-1",
+            "arr[0]",
+            "i"
+          ]
+        },
+        "blank4": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank5": {
+          "correct": "arr[i]",
+          "options": [
+            "arr[i]",
+            "arr[i+1]",
+            "max",
+            "*arr"
+          ]
+        },
+        "blank6": {
+          "correct": "arr[i]",
+          "options": [
+            "arr[i]",
+            "arr[i+1]",
+            "max",
+            "*arr"
+          ]
+        }
+      },
+      "explanation": "Initialize max with arr[0], then scan from i=1 to n-1. If a larger element is found, update max. Return max at the end.",
+      "hints": [
+        "Start max with the first element",
+        "Loop from index 1 to n-1",
+        "Update max when a bigger value appears"
+      ],
+      "tags": [
+        "arrays",
+        "loops",
+        "comparison"
+      ]
+    },
+    {
+      "id": "drag_004",
+      "category": "pointers",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Swap with Pointers",
+      "description": "Drag the correct tokens to complete a swap function using pointers:",
+      "code_template": "void swap(int *a, int *b) {\n    int tmp = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    <span class='drop-zone' data-blank-id='blank2'>[___]</span> = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;\n    <span class='drop-zone' data-blank-id='blank4'>[___]</span> = tmp;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*a",
+          "options": [
+            "*a",
+            "*b",
+            "a",
+            "b"
+          ]
+        },
+        "blank2": {
+          "correct": "*a",
+          "options": [
+            "*a",
+            "*b",
+            "a",
+            "b"
+          ]
+        },
+        "blank3": {
+          "correct": "*b",
+          "options": [
+            "*b",
+            "*a",
+            "a",
+            "b"
+          ]
+        },
+        "blank4": {
+          "correct": "*b",
+          "options": [
+            "*b",
+            "*a",
+            "a",
+            "b"
+          ]
+        }
+      },
+      "explanation": "Use a temporary variable to store *a, assign *a = *b, and then assign *b = tmp.",
+      "hints": [
+        "Dereference pointers to access values",
+        "Use a temp variable to avoid losing a value",
+        "Both assignments use *a and *b"
+      ],
+      "tags": [
+        "pointers",
+        "swap",
+        "dereference"
+      ]
+    },
+    {
+      "id": "drag_005",
+      "category": "arrays",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Sum Array",
+      "description": "Drag the correct tokens to complete a function that sums an array:",
+      "code_template": "int sum_array(int *arr, int n) {\n    int sum = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n\n    for (int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>; i < <span class='drop-zone' data-blank-id='blank3'>[___]</span>; i<span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        sum <span class='drop-zone' data-blank-id='blank5'>[___]</span> arr[i];\n    }\n\n    return sum;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "arr[0]",
+            "n"
+          ]
+        },
+        "blank2": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "arr[0]"
+          ]
+        },
+        "blank3": {
+          "correct": "n",
+          "options": [
+            "n",
+            "n-1",
+            "i",
+            "arr[0]"
+          ]
+        },
+        "blank4": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank5": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "*="
+          ]
+        }
+      },
+      "explanation": "Initialize sum to 0, loop from i=0 to n-1, add each element to sum, and return it.",
+      "hints": [
+        "Start sum at 0",
+        "Loop over all indices",
+        "Use += to accumulate"
+      ],
+      "tags": [
+        "arrays",
+        "loops",
+        "sum"
+      ]
+    },
+    {
+      "id": "drag_006",
+      "category": "strings",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "String Length Loop",
+      "description": "Drag the correct tokens to complete a string length function:",
+      "code_template": "int my_strlen(const char *s) {\n    int i = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    while (s[i] <span class='drop-zone' data-blank-id='blank2'>[___]</span> '\\0') {\n        i<span class='drop-zone' data-blank-id='blank3'>[___]</span>;\n    }\n    return i;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "s[0]"
+          ]
+        },
+        "blank2": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank3": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        }
+      },
+      "explanation": "Start at index 0 and increment until the null terminator is reached.",
+      "hints": [
+        "Strings end at '\\0'",
+        "Start from index 0",
+        "Increment i each loop"
+      ],
+      "tags": [
+        "strings",
+        "loops",
+        "null_terminator"
+      ]
+    },
+    {
+      "id": "drag_007",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Even Check",
+      "description": "Drag the correct tokens to complete an even check:",
+      "code_template": "int is_even(int x) {\n    return x <span class='drop-zone' data-blank-id='blank1'>[___]</span> 2 <span class='drop-zone' data-blank-id='blank2'>[___]</span> 0;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "%",
+          "options": [
+            "%",
+            "/",
+            "*",
+            "+"
+          ]
+        },
+        "blank2": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        }
+      },
+      "explanation": "A number is even when x % 2 equals 0.",
+      "hints": [
+        "Use modulo to check remainder",
+        "Even numbers leave remainder 0",
+        "Compare with =="
+      ],
+      "tags": [
+        "operators",
+        "control_flow",
+        "modulo"
+      ]
+    },
+    {
+      "id": "drag_008",
+      "category": "loops",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Factorial Loop",
+      "description": "Drag the correct tokens to complete a factorial loop:",
+      "code_template": "int factorial(int n) {\n    int result = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    for (int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>; i <span class='drop-zone' data-blank-id='blank3'>[___]</span> n; i<span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        result <span class='drop-zone' data-blank-id='blank5'>[___]</span> i;\n    }\n    return result;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "1",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "2"
+          ]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "2"
+          ]
+        },
+        "blank3": {
+          "correct": "<=",
+          "options": [
+            "<=",
+            "<",
+            ">=",
+            "=="
+          ]
+        },
+        "blank4": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank5": {
+          "correct": "*=",
+          "options": [
+            "*=",
+            "+=",
+            "-=",
+            "="
+          ]
+        }
+      },
+      "explanation": "Start result at 1 and multiply by each i from 1 to n.",
+      "hints": [
+        "Factorial multiplies numbers",
+        "Loop from 1 to n inclusive",
+        "Use *= to accumulate"
+      ],
+      "tags": [
+        "loops",
+        "factorial",
+        "multiplication"
+      ]
+    },
+    {
+      "id": "drag_009",
+      "category": "pointers",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Second Element",
+      "description": "Drag the correct token to return the second element:",
+      "code_template": "int second(int *arr) {\n    return <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*(arr + 1)",
+          "options": [
+            "*(arr + 1)",
+            "*(arr + 2)",
+            "arr[0]",
+            "arr[1]"
+          ]
+        }
+      },
+      "explanation": "arr + 1 points to the second element, and dereferencing yields its value.",
+      "hints": [
+        "Pointer arithmetic advances by elements",
+        "arr + 1 points to the second element",
+        "Dereference to get the value"
+      ],
+      "tags": [
+        "pointers",
+        "arrays",
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "drag_010",
+      "category": "arrays",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Reverse Print",
+      "description": "Drag the correct tokens to print an array in reverse:",
+      "code_template": "void print_reverse(int *arr, int n) {\n    for (int i = <span class='drop-zone' data-blank-id='blank1'>[___]</span>; i <span class='drop-zone' data-blank-id='blank2'>[___]</span> 0; i<span class='drop-zone' data-blank-id='blank3'>[___]</span>) {\n        printf(\"%d \", arr[i]);\n    }\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "n - 1",
+          "options": [
+            "n - 1",
+            "n",
+            "0",
+            "1"
+          ]
+        },
+        "blank2": {
+          "correct": ">=",
+          "options": [
+            ">=",
+            ">",
+            "<",
+            "<="
+          ]
+        },
+        "blank3": {
+          "correct": "--",
+          "options": [
+            "--",
+            "++",
+            "-=2",
+            "=+1"
+          ]
+        }
+      },
+      "explanation": "Start at the last index n-1, print while i >= 0, and decrement.",
+      "hints": [
+        "Last index is n-1",
+        "Use >= to include index 0",
+        "Decrement i each step"
+      ],
+      "tags": [
+        "arrays",
+        "loops",
+        "reverse"
+      ]
+    },
+    {
+      "id": "drag_011",
+      "category": "memory_management",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Allocate Int Array",
+      "description": "Drag the correct tokens to allocate an int array:",
+      "code_template": "int *make_array(int n) {\n    int *arr = <span class='drop-zone' data-blank-id='blank1'>[___]</span>(n * <span class='drop-zone' data-blank-id='blank2'>[___]</span>(int));\n    if (!arr) {\n        return <span class='drop-zone' data-blank-id='blank3'>[___]</span>;\n    }\n    return arr;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "malloc",
+          "options": [
+            "malloc",
+            "calloc",
+            "free",
+            "realloc"
+          ]
+        },
+        "blank2": {
+          "correct": "sizeof",
+          "options": [
+            "sizeof",
+            "size",
+            "length",
+            "count"
+          ]
+        },
+        "blank3": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "arr",
+            "-1"
+          ]
+        }
+      },
+      "explanation": "Use malloc with n * sizeof(int), and return NULL if allocation fails.",
+      "hints": [
+        "malloc allocates bytes",
+        "Use sizeof(int) for element size",
+        "Return NULL on failure"
+      ],
+      "tags": [
+        "malloc",
+        "arrays",
+        "memory_management"
+      ]
+    },
+    {
+      "id": "drag_012",
+      "category": "arrays",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Count Positives",
+      "description": "Drag the correct tokens to count positive values:",
+      "code_template": "int count_pos(int *arr, int n) {\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        if (arr[i] <span class='drop-zone' data-blank-id='blank1'>[___]</span> 0) {\n            count<span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n        }\n    }\n    return count;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": ">",
+          "options": [
+            ">",
+            "<",
+            "==",
+            "!="
+          ]
+        },
+        "blank2": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        }
+      },
+      "explanation": "Increment count when the element is greater than 0.",
+      "hints": [
+        "Positive means greater than 0",
+        "Increment count on a match",
+        "Use ++"
+      ],
+      "tags": [
+        "arrays",
+        "comparison",
+        "loops"
+      ]
+    },
+    {
+      "id": "drag_013",
+      "category": "strings",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Copy String",
+      "description": "Drag the correct tokens to copy a string:",
+      "code_template": "void my_strcpy(char *dst, const char *src) {\n    while (*src <span class='drop-zone' data-blank-id='blank1'>[___]</span> '\\0') {\n        *dst = *src;\n        dst<span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n        src<span class='drop-zone' data-blank-id='blank3'>[___]</span>;\n    }\n    *dst = <span class='drop-zone' data-blank-id='blank4'>[___]</span>;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank2": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank3": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank4": {
+          "correct": "'\\0'",
+          "options": [
+            "'\\0'",
+            "' '",
+            "'n'",
+            "0"
+          ]
+        }
+      },
+      "explanation": "Copy characters until the null terminator, then append a null terminator to the destination.",
+      "hints": [
+        "Stop at '\\0'",
+        "Increment both pointers",
+        "Write the terminator"
+      ],
+      "tags": [
+        "strings",
+        "pointers",
+        "copy"
+      ]
+    },
+    {
+      "id": "drag_014",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Find First Match",
+      "description": "Drag the correct tokens to return the first matching index:",
+      "code_template": "int find_first(int *arr, int n, int target) {\n    for (int i = 0; i < n; i++) {\n        if (arr[i] <span class='drop-zone' data-blank-id='blank1'>[___]</span> target) {\n            return i;\n        }\n    }\n    return <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank2": {
+          "correct": "-1",
+          "options": [
+            "-1",
+            "0",
+            "n",
+            "target"
+          ]
+        }
+      },
+      "explanation": "Return the index when a match is found; otherwise return -1.",
+      "hints": [
+        "Compare for equality",
+        "Return -1 when not found",
+        "First match stops the loop"
+      ],
+      "tags": [
+        "arrays",
+        "search",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "drag_015",
+      "category": "pointers",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Pointer Advance",
+      "description": "Drag the correct tokens to advance a pointer by one element:",
+      "code_template": "void advance(int **p) {\n    <span class='drop-zone' data-blank-id='blank1'>[___]</span> = <span class='drop-zone' data-blank-id='blank2'>[___]</span> + 1;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*p",
+          "options": [
+            "*p",
+            "p",
+            "**p",
+            "&p"
+          ]
+        },
+        "blank2": {
+          "correct": "*p",
+          "options": [
+            "*p",
+            "p",
+            "**p",
+            "&p"
+          ]
+        }
+      },
+      "explanation": "Dereference p to access the pointer it points to, then add 1 to move to the next element.",
+      "hints": [
+        "p points to a pointer",
+        "Use *p to access the pointer value",
+        "Add 1 to advance"
+      ],
+      "tags": [
+        "pointers",
+        "indirection",
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "drag_003",
+      "category": "pointers",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Pointer Swap Function",
+      "description": "Drag tokens to complete a function that swaps two integers using pointers:",
+      "code_template": "void swap(int <span class='drop-zone' data-blank-id='blank1'>[___]</span>a, int <span class='drop-zone' data-blank-id='blank2'>[___]</span>b) {\n    int temp = <span class='drop-zone' data-blank-id='blank3'>[___]</span>a;\n    <span class='drop-zone' data-blank-id='blank4'>[___]</span>a = <span class='drop-zone' data-blank-id='blank5'>[___]</span>b;\n    <span class='drop-zone' data-blank-id='blank6'>[___]</span>b = temp;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "const"
+          ]
+        },
+        "blank2": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "const"
+          ]
+        },
+        "blank3": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "NULL"
+          ]
+        },
+        "blank4": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "->"
+          ]
+        },
+        "blank5": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "NULL"
+          ]
+        },
+        "blank6": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "->"
+          ]
+        }
+      },
+      "explanation": "To swap values through pointers: parameters are pointers (int *a), dereference to access values (*a), store in temp, swap dereferenced values.",
+      "hints": [
+        "Parameters must be pointers to modify caller's variables",
+        "Use * to dereference and access the actual values",
+        "temp stores the dereferenced value"
+      ],
+      "tags": [
+        "pointers",
+        "swap",
+        "dereference"
+      ]
+    },
+    {
+      "id": "drag_004",
+      "category": "arrays",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Array Sum Function",
+      "description": "Drag tokens to complete a function that sums array elements:",
+      "code_template": "int array_sum(int arr<span class='drop-zone' data-blank-id='blank1'>[___]</span>, int size) {\n    int sum = <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n    for (int i = <span class='drop-zone' data-blank-id='blank3'>[___]</span>; i <span class='drop-zone' data-blank-id='blank4'>[___]</span> size; i<span class='drop-zone' data-blank-id='blank5'>[___]</span>) {\n        sum <span class='drop-zone' data-blank-id='blank6'>[___]</span> arr[i];\n    }\n    return sum;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "[]",
+          "options": [
+            "[]",
+            "[size]",
+            "*",
+            "[10]"
+          ]
+        },
+        "blank2": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "NULL",
+            "size"
+          ]
+        },
+        "blank3": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "size",
+            "-1"
+          ]
+        },
+        "blank4": {
+          "correct": "<",
+          "options": [
+            "<",
+            "<=",
+            ">",
+            ">="
+          ]
+        },
+        "blank5": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "*=2"
+          ]
+        },
+        "blank6": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "*="
+          ]
+        }
+      },
+      "explanation": "Array sum: array parameter with [], initialize sum to 0, loop from 0 to size-1, use += to accumulate.",
+      "hints": [
+        "Arrays are passed with [] syntax",
+        "Start sum at 0",
+        "Loop from 0 to size (exclusive)",
+        "+= adds to sum"
+      ],
+      "tags": [
+        "arrays",
+        "loops",
+        "sum"
+      ]
+    },
+    {
+      "id": "drag_005",
+      "category": "strings",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete String Length Function",
+      "description": "Drag tokens to complete a function that calculates string length:",
+      "code_template": "int string_length(char <span class='drop-zone' data-blank-id='blank1'>[___]</span>str) {\n    int len = <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n    while (str[len] <span class='drop-zone' data-blank-id='blank3'>[___]</span> <span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        len<span class='drop-zone' data-blank-id='blank5'>[___]</span>;\n    }\n    return len;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "[]",
+            "**"
+          ]
+        },
+        "blank2": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "NULL",
+            "-1"
+          ]
+        },
+        "blank3": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank4": {
+          "correct": "'\\0'",
+          "options": [
+            "'\\0'",
+            "0",
+            "NULL",
+            "' '"
+          ]
+        },
+        "blank5": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "*=2"
+          ]
+        }
+      },
+      "explanation": "String length: iterate through characters until null terminator '\\0', count characters, increment len.",
+      "hints": [
+        "Strings are char pointers",
+        "Start at 0",
+        "Check for null terminator '\\0'",
+        "Increment the counter"
+      ],
+      "tags": [
+        "strings",
+        "null_terminator",
+        "loops"
+      ]
+    },
+    {
+      "id": "drag_006",
+      "category": "memory",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "title": "Complete Memory Allocation Function",
+      "description": "Drag tokens to complete safe memory allocation:",
+      "code_template": "int* allocate_array(int size) {\n    int* arr = <span class='drop-zone' data-blank-id='blank1'>[___]</span>(size <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span>(int));\n    if (arr <span class='drop-zone' data-blank-id='blank4'>[___]</span> <span class='drop-zone' data-blank-id='blank5'>[___]</span>) {\n        return <span class='drop-zone' data-blank-id='blank6'>[___]</span>;\n    }\n    return arr;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "malloc",
+          "options": [
+            "malloc",
+            "calloc",
+            "free",
+            "realloc"
+          ]
+        },
+        "blank2": {
+          "correct": "*",
+          "options": [
+            "*",
+            "+",
+            "-",
+            "/"
+          ]
+        },
+        "blank3": {
+          "correct": "sizeof",
+          "options": [
+            "sizeof",
+            "strlen",
+            "size",
+            "count"
+          ]
+        },
+        "blank4": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank5": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "-1",
+            "false"
+          ]
+        },
+        "blank6": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "arr",
+            "-1"
+          ]
+        }
+      },
+      "explanation": "Safe malloc: allocate size * sizeof(type) bytes, check if returned NULL (allocation failed), return NULL on failure.",
+      "hints": [
+        "malloc allocates memory",
+        "Multiply size by sizeof(type)",
+        "Check if malloc returned NULL",
+        "Return NULL on allocation failure"
+      ],
+      "tags": [
+        "malloc",
+        "memory",
+        "error_handling"
+      ]
+    },
+    {
+      "id": "drag_007",
+      "category": "structs",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Struct Initialization",
+      "description": "Drag tokens to initialize and access a struct:",
+      "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nvoid move_point(struct Point <span class='drop-zone' data-blank-id='blank1'>[___]</span>p) {\n    p<span class='drop-zone' data-blank-id='blank2'>[___]</span>x <span class='drop-zone' data-blank-id='blank3'>[___]</span> 10;\n    p<span class='drop-zone' data-blank-id='blank4'>[___]</span>y <span class='drop-zone' data-blank-id='blank5'>[___]</span> 20;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            ".",
+            "->"
+          ]
+        },
+        "blank2": {
+          "correct": "->",
+          "options": [
+            "->",
+            ".",
+            "*",
+            "&"
+          ]
+        },
+        "blank3": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "=="
+          ]
+        },
+        "blank4": {
+          "correct": "->",
+          "options": [
+            "->",
+            ".",
+            "*",
+            "&"
+          ]
+        },
+        "blank5": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "=="
+          ]
+        }
+      },
+      "explanation": "Struct pointer: parameter is pointer (*p), use arrow operator (->) to access members through pointer, += to modify values.",
+      "hints": [
+        "Pointer to struct uses *",
+        "Arrow operator -> for pointer access",
+        "+= to add to existing value"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "arrow_operator"
+      ]
+    },
+    {
+      "id": "drag_008",
+      "category": "recursion",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "title": "Complete Power Function (Recursive)",
+      "description": "Drag tokens to complete recursive power function:",
+      "code_template": "int power(int base, int exp) {\n    if (exp <span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span>) {\n        return <span class='drop-zone' data-blank-id='blank3'>[___]</span>;\n    }\n    return base <span class='drop-zone' data-blank-id='blank4'>[___]</span> power(<span class='drop-zone' data-blank-id='blank5'>[___]</span>, exp <span class='drop-zone' data-blank-id='blank6'>[___]</span> 1);\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank2": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "-1",
+            "base"
+          ]
+        },
+        "blank3": {
+          "correct": "1",
+          "options": [
+            "1",
+            "0",
+            "base",
+            "exp"
+          ]
+        },
+        "blank4": {
+          "correct": "*",
+          "options": [
+            "*",
+            "+",
+            "-",
+            "/"
+          ]
+        },
+        "blank5": {
+          "correct": "base",
+          "options": [
+            "base",
+            "exp",
+            "1",
+            "0"
+          ]
+        },
+        "blank6": {
+          "correct": "-",
+          "options": [
+            "-",
+            "+",
+            "*",
+            "/"
+          ]
+        }
+      },
+      "explanation": "Recursive power: base case is exp == 0 returns 1, recursive case is base * power(base, exp-1).",
+      "hints": [
+        "Base case: any number to power 0 is 1",
+        "Recursive case: base * power(base, exp-1)",
+        "Decrement exponent each recursion"
+      ],
+      "tags": [
+        "recursion",
+        "power",
+        "base_case"
+      ]
+    },
+    {
+      "id": "drag_009",
+      "category": "linked_lists",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "title": "Complete Linked List Insert at Head",
+      "description": "Drag tokens to insert a node at the head of a linked list:",
+      "code_template": "typedef struct node {\n    int data;\n    struct node* next;\n} node_t;\n\nvoid insert_head(node_t<span class='drop-zone' data-blank-id='blank1'>[___]</span><span class='drop-zone' data-blank-id='blank2'>[___]</span>head, int value) {\n    node_t* new_node = malloc(sizeof(<span class='drop-zone' data-blank-id='blank3'>[___]</span>));\n    new_node<span class='drop-zone' data-blank-id='blank4'>[___]</span>data = value;\n    new_node<span class='drop-zone' data-blank-id='blank5'>[___]</span>next = <span class='drop-zone' data-blank-id='blank6'>[___]</span>head;\n    <span class='drop-zone' data-blank-id='blank7'>[___]</span>head = new_node;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "->"
+          ]
+        },
+        "blank2": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "->"
+          ]
+        },
+        "blank3": {
+          "correct": "node_t",
+          "options": [
+            "node_t",
+            "int",
+            "struct",
+            "node"
+          ]
+        },
+        "blank4": {
+          "correct": "->",
+          "options": [
+            "->",
+            ".",
+            "*",
+            "&"
+          ]
+        },
+        "blank5": {
+          "correct": "->",
+          "options": [
+            "->",
+            ".",
+            "*",
+            "&"
+          ]
+        },
+        "blank6": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "NULL"
+          ]
+        },
+        "blank7": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "->"
+          ]
+        }
+      },
+      "explanation": "Insert at head: pointer to pointer (node_t**) to modify head, allocate new node, set data, point new_node->next to current head, update head to new_node.",
+      "hints": [
+        "Double pointer (**) needed to modify head",
+        "malloc allocates space for node_t",
+        "Use -> for pointer member access",
+        "New node points to old head",
+        "Dereference ** to update head"
+      ],
+      "tags": [
+        "linked_lists",
+        "pointers",
+        "malloc"
+      ]
+    },
+    {
+      "id": "drag_010",
+      "category": "file_io",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete File Reading Code",
+      "description": "Drag tokens to complete file reading:",
+      "code_template": "FILE* file = fopen(\"data.txt\", <span class='drop-zone' data-blank-id='blank1'>[___]</span>);\nif (file <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span>) {\n    return;\n}\nchar buffer[100];\nwhile (fgets(buffer, <span class='drop-zone' data-blank-id='blank4'>[___]</span>, file) <span class='drop-zone' data-blank-id='blank5'>[___]</span> NULL) {\n    printf(\"%s\", buffer);\n}\n<span class='drop-zone' data-blank-id='blank6'>[___]</span>(file);",
+      "blanks": {
+        "blank1": {
+          "correct": "\"r\"",
+          "options": [
+            "\"r\"",
+            "\"w\"",
+            "\"a\"",
+            "\"rb\""
+          ]
+        },
+        "blank2": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank3": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "-1",
+            "EOF"
+          ]
+        },
+        "blank4": {
+          "correct": "100",
+          "options": [
+            "100",
+            "sizeof(buffer)",
+            "99",
+            "strlen(buffer)"
+          ]
+        },
+        "blank5": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank6": {
+          "correct": "fclose",
+          "options": [
+            "fclose",
+            "close",
+            "free",
+            "delete"
+          ]
+        }
+      },
+      "explanation": "File reading: fopen with \"r\" for read, check for NULL, fgets reads lines while != NULL, fclose closes file.",
+      "hints": [
+        "\"r\" mode opens for reading",
+        "Check if fopen returned NULL",
+        "fgets returns NULL at end of file",
+        "Always fclose the file"
+      ],
+      "tags": [
+        "file_io",
+        "fopen",
+        "fgets"
+      ]
+    },
+    {
+      "id": "drag_011",
+      "category": "bitwise",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Bit Manipulation",
+      "description": "Drag tokens to complete bit operations:",
+      "code_template": "// Check if bit n is set\nint is_bit_set(int value, int n) {\n    return (value <span class='drop-zone' data-blank-id='blank1'>[___]</span> (1 <span class='drop-zone' data-blank-id='blank2'>[___]</span> n)) <span class='drop-zone' data-blank-id='blank3'>[___]</span> 0;\n}\n\n// Set bit n\nint set_bit(int value, int n) {\n    return value <span class='drop-zone' data-blank-id='blank4'>[___]</span> (1 <span class='drop-zone' data-blank-id='blank5'>[___]</span> n);\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "&",
+          "options": [
+            "&",
+            "|",
+            "^",
+            "~"
+          ]
+        },
+        "blank2": {
+          "correct": "<<",
+          "options": [
+            "<<",
+            ">>",
+            "&",
+            "|"
+          ]
+        },
+        "blank3": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank4": {
+          "correct": "|",
+          "options": [
+            "|",
+            "&",
+            "^",
+            "~"
+          ]
+        },
+        "blank5": {
+          "correct": "<<",
+          "options": [
+            "<<",
+            ">>",
+            "&",
+            "|"
+          ]
+        }
+      },
+      "explanation": "Bit operations: AND (&) with mask to check bit, left shift (<<) to create mask, OR (|) to set bit.",
+      "hints": [
+        "& checks if bit is set",
+        "<< shifts 1 to create mask",
+        "!= 0 checks if result is non-zero",
+        "| sets bit to 1"
+      ],
+      "tags": [
+        "bitwise",
+        "bit_manipulation",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_012",
+      "category": "conditionals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Ternary Operator",
+      "description": "Drag tokens to complete ternary operations:",
+      "code_template": "// Return maximum of two numbers\nint max(int a, int b) {\n    return (a <span class='drop-zone' data-blank-id='blank1'>[___]</span> b) <span class='drop-zone' data-blank-id='blank2'>[___]</span> a <span class='drop-zone' data-blank-id='blank3'>[___]</span> b;\n}\n\n// Return absolute value\nint abs_value(int x) {\n    return (x <span class='drop-zone' data-blank-id='blank4'>[___]</span> 0) <span class='drop-zone' data-blank-id='blank5'>[___]</span> x <span class='drop-zone' data-blank-id='blank6'>[___]</span> -x;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": ">",
+          "options": [
+            ">",
+            "<",
+            ">=",
+            "<="
+          ]
+        },
+        "blank2": {
+          "correct": "?",
+          "options": [
+            "?",
+            ":",
+            "&&",
+            "||"
+          ]
+        },
+        "blank3": {
+          "correct": ":",
+          "options": [
+            ":",
+            "?",
+            "&&",
+            "||"
+          ]
+        },
+        "blank4": {
+          "correct": ">=",
+          "options": [
+            ">=",
+            "<",
+            ">",
+            "<="
+          ]
+        },
+        "blank5": {
+          "correct": "?",
+          "options": [
+            "?",
+            ":",
+            "&&",
+            "||"
+          ]
+        },
+        "blank6": {
+          "correct": ":",
+          "options": [
+            ":",
+            "?",
+            "&&",
+            "||"
+          ]
+        }
+      },
+      "explanation": "Ternary operator: condition ? true_value : false_value. Compact if-else alternative.",
+      "hints": [
+        "Syntax: condition ? if_true : if_false",
+        "Max: if a > b return a, else b",
+        "Abs: if x >= 0 return x, else -x"
+      ],
+      "tags": [
+        "ternary",
+        "conditionals",
+        "operators"
+      ]
+    }
+  ]
+}

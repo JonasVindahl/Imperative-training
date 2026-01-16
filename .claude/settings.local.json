@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(gcc:*)",
+      "Bash(chmod:*)",
+      "Bash(tree:*)",
+      "Bash(python verify_setup.py:*)",
+      "Bash(curl:*)",
+      "Bash(python test_new_features.py:*)",
+      "Bash(python:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "questions": [
+    {
+      "id": "mem_001",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Find the Memory Leak",
+      "description": "This code has a memory leak. Which line allocates memory that is never freed?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    char* str = malloc(100);\n    printf(\"Enter string: \");\n    scanf(\"%s\", str);\n    printf(\"You entered: %s\\n\", str);\n    return 0;\n}",
+      "options": [
+        "Line 4 - main() function",
+        "Line 5 - malloc(100)",
+        "Line 7 - scanf",
+        "Line 8 - printf"
+      ],
+      "correct_answer": "B",
+      "explanation": "Line 5 allocates memory with malloc(100), but there is no corresponding free(str) before the program exits. This causes a memory leak. The fix is to add 'free(str);' before 'return 0;'.",
+      "hints": [
+        "Look for malloc() calls in the code",
+        "Check if every malloc has a matching free()",
+        "The memory is allocated on line 5 with malloc"
+      ],
+      "tags": [
+        "malloc",
+        "free",
+        "memory_leak"
+      ]
+    },
+    {
+      "id": "mem_002",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Use After Free",
+      "description": "This code contains a use-after-free error. Which line uses memory after it has been freed?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    char* ptr = malloc(50);\n    strcpy(ptr, \"Hello\");\n    free(ptr);\n    printf(\"%s\\n\", ptr);\n    return 0;\n}",
+      "options": [
+        "Line 6 - malloc(50)",
+        "Line 7 - strcpy",
+        "Line 8 - free(ptr)",
+        "Line 9 - printf using ptr"
+      ],
+      "correct_answer": "D",
+      "explanation": "Line 9 attempts to print the contents of 'ptr' after it has been freed on line 8. This is undefined behavior known as 'use after free'. After freeing memory, you should not access it.",
+      "hints": [
+        "Look for where memory is freed",
+        "Check what happens after the free() call",
+        "The printf on line 9 uses the pointer after it's freed"
+      ],
+      "tags": [
+        "free",
+        "use_after_free",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "mem_003",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Double Free Error",
+      "description": "This code has a double free error. What causes the problem?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    char* p = malloc(100);\n    char* q = p;\n    free(p);\n    free(q);\n    return 0;\n}",
+      "options": [
+        "malloc is called only once",
+        "q and p point to different memory",
+        "q and p point to the SAME memory, freed twice",
+        "q is not initialized"
+      ],
+      "correct_answer": "C",
+      "explanation": "Line 6 makes q point to the same memory as p. When we free(p) and then free(q), we're freeing the same memory twice, causing a double free error. The fix is to remove one of the free() calls or set the pointer to NULL after freeing.",
+      "hints": [
+        "Look at line 6 - what does q = p do?",
+        "Both p and q point to the same memory",
+        "Lines 7 and 8 both free the same memory"
+      ],
+      "tags": [
+        "free",
+        "double_free",
+        "pointer_aliasing"
+      ]
+    },
+    {
+      "id": "mem_004",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Memory Allocation Size",
+      "description": "What will this program print? (Assume sizeof(int) = 4 bytes)",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int* arr = malloc(5 * sizeof(int));\n    printf(\"%zu\\n\", 5 * sizeof(int));\n    free(arr);\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "20",
+        "40"
+      ],
+      "correct_answer": "C",
+      "explanation": "sizeof(int) is typically 4 bytes. 5 * 4 = 20 bytes. The program allocates 20 bytes and prints this value.",
+      "hints": [
+        "What is sizeof(int) on most systems?",
+        "sizeof(int) is typically 4 bytes",
+        "Multiply 5 * 4"
+      ],
+      "tags": [
+        "malloc",
+        "sizeof"
+      ]
+    },
+    {
+      "id": "mem_005",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Memory Leak in Loop",
+      "description": "How many memory allocations are leaked in this code?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    char* ptr;\n    for (int i = 0; i < 10; i++) {\n        ptr = malloc(100);\n        printf(\"Iteration %d\\n\", i);\n    }\n    free(ptr);\n    return 0;\n}",
+      "options": [
+        "0 leaks - all memory is freed",
+        "1 leak - the last allocation",
+        "9 leaks - all except the last",
+        "10 leaks - none are freed"
+      ],
+      "correct_answer": "C",
+      "explanation": "The loop allocates memory 10 times, but each new malloc() overwrites the previous pointer value. Only the last allocation is freed on line 10. This means 9 out of 10 allocations are leaked. The fix is to free(ptr) at the end of each iteration inside the loop.",
+      "hints": [
+        "How many times does the loop run?",
+        "How many times is malloc called?",
+        "Each malloc overwrites the previous pointer, losing access to that memory"
+      ],
+      "tags": [
+        "malloc",
+        "free",
+        "memory_leak",
+        "loop"
+      ]
+    },
+    {
+      "id": "mem_006",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Return Pointer to Local Variable",
+      "description": "What is wrong with this code?",
+      "code_template": "#include <stdio.h>\n\nchar* get_name() {\n    char name[50] = \"Alice\";\n    return name;\n}\n\nint main() {\n    char* result = get_name();\n    printf(\"%s\\n\", result);\n    return 0;\n}",
+      "options": [
+        "Nothing wrong - it will work fine",
+        "name array is too small",
+        "Returning pointer to local variable (undefined behavior)",
+        "Missing free() call"
+      ],
+      "correct_answer": "C",
+      "explanation": "The function returns a pointer to the local array 'name', which goes out of scope when the function returns. This is undefined behavior. The fix is to either allocate memory with malloc() or use static storage.",
+      "hints": [
+        "What happens to local variables when a function returns?",
+        "The array 'name' is allocated on the stack",
+        "Returning a pointer to stack memory is dangerous"
+      ],
+      "tags": [
+        "pointer",
+        "stack",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "mem_007",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Correct malloc Usage",
+      "description": "Which is the CORRECT way to allocate memory for a string of 20 characters?",
+      "code_template": "",
+      "options": [
+        "char* str = malloc(20);",
+        "char* str = malloc(21);",
+        "char* str = malloc(19);",
+        "char str[20];"
+      ],
+      "correct_answer": "B",
+      "explanation": "For a string of 20 characters, you need 21 bytes: 20 for the characters plus 1 for the null terminator '\\0'. Always allocate strlen + 1 bytes for strings. Option D is also valid for stack allocation.",
+      "hints": [
+        "Strings need a null terminator",
+        "The null terminator takes 1 byte",
+        "Allocate length + 1 for the '\\0'"
+      ],
+      "tags": [
+        "malloc",
+        "string",
+        "null_terminator"
+      ]
+    },
+    {
+      "id": "mem_008",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "What does malloc return on failure?",
+      "description": "What does malloc() return if it fails to allocate memory?",
+      "code_template": "",
+      "options": [
+        "0",
+        "NULL",
+        "-1",
+        "It never fails"
+      ],
+      "correct_answer": "B",
+      "explanation": "When malloc() fails to allocate the requested memory (e.g., due to insufficient memory), it returns NULL. It's important to check for NULL before using the pointer to avoid dereferencing a null pointer.",
+      "hints": [
+        "Think about error handling",
+        "It returns a special pointer value",
+        "NULL indicates failure"
+      ],
+      "tags": [
+        "malloc",
+        "NULL",
+        "error_handling"
+      ]
+    },
+    {
+      "id": "mem_009",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Missing NULL Check",
+      "description": "What could go wrong with this code?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int* arr = malloc(1000000000000 * sizeof(int));\n    arr[0] = 42;\n    printf(\"%d\\n\", arr[0]);\n    free(arr);\n    return 0;\n}",
+      "options": [
+        "Nothing - it will work fine",
+        "malloc might fail and return NULL, causing a crash on line 6",
+        "The array is too large for printf",
+        "Missing sizeof in malloc"
+      ],
+      "correct_answer": "B",
+      "explanation": "With such a large allocation, malloc will likely fail and return NULL. Line 6 then dereferences NULL, causing a segmentation fault. The fix is to add 'if (arr == NULL) { /* handle error */ }' after malloc.",
+      "hints": [
+        "malloc can fail if there's not enough memory",
+        "What does malloc return on failure?",
+        "Line 6 uses arr without checking if allocation succeeded"
+      ],
+      "tags": [
+        "malloc",
+        "NULL",
+        "error_handling",
+        "segfault"
+      ]
+    },
+    {
+      "id": "mem_010",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Memory Leak in Conditional",
+      "description": "When does this code leak memory?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint process(int value) {\n    char* buffer = malloc(100);\n    if (value < 0) {\n        return -1;\n    }\n    sprintf(buffer, \"Value: %d\", value);\n    printf(\"%s\\n\", buffer);\n    free(buffer);\n    return 0;\n}",
+      "options": [
+        "Never - all paths free the memory",
+        "When value < 0 (early return before free)",
+        "When value >= 0 (normal path)",
+        "Always leaks memory"
+      ],
+      "correct_answer": "B",
+      "explanation": "When value < 0, the function returns early on line 7 without freeing the buffer allocated on line 5. This causes a memory leak in the error path. The fix is to add 'free(buffer);' before line 7's return statement.",
+      "hints": [
+        "Look at the early return on line 7",
+        "What happens to buffer if we return early?",
+        "free(buffer) is only called in the normal path, not the error path"
+      ],
+      "tags": [
+        "malloc",
+        "free",
+        "memory_leak",
+        "early_return"
+      ]
+    },
+    {
+      "id": "mem_011",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Double Free",
+      "description": "What is the problem with this code?",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(sizeof(int));\n    free(p);\n    free(p);\n    return 0;\n}",
+      "options": [
+        "No problem",
+        "Memory leak",
+        "Double free (undefined behavior)",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Calling free twice on the same pointer is undefined behavior. It can crash or corrupt memory. Set the pointer to NULL after freeing if you need to guard against this.",
+      "hints": [
+        "free should be called exactly once per allocation",
+        "Second free uses an already-freed pointer",
+        "Undefined behavior may crash"
+      ],
+      "tags": [
+        "free",
+        "double_free",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "mem_012",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Use After Free",
+      "description": "What is wrong with this program?",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *p = malloc(sizeof(int));\n    *p = 42;\n    free(p);\n    printf(\"%d\\n\", *p);\n    return 0;\n}",
+      "options": [
+        "No issue - prints 42",
+        "Compilation error",
+        "Use-after-free (undefined behavior)",
+        "Memory leak"
+      ],
+      "correct_answer": "C",
+      "explanation": "After free, p points to invalid memory. Dereferencing it is undefined behavior. Access memory only while it is allocated.",
+      "hints": [
+        "free releases the memory",
+        "Dereferencing after free is unsafe",
+        "Undefined behavior may print garbage or crash"
+      ],
+      "tags": [
+        "use_after_free",
+        "malloc",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "mem_013",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Freeing NULL",
+      "description": "What does this program do?",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = NULL;\n    free(p);\n    return 0;\n}",
+      "options": [
+        "Crashes (free on NULL)",
+        "Undefined behavior",
+        "No effect; it is safe",
+        "Memory leak"
+      ],
+      "correct_answer": "C",
+      "explanation": "Calling free on NULL is a no-op in C. It is safe and does nothing.",
+      "hints": [
+        "free(NULL) is explicitly allowed",
+        "It does nothing",
+        "No crash occurs"
+      ],
+      "tags": [
+        "free",
+        "NULL",
+        "safety"
+      ]
+    },
+    {
+      "id": "mem_014",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Wrong sizeof",
+      "description": "What is the bug in this allocation?",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *arr = malloc(10 * sizeof(arr));\n    if (!arr) return 1;\n    free(arr);\n    return 0;\n}",
+      "options": [
+        "No bug",
+        "Allocates too little memory",
+        "Allocates too much memory on 64-bit systems",
+        "Memory leak"
+      ],
+      "correct_answer": "C",
+      "explanation": "sizeof(arr) is the size of the pointer, not the size of int. On 64-bit systems it allocates 10 * 8 bytes, which is larger than needed. The correct expression is sizeof(*arr) or sizeof(int).",
+      "hints": [
+        "arr is a pointer",
+        "sizeof(arr) is not sizeof(int)",
+        "Use sizeof(*arr)"
+      ],
+      "tags": [
+        "malloc",
+        "sizeof",
+        "pointer"
+      ]
+    },
+    {
+      "id": "mem_015",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "realloc Failure",
+      "description": "What is the problem with this code?",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(4 * sizeof(int));\n    p = realloc(p, 100 * sizeof(int));\n    if (!p) {\n        return 1;\n    }\n    free(p);\n    return 0;\n}",
+      "options": [
+        "No problem",
+        "Memory leak if realloc fails",
+        "Double free",
+        "Use-after-free"
+      ],
+      "correct_answer": "B",
+      "explanation": "If realloc fails, it returns NULL but the original pointer is lost because it was overwritten. That leaks the original allocation. Use a temporary pointer for realloc.",
+      "hints": [
+        "realloc can return NULL",
+        "Assigning directly can lose the original pointer",
+        "Use a temp variable for realloc"
+      ],
+      "tags": [
+        "realloc",
+        "memory_leak",
+        "error_handling"
+      ]
+    },
+    {
+      "id": "mem_016",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Calloc vs Malloc",
+      "description": "What's the difference between malloc and calloc?",
+      "code_template": "int *arr1 = malloc(10 * sizeof(int));\nint *arr2 = calloc(10, sizeof(int));",
+      "options": [
+        "No difference",
+        "calloc initializes memory to zero",
+        "malloc is faster",
+        "calloc only works with integers"
+      ],
+      "correct_answer": "B",
+      "explanation": "calloc initializes allocated memory to zero, malloc doesn't. calloc(n, size) allocates n*size bytes.",
+      "hints": [
+        "calloc = clear + allocate",
+        "Zeros out memory",
+        "malloc doesn't initialize"
+      ],
+      "tags": [
+        "malloc",
+        "calloc",
+        "initialization"
+      ]
+    },
+    {
+      "id": "mem_017",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Realloc Behavior",
+      "description": "What does realloc return if it cannot resize?",
+      "code_template": "int *ptr = malloc(100);\nint *new_ptr = realloc(ptr, 10000000000);  // Huge size",
+      "options": [
+        "NULL (and ptr is still valid)",
+        "NULL (and ptr is freed)",
+        "Original ptr",
+        "Crashes immediately"
+      ],
+      "correct_answer": "A",
+      "explanation": "If realloc fails, it returns NULL and the original pointer remains valid. Must check return value!",
+      "hints": [
+        "Check realloc return value",
+        "Original pointer still valid on failure",
+        "Don't overwrite original pointer"
+      ],
+      "tags": [
+        "realloc",
+        "error_handling",
+        "memory"
+      ]
+    },
+    {
+      "id": "mem_018",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Free NULL",
+      "description": "What happens when you call free(NULL)?",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *ptr = NULL;\n    free(ptr);\n    return 0;\n}",
+      "options": [
+        "Segmentation fault",
+        "Nothing (safe operation)",
+        "Undefined behavior",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "free(NULL) is explicitly safe in C. It does nothing. No need to check before freeing.",
+      "hints": [
+        "Standard behavior",
+        "No crash",
+        "Safe to free NULL"
+      ],
+      "tags": [
+        "free",
+        "NULL",
+        "safety"
+      ]
+    },
+    {
+      "id": "mem_019",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Memory Leak Detection",
+      "description": "How many bytes are leaked?",
+      "code_template": "#include <stdlib.h>\n\nvoid func() {\n    int *p = malloc(100);\n    p = malloc(200);\n    free(p);\n}",
+      "options": [
+        "0 bytes",
+        "100 bytes",
+        "200 bytes",
+        "300 bytes"
+      ],
+      "correct_answer": "B",
+      "explanation": "First malloc(100) is leaked when p is reassigned. Second malloc(200) is freed. 100 bytes leaked.",
+      "hints": [
+        "First allocation lost",
+        "Pointer reassigned",
+        "Only second allocation freed"
+      ],
+      "tags": [
+        "memory_leak",
+        "pointer_reassignment",
+        "malloc"
+      ]
+    },
+    {
+      "id": "mem_020",
+      "category": "memory_management",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Stack vs Heap",
+      "description": "Which statement is TRUE?",
+      "code_template": "void func() {\n    int stack_var;           // Stack\n    int *heap_var = malloc(sizeof(int));  // Heap\n}",
+      "options": [
+        "Stack variables must be freed",
+        "Heap variables are automatically freed",
+        "Stack is faster than heap",
+        "Heap is unlimited"
+      ],
+      "correct_answer": "C",
+      "explanation": "Stack allocation is faster (just pointer adjustment). Stack auto-frees, heap needs manual free. Both are limited.",
+      "hints": [
+        "Stack is automatic",
+        "Heap needs malloc/free",
+        "Stack allocation is just pointer move"
+      ],
+      "tags": [
+        "stack",
+        "heap",
+        "performance"
+      ]
+    }
+  ]
+}

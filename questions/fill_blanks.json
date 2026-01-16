@@ -1,0 +1,2471 @@
+{
+  "questions": [
+    {
+      "id": "fill_001",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Function Parameters and Variables",
+      "description": "Fill in the blanks about function parameters and local variables:",
+      "code_template": "#include <stdio.h>\n\nint print_example(int a, double b, char* c) {\n    int p1 = 10;\n    int p2 = 2 * a;\n    if (c != NULL) {\n        p1 = 20;\n    }\n    printf(\"%d, %lf\\n\", p1 + p2, a + b);\n    return p2 - p1;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "p1 and p2 are ___ in ___",
+          "blanks": [
+            {
+              "options": [
+                "local variables",
+                "formal parameters",
+                "global variables",
+                "constants"
+              ],
+              "correct": "local variables"
+            },
+            {
+              "options": [
+                "the function",
+                "the module",
+                "the struct",
+                "the header"
+              ],
+              "correct": "the function"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "In print_example, a, b, and c are the ___",
+          "blanks": [
+            {
+              "options": [
+                "formal parameters",
+                "local variables",
+                "return values",
+                "global variables"
+              ],
+              "correct": "formal parameters"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "From the type, we know that a can contain ___",
+          "blanks": [
+            {
+              "options": [
+                "integers",
+                "floating-point numbers",
+                "characters",
+                "strings"
+              ],
+              "correct": "integers"
+            }
+          ]
+        }
+      ],
+      "explanation": "Local variables are declared inside a function. Formal parameters are the variables declared in the function signature. The type 'int' indicates integer values.",
+      "hints": [
+        "Variables declared inside the function are local to that function",
+        "Parameters are listed in the function signature (inside parentheses)",
+        "The 'int' type holds integer values"
+      ],
+      "tags": [
+        "functions",
+        "variables",
+        "parameters",
+        "types"
+      ]
+    },
+    {
+      "id": "fill_002",
+      "category": "pointers",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Pointer Declaration and Dereferencing",
+      "description": "Fill in the blanks about pointers:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 42;\n    int* ptr = &x;\n    printf(\"%d\\n\", *ptr);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The & operator is used to get the ___ of a variable",
+          "blanks": [
+            {
+              "options": [
+                "address",
+                "value",
+                "type",
+                "size"
+              ],
+              "correct": "address"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The * operator when used before a pointer ___ the pointer",
+          "blanks": [
+            {
+              "options": [
+                "dereferences",
+                "declares",
+                "allocates",
+                "frees"
+              ],
+              "correct": "dereferences"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "ptr stores the ___ of x, not its ___",
+          "blanks": [
+            {
+              "options": [
+                "address",
+                "value",
+                "type",
+                "name"
+              ],
+              "correct": "address"
+            },
+            {
+              "options": [
+                "value",
+                "address",
+                "type",
+                "name"
+              ],
+              "correct": "value"
+            }
+          ]
+        }
+      ],
+      "explanation": "The & operator gets the memory address of a variable. The * operator dereferences a pointer (accesses the value at that address). Pointers store addresses, not values.",
+      "hints": [
+        "& is the address-of operator",
+        "* is used for dereferencing (getting the value)",
+        "Pointers contain memory addresses"
+      ],
+      "tags": [
+        "pointers",
+        "operators",
+        "addresses"
+      ]
+    },
+    {
+      "id": "fill_003",
+      "category": "arrays",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Array Basics",
+      "description": "Fill in the blanks about arrays:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[4] = {1, 2, 3, 4};\n    printf(\"%d\\n\", arr[2]);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "arr has ___ elements",
+          "blanks": [
+            {
+              "options": [
+                "4",
+                "5",
+                "3",
+                "sizeof(arr)"
+              ],
+              "correct": "4"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "arr[2] evaluates to ___",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "2",
+                "4",
+                "1"
+              ],
+              "correct": "3"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "The last valid index is ___",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "4",
+                "2",
+                "0"
+              ],
+              "correct": "3"
+            }
+          ]
+        }
+      ],
+      "explanation": "Arrays are zero-indexed. An array of size 4 has indices 0 through 3. arr[2] refers to the third element, which is 3.",
+      "hints": [
+        "Arrays start at index 0",
+        "Size 4 means indices 0-3",
+        "arr[2] is the third element"
+      ],
+      "tags": [
+        "arrays",
+        "indexing",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_004",
+      "category": "memory_management",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Dynamic Allocation",
+      "description": "Fill in the blanks about malloc:",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(5 * sizeof(int));\n    if (!p) return 1;\n    free(p);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "malloc returns a ___",
+          "blanks": [
+            {
+              "options": [
+                "void pointer",
+                "int",
+                "int pointer",
+                "size"
+              ],
+              "correct": "void pointer"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The total bytes allocated is ___",
+          "blanks": [
+            {
+              "options": [
+                "5 * sizeof(int)",
+                "5",
+                "sizeof(int)",
+                "10"
+              ],
+              "correct": "5 * sizeof(int)"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "The memory should be released with ___",
+          "blanks": [
+            {
+              "options": [
+                "free(p)",
+                "delete p",
+                "malloc(p)",
+                "realloc(p)"
+              ],
+              "correct": "free(p)"
+            }
+          ]
+        }
+      ],
+      "explanation": "malloc returns a void pointer to allocated memory. The size is calculated in bytes, and the memory must be released with free.",
+      "hints": [
+        "malloc returns void*",
+        "5 elements times sizeof(int) bytes each",
+        "Use free to release allocated memory"
+      ],
+      "tags": [
+        "malloc",
+        "free",
+        "memory_management"
+      ]
+    },
+    {
+      "id": "fill_005",
+      "category": "arrays",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Array Indexing",
+      "description": "Fill in the blanks about array indexing:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int nums[3] = {7, 8, 9};\n    printf(\"%d\\n\", nums[1]);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "nums[1] refers to the ___ element",
+          "blanks": [
+            {
+              "options": [
+                "second",
+                "first",
+                "third",
+                "fourth"
+              ],
+              "correct": "second"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The value printed is ___",
+          "blanks": [
+            {
+              "options": [
+                "8",
+                "7",
+                "9",
+                "0"
+              ],
+              "correct": "8"
+            }
+          ]
+        }
+      ],
+      "explanation": "Arrays are zero-indexed. nums[1] is the second element, which is 8.",
+      "hints": [
+        "Index 0 is the first element",
+        "Index 1 is the second element",
+        "nums[1] is 8"
+      ],
+      "tags": [
+        "arrays",
+        "indexing"
+      ]
+    },
+    {
+      "id": "fill_006",
+      "category": "strings",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Null Terminator",
+      "description": "Fill in the blanks about C strings:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char s[] = \"Hi\";\n    printf(\"%zu\\n\", sizeof(s));\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "C strings end with a ___ character",
+          "blanks": [
+            {
+              "options": [
+                "null terminator",
+                "newline",
+                "space",
+                "tab"
+              ],
+              "correct": "null terminator"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "sizeof(s) is ___",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "2",
+                "1",
+                "4"
+              ],
+              "correct": "3"
+            }
+          ]
+        }
+      ],
+      "explanation": "\"Hi\" uses 3 bytes: 'H', 'i', and '\\0'.",
+      "hints": [
+        "String literals include '\\0'",
+        "Two letters plus terminator",
+        "Total is 3"
+      ],
+      "tags": [
+        "strings",
+        "null_terminator",
+        "sizeof"
+      ]
+    },
+    {
+      "id": "fill_007",
+      "category": "memory_management",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "free Basics",
+      "description": "Fill in the blanks about free:",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(sizeof(int));\n    if (!p) return 1;\n    free(p);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The function used to release memory is ___",
+          "blanks": [
+            {
+              "options": [
+                "free",
+                "malloc",
+                "calloc",
+                "realloc"
+              ],
+              "correct": "free"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "After freeing, p points to ___",
+          "blanks": [
+            {
+              "options": [
+                "invalid memory",
+                "valid memory",
+                "the stack",
+                "the heap start"
+              ],
+              "correct": "invalid memory"
+            }
+          ]
+        }
+      ],
+      "explanation": "free releases heap memory. After freeing, the pointer becomes invalid until reassigned.",
+      "hints": [
+        "free releases allocated memory",
+        "Freed pointers must not be dereferenced",
+        "The memory is invalid after free"
+      ],
+      "tags": [
+        "free",
+        "memory_management",
+        "pointers"
+      ]
+    },
+    {
+      "id": "fill_008",
+      "category": "pointers",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "NULL Check",
+      "description": "Fill in the blanks about NULL pointers:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int *p = NULL;\n    if (p == NULL) {\n        printf(\"NULL\\n\");\n    }\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "NULL represents a ___ pointer",
+          "blanks": [
+            {
+              "options": [
+                "null",
+                "valid",
+                "stack",
+                "dangling"
+              ],
+              "correct": "null"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Dereferencing NULL causes a ___",
+          "blanks": [
+            {
+              "options": [
+                "crash",
+                "compile error",
+                "warning",
+                "memory leak"
+              ],
+              "correct": "crash"
+            }
+          ]
+        }
+      ],
+      "explanation": "NULL is a special pointer value. Dereferencing it is undefined behavior and typically crashes.",
+      "hints": [
+        "NULL means no valid address",
+        "Dereferencing invalid memory is unsafe",
+        "Always check before use"
+      ],
+      "tags": [
+        "pointers",
+        "NULL",
+        "safety"
+      ]
+    },
+    {
+      "id": "fill_009",
+      "category": "control_flow",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "For Loop Parts",
+      "description": "Fill in the blanks about a for loop:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 0; i < 3; i++) {\n        printf(\"%d \", i);\n    }\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The loop initialization sets i to ___",
+          "blanks": [
+            {
+              "options": [
+                "0",
+                "1",
+                "3",
+                "-1"
+              ],
+              "correct": "0"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The loop condition is i ___ 3",
+          "blanks": [
+            {
+              "options": [
+                "<",
+                ">",
+                "==",
+                ">="
+              ],
+              "correct": "<"
+            }
+          ]
+        }
+      ],
+      "explanation": "The loop starts at 0 and continues while i < 3.",
+      "hints": [
+        "Initialization runs once",
+        "Condition controls the loop",
+        "i increments each time"
+      ],
+      "tags": [
+        "for_loop",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "fill_010",
+      "category": "recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Recursion Basics",
+      "description": "Fill in the blanks about recursion:",
+      "code_template": "int fact(int n) {\n    if (n <= 1) return 1;\n    return n * fact(n - 1);\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The stopping condition is called the ___ case",
+          "blanks": [
+            {
+              "options": [
+                "base",
+                "recursive",
+                "loop",
+                "exit"
+              ],
+              "correct": "base"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Each call reduces n by ___",
+          "blanks": [
+            {
+              "options": [
+                "1",
+                "2",
+                "n",
+                "0"
+              ],
+              "correct": "1"
+            }
+          ]
+        }
+      ],
+      "explanation": "Recursion requires a base case and progress toward it, here by subtracting 1.",
+      "hints": [
+        "Base case stops recursion",
+        "n decreases by 1",
+        "Eventually n <= 1"
+      ],
+      "tags": [
+        "recursion",
+        "base_case"
+      ]
+    },
+    {
+      "id": "fill_011",
+      "category": "structs",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Dot vs Arrow",
+      "description": "Fill in the blanks about struct access:",
+      "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    struct Point p = {1, 2};\n    struct Point *ptr = &p;\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Use the ___ operator to access members via a pointer",
+          "blanks": [
+            {
+              "options": [
+                "->",
+                ".",
+                "&",
+                "*"
+              ],
+              "correct": "->"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Use the ___ operator to access members of a value",
+          "blanks": [
+            {
+              "options": [
+                ".",
+                "->",
+                "&",
+                "*"
+              ],
+              "correct": "."
+            }
+          ]
+        }
+      ],
+      "explanation": "Use -> for pointers and . for struct values.",
+      "hints": [
+        "ptr->x accesses through a pointer",
+        "p.x accesses a value",
+        "-> equals (*ptr).x"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "member_access"
+      ]
+    },
+    {
+      "id": "fill_012",
+      "category": "integer_division",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Modulo Meaning",
+      "description": "Fill in the blanks about modulo:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int r = 17 % 5;\n    printf(\"%d\\n\", r);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The % operator returns the ___",
+          "blanks": [
+            {
+              "options": [
+                "remainder",
+                "quotient",
+                "sum",
+                "product"
+              ],
+              "correct": "remainder"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "17 % 5 equals ___",
+          "blanks": [
+            {
+              "options": [
+                "2",
+                "3",
+                "1",
+                "0"
+              ],
+              "correct": "2"
+            }
+          ]
+        }
+      ],
+      "explanation": "Modulo returns the remainder after integer division. 17 / 5 leaves remainder 2.",
+      "hints": [
+        "17 = 5 * 3 + 2",
+        "Remainder is 2",
+        "% gives remainder"
+      ],
+      "tags": [
+        "modulo",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "fill_013",
+      "category": "loops",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Do-While",
+      "description": "Fill in the blanks about do-while:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    do {\n        x++;\n    } while (x < 0);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "A do-while loop executes at least ___ time",
+          "blanks": [
+            {
+              "options": [
+                "one",
+                "zero",
+                "two",
+                "three"
+              ],
+              "correct": "one"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The value printed is ___",
+          "blanks": [
+            {
+              "options": [
+                "1",
+                "0",
+                "2",
+                "-1"
+              ],
+              "correct": "1"
+            }
+          ]
+        }
+      ],
+      "explanation": "The body runs once before checking the condition, so x becomes 1.",
+      "hints": [
+        "Do-while checks after the body",
+        "x increments once",
+        "Printed value is 1"
+      ],
+      "tags": [
+        "do_while",
+        "loops"
+      ]
+    },
+    {
+      "id": "fill_014",
+      "category": "strings",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "strlen vs sizeof",
+      "description": "Fill in the blanks about strlen and sizeof:",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[] = \"abc\";\n    printf(\"%zu %zu\\n\", strlen(s), sizeof(s));\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "strlen(s) returns ___",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "4",
+                "2",
+                "0"
+              ],
+              "correct": "3"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "sizeof(s) returns ___",
+          "blanks": [
+            {
+              "options": [
+                "4",
+                "3",
+                "2",
+                "0"
+              ],
+              "correct": "4"
+            }
+          ]
+        }
+      ],
+      "explanation": "strlen counts characters before '\\0'. sizeof includes the null terminator.",
+      "hints": [
+        "\"abc\" has 3 letters",
+        "Add 1 for '\\0'",
+        "sizeof includes the terminator"
+      ],
+      "tags": [
+        "strings",
+        "strlen",
+        "sizeof"
+      ]
+    },
+    {
+      "id": "fill_015",
+      "category": "pointers",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Pointer Arithmetic",
+      "description": "Fill in the blanks about pointer arithmetic:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {1, 2, 3};\n    int *p = arr;\n    printf(\"%d\\n\", *(p + 2));\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "p + 2 points to arr[___]",
+          "blanks": [
+            {
+              "options": [
+                "2",
+                "1",
+                "0",
+                "3"
+              ],
+              "correct": "2"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The value printed is ___",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "2",
+                "1",
+                "0"
+              ],
+              "correct": "3"
+            }
+          ]
+        }
+      ],
+      "explanation": "Pointer arithmetic advances by elements. p + 2 points to the third element, which is 3.",
+      "hints": [
+        "p + 1 is second element",
+        "p + 2 is third element",
+        "Third element is 3"
+      ],
+      "tags": [
+        "pointers",
+        "arrays",
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "fill_en_001",
+      "category": "terminology",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "C Programming Basics - Compilation Process",
+      "description": "Fill in the blanks about the C compilation process:",
+      "code_template": "// C compilation stages:\n// 1. Preprocessing\n// 2. Compilation\n// 3. Assembly\n// 4. Linking",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The ___ processes directives like #include and #define",
+          "blanks": [
+            {
+              "options": [
+                "preprocessor",
+                "compiler",
+                "linker",
+                "assembler"
+              ],
+              "correct": "preprocessor"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The ___ combines object files into an executable",
+          "blanks": [
+            {
+              "options": [
+                "linker",
+                "compiler",
+                "preprocessor",
+                "assembler"
+              ],
+              "correct": "linker"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "The compiler translates C code to ___",
+          "blanks": [
+            {
+              "options": [
+                "assembly code",
+                "machine code",
+                "bytecode",
+                "object code"
+              ],
+              "correct": "assembly code"
+            }
+          ]
+        }
+      ],
+      "explanation": "The compilation process has 4 stages: preprocessing (#include, #define), compilation (C to assembly), assembly (assembly to object), linking (objects to executable).",
+      "hints": [
+        "Preprocessing handles # directives",
+        "Linking combines separate files",
+        "Compiler outputs assembly language"
+      ],
+      "tags": [
+        "compilation",
+        "terminology",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_da_001",
+      "category": "terminology",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "C Programmering - Oversættelsesprocessen (Danish)",
+      "description": "Udfyld felterne om C-oversættelsesprocessen:",
+      "code_template": "// C oversættelses trin:\n// 1. Forbehandling\n// 2. Kompilering\n// 3. Assemblering\n// 4. Linking",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Præprocessoren håndterer ___ som #include og #define",
+          "blanks": [
+            {
+              "options": [
+                "direktiver",
+                "funktioner",
+                "variabler",
+                "konstanter"
+              ],
+              "correct": "direktiver"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Linkeren kombinerer ___ til en eksekverbar fil",
+          "blanks": [
+            {
+              "options": [
+                "objektfiler",
+                "kildefiler",
+                "headerfiler",
+                "biblioteker"
+              ],
+              "correct": "objektfiler"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Compileren oversætter C-kode til ___",
+          "blanks": [
+            {
+              "options": [
+                "assemblykode",
+                "maskinkode",
+                "bytekode",
+                "objektkode"
+              ],
+              "correct": "assemblykode"
+            }
+          ]
+        }
+      ],
+      "explanation": "Oversættelsesprocessen har 4 trin: forbehandling (#include, #define), kompilering (C til assembly), assemblering (assembly til objekt), linking (objekter til eksekverbar).",
+      "hints": [
+        "Præprocessoren behandler # direktiver",
+        "Linkeren samler separate filer",
+        "Compileren laver assembly sprog"
+      ],
+      "tags": [
+        "kompilering",
+        "terminologi",
+        "grundlæggende"
+      ]
+    },
+    {
+      "id": "fill_en_002",
+      "category": "memory",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Memory Segments",
+      "description": "Fill in the blanks about memory segments in C:",
+      "code_template": "int global_var = 10;      // Data segment\nstatic int static_var;    // BSS segment\n\nint main() {\n    int local = 5;         // Stack\n    char* heap = malloc(100); // Heap\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Global variables are stored in the ___",
+          "blanks": [
+            {
+              "options": [
+                "data segment",
+                "stack",
+                "heap",
+                "code segment"
+              ],
+              "correct": "data segment"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Local variables are stored on the ___",
+          "blanks": [
+            {
+              "options": [
+                "stack",
+                "heap",
+                "data segment",
+                "BSS segment"
+              ],
+              "correct": "stack"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Dynamically allocated memory is in the ___",
+          "blanks": [
+            {
+              "options": [
+                "heap",
+                "stack",
+                "data segment",
+                "code segment"
+              ],
+              "correct": "heap"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Uninitialized global variables go in the ___ segment",
+          "blanks": [
+            {
+              "options": [
+                "BSS",
+                "data",
+                "text",
+                "stack"
+              ],
+              "correct": "BSS"
+            }
+          ]
+        }
+      ],
+      "explanation": "C programs use different memory segments: stack (local vars), heap (malloc), data (initialized globals), BSS (uninitialized globals), text (code).",
+      "hints": [
+        "Stack grows with function calls",
+        "Heap is for dynamic allocation",
+        "BSS stands for Block Started by Symbol"
+      ],
+      "tags": [
+        "memory",
+        "segments",
+        "terminology"
+      ]
+    },
+    {
+      "id": "fill_da_002",
+      "category": "memory",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Hukommelsessegmenter (Danish)",
+      "description": "Udfyld felterne om hukommelsessegmenter i C:",
+      "code_template": "int global = 10;          // Data segment\nstatic int statisk;       // BSS segment\n\nint main() {\n    int lokal = 5;         // Stak\n    char* heap = malloc(100); // Heap\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Globale variabler gemmes i ___",
+          "blanks": [
+            {
+              "options": [
+                "datasegmentet",
+                "stakken",
+                "heapen",
+                "kodesegmentet"
+              ],
+              "correct": "datasegmentet"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Lokale variabler gemmes på ___",
+          "blanks": [
+            {
+              "options": [
+                "stakken",
+                "heapen",
+                "datasegmentet",
+                "BSS-segmentet"
+              ],
+              "correct": "stakken"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Dynamisk allokeret hukommelse er i ___",
+          "blanks": [
+            {
+              "options": [
+                "heapen",
+                "stakken",
+                "datasegmentet",
+                "kodesegmentet"
+              ],
+              "correct": "heapen"
+            }
+          ]
+        }
+      ],
+      "explanation": "C-programmer bruger forskellige hukommelsessegmenter: stak (lokale variabler), heap (malloc), data (initialiserede globale), BSS (uinitialiserede globale), tekst (kode).",
+      "hints": [
+        "Stakken vokser med funktionskald",
+        "Heap er til dynamisk allokering",
+        "BSS står for Block Started by Symbol"
+      ],
+      "tags": [
+        "hukommelse",
+        "segmenter",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_en_003",
+      "category": "types",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Data Types and Storage",
+      "description": "Fill in the blanks about C data types:",
+      "code_template": "int x;      // Signed integer\nunsigned y; // Unsigned integer\nchar c;     // Character\nfloat f;    // Floating point\ndouble d;   // Double precision",
+      "questions": [
+        {
+          "id": 0,
+          "text": "An ___ can store negative numbers, a ___ cannot",
+          "blanks": [
+            {
+              "options": [
+                "signed integer",
+                "unsigned integer",
+                "char",
+                "float"
+              ],
+              "correct": "signed integer"
+            },
+            {
+              "options": [
+                "unsigned integer",
+                "signed integer",
+                "double",
+                "pointer"
+              ],
+              "correct": "unsigned integer"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The ___ type has more precision than ___",
+          "blanks": [
+            {
+              "options": [
+                "double",
+                "float",
+                "int",
+                "char"
+              ],
+              "correct": "double"
+            },
+            {
+              "options": [
+                "float",
+                "double",
+                "int",
+                "long"
+              ],
+              "correct": "float"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "A ___ typically stores 1 byte and represents ___",
+          "blanks": [
+            {
+              "options": [
+                "char",
+                "int",
+                "float",
+                "double"
+              ],
+              "correct": "char"
+            },
+            {
+              "options": [
+                "a character or small integer",
+                "floating-point numbers",
+                "pointers",
+                "large integers"
+              ],
+              "correct": "a character or small integer"
+            }
+          ]
+        }
+      ],
+      "explanation": "C has various data types with different sizes and capabilities. Signed types store negative numbers, unsigned don't. Double has more precision than float.",
+      "hints": [
+        "Signed means can be negative",
+        "Double has double the precision",
+        "char is 1 byte"
+      ],
+      "tags": [
+        "types",
+        "data",
+        "terminology"
+      ]
+    },
+    {
+      "id": "fill_da_003",
+      "category": "types",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Datatyper og Lagring (Danish)",
+      "description": "Udfyld felterne om C datatyper:",
+      "code_template": "int x;      // Fortegnet heltal\nunsigned y; // Ufortegnet heltal\nchar c;     // Tegn\nfloat f;    // Kommatal\ndouble d;   // Dobbelt præcision",
+      "questions": [
+        {
+          "id": 0,
+          "text": "En ___ type kan gemme negative tal, en ___ kan ikke",
+          "blanks": [
+            {
+              "options": [
+                "fortegnet",
+                "ufortegnet",
+                "char",
+                "float"
+              ],
+              "correct": "fortegnet"
+            },
+            {
+              "options": [
+                "ufortegnet",
+                "fortegnet",
+                "double",
+                "pointer"
+              ],
+              "correct": "ufortegnet"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "___ typen har mere præcision end ___",
+          "blanks": [
+            {
+              "options": [
+                "double",
+                "float",
+                "int",
+                "char"
+              ],
+              "correct": "double"
+            },
+            {
+              "options": [
+                "float",
+                "double",
+                "int",
+                "long"
+              ],
+              "correct": "float"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "En ___ bruger typisk 1 byte og repræsenterer ___",
+          "blanks": [
+            {
+              "options": [
+                "char",
+                "int",
+                "float",
+                "double"
+              ],
+              "correct": "char"
+            },
+            {
+              "options": [
+                "et tegn eller lille heltal",
+                "kommatal",
+                "pointere",
+                "store heltal"
+              ],
+              "correct": "et tegn eller lille heltal"
+            }
+          ]
+        }
+      ],
+      "explanation": "C har forskellige datatyper med forskellige størrelser og muligheder. Fortegnede typer kan være negative, ufortegnede kan ikke. Double har mere præcision end float.",
+      "hints": [
+        "Fortegnet betyder kan være negativ",
+        "Double har dobbelt præcision",
+        "char er 1 byte"
+      ],
+      "tags": [
+        "typer",
+        "data",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_en_004",
+      "category": "pointers",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Pointer Terminology",
+      "description": "Fill in the blanks about pointer operations:",
+      "code_template": "int x = 42;\nint *p = &x;   // p stores the address of x\nint y = *p;    // y gets the value at address p",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The ___ operator gets the address, the ___ operator gets the value",
+          "blanks": [
+            {
+              "options": [
+                "address-of (&)",
+                "dereference (*)",
+                "arrow (->)",
+                "dot (.)"
+              ],
+              "correct": "address-of (&)"
+            },
+            {
+              "options": [
+                "dereference (*)",
+                "address-of (&)",
+                "arrow (->)",
+                "dot (.)"
+              ],
+              "correct": "dereference (*)"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Accessing the value at a pointer address is called ___",
+          "blanks": [
+            {
+              "options": [
+                "dereferencing",
+                "addressing",
+                "pointing",
+                "allocating"
+              ],
+              "correct": "dereferencing"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "A pointer stores a ___ not a ___",
+          "blanks": [
+            {
+              "options": [
+                "memory address",
+                "value",
+                "type",
+                "function"
+              ],
+              "correct": "memory address"
+            },
+            {
+              "options": [
+                "value",
+                "memory address",
+                "type",
+                "function"
+              ],
+              "correct": "value"
+            }
+          ]
+        }
+      ],
+      "explanation": "Pointer operations: & gets address, * dereferences (gets value). Pointers store addresses, not values. Dereferencing means accessing the value at an address.",
+      "hints": [
+        "& is address-of operator",
+        "* is dereference operator",
+        "Pointers hold addresses"
+      ],
+      "tags": [
+        "pointers",
+        "operators",
+        "terminology"
+      ]
+    },
+    {
+      "id": "fill_da_004",
+      "category": "pointers",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Pointer Terminologi (Danish)",
+      "description": "Udfyld felterne om pointer operationer:",
+      "code_template": "int x = 42;\nint *p = &x;   // p gemmer adressen til x\nint y = *p;    // y får værdien på adressen p",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ operatoren får adressen, ___ operatoren får værdien",
+          "blanks": [
+            {
+              "options": [
+                "adresse-af (&)",
+                "dereferering (*)",
+                "pil (->)",
+                "punkt (.)"
+              ],
+              "correct": "adresse-af (&)"
+            },
+            {
+              "options": [
+                "dereferering (*)",
+                "adresse-af (&)",
+                "pil (->)",
+                "punkt (.)"
+              ],
+              "correct": "dereferering (*)"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "At få værdien på en pointer-adresse kaldes ___",
+          "blanks": [
+            {
+              "options": [
+                "dereferering",
+                "adressering",
+                "pointing",
+                "allokering"
+              ],
+              "correct": "dereferering"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "En pointer gemmer en ___ ikke en ___",
+          "blanks": [
+            {
+              "options": [
+                "hukommelsesadresse",
+                "værdi",
+                "type",
+                "funktion"
+              ],
+              "correct": "hukommelsesadresse"
+            },
+            {
+              "options": [
+                "værdi",
+                "hukommelsesadresse",
+                "type",
+                "funktion"
+              ],
+              "correct": "værdi"
+            }
+          ]
+        }
+      ],
+      "explanation": "Pointer operationer: & får adresse, * derefererer (får værdi). Pointere gemmer adresser, ikke værdier. Dereferering betyder at få værdien på en adresse.",
+      "hints": [
+        "& er adresse-af operator",
+        "* er dereferering operator",
+        "Pointere indeholder adresser"
+      ],
+      "tags": [
+        "pointere",
+        "operatorer",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_en_005",
+      "category": "functions",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Function Terminology",
+      "description": "Fill in the blanks about C functions:",
+      "code_template": "int add(int a, int b);  // Declaration/Prototype\n\nint add(int a, int b) { // Definition\n    return a + b;       // Return statement\n}\n\nint main() {\n    int x = add(5, 3);  // Function call\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "A function ___ tells the compiler the function exists, a ___ provides the implementation",
+          "blanks": [
+            {
+              "options": [
+                "declaration",
+                "definition",
+                "call",
+                "invocation"
+              ],
+              "correct": "declaration"
+            },
+            {
+              "options": [
+                "definition",
+                "declaration",
+                "call",
+                "prototype"
+              ],
+              "correct": "definition"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The variables in the function signature are called ___",
+          "blanks": [
+            {
+              "options": [
+                "formal parameters",
+                "actual parameters",
+                "arguments",
+                "local variables"
+              ],
+              "correct": "formal parameters"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "The values passed when calling a function are called ___",
+          "blanks": [
+            {
+              "options": [
+                "arguments",
+                "parameters",
+                "variables",
+                "constants"
+              ],
+              "correct": "arguments"
+            }
+          ]
+        }
+      ],
+      "explanation": "Function declaration (prototype) announces the function. Definition provides the body. Parameters are in the signature, arguments are passed at call time.",
+      "hints": [
+        "Declaration = promise, Definition = implementation",
+        "Parameters = placeholder names",
+        "Arguments = actual values passed"
+      ],
+      "tags": [
+        "functions",
+        "terminology",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_da_005",
+      "category": "functions",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Funktions Terminologi (Danish)",
+      "description": "Udfyld felterne om C funktioner:",
+      "code_template": "int add(int a, int b);  // Erklæring/Prototype\n\nint add(int a, int b) { // Definition\n    return a + b;       // Return statement\n}\n\nint main() {\n    int x = add(5, 3);  // Funktionskald\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "En funktions ___ fortæller compileren at funktionen eksisterer, en ___ giver implementeringen",
+          "blanks": [
+            {
+              "options": [
+                "erklæring",
+                "definition",
+                "kald",
+                "invokation"
+              ],
+              "correct": "erklæring"
+            },
+            {
+              "options": [
+                "definition",
+                "erklæring",
+                "kald",
+                "prototype"
+              ],
+              "correct": "definition"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Variablerne i funktionssignaturen kaldes ___",
+          "blanks": [
+            {
+              "options": [
+                "formelle parametre",
+                "aktuelle parametre",
+                "argumenter",
+                "lokale variabler"
+              ],
+              "correct": "formelle parametre"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Værdierne der sendes når funktionen kaldes hedder ___",
+          "blanks": [
+            {
+              "options": [
+                "argumenter",
+                "parametre",
+                "variabler",
+                "konstanter"
+              ],
+              "correct": "argumenter"
+            }
+          ]
+        }
+      ],
+      "explanation": "Funktionserklæring (prototype) annoncerer funktionen. Definition giver kroppen. Parametre er i signaturen, argumenter sendes ved kald.",
+      "hints": [
+        "Erklæring = løfte, Definition = implementering",
+        "Parametre = placeholder navne",
+        "Argumenter = faktiske værdier sendt"
+      ],
+      "tags": [
+        "funktioner",
+        "terminologi",
+        "grundlæggende"
+      ]
+    },
+    {
+      "id": "fill_en_006",
+      "category": "memory_errors",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Common Memory Errors",
+      "description": "Fill in the blanks about memory errors:",
+      "code_template": "// Common errors:\n// 1. Memory leak: malloc without free\n// 2. Dangling pointer: pointer to freed memory\n// 3. Use after free: using freed memory\n// 4. Double free: freeing same memory twice\n// 5. Buffer overflow: writing beyond array bounds",
+      "questions": [
+        {
+          "id": 0,
+          "text": "A ___ occurs when allocated memory is never freed",
+          "blanks": [
+            {
+              "options": [
+                "memory leak",
+                "dangling pointer",
+                "buffer overflow",
+                "segmentation fault"
+              ],
+              "correct": "memory leak"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "A ___ points to memory that has been freed",
+          "blanks": [
+            {
+              "options": [
+                "dangling pointer",
+                "null pointer",
+                "wild pointer",
+                "smart pointer"
+              ],
+              "correct": "dangling pointer"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Writing beyond an array's bounds causes ___",
+          "blanks": [
+            {
+              "options": [
+                "buffer overflow",
+                "memory leak",
+                "dangling pointer",
+                "double free"
+              ],
+              "correct": "buffer overflow"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Calling free() twice on the same pointer is a ___",
+          "blanks": [
+            {
+              "options": [
+                "double free error",
+                "memory leak",
+                "buffer overflow",
+                "segmentation fault"
+              ],
+              "correct": "double free error"
+            }
+          ]
+        }
+      ],
+      "explanation": "Memory errors: leaks (no free), dangling pointers (freed but still used), buffer overflow (write beyond bounds), double free (free twice), use after free.",
+      "hints": [
+        "Leak = forget to free",
+        "Dangling = points to freed memory",
+        "Overflow = write too much",
+        "Double free = free twice"
+      ],
+      "tags": [
+        "memory",
+        "errors",
+        "terminology"
+      ]
+    },
+    {
+      "id": "fill_da_006",
+      "category": "memory_errors",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Almindelige Hukommelsesfejl (Danish)",
+      "description": "Udfyld felterne om hukommelsesfejl:",
+      "code_template": "// Almindelige fejl:\n// 1. Memory leak: malloc uden free\n// 2. Dangling pointer: pointer til frigivet hukommelse\n// 3. Use after free: brug af frigivet hukommelse\n// 4. Double free: frigiver samme hukommelse to gange\n// 5. Buffer overflow: skriver ud over array grænser",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Et ___ opstår når allokeret hukommelse aldrig frigives",
+          "blanks": [
+            {
+              "options": [
+                "memory leak",
+                "dangling pointer",
+                "buffer overflow",
+                "segmentation fault"
+              ],
+              "correct": "memory leak"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "En ___ peger på hukommelse der er blevet frigivet",
+          "blanks": [
+            {
+              "options": [
+                "dinglende pointer",
+                "null pointer",
+                "vild pointer",
+                "smart pointer"
+              ],
+              "correct": "dinglende pointer"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "At skrive ud over et arrays grænser forårsager ___",
+          "blanks": [
+            {
+              "options": [
+                "buffer overflow",
+                "memory leak",
+                "dangling pointer",
+                "double free"
+              ],
+              "correct": "buffer overflow"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "At kalde free() to gange på samme pointer er en ___",
+          "blanks": [
+            {
+              "options": [
+                "double free fejl",
+                "memory leak",
+                "buffer overflow",
+                "segmentation fault"
+              ],
+              "correct": "double free fejl"
+            }
+          ]
+        }
+      ],
+      "explanation": "Hukommelsesfejl: leaks (ingen free), dinglende pointere (frigivet men stadig brugt), buffer overflow (skriv ud over grænser), double free (frigør to gange).",
+      "hints": [
+        "Leak = glem at frigøre",
+        "Dinglende = peger til frigivet hukommelse",
+        "Overflow = skriv for meget",
+        "Double free = frigør to gange"
+      ],
+      "tags": [
+        "hukommelse",
+        "fejl",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_en_007",
+      "category": "scope",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Variable Scope and Lifetime",
+      "description": "Fill in the blanks about scope and lifetime:",
+      "code_template": "int global = 1;         // File scope, static lifetime\n\nvoid func() {\n    static int s = 0;   // Block scope, static lifetime\n    int local = 2;      // Block scope, automatic lifetime\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ variables exist for the entire program duration",
+          "blanks": [
+            {
+              "options": [
+                "Global",
+                "Local",
+                "Register",
+                "Temporary"
+              ],
+              "correct": "Global"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "___ variables are created when function is called and destroyed when it returns",
+          "blanks": [
+            {
+              "options": [
+                "Automatic (local)",
+                "Static",
+                "Global",
+                "Extern"
+              ],
+              "correct": "Automatic (local)"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Variables declared with ___ keyword retain their value between function calls",
+          "blanks": [
+            {
+              "options": [
+                "static",
+                "const",
+                "extern",
+                "volatile"
+              ],
+              "correct": "static"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "___ determines where a variable can be accessed, ___ determines how long it exists",
+          "blanks": [
+            {
+              "options": [
+                "Scope",
+                "Lifetime",
+                "Type",
+                "Storage"
+              ],
+              "correct": "Scope"
+            },
+            {
+              "options": [
+                "Lifetime",
+                "Scope",
+                "Type",
+                "Duration"
+              ],
+              "correct": "Lifetime"
+            }
+          ]
+        }
+      ],
+      "explanation": "Scope is where variable is visible. Lifetime is how long it exists. Global = entire program. Local = function only. Static = keeps value between calls.",
+      "hints": [
+        "Global variables live forever",
+        "Local variables are automatic",
+        "Static keeps its value",
+        "Scope = visibility, Lifetime = duration"
+      ],
+      "tags": [
+        "scope",
+        "lifetime",
+        "terminology"
+      ]
+    },
+    {
+      "id": "fill_da_007",
+      "category": "scope",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Variabel Scope og Levetid (Danish)",
+      "description": "Udfyld felterne om scope og levetid:",
+      "code_template": "int global = 1;         // Fil scope, statisk levetid\n\nvoid func() {\n    static int s = 0;   // Blok scope, statisk levetid\n    int lokal = 2;      // Blok scope, automatisk levetid\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ variabler eksisterer hele programmets varighed",
+          "blanks": [
+            {
+              "options": [
+                "Globale",
+                "Lokale",
+                "Register",
+                "Midlertidige"
+              ],
+              "correct": "Globale"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "___ variabler oprettes når funktionen kaldes og destrueres når den returnerer",
+          "blanks": [
+            {
+              "options": [
+                "Automatiske (lokale)",
+                "Statiske",
+                "Globale",
+                "Eksterne"
+              ],
+              "correct": "Automatiske (lokale)"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Variabler erklæret med ___ nøgleord bevarer deres værdi mellem funktionskald",
+          "blanks": [
+            {
+              "options": [
+                "static",
+                "const",
+                "extern",
+                "volatile"
+              ],
+              "correct": "static"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "___ bestemmer hvor en variabel kan tilgås, ___ bestemmer hvor længe den eksisterer",
+          "blanks": [
+            {
+              "options": [
+                "Scope",
+                "Levetid",
+                "Type",
+                "Lagring"
+              ],
+              "correct": "Scope"
+            },
+            {
+              "options": [
+                "Levetid",
+                "Scope",
+                "Type",
+                "Varighed"
+              ],
+              "correct": "Levetid"
+            }
+          ]
+        }
+      ],
+      "explanation": "Scope er hvor variablen er synlig. Levetid er hvor længe den eksisterer. Global = hele programmet. Lokal = kun funktion. Static = beholder værdi mellem kald.",
+      "hints": [
+        "Globale variabler lever evigt",
+        "Lokale variabler er automatiske",
+        "Static beholder sin værdi",
+        "Scope = synlighed, Levetid = varighed"
+      ],
+      "tags": [
+        "scope",
+        "levetid",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_en_008",
+      "category": "arrays",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Array Concepts",
+      "description": "Fill in the blanks about arrays:",
+      "code_template": "int arr[5] = {1, 2, 3, 4, 5};\nint *p = arr;  // Array name decays to pointer",
+      "questions": [
+        {
+          "id": 0,
+          "text": "An array name ___ to a pointer when passed to a function",
+          "blanks": [
+            {
+              "options": [
+                "decays",
+                "converts",
+                "transforms",
+                "changes"
+              ],
+              "correct": "decays"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Arrays in C are ___-indexed, starting at ___",
+          "blanks": [
+            {
+              "options": [
+                "zero",
+                "one",
+                "negative",
+                "positive"
+              ],
+              "correct": "zero"
+            },
+            {
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "N"
+              ],
+              "correct": "0"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Array elements are stored in ___ memory locations",
+          "blanks": [
+            {
+              "options": [
+                "contiguous",
+                "random",
+                "separated",
+                "distributed"
+              ],
+              "correct": "contiguous"
+            }
+          ]
+        }
+      ],
+      "explanation": "Arrays: zero-indexed (start at 0), stored contiguously in memory, name decays to pointer when passed to functions.",
+      "hints": [
+        "First element is arr[0]",
+        "Elements are next to each other",
+        "Array name becomes pointer"
+      ],
+      "tags": [
+        "arrays",
+        "terminology",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_da_008",
+      "category": "arrays",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Array Koncepter (Danish)",
+      "description": "Udfyld felterne om arrays:",
+      "code_template": "int arr[5] = {1, 2, 3, 4, 5};\nint *p = arr;  // Array navn decays til pointer",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Et array navn ___ til en pointer når det sendes til en funktion",
+          "blanks": [
+            {
+              "options": [
+                "decays",
+                "konverterer",
+                "transformerer",
+                "ændrer"
+              ],
+              "correct": "decays"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Arrays i C er ___-indekseret, starter ved ___",
+          "blanks": [
+            {
+              "options": [
+                "nul",
+                "en",
+                "negativ",
+                "positiv"
+              ],
+              "correct": "nul"
+            },
+            {
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "N"
+              ],
+              "correct": "0"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Array elementer gemmes i ___ hukommelseslokationer",
+          "blanks": [
+            {
+              "options": [
+                "sammenhængende",
+                "tilfældige",
+                "adskilte",
+                "fordelte"
+              ],
+              "correct": "sammenhængende"
+            }
+          ]
+        }
+      ],
+      "explanation": "Arrays: nul-indekseret (starter ved 0), gemt sammenhængende i hukommelse, navn decays til pointer når sendt til funktioner.",
+      "hints": [
+        "Første element er arr[0]",
+        "Elementer er ved siden af hinanden",
+        "Array navn bliver pointer"
+      ],
+      "tags": [
+        "arrays",
+        "terminologi",
+        "grundlæggende"
+      ]
+    },
+    {
+      "id": "fill_en_009",
+      "category": "structs",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Structure Terminology",
+      "description": "Fill in the blanks about structures:",
+      "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nstruct Point p;\np.x = 10;  // Member access\n\nstruct Point *ptr = &p;\nptr->x = 20;  // Arrow operator",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The ___ operator accesses struct members through a variable, ___ through a pointer",
+          "blanks": [
+            {
+              "options": [
+                "dot (.)",
+                "arrow (->)",
+                "star (*)",
+                "ampersand (&)"
+              ],
+              "correct": "dot (.)"
+            },
+            {
+              "options": [
+                "arrow (->)",
+                "dot (.)",
+                "star (*)",
+                "ampersand (&)"
+              ],
+              "correct": "arrow (->)"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Variables inside a struct are called ___",
+          "blanks": [
+            {
+              "options": [
+                "members or fields",
+                "properties",
+                "attributes",
+                "elements"
+              ],
+              "correct": "members or fields"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Extra bytes added for alignment are called ___",
+          "blanks": [
+            {
+              "options": [
+                "padding",
+                "spacing",
+                "gaps",
+                "holes"
+              ],
+              "correct": "padding"
+            }
+          ]
+        }
+      ],
+      "explanation": "Struct terminology: members/fields (variables inside), dot operator (direct access), arrow operator (pointer access), padding (alignment bytes).",
+      "hints": [
+        "Use . for direct access",
+        "Use -> for pointer access",
+        "Padding aligns memory"
+      ],
+      "tags": [
+        "structs",
+        "terminology",
+        "operators"
+      ]
+    },
+    {
+      "id": "fill_da_009",
+      "category": "structs",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Struktur Terminologi (Danish)",
+      "description": "Udfyld felterne om strukturer:",
+      "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nstruct Point p;\np.x = 10;  // Member adgang\n\nstruct Point *ptr = &p;\nptr->x = 20;  // Pil operator",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ operatoren får adgang til struct medlemmer gennem en variabel, ___ gennem en pointer",
+          "blanks": [
+            {
+              "options": [
+                "punktum (.)",
+                "pil (->)",
+                "stjerne (*)",
+                "og-tegn (&)"
+              ],
+              "correct": "punktum (.)"
+            },
+            {
+              "options": [
+                "pil (->)",
+                "punktum (.)",
+                "stjerne (*)",
+                "og-tegn (&)"
+              ],
+              "correct": "pil (->)"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Variabler inde i en struct kaldes ___",
+          "blanks": [
+            {
+              "options": [
+                "medlemmer eller felter",
+                "egenskaber",
+                "attributter",
+                "elementer"
+              ],
+              "correct": "medlemmer eller felter"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Ekstra bytes tilføjet for alignment kaldes ___",
+          "blanks": [
+            {
+              "options": [
+                "padding",
+                "mellemrum",
+                "huller",
+                "gaps"
+              ],
+              "correct": "padding"
+            }
+          ]
+        }
+      ],
+      "explanation": "Struct terminologi: medlemmer/felter (variabler indeni), punktum operator (direkte adgang), pil operator (pointer adgang), padding (alignment bytes).",
+      "hints": [
+        "Brug . til direkte adgang",
+        "Brug -> til pointer adgang",
+        "Padding aligner hukommelse"
+      ],
+      "tags": [
+        "strukturer",
+        "terminologi",
+        "operatorer"
+      ]
+    },
+    {
+      "id": "fill_en_010",
+      "category": "recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Recursion Concepts",
+      "description": "Fill in the blanks about recursion:",
+      "code_template": "int factorial(int n) {\n    if (n <= 1) return 1;  // Base case\n    return n * factorial(n - 1);  // Recursive case\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The ___ prevents infinite recursion by stopping the recursive calls",
+          "blanks": [
+            {
+              "options": [
+                "base case",
+                "recursive case",
+                "return statement",
+                "condition"
+              ],
+              "correct": "base case"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "When a function calls itself, it is called ___",
+          "blanks": [
+            {
+              "options": [
+                "recursion",
+                "iteration",
+                "looping",
+                "cycling"
+              ],
+              "correct": "recursion"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Each recursive call creates a new ___ on the stack",
+          "blanks": [
+            {
+              "options": [
+                "stack frame",
+                "heap allocation",
+                "global variable",
+                "register"
+              ],
+              "correct": "stack frame"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Too many recursive calls can cause ___",
+          "blanks": [
+            {
+              "options": [
+                "stack overflow",
+                "heap overflow",
+                "memory leak",
+                "segmentation fault"
+              ],
+              "correct": "stack overflow"
+            }
+          ]
+        }
+      ],
+      "explanation": "Recursion: function calls itself. Base case stops recursion. Each call creates stack frame. Too deep causes stack overflow.",
+      "hints": [
+        "Base case is the stopping condition",
+        "Recursion = self-calling",
+        "Stack frames pile up",
+        "Stack has limited size"
+      ],
+      "tags": [
+        "recursion",
+        "terminology",
+        "concepts"
+      ]
+    },
+    {
+      "id": "fill_da_010",
+      "category": "recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Rekursions Koncepter (Danish)",
+      "description": "Udfyld felterne om rekursion:",
+      "code_template": "int factorial(int n) {\n    if (n <= 1) return 1;  // Basistilfælde\n    return n * factorial(n - 1);  // Rekursivt tilfælde\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ forhindrer uendelig rekursion ved at stoppe de rekursive kald",
+          "blanks": [
+            {
+              "options": [
+                "basistilfældet",
+                "rekursive tilfælde",
+                "return statement",
+                "betingelse"
+              ],
+              "correct": "basistilfældet"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Når en funktion kalder sig selv, kaldes det ___",
+          "blanks": [
+            {
+              "options": [
+                "rekursion",
+                "iteration",
+                "løkke",
+                "cyklus"
+              ],
+              "correct": "rekursion"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Hvert rekursivt kald opretter en ny ___ på stakken",
+          "blanks": [
+            {
+              "options": [
+                "stakramme",
+                "heap allokering",
+                "global variabel",
+                "register"
+              ],
+              "correct": "stakramme"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "For mange rekursive kald kan forårsage ___",
+          "blanks": [
+            {
+              "options": [
+                "stak overflow",
+                "heap overflow",
+                "memory leak",
+                "segmentation fault"
+              ],
+              "correct": "stak overflow"
+            }
+          ]
+        }
+      ],
+      "explanation": "Rekursion: funktion kalder sig selv. Basistilfælde stopper rekursion. Hvert kald opretter stakramme. For dybt forårsager stak overflow.",
+      "hints": [
+        "Basistilfælde er stopbetingelsen",
+        "Rekursion = selv-kaldende",
+        "Stakrammer hober sig op",
+        "Stak har begrænset størrelse"
+      ],
+      "tags": [
+        "rekursion",
+        "terminologi",
+        "koncepter"
+      ]
+    }
+  ]
+}

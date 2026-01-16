@@ -1,0 +1,852 @@
+{
+  "questions": [
+    {
+      "id": "ctrl_001",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Prefix vs Postfix Increment",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 5;\n    printf(\"%d \", i++);\n    printf(\"%d \", ++i);\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+      "options": [
+        "5 6 6",
+        "5 7 7",
+        "6 7 7",
+        "5 6 7"
+      ],
+      "correct_answer": "B",
+      "explanation": "i++ returns 5 then increments to 6. ++i increments to 7 then returns 7. Final value of i is 7. Output: 5 7 7",
+      "hints": [
+        "i++ uses the value then increments",
+        "++i increments then uses the value",
+        "After i++, i becomes 6. After ++i, i becomes 7"
+      ],
+      "tags": [
+        "increment",
+        "prefix",
+        "postfix"
+      ]
+    },
+    {
+      "id": "ctrl_002",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Short-Circuit Safety",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x != 0 && 10 / x > 1) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "Division by zero error",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "The left side of && is false (x != 0), so the right side is never evaluated. That prevents division by zero, and the else branch prints B.",
+      "hints": [
+        "&& short-circuits when the left side is false",
+        "The division is skipped",
+        "The else branch runs"
+      ],
+      "tags": [
+        "short_circuit",
+        "logical_and",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "ctrl_003",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Switch Fallthrough",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 2;\n    switch (x) {\n        case 1:\n            printf(\"A\");\n        case 2:\n            printf(\"B\");\n            break;\n        default:\n            printf(\"C\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "AB",
+        "BC"
+      ],
+      "correct_answer": "B",
+      "explanation": "Execution jumps to case 2 and prints B, then breaks. Case 1 is not executed because the switch matches case 2 directly.",
+      "hints": [
+        "The switch jumps directly to case 2",
+        "Only case 2 executes before break",
+        "No fallthrough occurs from case 1"
+      ],
+      "tags": [
+        "switch",
+        "fallthrough",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "ctrl_004",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Dangling Else",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1;\n    int b = 0;\n    if (a)\n        if (b)\n            printf(\"X\\n\");\n        else\n            printf(\"Y\\n\");\n    return 0;\n}",
+      "options": [
+        "X",
+        "Y",
+        "No output",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "The else binds to the nearest if (the inner one). Since b is 0, it prints Y.",
+      "hints": [
+        "Else pairs with the closest unmatched if",
+        "The inner if checks b",
+        "b is 0"
+      ],
+      "tags": [
+        "if_else",
+        "dangling_else"
+      ]
+    },
+    {
+      "id": "ctrl_005",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "For Loop Sum",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int sum = 0;\n    for (int i = 0; i < 3; i++) {\n        sum += i;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "3",
+        "6"
+      ],
+      "correct_answer": "C",
+      "explanation": "The loop adds 0 + 1 + 2, which is 3.",
+      "hints": [
+        "i runs 0, 1, 2",
+        "Sum is 0+1+2",
+        "Total is 3"
+      ],
+      "tags": [
+        "for_loop",
+        "sum"
+      ]
+    },
+    {
+      "id": "ctrl_006",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Continue Skips",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int count = 0;\n    for (int i = 0; i < 5; i++) {\n        if (i % 2 == 0) {\n            continue;\n        }\n        count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "A",
+      "explanation": "The odd numbers between 0 and 4 are 1 and 3, so count increments twice.",
+      "hints": [
+        "Even numbers are skipped",
+        "Odd numbers are 1 and 3",
+        "Count increments twice"
+      ],
+      "tags": [
+        "continue",
+        "for_loop"
+      ]
+    },
+    {
+      "id": "ctrl_007",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Switch Fallthrough to Default",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    switch (x) {\n        case 1:\n            printf(\"A\");\n            break;\n        case 3:\n            printf(\"C\");\n        default:\n            printf(\"D\");\n    }\n    return 0;\n}",
+      "options": [
+        "C",
+        "D",
+        "CD",
+        "AD"
+      ],
+      "correct_answer": "C",
+      "explanation": "Case 3 prints C, then falls through to default and prints D.",
+      "hints": [
+        "No break after case 3",
+        "Default executes after case 3",
+        "Both C and D print"
+      ],
+      "tags": [
+        "switch",
+        "fallthrough",
+        "default"
+      ]
+    },
+    {
+      "id": "ctrl_008",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Ternary Operator",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int y = (x > 3) ? x - 1 : x + 1;\n    printf(\"%d\\n\", y);\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "B",
+      "explanation": "Since x > 3 is true, y becomes x - 1, which is 4.",
+      "hints": [
+        "Condition is true",
+        "Use the first branch",
+        "5 - 1 = 4"
+      ],
+      "tags": [
+        "ternary",
+        "conditionals"
+      ]
+    },
+    {
+      "id": "ctrl_009",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Do-While Runs Once",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    do {\n        x++;\n    } while (x < 0);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "No output"
+      ],
+      "correct_answer": "B",
+      "explanation": "The do-while loop executes once before checking the condition, so x becomes 1.",
+      "hints": [
+        "do-while runs at least once",
+        "x increments once",
+        "x is 1"
+      ],
+      "tags": [
+        "do_while",
+        "loops"
+      ]
+    },
+    {
+      "id": "ctrl_010",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Empty Loop Body",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i;\n    for (i = 0; i < 5; i++);\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+      "options": [
+        "0",
+        "4",
+        "5",
+        "Undefined"
+      ],
+      "correct_answer": "C",
+      "explanation": "The semicolon makes the loop body empty. The loop runs until i == 5, then prints 5.",
+      "hints": [
+        "The semicolon ends the loop body",
+        "i increments until 5",
+        "Prints 5"
+      ],
+      "tags": [
+        "for_loop",
+        "pitfall"
+      ]
+    },
+    {
+      "id": "ctrl_011",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Short-Circuit OR",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x == 0 || 10 / x > 1) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "Division by zero error",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "The left side of || is true, so the right side is not evaluated. It prints A.",
+      "hints": [
+        "|| short-circuits on true",
+        "Division is skipped",
+        "A is printed"
+      ],
+      "tags": [
+        "short_circuit",
+        "logical_or"
+      ]
+    },
+    {
+      "id": "ctrl_012",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Nested Loop Count",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int count = 0;\n    for (int i = 1; i <= 3; i++) {\n        for (int j = 1; j <= i; j++) {\n            count++;\n        }\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "9"
+      ],
+      "correct_answer": "C",
+      "explanation": "The inner loop runs 1 + 2 + 3 times, so count becomes 6.",
+      "hints": [
+        "Add the iterations: 1+2+3",
+        "Count increments each inner loop",
+        "Total is 6"
+      ],
+      "tags": [
+        "nested_loops",
+        "counting"
+      ]
+    },
+    {
+      "id": "ctrl_013",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Switch with char",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char c = 'b';\n    switch (c) {\n        case 'a':\n            printf(\"A\\n\");\n            break;\n        case 'b':\n            printf(\"B\\n\");\n            break;\n        default:\n            printf(\"C\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "AB"
+      ],
+      "correct_answer": "B",
+      "explanation": "The switch matches case 'b' and prints B.",
+      "hints": [
+        "c is 'b'",
+        "Case 'b' matches",
+        "Prints B"
+      ],
+      "tags": [
+        "switch",
+        "char"
+      ]
+    },
+    {
+      "id": "ctrl_014",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Assignment in Condition",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x = 5) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "No output",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "x = 5 assigns 5 to x, and the expression is nonzero, so the if condition is true.",
+      "hints": [
+        "This is assignment, not comparison",
+        "The expression value is 5",
+        "Nonzero is true"
+      ],
+      "tags": [
+        "assignment",
+        "if_else",
+        "pitfall"
+      ]
+    },
+    {
+      "id": "ctrl_015",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Post-Decrement in While",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 3;\n    int count = 0;\n    while (i--) {\n        count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "0"
+      ],
+      "correct_answer": "B",
+      "explanation": "i-- returns 3, 2, 1, then 0. The loop runs three times, so count is 3.",
+      "hints": [
+        "The condition uses the old value of i",
+        "Loop runs while the value is nonzero",
+        "Three iterations"
+      ],
+      "tags": [
+        "while_loop",
+        "post_decrement"
+      ]
+    },
+    {
+      "id": "cf_016",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Switch Statement",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 2;\n    switch(x) {\n        case 1: printf(\"A\");\n        case 2: printf(\"B\");\n        case 3: printf(\"C\");\n        default: printf(\"D\");\n    }\n    return 0;\n}",
+      "options": [
+        "B",
+        "BC",
+        "BCD",
+        "D"
+      ],
+      "correct_answer": "C",
+      "explanation": "No break statements, so execution falls through from case 2 to case 3 to default. Prints BCD.",
+      "hints": [
+        "Missing break statements",
+        "Falls through to next cases",
+        "Prints B, then C, then D"
+      ],
+      "tags": [
+        "switch",
+        "fallthrough",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "cf_017",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Nested Loops",
+      "description": "How many times does this print 'X'?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 0; i < 3; i++) {\n        for (int j = 0; j < 2; j++) {\n            printf(\"X\");\n        }\n    }\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "D",
+      "explanation": "Outer loop runs 3 times, inner loop runs 2 times each. 3 * 2 = 6.",
+      "hints": [
+        "Outer loop: 3 iterations",
+        "Inner loop: 2 iterations each",
+        "Multiply them"
+      ],
+      "tags": [
+        "loops",
+        "nested",
+        "count"
+      ]
+    },
+    {
+      "id": "cf_018",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Break Statement",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 0; i < 5; i++) {\n        if (i == 3) break;\n        printf(\"%d \", i);\n    }\n    return 0;\n}",
+      "options": [
+        "0 1 2",
+        "0 1 2 3",
+        "0 1 2 3 4",
+        "0 1 2 4"
+      ],
+      "correct_answer": "A",
+      "explanation": "Loop breaks when i == 3, so only prints 0, 1, 2.",
+      "hints": [
+        "break exits the loop",
+        "Stops at i == 3",
+        "Doesn't print 3"
+      ],
+      "tags": [
+        "break",
+        "loops",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "cf_019",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Continue Statement",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 0; i < 5; i++) {\n        if (i == 2) continue;\n        printf(\"%d \", i);\n    }\n    return 0;\n}",
+      "options": [
+        "0 1 3 4",
+        "0 1 2 3 4",
+        "0 1",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "continue skips the rest of iteration when i == 2, so doesn't print 2.",
+      "hints": [
+        "continue skips to next iteration",
+        "Skips printing when i == 2",
+        "Prints all except 2"
+      ],
+      "tags": [
+        "continue",
+        "loops",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "cf_020",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Do-While Loop",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 5;\n    do {\n        printf(\"%d \", i);\n        i++;\n    } while (i < 5);\n    return 0;\n}",
+      "options": [
+        "Nothing",
+        "5",
+        "5 6 7 8 ...",
+        "Infinite loop"
+      ],
+      "correct_answer": "B",
+      "explanation": "do-while executes body once before checking condition. Prints 5, then condition fails.",
+      "hints": [
+        "do-while runs at least once",
+        "Body executes before condition check",
+        "Prints 5, then stops"
+      ],
+      "tags": [
+        "do_while",
+        "loops",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "cf_021",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Variable Scope",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint x = 10;\n\nvoid func() {\n    int x = 20;\n    printf(\"%d \", x);\n}\n\nint main() {\n    func();\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "10 10",
+        "20 20",
+        "20 10",
+        "10 20"
+      ],
+      "correct_answer": "C",
+      "explanation": "Local variable x in func() shadows global x. func() prints 20, main() prints global x = 10.",
+      "hints": [
+        "Local variables shadow globals",
+        "Each x is in different scope",
+        "func has local x=20"
+      ],
+      "tags": [
+        "scope",
+        "shadowing",
+        "variables"
+      ]
+    },
+    {
+      "id": "cf_022",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Block Scope",
+      "description": "What happens?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    if (1) {\n        int x = 10;\n        printf(\"%d \", x);\n    }\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "5 5",
+        "10 10",
+        "10 5",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Block inside if creates new scope. Inner x=10 shadows outer x=5 within block. Outside block, outer x=5 is used.",
+      "hints": [
+        "Blocks create new scope",
+        "Inner x shadows outer",
+        "After block, outer x visible"
+      ],
+      "tags": [
+        "scope",
+        "blocks",
+        "shadowing"
+      ]
+    },
+    {
+      "id": "cf_023",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Enum Basic Usage",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nenum Color { RED, GREEN, BLUE };\n\nint main() {\n    enum Color c = GREEN;\n    printf(\"%d\\n\", c);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "Enum values start at 0 by default. RED=0, GREEN=1, BLUE=2.",
+      "hints": [
+        "Enums start at 0",
+        "GREEN is second value",
+        "Prints 1"
+      ],
+      "tags": [
+        "enum",
+        "constants"
+      ]
+    },
+    {
+      "id": "cf_024",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Enum Custom Values",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nenum Status { OK = 200, NOT_FOUND = 404, ERROR = 500 };\n\nint main() {\n    enum Status s = NOT_FOUND;\n    printf(\"%d\\n\", s);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "404",
+        "500"
+      ],
+      "correct_answer": "C",
+      "explanation": "Enum values can be explicitly assigned. NOT_FOUND is 404.",
+      "hints": [
+        "Enum values can be custom",
+        "NOT_FOUND = 404",
+        "Prints 404"
+      ],
+      "tags": [
+        "enum",
+        "constants"
+      ]
+    },
+    {
+      "id": "cf_025",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Typedef for Struct",
+      "description": "What does this code demonstrate?",
+      "code_template": "typedef struct {\n    int x;\n    int y;\n} Point;\n\nPoint p = {10, 20};",
+      "options": [
+        "Compilation error",
+        "Creates alias 'Point' for the struct",
+        "Creates a new type incompatible with struct",
+        "Only works with pointers"
+      ],
+      "correct_answer": "B",
+      "explanation": "typedef creates an alias. You can use 'Point' instead of 'struct Point'.",
+      "hints": [
+        "typedef creates type alias",
+        "Simplifies syntax",
+        "No 'struct' keyword needed"
+      ],
+      "tags": [
+        "typedef",
+        "structs"
+      ]
+    },
+    {
+      "id": "cf_026",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Type Cast",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    double d = 9.7;\n    int i = (int)d;\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+      "options": [
+        "9",
+        "10",
+        "9.7",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "Casting double to int truncates (doesn't round). 9.7 becomes 9.",
+      "hints": [
+        "Type cast truncates",
+        "No rounding",
+        "9.7 -> 9"
+      ],
+      "tags": [
+        "casting",
+        "truncation"
+      ]
+    },
+    {
+      "id": "cf_027",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Ternary Operator",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10;\n    int y = (x > 5) ? 100 : 200;\n    printf(\"%d\\n\", y);\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "100",
+        "200"
+      ],
+      "correct_answer": "C",
+      "explanation": "Ternary operator: condition ? true_value : false_value. x > 5 is true, so y = 100.",
+      "hints": [
+        "Condition is x > 5",
+        "10 > 5 is true",
+        "Returns first value: 100"
+      ],
+      "tags": [
+        "ternary",
+        "operators",
+        "conditional"
+      ]
+    },
+    {
+      "id": "cf_028",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Logical AND Short-circuit",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    int y = 5;\n    if (x && (y = 10)) {\n        printf(\"inside\\n\");\n    }\n    printf(\"%d\\n\", y);\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "inside\\n5",
+        "inside\\n10"
+      ],
+      "correct_answer": "A",
+      "explanation": "Short-circuit: x is 0 (false), so (y = 10) is never evaluated. y remains 5.",
+      "hints": [
+        "&& short-circuits on false",
+        "x is 0 (false)",
+        "y assignment skipped"
+      ],
+      "tags": [
+        "logical_operators",
+        "short_circuit"
+      ]
+    },
+    {
+      "id": "cf_029",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Assert Statement",
+      "description": "What happens when this runs with an assertion?",
+      "code_template": "#include <assert.h>\n\nint divide(int a, int b) {\n    assert(b != 0);\n    return a / b;\n}\n\nint main() {\n    divide(10, 0);\n    return 0;\n}",
+      "options": [
+        "Returns 0",
+        "Program aborts/crashes",
+        "Division by zero error",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "assert checks condition. If false, program aborts with error message. b=0 fails assertion.",
+      "hints": [
+        "assert verifies conditions",
+        "b != 0 is false",
+        "Program aborts"
+      ],
+      "tags": [
+        "assert",
+        "debugging",
+        "testing"
+      ]
+    },
+    {
+      "id": "cf_030",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "NDEBUG Macro",
+      "description": "What does #define NDEBUG do to assertions?",
+      "code_template": "#define NDEBUG\n#include <assert.h>\n\nint main() {\n    assert(0);  // Always fails\n    printf(\"Still running\\n\");\n    return 0;\n}",
+      "options": [
+        "Program crashes",
+        "Compilation error",
+        "Assertions are disabled, program continues",
+        "No effect"
+      ],
+      "correct_answer": "C",
+      "explanation": "NDEBUG disables all assertions. assert(0) is removed, program continues normally.",
+      "hints": [
+        "NDEBUG disables asserts",
+        "Used in production",
+        "Program continues"
+      ],
+      "tags": [
+        "assert",
+        "NDEBUG",
+        "debugging"
+      ]
+    },
+    {
+      "id": "cf_031",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "While vs Do-While",
+      "description": "What's the difference in execution?",
+      "code_template": "// Loop A\nwhile (condition) {\n    // body\n}\n\n// Loop B\ndo {\n    // body\n} while (condition);",
+      "options": [
+        "No difference",
+        "Loop A may not execute, Loop B executes at least once",
+        "Loop B is faster",
+        "Loop A is infinite"
+      ],
+      "correct_answer": "B",
+      "explanation": "do-while checks condition after body, so executes at least once. while checks before.",
+      "hints": [
+        "do-while: condition checked after",
+        "while: condition checked before",
+        "Different first iteration"
+      ],
+      "tags": [
+        "loops",
+        "do_while",
+        "while"
+      ]
+    },
+    {
+      "id": "cf_032",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Comma Operator in For",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i, j;\n    for (i = 0, j = 10; i < 3; i++, j--) {\n        printf(\"%d \", j);\n    }\n    return 0;\n}",
+      "options": [
+        "0 1 2",
+        "10 11 12",
+        "10 9 8",
+        "3 2 1"
+      ],
+      "correct_answer": "C",
+      "explanation": "Comma operator allows multiple expressions. j starts at 10 and decrements. Prints: 10 9 8.",
+      "hints": [
+        "Comma operator in for loop",
+        "j starts at 10",
+        "j decrements each iteration"
+      ],
+      "tags": [
+        "for_loop",
+        "comma_operator"
+      ]
+    }
+  ]
+}

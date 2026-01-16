@@ -1,0 +1,620 @@
+{
+  "questions": [
+    {
+      "id": "struct_001",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Calculate Struct Size",
+      "description": "What is sizeof(struct Example)? Assume: char=1, int=4, double=8, pointer=8 bytes",
+      "code_template": "struct Example {\n    char a;\n    int b;\n    char c;\n};",
+      "options": [
+        "6 bytes (1 + 4 + 1)",
+        "8 bytes",
+        "12 bytes",
+        "16 bytes"
+      ],
+      "correct_answer": "C",
+      "explanation": "With padding: char a (1 byte) + 3 bytes padding + int b (4 bytes) + char c (1 byte) + 3 bytes padding = 12 bytes total. The struct is padded to align to its largest member (int, 4 bytes).",
+      "hints": [
+        "Consider alignment requirements",
+        "ints typically require 4-byte alignment",
+        "Padding is added after 'a' and after 'c'"
+      ],
+      "tags": [
+        "sizeof",
+        "padding",
+        "alignment"
+      ]
+    },
+    {
+      "id": "struct_002",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Arrow vs Dot",
+      "description": "What does this program print?",
+      "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    struct Point p = {1, 2};\n    struct Point *ptr = &p;\n    printf(\"%d\\n\", ptr->y);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "B",
+      "explanation": "ptr points to p, so ptr->y accesses p.y, which is 2.",
+      "hints": [
+        "Use -> for pointers to structs",
+        "ptr points to p",
+        "y was initialized to 2"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "member_access"
+      ]
+    },
+    {
+      "id": "struct_003",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Struct Assignment Copy",
+      "description": "What does this program print?",
+      "code_template": "struct S {\n    int x;\n};\n\nint main() {\n    struct S a = {1};\n    struct S b = a;\n    b.x = 5;\n    printf(\"%d %d\\n\", a.x, b.x);\n    return 0;\n}",
+      "options": [
+        "1 1",
+        "5 5",
+        "1 5",
+        "5 1"
+      ],
+      "correct_answer": "C",
+      "explanation": "Struct assignment copies values. b is a copy of a, so changing b.x does not change a.x.",
+      "hints": [
+        "Struct assignment copies fields",
+        "b is independent after the copy",
+        "Only b.x changes"
+      ],
+      "tags": [
+        "structs",
+        "assignment",
+        "copy"
+      ]
+    },
+    {
+      "id": "struct_004",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Struct Initialization",
+      "description": "What does this program print?",
+      "code_template": "struct Pair {\n    int a;\n    int b;\n};\n\nint main() {\n    struct Pair p = {3, 4};\n    printf(\"%d\\n\", p.b);\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "0",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p.b is initialized to 4.",
+      "hints": [
+        "Initializer list sets a then b",
+        "p.b is the second value",
+        "Second value is 4"
+      ],
+      "tags": [
+        "structs",
+        "initialization"
+      ]
+    },
+    {
+      "id": "struct_005",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Padding with Double",
+      "description": "What is sizeof(struct Example)? Assume: char=1, double=8, alignment to 8 bytes.",
+      "code_template": "struct Example {\n    char c;\n    double d;\n};",
+      "options": [
+        "9 bytes",
+        "12 bytes",
+        "16 bytes",
+        "24 bytes"
+      ],
+      "correct_answer": "C",
+      "explanation": "The double must be 8-byte aligned. The struct becomes 16 bytes due to padding after the char.",
+      "hints": [
+        "char is 1 byte",
+        "double needs 8-byte alignment",
+        "Padding brings total to 16"
+      ],
+      "tags": [
+        "structs",
+        "padding",
+        "alignment"
+      ]
+    },
+    {
+      "id": "struct_006",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Pointer Member Access",
+      "description": "What does this program print?",
+      "code_template": "struct Item {\n    int id;\n};\n\nint main() {\n    struct Item it = {42};\n    struct Item *p = &it;\n    printf(\"%d\\n\", p->id);\n    return 0;\n}",
+      "options": [
+        "0",
+        "42",
+        "Address of it",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p->id accesses it.id, which is 42.",
+      "hints": [
+        "p points to it",
+        "Use -> for pointer access",
+        "id is 42"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "member_access"
+      ]
+    },
+    {
+      "id": "struct_007",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pass by Value",
+      "description": "What does this program print?",
+      "code_template": "struct S {\n    int x;\n};\n\nvoid set_x(struct S s) {\n    s.x = 10;\n}\n\nint main() {\n    struct S a = {3};\n    set_x(a);\n    printf(\"%d\\n\", a.x);\n    return 0;\n}",
+      "options": [
+        "3",
+        "10",
+        "0",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "The struct is passed by value, so set_x modifies a copy, not the original.",
+      "hints": [
+        "Function receives a copy",
+        "Original is unchanged",
+        "a.x remains 3"
+      ],
+      "tags": [
+        "structs",
+        "pass_by_value"
+      ]
+    },
+    {
+      "id": "struct_008",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "sizeof Struct vs Pointer",
+      "description": "What does this program print on a 64-bit system? Assume int=4 bytes.",
+      "code_template": "struct S {\n    int a;\n    int b;\n};\n\nint main() {\n    struct S s;\n    struct S *p = &s;\n    printf(\"%zu %zu\\n\", sizeof(s), sizeof(p));\n    return 0;\n}",
+      "options": [
+        "8 8",
+        "8 4",
+        "16 8",
+        "4 8"
+      ],
+      "correct_answer": "A",
+      "explanation": "Two ints make 8 bytes. The pointer size is also 8 on 64-bit.",
+      "hints": [
+        "Two ints total 8 bytes",
+        "Pointer size is 8",
+        "Prints 8 8"
+      ],
+      "tags": [
+        "sizeof",
+        "structs",
+        "pointers"
+      ]
+    },
+    {
+      "id": "struct_009",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Nested Struct",
+      "description": "What does this program print?",
+      "code_template": "struct Inner {\n    int v;\n};\n\nstruct Outer {\n    struct Inner in;\n};\n\nint main() {\n    struct Outer o = {{5}};\n    printf(\"%d\\n\", o.in.v);\n    return 0;\n}",
+      "options": [
+        "0",
+        "5",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "B",
+      "explanation": "o.in.v is initialized to 5.",
+      "hints": [
+        "Nested initialization sets inner value",
+        "Access with o.in.v",
+        "Value is 5"
+      ],
+      "tags": [
+        "structs",
+        "nested",
+        "initialization"
+      ]
+    },
+    {
+      "id": "struct_010",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Array of Structs",
+      "description": "What does this program print?",
+      "code_template": "struct P {\n    int x;\n};\n\nint main() {\n    struct P arr[2] = {{1}, {2}};\n    printf(\"%d\\n\", arr[1].x);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "arr[1].x accesses the second struct, which has x = 2.",
+      "hints": [
+        "arr[0].x is 1",
+        "arr[1].x is 2",
+        "Prints 2"
+      ],
+      "tags": [
+        "structs",
+        "arrays"
+      ]
+    },
+    {
+      "id": "struct_011",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "typedef Struct",
+      "description": "What does this program print?",
+      "code_template": "typedef struct {\n    int id;\n} Item;\n\nint main() {\n    Item it = {9};\n    printf(\"%d\\n\", it.id);\n    return 0;\n}",
+      "options": [
+        "0",
+        "9",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "B",
+      "explanation": "typedef creates an alias. it.id is 9.",
+      "hints": [
+        "typedef aliases the struct type",
+        "it.id is initialized to 9",
+        "Prints 9"
+      ],
+      "tags": [
+        "structs",
+        "typedef"
+      ]
+    },
+    {
+      "id": "struct_012",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modify via Pointer",
+      "description": "What does this program print?",
+      "code_template": "struct S {\n    int x;\n};\n\nvoid set_x(struct S *s) {\n    s->x = 7;\n}\n\nint main() {\n    struct S a = {2};\n    set_x(&a);\n    printf(\"%d\\n\", a.x);\n    return 0;\n}",
+      "options": [
+        "2",
+        "7",
+        "0",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "Passing a pointer allows modifying the original struct. a.x becomes 7.",
+      "hints": [
+        "Pointer allows mutation",
+        "set_x writes to a",
+        "a.x becomes 7"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "mutation"
+      ]
+    },
+    {
+      "id": "struct_013",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Padding with Mixed Types",
+      "description": "What is sizeof(struct Mix)? Assume: char=1, int=4, double=8, alignment to 8 bytes.",
+      "code_template": "struct Mix {\n    char a;\n    int b;\n    double c;\n};",
+      "options": [
+        "13 bytes",
+        "16 bytes",
+        "24 bytes",
+        "32 bytes"
+      ],
+      "correct_answer": "B",
+      "explanation": "Layout: char (1) + 3 padding + int (4) = 8 so far, then double (8) = 16. The struct aligns to 8, so total size is 16.",
+      "hints": [
+        "char + padding + int aligns to 8",
+        "double adds 8 more",
+        "Total is 16"
+      ],
+      "tags": [
+        "structs",
+        "padding",
+        "alignment"
+      ]
+    },
+    {
+      "id": "struct_014",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Struct Copy in Function",
+      "description": "What does this program print?",
+      "code_template": "struct S {\n    int x;\n};\n\nstruct S make_s(void) {\n    struct S s = {5};\n    return s;\n}\n\nint main() {\n    struct S a = make_s();\n    printf(\"%d\\n\", a.x);\n    return 0;\n}",
+      "options": [
+        "0",
+        "5",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "B",
+      "explanation": "The function returns a struct by value. a.x is initialized to 5.",
+      "hints": [
+        "Returning a struct by value is allowed",
+        "a receives the returned value",
+        "a.x is 5"
+      ],
+      "tags": [
+        "structs",
+        "return_value"
+      ]
+    },
+    {
+      "id": "struct_015",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Self-Referential Struct",
+      "description": "Which line correctly declares a self-referential pointer?",
+      "code_template": "struct Node {\n    int value;\n    // Which line is correct?\n};",
+      "options": [
+        "struct Node next;",
+        "struct Node *next;",
+        "Node *next;",
+        "struct *Node next;"
+      ],
+      "correct_answer": "B",
+      "explanation": "A struct can contain a pointer to its own type: struct Node *next;",
+      "hints": [
+        "Self-referential fields must be pointers",
+        "Use the full struct name",
+        "struct Node *next is valid"
+      ],
+      "tags": [
+        "structs",
+        "linked_lists",
+        "pointers"
+      ]
+    },
+    {
+      "id": "struct_016",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Struct Member Access",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nstruct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    struct Point p = {10, 20};\n    printf(\"%d\\n\", p.x + p.y);\n    return 0;\n}",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "p.x is 10, p.y is 20, so 10 + 20 = 30.",
+      "hints": [
+        "p.x = 10",
+        "p.y = 20",
+        "Add them together"
+      ],
+      "tags": [
+        "structs",
+        "initialization",
+        "member_access"
+      ]
+    },
+    {
+      "id": "struct_017",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Struct Padding",
+      "description": "What is likely the sizeof this struct on a typical system?",
+      "code_template": "struct Example {\n    char a;    // 1 byte\n    int b;     // 4 bytes\n    char c;    // 1 byte\n};",
+      "options": [
+        "6 bytes",
+        "8 bytes",
+        "12 bytes",
+        "16 bytes"
+      ],
+      "correct_answer": "C",
+      "explanation": "Due to alignment requirements, padding is added. char (1) + padding (3) + int (4) + char (1) + padding (3) = 12 bytes.",
+      "hints": [
+        "Compiler adds padding for alignment",
+        "int typically needs 4-byte alignment",
+        "Total is usually a multiple of largest type"
+      ],
+      "tags": [
+        "structs",
+        "padding",
+        "sizeof"
+      ]
+    },
+    {
+      "id": "struct_018",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Struct Assignment",
+      "description": "What happens with this code?",
+      "code_template": "#include <stdio.h>\n\nstruct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    struct Point p1 = {10, 20};\n    struct Point p2 = p1;\n    p2.x = 30;\n    printf(\"%d %d\\n\", p1.x, p2.x);\n    return 0;\n}",
+      "options": [
+        "10 10",
+        "30 30",
+        "10 30",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Struct assignment creates a copy. p2 is a separate copy of p1. Changing p2.x doesn't affect p1.x.",
+      "hints": [
+        "Struct assignment copies all members",
+        "p2 is independent of p1",
+        "p1.x remains 10"
+      ],
+      "tags": [
+        "structs",
+        "assignment",
+        "copy"
+      ]
+    },
+    {
+      "id": "struct_019",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Nested Structs",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nstruct Inner {\n    int val;\n};\n\nstruct Outer {\n    struct Inner in;\n};\n\nint main() {\n    struct Outer o = {{42}};\n    printf(\"%d\\n\", o.in.val);\n    return 0;\n}",
+      "options": [
+        "0",
+        "42",
+        "Undefined",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "Nested struct initialization: {{42}} initializes o.in.val to 42. Access with o.in.val.",
+      "hints": [
+        "Nested braces for nested structs",
+        "o.in accesses inner struct",
+        "o.in.val is 42"
+      ],
+      "tags": [
+        "structs",
+        "nested",
+        "initialization"
+      ]
+    },
+    {
+      "id": "struct_020",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Struct Pointers",
+      "description": "What's the correct way to access member 'x' through pointer 'p'?",
+      "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nstruct Point pt = {5, 10};\nstruct Point *p = &pt;",
+      "options": [
+        "p.x",
+        "(*p).x or p->x",
+        "*p.x",
+        "p->x only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Both (*p).x and p->x access members through pointer. p->x is shorthand for (*p).x.",
+      "hints": [
+        "Need to dereference pointer first",
+        "-> is arrow operator",
+        "Both (*p).x and p->x work"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "arrow_operator"
+      ]
+    },
+    {
+      "id": "struct_021",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Array of Structs Initialization",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nstruct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    struct Point points[3] = {{1,2}, {3,4}, {5,6}};\n    printf(\"%d\\n\", points[1].y);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct_answer": "C",
+      "explanation": "points[1] is the second struct with x=3, y=4. points[1].y is 4.",
+      "hints": [
+        "points[1] is second element",
+        "y is second field",
+        "Value is 4"
+      ],
+      "tags": [
+        "structs",
+        "arrays",
+        "initialization"
+      ]
+    },
+    {
+      "id": "struct_022",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Struct Pointer Array",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nstruct Data {\n    int val;\n};\n\nint main() {\n    struct Data d1 = {10}, d2 = {20};\n    struct Data *arr[2] = {&d1, &d2};\n    printf(\"%d\\n\", arr[1]->val);\n    return 0;\n}",
+      "options": [
+        "10",
+        "20",
+        "Compilation error",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "arr[1] is a pointer to d2. arr[1]->val accesses d2.val which is 20.",
+      "hints": [
+        "arr[1] points to d2",
+        "d2.val is 20",
+        "Arrow operator accesses member"
+      ],
+      "tags": [
+        "structs",
+        "pointers",
+        "arrays"
+      ]
+    },
+    {
+      "id": "struct_023",
+      "category": "structs",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Struct Designated Initializers",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nstruct Point {\n    int x;\n    int y;\n    int z;\n};\n\nint main() {\n    struct Point p = {.z = 3, .x = 1};\n    printf(\"%d %d %d\\n\", p.x, p.y, p.z);\n    return 0;\n}",
+      "options": [
+        "1 0 3",
+        "0 0 0",
+        "1 3 0",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "Designated initializers set specific fields. Uninitialized fields default to 0. x=1, y=0, z=3.",
+      "hints": [
+        "Designated initializers",
+        "Unset fields become 0",
+        "x=1, y=0, z=3"
+      ],
+      "tags": [
+        "structs",
+        "designated_initializers",
+        "C99"
+      ]
+    }
+  ]
+}

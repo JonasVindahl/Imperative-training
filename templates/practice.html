@@ -1,0 +1,417 @@
+{% extends "base.html" %}
+
+{% block title %}Practice Question - C Programming Practice{% endblock %}
+
+{% block content %}
+<div class="practice-container">
+    <div class="practice-header">
+        <div class="question-progress">
+            Question {{ question_number }} of {{ total_questions }}
+        </div>
+        <div class="question-category">
+            {{ question.category.replace('_', ' ').title() }}
+        </div>
+    </div>
+
+    <div class="question-card">
+        <h2>{{ question.title }}</h2>
+        <p class="question-description">{{ question.description }}</p>
+
+        {% if question.code_template and question.type != 'drag_drop' %}
+        <div class="code-section">
+            <h3>Code:</h3>
+            <div class="code-editor-wrapper">
+                {% if question.type in ['code_completion', 'code_writing'] %}
+                <textarea id="code-editor" class="code-editor">{{ question.code_template }}</textarea>
+                {% else %}
+                <pre class="code-display" data-line-numbers="true"><code>{{ question.code_template }}</code></pre>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="answer-section">
+            <h3>Your Answer:</h3>
+
+            {# Type 1: Fill-in-the-Blanks #}
+            {% if question.type == 'fill_blanks' %}
+            <div class="fill-blanks-section">
+                {% for q_item in question.questions %}
+                <div class="fill-blank-question">
+                    <p class="blank-text">{{ q_item.text }}</p>
+                    <div class="blank-dropdowns">
+                        {% for blank in q_item.blanks %}
+                        <select class="blank-dropdown" data-blank-id="blank_{{ loop.parent.loop.index0 }}_{{ loop.index0 }}" required>
+                            <option value="">-- Select --</option>
+                            {% for option in blank.options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {# Type 2: Multiple Choice #}
+            {% elif question.options %}
+            <div class="multiple-choice-options">
+                {% for option in question.options %}
+                <label class="option-label">
+                    <input type="radio" name="answer" value="{{ loop.index0 | string }}" required>
+                    <span class="option-text"><strong>{{ ['A', 'B', 'C', 'D'][loop.index0] }})</strong> {{ option }}</span>
+                </label>
+                {% endfor %}
+            </div>
+
+            {# Type 3: Drag-and-Drop #}
+            {% elif question.type == 'drag_drop' %}
+            <div class="drag-drop-section">
+                <div class="code-with-blanks">
+                    <pre class="code-display" data-line-numbers="true">{{ question.code_template | safe }}</pre>
+                </div>
+                <div class="draggable-tokens-container">
+                    <h4>Drag these tokens into the blanks above:</h4>
+                    <div class="draggable-tokens" id="token-pool">
+                        {% for blank_id, blank_data in question.blanks.items() %}
+                            {% for option in blank_data.options %}
+                        <span class="draggable-token" data-token="{{ option }}">{{ option }}</span>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {# Type 4: Recursive Trace #}
+            {% elif question.type == 'recursive_trace' %}
+            <div class="recursive-trace-section">
+                {% for test_case in question.test_cases %}
+                <div class="trace-test-case">
+                    <label>
+                        <strong>{{ test_case.input }}</strong> =
+                        <input type="text" class="trace-input" data-test-id="test_{{ loop.index0 }}"
+                               placeholder="Enter result" required>
+                    </label>
+                    <button type="button" class="btn-trace-hint" onclick="showTrace({{ loop.index0 }})">
+                        Show Trace
+                    </button>
+                    <div class="trace-display" id="trace_{{ loop.index0 }}" style="display: none;">
+                        <h5>Call Stack Trace:</h5>
+                        <ol>
+                            {% for step in test_case.trace %}
+                            <li>{{ step }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {# Fallback: Text Area #}
+            {% else %}
+            <textarea id="user-answer" class="answer-input" rows="10"
+                      placeholder="Enter your answer here..."></textarea>
+            {% endif %}
+        </div>
+
+        <div class="hint-section" id="hint-section" style="display: none;">
+            <h3>Hints:</h3>
+            <div id="hints-container"></div>
+            <button type="button" id="show-hint-btn" class="btn-secondary" onclick="showNextHint()">
+                Show Hint
+            </button>
+        </div>
+
+        <div class="action-buttons">
+            {% if question.code_template and question.type in ['code_completion', 'code_writing'] %}
+            <button type="button" class="btn-secondary" onclick="compileCode()">
+                Compile & Run
+            </button>
+            {% endif %}
+            <button type="button" id="hint-toggle-btn" class="btn-secondary" onclick="toggleHints()">
+                Need a Hint?
+            </button>
+            <button type="button" class="btn-primary" onclick="submitAnswer()">
+                Submit Answer
+            </button>
+        </div>
+    </div>
+
+    <div id="compile-output" class="output-section" style="display: none;">
+        <h3>Output:</h3>
+        <pre id="output-content"></pre>
+    </div>
+
+    <div id="result-section" class="result-section" style="display: none;">
+        <div id="result-content"></div>
+        <div class="result-actions">
+            <button type="button" class="btn-primary" onclick="nextQuestion()">
+                Next Question
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const questionId = "{{ question.id }}";
+    const hints = {{ question.hints | tojson }};
+    let currentHintIndex = 0;
+    let hintsUsed = 0;
+
+    function toggleHints() {
+        const hintSection = document.getElementById('hint-section');
+        if (hintSection.style.display === 'none') {
+            hintSection.style.display = 'block';
+        } else {
+            hintSection.style.display = 'none';
+        }
+    }
+
+    function showNextHint() {
+        if (currentHintIndex < hints.length) {
+            const hintsContainer = document.getElementById('hints-container');
+            const hintDiv = document.createElement('div');
+            hintDiv.className = 'hint-item';
+            hintDiv.innerHTML = `<strong>Hint ${currentHintIndex + 1}:</strong> ${hints[currentHintIndex]}`;
+            hintsContainer.appendChild(hintDiv);
+            currentHintIndex++;
+            hintsUsed++;
+
+            if (currentHintIndex >= hints.length) {
+                document.getElementById('show-hint-btn').disabled = true;
+                document.getElementById('show-hint-btn').textContent = 'No more hints';
+            }
+        }
+    }
+
+    async function compileCode() {
+        const code = document.getElementById('code-editor').value;
+        const outputSection = document.getElementById('compile-output');
+        const outputContent = document.getElementById('output-content');
+
+        outputContent.textContent = 'Compiling...';
+        outputSection.style.display = 'block';
+
+        try {
+            const response = await fetch('/practice/compile', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({code: code})
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                outputContent.textContent = `Output:\n${result.stdout}\n\n${result.stderr ? 'Warnings:\n' + result.stderr : ''}`;
+            } else {
+                outputContent.textContent = `Error (${result.stage}):\n${result.error}`;
+            }
+        } catch (error) {
+            outputContent.textContent = `Error: ${error.message}`;
+        }
+    }
+
+    let hasSubmittedAnswer = {{ 'true' if has_answered else 'false' }};
+    const initialSubmitDisabled = hasSubmittedAnswer;
+    if (initialSubmitDisabled) {
+        const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+        }
+    }
+
+    async function submitAnswer() {
+        if (hasSubmittedAnswer) {
+            return;
+        }
+
+        const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+        }
+        hasSubmittedAnswer = true;
+        let answer;
+
+        // Type 1: Fill-in-the-Blanks
+        const fillBlankDropdowns = document.querySelectorAll('.blank-dropdown');
+        if (fillBlankDropdowns.length > 0) {
+            const blanks = {};
+            let allFilled = true;
+            fillBlankDropdowns.forEach(dropdown => {
+                const blankId = dropdown.getAttribute('data-blank-id');
+                const value = dropdown.value;
+                if (!value) {
+                    allFilled = false;
+                }
+                blanks[blankId] = value;
+            });
+            if (!allFilled) {
+                alert('Please fill in all blanks');
+                return;
+            }
+            answer = JSON.stringify(blanks);
+        }
+        // Type 2: Multiple Choice
+        else {
+            const radioButtons = document.getElementsByName('answer');
+            if (radioButtons.length > 0) {
+                const selected = Array.from(radioButtons).find(rb => rb.checked);
+                if (!selected) {
+                    alert('Please select an answer');
+                    return;
+                }
+                // Convert index to letter (0=A, 1=B, 2=C, 3=D)
+                answer = ['A', 'B', 'C', 'D'][parseInt(selected.value)];
+            }
+            // Type 3: Drag-and-Drop
+            else if (document.querySelector('.drag-drop-section')) {
+                const placements = {};
+                document.querySelectorAll('.drop-zone').forEach(zone => {
+                    const blankId = zone.getAttribute('data-blank-id');
+                    const token = zone.getAttribute('data-placed-token');
+                    placements[blankId] = token || '';
+                });
+                answer = JSON.stringify(placements);
+            }
+            // Type 4: Recursive Trace
+            else if (document.querySelector('.recursive-trace-section')) {
+                const results = {};
+                let allFilled = true;
+                document.querySelectorAll('.trace-input').forEach(input => {
+                    const testId = input.getAttribute('data-test-id');
+                    const value = input.value.trim();
+                    if (!value) {
+                        allFilled = false;
+                    }
+                    results[testId] = value;
+                });
+                if (!allFilled) {
+                    alert('Please answer all test cases');
+                    return;
+                }
+                answer = JSON.stringify(results);
+            }
+            // Fallback: textarea
+            else {
+                const textArea = document.getElementById('user-answer');
+                if (textArea) {
+                    answer = textArea.value;
+                    if (!answer.trim()) {
+                        alert('Please enter an answer');
+                        return;
+                    }
+                }
+            }
+        }
+
+        try {
+            const response = await fetch('/practice/submit', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    question_id: questionId,
+                    answer: answer,
+                    hints_used: hintsUsed
+                })
+            });
+
+            const result = await response.json();
+            displayResult(result);
+        } catch (error) {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+            }
+            hasSubmittedAnswer = false;
+            alert(`Error: ${error.message}`);
+        }
+    }
+
+    function displayResult(result) {
+        const resultSection = document.getElementById('result-section');
+        const resultContent = document.getElementById('result-content');
+
+        let html = '<div class="result-card">';
+
+        if (result.correct) {
+            html += '<div class="result-header correct">✓ Correct!</div>';
+        } else {
+            html += '<div class="result-header incorrect">✗ Incorrect</div>';
+        }
+
+        if (result.explanation) {
+            html += `<div class="explanation"><h4>Explanation:</h4><p>${result.explanation}</p></div>`;
+        }
+
+        if (result.expected !== undefined) {
+            html += `<div class="answer-comparison">`;
+            html += `<div class="answer-box"><strong>Your Answer:</strong> <span class="answer-value">${result.received}</span></div>`;
+            html += `<div class="answer-box correct"><strong>Correct Answer:</strong> <span class="answer-value">${result.expected}</span></div>`;
+            html += `</div>`;
+        }
+
+        if (result.test_results) {
+            html += '<div class="test-results"><h4>Test Results:</h4>';
+            result.test_results.forEach((test, index) => {
+                const status = test.passed ? '✓' : '✗';
+                html += `<div class="test-case ${test.passed ? 'passed' : 'failed'}">`;
+                html += `<strong>${status} Test ${index + 1}:</strong><br>`;
+                html += `Input: ${test.input || '(none)'}<br>`;
+                html += `Expected: ${test.expected}<br>`;
+                html += `Got: ${test.received}`;
+                html += `</div>`;
+            });
+            html += '</div>';
+        }
+
+        html += '</div>';
+
+        resultContent.innerHTML = html;
+        resultSection.style.display = 'block';
+
+        // Scroll to result
+        resultSection.scrollIntoView({behavior: 'smooth'});
+    }
+
+    function nextQuestion() {
+        window.location.href = '/practice/next';
+    }
+
+    // Show trace for recursive function
+    function showTrace(testIndex) {
+        const traceDiv = document.getElementById(`trace_${testIndex}`);
+        if (traceDiv.style.display === 'none') {
+            traceDiv.style.display = 'block';
+        } else {
+            traceDiv.style.display = 'none';
+        }
+    }
+
+    // Initialize drag-and-drop if jQuery UI is available
+    if (typeof $ !== 'undefined' && $.ui) {
+        $(document).ready(function() {
+            // Make tokens draggable
+            $('.draggable-token').draggable({
+                revert: 'invalid',
+                helper: 'clone',
+                cursor: 'move',
+                zIndex: 100
+            });
+
+            // Make drop zones droppable
+            $('.drop-zone').droppable({
+                accept: '.draggable-token',
+                hoverClass: 'drop-zone-hover',
+                drop: function(event, ui) {
+                    const token = ui.draggable.data('token');
+                    const blankId = $(this).data('blank-id');
+
+                    // Update the drop zone
+                    $(this).text(token);
+                    $(this).attr('data-placed-token', token);
+                    $(this).addClass('filled');
+                }
+            });
+        });
+    }
+</script>
+{% endblock %}

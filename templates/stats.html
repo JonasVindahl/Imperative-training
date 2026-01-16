@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Detailed Statistics - C Programming Practice{% endblock %}
+
+{% block content %}
+<div class="stats-page">
+    <h1>Detailed Statistics</h1>
+
+    <div class="overall-stats">
+        <h2>Overall Performance</h2>
+        <div class="summary-stats">
+            <div class="stat-card">
+                <div class="stat-value">{{ progress.overall_accuracy }}%</div>
+                <div class="stat-label">Overall Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ attempts_count }}</div>
+                <div class="stat-label">Total Attempts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ (total_time / 60) | int }}m</div>
+                <div class="stat-label">Total Practice Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ avg_time | int }}s</div>
+                <div class="stat-label">Avg Time/Question</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-breakdown">
+        <h2>Category Performance</h2>
+        <div class="category-stats-grid">
+            {% for category, stats in category_stats.items() %}
+            <div class="category-stat-card">
+                <h3>{{ category.replace('_', ' ').title() }}</h3>
+                <div class="stat-detail">
+                    <span class="label">Accuracy:</span>
+                    <span class="value">
+                        {% if stats.total > 0 %}
+                        {{ ((stats.correct / stats.total) * 100) | int }}%
+                        {% else %}
+                        N/A
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="stat-detail">
+                    <span class="label">Questions:</span>
+                    <span class="value">{{ stats.total }}</span>
+                </div>
+                <div class="stat-detail">
+                    <span class="label">Correct:</span>
+                    <span class="value">{{ stats.correct }}</span>
+                </div>
+                <div class="stat-detail">
+                    <span class="label">Total Time:</span>
+                    <span class="value">{{ (stats.time / 60) | int }}m {{ stats.time % 60 }}s</span>
+                </div>
+                <div class="progress-bar-small">
+                    <div class="progress-fill" style="width: {% if stats.total > 0 %}{{ ((stats.correct / stats.total) * 100) | int }}{% else %}0{% endif %}%"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="weak-areas">
+        <h2>Areas for Improvement</h2>
+        <ul>
+            {% for area in progress.weak_areas %}
+            <li class="weak-area-item">
+                <strong>{{ area.replace('_', ' ').title() }}</strong>
+                {% if area in category_stats %}
+                - {{ ((category_stats[area].correct / category_stats[area].total) * 100) | int }}% accuracy
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="action-buttons">
+        <a href="{{ url_for('practice.start_practice') }}" class="btn-primary btn-large">
+            Start Practice
+        </a>
+        <a href="{{ url_for('progress.dashboard') }}" class="btn-secondary btn-large">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - C Programming Practice{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Welcome, {{ user.name }}!</h1>
+        <div class="streak-badge">
+            {% if streak > 0 %}
+            <span class="streak-icon">🔥</span>
+            <span class="streak-count">{{ streak }}-day streak</span>
+            {% else %}
+            <span>Start practicing to build your streak!</span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="progress-overview">
+        <h2>Your Progress</h2>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{ progress.overall_accuracy }}%">
+                {{ progress.overall_accuracy }}%
+            </div>
+        </div>
+        <p class="progress-stats">
+            {{ progress.total_correct }} correct out of {{ progress.total_attempted }} attempted
+        </p>
+    </div>
+
+    <div class="categories-grid">
+        <h2>Categories</h2>
+        <div class="grid">
+            {% for category, data in progress.category_progress.items() %}
+            <div class="category-card">
+                <h3>{{ category.replace('_', ' ').title() }}</h3>
+                <div class="category-progress">
+                    <div class="progress-bar-small">
+                        <div class="progress-fill" style="width: {{ data.accuracy }}%"></div>
+                    </div>
+                    <span class="accuracy">{{ data.accuracy }}%</span>
+                </div>
+                <p class="category-stats">
+                    {{ data.correct }}/{{ data.attempted }} questions
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>Recommendations</h2>
+        <ul>
+            {% for recommendation in progress.recommendations %}
+            <li>{{ recommendation }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="recent-activity">
+        <h2>Recent Activity</h2>
+        {% if recent_attempts %}
+        <table class="attempts-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Result</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for attempt in recent_attempts %}
+                <tr>
+                    <td>{{ attempt.category.replace('_', ' ').title() }}</td>
+                    <td>
+                        {% if attempt.correct %}
+                        <span class="badge badge-success">Correct</span>
+                        {% else %}
+                        <span class="badge badge-error">Incorrect</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ attempt.time_spent }}s</td>
+                    <td>{{ attempt.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No practice attempts yet. Start practicing to see your progress!</p>
+        {% endif %}
+    </div>
+
+    <div class="action-buttons">
+        <a href="{{ url_for('practice.start_practice') }}" class="btn-primary btn-large">
+            Start Smart Practice
+        </a>
+        <a href="{{ url_for('progress.stats') }}" class="btn-secondary btn-large">
+            View Detailed Stats
+        </a>
+    </div>
+</div>
+{% endblock %}

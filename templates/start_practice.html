@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Start Practice - C Programming Practice{% endblock %}
+
+{% block content %}
+<div class="practice-start">
+    <h1>Choose Practice Mode</h1>
+
+    <div class="practice-modes">
+        <form method="POST" action="{{ url_for('practice.start_practice') }}">
+            <div class="mode-card featured">
+                <h2>Smart Practice</h2>
+                <p>Adaptive learning algorithm focuses on your weak areas</p>
+                <ul>
+                    <li>70% questions from your weakest categories</li>
+                    <li>30% review questions</li>
+                    <li>10 questions per session</li>
+                </ul>
+                <input type="hidden" name="mode" value="smart">
+                <button type="submit" class="btn-primary btn-large">Start Smart Practice</button>
+            </div>
+        </form>
+
+        <form method="POST" action="{{ url_for('practice.start_practice') }}">
+            <div class="mode-card">
+                <h2>Category Practice</h2>
+                <p>Focus on a specific category</p>
+                <select name="category" class="form-control" required>
+                    <option value="">Select Category</option>
+                    <option value="memory_management">Memory Management</option>
+                    <option value="integer_division">Integer vs Float Division</option>
+                    <option value="strings">Strings & Null Terminators</option>
+                    <option value="structs">Struct Memory Layout</option>
+                    <option value="pointers">Pointer Safety</option>
+                    <option value="recursion">Recursion</option>
+                    <option value="control_flow">Control Flow</option>
+                </select>
+                <input type="hidden" name="mode" value="category">
+                <button type="submit" class="btn-secondary btn-large">Start Category Practice</button>
+            </div>
+        </form>
+
+        <form method="POST" action="{{ url_for('practice.start_practice') }}">
+            <div class="mode-card">
+                <h2>Random Mix</h2>
+                <p>Random questions from all categories</p>
+                <ul>
+                    <li>10 random questions</li>
+                    <li>All categories mixed</li>
+                    <li>Great for general review</li>
+                </ul>
+                <input type="hidden" name="mode" value="random">
+                <button type="submit" class="btn-secondary btn-large">Start Random Practice</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

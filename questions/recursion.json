@@ -1,0 +1,621 @@
+{
+  "questions": [
+    {
+      "id": "rec_001",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Factorial Calculation",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint factorial(int n) {\n    if (n == 0) return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", factorial(4));\n    return 0;\n}",
+      "options": [
+        "10",
+        "20",
+        "24",
+        "120"
+      ],
+      "correct_answer": "C",
+      "explanation": "factorial(4) = 4 * factorial(3) = 4 * 3 * factorial(2) = 4 * 3 * 2 * factorial(1) = 4 * 3 * 2 * 1 * factorial(0) = 4 * 3 * 2 * 1 * 1 = 24",
+      "hints": [
+        "Trace the recursion: 4 * 3 * 2 * 1",
+        "Base case: factorial(0) = 1",
+        "4! = 24"
+      ],
+      "tags": [
+        "recursion",
+        "factorial",
+        "base_case"
+      ]
+    },
+    {
+      "id": "rec_002",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sum of Digits",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint sum_digits(int n) {\n    if (n < 10) return n;\n    return (n % 10) + sum_digits(n / 10);\n}\n\nint main() {\n    printf(\"%d\\n\", sum_digits(742));\n    return 0;\n}",
+      "options": [
+        "7",
+        "13",
+        "14",
+        "742"
+      ],
+      "correct_answer": "B",
+      "explanation": "sum_digits(742) = 2 + sum_digits(74) = 2 + (4 + sum_digits(7)) = 2 + 4 + 7 = 13.",
+      "hints": [
+        "Split the last digit with n % 10",
+        "Reduce the number with n / 10",
+        "Add each digit"
+      ],
+      "tags": [
+        "recursion",
+        "modulo",
+        "digits"
+      ]
+    },
+    {
+      "id": "rec_003",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Missing Base Case",
+      "description": "What happens when this code runs?",
+      "code_template": "#include <stdio.h>\n\nint f(int n) {\n    return f(n - 1) + 1;\n}\n\nint main() {\n    printf(\"%d\\n\", f(3));\n    return 0;\n}",
+      "options": [
+        "Prints 3",
+        "Prints 4",
+        "Stack overflow (infinite recursion)",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "There is no base case. f keeps calling itself with decreasing n until the stack overflows.",
+      "hints": [
+        "There is no stopping condition",
+        "Recursion must have a base case",
+        "The stack grows until it crashes"
+      ],
+      "tags": [
+        "recursion",
+        "base_case",
+        "stack_overflow"
+      ]
+    },
+    {
+      "id": "rec_004",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sum to N",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint sum_n(int n) {\n    if (n == 0) return 0;\n    return n + sum_n(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", sum_n(5));\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "correct_answer": "C",
+      "explanation": "sum_n(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15.",
+      "hints": [
+        "Sum of 1..5 is 15",
+        "Base case returns 0",
+        "Adds n down to 0"
+      ],
+      "tags": [
+        "recursion",
+        "summation"
+      ]
+    },
+    {
+      "id": "rec_005",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Print Before Call",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid print_down(int n) {\n    if (n == 0) return;\n    printf(\"%d\", n);\n    print_down(n - 1);\n}\n\nint main() {\n    print_down(3);\n    return 0;\n}",
+      "options": [
+        "123",
+        "321",
+        "333",
+        "No output"
+      ],
+      "correct_answer": "B",
+      "explanation": "The print happens before the recursive call, so it prints 3, then 2, then 1.",
+      "hints": [
+        "Print happens before recursion",
+        "n decreases each call",
+        "Outputs 3 then 2 then 1"
+      ],
+      "tags": [
+        "recursion",
+        "printing",
+        "order"
+      ]
+    },
+    {
+      "id": "rec_006",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Print After Call",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid print_up(int n) {\n    if (n == 0) return;\n    print_up(n - 1);\n    printf(\"%d\", n);\n}\n\nint main() {\n    print_up(3);\n    return 0;\n}",
+      "options": [
+        "123",
+        "321",
+        "333",
+        "No output"
+      ],
+      "correct_answer": "A",
+      "explanation": "The print happens after the recursive call, so it prints 1, then 2, then 3.",
+      "hints": [
+        "Print happens after recursion",
+        "Unwinding prints in ascending order",
+        "Outputs 1 then 2 then 3"
+      ],
+      "tags": [
+        "recursion",
+        "printing",
+        "order"
+      ]
+    },
+    {
+      "id": "rec_007",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Power Function",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint power(int base, int exp) {\n    if (exp == 0) return 1;\n    return base * power(base, exp - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", power(2, 4));\n    return 0;\n}",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "24"
+      ],
+      "correct_answer": "C",
+      "explanation": "2^4 = 2 * 2 * 2 * 2 = 16.",
+      "hints": [
+        "Multiply 2 by itself 4 times",
+        "Base case exp == 0 returns 1",
+        "Result is 16"
+      ],
+      "tags": [
+        "recursion",
+        "power"
+      ]
+    },
+    {
+      "id": "rec_008",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive GCD",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint gcd(int a, int b) {\n    if (b == 0) return a;\n    return gcd(b, a % b);\n}\n\nint main() {\n    printf(\"%d\\n\", gcd(48, 18));\n    return 0;\n}",
+      "options": [
+        "3",
+        "6",
+        "12",
+        "18"
+      ],
+      "correct_answer": "B",
+      "explanation": "gcd(48,18) is 6 using Euclid's algorithm.",
+      "hints": [
+        "Use Euclid's algorithm",
+        "48 % 18 = 12",
+        "gcd(18,12) -> gcd(12,6) -> 6"
+      ],
+      "tags": [
+        "recursion",
+        "gcd",
+        "modulo"
+      ]
+    },
+    {
+      "id": "rec_009",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Count Digits",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint count_digits(int n) {\n    if (n < 10) return 1;\n    return 1 + count_digits(n / 10);\n}\n\nint main() {\n    printf(\"%d\\n\", count_digits(1000));\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "10"
+      ],
+      "correct_answer": "B",
+      "explanation": "1000 has 4 digits. The function counts one digit per division by 10.",
+      "hints": [
+        "Divide by 10 each call",
+        "Stop when n < 10",
+        "1000 has 4 digits"
+      ],
+      "tags": [
+        "recursion",
+        "digits",
+        "division"
+      ]
+    },
+    {
+      "id": "rec_010",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Wrong Base Case",
+      "description": "What happens when this program runs?",
+      "code_template": "#include <stdio.h>\n\nint fact(int n) {\n    if (n == 1) return 1;\n    return n * fact(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", fact(0));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "Stack overflow (infinite recursion)",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "fact(0) never reaches the base case n == 1, so it recurses indefinitely until the stack overflows.",
+      "hints": [
+        "Base case does not handle n == 0",
+        "n keeps decreasing",
+        "Stack overflows"
+      ],
+      "tags": [
+        "recursion",
+        "base_case",
+        "stack_overflow"
+      ]
+    },
+    {
+      "id": "rec_011",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sum Array Recursively",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint sum_arr(int *arr, int n) {\n    if (n == 0) return 0;\n    return arr[n - 1] + sum_arr(arr, n - 1);\n}\n\nint main() {\n    int a[] = {1, 2, 3};\n    printf(\"%d\\n\", sum_arr(a, 3));\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct_answer": "C",
+      "explanation": "The function adds 1 + 2 + 3 = 6.",
+      "hints": [
+        "Sum all elements",
+        "Base case is n == 0",
+        "1 + 2 + 3 = 6"
+      ],
+      "tags": [
+        "recursion",
+        "arrays",
+        "sum"
+      ]
+    },
+    {
+      "id": "rec_012",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Add Two Recursively",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint add_two(int n) {\n    if (n == 0) return 0;\n    return 2 + add_two(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", add_two(3));\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "D",
+      "explanation": "add_two(3) adds 2 three times: 2 + 2 + 2 = 6.",
+      "hints": [
+        "Base case returns 0",
+        "Adds 2 each call",
+        "3 calls yield 6"
+      ],
+      "tags": [
+        "recursion",
+        "addition"
+      ]
+    },
+    {
+      "id": "rec_013",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Fibonacci Value",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint fib(int n) {\n    if (n <= 1) return n;\n    return fib(n - 1) + fib(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", fib(6));\n    return 0;\n}",
+      "options": [
+        "5",
+        "8",
+        "13",
+        "21"
+      ],
+      "correct_answer": "B",
+      "explanation": "Fibonacci sequence: 0,1,1,2,3,5,8. fib(6) is 8.",
+      "hints": [
+        "Compute fib(6)",
+        "Sequence starts 0,1",
+        "fib(6) = 8"
+      ],
+      "tags": [
+        "recursion",
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "rec_014",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Return Count",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint count_down(int n) {\n    if (n == 0) return 0;\n    return 1 + count_down(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", count_down(4));\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "B",
+      "explanation": "The function adds 1 four times, so it returns 4.",
+      "hints": [
+        "One is added each call",
+        "Base case at n == 0",
+        "Four calls yield 4"
+      ],
+      "tags": [
+        "recursion",
+        "counting"
+      ]
+    },
+    {
+      "id": "rec_015",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Step of Two",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint f(int n) {\n    if (n <= 0) return 0;\n    return 1 + f(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", f(5));\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "B",
+      "explanation": "f(5) -> 1 + f(3) -> 1 + 1 + f(1) -> 1 + 1 + 1 + f(-1) = 3.",
+      "hints": [
+        "n decreases by 2",
+        "Count how many calls until n <= 0",
+        "Result is 3"
+      ],
+      "tags": [
+        "recursion",
+        "counting",
+        "step"
+      ]
+    },
+    {
+      "id": "rec_016",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Base Case",
+      "description": "What is the purpose of a base case in recursion?",
+      "code_template": "int count_down(int n) {\n    if (n <= 0) return 0;  // Base case\n    printf(\"%d \", n);\n    return count_down(n - 1);\n}",
+      "options": [
+        "To make the function faster",
+        "To stop infinite recursion",
+        "To handle errors",
+        "To initialize variables"
+      ],
+      "correct_answer": "B",
+      "explanation": "Base case is the stopping condition that prevents infinite recursion.",
+      "hints": [
+        "Prevents infinite calls",
+        "Stopping condition",
+        "Returns without recursing"
+      ],
+      "tags": [
+        "recursion",
+        "base_case",
+        "concepts"
+      ]
+    },
+    {
+      "id": "rec_017",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Stack Depth",
+      "description": "What happens with very deep recursion?",
+      "code_template": "int deep(int n) {\n    if (n == 0) return 0;\n    return deep(n - 1);\n}\n\nint main() {\n    deep(1000000);  // Very large\n    return 0;\n}",
+      "options": [
+        "Runs normally",
+        "Heap overflow",
+        "Stack overflow",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Each recursive call uses stack space. Too many calls cause stack overflow.",
+      "hints": [
+        "Each call creates stack frame",
+        "Stack has limited size",
+        "Very deep recursion dangerous"
+      ],
+      "tags": [
+        "recursion",
+        "stack_overflow",
+        "limits"
+      ]
+    },
+    {
+      "id": "rec_018",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Tail Recursion",
+      "description": "Which is tail-recursive?",
+      "code_template": "// Option A\nint sum_a(int n, int acc) {\n    if (n == 0) return acc;\n    return sum_a(n - 1, acc + n);\n}\n\n// Option B\nint sum_b(int n) {\n    if (n == 0) return 0;\n    return n + sum_b(n - 1);\n}",
+      "options": [
+        "Option A only",
+        "Option B only",
+        "Both",
+        "Neither"
+      ],
+      "correct_answer": "A",
+      "explanation": "Option A is tail-recursive (recursive call is last operation). Option B adds after recursion.",
+      "hints": [
+        "Tail recursion = recursive call is last thing",
+        "Option A: nothing after recursive call",
+        "Option B: addition after recursive call"
+      ],
+      "tags": [
+        "recursion",
+        "tail_recursion",
+        "optimization"
+      ]
+    },
+    {
+      "id": "rec_019",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Mutual Recursion",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint is_even(int n);\nint is_odd(int n);\n\nint is_even(int n) {\n    if (n == 0) return 1;\n    return is_odd(n - 1);\n}\n\nint is_odd(int n) {\n    if (n == 0) return 0;\n    return is_even(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", is_even(4));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "4",
+        "Stack overflow"
+      ],
+      "correct_answer": "B",
+      "explanation": "Mutual recursion: is_even calls is_odd, is_odd calls is_even. is_even(4) \u2192 is_odd(3) \u2192 is_even(2) \u2192 is_odd(1) \u2192 is_even(0) \u2192 1.",
+      "hints": [
+        "Functions call each other",
+        "Trace: 4\u21923\u21922\u21921\u21920",
+        "4 is even, returns 1"
+      ],
+      "tags": [
+        "recursion",
+        "mutual_recursion",
+        "tracing"
+      ]
+    },
+    {
+      "id": "rec_020",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursion vs Iteration",
+      "description": "What is an advantage of recursion over iteration?",
+      "code_template": "// Recursive\nint fact_rec(int n) {\n    if (n <= 1) return 1;\n    return n * fact_rec(n - 1);\n}\n\n// Iterative\nint fact_iter(int n) {\n    int result = 1;\n    for (int i = 2; i <= n; i++)\n        result *= i;\n    return result;\n}",
+      "options": [
+        "Always faster",
+        "Uses less memory",
+        "More natural for tree/graph problems",
+        "No base case needed"
+      ],
+      "correct_answer": "C",
+      "explanation": "Recursion is often more natural and elegant for tree, graph, and divide-and-conquer problems. But uses more memory.",
+      "hints": [
+        "Not about speed or memory",
+        "Think about problem structure",
+        "Trees naturally recursive"
+      ],
+      "tags": [
+        "recursion",
+        "iteration",
+        "comparison"
+      ]
+    },
+    {
+      "id": "rec_021",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Recursive String Reverse",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nvoid reverse_print(char *s, int i) {\n    if (i < 0) return;\n    printf(\"%c\", s[i]);\n    reverse_print(s, i - 1);\n}\n\nint main() {\n    char s[] = \"abc\";\n    reverse_print(s, strlen(s) - 1);\n    return 0;\n}",
+      "options": [
+        "abc",
+        "cba",
+        "bca",
+        "No output"
+      ],
+      "correct_answer": "B",
+      "explanation": "Prints from last char to first: c, b, a. Output is \"cba\".",
+      "hints": [
+        "Starts at last index",
+        "Decrements each call",
+        "Prints backwards"
+      ],
+      "tags": [
+        "recursion",
+        "strings",
+        "reverse"
+      ]
+    },
+    {
+      "id": "rec_022",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Array Search",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint find(int arr[], int n, int target) {\n    if (n == 0) return 0;\n    if (arr[n-1] == target) return 1;\n    return find(arr, n-1, target);\n}\n\nint main() {\n    int arr[] = {1, 3, 5, 7};\n    printf(\"%d\\n\", find(arr, 4, 5));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "5",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "Recursively searches array for target. Finds 5, returns 1 (true).",
+      "hints": [
+        "Searches from end",
+        "Finds 5 in array",
+        "Returns 1 (found)"
+      ],
+      "tags": [
+        "recursion",
+        "arrays",
+        "search"
+      ]
+    },
+    {
+      "id": "rec_023",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Euclid's GCD Algorithm",
+      "description": "What algorithm is this?",
+      "code_template": "int gcd(int a, int b) {\n    if (b == 0) return a;\n    return gcd(b, a % b);\n}",
+      "options": [
+        "Binary search",
+        "Euclid's algorithm for GCD",
+        "Fibonacci sequence",
+        "Prime factorization"
+      ],
+      "correct_answer": "B",
+      "explanation": "Euclid's algorithm finds greatest common divisor using modulo and recursion.",
+      "hints": [
+        "Classic GCD algorithm",
+        "Uses modulo",
+        "Very efficient"
+      ],
+      "tags": [
+        "recursion",
+        "gcd",
+        "euclid",
+        "algorithms"
+      ]
+    }
+  ]
+}

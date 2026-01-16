@@ -1,0 +1,56 @@
+version: "3.4"
+
+services:
+  c-programming-practice:
+    image: python:3.11-slim
+    container_name: c-programming-practice
+    hostname: c-practice
+
+    command:
+      - /bin/bash
+      - -c
+      - |
+        set -e
+        apt-get update
+        apt-get install -y gcc build-essential
+        cd /app
+        pip install --no-cache-dir -r requirements.txt
+        python app.py
+
+    environment:
+      - FLASK_SECRET_KEY=change-this-to-random-string-abc123xyz
+      - FLASK_ENV=production
+      - FLASK_DEBUG=False
+      - DATABASE_URL=sqlite:///instance/practice.db
+      - MAX_CODE_EXECUTION_TIME=3
+      - MAX_MEMORY_MB=50
+      - TZ=Europe/Copenhagen
+      - PYTHONUNBUFFERED=1
+
+    ports:
+      - 5067:5067
+
+    volumes:
+      - /mnt/MainPool/Apps/c-practice:/app:rw
+      - /mnt/MainPool/Apps/c-practice-data:/app/instance:rw
+
+    restart: unless-stopped
+
+    stdin_open: false
+    tty: false
+
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5067').read()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M

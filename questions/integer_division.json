@@ -1,0 +1,648 @@
+{
+  "questions": [
+    {
+      "id": "div_001",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic Integer Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 3;\n    printf(\"%d\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "2",
+        "2.33",
+        "2.333333",
+        "3"
+      ],
+      "correct_answer": "A",
+      "explanation": "When dividing two integers in C, the result is also an integer. 7 / 3 = 2.333..., but integer division truncates (not rounds) the result, giving us 2.",
+      "hints": [
+        "Integer division truncates the decimal part",
+        "7 / 3 in integer division is 2, not 3",
+        "The decimal .333... is simply discarded"
+      ],
+      "tags": [
+        "integer_division",
+        "truncation"
+      ]
+    },
+    {
+      "id": "div_002",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Float Division from Integers",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 3;\n    printf(\"%.2f\\n\", (double)a / b);\n    return 0;\n}",
+      "options": [
+        "2.00",
+        "2.33",
+        "2.34",
+        "3.00"
+      ],
+      "correct_answer": "B",
+      "explanation": "Casting 'a' to double before division makes this a floating-point division. 7.0 / 3 = 2.333..., which is printed with 2 decimal places as 2.33.",
+      "hints": [
+        "The (double) cast converts a to a floating-point number",
+        "When one operand is a double, the division is floating-point",
+        "%.2f formats the output to 2 decimal places"
+      ],
+      "tags": [
+        "casting",
+        "float_division",
+        "printf"
+      ]
+    },
+    {
+      "id": "div_003",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Division Order of Operations",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 3;\n    printf(\"%f\\n\", (double)(a / b));\n    return 0;\n}",
+      "options": [
+        "2.000000",
+        "2.333333",
+        "2.330000",
+        "3.000000"
+      ],
+      "correct_answer": "A",
+      "explanation": "The division a / b happens first (both are ints), resulting in 2. Then 2 is cast to double, giving 2.0. The parentheses around (a / b) ensure integer division happens before the cast.",
+      "hints": [
+        "Pay attention to where the cast is placed",
+        "The division happens inside the parentheses first",
+        "Integer division gives 2, then it's cast to 2.0"
+      ],
+      "tags": [
+        "casting",
+        "integer_division",
+        "operator_precedence"
+      ]
+    },
+    {
+      "id": "div_004",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Negative Integer Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -7;\n    int b = 3;\n    printf(\"%d\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "-3",
+        "-2",
+        "-1",
+        "2"
+      ],
+      "correct_answer": "B",
+      "explanation": "Integer division of -7 / 3 truncates toward zero, giving -2 (not -3). In C, integer division always truncates toward zero.",
+      "hints": [
+        "Integer division truncates toward zero",
+        "-7 / 3 = -2.333...",
+        "Truncating toward zero gives -2"
+      ],
+      "tags": [
+        "integer_division",
+        "negative_numbers",
+        "truncation"
+      ]
+    },
+    {
+      "id": "div_005",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Average Calculation Bug",
+      "description": "This code tries to calculate an average but gives the wrong result. What needs to be fixed?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int sum = 100;\n    int count = 3;\n    double average = sum / count;\n    printf(\"Average: %.2f\\n\", average);\n    return 0;\n}",
+      "options": [
+        "Nothing - it's correct",
+        "Need to cast sum or count to double: (double)sum / count",
+        "Need to change sum to a double",
+        "Need to use float instead of double"
+      ],
+      "correct_answer": "B",
+      "explanation": "Line 6 performs integer division (sum / count = 100 / 3 = 33), then assigns the result to a double. This gives 33.0 instead of 33.33. Fix: Cast one operand to double: 'double average = (double)sum / count;'",
+      "hints": [
+        "The division happens before assignment to average",
+        "sum and count are both integers",
+        "You need to cast at least one operand to double"
+      ],
+      "tags": [
+        "integer_division",
+        "casting",
+        "average"
+      ]
+    },
+    {
+      "id": "div_006",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Which Cast is Needed?",
+      "description": "To get a floating-point result from '5 / 2', which cast(s) will work?",
+      "code_template": "A) (double)(5 / 2)\nB) (double)5 / 2\nC) 5 / (double)2\nD) Both B and C",
+      "options": [
+        "Only A",
+        "Only B",
+        "Only C",
+        "Both B and C"
+      ],
+      "correct_answer": "D",
+      "explanation": "Options B and C both work because casting either operand to double promotes the entire operation to floating-point division. Option A doesn't work because the integer division happens first, giving 2, which is then cast to 2.0.",
+      "hints": [
+        "Casting either operand makes it floating-point division",
+        "Option A casts after the division is already done",
+        "Both B and C cast before division"
+      ],
+      "tags": [
+        "casting",
+        "float_division"
+      ]
+    },
+    {
+      "id": "div_007",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mixed Division Output",
+      "description": "What are ALL the outputs of this program (in order)?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", 10 / 4);\n    printf(\"%f\\n\", 10.0 / 4);\n    printf(\"%f\\n\", 10 / 4.0);\n    return 0;\n}",
+      "options": [
+        "2, 2.500000, 2.500000",
+        "2.5, 2.5, 2.5",
+        "2, 2.0, 2.0",
+        "2, 2.500000, 2.0"
+      ],
+      "correct_answer": "A",
+      "explanation": "Line 4: 10 / 4 is integer division = 2. Line 5: 10.0 / 4 is float division = 2.5. Line 6: 10 / 4.0 is also float division = 2.5. When either operand is a float, the result is a float.",
+      "hints": [
+        "Integer / Integer = Integer division",
+        "Float / Integer = Float division",
+        "Integer / Float = Float division"
+      ],
+      "tags": [
+        "integer_division",
+        "float_division",
+        "type_promotion"
+      ]
+    },
+    {
+      "id": "div_008",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Function Return Type",
+      "description": "What should the return statement be to correctly calculate the average as a float?",
+      "code_template": "#include <stdio.h>\n\ndouble calculate_average(int a, int b, int c) {\n    int sum = a + b + c;\n    // What goes here?\n}",
+      "options": [
+        "return sum / 3;",
+        "return (double)sum / 3;",
+        "return sum / 3.0;",
+        "Both B and C work"
+      ],
+      "correct_answer": "D",
+      "explanation": "To get a floating-point average, you need to cast either sum or 3 to double before division. Both 'return (double)sum / 3;' and 'return sum / 3.0;' work correctly.",
+      "hints": [
+        "You need to return a double",
+        "Cast sum to double before dividing",
+        "Or divide by 3.0 instead of 3"
+      ],
+      "tags": [
+        "casting",
+        "function",
+        "average"
+      ]
+    },
+    {
+      "id": "div_009",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Complex Division Expression",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    int b = 2;\n    double result = a / b * 1.0;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "2.5",
+        "2.0",
+        "5.0",
+        "1.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "Due to left-to-right evaluation, a / b is calculated first as integer division (5 / 2 = 2), then 2 * 1.0 = 2.0. If you wanted 2.5, you'd need to multiply by 1.0 first: 'a * 1.0 / b' or use casting.",
+      "hints": [
+        "Operations are evaluated left to right",
+        "a / b happens before * 1.0",
+        "Integer division gives 2 before the multiplication"
+      ],
+      "tags": [
+        "integer_division",
+        "operator_precedence",
+        "type_promotion"
+      ]
+    },
+    {
+      "id": "div_010",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Division with Remainder",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int dividend = 17;\n    int divisor = 5;\n    int quotient = dividend / divisor;\n    int remainder = dividend % divisor;\n    printf(\"%d %d\\n\", quotient, remainder);\n    return 0;\n}",
+      "options": [
+        "3 2",
+        "4 2",
+        "3 3",
+        "2 7"
+      ],
+      "correct_answer": "A",
+      "explanation": "Integer division: 17 / 5 = 3. The modulo operator %: 17 % 5 = 2 (the remainder). So it prints '3 2'.",
+      "hints": [
+        "/ gives the quotient in integer division",
+        "% gives the remainder",
+        "17 = 5 * 3 + 2"
+      ],
+      "tags": [
+        "integer_division",
+        "modulo",
+        "remainder"
+      ]
+    },
+    {
+      "id": "div_011",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Negative Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -7;\n    int b = 2;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "-4 1",
+        "-3 -1",
+        "3 -1",
+        "-3 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "In C, integer division truncates toward zero. -7 / 2 is -3, and the remainder is -1 because -7 = (-3) * 2 + (-1).",
+      "hints": [
+        "C truncates toward zero",
+        "Check the equation: a = (a/b) * b + (a%b)",
+        "Remainder keeps the sign of the dividend"
+      ],
+      "tags": [
+        "integer_division",
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "div_012",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Casting to Double",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    double result = (double)a / b;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.0",
+        "3.5",
+        "3.7",
+        "4.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "Casting a to double makes the division floating-point. 7.0 / 2 = 3.5.",
+      "hints": [
+        "Casting promotes a to double",
+        "Floating-point division keeps the fraction",
+        "7 / 2 becomes 7.0 / 2.0"
+      ],
+      "tags": [
+        "type_casting",
+        "floating_point",
+        "division"
+      ]
+    },
+    {
+      "id": "div_013",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cast After Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    double result = (double)(a / b);\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.5",
+        "3.0",
+        "2.0",
+        "4.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "a / b is integer division first (7 / 2 = 3). Casting after the division makes 3.0.",
+      "hints": [
+        "Division happens before the cast",
+        "Integer division yields 3",
+        "Casting 3 to double gives 3.0"
+      ],
+      "tags": [
+        "type_casting",
+        "integer_division",
+        "order_of_operations"
+      ]
+    },
+    {
+      "id": "div_014",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Mixed Types",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    double b = 2;\n    printf(\"%.1f\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "2.0",
+        "2.5",
+        "3.0",
+        "5.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "a is promoted to double, so the division is floating-point: 5.0 / 2.0 = 2.5.",
+      "hints": [
+        "One operand is double",
+        "Promotion makes the division floating-point",
+        "5.0 / 2.0 = 2.5"
+      ],
+      "tags": [
+        "type_promotion",
+        "floating_point",
+        "division"
+      ]
+    },
+    {
+      "id": "div_015",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Negative Divisor",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = -3;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "-2 1",
+        "-2 -1",
+        "2 1",
+        "2 -1"
+      ],
+      "correct_answer": "A",
+      "explanation": "C truncates toward zero, so 7 / -3 is -2. The remainder keeps the sign of the dividend: 7 = (-2) * (-3) + 1.",
+      "hints": [
+        "Division truncates toward zero",
+        "Check the equation a = (a/b) * b + (a%b)",
+        "Remainder matches the dividend's sign"
+      ],
+      "tags": [
+        "integer_division",
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_div_021",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Negative Division",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", -7 / 2);\n    return 0;\n}",
+      "options": [
+        "-3",
+        "-4",
+        "3",
+        "-3.5"
+      ],
+      "correct_answer": "A",
+      "explanation": "Integer division truncates toward zero. -7 / 2 = -3.5 truncated to -3.",
+      "hints": [
+        "Integer division discards decimal",
+        "Truncates toward zero",
+        "-7 / 2 = -3"
+      ],
+      "tags": [
+        "integer_division",
+        "negative",
+        "truncation"
+      ]
+    },
+    {
+      "id": "int_div_022",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Negative",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", -7 % 3);\n    return 0;\n}",
+      "options": [
+        "-1",
+        "1",
+        "-2",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "In C, result of % has same sign as dividend. -7 = -2 * 3 + (-1), so -7 % 3 = -1.",
+      "hints": [
+        "Modulo result has dividend's sign",
+        "-7 divided by 3 is -2 remainder -1",
+        "Result is -1"
+      ],
+      "tags": [
+        "modulo",
+        "negative",
+        "remainder"
+      ]
+    },
+    {
+      "id": "int_div_023",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Division Order",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", 10 / 2 / 2);\n    return 0;\n}",
+      "options": [
+        "2",
+        "2.5",
+        "5",
+        "10"
+      ],
+      "correct_answer": "A",
+      "explanation": "Division is left-associative. 10 / 2 = 5, then 5 / 2 = 2.",
+      "hints": [
+        "Evaluate left to right",
+        "10 / 2 = 5",
+        "5 / 2 = 2"
+      ],
+      "tags": [
+        "integer_division",
+        "associativity",
+        "order"
+      ]
+    },
+    {
+      "id": "int_div_024",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mixed Type Division",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    double b = 2;\n    printf(\"%f\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "3.0",
+        "3.5",
+        "3",
+        "Error"
+      ],
+      "correct_answer": "B",
+      "explanation": "Mixed int/double promotes to double division. 7.0 / 2.0 = 3.5.",
+      "hints": [
+        "int promoted to double",
+        "Becomes floating-point division",
+        "7.0 / 2.0 = 3.5"
+      ],
+      "tags": [
+        "division",
+        "type_conversion",
+        "promotion"
+      ]
+    },
+    {
+      "id": "int_div_025",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Rounding Up Division",
+      "description": "Which expression rounds up integer division a/b?",
+      "code_template": "int a = 7, b = 3;\n// Want ceiling of 7/3 = 3 (not 2)",
+      "options": [
+        "a / b",
+        "(a + b - 1) / b",
+        "a / b + 1",
+        "(a / b) + 0.5"
+      ],
+      "correct_answer": "B",
+      "explanation": "(a + b - 1) / b rounds up. For 7/3: (7 + 3 - 1) / 3 = 9/3 = 3.",
+      "hints": [
+        "Normal division truncates down",
+        "Add (b-1) before dividing",
+        "7+2=9, 9/3=3"
+      ],
+      "tags": [
+        "integer_division",
+        "ceiling",
+        "rounding"
+      ]
+    },
+    {
+      "id": "int_021",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise AND",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 12;  // 1100 in binary\n    int b = 10;  // 1010 in binary\n    printf(\"%d\\n\", a & b);\n    return 0;\n}",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "correct_answer": "A",
+      "explanation": "Bitwise AND: 1100 & 1010 = 1000 = 8 in decimal.",
+      "hints": [
+        "Bitwise AND compares bits",
+        "1100 & 1010",
+        "Result: 1000 = 8"
+      ],
+      "tags": [
+        "bitwise",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_022",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise OR",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 12;  // 1100 in binary\n    int b = 10;  // 1010 in binary\n    printf(\"%d\\n\", a | b);\n    return 0;\n}",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "correct_answer": "D",
+      "explanation": "Bitwise OR: 1100 | 1010 = 1110 = 14 in decimal.",
+      "hints": [
+        "Bitwise OR combines bits",
+        "1100 | 1010",
+        "Result: 1110 = 14"
+      ],
+      "tags": [
+        "bitwise",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_023",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Left Shift",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    printf(\"%d\\n\", x << 1);\n    return 0;\n}",
+      "options": [
+        "2",
+        "5",
+        "10",
+        "20"
+      ],
+      "correct_answer": "C",
+      "explanation": "Left shift by 1 multiplies by 2. 5 << 1 = 10.",
+      "hints": [
+        "<< shifts bits left",
+        "Equivalent to multiply by 2",
+        "5 * 2 = 10"
+      ],
+      "tags": [
+        "bitwise",
+        "shift",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_024",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Right Shift",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 16;\n    printf(\"%d\\n\", x >> 2);\n    return 0;\n}",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "correct_answer": "B",
+      "explanation": "Right shift by 2 divides by 4. 16 >> 2 = 4.",
+      "hints": [
+        ">> shifts bits right",
+        "Divides by 2^n",
+        "16 / 4 = 4"
+      ],
+      "tags": [
+        "bitwise",
+        "shift",
+        "operators"
+      ]
+    }
+  ]
+}

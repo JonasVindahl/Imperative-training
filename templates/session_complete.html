@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Session Complete - C Programming Practice{% endblock %}
+
+{% block content %}
+<div class="session-complete">
+    <div class="completion-header">
+        <h1>Practice Session Complete!</h1>
+        <div class="completion-icon">
+            {% if correct_count == total_questions %}
+            🎉
+            {% elif correct_count >= total_questions * 0.7 %}
+            👍
+            {% else %}
+            💪
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="session-summary">
+        <h2>Your Results</h2>
+        <div class="summary-stats">
+            <div class="stat-card">
+                <div class="stat-value">{{ correct_count }}/{{ total_questions }}</div>
+                <div class="stat-label">Correct Answers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ ((correct_count / total_questions) * 100) | int }}%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ total_time }}s</div>
+                <div class="stat-label">Total Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ (total_time / total_questions) | int }}s</div>
+                <div class="stat-label">Avg per Question</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-message">
+        {% if correct_count == total_questions %}
+        <p class="message-excellent">Perfect score! Excellent work! 🌟</p>
+        {% elif correct_count >= total_questions * 0.8 %}
+        <p class="message-good">Great job! You're mastering these concepts! 🚀</p>
+        {% elif correct_count >= total_questions * 0.6 %}
+        <p class="message-okay">Good effort! Keep practicing to improve. 📚</p>
+        {% else %}
+        <p class="message-needs-work">Keep practicing! You'll get better with each session. 💪</p>
+        {% endif %}
+    </div>
+
+    <div class="attempts-breakdown">
+        <h2>Question Breakdown</h2>
+        <table class="attempts-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Result</th>
+                    <th>Time Spent</th>
+                    <th>Hints Used</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for attempt in attempts %}
+                <tr>
+                    <td>{{ attempt.category.replace('_', ' ').title() }}</td>
+                    <td>
+                        {% if attempt.correct %}
+                        <span class="badge badge-success">✓ Correct</span>
+                        {% else %}
+                        <span class="badge badge-error">✗ Incorrect</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ attempt.time_spent }}s</td>
+                    <td>{{ attempt.hints_used }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="action-buttons">
+        <a href="{{ url_for('practice.start_practice') }}" class="btn-primary btn-large">
+            Practice Again
+        </a>
+        <a href="{{ url_for('progress.dashboard') }}" class="btn-secondary btn-large">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

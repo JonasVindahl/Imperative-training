@@ -1,0 +1,166 @@
+{
+  "questions": [
+    {
+      "id": "io_001",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "File Opening Modes",
+      "description": "Which mode appends to existing file?",
+      "code_template": "FILE *fp1 = fopen(\"file.txt\", \"r\");\nFILE *fp2 = fopen(\"file.txt\", \"w\");\nFILE *fp3 = fopen(\"file.txt\", \"a\");\nFILE *fp4 = fopen(\"file.txt\", \"r+\");",
+      "options": [
+        "\"r\" mode",
+        "\"w\" mode",
+        "\"a\" mode",
+        "\"r+\" mode"
+      ],
+      "correct_answer": "C",
+      "explanation": "\"a\" mode opens for append. \"w\" truncates file. \"r\" reads only. \"r+\" reads and writes.",
+      "hints": [
+        "a = append",
+        "w = write (overwrites)",
+        "r = read only"
+      ],
+      "tags": [
+        "file_io",
+        "fopen",
+        "modes"
+      ]
+    },
+    {
+      "id": "io_002",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "fgets vs scanf",
+      "description": "What's the difference?",
+      "code_template": "char s1[50], s2[50];\n\n// Method 1:\nfgets(s1, 50, stdin);\n\n// Method 2:\nscanf(\"%s\", s2);",
+      "options": [
+        "No difference",
+        "fgets reads entire line including newline, scanf stops at whitespace",
+        "scanf is safer with buffer overflow",
+        "fgets only works with files"
+      ],
+      "correct_answer": "B",
+      "explanation": "fgets reads entire line (including \\n), scanf stops at first whitespace. fgets is safer (limit specified).",
+      "hints": [
+        "fgets reads whole line",
+        "scanf stops at space/tab/newline",
+        "fgets includes newline character"
+      ],
+      "tags": [
+        "file_io",
+        "fgets",
+        "scanf"
+      ]
+    },
+    {
+      "id": "io_003",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "EOF Detection",
+      "description": "How to detect end of file?",
+      "code_template": "FILE *fp = fopen(\"data.txt\", \"r\");\nint c;\nwhile ((c = fgetc(fp)) != EOF) {\n    putchar(c);\n}\nfclose(fp);",
+      "options": [
+        "Check if c == 0",
+        "Check if c == EOF",
+        "Check if c == NULL",
+        "Check if c == '\\0'"
+      ],
+      "correct_answer": "B",
+      "explanation": "fgetc returns EOF (typically -1) when end of file is reached. Must compare with EOF macro.",
+      "hints": [
+        "EOF = end of file",
+        "fgetc returns EOF",
+        "EOF is a macro, typically -1"
+      ],
+      "tags": [
+        "file_io",
+        "EOF",
+        "fgetc"
+      ]
+    },
+    {
+      "id": "io_004",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "fclose Return Value",
+      "description": "What should you do after using a file?",
+      "code_template": "FILE *fp = fopen(\"data.txt\", \"r\");\nif (fp == NULL) return 1;\n// ... use file ...\n// What next?",
+      "options": [
+        "Nothing, OS closes it",
+        "fclose(fp);",
+        "delete fp;",
+        "fp = NULL;"
+      ],
+      "correct_answer": "B",
+      "explanation": "Always close files with fclose(fp) to flush buffers and release resources.",
+      "hints": [
+        "Files must be closed",
+        "Use fclose",
+        "Prevents resource leaks"
+      ],
+      "tags": [
+        "file_io",
+        "fclose",
+        "cleanup"
+      ]
+    },
+    {
+      "id": "io_005",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "fprintf to File",
+      "description": "What does this code do?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    FILE *fp = fopen(\"out.txt\", \"w\");\n    fprintf(fp, \"Value: %d\\n\", 42);\n    fclose(fp);\n    return 0;\n}",
+      "options": [
+        "Prints to console",
+        "Writes \"Value: 42\" to out.txt",
+        "Compilation error",
+        "Appends to out.txt"
+      ],
+      "correct_answer": "B",
+      "explanation": "fprintf writes formatted output to a file. Mode \"w\" creates/overwrites the file.",
+      "hints": [
+        "fprintf writes to file",
+        "Similar to printf",
+        "Mode \"w\" creates file"
+      ],
+      "tags": [
+        "file_io",
+        "fprintf",
+        "output"
+      ]
+    },
+    {
+      "id": "io_006",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "fscanf Reading",
+      "description": "What does this program do?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    FILE *fp = fopen(\"data.txt\", \"r\");\n    int num;\n    fscanf(fp, \"%d\", &num);\n    fclose(fp);\n    return 0;\n}",
+      "options": [
+        "Writes num to file",
+        "Reads integer from file into num",
+        "Reads entire file",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "fscanf reads formatted input from a file, like scanf but from file instead of stdin.",
+      "hints": [
+        "fscanf reads from file",
+        "Similar to scanf",
+        "Reads into num"
+      ],
+      "tags": [
+        "file_io",
+        "fscanf",
+        "input"
+      ]
+    }
+  ]
+}
