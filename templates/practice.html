@@ -20,14 +20,26 @@
         {% if question.code_template and question.type != 'drag_drop' %}
         <div class="code-section">
             {% if question.type in ['code_completion', 'code_writing'] %}
-            <h3>Write Your Code:</h3>
-            <p class="instruction-text">Replace <code>/* YOUR CODE HERE */</code> with your solution. You can use "Compile & Run" to test before submitting.</p>
+            <h3>Program Template (Read-only):</h3>
+            <p class="instruction-text">This is the complete program. Write your function in the box below where it says <code>/* YOUR CODE HERE */</code>.</p>
+            <div class="code-editor-wrapper" data-code-template='{{ question.code_template | tojson }}'>
+                <pre class="code-display code-readonly" data-line-numbers="true"><code class="language-c">{{ question.code_template }}</code></pre>
+            </div>
+
+            <h3 style="margin-top: 1.5rem;">Your Code:</h3>
+            <p class="instruction-text">Write your function here (e.g., <code>int gcd(int a, int b) { ... }</code>). Use "Compile & Run" to test.</p>
             <div class="code-editor-wrapper">
-                <textarea id="code-editor" class="code-editor">{{ question.code_template }}</textarea>
+                <textarea id="user-code-input" class="code-editor" placeholder="// Write your function here...
+// Example:
+// int gcd(int a, int b) {
+//     if (b < 0) return gcd(-b, a);
+//     if (b == 0) return a;
+//     return gcd(b, a % b);
+// }" rows="15"></textarea>
             </div>
             {% else %}
             <h3>Code:</h3>
-            <div class="code-editor-wrapper">
+            <div class="code-editor-wrapper" data-code-template='{{ question.code_template | tojson }}'>
                 <pre class="code-display" data-line-numbers="true"><code class="language-c">{{ question.code_template }}</code></pre>
             </div>
             {% endif %}
@@ -72,7 +84,7 @@
             {% elif question.type == 'drag_drop' %}
             <div class="drag-drop-section">
                 <div class="code-with-blanks">
-                    <pre class="code-display" data-line-numbers="true">{{ question.code_template | safe }}</pre>
+                    <pre class="code-display">{{ question.code_template | safe }}</pre>
                 </div>
                 <div class="draggable-tokens-container">
                     <h4>Drag these tokens into the blanks above:</h4>
@@ -82,10 +94,14 @@
                     <!-- DEBUG: question.blanks exists = {{ question.blanks is defined }} -->
                     <div class="draggable-tokens" id="token-pool">
                         {% if question.blanks %}
+                            {% set ns = namespace(tokens=[]) %}
                             {% for blank_id, blank_data in question.blanks.items() %}
                                 {% if blank_data and blank_data.options %}
                                     {% for option in blank_data.options %}
+                                        {% if option not in ns.tokens %}
+                                            {% set _ = ns.tokens.append(option) %}
                         <span class="draggable-token" data-token="{{ option }}">{{ option }}</span>
+                                        {% endif %}
                                     {% endfor %}
                                 {% endif %}
                             {% endfor %}
@@ -193,13 +209,60 @@
         }
     }
 
+    function getTemplateCode() {
+        const wrapper = document.querySelector('.code-editor-wrapper[data-code-template]');
+        if (!wrapper) {
+            return null;
+        }
+        const raw = wrapper.getAttribute('data-code-template');
+        if (!raw) {
+            return null;
+        }
+        try {
+            return JSON.parse(raw);
+        } catch (error) {
+            console.warn('Failed to parse code template:', error);
+            return null;
+        }
+    }
+
     async function compileCode() {
-        const code = document.getElementById('code-editor').value;
         const outputSection = document.getElementById('compile-output');
         const outputContent = document.getElementById('output-content');
 
+        // Get code from appropriate source
+        let code;
+        const userCodeInput = document.getElementById('user-code-input');
+
+        if (userCodeInput) {
+            // New separate input: combine user code with template
+            const userCode = userCodeInput.value.trim();
+            if (!userCode) {
+                alert('Please write your code in the "Your Code" section first');
+                return;
+            }
+            const templateCode = getTemplateCode();
+            if (!templateCode) {
+                alert('No code template found');
+                return;
+            }
+            if (templateCode.includes('/* YOUR CODE HERE */')) {
+                code = templateCode.replace('/* YOUR CODE HERE */', userCode);
+            } else {
+                code = `${templateCode}\n\n${userCode}\n`;
+            }
+        } else {
+            alert('No code editor found');
+            return;
+        }
+
         outputContent.textContent = 'Compiling...';
         outputSection.style.display = 'block';
+
+        // Auto-scroll to output
+        setTimeout(() => {
+            outputSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
 
         try {
             const response = await fetch('/practice/compile', {
@@ -211,12 +274,15 @@
             const result = await response.json();
 
             if (result.success) {
-                outputContent.textContent = `Output:\n${result.stdout}\n\n${result.stderr ? 'Warnings:\n' + result.stderr : ''}`;
+                outputContent.textContent = `✅ Compilation Successful!\n\nOutput:\n${result.stdout}\n\n${result.stderr ? 'Warnings:\n' + result.stderr : ''}`;
+                outputContent.style.color = 'var(--success-color)';
             } else {
-                outputContent.textContent = `Error (${result.stage}):\n${result.error}`;
+                outputContent.textContent = `❌ Compilation Failed\n\nError (${result.stage}):\n${result.error}`;
+                outputContent.style.color = 'var(--error-color)';
             }
         } catch (error) {
-            outputContent.textContent = `Error: ${error.message}`;
+            outputContent.textContent = `❌ Error: ${error.message}`;
+            outputContent.style.color = 'var(--error-color)';
         }
     }
 
@@ -229,16 +295,31 @@
         }
     }
 
+    function setSubmitState(button, state) {
+        if (!button) {
+            return;
+        }
+        if (state === 'loading') {
+            button.disabled = true;
+            button.classList.add('is-loading');
+            button.textContent = 'Submitting...';
+        } else if (state === 'submitted') {
+            button.disabled = true;
+            button.classList.remove('is-loading');
+            button.textContent = 'Submitted';
+        } else {
+            button.disabled = false;
+            button.classList.remove('is-loading');
+            button.textContent = 'Submit Answer';
+        }
+    }
+
     async function submitAnswer() {
         if (hasSubmittedAnswer) {
             return;
         }
 
         const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-        }
-        hasSubmittedAnswer = true;
         let answer;
 
         // Type 1: Fill-in-the-Blanks
@@ -256,6 +337,7 @@
             });
             if (!allFilled) {
                 alert('Please fill in all blanks');
+                setSubmitState(submitBtn, 'idle');
                 return;
             }
             answer = JSON.stringify(blanks);
@@ -267,6 +349,7 @@
                 const selected = Array.from(radioButtons).find(rb => rb.checked);
                 if (!selected) {
                     alert('Please select an answer');
+                    setSubmitState(submitBtn, 'idle');
                     return;
                 }
                 // Convert index to letter (0=A, 1=B, 2=C, 3=D)
@@ -296,21 +379,32 @@
                 });
                 if (!allFilled) {
                     alert('Please answer all test cases');
+                    setSubmitState(submitBtn, 'idle');
                     return;
                 }
                 answer = JSON.stringify(results);
             }
             // Type 5: Code Writing/Completion
-            else if (document.getElementById('code-editor')) {
+            else if (document.getElementById('user-code-input') || document.getElementById('code-editor')) {
+                const userCodeInput = document.getElementById('user-code-input');
                 const codeEditor = document.getElementById('code-editor');
-                answer = codeEditor.value;
-                if (!answer.trim()) {
-                    alert('Please enter your code');
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
+
+                if (userCodeInput) {
+                    // New separate input: combine user code with template
+                    const userCode = userCodeInput.value.trim();
+                    if (!userCode) {
+                        alert('Please write your code in the "Your Code" section');
+                        setSubmitState(submitBtn, 'idle');
+                        return;
                     }
-                    hasSubmittedAnswer = false;
-                    return;
+                    answer = userCode;
+                } else if (codeEditor) {
+                    answer = codeEditor.value;
+                    if (!answer.trim()) {
+                        alert('Please enter your code');
+                        setSubmitState(submitBtn, 'idle');
+                        return;
+                    }
                 }
             }
             // Fallback: textarea
@@ -320,10 +414,7 @@
                     answer = textArea.value;
                     if (!answer.trim()) {
                         alert('Please enter an answer');
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                        }
-                        hasSubmittedAnswer = false;
+                        setSubmitState(submitBtn, 'idle');
                         return;
                     }
                 }
@@ -331,6 +422,8 @@
         }
 
         try {
+            setSubmitState(submitBtn, 'loading');
+            hasSubmittedAnswer = true;
             const response = await fetch('/practice/submit', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -341,15 +434,58 @@
                 })
             });
 
+            const contentType = response.headers.get('content-type') || '';
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Server error (${response.status}). ${errorText.slice(0, 300)}`);
+            }
+            if (!contentType.includes('application/json')) {
+                const errorText = await response.text();
+                throw new Error(`Unexpected response (not JSON). ${errorText.slice(0, 300)}`);
+            }
+
             const result = await response.json();
+
+            // Show success notification
+            const notification = document.createElement('div');
+            notification.className = 'submit-notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--success-color);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 10000;
+                font-weight: 600;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = '✅ Answer Submitted!';
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+
+            setSubmitState(submitBtn, 'submitted');
             displayResult(result);
         } catch (error) {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-            }
             hasSubmittedAnswer = false;
+            setSubmitState(submitBtn, 'idle');
             alert(`Error: ${error.message}`);
         }
+    }
+
+    function escapeHtml(value) {
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
 
     function displayResult(result) {
@@ -359,24 +495,24 @@
         let html = '<div class="result-card">';
 
         if (result.correct) {
-            html += '<div class="result-header correct">✓ Correct!</div>';
+            html += '<div class="result-header correct" style="font-size: 1.5rem; padding: 1.5rem;">🎉 ✓ Correct!</div>';
         } else {
-            html += '<div class="result-header incorrect">✗ Incorrect</div>';
+            html += '<div class="result-header incorrect" style="font-size: 1.5rem; padding: 1.5rem;">❌ ✗ Incorrect</div>';
         }
 
         if (result.explanation) {
             html += `<div class="explanation"><h4>Explanation:</h4><p>${result.explanation}</p></div>`;
         }
 
-        if (result.expected !== undefined) {
+        if (result.expected !== undefined && result.expected !== null && result.received !== null && result.received !== undefined) {
             if (result.correct) {
                 html += `<div class="answer-comparison">`;
-                html += `<div class="answer-box correct"><strong>Your Answer:</strong> <span class="answer-value">${result.received}</span></div>`;
+                html += `<div class="answer-box correct"><strong>Your Answer:</strong> <span class="answer-value">${escapeHtml(result.received)}</span></div>`;
                 html += `</div>`;
             } else {
                 html += `<div class="answer-comparison">`;
-                html += `<div class="answer-box"><strong>Your Answer:</strong> <span class="answer-value">${result.received}</span></div>`;
-                html += `<div class="answer-box correct"><strong>Correct Answer:</strong> <span class="answer-value">${result.expected}</span></div>`;
+                html += `<div class="answer-box"><strong>Your Answer:</strong> <span class="answer-value">${escapeHtml(result.received)}</span></div>`;
+                html += `<div class="answer-box correct"><strong>Correct Answer:</strong> <span class="answer-value">${escapeHtml(result.expected)}</span></div>`;
                 html += `</div>`;
             }
         }
@@ -387,9 +523,23 @@
                 const status = test.passed ? '✓' : '✗';
                 html += `<div class="test-case ${test.passed ? 'passed' : 'failed'}">`;
                 html += `<strong>${status} Test ${index + 1}:</strong><br>`;
-                html += `Input: ${test.input || '(none)'}<br>`;
-                html += `Expected: ${test.expected}<br>`;
-                html += `Got: ${test.received}`;
+                const inputText = test.input || '(none)';
+                html += `Input: ${escapeHtml(inputText)}<br>`;
+                html += `Expected:<pre class="result-output">${escapeHtml(test.expected)}</pre>`;
+                html += `Got:<pre class="result-output">${escapeHtml(test.received)}</pre>`;
+                html += `</div>`;
+            });
+            html += '</div>';
+        }
+
+        if (result.blank_results) {
+            html += '<div class="test-results"><h4>Correct Answers:</h4>';
+            result.blank_results.forEach((blank, index) => {
+                const status = blank.correct ? '✓' : '✗';
+                html += `<div class="test-case ${blank.correct ? 'passed' : 'failed'}">`;
+                html += `<strong>${status} Blank ${index + 1}:</strong><br>`;
+                html += `Your Answer:<pre class="result-output">${escapeHtml(blank.user_answer)}</pre>`;
+                html += `Correct Answer:<pre class="result-output">${escapeHtml(blank.correct_answer)}</pre>`;
                 html += `</div>`;
             });
             html += '</div>';
@@ -400,8 +550,10 @@
         resultContent.innerHTML = html;
         resultSection.style.display = 'block';
 
-        // Scroll to result
-        resultSection.scrollIntoView({behavior: 'smooth'});
+        // Scroll to result (especially for long code submissions)
+        setTimeout(() => {
+            resultSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }, 50);
 
         const hintButton = document.getElementById('show-hint-btn');
         if (hintButton) {
@@ -437,9 +589,13 @@
                 // Make tokens draggable
                 $('.draggable-token').draggable({
                     revert: 'invalid',
+                    revertDuration: 150,
                     helper: 'clone',
                     cursor: 'move',
                     zIndex: 1000,
+                    appendTo: 'body',
+                    containment: 'window',
+                    scroll: false,
                     start: function() {
                         console.log('Drag started');
                     }
@@ -462,6 +618,7 @@
                 });
 
                 console.log('jQuery UI drag-drop initialized successfully');
+                enableClickToPlace();
             } catch (error) {
                 console.error('Error initializing jQuery UI drag-drop:', error);
                 enableClickToPlace();
@@ -509,17 +666,32 @@
         console.log('Click-to-place fallback enabled');
     }
 
+    function initializeTraceShortcuts() {
+        document.querySelectorAll('.trace-input').forEach(input => {
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    submitAnswer();
+                }
+            });
+        });
+    }
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeDragDrop);
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDragDrop();
+            initializeTraceShortcuts();
+        });
     } else {
         initializeDragDrop();
+        initializeTraceShortcuts();
     }
 
     // Also try when window loads (as a backup)
     window.addEventListener('load', function() {
-        // Only reinitialize if elements weren't initialized
-        if ($('.draggable-token').length > 0 && !$('.draggable-token').hasClass('ui-draggable')) {
+        // Reinitialize if drop zones were replaced by line-number rendering
+        if ($('.drop-zone').length > 0 && !$('.drop-zone').hasClass('ui-droppable')) {
             console.log('Reinitializing on window.load');
             initializeDragDrop();
         }
