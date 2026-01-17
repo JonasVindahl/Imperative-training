@@ -356,96 +356,90 @@
             }
             answer = JSON.stringify(blanks);
         }
-        // Type 2: Multiple Choice or Multiple Select
-        else {
-            // Check for multiple-select checkboxes first
-            const allCheckboxes = document.querySelectorAll('input[name="answer_checkbox"]');
-            if (allCheckboxes.length > 0) {
-                const checkboxes = document.querySelectorAll('input[name="answer_checkbox"]:checked');
-                if (checkboxes.length === 0) {
-                    alert('Please select at least one answer');
-                    setSubmitState(submitBtn, 'idle');
-                    return;
+        // Type 2a: Multiple Select (Checkboxes)
+        else if (document.querySelectorAll('input[name="answer_checkbox"]').length > 0) {
+            const checkboxes = document.querySelectorAll('input[name="answer_checkbox"]:checked');
+            if (checkboxes.length === 0) {
+                alert('Please select at least one answer');
+                setSubmitState(submitBtn, 'idle');
+                return;
+            }
+            const selectedValues = Array.from(checkboxes).map(cb => cb.value);
+            answer = JSON.stringify(selectedValues);
+        }
+        // Type 2b: Multiple Choice (Radio Buttons)
+        else if (document.getElementsByName('answer').length > 0) {
+            const radioButtons = document.getElementsByName('answer');
+            const selected = Array.from(radioButtons).find(rb => rb.checked);
+            if (!selected) {
+                alert('Please select an answer');
+                setSubmitState(submitBtn, 'idle');
+                return;
+            }
+            // Convert index to letter (0=A, 1=B, 2=C, 3=D)
+            answer = ['A', 'B', 'C', 'D'][parseInt(selected.value)];
+        }
+        // Type 3: Drag-and-Drop
+        else if (document.querySelector('.drag-drop-section')) {
+            const placements = {};
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                const blankId = zone.getAttribute('data-blank-id');
+                const token = zone.getAttribute('data-placed-token');
+                placements[blankId] = token || '';
+            });
+            answer = JSON.stringify(placements);
+        }
+        // Type 4: Recursive Trace
+        else if (document.querySelector('.recursive-trace-section')) {
+            const results = {};
+            let allFilled = true;
+            document.querySelectorAll('.trace-input').forEach(input => {
+                const testId = input.getAttribute('data-test-id');
+                const value = input.value.trim();
+                if (!value) {
+                    allFilled = false;
                 }
-                const selectedValues = Array.from(checkboxes).map(cb => cb.value);
-                answer = JSON.stringify(selectedValues);
+                results[testId] = value;
+            });
+            if (!allFilled) {
+                alert('Please answer all test cases');
+                setSubmitState(submitBtn, 'idle');
+                return;
             }
-            // Then check for radio buttons (single selection)
-            else {
-                const radioButtons = document.getElementsByName('answer');
-                if (radioButtons.length > 0) {
-                    const selected = Array.from(radioButtons).find(rb => rb.checked);
-                    if (!selected) {
-                        alert('Please select an answer');
-                        setSubmitState(submitBtn, 'idle');
-                        return;
-                    }
-                    // Convert index to letter (0=A, 1=B, 2=C, 3=D)
-                    answer = ['A', 'B', 'C', 'D'][parseInt(selected.value)];
-                }
-            }
-            // Type 3: Drag-and-Drop
-            else if (document.querySelector('.drag-drop-section')) {
-                const placements = {};
-                document.querySelectorAll('.drop-zone').forEach(zone => {
-                    const blankId = zone.getAttribute('data-blank-id');
-                    const token = zone.getAttribute('data-placed-token');
-                    placements[blankId] = token || '';
-                });
-                answer = JSON.stringify(placements);
-            }
-            // Type 4: Recursive Trace
-            else if (document.querySelector('.recursive-trace-section')) {
-                const results = {};
-                let allFilled = true;
-                document.querySelectorAll('.trace-input').forEach(input => {
-                    const testId = input.getAttribute('data-test-id');
-                    const value = input.value.trim();
-                    if (!value) {
-                        allFilled = false;
-                    }
-                    results[testId] = value;
-                });
-                if (!allFilled) {
-                    alert('Please answer all test cases');
-                    setSubmitState(submitBtn, 'idle');
-                    return;
-                }
-                answer = JSON.stringify(results);
-            }
-            // Type 5: Code Writing/Completion
-            else if (document.getElementById('user-code-input') || document.getElementById('code-editor')) {
-                const userCodeInput = document.getElementById('user-code-input');
-                const codeEditor = document.getElementById('code-editor');
+            answer = JSON.stringify(results);
+        }
+        // Type 5: Code Writing/Completion
+        else if (document.getElementById('user-code-input') || document.getElementById('code-editor')) {
+            const userCodeInput = document.getElementById('user-code-input');
+            const codeEditor = document.getElementById('code-editor');
 
-                if (userCodeInput) {
-                    // New separate input: combine user code with template
-                    const userCode = userCodeInput.value.trim();
-                    if (!userCode) {
-                        alert('Please write your code in the "Your Code" section');
-                        setSubmitState(submitBtn, 'idle');
-                        return;
-                    }
-                    answer = userCode;
-                } else if (codeEditor) {
-                    answer = codeEditor.value;
-                    if (!answer.trim()) {
-                        alert('Please enter your code');
-                        setSubmitState(submitBtn, 'idle');
-                        return;
-                    }
+            if (userCodeInput) {
+                // New separate input: combine user code with template
+                const userCode = userCodeInput.value.trim();
+                if (!userCode) {
+                    alert('Please write your code in the "Your Code" section');
+                    setSubmitState(submitBtn, 'idle');
+                    return;
+                }
+                answer = userCode;
+            } else if (codeEditor) {
+                answer = codeEditor.value;
+                if (!answer.trim()) {
+                    alert('Please enter your code');
+                    setSubmitState(submitBtn, 'idle');
+                    return;
                 }
             }
-            // Fallback: textarea
-            else {
-                const textArea = document.getElementById('user-answer');
-                if (textArea) {
-                    answer = textArea.value;
-                    if (!answer.trim()) {
-                        alert('Please enter an answer');
-                        setSubmitState(submitBtn, 'idle');
-                        return;
-                    }
+        }
+        // Fallback: textarea
+        else {
+            const textArea = document.getElementById('user-answer');
+            if (textArea) {
+                answer = textArea.value;
+                if (!answer.trim()) {
+                    alert('Please enter an answer');
+                    setSubmitState(submitBtn, 'idle');
+                    return;
                 }
             }
         }
