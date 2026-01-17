@@ -41,13 +41,22 @@
                 <p>Focus on a specific category</p>
                 <select name="category" class="form-control" required>
                     <option value="">Select Category</option>
-                    <option value="memory_management">Memory Management</option>
-                    <option value="integer_division">Integer vs Float Division</option>
-                    <option value="strings">Strings & Null Terminators</option>
-                    <option value="structs">Struct Memory Layout</option>
-                    <option value="pointers">Pointer Safety</option>
-                    <option value="recursion">Recursion</option>
-                    <option value="control_flow">Control Flow</option>
+                    <optgroup label="Core C Concepts">
+                        <option value="memory_management">Memory Management</option>
+                        <option value="pointers">Pointer Safety</option>
+                        <option value="strings">Strings & Null Terminators</option>
+                        <option value="structs">Struct Memory Layout</option>
+                        <option value="integer_division">Integer vs Float Division</option>
+                        <option value="control_flow">Control Flow</option>
+                        <option value="recursion">Recursion</option>
+                        <option value="file_io">File I/O</option>
+                    </optgroup>
+                    <optgroup label="Interactive Exercises">
+                        <option value="fill_blanks">Fill in the Blanks</option>
+                        <option value="drag_drop">Drag & Drop Code</option>
+                        <option value="recursive_trace">Recursive Trace</option>
+                        <option value="programming_tasks">Programming Tasks (Exam Style)</option>
+                    </optgroup>
                 </select>
                 <small class="field-message" data-message-for="category"></small>
                 <label class="form-label">Questions per session</label>

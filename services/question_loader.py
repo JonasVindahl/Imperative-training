@@ -28,9 +28,11 @@ class QuestionLoader:
             'pointers',
             'recursion',
             'control_flow',
+            'file_io',
             'fill_blanks',
             'drag_drop',
-            'recursive_trace'
+            'recursive_trace',
+            'programming_tasks'
         ]
 
         questions = {}
