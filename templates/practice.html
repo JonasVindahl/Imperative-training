@@ -75,15 +75,23 @@
                     <!-- DEBUG: Blanks type={{ question.blanks|string|truncate(200) }} -->
                     <div class="draggable-tokens" id="token-pool">
                         {% if question.blanks %}
+                            {% set unique_tokens = [] %}
                             {% for blank_id, blank_data in question.blanks.items() %}
                                 {% if blank_data.options %}
                                     {% for option in blank_data.options %}
+                                        {% if option not in unique_tokens %}
+                                            {% set _ = unique_tokens.append(option) %}
                         <span class="draggable-token" data-token="{{ option }}">{{ option }}</span>
+                                        {% endif %}
                                     {% endfor %}
+                                {% else %}
+                        <!-- DEBUG: Blank {{ blank_id }} has no options -->
                                 {% endif %}
                             {% endfor %}
+                            <!-- DEBUG: Found {{ unique_tokens|length }} unique tokens -->
                         {% else %}
-                        <!-- DEBUG: No blanks found! -->
+                        <!-- DEBUG: No blanks found in question.blanks! -->
+                        <p style="color: red;">ERROR: No tokens available. Question data may be malformed.</p>
                         {% endif %}
                     </div>
                 </div>
