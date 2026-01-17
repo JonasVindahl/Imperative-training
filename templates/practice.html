@@ -19,14 +19,18 @@
 
         {% if question.code_template and question.type != 'drag_drop' %}
         <div class="code-section">
+            {% if question.type in ['code_completion', 'code_writing'] %}
+            <h3>Write Your Code:</h3>
+            <p class="instruction-text">Replace <code>/* YOUR CODE HERE */</code> with your solution. You can use "Compile & Run" to test before submitting.</p>
+            <div class="code-editor-wrapper">
+                <textarea id="code-editor" class="code-editor">{{ question.code_template }}</textarea>
+            </div>
+            {% else %}
             <h3>Code:</h3>
             <div class="code-editor-wrapper">
-                {% if question.type in ['code_completion', 'code_writing'] %}
-                <textarea id="code-editor" class="code-editor">{{ question.code_template }}</textarea>
-                {% else %}
                 <pre class="code-display" data-line-numbers="true"><code class="language-c">{{ question.code_template }}</code></pre>
-                {% endif %}
             </div>
+            {% endif %}
         </div>
         {% endif %}
 
@@ -41,7 +45,7 @@
                     <p class="blank-text">{{ q_item.text }}</p>
                     <div class="blank-dropdowns">
                         {% for blank in q_item.blanks %}
-                        <select class="blank-dropdown" data-blank-id="blank_{{ loop.parent.loop.index0 }}_{{ loop.index0 }}" required>
+                        <select class="blank-dropdown" data-blank-id="blank_{{ q_item.id }}_{{ loop.index0 }}" required>
                             <option value="">-- Select --</option>
                             {% for option in blank.options %}
                             <option value="{{ option }}">{{ option }}</option>
@@ -72,28 +76,22 @@
                 </div>
                 <div class="draggable-tokens-container">
                     <h4>Drag these tokens into the blanks above:</h4>
-                    <!-- DEBUG: Blanks type={{ question.blanks|string|truncate(200) }} -->
+                    <!-- DEBUG: question.blanks exists = {{ question.blanks is defined }} -->
                     <div class="draggable-tokens" id="token-pool">
                         {% if question.blanks %}
-                            {% set unique_tokens = [] %}
                             {% for blank_id, blank_data in question.blanks.items() %}
-                                {% if blank_data.options %}
+                                {% if blank_data and blank_data.options %}
                                     {% for option in blank_data.options %}
-                                        {% if option not in unique_tokens %}
-                                            {% set _ = unique_tokens.append(option) %}
                         <span class="draggable-token" data-token="{{ option }}">{{ option }}</span>
-                                        {% endif %}
                                     {% endfor %}
-                                {% else %}
-                        <!-- DEBUG: Blank {{ blank_id }} has no options -->
                                 {% endif %}
                             {% endfor %}
-                            <!-- DEBUG: Found {{ unique_tokens|length }} unique tokens -->
                         {% else %}
-                        <!-- DEBUG: No blanks found in question.blanks! -->
-                        <p style="color: red;">ERROR: No tokens available. Question data may be malformed.</p>
+                        <p style="color: red; padding: 10px;">ERROR: No tokens available. Question data may be malformed.</p>
+                        <p style="font-size: 12px;">Debug: question.blanks = {{ question.blanks }}</p>
                         {% endif %}
                     </div>
+                    <!-- DEBUG: Rendered token-pool -->
                 </div>
             </div>
 
@@ -122,8 +120,8 @@
                 {% endfor %}
             </div>
 
-            {# Fallback: Text Area #}
-            {% else %}
+            {# Fallback: Text Area (not for code_writing/code_completion) #}
+            {% elif question.type not in ['code_writing', 'code_completion'] %}
             <textarea id="user-answer" class="answer-input" rows="10"
                       placeholder="Enter your answer here..."></textarea>
             {% endif %}
@@ -299,6 +297,19 @@
                 }
                 answer = JSON.stringify(results);
             }
+            // Type 5: Code Writing/Completion
+            else if (document.getElementById('code-editor')) {
+                const codeEditor = document.getElementById('code-editor');
+                answer = codeEditor.value;
+                if (!answer.trim()) {
+                    alert('Please enter your code');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                    }
+                    hasSubmittedAnswer = false;
+                    return;
+                }
+            }
             // Fallback: textarea
             else {
                 const textArea = document.getElementById('user-answer');
@@ -306,6 +317,10 @@
                     answer = textArea.value;
                     if (!answer.trim()) {
                         alert('Please enter an answer');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                        }
+                        hasSubmittedAnswer = false;
                         return;
                     }
                 }
