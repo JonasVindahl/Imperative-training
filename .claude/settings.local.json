@@ -15,7 +15,8 @@
       "Bash(do)",
       "Bash(done)",
       "Bash(cat:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(python3:*)"
     ]
   }
 }

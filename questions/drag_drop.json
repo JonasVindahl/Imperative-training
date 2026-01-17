@@ -2214,6 +2214,364 @@
         "ternary",
         "operators"
       ]
+    },
+    {
+      "id": "drag_041",
+      "category": "structs",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "points": 5,
+      "title": "Complete Typedef Struct Definition (Exam Style)",
+      "description": "Drag tokens to complete a typedef struct definition for a point with coordinates:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> point {\n    <span class='drop-zone' data-blank-id='blank3'>[___]</span> x;\n    <span class='drop-zone' data-blank-id='blank4'>[___]</span> y;\n} <span class='drop-zone' data-blank-id='blank5'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "typedef",
+          "options": [
+            "typedef",
+            "struct",
+            "define",
+            "const"
+          ]
+        },
+        "blank2": {
+          "correct": "struct",
+          "options": [
+            "struct",
+            "typedef",
+            "union",
+            "enum"
+          ]
+        },
+        "blank3": {
+          "correct": "int",
+          "options": [
+            "int",
+            "float",
+            "char",
+            "double"
+          ]
+        },
+        "blank4": {
+          "correct": "int",
+          "options": [
+            "int",
+            "float",
+            "char",
+            "double"
+          ]
+        },
+        "blank5": {
+          "correct": "point_t",
+          "options": [
+            "point_t",
+            "point",
+            "Point",
+            "POINT"
+          ]
+        }
+      },
+      "explanation": "Typedef struct pattern: typedef struct name { fields } alias; Creates alias point_t for struct point.",
+      "hints": [
+        "typedef creates an alias for a type",
+        "struct keyword defines the structure",
+        "Convention: _t suffix for typedef names",
+        "Fields should match the data type needed"
+      ],
+      "tags": [
+        "typedef",
+        "structs",
+        "exam_style"
+      ]
+    },
+    {
+      "id": "drag_042",
+      "category": "structs",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "points": 5,
+      "title": "Complete Linked List Node Typedef (Exam Style)",
+      "description": "Drag tokens to complete a typedef for a linked list node:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> node {\n    int data;\n    <span class='drop-zone' data-blank-id='blank3'>[___]</span> node <span class='drop-zone' data-blank-id='blank4'>[___]</span>next;\n} <span class='drop-zone' data-blank-id='blank5'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "typedef",
+          "options": [
+            "typedef",
+            "struct",
+            "define",
+            "const"
+          ]
+        },
+        "blank2": {
+          "correct": "struct",
+          "options": [
+            "struct",
+            "typedef",
+            "union",
+            "enum"
+          ]
+        },
+        "blank3": {
+          "correct": "struct",
+          "options": [
+            "struct",
+            "typedef",
+            "int",
+            "void"
+          ]
+        },
+        "blank4": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "[]"
+          ]
+        },
+        "blank5": {
+          "correct": "node_t",
+          "options": [
+            "node_t",
+            "node",
+            "Node",
+            "NODE"
+          ]
+        }
+      },
+      "explanation": "Self-referential struct: must use 'struct node' for the next pointer since node_t isn't defined yet inside the struct body.",
+      "hints": [
+        "typedef creates an alias",
+        "Self-reference requires 'struct node' for next",
+        "Pointer to next node uses *",
+        "_t convention for typedef name"
+      ],
+      "tags": [
+        "typedef",
+        "linked_lists",
+        "self_reference",
+        "exam_style"
+      ]
+    },
+    {
+      "id": "drag_043",
+      "category": "structs",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "points": 4,
+      "title": "Complete Person Struct (Exam Style)",
+      "description": "Drag tokens to complete a typedef struct for a person with name and age:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> {\n    <span class='drop-zone' data-blank-id='blank3'>[___]</span> name[50];\n    <span class='drop-zone' data-blank-id='blank4'>[___]</span> age;\n} <span class='drop-zone' data-blank-id='blank5'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "typedef",
+          "options": [
+            "typedef",
+            "struct",
+            "define",
+            "const"
+          ]
+        },
+        "blank2": {
+          "correct": "struct",
+          "options": [
+            "struct",
+            "typedef",
+            "union",
+            "enum"
+          ]
+        },
+        "blank3": {
+          "correct": "char",
+          "options": [
+            "char",
+            "int",
+            "char*",
+            "string"
+          ]
+        },
+        "blank4": {
+          "correct": "int",
+          "options": [
+            "int",
+            "char",
+            "float",
+            "unsigned"
+          ]
+        },
+        "blank5": {
+          "correct": "person_t",
+          "options": [
+            "person_t",
+            "Person",
+            "person",
+            "PERSON"
+          ]
+        }
+      },
+      "explanation": "typedef struct pattern with array member: char name[50] for string, int for age, person_t as alias.",
+      "hints": [
+        "typedef before struct",
+        "char array for strings",
+        "int for age",
+        "_t suffix convention"
+      ],
+      "tags": [
+        "typedef",
+        "structs",
+        "arrays",
+        "exam_style"
+      ]
+    },
+    {
+      "id": "drag_044",
+      "category": "structs",
+      "type": "drag_drop",
+      "difficulty": "hard",
+      "points": 5,
+      "title": "Complete Rectangle Struct with Pointer (Exam Style)",
+      "description": "Drag tokens to complete a typedef struct for a rectangle with pointer to center point:",
+      "code_template": "typedef struct {\n    int x;\n    int y;\n} point_t;\n\n<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> {\n    int width;\n    int height;\n    point_t <span class='drop-zone' data-blank-id='blank3'>[___]</span>center;\n} <span class='drop-zone' data-blank-id='blank4'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "typedef",
+          "options": [
+            "typedef",
+            "struct",
+            "define",
+            "const"
+          ]
+        },
+        "blank2": {
+          "correct": "struct",
+          "options": [
+            "struct",
+            "typedef",
+            "union",
+            "enum"
+          ]
+        },
+        "blank3": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "**",
+            "[]"
+          ]
+        },
+        "blank4": {
+          "correct": "rect_t",
+          "options": [
+            "rect_t",
+            "rectangle_t",
+            "Rect",
+            "RECT"
+          ]
+        }
+      },
+      "explanation": "Nested struct with pointer: point_t* for pointer to center, typedef struct pattern creates rect_t alias.",
+      "hints": [
+        "typedef before struct",
+        "Pointer to another struct uses *",
+        "_t convention for alias"
+      ],
+      "tags": [
+        "typedef",
+        "structs",
+        "pointers",
+        "nested_structs",
+        "exam_style"
+      ]
+    },
+    {
+      "id": "drag_045",
+      "category": "structs",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "points": 4,
+      "title": "Complete Array of Structs Initialization (Exam Style)",
+      "description": "Drag tokens to initialize an array of point structs:",
+      "code_template": "typedef struct {\n    int x;\n    int y;\n} point_t;\n\npoint_t points<span class='drop-zone' data-blank-id='blank1'>[___]</span> = <span class='drop-zone' data-blank-id='blank2'>[___]</span>\n    <span class='drop-zone' data-blank-id='blank3'>[___]</span>0, 0<span class='drop-zone' data-blank-id='blank4'>[___]</span>,\n    <span class='drop-zone' data-blank-id='blank5'>[___]</span>1, 1<span class='drop-zone' data-blank-id='blank6'>[___]</span>\n<span class='drop-zone' data-blank-id='blank7'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "[2]",
+          "options": [
+            "[2]",
+            "[]",
+            "[3]",
+            "*"
+          ]
+        },
+        "blank2": {
+          "correct": "{",
+          "options": [
+            "{",
+            "[",
+            "(",
+            "<"
+          ]
+        },
+        "blank3": {
+          "correct": "{",
+          "options": [
+            "{",
+            "[",
+            "(",
+            "<"
+          ]
+        },
+        "blank4": {
+          "correct": "}",
+          "options": [
+            "}",
+            "]",
+            ")",
+            ">"
+          ]
+        },
+        "blank5": {
+          "correct": "{",
+          "options": [
+            "{",
+            "[",
+            "(",
+            "<"
+          ]
+        },
+        "blank6": {
+          "correct": "}",
+          "options": [
+            "}",
+            "]",
+            ")",
+            ">"
+          ]
+        },
+        "blank7": {
+          "correct": "}",
+          "options": [
+            "}",
+            "]",
+            ")",
+            ">"
+          ]
+        }
+      },
+      "explanation": "Array of structs initialization: array size [2], outer braces {}, each struct element in inner braces {{x, y}, {x, y}}.",
+      "hints": [
+        "Specify array size [2]",
+        "Outer braces for array",
+        "Inner braces for each struct",
+        "Comma-separated values"
+      ],
+      "tags": [
+        "structs",
+        "arrays",
+        "initialization",
+        "exam_style"
+      ]
     }
   ]
 }

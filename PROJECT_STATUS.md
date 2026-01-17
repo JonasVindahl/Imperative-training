@@ -1,15 +1,15 @@
 # Project Status Report
 
 **Date**: 2026-01-17
-**Version**: 3.0
+**Version**: 3.1
 **Status**: ✅ Production Ready
 
 ---
 
 ## 📊 Project Statistics
 
-- **Total Questions**: 620
-- **Question Files**: 11 JSON files
+- **Total Questions**: 645
+- **Question Files**: 12 JSON files
 - **Python Modules**: 10 files
 - **Templates**: 9 HTML files
 - **Documentation**: 11 markdown files
@@ -27,11 +27,13 @@
 - ✅ Proper .gitignore configured
 
 ### Question Bank
-- ✅ 620 total questions verified
+- ✅ 645 total questions verified
 - ✅ All categories populated
 - ✅ No duplicate IDs
 - ✅ All required fields present
 - ✅ Difficulty levels balanced (30% easy, 50% medium, 20% hard)
+- ✅ NEW: 20 programming tasks (exam-style code writing)
+- ✅ NEW: 5 exam-style struct/typedef drag-and-drop questions
 
 ### Templates & Static Files
 - ✅ All 9 templates present
@@ -102,7 +104,7 @@
 │   │   └── recursive_trace.js
 │   └── images/                     # Image assets
 │
-├── questions/                      # Question bank (620 questions)
+├── questions/                      # Question bank (645 questions)
 │   ├── memory_management.json      # 65 questions
 │   ├── pointers.json               # 65 questions
 │   ├── strings.json                # 70 questions
@@ -112,8 +114,9 @@
 │   ├── control_flow.json           # 65 questions
 │   ├── file_io.json                # 40 questions
 │   ├── fill_blanks.json            # 40 questions
-│   ├── drag_drop.json              # 40 questions
-│   └── recursive_trace.json        # 40 questions
+│   ├── drag_drop.json              # 45 questions (NEW: +5 exam-style)
+│   ├── recursive_trace.json        # 40 questions
+│   └── programming_tasks.json      # 20 questions (NEW)
 │
 ├── deployment/                     # Deployment files
 │   ├── docker-compose.yml          # Docker Compose
@@ -201,7 +204,7 @@ MAX_MEMORY_MB=50
 ✅ services/question_loader.py     # Question management
 ```
 
-### Question Files (11 files)
+### Question Files (12 files)
 ```
 ✅ memory_management.json          # 65 questions
 ✅ pointers.json                   # 65 questions
@@ -212,8 +215,9 @@ MAX_MEMORY_MB=50
 ✅ control_flow.json               # 65 questions
 ✅ file_io.json                    # 40 questions
 ✅ fill_blanks.json                # 40 questions
-✅ drag_drop.json                  # 40 questions
+✅ drag_drop.json                  # 45 questions (NEW: +5 exam-style)
 ✅ recursive_trace.json            # 40 questions
+✅ programming_tasks.json          # 20 questions (NEW)
 ```
 
 ---
@@ -282,7 +286,7 @@ MAX_MEMORY_MB=50
 - [x] Docker Compose files configured
 - [x] TrueNAS YAML ready
 - [x] Documentation complete
-- [x] 620 questions verified
+- [x] 645 questions verified
 - [x] All templates present
 - [x] Static files organized
 - [x] .gitignore proper
@@ -305,5 +309,5 @@ MAX_MEMORY_MB=50
 
 **Generated**: 2026-01-17
 **Audit**: ✅ Passed
-**Questions**: 620
-**Version**: 3.0
+**Questions**: 645
+**Version**: 3.1

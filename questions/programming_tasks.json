@@ -1,0 +1,447 @@
+{
+  "questions": [
+    {
+      "id": "prog_001",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer rekursiv GCD",
+      "description": "Skriv en funktion med signaturen `int gcd(int a, int b)` der implementerer via rekursion den følgende rekursive definition:\n\ngcd(a,b) = gcd(-b, a)     hvis b < 0\ngcd(a,b) = a              hvis b = 0  \ngcd(a,b) = gcd(b, a%b)    ellers\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    printf(\"%d\\n\", gcd(48, 18));  // Skal give 6\n    printf(\"%d\\n\", gcd(100, 35)); // Skal give 5\n    return 0;\n}",
+      "expected_output": "6\n5",
+      "test_cases": [
+        {"input": "gcd(48, 18)", "expected": "6"},
+        {"input": "gcd(100, 35)", "expected": "5"},
+        {"input": "gcd(17, 0)", "expected": "17"},
+        {"input": "gcd(12, -8)", "expected": "4"}
+      ],
+      "hints": [
+        "Brug de tre betingelser som if/else if/else struktur",
+        "Base case er når b = 0",
+        "Håndter negative b ved at kalde gcd(-b, a)"
+      ],
+      "tags": ["recursion", "gcd", "euclid", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_002",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 8,
+      "title": "Implementer rekursiv fibonacci",
+      "description": "Skriv en funktion med signaturen `int fib(int n)` der returnerer det n'te fibonacci tal via rekursion.\n\nFibonacci sekvensen: 0, 1, 1, 2, 3, 5, 8, 13, ...\nfib(0) = 0\nfib(1) = 1\nfib(n) = fib(n-1) + fib(n-2) for n > 1\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    printf(\"%d\\n\", fib(0));  // 0\n    printf(\"%d\\n\", fib(6));  // 8\n    printf(\"%d\\n\", fib(10)); // 55\n    return 0;\n}",
+      "expected_output": "0\n8\n55",
+      "test_cases": [
+        {"input": "fib(0)", "expected": "0"},
+        {"input": "fib(1)", "expected": "1"},
+        {"input": "fib(6)", "expected": "8"},
+        {"input": "fib(10)", "expected": "55"}
+      ],
+      "hints": [
+        "Base cases: n=0 returnerer 0, n=1 returnerer 1",
+        "Ellers returner fib(n-1) + fib(n-2)",
+        "Brug rekursion, ikke loops"
+      ],
+      "tags": ["recursion", "fibonacci", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_003",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer rekursiv fakultet",
+      "description": "Skriv en funktion med signaturen `long factorial(int n)` der beregner n! (n fakultet) via rekursion.\n\nfactorial(0) = 1\nfactorial(n) = n * factorial(n-1) for n > 0\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    printf(\"%ld\\n\", factorial(0));  // 1\n    printf(\"%ld\\n\", factorial(5));  // 120\n    printf(\"%ld\\n\", factorial(10)); // 3628800\n    return 0;\n}",
+      "expected_output": "1\n120\n3628800",
+      "test_cases": [
+        {"input": "factorial(0)", "expected": "1"},
+        {"input": "factorial(5)", "expected": "120"},
+        {"input": "factorial(10)", "expected": "3628800"}
+      ],
+      "hints": [
+        "Base case: factorial(0) = 1",
+        "Ellers: n * factorial(n-1)",
+        "Brug long for at håndtere store tal"
+      ],
+      "tags": ["recursion", "factorial", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_004",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 8,
+      "title": "Implementer array sum",
+      "description": "Skriv en funktion med signaturen `int array_sum(int arr[], int n)` der returnerer summen af alle elementer i arrayet ved hjælp af rekursion.\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int arr1[] = {1, 2, 3, 4, 5};\n    int arr2[] = {10, 20, 30};\n    printf(\"%d\\n\", array_sum(arr1, 5)); // 15\n    printf(\"%d\\n\", array_sum(arr2, 3)); // 60\n    return 0;\n}",
+      "expected_output": "15\n60",
+      "test_cases": [
+        {"input": "array_sum([1,2,3,4,5], 5)", "expected": "15"},
+        {"input": "array_sum([10,20,30], 3)", "expected": "60"}
+      ],
+      "hints": [
+        "Base case: når n = 0, returner 0",
+        "Ellers: arr[n-1] + array_sum(arr, n-1)",
+        "Reducer array størrelse ved hver rekursion"
+      ],
+      "tags": ["recursion", "arrays", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_005",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer string reverse",
+      "description": "Skriv en funktion med signaturen `void reverse_string(char *str, int start, int end)` der vender en string om in-place ved hjælp af rekursion.\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    char s1[] = \"hello\";\n    reverse_string(s1, 0, strlen(s1) - 1);\n    printf(\"%s\\n\", s1); // \"olleh\"\n    \n    char s2[] = \"abcd\";\n    reverse_string(s2, 0, strlen(s2) - 1);\n    printf(\"%s\\n\", s2); // \"dcba\"\n    return 0;\n}",
+      "expected_output": "olleh\ndcba",
+      "test_cases": [
+        {"input": "reverse_string('hello', 0, 4)", "expected": "olleh"},
+        {"input": "reverse_string('abcd', 0, 3)", "expected": "dcba"}
+      ],
+      "hints": [
+        "Base case: start >= end",
+        "Swap str[start] og str[end]",
+        "Rekursivt kald med start+1 og end-1"
+      ],
+      "tags": ["recursion", "strings", "programming_task", "in_place"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_006",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 7,
+      "title": "Char array initialisering",
+      "description": "Definer et char array, kaldet s, med en passende initialisering, således at følgende kode udskriver teksten: s='ABC'\n\nDu SKAL benytte tuborgklammer (altså { og } ) i din løsning.\n\nKoden der skal virke:\nprintf(\"s='%s'\\n\", s);",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    // Definer char array 's' her\n    \n    \n    printf(\"s='%s'\\n\", s);\n    return 0;\n}",
+      "expected_output": "s='ABC'",
+      "solution": "char s[] = {'A', 'B', 'C', '\\0'};",
+      "alternative_solutions": [
+        "char s[] = {65, 66, 67, 0};",
+        "char s[4] = {'A', 'B', 'C', '\\0'};"
+      ],
+      "hints": [
+        "Brug tuborgklammer {} til initialisering",
+        "Husk null terminator '\\0' til sidst",
+        "char s[] = {'A', 'B', 'C', ...};"
+      ],
+      "tags": ["arrays", "strings", "initialization", "programming_task"]
+    },
+    {
+      "id": "prog_007",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 7,
+      "title": "Integer array initialisering",
+      "description": "Definer et int array, kaldet nums, med en passende initialisering, således at følgende kode udskriver teksten: Sum=15\n\nDu SKAL benytte tuborgklammer i din løsning.\n\nKoden der skal virke:\nint sum = nums[0] + nums[1] + nums[2] + nums[3] + nums[4];\nprintf(\"Sum=%d\\n\", sum);",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    // Definer int array 'nums' her med 5 elementer\n    \n    \n    int sum = nums[0] + nums[1] + nums[2] + nums[3] + nums[4];\n    printf(\"Sum=%d\\n\", sum);\n    return 0;\n}",
+      "expected_output": "Sum=15",
+      "solution": "int nums[] = {1, 2, 3, 4, 5};",
+      "alternative_solutions": [
+        "int nums[5] = {1, 2, 3, 4, 5};",
+        "int nums[] = {5, 4, 3, 2, 1};",
+        "int nums[] = {0, 0, 0, 0, 15};"
+      ],
+      "hints": [
+        "Brug tuborgklammer {} til initialisering",
+        "Arrayet skal have 5 elementer der summerer til 15",
+        "int nums[] = {tal1, tal2, tal3, tal4, tal5};"
+      ],
+      "tags": ["arrays", "initialization", "programming_task"]
+    },
+    {
+      "id": "prog_008",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer power funktion",
+      "description": "Skriv en funktion med signaturen `int power(int base, int exp)` der beregner base^exp ved hjælp af rekursion.\n\npower(base, 0) = 1\npower(base, exp) = base * power(base, exp-1) for exp > 0\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    printf(\"%d\\n\", power(2, 0));  // 1\n    printf(\"%d\\n\", power(2, 5));  // 32\n    printf(\"%d\\n\", power(3, 4));  // 81\n    return 0;\n}",
+      "expected_output": "1\n32\n81",
+      "test_cases": [
+        {"input": "power(2, 0)", "expected": "1"},
+        {"input": "power(2, 5)", "expected": "32"},
+        {"input": "power(3, 4)", "expected": "81"},
+        {"input": "power(5, 3)", "expected": "125"}
+      ],
+      "hints": [
+        "Base case: exp = 0 returnerer 1",
+        "Ellers: base * power(base, exp-1)",
+        "Brug rekursion til at multiplicere base exp gange"
+      ],
+      "tags": ["recursion", "power", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_009",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 8,
+      "title": "Implementer count_digits",
+      "description": "Skriv en funktion med signaturen `int count_digits(int n)` der tæller antallet af cifre i et positivt heltal ved hjælp af rekursion.\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    printf(\"%d\\n\", count_digits(5));     // 1\n    printf(\"%d\\n\", count_digits(123));   // 3\n    printf(\"%d\\n\", count_digits(98765)); // 5\n    return 0;\n}",
+      "expected_output": "1\n3\n5",
+      "test_cases": [
+        {"input": "count_digits(5)", "expected": "1"},
+        {"input": "count_digits(123)", "expected": "3"},
+        {"input": "count_digits(98765)", "expected": "5"}
+      ],
+      "hints": [
+        "Base case: når n < 10, returner 1",
+        "Ellers: 1 + count_digits(n / 10)",
+        "Divider med 10 for at fjerne sidste ciffer"
+      ],
+      "tags": ["recursion", "digits", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_010",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer is_palindrome",
+      "description": "Skriv en funktion med signaturen `int is_palindrome(char *str, int start, int end)` der checker om en string er et palindrome ved hjælp af rekursion.\n\nReturnerer 1 hvis palindrome, 0 ellers.\n\nBenyt IKKE while og for.",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    char s1[] = \"racecar\";\n    char s2[] = \"hello\";\n    printf(\"%d\\n\", is_palindrome(s1, 0, strlen(s1)-1)); // 1\n    printf(\"%d\\n\", is_palindrome(s2, 0, strlen(s2)-1)); // 0\n    return 0;\n}",
+      "expected_output": "1\n0",
+      "test_cases": [
+        {"input": "is_palindrome('racecar', 0, 6)", "expected": "1"},
+        {"input": "is_palindrome('hello', 0, 4)", "expected": "0"},
+        {"input": "is_palindrome('aba', 0, 2)", "expected": "1"}
+      ],
+      "hints": [
+        "Base case: start >= end returnerer 1",
+        "Hvis str[start] != str[end], returner 0",
+        "Ellers rekursivt check is_palindrome(str, start+1, end-1)"
+      ],
+      "tags": ["recursion", "strings", "palindrome", "programming_task"],
+      "restrictions": ["MUST use recursion", "CANNOT use while or for loops"]
+    },
+    {
+      "id": "prog_011",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 7,
+      "title": "Implementer bubble sort",
+      "description": "Skriv en funktion med signaturen `void bubble_sort(int arr[], int n)` der sorterer et int array ved hjælp af bubble sort algoritmen.\n\nBubble sort sammenligner naboelementer og bytter dem hvis de er i forkert rækkefølge. Gentag indtil arrayet er sorteret.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int arr1[] = {5, 2, 8, 1, 9};\n    bubble_sort(arr1, 5);\n    for (int i = 0; i < 5; i++) printf(\"%d \", arr1[i]);\n    printf(\"\\n\");\n    \n    int arr2[] = {3, 1, 4, 1, 5};\n    bubble_sort(arr2, 5);\n    for (int i = 0; i < 5; i++) printf(\"%d \", arr2[i]);\n    printf(\"\\n\");\n    return 0;\n}",
+      "expected_output": "1 2 5 8 9\n1 1 3 4 5",
+      "test_cases": [
+        {"input": "bubble_sort([5,2,8,1,9], 5)", "expected": "[1,2,5,8,9]"},
+        {"input": "bubble_sort([3,1,4,1,5], 5)", "expected": "[1,1,3,4,5]"}
+      ],
+      "hints": [
+        "Brug nested loops: ydre loop for passes, indre loop for sammenligninger",
+        "Sammenlign arr[j] med arr[j+1]",
+        "Byt elementer hvis arr[j] > arr[j+1]"
+      ],
+      "tags": ["loops", "sorting", "arrays", "programming_task"],
+      "restrictions": ["MUST sort in-place", "Use nested for loops"]
+    },
+    {
+      "id": "prog_012",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 7,
+      "title": "Implementer find_max funktion",
+      "description": "Skriv en funktion med signaturen `int find_max(int arr[], int n)` der finder det største element i et array ved hjælp af en loop.\n\nReturnér værdien af det største element.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int arr1[] = {3, 7, 2, 9, 1};\n    printf(\"%d\\n\", find_max(arr1, 5));  // 9\n    \n    int arr2[] = {-5, -2, -10, -1};\n    printf(\"%d\\n\", find_max(arr2, 4));  // -1\n    return 0;\n}",
+      "expected_output": "9\n-1",
+      "test_cases": [
+        {"input": "find_max([3,7,2,9,1], 5)", "expected": "9"},
+        {"input": "find_max([-5,-2,-10,-1], 4)", "expected": "-1"}
+      ],
+      "hints": [
+        "Initialiser max til arr[0]",
+        "Loop igennem arrayet fra index 1",
+        "Opdater max når et større element findes"
+      ],
+      "tags": ["loops", "arrays", "max", "programming_task"]
+    },
+    {
+      "id": "prog_013",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer binary search",
+      "description": "Skriv en funktion med signaturen `int binary_search(int arr[], int n, int target)` der søger efter target i et sorteret array ved hjælp af binary search.\n\nReturnér index hvis fundet, ellers -1.\n\nArrayet er garanteret sorteret i stigende rækkefølge.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int arr[] = {1, 3, 5, 7, 9, 11, 13};\n    printf(\"%d\\n\", binary_search(arr, 7, 7));   // 3\n    printf(\"%d\\n\", binary_search(arr, 7, 1));   // 0\n    printf(\"%d\\n\", binary_search(arr, 7, 4));   // -1\n    return 0;\n}",
+      "expected_output": "3\n0\n-1",
+      "test_cases": [
+        {"input": "binary_search([1,3,5,7,9,11,13], 7, 7)", "expected": "3"},
+        {"input": "binary_search([1,3,5,7,9,11,13], 7, 1)", "expected": "0"},
+        {"input": "binary_search([1,3,5,7,9,11,13], 7, 4)", "expected": "-1"}
+      ],
+      "hints": [
+        "Brug to pointere: left = 0, right = n-1",
+        "Beregn midtpunkt: mid = (left + right) / 2",
+        "Sammenlign arr[mid] med target og juster left/right"
+      ],
+      "tags": ["binary_search", "loops", "arrays", "programming_task"]
+    },
+    {
+      "id": "prog_014",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 8,
+      "title": "Implementer string_reverse med loop",
+      "description": "Skriv en funktion med signaturen `void string_reverse(char *str)` der vender en string om in-place ved hjælp af en loop (IKKE rekursion).",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    char s1[] = \"hello\";\n    string_reverse(s1);\n    printf(\"%s\\n\", s1);  // \"olleh\"\n    \n    char s2[] = \"world\";\n    string_reverse(s2);\n    printf(\"%s\\n\", s2);  // \"dlrow\"\n    return 0;\n}",
+      "expected_output": "olleh\ndlrow",
+      "test_cases": [
+        {"input": "string_reverse('hello')", "expected": "olleh"},
+        {"input": "string_reverse('world')", "expected": "dlrow"}
+      ],
+      "hints": [
+        "Brug to pointere: start og end",
+        "Swap karakterer ved start og end",
+        "Flyt start fremad og end bagud indtil de mødes"
+      ],
+      "tags": ["strings", "loops", "in_place", "programming_task"],
+      "restrictions": ["CANNOT use recursion", "MUST use loops"]
+    },
+    {
+      "id": "prog_015",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer fil læsning og tælling",
+      "description": "Skriv en funktion med signaturen `int count_lines(const char *filename)` der åbner en fil, tæller antallet af linjer, og returnerer antallet.\n\nReturnér -1 hvis filen ikke kan åbnes.\n\nBrug fopen, fgets og fclose.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    // Test assumes a file 'test.txt' exists\n    int lines = count_lines(\"test.txt\");\n    printf(\"Lines: %d\\n\", lines);\n    return 0;\n}",
+      "expected_output": "Lines: <depends on file>",
+      "test_cases": [
+        {"input": "count_lines('test.txt')", "expected": "number of lines or -1"}
+      ],
+      "hints": [
+        "Brug fopen(filename, \"r\") til at åbne filen",
+        "Check om fopen returnerede NULL",
+        "Brug fgets i en loop til at læse linjer",
+        "Husk at kalde fclose(file)"
+      ],
+      "tags": ["file_io", "fopen", "fgets", "programming_task"]
+    },
+    {
+      "id": "prog_016",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer fil skrivning",
+      "description": "Skriv en funktion med signaturen `int write_numbers(const char *filename, int *arr, int n)` der skriver tallene i arrayet til en fil (et tal per linje).\n\nReturnér 0 hvis succesfuld, -1 hvis filen ikke kan åbnes.\n\nBrug fopen, fprintf og fclose.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int numbers[] = {10, 20, 30, 40};\n    int result = write_numbers(\"output.txt\", numbers, 4);\n    printf(\"Result: %d\\n\", result);  // 0 if successful\n    return 0;\n}",
+      "expected_output": "Result: 0",
+      "test_cases": [
+        {"input": "write_numbers('output.txt', [10,20,30,40], 4)", "expected": "0"}
+      ],
+      "hints": [
+        "Brug fopen(filename, \"w\") til at åbne filen for skrivning",
+        "Check om fopen returnerede NULL",
+        "Loop gennem arrayet og brug fprintf(file, \"%d\\n\", arr[i])",
+        "Husk at kalde fclose(file)"
+      ],
+      "tags": ["file_io", "fopen", "fprintf", "programming_task"]
+    },
+    {
+      "id": "prog_017",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 8,
+      "title": "Implementer matrix sum",
+      "description": "Skriv en funktion med signaturen `int matrix_sum(int matrix[][3], int rows)` der beregner summen af alle elementer i en 2D matrix.\n\nMatricen har altid 3 kolonner, men antallet af rækker varierer.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int m1[2][3] = {{1, 2, 3}, {4, 5, 6}};\n    printf(\"%d\\n\", matrix_sum(m1, 2));  // 21\n    \n    int m2[3][3] = {{1, 1, 1}, {2, 2, 2}, {3, 3, 3}};\n    printf(\"%d\\n\", matrix_sum(m2, 3));  // 18\n    return 0;\n}",
+      "expected_output": "21\n18",
+      "test_cases": [
+        {"input": "matrix_sum([[1,2,3],[4,5,6]], 2)", "expected": "21"},
+        {"input": "matrix_sum([[1,1,1],[2,2,2],[3,3,3]], 3)", "expected": "18"}
+      ],
+      "hints": [
+        "Brug nested loops: ydre loop for rækker, indre loop for kolonner",
+        "Initialiser sum til 0",
+        "Læg matrix[i][j] til sum for hver iteration"
+      ],
+      "tags": ["2d_arrays", "matrix", "loops", "programming_task"]
+    },
+    {
+      "id": "prog_018",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 7,
+      "title": "Implementer count_vowels",
+      "description": "Skriv en funktion med signaturen `int count_vowels(const char *str)` der tæller antallet af vokaler (a, e, i, o, u) i en string.\n\nIgnorér om vokalerne er store eller små bogstaver.",
+      "code_template": "#include <stdio.h>\n#include <ctype.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    printf(\"%d\\n\", count_vowels(\"hello\"));    // 2\n    printf(\"%d\\n\", count_vowels(\"AEIOU\"));    // 5\n    printf(\"%d\\n\", count_vowels(\"xyz\"));      // 0\n    return 0;\n}",
+      "expected_output": "2\n5\n0",
+      "test_cases": [
+        {"input": "count_vowels('hello')", "expected": "2"},
+        {"input": "count_vowels('AEIOU')", "expected": "5"},
+        {"input": "count_vowels('xyz')", "expected": "0"}
+      ],
+      "hints": [
+        "Loop gennem strengen karakter for karakter",
+        "Brug tolower() til at konvertere til små bogstaver",
+        "Check om karakteren er 'a', 'e', 'i', 'o', eller 'u'"
+      ],
+      "tags": ["strings", "loops", "counting", "programming_task"]
+    },
+    {
+      "id": "prog_019",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "medium",
+      "points": 8,
+      "title": "Implementer remove_duplicates",
+      "description": "Skriv en funktion med signaturen `int remove_duplicates(int arr[], int n)` der fjerner duplikater fra et sorteret array og returnerer den nye længde.\n\nArrayet er sorteret i stigende rækkefølge. Modificer arrayet in-place.",
+      "code_template": "#include <stdio.h>\n\n// Skriv din funktion her\n\n\nint main() {\n    int arr1[] = {1, 1, 2, 2, 3, 4, 4};\n    int len1 = remove_duplicates(arr1, 7);\n    printf(\"%d: \", len1);\n    for (int i = 0; i < len1; i++) printf(\"%d \", arr1[i]);\n    printf(\"\\n\");\n    \n    int arr2[] = {1, 2, 3, 4, 5};\n    int len2 = remove_duplicates(arr2, 5);\n    printf(\"%d: \", len2);\n    for (int i = 0; i < len2; i++) printf(\"%d \", arr2[i]);\n    printf(\"\\n\");\n    return 0;\n}",
+      "expected_output": "4: 1 2 3 4\n5: 1 2 3 4 5",
+      "test_cases": [
+        {"input": "remove_duplicates([1,1,2,2,3,4,4], 7)", "expected": "4"},
+        {"input": "remove_duplicates([1,2,3,4,5], 5)", "expected": "5"}
+      ],
+      "hints": [
+        "Brug two-pointer teknik",
+        "Hvis arr[i] != arr[i-1], kopier til næste unique position",
+        "Returnér antallet af unique elementer"
+      ],
+      "tags": ["arrays", "two_pointers", "in_place", "programming_task"]
+    },
+    {
+      "id": "prog_020",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer struct og array operations",
+      "description": "Definer en struct Student med felter: char name[50], int age, float grade.\n\nSkriv en funktion med signaturen `float average_grade(Student students[], int n)` der beregner gennemsnitskarakteren for et array af studerende.",
+      "code_template": "#include <stdio.h>\n\n// Definer Student struct her\n\n\n// Skriv average_grade funktion her\n\n\nint main() {\n    Student students[] = {\n        {\"Alice\", 20, 85.5},\n        {\"Bob\", 21, 92.0},\n        {\"Charlie\", 19, 78.5}\n    };\n    \n    printf(\"%.1f\\n\", average_grade(students, 3));  // 85.3\n    return 0;\n}",
+      "expected_output": "85.3",
+      "test_cases": [
+        {"input": "average_grade([{Alice,20,85.5},{Bob,21,92.0},{Charlie,19,78.5}], 3)", "expected": "85.3"}
+      ],
+      "hints": [
+        "Definer struct med typedef for nemhed",
+        "Loop gennem arrayet og sum alle grades",
+        "Divider summen med n for at få gennemsnittet"
+      ],
+      "tags": ["structs", "arrays", "loops", "programming_task"]
+    }
+  ]
+}

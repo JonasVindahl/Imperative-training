@@ -336,10 +336,16 @@
         }
 
         if (result.expected !== undefined) {
-            html += `<div class="answer-comparison">`;
-            html += `<div class="answer-box"><strong>Your Answer:</strong> <span class="answer-value">${result.received}</span></div>`;
-            html += `<div class="answer-box correct"><strong>Correct Answer:</strong> <span class="answer-value">${result.expected}</span></div>`;
-            html += `</div>`;
+            if (result.correct) {
+                html += `<div class="answer-comparison">`;
+                html += `<div class="answer-box correct"><strong>Your Answer:</strong> <span class="answer-value">${result.received}</span></div>`;
+                html += `</div>`;
+            } else {
+                html += `<div class="answer-comparison">`;
+                html += `<div class="answer-box"><strong>Your Answer:</strong> <span class="answer-value">${result.received}</span></div>`;
+                html += `<div class="answer-box correct"><strong>Correct Answer:</strong> <span class="answer-value">${result.expected}</span></div>`;
+                html += `</div>`;
+            }
         }
 
         if (result.test_results) {
