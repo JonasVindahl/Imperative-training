@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, jsonify
 from flask_login import login_required, current_user
 from services.adaptive import AdaptiveLearningService
+from services.question_loader import QuestionLoader
 from models import Attempt, Progress
 from datetime import datetime, timedelta
 
@@ -46,8 +47,19 @@ def stats():
     total_time = sum(a.time_spent for a in all_attempts)
     avg_time_per_question = total_time / len(all_attempts) if all_attempts else 0
 
-    # Category breakdown
+    # Category breakdown - initialize all categories
+    all_categories = AdaptiveLearningService.CATEGORIES
     category_stats = {}
+
+    # Initialize all categories with zero stats
+    for category in all_categories:
+        category_stats[category] = {
+            'correct': 0,
+            'total': 0,
+            'time': 0
+        }
+
+    # Fill in actual attempt data
     for attempt in all_attempts:
         if attempt.category not in category_stats:
             category_stats[attempt.category] = {
