@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add line numbers to code blocks
     const codeBlocks = document.querySelectorAll('[data-line-numbers]');
     codeBlocks.forEach(container => {
+        if (container.querySelector('.drop-zone')) {
+            return;
+        }
         const target = container.querySelector('code') || container;
         if (window.hljs && target.tagName === 'CODE') {
             window.hljs.highlightElement(target);

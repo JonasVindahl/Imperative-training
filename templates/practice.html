@@ -69,13 +69,27 @@
                 {% endfor %}
             </div>
 
-            {# Type 2: Multiple Choice #}
-            {% elif question.options %}
+            {# Type 2: Multiple Choice (Radio - single selection) #}
+            {% elif question.options and question.type != 'multiple_select' %}
             <div class="multiple-choice-options">
                 {% for option in question.options %}
                 <label class="option-label">
                     <input type="radio" name="answer" value="{{ loop.index0 | string }}" required>
-                    <span class="option-text"><strong>{{ ['A', 'B', 'C', 'D'][loop.index0] }})</strong> {{ option }}</span>
+                    <span class="option-text"><strong>{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }})</strong> {{ option }}</span>
+                </label>
+                {% endfor %}
+            </div>
+
+            {# Type 2b: Multiple Select (Checkbox - multiple selections) #}
+            {% elif question.type == 'multiple_select' %}
+            <div class="multiple-select-options">
+                <p class="instruction-text" style="margin-bottom: 1rem; font-weight: 600; color: var(--warning-color);">
+                    ⚠️ Marker ALLE korrekte svar (brug checkboxes):
+                </p>
+                {% for option in question.options %}
+                <label class="option-label checkbox-label">
+                    <input type="checkbox" name="answer_checkbox" value="{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }}" data-index="{{ loop.index0 }}">
+                    <span class="option-text"><strong>{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }})</strong> {{ option }}</span>
                 </label>
                 {% endfor %}
             </div>
@@ -342,18 +356,33 @@
             }
             answer = JSON.stringify(blanks);
         }
-        // Type 2: Multiple Choice
+        // Type 2: Multiple Choice or Multiple Select
         else {
-            const radioButtons = document.getElementsByName('answer');
-            if (radioButtons.length > 0) {
-                const selected = Array.from(radioButtons).find(rb => rb.checked);
-                if (!selected) {
-                    alert('Please select an answer');
+            // Check for multiple-select checkboxes first
+            const allCheckboxes = document.querySelectorAll('input[name="answer_checkbox"]');
+            if (allCheckboxes.length > 0) {
+                const checkboxes = document.querySelectorAll('input[name="answer_checkbox"]:checked');
+                if (checkboxes.length === 0) {
+                    alert('Please select at least one answer');
                     setSubmitState(submitBtn, 'idle');
                     return;
                 }
-                // Convert index to letter (0=A, 1=B, 2=C, 3=D)
-                answer = ['A', 'B', 'C', 'D'][parseInt(selected.value)];
+                const selectedValues = Array.from(checkboxes).map(cb => cb.value);
+                answer = JSON.stringify(selectedValues);
+            }
+            // Then check for radio buttons (single selection)
+            else {
+                const radioButtons = document.getElementsByName('answer');
+                if (radioButtons.length > 0) {
+                    const selected = Array.from(radioButtons).find(rb => rb.checked);
+                    if (!selected) {
+                        alert('Please select an answer');
+                        setSubmitState(submitBtn, 'idle');
+                        return;
+                    }
+                    // Convert index to letter (0=A, 1=B, 2=C, 3=D)
+                    answer = ['A', 'B', 'C', 'D'][parseInt(selected.value)];
+                }
             }
             // Type 3: Drag-and-Drop
             else if (document.querySelector('.drag-drop-section')) {

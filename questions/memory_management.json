@@ -1753,6 +1753,91 @@
         "external_fragmentation",
         "heap"
       ]
+    },
+    {
+      "id": "mem_046",
+      "category": "memory_management",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Mark ALL places where free() should be called",
+      "description": "Marker ALLE de steder i koden nedenfor, hvor free() skal kaldes for at undgå memory leaks:",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *p1 = malloc(sizeof(int));       // Line 5\n    int *p2 = malloc(sizeof(int) * 10);  // Line 6\n    char *str = malloc(100);             // Line 7\n    \n    *p1 = 42;\n    p2[0] = 10;\n    sprintf(str, \"Hello\");\n    \n    printf(\"%d %d %s\\n\", *p1, p2[0], str);\n    return 0;\n}",
+      "options": [
+        "Efter linje 5 (p1)",
+        "Efter linje 6 (p2)",
+        "Efter linje 7 (str)",
+        "Før linje 14 (return statement)"
+      ],
+      "correct_answer": ["D"],
+      "explanation": "Alle tre pointere (p1, p2, og str) skal frigives før programmet slutter. Det korrekte sted er før return-statement (option D). Man skal kalde free(p1), free(p2), og free(str) alle sammen før linje 14. Options A, B, og C er ikke korrekte fordi vi stadig bruger variablerne senere i programmet.",
+      "hints": [
+        "Alle malloc-kald skal have en tilsvarende free",
+        "free skal kaldes før programmet slutter",
+        "Men vi skal stadig bruge variablerne til printf"
+      ],
+      "tags": [
+        "free",
+        "memory_leak",
+        "malloc"
+      ]
+    },
+    {
+      "id": "mem_047",
+      "category": "memory_management",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Mark ALL places where free() should be called",
+      "description": "Marker ALLE de steder i funktionen nedenfor, hvor free() skal kaldes:",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint process(int n) {\n    int *data = malloc(n * sizeof(int));  // Line 5\n    if (data == NULL) {\n        return -1;                         // Line 7\n    }\n    \n    char *buffer = malloc(100);            // Line 10\n    if (buffer == NULL) {\n        return -1;                         // Line 12\n    }\n    \n    // Use data and buffer\n    sprintf(buffer, \"Processing %d items\", n);\n    \n    free(buffer);                          // Line 18\n    free(data);                            // Line 19\n    return 0;                              // Line 20\n}",
+      "options": [
+        "På linje 7 skal free(data) kaldes",
+        "På linje 12 skal free(data) kaldes",
+        "På linje 12 skal free(buffer) kaldes",
+        "Linje 18 og 19 er korrekte"
+      ],
+      "correct_answer": ["B", "D"],
+      "explanation": "På linje 12 skal free(data) kaldes før return, fordi data allerede er allokeret men buffer allocation fejlede. Dette er et klassisk memory leak i error-handling paths. Linje 18 og 19 er korrekte for den normale path. Linje 7 er OK fordi data==NULL på det tidspunkt (ingen allocation skete). Option C er forkert fordi buffer ikke blev allokeret successfully.",
+      "hints": [
+        "Tjek alle early return paths",
+        "Hvad er allokeret når hver return bliver nået?",
+        "Error handling skal også frigive hukommelse"
+      ],
+      "tags": [
+        "free",
+        "memory_leak",
+        "error_handling",
+        "early_return"
+      ]
+    },
+    {
+      "id": "mem_048",
+      "category": "memory_management",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Marker ALLE korrekte udsagn om memory management",
+      "description": "Vælg ALLE korrekte udsagn om dynamisk hukommelsesallokering i C:",
+      "code_template": "",
+      "options": [
+        "malloc() initialiserer allokeret hukommelse til 0",
+        "calloc() initialiserer allokeret hukommelse til 0",
+        "free(NULL) er lovligt og sikkert",
+        "realloc() bevarer eksisterende data når størrelsen øges",
+        "sizeof(pointer) giver størrelsen af allokeret hukommelse"
+      ],
+      "correct_answer": ["B", "C", "D"],
+      "explanation": "B er korrekt: calloc() nulstiller hukommelsen. C er korrekt: free(NULL) er eksplicit tilladt i C-standarden og gør ingenting. D er korrekt: realloc() bevarer data op til minimum af gammel og ny størrelse. A er forkert: malloc() efterlader hukommelsen uinitialiseret. E er forkert: sizeof(pointer) giver størrelsen af selve pointeren (8 bytes på 64-bit systemer), ikke det allokerede område.",
+      "hints": [
+        "calloc står for 'clear allocation'",
+        "C-standarden tillader free(NULL)",
+        "sizeof på en pointer giver pointer-størrelsen"
+      ],
+      "tags": [
+        "malloc",
+        "calloc",
+        "free",
+        "realloc",
+        "sizeof"
+      ]
     }
   ]
 }

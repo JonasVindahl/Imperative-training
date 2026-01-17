@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, session
+from flask import Flask, render_template, redirect, url_for, flash, session, request, jsonify
 from flask_login import LoginManager, current_user
 from config import Config
 from models import db, User
@@ -15,6 +15,14 @@ db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'auth.login'
+
+
+@login_manager.unauthorized_handler
+def unauthorized():
+    wants_json = request.accept_mimetypes.accept_json or request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+    if wants_json:
+        return jsonify({'error': 'Authentication required'}), 401
+    return redirect(url_for('auth.login'))
 
 
 @login_manager.user_loader
@@ -46,12 +54,16 @@ def index():
 
 @app.errorhandler(404)
 def not_found_error(error):
+    if request.accept_mimetypes.accept_json:
+        return jsonify({'error': 'Not found'}), 404
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def internal_error(error):
     db.session.rollback()
+    if request.accept_mimetypes.accept_json:
+        return jsonify({'error': 'Internal server error'}), 500
     return render_template('500.html'), 500
 
 

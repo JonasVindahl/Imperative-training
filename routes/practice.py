@@ -126,10 +126,12 @@ def question():
 @login_required
 def submit_answer():
     """Submit and grade an answer"""
-    data = request.json
+    data = request.get_json(silent=True) or {}
     question_id = data.get('question_id')
     user_answer = data.get('answer', '')
     hints_used = data.get('hints_used', 0)
+    if not question_id:
+        return jsonify({'error': 'Missing question_id'}), 400
 
     # Load question
     question = question_loader.get_question_by_id(question_id)

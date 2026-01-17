@@ -13,19 +13,25 @@ class AdaptiveLearningService:
         'structs',
         'pointers',
         'recursion',
-        'control_flow'
+        'control_flow',
+        'file_io',
+        'fill_blanks',
+        'drag_drop',
+        'recursive_trace',
+        'programming_tasks'
     ]
 
     def __init__(self, user_id: int):
         self.user_id = user_id
 
-    def get_recommended_categories(self) -> List[str]:
+    def get_recommended_categories(self, categories: List[str] = None) -> List[str]:
         """
         Get the 3 weakest categories for the user
 
         Returns:
             List of category names sorted by weakest first
         """
+        categories = categories or self.CATEGORIES
         progress_records = Progress.query.filter_by(user_id=self.user_id).all()
 
         # Calculate accuracy for each category
@@ -34,7 +40,7 @@ class AdaptiveLearningService:
             category_scores[record.category] = record.accuracy
 
         # Add categories with no attempts (0% accuracy)
-        for category in self.CATEGORIES:
+        for category in categories:
             if category not in category_scores:
                 category_scores[category] = 0
 
@@ -55,7 +61,8 @@ class AdaptiveLearningService:
         Returns:
             List of question dictionaries
         """
-        weak_categories = self.get_recommended_categories()
+        all_categories = list(questions_pool.keys()) or self.CATEGORIES
+        weak_categories = self.get_recommended_categories(all_categories)
 
         # 70% weak areas, 30% review from other areas
         weak_count = int(session_size * 0.7)
@@ -86,13 +93,13 @@ class AdaptiveLearningService:
         session_questions.extend(pick_unique(weak_categories, weak_count))
 
         # Select review questions from other categories
-        review_categories = [cat for cat in self.CATEGORIES if cat not in weak_categories]
+        review_categories = [cat for cat in all_categories if cat not in weak_categories]
         session_questions.extend(pick_unique(review_categories, review_count))
 
         # Fill any remaining slots from all categories without repeats
         if len(session_questions) < session_size:
             session_questions.extend(
-                pick_unique(self.CATEGORIES, session_size - len(session_questions))
+                pick_unique(all_categories, session_size - len(session_questions))
             )
 
         # Shuffle to mix weak and review questions
@@ -100,7 +107,7 @@ class AdaptiveLearningService:
 
         return session_questions[:session_size]
 
-    def get_progress_summary(self) -> Dict:
+    def get_progress_summary(self, categories: List[str] = None) -> Dict:
         """
         Get overall progress summary for the user
 
@@ -126,7 +133,8 @@ class AdaptiveLearningService:
             }
 
         # Add categories with no attempts
-        for category in self.CATEGORIES:
+        categories = categories or self.CATEGORIES
+        for category in categories:
             if category not in category_progress:
                 category_progress[category] = {
                     'attempted': 0,
@@ -135,7 +143,7 @@ class AdaptiveLearningService:
                     'last_practiced': None
                 }
 
-        weak_areas = self.get_recommended_categories()
+        weak_areas = self.get_recommended_categories(categories)
 
         return {
             'overall_accuracy': overall_accuracy,

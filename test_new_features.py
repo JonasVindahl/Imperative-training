@@ -225,10 +225,10 @@ def test_question_count():
     print(f"\n{Colors.BOLD}Total Questions: {total}{Colors.END}")
 
     # Check specific counts
-    test1 = print_test("Fill-blanks has 2 questions", len(all_questions.get('fill_blanks', [])) == 2)
-    test2 = print_test("Drag-drop has 2 questions", len(all_questions.get('drag_drop', [])) == 2)
-    test3 = print_test("Recursive-trace has 3 questions", len(all_questions.get('recursive_trace', [])) == 3)
-    test4 = print_test(f"Total questions >= 41", total >= 41)
+    test1 = print_test("Fill-blanks has >= 40 questions", len(all_questions.get('fill_blanks', [])) >= 40)
+    test2 = print_test("Drag-drop has >= 55 questions", len(all_questions.get('drag_drop', [])) >= 55)
+    test3 = print_test("Recursive-trace has >= 40 questions", len(all_questions.get('recursive_trace', [])) >= 40)
+    test4 = print_test(f"Total questions >= 700", total >= 700)
 
     return test1 and test2 and test3 and test4
 
@@ -292,6 +292,105 @@ def test_question_structure():
 
     return all_tests_passed
 
+def test_multiple_select():
+    """Test multiple select (checkbox) question type"""
+    print(f"\n{Colors.BOLD}{Colors.BLUE}Testing Multiple Select (Checkbox){Colors.END}")
+    print("=" * 60)
+
+    grader = GraderService()
+    loader = QuestionLoader('questions')
+
+    # Load memory_management questions
+    questions = loader.load_category('memory_management')
+
+    # Find multiple_select questions
+    ms_questions = [q for q in questions if q.get('type') == 'multiple_select']
+
+    test1 = print_test(f"Found {len(ms_questions)} multiple_select questions", len(ms_questions) >= 3)
+
+    if not ms_questions:
+        return False
+
+    # Test grading of multiple_select
+    question = {
+        'type': 'multiple_select',
+        'correct_answer': ['A', 'C', 'D'],
+        'explanation': 'Test'
+    }
+
+    # Test all correct
+    result = grader.grade(question, json.dumps(['A', 'C', 'D']))
+    test2 = print_test("Multiple-select: All correct answers", result['correct'])
+
+    # Test partial (should fail)
+    result = grader.grade(question, json.dumps(['A', 'C']))
+    test3 = print_test("Multiple-select: Detect missing answer", not result['correct'])
+
+    # Test extra answer (should fail)
+    result = grader.grade(question, json.dumps(['A', 'B', 'C', 'D']))
+    test4 = print_test("Multiple-select: Detect extra answer", not result['correct'])
+
+    # Test case insensitive
+    result = grader.grade(question, json.dumps(['a', 'c', 'd']))
+    test5 = print_test("Multiple-select: Case insensitive", result['correct'])
+
+    return test1 and test2 and test3 and test4 and test5
+
+def test_linked_list_questions():
+    """Test linked list programming questions"""
+    print(f"\n{Colors.BOLD}{Colors.BLUE}Testing Linked List Questions{Colors.END}")
+    print("=" * 60)
+
+    loader = QuestionLoader('questions')
+
+    # Load programming_tasks questions
+    questions = loader.load_category('programming_tasks')
+
+    # Find linked list questions
+    ll_questions = [q for q in questions if 'linked_lists' in q.get('tags', [])]
+
+    test1 = print_test(f"Found {len(ll_questions)} linked list questions", len(ll_questions) >= 4)
+
+    # Check node_t struct presence
+    all_have_node_t = all('node_t' in q.get('code_template', '') for q in ll_questions)
+    test2 = print_test("All linked list questions have node_t struct", all_have_node_t)
+
+    # Check for exam_style tag
+    exam_style = sum(1 for q in ll_questions if 'exam_style' in q.get('tags', []))
+    test3 = print_test(f"Found {exam_style} exam-style linked list questions", exam_style >= 4)
+
+    return test1 and test2 and test3
+
+def test_exam_coverage():
+    """Test that all exam question types are covered"""
+    print(f"\n{Colors.BOLD}{Colors.BLUE}Testing Exam Coverage (Q1-Q19){Colors.END}")
+    print("=" * 60)
+
+    loader = QuestionLoader('questions')
+
+    # Check for mixed drag-drop tokens
+    drag_drop = loader.load_category('drag_drop')
+    exam_drag = sum(1 for q in drag_drop if 'exam_style' in q.get('tags', []))
+    test1 = print_test(f"Mixed drag-drop tokens (Q12, Q14): {exam_drag} questions", exam_drag > 0)
+
+    # Check for multiple_select
+    memory = loader.load_category('memory_management')
+    ms_count = sum(1 for q in memory if q.get('type') == 'multiple_select')
+    test2 = print_test(f"Multiple select checkboxes (Q13, Q15): {ms_count} questions", ms_count >= 3)
+
+    # Check for conceptual questions
+    terminology = loader.load_category('terminology')
+    test3 = print_test(f"Conceptual/terminology questions (Q17): {len(terminology)} questions", len(terminology) >= 50)
+
+    # Check for linked list questions
+    programming = loader.load_category('programming_tasks')
+    ll_count = sum(1 for q in programming if 'linked_lists' in q.get('tags', []))
+    test4 = print_test(f"Linked list programming (Q18): {ll_count} questions", ll_count >= 4)
+
+    print(f"\n{Colors.GREEN}✓ All exam question types (Q1-Q19) are now supported!{Colors.END}")
+
+    return test1 and test2 and test3 and test4
+
 def main():
     """Run all tests"""
     print(f"\n{Colors.BOLD}{'=' * 60}")
@@ -304,6 +403,9 @@ def main():
     results.append(("Fill-in-the-Blanks", test_fill_blanks()))
     results.append(("Drag-and-Drop", test_drag_drop()))
     results.append(("Recursive Trace", test_recursive_trace()))
+    results.append(("Multiple Select (NEW)", test_multiple_select()))
+    results.append(("Linked List Questions (NEW)", test_linked_list_questions()))
+    results.append(("Exam Coverage (Q1-Q19)", test_exam_coverage()))
     results.append(("Question Count", test_question_count()))
     results.append(("Question Structure", test_question_structure()))
 

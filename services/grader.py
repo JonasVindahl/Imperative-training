@@ -9,6 +9,14 @@ class GraderService:
     def __init__(self):
         self.compiler = CompilerService()
 
+    def _normalize_output(self, text: str) -> str:
+        """Normalize multiline output by trimming line endings and trailing spaces."""
+        if text is None:
+            return ''
+        lines = str(text).splitlines()
+        cleaned = [line.rstrip() for line in lines]
+        return '\n'.join(cleaned).strip()
+
     def grade_output_prediction(self, question: Dict, user_answer: str) -> Dict:
         """Grade output prediction exercises"""
         correct_output = question['correct_answer'].strip()
@@ -46,7 +54,25 @@ class GraderService:
         results = []
         all_passed = True
 
+        normalized_cases = []
         for test_case in test_cases:
+            expected_output = test_case.get('expected_output')
+            if expected_output is None:
+                continue
+            normalized_cases.append({
+                'input': test_case.get('input', ''),
+                'expected_output': expected_output
+            })
+
+        if not normalized_cases:
+            expected_output = question.get('expected_output')
+            if expected_output is not None:
+                normalized_cases.append({
+                    'input': '',
+                    'expected_output': expected_output
+                })
+
+        for test_case in normalized_cases:
             # Replace placeholder with user's code
             full_code = question['code_template'].replace('/* YOUR CODE HERE */', user_code)
 
@@ -62,8 +88,8 @@ class GraderService:
                     'passed': False
                 })
             else:
-                output = result['stdout'].strip()
-                expected = test_case['expected_output'].strip()
+                output = self._normalize_output(result['stdout'])
+                expected = self._normalize_output(test_case['expected_output'])
                 passed = output == expected
 
                 if not passed:
@@ -75,6 +101,14 @@ class GraderService:
                     'received': output,
                     'passed': passed
                 })
+
+        if not results:
+            return {
+                'correct': False,
+                'test_results': [],
+                'explanation': question.get('explanation', ''),
+                'error': 'No valid test cases or expected output configured.'
+            }
 
         return {
             'correct': all_passed,
@@ -97,6 +131,36 @@ class GraderService:
             'expected': correct,
             'received': user_answer,
             'explanation': question.get('explanation', '')
+        }
+
+    def grade_multiple_select(self, question: Dict, user_answer: str) -> Dict:
+        """Grade multiple select (checkbox) questions - select ALL correct answers"""
+        import json
+        try:
+            # user_answer is JSON array: ["A", "B", "D"]
+            user_selections = set(json.loads(user_answer))
+        except:
+            user_selections = set()
+
+        # correct_answer can be string "A,B,D" or list ["A", "B", "D"]
+        correct_answer = question['correct_answer']
+        if isinstance(correct_answer, str):
+            correct_selections = set([a.strip().upper() for a in correct_answer.split(',')])
+        else:
+            correct_selections = set([a.strip().upper() for a in correct_answer])
+
+        # Normalize user selections
+        user_selections = set([a.strip().upper() for a in user_selections])
+
+        is_correct = user_selections == correct_selections
+
+        return {
+            'correct': is_correct,
+            'expected': ','.join(sorted(correct_selections)),
+            'received': ','.join(sorted(user_selections)),
+            'explanation': question.get('explanation', ''),
+            'correct_selections': list(correct_selections),
+            'user_selections': list(user_selections)
         }
 
     def grade_memory_tracing(self, question: Dict, user_answer: str) -> Dict:
@@ -275,6 +339,7 @@ class GraderService:
             'code_completion': self.grade_code_completion,
             'code_writing': self.grade_code_writing,
             'multiple_choice': self.grade_multiple_choice,
+            'multiple_select': self.grade_multiple_select,
             'memory_tracing': self.grade_memory_tracing,
             'struct_size': self.grade_struct_size,
             'fill_blanks': self.grade_fill_blanks,

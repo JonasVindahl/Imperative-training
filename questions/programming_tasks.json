@@ -698,6 +698,156 @@
         "loops",
         "programming_task"
       ]
+    },
+    {
+      "id": "prog_021",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 12,
+      "title": "Implementer linked list insertion (Exam Style)",
+      "description": "Implementer en funktion med signaturen:\n\n`void insert_sorted(node_t **head, int value)`\n\nder indsætter en ny node med den givne værdi i en sorteret linked list, så listen forbliver sorteret.\n\nLinked list strukturen er defineret som:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nDu skal allokere hukommelse til den nye node med malloc.",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\n/* YOUR CODE HERE */\n\n\nvoid print_list(node_t *head) {\n    while (head) {\n        printf(\"%d \", head->data);\n        head = head->next;\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    node_t *list = NULL;\n    \n    insert_sorted(&list, 3);\n    insert_sorted(&list, 1);\n    insert_sorted(&list, 5);\n    insert_sorted(&list, 2);\n    \n    print_list(list);  // Should print: 1 2 3 5\n    return 0;\n}",
+      "expected_output": "1 2 3 5",
+      "test_cases": [
+        {
+          "input": "insert_sorted on empty list with 3",
+          "expected_output": "3"
+        },
+        {
+          "input": "insert_sorted with 1,3,5,2",
+          "expected_output": "1 2 3 5"
+        }
+      ],
+      "hints": [
+        "Håndter tre tilfælde: tom liste, indsæt først, indsæt i midten/slutningen",
+        "Brug malloc(sizeof(node_t)) til at allokere ny node",
+        "Opdater head pointer gennem **head hvis nødvendigt",
+        "Husk at sætte new_node->next korrekt"
+      ],
+      "tags": [
+        "linked_lists",
+        "pointers",
+        "malloc",
+        "sorting",
+        "programming_task",
+        "exam_style"
+      ],
+      "restrictions": [
+        "MUST use malloc to allocate nodes",
+        "MUST maintain sorted order"
+      ]
+    },
+    {
+      "id": "prog_022",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 12,
+      "title": "Implementer linked list remove duplicates (Exam Style)",
+      "description": "Implementer en funktion med signaturen:\n\n`void remove_duplicates(node_t **head)`\n\nder fjerner alle duplikerede værdier fra en sorteret linked list, så hver værdi kun forekommer én gang.\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nDu skal frigive hukommelsen for duplikerede nodes med free.",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nvoid insert_end(node_t **head, int value) {\n    node_t *new_node = malloc(sizeof(node_t));\n    new_node->data = value;\n    new_node->next = NULL;\n    \n    if (*head == NULL) {\n        *head = new_node;\n        return;\n    }\n    \n    node_t *curr = *head;\n    while (curr->next) curr = curr->next;\n    curr->next = new_node;\n}\n\n/* YOUR CODE HERE */\n\n\nvoid print_list(node_t *head) {\n    while (head) {\n        printf(\"%d \", head->data);\n        head = head->next;\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    node_t *list = NULL;\n    insert_end(&list, 1);\n    insert_end(&list, 1);\n    insert_end(&list, 2);\n    insert_end(&list, 3);\n    insert_end(&list, 3);\n    insert_end(&list, 3);\n    insert_end(&list, 4);\n    \n    remove_duplicates(&list);\n    print_list(list);  // Should print: 1 2 3 4\n    return 0;\n}",
+      "expected_output": "1 2 3 4",
+      "test_cases": [
+        {
+          "input": "remove_duplicates([1,1,2,3,3,3,4])",
+          "expected_output": "1 2 3 4"
+        }
+      ],
+      "hints": [
+        "Loop gennem listen og sammenlign current->data med current->next->data",
+        "Hvis ens, fjern current->next node",
+        "Husk at kalde free() på den fjernede node",
+        "Opdater current->next til at springe over duplikaten"
+      ],
+      "tags": [
+        "linked_lists",
+        "pointers",
+        "free",
+        "memory_management",
+        "programming_task",
+        "exam_style"
+      ],
+      "restrictions": [
+        "MUST free duplicate nodes",
+        "List is sorted"
+      ]
+    },
+    {
+      "id": "prog_023",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 12,
+      "title": "Implementer linked list find nth from end (Exam Style)",
+      "description": "Implementer en funktion med signaturen:\n\n`int find_nth_from_end(node_t *head, int n)`\n\nder returnerer værdien af den n'te node fra slutningen af listen. Hvis n er større end listens længde, returner -1.\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nEksempel: I listen 1->2->3->4->5, er find_nth_from_end(head, 2) = 4 (den 2. node fra slutningen).",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nvoid insert_end(node_t **head, int value) {\n    node_t *new_node = malloc(sizeof(node_t));\n    new_node->data = value;\n    new_node->next = NULL;\n    \n    if (*head == NULL) {\n        *head = new_node;\n        return;\n    }\n    \n    node_t *curr = *head;\n    while (curr->next) curr = curr->next;\n    curr->next = new_node;\n}\n\n/* YOUR CODE HERE */\n\n\nint main() {\n    node_t *list = NULL;\n    insert_end(&list, 1);\n    insert_end(&list, 2);\n    insert_end(&list, 3);\n    insert_end(&list, 4);\n    insert_end(&list, 5);\n    \n    printf(\"%d\\n\", find_nth_from_end(list, 1));  // 5\n    printf(\"%d\\n\", find_nth_from_end(list, 2));  // 4\n    printf(\"%d\\n\", find_nth_from_end(list, 5));  // 1\n    printf(\"%d\\n\", find_nth_from_end(list, 10)); // -1\n    return 0;\n}",
+      "expected_output": "5\n4\n1\n-1",
+      "test_cases": [
+        {
+          "input": "find_nth_from_end([1,2,3,4,5], 1)",
+          "expected_output": "5"
+        },
+        {
+          "input": "find_nth_from_end([1,2,3,4,5], 2)",
+          "expected_output": "4"
+        },
+        {
+          "input": "find_nth_from_end([1,2,3,4,5], 5)",
+          "expected_output": "1"
+        },
+        {
+          "input": "find_nth_from_end([1,2,3,4,5], 10)",
+          "expected_output": "-1"
+        }
+      ],
+      "hints": [
+        "Brug two-pointer teknik: flyt en pointer n steps frem først",
+        "Derefter flyt begge pointere samtidig indtil den forreste når slutningen",
+        "Den bageste pointer vil nu være ved n'te node fra slutningen",
+        "Håndter edge case hvor n > list length"
+      ],
+      "tags": [
+        "linked_lists",
+        "pointers",
+        "two_pointers",
+        "programming_task",
+        "exam_style"
+      ]
+    },
+    {
+      "id": "prog_024",
+      "category": "programming_tasks",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 12,
+      "title": "Implementer linked list reverse (Exam Style)",
+      "description": "Implementer en funktion med signaturen:\n\n`void reverse_list(node_t **head)`\n\nder vender en linked list om in-place (uden at allokere nye nodes).\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nEksempel: 1->2->3->4->5 bliver til 5->4->3->2->1",
+      "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nvoid insert_end(node_t **head, int value) {\n    node_t *new_node = malloc(sizeof(node_t));\n    new_node->data = value;\n    new_node->next = NULL;\n    \n    if (*head == NULL) {\n        *head = new_node;\n        return;\n    }\n    \n    node_t *curr = *head;\n    while (curr->next) curr = curr->next;\n    curr->next = new_node;\n}\n\n/* YOUR CODE HERE */\n\n\nvoid print_list(node_t *head) {\n    while (head) {\n        printf(\"%d \", head->data);\n        head = head->next;\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    node_t *list = NULL;\n    insert_end(&list, 1);\n    insert_end(&list, 2);\n    insert_end(&list, 3);\n    insert_end(&list, 4);\n    insert_end(&list, 5);\n    \n    printf(\"Original: \");\n    print_list(list);\n    \n    reverse_list(&list);\n    \n    printf(\"Reversed: \");\n    print_list(list);  // Should print: 5 4 3 2 1\n    return 0;\n}",
+      "expected_output": "Original: 1 2 3 4 5\nReversed: 5 4 3 2 1",
+      "test_cases": [
+        {
+          "input": "reverse_list([1,2,3,4,5])",
+          "expected_output": "5 4 3 2 1"
+        }
+      ],
+      "hints": [
+        "Brug tre pointere: prev, current, next",
+        "Loop gennem listen og vend hver node's next pointer",
+        "Opdater head til at pege på den tidligere sidste node",
+        "Håndter edge case: tom liste eller liste med én node"
+      ],
+      "tags": [
+        "linked_lists",
+        "pointers",
+        "in_place",
+        "programming_task",
+        "exam_style"
+      ],
+      "restrictions": [
+        "MUST reverse in-place",
+        "CANNOT allocate new nodes"
+      ]
     }
   ]
 }
