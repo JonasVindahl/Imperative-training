@@ -32,7 +32,8 @@ class QuestionLoader:
             'fill_blanks',
             'drag_drop',
             'recursive_trace',
-            'programming_tasks'
+            'programming_tasks',
+            'terminology'
         ]
 
         questions = {}
