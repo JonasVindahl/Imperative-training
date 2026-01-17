@@ -1,6 +1,6 @@
 # C Programming Practice System
 
-Interactive web-based platform for learning C programming with **264 questions** across 11 categories.
+Interactive web-based platform for learning C programming with **620 questions** across 11 categories.
 
 ## 🚀 Quick Start
 
@@ -11,7 +11,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
 ```
-Access at: `http://localhost:5067`
+Access at: `http://localhost:8000`
 
 ### TrueNAS SCALE 24.10 Deployment
 
@@ -24,7 +24,7 @@ scp -r . root@TRUENAS_IP:/mnt/MainPool/Apps/c-practice
 ssh root@TRUENAS_IP
 cd /mnt/MainPool/Apps/c-practice && ./deployment/DEPLOY_TRUENAS_SIMPLE.sh
 
-# 3. Access at http://TRUENAS_IP:5067
+# 3. Access at http://TRUENAS_IP:8000
 ```
 
 **See full guide:** [README_TRUENAS.md](README_TRUENAS.md)
@@ -33,7 +33,7 @@ cd /mnt/MainPool/Apps/c-practice && ./deployment/DEPLOY_TRUENAS_SIMPLE.sh
 
 ## 📚 Features
 
-- ✅ **264 questions** across 11 categories
+- ✅ **620 questions** across 11 categories
 - ✅ **5 question types**: Multiple choice, Fill-in-the-blanks, Drag-and-drop, Recursive trace
 - ✅ **Bilingual**: English + Danish (faglige begreber)
 - ✅ **Safe C compilation**: Sandboxed GCC execution
@@ -44,17 +44,17 @@ cd /mnt/MainPool/Apps/c-practice && ./deployment/DEPLOY_TRUENAS_SIMPLE.sh
 
 | Category | Questions | Topics |
 |----------|-----------|--------|
-| Memory Management | 20 | malloc, free, calloc, realloc, leaks |
-| Pointers | 23 | Dereferencing, arithmetic, aliasing, const, arrays |
-| Strings | 29 | strlen, strcpy, strcat, strcmp, scanf/printf |
-| Structs | 23 | Member access, padding, alignment, pointers, arrays |
-| Integer Division | 24 | Truncation, modulo, rounding, bitwise operators |
-| Recursion | 23 | Base cases, stack frames, tail recursion, GCD |
-| Control Flow | 32 | Loops, switch, break, enums, scope, assertions |
-| File I/O | 6 | fopen, fgets, scanf, fprintf, EOF detection |
-| Fill-in-the-Blanks | 35 | Professional terminology (EN/DA) |
-| Drag-and-Drop | 25 | Code assembly exercises |
-| Recursive Trace | 24 | Function call tracing |
+| Memory Management | 65 | malloc, free, calloc, realloc, leaks, dangling pointers |
+| Pointers | 65 | Dereferencing, arithmetic, function pointers, void*, const |
+| Strings | 70 | strlen, strcpy, strcat, strcmp, strtok, sprintf, safety |
+| Structs | 65 | Padding, bit fields, flexible arrays, anonymous, alignment |
+| Integer Division | 65 | Bitwise operators, shifts, bit manipulation, two's complement |
+| Recursion | 65 | Tree traversal, backtracking, memoization, tail recursion |
+| Control Flow | 65 | Loops, switch, goto, short-circuit, Duff's device |
+| File I/O | 40 | fopen modes, fread/fwrite, fseek/ftell, buffering |
+| Fill-in-the-Blanks | 40 | Professional terminology (EN/DA) |
+| Drag-and-Drop | 40 | Code assembly exercises |
+| Recursive Trace | 40 | Function call tracing |
 
 ---
 
@@ -90,18 +90,18 @@ cd /mnt/MainPool/Apps/c-practice && ./deployment/DEPLOY_TRUENAS_SIMPLE.sh
 ├── static/               # CSS, images
 │   └── css/style.css    # Includes drag-drop, fill-blanks styling
 │
-├── questions/            # Question bank (264 questions)
-│   ├── memory_management.json (20 questions)
-│   ├── pointers.json (23 questions)
-│   ├── strings.json (29 questions)
-│   ├── structs.json (23 questions)
-│   ├── integer_division.json (24 questions)
-│   ├── recursion.json (23 questions)
-│   ├── control_flow.json (32 questions)
-│   ├── file_io.json (6 questions)
-│   ├── fill_blanks.json (35 questions - EN/DA)
-│   ├── drag_drop.json (25 questions)
-│   └── recursive_trace.json (24 questions)
+├── questions/            # Question bank (620 questions)
+│   ├── memory_management.json (65 questions)
+│   ├── pointers.json (65 questions)
+│   ├── strings.json (70 questions)
+│   ├── structs.json (65 questions)
+│   ├── integer_division.json (65 questions)
+│   ├── recursion.json (65 questions)
+│   ├── control_flow.json (65 questions)
+│   ├── file_io.json (40 questions)
+│   ├── fill_blanks.json (40 questions - EN/DA)
+│   ├── drag_drop.json (40 questions)
+│   └── recursive_trace.json (40 questions)
 │
 ├── deployment/           # Deployment files
 │   ├── DEPLOY_TRUENAS_SIMPLE.sh
@@ -218,7 +218,7 @@ Automatic initialization on first run. Creates:
 
 ## 📊 Statistics
 
-- **Total Questions**: 264
+- **Total Questions**: 620
 - **Question Types**: 5
 - **Categories**: 11
 - **Languages**: English + Danish
@@ -226,10 +226,10 @@ Automatic initialization on first run. Creates:
 
 ### Question Distribution
 
-- Multiple Choice: 180 (68.2%)
-- Fill-in-the-Blanks: 35 (13.3%)
-- Drag-and-Drop: 25 (9.5%)
-- Recursive Trace: 24 (9.1%)
+- Multiple Choice: 500 (80.6%)
+- Fill-in-the-Blanks: 40 (6.5%)
+- Drag-and-Drop: 40 (6.5%)
+- Recursive Trace: 40 (6.5%)
 
 ---
 
@@ -257,7 +257,7 @@ python app.py
 Use Gunicorn + NGINX:
 ```bash
 pip install gunicorn
-gunicorn -w 4 -b 0.0.0.0:5067 app:app
+gunicorn -w 4 -b 0.0.0.0:8000 app:app
 ```
 
 ---
@@ -298,6 +298,6 @@ Install GCC:
 
 ---
 
-**Status**: ✅ Production Ready | **Questions**: 264 | **Version**: 2.1
+**Status**: ✅ Production Ready | **Questions**: 620 | **Version**: 3.0
 
 Built with ❤️ for C programming education

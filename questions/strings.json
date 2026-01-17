@@ -776,6 +776,1092 @@
         "ctype",
         "character_functions"
       ]
+    },
+    {
+      "id": "str_035",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strlen Result",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[] = \"C\";\n    printf(\"%zu\\n\", strlen(s));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "The string \"C\" has length 1 (excluding the null terminator).",
+      "hints": [
+        "strlen excludes '\\0'",
+        "\"C\" is one character",
+        "Result is 1"
+      ],
+      "tags": [
+        "strlen",
+        "basics"
+      ]
+    },
+    {
+      "id": "str_036",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "String Literal Size",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%zu\\n\", sizeof(\"hi\"));\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "String literals include the null terminator, so \"hi\" has size 3.",
+      "hints": [
+        "Includes '\\0'",
+        "h and i plus terminator",
+        "Size is 3"
+      ],
+      "tags": [
+        "sizeof",
+        "string_literals"
+      ]
+    },
+    {
+      "id": "str_037",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strncpy Behavior",
+      "description": "What is the issue with this code?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char dest[4];\n    strncpy(dest, \"hello\", sizeof(dest));\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "No issue",
+        "dest may not be null-terminated",
+        "Compilation error",
+        "strncpy always null-terminates"
+      ],
+      "correct_answer": "B",
+      "explanation": "strncpy does not guarantee a null terminator if the source is longer than the buffer.",
+      "hints": [
+        "Buffer size is 4",
+        "Source is longer",
+        "No guaranteed '\\0'"
+      ],
+      "tags": [
+        "strncpy",
+        "null_terminator"
+      ]
+    },
+    {
+      "id": "str_038",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strcmp Result",
+      "description": "What does strcmp return when strings are equal?",
+      "code_template": "strcmp(\"abc\", \"abc\");",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Undefined"
+      ],
+      "correct_answer": "A",
+      "explanation": "strcmp returns 0 when strings are equal.",
+      "hints": [
+        "strcmp returns 0 on equality",
+        "Equal strings",
+        "Result is 0"
+      ],
+      "tags": [
+        "strcmp",
+        "comparison"
+      ]
+    },
+    {
+      "id": "str_039",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strcat Destination Size",
+      "description": "What is required for this code to be safe?",
+      "code_template": "char dest[10] = \"Hi\";\nchar src[] = \"There\";\nstrcat(dest, src);",
+      "options": [
+        "dest must be at least 7 bytes",
+        "dest must be at least 8 bytes",
+        "dest must be at least 9 bytes",
+        "dest must be at least 10 bytes"
+      ],
+      "correct_answer": "B",
+      "explanation": "\"Hi\" has length 2 and \"There\" has length 5, so total is 7 plus one null terminator = 8 bytes.",
+      "hints": [
+        "Hi is 3 bytes incl. '\\0'",
+        "There is 6 bytes incl. '\\0'",
+        "Need 2+5+1 = 8"
+      ],
+      "tags": [
+        "strcat",
+        "buffer_size"
+      ]
+    },
+    {
+      "id": "str_040",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "toupper Result",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <ctype.h>\n\nint main() {\n    char c = 'b';\n    printf(\"%c\\n\", toupper(c));\n    return 0;\n}",
+      "options": [
+        "b",
+        "B",
+        "98",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "toupper converts lowercase to uppercase. 'b' becomes 'B'.",
+      "hints": [
+        "toupper uppercases",
+        "b -> B",
+        "Prints B"
+      ],
+      "tags": [
+        "ctype",
+        "toupper"
+      ]
+    },
+    {
+      "id": "str_041",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strchr Result",
+      "description": "What does strchr return when the character is found?",
+      "code_template": "char *p = strchr(\"hello\", 'l');",
+      "options": [
+        "NULL",
+        "Pointer to the first 'l'",
+        "Index of 'l'",
+        "Length of the string"
+      ],
+      "correct_answer": "B",
+      "explanation": "strchr returns a pointer to the first occurrence of the character.",
+      "hints": [
+        "Returns pointer",
+        "First match",
+        "Not an index"
+      ],
+      "tags": [
+        "strchr",
+        "pointers"
+      ]
+    },
+    {
+      "id": "str_042",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "snprintf Size",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char buf[4];\n    int n = snprintf(buf, sizeof(buf), \"%s\", \"hello\");\n    printf(\"%d %s\\n\", n, buf);\n    return 0;\n}",
+      "options": [
+        "5 hel",
+        "5 hel\\0",
+        "4 hell",
+        "3 hel"
+      ],
+      "correct_answer": "A",
+      "explanation": "snprintf returns the full length (5) and writes up to 3 chars plus null, so buf is \"hel\".",
+      "hints": [
+        "Return value is full length",
+        "Buffer holds 3 chars + '\\0'",
+        "buf is \"hel\""
+      ],
+      "tags": [
+        "snprintf",
+        "buffer_size"
+      ]
+    },
+    {
+      "id": "str_043",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "fgets Buffer Limit",
+      "description": "How many characters can fgets store here (excluding null terminator)?",
+      "code_template": "char buf[8];\nfgets(buf, sizeof(buf), stdin);",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "B",
+      "explanation": "fgets reads at most size-1 characters and adds a null terminator.",
+      "hints": [
+        "Leaves space for '\\0'",
+        "size-1 characters",
+        "8-1 = 7"
+      ],
+      "tags": [
+        "fgets",
+        "buffer_size"
+      ]
+    },
+    {
+      "id": "str_044",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strcmp Ordering",
+      "description": "What does strcmp return here?",
+      "code_template": "strcmp(\"cat\", \"dog\");",
+      "options": [
+        "0",
+        "Negative value",
+        "Positive value",
+        "Always 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "\"cat\" comes before \"dog\", so strcmp returns a negative value.",
+      "hints": [
+        "Lexicographical order",
+        "c comes before d",
+        "Negative result"
+      ],
+      "tags": [
+        "strcmp",
+        "comparison"
+      ]
+    },
+    {
+      "id": "str_045",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strncat Size",
+      "description": "Which is required to safely use strncat?",
+      "code_template": "char dest[6] = \"hi\";\nstrncat(dest, \"abc\", 3);",
+      "options": [
+        "dest must be at least 4 bytes",
+        "dest must be at least 5 bytes",
+        "dest must be at least 6 bytes",
+        "No size requirement"
+      ],
+      "correct_answer": "C",
+      "explanation": "\"hi\" (2 chars) + \"abc\" (3 chars) + '\\0' requires 6 bytes.",
+      "hints": [
+        "Total length 2+3+1",
+        "Needs 6 bytes",
+        "Buffer must fit all"
+      ],
+      "tags": [
+        "strncat",
+        "buffer_size"
+      ]
+    },
+    {
+      "id": "str_035",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic strlen Usage",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"Hello\";\n    printf(\"%lu\\n\", strlen(str));\n    return 0;\n}",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "strlen() returns the number of characters in the string excluding the null terminator. 'Hello' has 5 characters, so strlen(str) returns 5.",
+      "hints": [
+        "strlen counts characters until the null terminator",
+        "The null terminator is not counted",
+        "Count the letters in 'Hello'"
+      ],
+      "tags": [
+        "strlen",
+        "string_basics"
+      ]
+    },
+    {
+      "id": "str_036",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strcpy Buffer Copy",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char src[] = \"World\";\n    char dest[10];\n    strcpy(dest, src);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "World",
+        "Garbage value",
+        "Compilation error",
+        "Segmentation fault"
+      ],
+      "correct_answer": "A",
+      "explanation": "strcpy() copies the string from src to dest including the null terminator. Since dest has enough space (10 bytes) to hold 'World' (6 bytes including null terminator), it prints 'World'.",
+      "hints": [
+        "strcpy copies the entire string including null terminator",
+        "Check if dest has enough space",
+        "src is 6 bytes including the null terminator"
+      ],
+      "tags": [
+        "strcpy",
+        "string_copy"
+      ]
+    },
+    {
+      "id": "str_037",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "strncpy Padding Behavior",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char src[] = \"Hi\";\n    char dest[10] = \"XXXXXXXXXX\";\n    strncpy(dest, src, 5);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "Hi",
+        "HiXXXXXXXX",
+        "Hi\\0\\0\\0XXXXX",
+        "Undefined behavior"
+      ],
+      "correct_answer": "C",
+      "explanation": "strncpy() copies up to n characters. If the source is shorter than n, it pads the remaining space with null bytes. Here, 'Hi' (2 chars + 1 null = 3 bytes) is copied, then strncpy pads with 2 more null bytes to reach 5 total. The remaining 'XXXXX' stays. However, the string prints as 'Hi' because printf stops at the first null terminator.",
+      "hints": [
+        "strncpy pads with null bytes if src is shorter than n",
+        "strncpy may not null-terminate if src is longer than n",
+        "printf stops at the first null terminator"
+      ],
+      "tags": [
+        "strncpy",
+        "string_copy",
+        "null_terminator"
+      ]
+    },
+    {
+      "id": "str_038",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strcat Basic Concatenation",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char dest[20] = \"Hello\";\n    char src[] = \" World\";\n    strcat(dest, src);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "Hello",
+        "World",
+        "Hello World",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "strcat() appends the string src to the end of dest. It finds the null terminator in dest and starts copying src from that position. The result is 'Hello World'.",
+      "hints": [
+        "strcat stands for string concatenate",
+        "It appends src to the end of dest",
+        "The original content of dest is preserved"
+      ],
+      "tags": [
+        "strcat",
+        "string_concatenation"
+      ]
+    },
+    {
+      "id": "str_039",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strncat Length Limit",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char dest[20] = \"Test\";\n    char src[] = \"12345\";\n    strncat(dest, src, 3);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "Test",
+        "Test123",
+        "Test12345",
+        "123"
+      ],
+      "correct_answer": "B",
+      "explanation": "strncat() appends at most n characters from src to dest. Here it appends 3 characters ('1', '2', '3') to 'Test', resulting in 'Test123'. Unlike strncpy, strncat always null-terminates the result.",
+      "hints": [
+        "strncat appends at most n characters",
+        "strncat always adds a null terminator",
+        "Count how many characters are appended"
+      ],
+      "tags": [
+        "strncat",
+        "string_concatenation"
+      ]
+    },
+    {
+      "id": "str_040",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strcmp Equality Check",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str1[] = \"apple\";\n    char str2[] = \"apple\";\n    if (strcmp(str1, str2) == 0) {\n        printf(\"Equal\\n\");\n    } else {\n        printf(\"Not equal\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "Equal",
+        "Not equal",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "strcmp() compares two strings lexicographically. It returns 0 if the strings are identical. Since both str1 and str2 contain 'apple', strcmp returns 0 and 'Equal' is printed.",
+      "hints": [
+        "strcmp returns 0 when strings are equal",
+        "strcmp compares strings character by character",
+        "Both strings contain 'apple'"
+      ],
+      "tags": [
+        "strcmp",
+        "string_comparison"
+      ]
+    },
+    {
+      "id": "str_041",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strcmp Lexicographic Order",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str1[] = \"banana\";\n    char str2[] = \"apple\";\n    int result = strcmp(str1, str2);\n    if (result > 0) {\n        printf(\"Greater\\n\");\n    } else if (result < 0) {\n        printf(\"Less\\n\");\n    } else {\n        printf(\"Equal\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "Greater",
+        "Less",
+        "Equal",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "strcmp() returns a positive value if str1 is lexicographically greater than str2. Since 'b' (in 'banana') comes after 'a' (in 'apple') in ASCII order, strcmp returns a positive value and 'Greater' is printed.",
+      "hints": [
+        "strcmp returns positive if str1 > str2",
+        "Compare the first differing character",
+        "'b' comes after 'a' in ASCII order"
+      ],
+      "tags": [
+        "strcmp",
+        "string_comparison",
+        "lexicographic"
+      ]
+    },
+    {
+      "id": "str_042",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strncmp Partial Comparison",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str1[] = \"testing123\";\n    char str2[] = \"testing456\";\n    if (strncmp(str1, str2, 7) == 0) {\n        printf(\"Match\\n\");\n    } else {\n        printf(\"No match\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "Match",
+        "No match",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "strncmp() compares at most the first n characters of two strings. Here it compares the first 7 characters. Both strings have 'testing' (7 characters) in common, so strncmp returns 0 and 'Match' is printed.",
+      "hints": [
+        "strncmp compares only the first n characters",
+        "Count the first 7 characters of each string",
+        "The digits are beyond the 7th position"
+      ],
+      "tags": [
+        "strncmp",
+        "string_comparison"
+      ]
+    },
+    {
+      "id": "str_043",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "strcasecmp Case Insensitive",
+      "description": "What does this program print? (Assume strcasecmp is available)",
+      "code_template": "#include <stdio.h>\n#include <strings.h>\n\nint main() {\n    char str1[] = \"Hello\";\n    char str2[] = \"HELLO\";\n    if (strcasecmp(str1, str2) == 0) {\n        printf(\"Same\\n\");\n    } else {\n        printf(\"Different\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "Same",
+        "Different",
+        "Compilation error",
+        "Depends on locale"
+      ],
+      "correct_answer": "A",
+      "explanation": "strcasecmp() performs a case-insensitive comparison. It treats 'Hello' and 'HELLO' as the same string, returning 0. Therefore, 'Same' is printed. Note that strcasecmp is in <strings.h>, not <string.h>.",
+      "hints": [
+        "strcasecmp ignores case differences",
+        "'H' and 'h' are considered equal",
+        "The function is in <strings.h>"
+      ],
+      "tags": [
+        "strcasecmp",
+        "string_comparison",
+        "case_insensitive"
+      ]
+    },
+    {
+      "id": "str_044",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strchr Find Character",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"Hello World\";\n    char *ptr = strchr(str, 'o');\n    if (ptr != NULL) {\n        printf(\"%s\\n\", ptr);\n    }\n    return 0;\n}",
+      "options": [
+        "o World",
+        "o",
+        "orld",
+        "Hello World"
+      ],
+      "correct_answer": "A",
+      "explanation": "strchr() returns a pointer to the first occurrence of the character 'o' in the string. The first 'o' is at index 4 in 'Hello World'. Printing from that pointer prints 'o World'.",
+      "hints": [
+        "strchr returns a pointer to the first occurrence",
+        "It returns a pointer, not just the character",
+        "What comes after the first 'o'?"
+      ],
+      "tags": [
+        "strchr",
+        "string_search"
+      ]
+    },
+    {
+      "id": "str_045",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strrchr Last Occurrence",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"programming\";\n    char *ptr = strrchr(str, 'g');\n    if (ptr != NULL) {\n        printf(\"%ld\\n\", ptr - str);\n    }\n    return 0;\n}",
+      "options": [
+        "3",
+        "7",
+        "10",
+        "NULL"
+      ],
+      "correct_answer": "C",
+      "explanation": "strrchr() returns a pointer to the last occurrence of 'g' in the string. In 'programming', the last 'g' is at index 10. ptr - str gives the offset from the start of the string, which is 10.",
+      "hints": [
+        "strrchr finds the last occurrence",
+        "Count from the beginning to find the index",
+        "The string is 'programming'"
+      ],
+      "tags": [
+        "strrchr",
+        "string_search",
+        "pointer_arithmetic"
+      ]
+    },
+    {
+      "id": "str_046",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strstr Substring Search",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"The quick brown fox\";\n    char *ptr = strstr(str, \"quick\");\n    if (ptr != NULL) {\n        printf(\"%s\\n\", ptr);\n    } else {\n        printf(\"Not found\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "quick brown fox",
+        "quick",
+        "The quick brown fox",
+        "Not found"
+      ],
+      "correct_answer": "A",
+      "explanation": "strstr() returns a pointer to the first occurrence of the substring 'quick' in str. It finds 'quick' starting at index 4 and returns a pointer to that position. Printing from that pointer prints 'quick brown fox'.",
+      "hints": [
+        "strstr finds the first occurrence of a substring",
+        "It returns a pointer to where the substring starts",
+        "What comes after 'quick' in the string?"
+      ],
+      "tags": [
+        "strstr",
+        "string_search",
+        "substring"
+      ]
+    },
+    {
+      "id": "str_047",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "strstr Not Found",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"Hello\";\n    char *ptr = strstr(str, \"world\");\n    if (ptr == NULL) {\n        printf(\"Not found\\n\");\n    } else {\n        printf(\"Found at position %ld\\n\", ptr - str);\n    }\n    return 0;\n}",
+      "options": [
+        "Not found",
+        "Found at position 0",
+        "Found at position -1",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "strstr() returns NULL if the substring is not found in the string. Since 'world' is not present in 'Hello', strstr returns NULL and 'Not found' is printed.",
+      "hints": [
+        "strstr returns NULL if substring is not found",
+        "Check if 'world' exists in 'Hello'",
+        "NULL indicates failure"
+      ],
+      "tags": [
+        "strstr",
+        "string_search",
+        "null_pointer"
+      ]
+    },
+    {
+      "id": "str_048",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strtok Basic Tokenization",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"one,two,three\";\n    char *token = strtok(str, \",\");\n    printf(\"%s\\n\", token);\n    return 0;\n}",
+      "options": [
+        "one",
+        "one,two,three",
+        "two",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "strtok() breaks a string into tokens based on delimiters. The first call returns a pointer to the first token 'one'. It replaces the delimiter ',' with a null terminator internally.",
+      "hints": [
+        "strtok splits the string by delimiters",
+        "The first call returns the first token",
+        "The delimiter is ','"
+      ],
+      "tags": [
+        "strtok",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "str_049",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strtok Multiple Calls",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"red:green:blue\";\n    char *token = strtok(str, \":\");\n    token = strtok(NULL, \":\");\n    printf(\"%s\\n\", token);\n    return 0;\n}",
+      "options": [
+        "red",
+        "green",
+        "blue",
+        "NULL"
+      ],
+      "correct_answer": "B",
+      "explanation": "The first strtok call returns 'red'. Subsequent calls with NULL as the first argument continue tokenizing the same string. The second call returns 'green'.",
+      "hints": [
+        "strtok(NULL, delim) continues from where it left off",
+        "The first call returns 'red'",
+        "The second call returns the next token"
+      ],
+      "tags": [
+        "strtok",
+        "tokenization"
+      ]
+    },
+    {
+      "id": "str_050",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "strtok Modifies String",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"a-b-c\";\n    strtok(str, \"-\");\n    printf(\"%s\\n\", str);\n    return 0;\n}",
+      "options": [
+        "a-b-c",
+        "a",
+        "b-c",
+        "Undefined behavior"
+      ],
+      "correct_answer": "B",
+      "explanation": "strtok() modifies the original string by replacing delimiters with null terminators. After the first call, the first '-' is replaced with '\\0', so printing str prints only 'a' (up to the null terminator).",
+      "hints": [
+        "strtok modifies the original string",
+        "It replaces delimiters with null terminators",
+        "printf stops at the first null terminator"
+      ],
+      "tags": [
+        "strtok",
+        "tokenization",
+        "string_modification"
+      ]
+    },
+    {
+      "id": "str_051",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "sprintf Basic Formatting",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char buffer[50];\n    int num = 42;\n    sprintf(buffer, \"The answer is %d\", num);\n    printf(\"%s\\n\", buffer);\n    return 0;\n}",
+      "options": [
+        "The answer is 42",
+        "The answer is %d",
+        "42",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "sprintf() formats and stores a string in a buffer instead of printing to stdout. It works like printf but writes to the buffer. Here it formats 'The answer is 42' into the buffer.",
+      "hints": [
+        "sprintf writes formatted output to a string",
+        "It works like printf but to a buffer",
+        "%d is replaced with the value of num"
+      ],
+      "tags": [
+        "sprintf",
+        "string_formatting"
+      ]
+    },
+    {
+      "id": "str_052",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "snprintf Buffer Safety",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char buffer[10];\n    int result = snprintf(buffer, sizeof(buffer), \"Hello World!\");\n    printf(\"%s:%d\\n\", buffer, result);\n    return 0;\n}",
+      "options": [
+        "Hello Wor:9",
+        "Hello World!:12",
+        "Hello Wor:12",
+        "Buffer overflow"
+      ],
+      "correct_answer": "C",
+      "explanation": "snprintf() writes at most n-1 characters to the buffer (leaving room for null terminator). With a 10-byte buffer, it writes 'Hello Wor' (9 chars + null). However, it returns 12, the length of the string that would have been written if the buffer were large enough.",
+      "hints": [
+        "snprintf truncates output to fit the buffer",
+        "It returns the length that would have been written",
+        "The buffer can hold 9 characters plus null terminator"
+      ],
+      "tags": [
+        "snprintf",
+        "string_formatting",
+        "buffer_safety"
+      ]
+    },
+    {
+      "id": "str_053",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "String Literal vs Array",
+      "description": "What is the difference between these declarations?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char *str1 = \"Hello\";\n    char str2[] = \"Hello\";\n    // Which statement is correct?\n    return 0;\n}",
+      "options": [
+        "str1 can be modified, str2 cannot",
+        "str2 can be modified, str1 cannot",
+        "Both can be modified",
+        "Neither can be modified"
+      ],
+      "correct_answer": "B",
+      "explanation": "str1 is a pointer to a string literal stored in read-only memory and should not be modified (undefined behavior). str2 is a character array initialized with a copy of the string, stored on the stack, and can be modified.",
+      "hints": [
+        "String literals are stored in read-only memory",
+        "Arrays store their own copy of data",
+        "Modifying string literals is undefined behavior"
+      ],
+      "tags": [
+        "string_literals",
+        "char_arrays",
+        "memory"
+      ]
+    },
+    {
+      "id": "str_054",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "String Literal Modification",
+      "description": "What happens when this program runs?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char *str = \"Hello\";\n    str[0] = 'h';\n    printf(\"%s\\n\", str);\n    return 0;\n}",
+      "options": [
+        "hello",
+        "Hello",
+        "Undefined behavior",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "String literals are stored in read-only memory. Attempting to modify a string literal through a pointer results in undefined behavior, which may cause a segmentation fault or other runtime errors.",
+      "hints": [
+        "String literals are read-only",
+        "Modifying read-only memory is undefined behavior",
+        "This may crash at runtime"
+      ],
+      "tags": [
+        "string_literals",
+        "undefined_behavior",
+        "memory"
+      ]
+    },
+    {
+      "id": "str_055",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Buffer Overflow Detection",
+      "description": "What is the problem with this code?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char buffer[5];\n    strcpy(buffer, \"Hello\");\n    printf(\"%s\\n\", buffer);\n    return 0;\n}",
+      "options": [
+        "No problem, prints Hello",
+        "Buffer overflow - undefined behavior",
+        "Compilation error",
+        "Prints garbage"
+      ],
+      "correct_answer": "B",
+      "explanation": "The buffer has space for 5 characters, but 'Hello' requires 6 bytes (5 characters + null terminator). strcpy will write beyond the buffer boundaries, causing a buffer overflow and undefined behavior.",
+      "hints": [
+        "Count the bytes needed including null terminator",
+        "strcpy doesn't check buffer size",
+        "Writing beyond buffer boundaries is dangerous"
+      ],
+      "tags": [
+        "buffer_overflow",
+        "strcpy",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "str_056",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Array Bounds Safety",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[6] = \"Hello\";\n    printf(\"%lu\\n\", sizeof(str));\n    return 0;\n}",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "Depends on system"
+      ],
+      "correct_answer": "B",
+      "explanation": "sizeof() returns the total size of the array in bytes, not the string length. The array is declared with size 6, so sizeof(str) returns 6, regardless of the content.",
+      "hints": [
+        "sizeof returns the size of the array, not string length",
+        "The array size is specified as 6",
+        "sizeof is compile-time, not runtime"
+      ],
+      "tags": [
+        "sizeof",
+        "char_arrays",
+        "array_bounds"
+      ]
+    },
+    {
+      "id": "str_057",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strlen vs sizeof",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[10] = \"Test\";\n    printf(\"%lu %lu\\n\", strlen(str), sizeof(str));\n    return 0;\n}",
+      "options": [
+        "4 4",
+        "4 10",
+        "5 10",
+        "10 10"
+      ],
+      "correct_answer": "B",
+      "explanation": "strlen() returns the number of characters before the null terminator (4 for 'Test'). sizeof() returns the total allocated size of the array (10 bytes).",
+      "hints": [
+        "strlen counts characters until null terminator",
+        "sizeof returns total array size",
+        "Array was declared with size 10"
+      ],
+      "tags": [
+        "strlen",
+        "sizeof",
+        "char_arrays"
+      ]
+    },
+    {
+      "id": "str_058",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strncpy No Null Terminator",
+      "description": "What is the potential issue with this code?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char dest[5];\n    char src[] = \"Hello\";\n    strncpy(dest, src, 5);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "No issue",
+        "dest is not null-terminated",
+        "Buffer overflow",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "strncpy copies exactly 5 bytes from src to dest. Since 'Hello' is 5 characters, there's no room for the null terminator in the 5 bytes copied. dest is not null-terminated, causing undefined behavior when printf tries to print it.",
+      "hints": [
+        "strncpy doesn't guarantee null termination",
+        "src has exactly 5 characters plus null terminator",
+        "Only 5 bytes are copied"
+      ],
+      "tags": [
+        "strncpy",
+        "null_terminator",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "str_059",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "strtok Edge Case",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"::a::b::\";\n    char *token = strtok(str, \":\");\n    while (token != NULL) {\n        printf(\"%s \", token);\n        token = strtok(NULL, \":\");\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        ":: a :: b ::",
+        "a b",
+        ": : a : : b : :",
+        "a b : :"
+      ],
+      "correct_answer": "B",
+      "explanation": "strtok() treats consecutive delimiters as a single delimiter and skips them. It only returns non-empty tokens. Leading and trailing delimiters are also ignored. So it prints 'a b'.",
+      "hints": [
+        "strtok skips empty tokens",
+        "Consecutive delimiters are treated as one",
+        "Leading/trailing delimiters are ignored"
+      ],
+      "tags": [
+        "strtok",
+        "tokenization",
+        "edge_cases"
+      ]
+    },
+    {
+      "id": "str_060",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "sprintf Return Value",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char buffer[20];\n    int len = sprintf(buffer, \"Count: %d\", 123);\n    printf(\"%d\\n\", len);\n    return 0;\n}",
+      "options": [
+        "3",
+        "9",
+        "10",
+        "20"
+      ],
+      "correct_answer": "C",
+      "explanation": "sprintf() returns the number of characters written to the buffer (excluding the null terminator). 'Count: 123' has 10 characters, so sprintf returns 10.",
+      "hints": [
+        "sprintf returns the number of characters written",
+        "Count the characters in 'Count: 123'",
+        "The null terminator is not counted"
+      ],
+      "tags": [
+        "sprintf",
+        "return_value",
+        "string_formatting"
+      ]
+    },
+    {
+      "id": "str_061",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "strchr Null Character",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[] = \"Hello\";\n    char *ptr = strchr(str, '\\0');\n    if (ptr != NULL) {\n        printf(\"Found\\n\");\n    } else {\n        printf(\"Not found\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "Found",
+        "Not found",
+        "Undefined behavior",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "strchr() can find the null terminator. Every C string ends with '\\0', so strchr(str, '\\0') returns a pointer to the null terminator, not NULL. Therefore, 'Found' is printed.",
+      "hints": [
+        "strchr can search for the null terminator",
+        "All C strings end with '\\0'",
+        "It returns a pointer to the terminator, not NULL"
+      ],
+      "tags": [
+        "strchr",
+        "null_terminator",
+        "string_search"
+      ]
+    },
+    {
+      "id": "str_062",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strcat Buffer Overflow Risk",
+      "description": "What is wrong with this code?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char dest[10] = \"Hello\";\n    char src[] = \" World\";\n    strcat(dest, src);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "No problem",
+        "Buffer overflow",
+        "Compilation error",
+        "src is not null-terminated"
+      ],
+      "correct_answer": "B",
+      "explanation": "dest has 10 bytes. 'Hello' takes 6 bytes (including null). ' World' takes 7 bytes (including null). Together they need 12 bytes (5+6+1), exceeding the 10-byte buffer. strcat causes a buffer overflow.",
+      "hints": [
+        "Count total bytes needed including null terminator",
+        "dest has only 10 bytes",
+        "strcat doesn't check buffer size"
+      ],
+      "tags": [
+        "strcat",
+        "buffer_overflow",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "str_063",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "strncat Safe Concatenation",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char dest[10] = \"Hi\";\n    char src[] = \"12345678\";\n    strncat(dest, src, sizeof(dest) - strlen(dest) - 1);\n    printf(\"%s\\n\", dest);\n    return 0;\n}",
+      "options": [
+        "Hi1234567",
+        "Hi12345678",
+        "Hi123456",
+        "Buffer overflow"
+      ],
+      "correct_answer": "C",
+      "explanation": "dest has 10 bytes, 'Hi' uses 3 (including null). Remaining space is 7 bytes. We calculate sizeof(dest) - strlen(dest) - 1 = 10 - 2 - 1 = 7. strncat appends at most 7 chars, but always null-terminates. So it appends 'Hi' + '123456' (6 chars) to fit in 9 total + null.",
+      "hints": [
+        "Calculate available space correctly",
+        "strncat always adds null terminator",
+        "Account for existing content and null byte"
+      ],
+      "tags": [
+        "strncat",
+        "buffer_safety",
+        "string_concatenation"
+      ]
+    },
+    {
+      "id": "str_064",
+      "category": "strings",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "strcmp vs strncmp",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str1[] = \"test\";\n    char str2[] = \"testing\";\n    int r1 = strcmp(str1, str2);\n    int r2 = strncmp(str1, str2, 4);\n    printf(\"%d %d\\n\", (r1 == 0), (r2 == 0));\n    return 0;\n}",
+      "options": [
+        "0 0",
+        "0 1",
+        "1 0",
+        "1 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "strcmp compares the entire strings and finds them different ('test' vs 'testing'), returning non-zero (r1 == 0 is false, prints 0). strncmp compares only the first 4 characters ('test' vs 'test'), which match, returning 0 (r2 == 0 is true, prints 1).",
+      "hints": [
+        "strcmp compares entire strings",
+        "strncmp compares only n characters",
+        "First 4 characters are the same"
+      ],
+      "tags": [
+        "strcmp",
+        "strncmp",
+        "string_comparison"
+      ]
     }
   ]
 }

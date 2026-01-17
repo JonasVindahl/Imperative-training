@@ -5,7 +5,7 @@ services:
     build: .
     container_name: c-programming-practice
     ports:
-      - "5067:5067"
+      - "8000:8000"
     volumes:
       # Persist database
       - ./instance:/app/instance
@@ -18,7 +18,7 @@ services:
       - MAX_MEMORY_MB=50
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5067/"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
       interval: 30s
       timeout: 10s
       retries: 3

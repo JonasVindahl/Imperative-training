@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const codeBlocks = document.querySelectorAll('[data-line-numbers]');
     codeBlocks.forEach(container => {
         const target = container.querySelector('code') || container;
+        if (window.hljs && target.tagName === 'CODE') {
+            window.hljs.highlightElement(target);
+        }
         const lines = target.innerHTML.split('\n');
         const numberedLines = lines.map((line, index) => {
             return `<span class="code-line"><span class="line-number">${index + 1}</span>${line || ''}</span>`;
@@ -44,11 +47,33 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const alerts = document.querySelectorAll('.alert');
     alerts.forEach(alert => {
-        setTimeout(() => {
+        const closeBtn = alert.querySelector('.toast-close');
+        let timeoutId = null;
+
+        const dismiss = () => {
             alert.style.opacity = '0';
             alert.style.transition = 'opacity 0.5s';
             setTimeout(() => alert.remove(), 500);
-        }, 5000);
+        };
+
+        const scheduleDismiss = (delay) => {
+            timeoutId = setTimeout(dismiss, delay);
+        };
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', dismiss);
+        }
+
+        alert.addEventListener('mouseenter', () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        });
+        alert.addEventListener('mouseleave', () => {
+            scheduleDismiss(3000);
+        });
+
+        scheduleDismiss(7000);
     });
 });
 
@@ -90,6 +115,33 @@ document.addEventListener('keydown', function(e) {
     if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
         const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
         if (submitBtn) {
+            e.preventDefault();
+            submitAnswer();
+        }
+    }
+
+    const activeTag = document.activeElement ? document.activeElement.tagName : '';
+    const isTypingField = ['INPUT', 'TEXTAREA', 'SELECT'].includes(activeTag);
+
+    // Number keys 1-4 select multiple choice answers
+    const isNumberShortcut = ['1', '2', '3', '4'].includes(e.key);
+    const isNumpadShortcut = ['Numpad1', 'Numpad2', 'Numpad3', 'Numpad4'].includes(e.code);
+
+    if (!isTypingField && (isNumberShortcut || isNumpadShortcut)) {
+        const radioButtons = document.getElementsByName('answer');
+        const key = isNumberShortcut ? e.key : e.code.replace('Numpad', '');
+        const index = parseInt(key, 10) - 1;
+        if (radioButtons.length > index && radioButtons[index]) {
+            e.preventDefault();
+            radioButtons[index].checked = true;
+            radioButtons[index].dispatchEvent(new Event('change'));
+        }
+    }
+
+    // Enter to submit when not typing
+    if (!isTypingField && e.key === 'Enter' && !(e.ctrlKey || e.metaKey)) {
+        const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
+        if (submitBtn && !submitBtn.disabled) {
             e.preventDefault();
             submitAnswer();
         }

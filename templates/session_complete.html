@@ -81,10 +81,56 @@
         </table>
     </div>
 
+    {% if incorrect_details %}
+    <div class="review-section" id="review-incorrect">
+        <h2>Review Incorrect Answers</h2>
+        {% for item in incorrect_details %}
+        <div class="review-card">
+            <div class="review-header">
+                <h3>{{ item.question.title }}</h3>
+                <span class="badge badge-error">Incorrect</span>
+            </div>
+            <p class="review-description">{{ item.question.description }}</p>
+
+            {% if item.question.code_template %}
+                {% if item.question.type == 'drag_drop' %}
+                <pre class="code-display" data-line-numbers="true"><code class="language-c">{{ item.question.code_template | striptags }}</code></pre>
+                {% else %}
+                <pre class="code-display" data-line-numbers="true"><code class="language-c">{{ item.question.code_template }}</code></pre>
+                {% endif %}
+            {% endif %}
+
+            <div class="review-answers">
+                <div>
+                    <strong>Your Answer:</strong>
+                    <span class="answer-value">{{ item.attempt.submitted_answer }}</span>
+                </div>
+                <div>
+                    <strong>Correct Answer:</strong>
+                    <span class="answer-value">{{ item.question.correct_answer }}</span>
+                </div>
+            </div>
+
+            {% if item.question.explanation %}
+            <div class="review-explanation">
+                <strong>Explanation:</strong>
+                <p>{{ item.question.explanation }}</p>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="action-buttons">
         <a href="{{ url_for('practice.start_practice') }}" class="btn-primary btn-large">
             Practice Again
         </a>
+        {% if incorrect_details %}
+        <a href="#review-incorrect" class="btn-secondary btn-large">
+            Review Incorrect
+        </a>
+        {% endif %}
         <a href="{{ url_for('progress.dashboard') }}" class="btn-secondary btn-large">
             Back to Dashboard
         </a>

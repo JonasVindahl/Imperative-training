@@ -50,6 +50,9 @@ body {
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar .container {
@@ -76,6 +79,22 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 999px;
 }
 
 .nav-links a:hover {
@@ -123,15 +142,26 @@ body {
     font-size: 1.1rem;
 }
 
-/* Flash Messages */
-.flash-messages {
-    margin-bottom: 1.5rem;
+/* Toast Messages */
+.toast-container {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 9999;
 }
 
 .alert {
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .alert-success {
@@ -190,6 +220,13 @@ body {
     color: var(--text-color);
 }
 
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+    color: var(--text-color);
+}
+
 .form-group input, .form-control {
     width: 100%;
     padding: 0.75rem;
@@ -198,6 +235,83 @@ body {
     font-size: 1rem;
 }
 
+.input-with-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-toggle input {
+    padding-right: 4.5rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+.password-toggle:focus {
+    outline: none;
+}
+
+.field-message {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.field-message.is-error {
+    color: var(--error-color);
+}
+
+.field-message.is-success {
+    color: var(--success-color);
+}
+
+.input-invalid {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.input-valid {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.strength-meter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.strength-meter span {
+    height: 6px;
+    border-radius: 999px;
+    background: #e2e8f0;
+}
+
+.strength-meter[data-strength="1"] span:nth-child(-n+1),
+.strength-meter[data-strength="2"] span:nth-child(-n+2) {
+    background: #f97316;
+}
+
+.strength-meter[data-strength="3"] span:nth-child(-n+3) {
+    background: #22c55e;
+}
+
+.strength-meter[data-strength="4"] span:nth-child(-n+4) {
+    background: #16a34a;
+}
 .form-group input:focus, .form-control:focus {
     outline: none;
     border-color: var(--primary-color);
@@ -213,6 +327,12 @@ body {
     text-align: center;
     margin-top: 1.5rem;
     color: var(--text-secondary);
+}
+
+.resume-card {
+    margin-bottom: 2rem;
+    border: 2px dashed var(--primary-color);
+    background: #eef2ff;
 }
 
 .auth-footer a {
@@ -399,11 +519,101 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+.review-section {
+    margin-top: 2rem;
+}
+
+.review-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.review-description {
+    margin: 0.75rem 0 1rem;
+    color: var(--text-secondary);
+}
+
+.review-answers {
+    display: grid;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.review-explanation {
+    background: #f1f5f9;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.review-explanation p {
+    margin: 0.5rem 0 0;
+}
+
 .badge {
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
     font-size: 0.875rem;
     font-weight: 600;
+}
+
+.category-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.stat-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.stat-detail .label {
+    color: var(--text-secondary);
+}
+
+.stats-charts {
+    margin-top: 2rem;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.chart-card h3 {
+    margin-bottom: 1rem;
+}
+
+.chart-summary {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .badge-success {
@@ -653,6 +863,30 @@ body {
     border-radius: 0.5rem;
     margin-bottom: 2rem;
     border-left: 4px solid var(--warning-color);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.hint-section.is-visible {
+    max-height: 600px;
+    opacity: 1;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.shortcut-hint {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    width: 100%;
 }
 
 .hint-item {
@@ -1138,4 +1372,12 @@ body {
     .answer-comparison {
         flex-direction: column;
     }
+}
+.toast-close {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1;
 }

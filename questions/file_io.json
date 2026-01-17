@@ -161,6 +161,890 @@
         "fscanf",
         "input"
       ]
+    },
+    {
+      "id": "io_007",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Read/Write Without Truncate",
+      "description": "Which mode opens a file for reading and writing without truncating it?",
+      "code_template": "",
+      "options": [
+        "\"r+\"",
+        "\"w+\"",
+        "\"a\"",
+        "\"w\""
+      ],
+      "correct_answer": "A",
+      "explanation": "\"r+\" opens for read/write and does not truncate. \"w+\" truncates.",
+      "hints": [
+        "r+ keeps existing content",
+        "w+ truncates",
+        "a is append only"
+      ],
+      "tags": [
+        "fopen",
+        "modes"
+      ]
+    },
+    {
+      "id": "io_008",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "w+ Behavior",
+      "description": "What happens when opening an existing file with \"w+\"?",
+      "code_template": "FILE *fp = fopen(\"data.txt\", \"w+\");",
+      "options": [
+        "File is opened for reading only",
+        "File is opened for append only",
+        "File is truncated to zero length",
+        "File is left unchanged"
+      ],
+      "correct_answer": "C",
+      "explanation": "\"w+\" truncates the file and opens it for read/write.",
+      "hints": [
+        "w means write",
+        "w truncates",
+        "+ adds reading"
+      ],
+      "tags": [
+        "fopen",
+        "modes"
+      ]
+    },
+    {
+      "id": "io_009",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "feof Timing",
+      "description": "When does feof(fp) become true?",
+      "code_template": "int c = fgetc(fp);\nif (feof(fp)) {\n    // ...\n}",
+      "options": [
+        "Before reading the last character",
+        "After a read attempts to go past EOF",
+        "As soon as EOF is reached",
+        "When the file is opened"
+      ],
+      "correct_answer": "B",
+      "explanation": "feof becomes true only after a read fails due to EOF.",
+      "hints": [
+        "EOF flag is set after failure",
+        "Read past EOF triggers it",
+        "Check read return value"
+      ],
+      "tags": [
+        "feof",
+        "EOF"
+      ]
+    },
+    {
+      "id": "io_010",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Seek to Start",
+      "description": "Which call moves the file position to the beginning?",
+      "code_template": "",
+      "options": [
+        "fseek(fp, 0, SEEK_END)",
+        "fseek(fp, 0, SEEK_SET)",
+        "fseek(fp, 1, SEEK_SET)",
+        "fseek(fp, 0, SEEK_CUR)"
+      ],
+      "correct_answer": "B",
+      "explanation": "SEEK_SET with offset 0 moves to the start of the file.",
+      "hints": [
+        "SEEK_SET is absolute",
+        "Offset 0 means beginning",
+        "SEEK_END is end"
+      ],
+      "tags": [
+        "fseek",
+        "position"
+      ]
+    },
+    {
+      "id": "io_011",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "ftell Meaning",
+      "description": "What does ftell(fp) return?",
+      "code_template": "long pos = ftell(fp);",
+      "options": [
+        "File size in bytes",
+        "Current file position in bytes",
+        "Number of lines read",
+        "Number of bytes remaining"
+      ],
+      "correct_answer": "B",
+      "explanation": "ftell returns the current file offset in bytes.",
+      "hints": [
+        "ftell = file tell",
+        "Position offset",
+        "Measured in bytes"
+      ],
+      "tags": [
+        "ftell",
+        "position"
+      ]
+    },
+    {
+      "id": "io_012",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "rewind Effect",
+      "description": "What does rewind(fp) do?",
+      "code_template": "rewind(fp);",
+      "options": [
+        "Closes the file",
+        "Moves position to start and clears errors",
+        "Moves position to end",
+        "Flushes output only"
+      ],
+      "correct_answer": "B",
+      "explanation": "rewind sets the position to the start and clears error/EOF flags.",
+      "hints": [
+        "Rewind = go to start",
+        "Clears EOF",
+        "Also clears errors"
+      ],
+      "tags": [
+        "rewind",
+        "position"
+      ]
+    },
+    {
+      "id": "io_013",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "fread Return Value",
+      "description": "What does fread return?",
+      "code_template": "size_t n = fread(buf, sizeof(int), 10, fp);",
+      "options": [
+        "Number of bytes read",
+        "Number of elements read",
+        "0 or 1 only",
+        "File size"
+      ],
+      "correct_answer": "B",
+      "explanation": "fread returns the number of elements successfully read.",
+      "hints": [
+        "Returns count of elements",
+        "Not bytes",
+        "Compare with requested count"
+      ],
+      "tags": [
+        "fread",
+        "binary"
+      ]
+    },
+    {
+      "id": "io_014",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Binary Read Mode",
+      "description": "Which mode opens a file for binary reading?",
+      "code_template": "",
+      "options": [
+        "\"r\"",
+        "\"rb\"",
+        "\"wb\"",
+        "\"ab\""
+      ],
+      "correct_answer": "B",
+      "explanation": "\"rb\" opens a file for reading in binary mode.",
+      "hints": [
+        "b means binary",
+        "r means read",
+        "rb = read binary"
+      ],
+      "tags": [
+        "binary",
+        "fopen"
+      ]
+    },
+    {
+      "id": "io_015",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "fopen Failure Check",
+      "description": "How do you check if fopen failed?",
+      "code_template": "FILE *fp = fopen(\"data.txt\", \"r\");",
+      "options": [
+        "if (fp == EOF)",
+        "if (fp == NULL)",
+        "if (fp == 0)",
+        "if (fp == -1)"
+      ],
+      "correct_answer": "B",
+      "explanation": "fopen returns NULL on failure.",
+      "hints": [
+        "NULL indicates failure",
+        "EOF is for reads",
+        "Check pointer"
+      ],
+      "tags": [
+        "fopen",
+        "error_handling"
+      ]
+    },
+    {
+      "id": "io_016",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "perror Usage",
+      "description": "What does perror do after a failed fopen?",
+      "code_template": "FILE *fp = fopen(\"missing.txt\", \"r\");\nif (!fp) {\n    perror(\"open failed\");\n}",
+      "options": [
+        "Clears the error",
+        "Prints a descriptive error message",
+        "Retries the open",
+        "Closes the file"
+      ],
+      "correct_answer": "B",
+      "explanation": "perror prints a message based on the current errno value.",
+      "hints": [
+        "Uses errno",
+        "Prints message",
+        "Helpful for debugging"
+      ],
+      "tags": [
+        "perror",
+        "errors"
+      ]
+    },
+    {
+      "id": "io_017",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "fscanf Return",
+      "description": "What does fscanf return when reading integers?",
+      "code_template": "int x;\nint n = fscanf(fp, \"%d\", &x);",
+      "options": [
+        "EOF on end of file, otherwise number of items read",
+        "Always 0 or 1",
+        "Number of bytes read",
+        "The integer read"
+      ],
+      "correct_answer": "A",
+      "explanation": "fscanf returns the count of successfully read items, or EOF on end of file.",
+      "hints": [
+        "Return is count",
+        "EOF on failure",
+        "Use in loops"
+      ],
+      "tags": [
+        "fscanf",
+        "return_value"
+      ]
+    },
+    {
+      "id": "io_018",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "fgets Newline",
+      "description": "What does fgets do with the newline?",
+      "code_template": "fgets(buf, sizeof(buf), fp);",
+      "options": [
+        "Always removes newline",
+        "Keeps newline if it fits",
+        "Always adds two newlines",
+        "Never reads newline"
+      ],
+      "correct_answer": "B",
+      "explanation": "fgets keeps the newline if it is read before the buffer fills.",
+      "hints": [
+        "Keeps newline",
+        "Only if it fits",
+        "Buffer includes \\n"
+      ],
+      "tags": [
+        "fgets",
+        "newline"
+      ]
+    },
+    {
+      "id": "io_019",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Write a Char",
+      "description": "Which function writes a single character to a file?",
+      "code_template": "",
+      "options": [
+        "fgetc",
+        "fputc",
+        "fgets",
+        "fprintf"
+      ],
+      "correct_answer": "B",
+      "explanation": "fputc writes a single character to a file.",
+      "hints": [
+        "put = write",
+        "get = read",
+        "Single char"
+      ],
+      "tags": [
+        "fputc",
+        "output"
+      ]
+    },
+    {
+      "id": "io_020",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "fprintf Target",
+      "description": "Where does fprintf write output?",
+      "code_template": "fprintf(fp, \"Hello\");",
+      "options": [
+        "Standard output",
+        "Standard error",
+        "The file pointed to by fp",
+        "Keyboard input"
+      ],
+      "correct_answer": "C",
+      "explanation": "fprintf writes formatted output to the given file stream.",
+      "hints": [
+        "First argument is stream",
+        "fp points to file",
+        "Writes to file"
+      ],
+      "tags": [
+        "fprintf",
+        "output"
+      ]
+    },
+    {
+      "id": "io_021",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Append Mode",
+      "description": "What is true about mode \"a\"?",
+      "code_template": "FILE *fp = fopen(\"log.txt\", \"a\");",
+      "options": [
+        "Writes always go to the beginning",
+        "Writes always go to the end",
+        "File is truncated",
+        "Read only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Append mode writes at the end of the file.",
+      "hints": [
+        "Append = add to end",
+        "No truncation",
+        "Write at end"
+      ],
+      "tags": [
+        "append",
+        "fopen"
+      ]
+    },
+    {
+      "id": "io_022",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "a+ Mode",
+      "description": "What does \"a+\" allow?",
+      "code_template": "FILE *fp = fopen(\"log.txt\", \"a+\");",
+      "options": [
+        "Read only",
+        "Write only",
+        "Read and append",
+        "Read and overwrite"
+      ],
+      "correct_answer": "C",
+      "explanation": "\"a+\" allows reading and appending (writes go to end).",
+      "hints": [
+        "a+ includes reading",
+        "Writes append",
+        "Does not overwrite"
+      ],
+      "tags": [
+        "fopen",
+        "append"
+      ]
+    },
+    {
+      "id": "io_023",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Remove File",
+      "description": "Which function deletes a file?",
+      "code_template": "",
+      "options": [
+        "delete(\"a.txt\")",
+        "remove(\"a.txt\")",
+        "unlink(\"a.txt\")",
+        "erase(\"a.txt\")"
+      ],
+      "correct_answer": "B",
+      "explanation": "remove deletes a file in standard C.",
+      "hints": [
+        "Standard C function",
+        "remove(\"file\")",
+        "Not delete"
+      ],
+      "tags": [
+        "remove",
+        "files"
+      ]
+    },
+    {
+      "id": "io_024",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Rename File",
+      "description": "Which function renames a file?",
+      "code_template": "",
+      "options": [
+        "rename(\"old.txt\", \"new.txt\")",
+        "move(\"old.txt\", \"new.txt\")",
+        "mv(\"old.txt\", \"new.txt\")",
+        "change(\"old.txt\", \"new.txt\")"
+      ],
+      "correct_answer": "A",
+      "explanation": "rename is the standard C function for renaming files.",
+      "hints": [
+        "rename is standard C",
+        "Takes old and new names",
+        "Returns 0 on success"
+      ],
+      "tags": [
+        "rename",
+        "files"
+      ]
+    },
+    {
+      "id": "io_025",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "fgetc Return Type",
+      "description": "Why is fgetc's return type int?",
+      "code_template": "int c = fgetc(fp);",
+      "options": [
+        "It returns strings",
+        "It must represent all char values plus EOF",
+        "It is faster than char",
+        "It returns pointers"
+      ],
+      "correct_answer": "B",
+      "explanation": "int can represent all unsigned char values and EOF.",
+      "hints": [
+        "EOF is -1",
+        "char may not hold EOF",
+        "int can"
+      ],
+      "tags": [
+        "fgetc",
+        "EOF"
+      ]
+    },
+    {
+      "id": "io_026",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "ungetc Purpose",
+      "description": "What does ungetc do?",
+      "code_template": "int c = fgetc(fp);\nungetc(c, fp);",
+      "options": [
+        "Removes a character from the file",
+        "Pushes a character back to the stream",
+        "Closes the file",
+        "Moves to end of file"
+      ],
+      "correct_answer": "B",
+      "explanation": "ungetc pushes a character back so it can be read again.",
+      "hints": [
+        "Push back",
+        "Next read returns same char",
+        "Useful for parsing"
+      ],
+      "tags": [
+        "ungetc",
+        "streams"
+      ]
+    },
+    {
+      "id": "io_027",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Binary Struct Read",
+      "description": "What does this read?",
+      "code_template": "struct Item x;\nsize_t n = fread(&x, sizeof(x), 1, fp);",
+      "options": [
+        "One struct Item",
+        "An array of items",
+        "A string",
+        "A line of text"
+      ],
+      "correct_answer": "A",
+      "explanation": "fread reads 1 element of size sizeof(x) into x.",
+      "hints": [
+        "count is 1",
+        "size is sizeof(x)",
+        "Reads one struct"
+      ],
+      "tags": [
+        "fread",
+        "binary"
+      ]
+    },
+    {
+      "id": "io_028",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "rb+ Mode",
+      "description": "What does \"rb+\" mean?",
+      "code_template": "",
+      "options": [
+        "Read binary only",
+        "Write binary only",
+        "Read/write binary without truncation",
+        "Append binary only"
+      ],
+      "correct_answer": "C",
+      "explanation": "\"rb+\" opens for reading and writing in binary mode without truncating.",
+      "hints": [
+        "r+ = read/write",
+        "b = binary",
+        "No truncation"
+      ],
+      "tags": [
+        "fopen",
+        "binary"
+      ]
+    },
+    {
+      "id": "io_029",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Read Last Byte",
+      "description": "Which call moves to the last byte of a file?",
+      "code_template": "",
+      "options": [
+        "fseek(fp, 0, SEEK_END)",
+        "fseek(fp, -1, SEEK_END)",
+        "fseek(fp, 1, SEEK_SET)",
+        "fseek(fp, -1, SEEK_SET)"
+      ],
+      "correct_answer": "B",
+      "explanation": "SEEK_END with offset -1 positions the stream at the last byte.",
+      "hints": [
+        "SEEK_END is end",
+        "Use negative offset",
+        "-1 moves to last byte"
+      ],
+      "tags": [
+        "fseek",
+        "position"
+      ]
+    },
+    {
+      "id": "io_030",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Flush Output",
+      "description": "Which function flushes a stream's output buffer?",
+      "code_template": "",
+      "options": [
+        "fseek",
+        "fflush",
+        "fread",
+        "fputs"
+      ],
+      "correct_answer": "B",
+      "explanation": "fflush forces buffered output to be written.",
+      "hints": [
+        "flush = write buffer",
+        "fflush does that",
+        "Used with output streams"
+      ],
+      "tags": [
+        "fflush",
+        "buffering"
+      ]
+    },
+    {
+      "id": "io_031",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "fclose Effect",
+      "description": "What does fclose do besides closing the file?",
+      "code_template": "",
+      "options": [
+        "Deletes the file",
+        "Flushes output buffers",
+        "Resets file pointer to start",
+        "Changes permissions"
+      ],
+      "correct_answer": "B",
+      "explanation": "fclose flushes buffers and releases the file handle.",
+      "hints": [
+        "Flushes output",
+        "Closes stream",
+        "Releases resources"
+      ],
+      "tags": [
+        "fclose",
+        "buffering"
+      ]
+    },
+    {
+      "id": "io_032",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Safe Line Read",
+      "description": "Which is the safest way to read a line into buf?",
+      "code_template": "char buf[100];",
+      "options": [
+        "gets(buf)",
+        "fgets(buf, sizeof(buf), fp)",
+        "scanf(\"%s\", buf)",
+        "fscanf(fp, \"%s\", buf)"
+      ],
+      "correct_answer": "B",
+      "explanation": "fgets limits input by buffer size and is safer than gets/scanf.",
+      "hints": [
+        "Use size to limit input",
+        "fgets takes size",
+        "gets is unsafe"
+      ],
+      "tags": [
+        "fgets",
+        "safety"
+      ]
+    },
+    {
+      "id": "io_033",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Whitespace in fscanf",
+      "description": "What does fscanf with \"%s\" do?",
+      "code_template": "char buf[50];\nfscanf(fp, \"%s\", buf);",
+      "options": [
+        "Reads a full line including spaces",
+        "Reads until whitespace",
+        "Reads the entire file",
+        "Reads only numbers"
+      ],
+      "correct_answer": "B",
+      "explanation": "%s stops at whitespace when reading strings.",
+      "hints": [
+        "%s stops at space",
+        "Use fgets for full line",
+        "Whitespace ends input"
+      ],
+      "tags": [
+        "fscanf",
+        "strings"
+      ]
+    },
+    {
+      "id": "io_034",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Open Missing File",
+      "description": "What happens if you fopen with \"r\" on a missing file?",
+      "code_template": "FILE *fp = fopen(\"missing.txt\", \"r\");",
+      "options": [
+        "Creates a new file",
+        "Returns NULL",
+        "Truncates the file",
+        "Returns EOF"
+      ],
+      "correct_answer": "B",
+      "explanation": "\"r\" requires an existing file. fopen returns NULL if it doesn't exist.",
+      "hints": [
+        "r does not create files",
+        "Check for NULL",
+        "Missing file fails"
+      ],
+      "tags": [
+        "fopen",
+        "errors"
+      ]
+    },
+    {
+      "id": "io_035",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Create New File",
+      "description": "Which mode creates a file if it doesn't exist?",
+      "code_template": "",
+      "options": [
+        "\"r\"",
+        "\"w\"",
+        "\"r+\"",
+        "\"rb\""
+      ],
+      "correct_answer": "B",
+      "explanation": "\"w\" creates the file if it doesn't exist (and truncates if it does).",
+      "hints": [
+        "w = write",
+        "Creates if missing",
+        "Truncates if exists"
+      ],
+      "tags": [
+        "fopen",
+        "modes"
+      ]
+    },
+    {
+      "id": "io_036",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "r+ on Missing File",
+      "description": "What happens if you open a missing file with \"r+\"?",
+      "code_template": "",
+      "options": [
+        "Creates the file",
+        "Returns NULL",
+        "Truncates the file",
+        "Opens in append mode"
+      ],
+      "correct_answer": "B",
+      "explanation": "\"r+\" requires an existing file and fails if missing.",
+      "hints": [
+        "r+ needs file to exist",
+        "No creation",
+        "Returns NULL"
+      ],
+      "tags": [
+        "fopen",
+        "modes"
+      ]
+    },
+    {
+      "id": "io_037",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Append Creates File",
+      "description": "What happens if you open a missing file with \"a\"?",
+      "code_template": "",
+      "options": [
+        "Fails",
+        "Creates a new file",
+        "Truncates a file",
+        "Opens read-only"
+      ],
+      "correct_answer": "B",
+      "explanation": "Append mode creates the file if it doesn't exist.",
+      "hints": [
+        "a = append",
+        "Creates file if missing",
+        "Write at end"
+      ],
+      "tags": [
+        "fopen",
+        "append"
+      ]
+    },
+    {
+      "id": "io_038",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Read Integers Loop",
+      "description": "Which loop correctly reads integers until EOF?",
+      "code_template": "int x;",
+      "options": [
+        "while (fscanf(fp, \"%d\", &x) == 1)",
+        "while (feof(fp))",
+        "while (x != EOF)",
+        "while (fgetc(fp) != EOF)"
+      ],
+      "correct_answer": "A",
+      "explanation": "Check fscanf return value to read until EOF.",
+      "hints": [
+        "fscanf returns count",
+        "1 means integer read",
+        "Stop on EOF"
+      ],
+      "tags": [
+        "fscanf",
+        "EOF"
+      ]
+    },
+    {
+      "id": "io_039",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Write Line",
+      "description": "Which function writes a string to a file?",
+      "code_template": "",
+      "options": [
+        "fputs",
+        "fgets",
+        "fgetc",
+        "fread"
+      ],
+      "correct_answer": "A",
+      "explanation": "fputs writes a string to a file stream.",
+      "hints": [
+        "puts writes a string",
+        "fputs is file version",
+        "fgets is for reading"
+      ],
+      "tags": [
+        "fputs",
+        "output"
+      ]
+    },
+    {
+      "id": "io_040",
+      "category": "file_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Binary Write",
+      "description": "How many bytes are written here?",
+      "code_template": "int buf[4] = {1,2,3,4};\nsize_t n = fwrite(buf, sizeof(int), 4, fp);",
+      "options": [
+        "4 bytes",
+        "8 bytes",
+        "16 bytes",
+        "Depends on file size"
+      ],
+      "correct_answer": "C",
+      "explanation": "4 elements * sizeof(int). With int=4 bytes, that's 16 bytes.",
+      "hints": [
+        "count is 4",
+        "size is sizeof(int)",
+        "4 * 4 = 16"
+      ],
+      "tags": [
+        "fwrite",
+        "binary"
+      ]
     }
   ]
 }

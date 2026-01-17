@@ -23,7 +23,7 @@ cd /mnt/MainPool/Apps/c-practice/7_imperative_exam
 
 ### Step 3: Access Your App
 
-Open browser: **http://YOUR_TRUENAS_IP:5067**
+Open browser: **http://YOUR_TRUENAS_IP:8000**
 
 **Done!** 🎉
 
@@ -175,12 +175,12 @@ docker restart c-programming-practice
 
 1. Login to your router
 2. Add port forwarding rule:
-   - **External Port**: 5067
+   - **External Port**: 8000
    - **Internal IP**: Your TrueNAS IP
-   - **Internal Port**: 5067
+   - **Internal Port**: 8000
    - **Protocol**: TCP
 
-3. Access via your public IP: `http://YOUR_PUBLIC_IP:5067`
+3. Access via your public IP: `http://YOUR_PUBLIC_IP:8000`
 
 **⚠️ Security Warning:** Use HTTPS/reverse proxy for internet access!
 
@@ -191,7 +191,7 @@ Install **NGINX Proxy Manager** from TrueNAS Apps:
 1. **Apps** → **Discover** → Search "nginx proxy manager"
 2. Install
 3. Access at `http://TRUENAS_IP:81`
-4. Add proxy host pointing to `localhost:5067`
+4. Add proxy host pointing to `localhost:8000`
 5. Enable Let's Encrypt SSL
 6. Access via `https://yourdomain.com`
 
@@ -206,7 +206,7 @@ Install **NGINX Proxy Manager** from TrueNAS Apps:
 docker logs c-programming-practice
 
 # Check if port is in use
-netstat -an | grep 5067
+netstat -an | grep 8000
 
 # Recreate container
 cd /mnt/MainPool/Apps/c-practice/7_imperative_exam
@@ -218,7 +218,7 @@ docker compose -f truenas-scale-app.yaml up -d
 
 ```bash
 # Test locally
-curl http://localhost:5067
+curl http://localhost:8000
 
 # Check container is running
 docker ps | grep c-programming
@@ -287,13 +287,13 @@ Check the full guide: `TRUENAS_SCALE_YAML_DEPLOY.md`
 
 After deployment:
 
-1. **Access the app**: `http://TRUENAS_IP:5067`
+1. **Access the app**: `http://TRUENAS_IP:8000`
 2. **Register admin account**: Click "Register"
 3. **Create account** with strong password
 4. **Start practicing!** Select a category
 
 **Share with students:**
-- Give them the URL: `http://TRUENAS_IP:5067`
+- Give them the URL: `http://TRUENAS_IP:8000`
 - They register their own accounts
 - Track their progress in the database
 
@@ -316,7 +316,7 @@ After deployment:
 ## ✅ Feature Checklist
 
 Current features:
-- ✅ 264 questions across 11 categories
+- ✅ 620 questions across 11 categories
 - ✅ 5 question types (MC, fill-blanks, drag-drop, recursive trace)
 - ✅ Bilingual (English + Danish)
 - ✅ User authentication

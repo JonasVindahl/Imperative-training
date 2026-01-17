@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, request
+from flask import Blueprint, render_template, redirect, url_for, flash, request, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User
@@ -88,3 +88,13 @@ def logout():
     logout_user()
     flash('You have been logged out', 'info')
     return redirect(url_for('auth.login'))
+
+
+@auth_bp.route('/check-email')
+def check_email():
+    """Check if an email is available for registration"""
+    email = request.args.get('email', '').strip().lower()
+    if not email:
+        return jsonify({'available': False})
+    exists = User.query.filter_by(email=email).first() is not None
+    return jsonify({'available': not exists})

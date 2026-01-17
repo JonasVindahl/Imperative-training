@@ -6,6 +6,7 @@
     <title>{% block title %}C Programming Practice{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -16,9 +17,12 @@
                 <a href="{{ url_for('progress.dashboard') }}">C Programming Practice</a>
             </div>
             <div class="nav-links">
-                <a href="{{ url_for('progress.dashboard') }}">Dashboard</a>
-                <a href="{{ url_for('practice.start_practice') }}">Practice</a>
-                <a href="{{ url_for('progress.stats') }}">Stats</a>
+                <a href="{{ url_for('progress.dashboard') }}"
+                   class="{% if request.endpoint == 'progress.dashboard' %}active{% endif %}">Dashboard</a>
+                <a href="{{ url_for('practice.start_practice') }}"
+                   class="{% if request.endpoint and request.endpoint.startswith('practice.') %}active{% endif %}">Practice</a>
+                <a href="{{ url_for('progress.stats') }}"
+                   class="{% if request.endpoint == 'progress.stats' %}active{% endif %}">Stats</a>
                 <span class="nav-user">{{ current_user.name }}</span>
                 <a href="{{ url_for('auth.logout') }}" class="btn-secondary">Logout</a>
             </div>
@@ -26,19 +30,20 @@
     </nav>
     {% endif %}
 
-    <div class="container main-content">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <div class="flash-messages">
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="toast-container">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        <span>{{ message }}</span>
+                        <button type="button" class="toast-close" aria-label="Close notification">×</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 
+    <div class="container main-content">
         {% block content %}{% endblock %}
     </div>
 
@@ -50,6 +55,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
     {% block extra_js %}{% endblock %}
 </body>

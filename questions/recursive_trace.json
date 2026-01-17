@@ -1159,6 +1159,546 @@
         "even_odd",
         "base_cases"
       ]
+    },
+    {
+      "id": "trace_013",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Factorial 4",
+      "description": "Trace the execution of this factorial function:",
+      "code_template": "int fact(int n) {\n    if (n <= 1) return 1;\n    return n * fact(n - 1);\n}",
+      "test_cases": [
+        {
+          "input": "fact(1)",
+          "correct_answer": "1",
+          "trace": [
+            "fact(1): n <= 1, so return 1"
+          ]
+        },
+        {
+          "input": "fact(4)",
+          "correct_answer": "24",
+          "trace": [
+            "fact(4): return 4 * fact(3)",
+            "  fact(3): return 3 * fact(2)",
+            "    fact(2): return 2 * fact(1)",
+            "      fact(1): return 1",
+            "    fact(2) = 2 * 1 = 2",
+            "  fact(3) = 3 * 2 = 6",
+            "fact(4) = 4 * 6 = 24"
+          ]
+        }
+      ],
+      "explanation": "Factorial multiplies n by factorial(n-1) until n <= 1.",
+      "hints": [
+        "Base case: n <= 1",
+        "Multiply on the way back",
+        "4! = 24"
+      ],
+      "tags": [
+        "recursion",
+        "factorial"
+      ]
+    },
+    {
+      "id": "trace_014",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Sum to N",
+      "description": "Trace the execution of this sum function:",
+      "code_template": "int sum_n(int n) {\n    if (n == 0) return 0;\n    return n + sum_n(n - 1);\n}",
+      "test_cases": [
+        {
+          "input": "sum_n(2)",
+          "correct_answer": "3",
+          "trace": [
+            "sum_n(2): return 2 + sum_n(1)",
+            "  sum_n(1): return 1 + sum_n(0)",
+            "    sum_n(0): return 0",
+            "  sum_n(1) = 1 + 0 = 1",
+            "sum_n(2) = 2 + 1 = 3"
+          ]
+        }
+      ],
+      "explanation": "The function adds n down to 0.",
+      "hints": [
+        "Base case returns 0",
+        "Add n each call",
+        "2+1=3"
+      ],
+      "tags": [
+        "recursion",
+        "summation"
+      ]
+    },
+    {
+      "id": "trace_015",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Power",
+      "description": "Trace the execution of this power function:",
+      "code_template": "int pow_n(int base, int exp) {\n    if (exp == 0) return 1;\n    return base * pow_n(base, exp - 1);\n}",
+      "test_cases": [
+        {
+          "input": "pow_n(3, 2)",
+          "correct_answer": "9",
+          "trace": [
+            "pow_n(3, 2): return 3 * pow_n(3, 1)",
+            "  pow_n(3, 1): return 3 * pow_n(3, 0)",
+            "    pow_n(3, 0): return 1",
+            "  pow_n(3, 1) = 3 * 1 = 3",
+            "pow_n(3, 2) = 3 * 3 = 9"
+          ]
+        }
+      ],
+      "explanation": "Each call multiplies by the base until exp reaches 0.",
+      "hints": [
+        "Base case exp == 0",
+        "Multiply on unwind",
+        "3^2 = 9"
+      ],
+      "tags": [
+        "recursion",
+        "power"
+      ]
+    },
+    {
+      "id": "trace_016",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Count Digits",
+      "description": "Trace the execution of this digit counter:",
+      "code_template": "int digits(int n) {\n    if (n < 10) return 1;\n    return 1 + digits(n / 10);\n}",
+      "test_cases": [
+        {
+          "input": "digits(1200)",
+          "correct_answer": "4",
+          "trace": [
+            "digits(1200): return 1 + digits(120)",
+            "  digits(120): return 1 + digits(12)",
+            "    digits(12): return 1 + digits(1)",
+            "      digits(1): return 1",
+            "    digits(12) = 1 + 1 = 2",
+            "  digits(120) = 1 + 2 = 3",
+            "digits(1200) = 1 + 3 = 4"
+          ]
+        }
+      ],
+      "explanation": "Each call removes one digit by dividing by 10.",
+      "hints": [
+        "Divide by 10 each step",
+        "Stop when n < 10",
+        "1200 has 4 digits"
+      ],
+      "tags": [
+        "recursion",
+        "digits"
+      ]
+    },
+    {
+      "id": "trace_017",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Sum of Digits",
+      "description": "Trace the execution of this sum of digits function:",
+      "code_template": "int sum_digits(int n) {\n    if (n < 10) return n;\n    return (n % 10) + sum_digits(n / 10);\n}",
+      "test_cases": [
+        {
+          "input": "sum_digits(507)",
+          "correct_answer": "12",
+          "trace": [
+            "sum_digits(507): return 7 + sum_digits(50)",
+            "  sum_digits(50): return 0 + sum_digits(5)",
+            "    sum_digits(5): return 5",
+            "  sum_digits(50) = 0 + 5 = 5",
+            "sum_digits(507) = 7 + 5 = 12"
+          ]
+        }
+      ],
+      "explanation": "Use modulo to peel off digits and recurse on n/10.",
+      "hints": [
+        "Last digit is n % 10",
+        "Divide by 10 each step",
+        "5+0+7=12"
+      ],
+      "tags": [
+        "recursion",
+        "digits"
+      ]
+    },
+    {
+      "id": "trace_018",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Fibonacci 3",
+      "description": "Trace the execution of this Fibonacci function:",
+      "code_template": "int fib(int n) {\n    if (n <= 1) return n;\n    return fib(n - 1) + fib(n - 2);\n}",
+      "test_cases": [
+        {
+          "input": "fib(3)",
+          "correct_answer": "2",
+          "trace": [
+            "fib(3): return fib(2) + fib(1)",
+            "  fib(2): return fib(1) + fib(0)",
+            "    fib(1): return 1",
+            "    fib(0): return 0",
+            "  fib(2) = 1 + 0 = 1",
+            "  fib(1): return 1",
+            "fib(3) = 1 + 1 = 2"
+          ]
+        }
+      ],
+      "explanation": "Fibonacci adds the two previous numbers.",
+      "hints": [
+        "Base cases fib(0)=0, fib(1)=1",
+        "fib(2)=1",
+        "fib(3)=2"
+      ],
+      "tags": [
+        "recursion",
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "trace_019",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace GCD",
+      "description": "Trace the execution of this gcd function:",
+      "code_template": "int gcd(int a, int b) {\n    if (b == 0) return a;\n    return gcd(b, a % b);\n}",
+      "test_cases": [
+        {
+          "input": "gcd(14, 8)",
+          "correct_answer": "2",
+          "trace": [
+            "gcd(14, 8): return gcd(8, 6)",
+            "  gcd(8, 6): return gcd(6, 2)",
+            "    gcd(6, 2): return gcd(2, 0)",
+            "      gcd(2, 0): return 2",
+            "    gcd(6, 2) = 2",
+            "  gcd(8, 6) = 2",
+            "gcd(14, 8) = 2"
+          ]
+        }
+      ],
+      "explanation": "Euclid's algorithm uses repeated modulo until b is 0.",
+      "hints": [
+        "Use a % b",
+        "Stop when b == 0",
+        "Result is 2"
+      ],
+      "tags": [
+        "recursion",
+        "gcd"
+      ]
+    },
+    {
+      "id": "trace_020",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Multiply",
+      "description": "Trace the execution of this multiply function:",
+      "code_template": "int mult(int a, int b) {\n    if (b == 0) return 0;\n    return a + mult(a, b - 1);\n}",
+      "test_cases": [
+        {
+          "input": "mult(4, 2)",
+          "correct_answer": "8",
+          "trace": [
+            "mult(4, 2): return 4 + mult(4, 1)",
+            "  mult(4, 1): return 4 + mult(4, 0)",
+            "    mult(4, 0): return 0",
+            "  mult(4, 1) = 4 + 0 = 4",
+            "mult(4, 2) = 4 + 4 = 8"
+          ]
+        }
+      ],
+      "explanation": "Multiplication is repeated addition until b is 0.",
+      "hints": [
+        "Add a each call",
+        "Stop at b == 0",
+        "4 * 2 = 8"
+      ],
+      "tags": [
+        "recursion",
+        "multiplication"
+      ]
+    },
+    {
+      "id": "trace_021",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Sum Array",
+      "description": "Trace the execution of this array sum function:",
+      "code_template": "int sum_arr(int *a, int n) {\n    if (n == 0) return 0;\n    return a[n - 1] + sum_arr(a, n - 1);\n}",
+      "test_cases": [
+        {
+          "input": "sum_arr([1,2,3], 3)",
+          "correct_answer": "6",
+          "trace": [
+            "sum_arr([1,2,3], 3): return a[2] + sum_arr([1,2,3], 2)",
+            "  sum_arr([1,2,3], 2): return a[1] + sum_arr([1,2,3], 1)",
+            "    sum_arr([1,2,3], 1): return a[0] + sum_arr([1,2,3], 0)",
+            "      sum_arr([1,2,3], 0): return 0",
+            "    sum_arr([1,2,3], 1) = 1 + 0 = 1",
+            "  sum_arr([1,2,3], 2) = 2 + 1 = 3",
+            "sum_arr([1,2,3], 3) = 3 + 3 = 6"
+          ]
+        }
+      ],
+      "explanation": "The function adds elements from the end toward the start.",
+      "hints": [
+        "Base case n == 0",
+        "Use a[n-1]",
+        "1+2+3=6"
+      ],
+      "tags": [
+        "recursion",
+        "arrays"
+      ]
+    },
+    {
+      "id": "trace_022",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace String Length",
+      "description": "Trace the execution of this string length function:",
+      "code_template": "int len(const char *s) {\n    if (*s == '\\0') return 0;\n    return 1 + len(s + 1);\n}",
+      "test_cases": [
+        {
+          "input": "len(\"cat\")",
+          "correct_answer": "3",
+          "trace": [
+            "len(\"cat\"): return 1 + len(\"at\")",
+            "  len(\"at\"): return 1 + len(\"t\")",
+            "    len(\"t\"): return 1 + len(\"\")",
+            "      len(\"\"): return 0",
+            "    len(\"t\") = 1 + 0 = 1",
+            "  len(\"at\") = 1 + 1 = 2",
+            "len(\"cat\") = 1 + 2 = 3"
+          ]
+        }
+      ],
+      "explanation": "The function counts characters until it reaches '\\0'.",
+      "hints": [
+        "Advance pointer each call",
+        "Base case at '\\0'",
+        "Length of cat is 3"
+      ],
+      "tags": [
+        "recursion",
+        "strings"
+      ]
+    },
+    {
+      "id": "trace_023",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Sum Even Count",
+      "description": "Trace the execution of this even counter:",
+      "code_template": "int count_even(int n) {\n    if (n == 0) return 0;\n    return (n % 2 == 0) + count_even(n - 1);\n}",
+      "test_cases": [
+        {
+          "input": "count_even(4)",
+          "correct_answer": "2",
+          "trace": [
+            "count_even(4): return 1 + count_even(3)",
+            "  count_even(3): return 0 + count_even(2)",
+            "    count_even(2): return 1 + count_even(1)",
+            "      count_even(1): return 0 + count_even(0)",
+            "        count_even(0): return 0",
+            "      count_even(1) = 0 + 0 = 0",
+            "    count_even(2) = 1 + 0 = 1",
+            "  count_even(3) = 0 + 1 = 1",
+            "count_even(4) = 1 + 1 = 2"
+          ]
+        }
+      ],
+      "explanation": "Adds 1 for even numbers and 0 for odd numbers.",
+      "hints": [
+        "Even numbers add 1",
+        "Odd numbers add 0",
+        "Count of evens up to 4 is 2"
+      ],
+      "tags": [
+        "recursion",
+        "modulo"
+      ]
+    },
+    {
+      "id": "trace_024",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Count Down",
+      "description": "Trace the execution of this countdown function:",
+      "code_template": "int count(int n) {\n    if (n == 0) return 0;\n    return 1 + count(n - 1);\n}",
+      "test_cases": [
+        {
+          "input": "count(3)",
+          "correct_answer": "3",
+          "trace": [
+            "count(3): return 1 + count(2)",
+            "  count(2): return 1 + count(1)",
+            "    count(1): return 1 + count(0)",
+            "      count(0): return 0",
+            "    count(1) = 1 + 0 = 1",
+            "  count(2) = 1 + 1 = 2",
+            "count(3) = 1 + 2 = 3"
+          ]
+        }
+      ],
+      "explanation": "Each call adds 1 until n reaches 0.",
+      "hints": [
+        "Base case n == 0",
+        "Adds 1 per call",
+        "Result equals n"
+      ],
+      "tags": [
+        "recursion",
+        "counting"
+      ]
+    },
+    {
+      "id": "trace_025",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Min of Two",
+      "description": "Trace the execution of this min function:",
+      "code_template": "int min2(int a, int b) {\n    if (a < b) return a;\n    return b;\n}",
+      "test_cases": [
+        {
+          "input": "min2(8, 5)",
+          "correct_answer": "5",
+          "trace": [
+            "min2(8, 5): a >= b, so return 5"
+          ]
+        },
+        {
+          "input": "min2(2, 7)",
+          "correct_answer": "2",
+          "trace": [
+            "min2(2, 7): a < b, so return 2"
+          ]
+        }
+      ],
+      "explanation": "The function returns the smaller of the two values.",
+      "hints": [
+        "Compare a and b",
+        "Return smaller value",
+        "Simple conditional"
+      ],
+      "tags": [
+        "recursion",
+        "conditionals"
+      ]
+    },
+    {
+      "id": "trace_026",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Reverse Digits",
+      "description": "Trace the execution of this digit printer:",
+      "code_template": "void print_rev(int n) {\n    if (n == 0) return;\n    printf(\"%d\", n % 10);\n    print_rev(n / 10);\n}",
+      "test_cases": [
+        {
+          "input": "print_rev(120)",
+          "correct_answer": "021",
+          "trace": [
+            "print_rev(120): print 0, then call print_rev(12)",
+            "  print_rev(12): print 2, then call print_rev(1)",
+            "    print_rev(1): print 1, then call print_rev(0)",
+            "      print_rev(0): return"
+          ]
+        }
+      ],
+      "explanation": "Each call prints the last digit then recurses on the remaining number.",
+      "hints": [
+        "Use n % 10",
+        "Divide by 10 each call",
+        "Prints reversed digits"
+      ],
+      "tags": [
+        "recursion",
+        "digits"
+      ]
+    },
+    {
+      "id": "trace_027",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "medium",
+      "title": "Trace Binary Search",
+      "description": "Trace the execution of this binary search:",
+      "code_template": "int search(int *a, int lo, int hi, int target) {\n    if (lo > hi) return -1;\n    int mid = (lo + hi) / 2;\n    if (a[mid] == target) return mid;\n    if (target < a[mid]) return search(a, lo, mid - 1, target);\n    return search(a, mid + 1, hi, target);\n}",
+      "test_cases": [
+        {
+          "input": "search([1,3,5,7], 0, 3, 7)",
+          "correct_answer": "3",
+          "trace": [
+            "search([1,3,5,7], 0, 3, 7): mid = 1, a[mid]=3",
+            "  target > 3, search right half",
+            "  search([1,3,5,7], 2, 3, 7): mid = 2, a[mid]=5",
+            "    target > 5, search right half",
+            "    search([1,3,5,7], 3, 3, 7): mid = 3, a[mid]=7",
+            "      a[mid] == target, return 3"
+          ]
+        }
+      ],
+      "explanation": "Binary search halves the range until it finds the target or fails.",
+      "hints": [
+        "Compute mid each step",
+        "Go left or right",
+        "Return index when found"
+      ],
+      "tags": [
+        "recursion",
+        "binary_search"
+      ]
+    },
+    {
+      "id": "trace_028",
+      "category": "recursion",
+      "type": "recursive_trace",
+      "difficulty": "easy",
+      "title": "Trace Sum of Squares",
+      "description": "Trace the execution of this sum of squares function:",
+      "code_template": "int sum_sq(int n) {\n    if (n == 0) return 0;\n    return n * n + sum_sq(n - 1);\n}",
+      "test_cases": [
+        {
+          "input": "sum_sq(2)",
+          "correct_answer": "5",
+          "trace": [
+            "sum_sq(2): return 4 + sum_sq(1)",
+            "  sum_sq(1): return 1 + sum_sq(0)",
+            "    sum_sq(0): return 0",
+            "  sum_sq(1) = 1 + 0 = 1",
+            "sum_sq(2) = 4 + 1 = 5"
+          ]
+        }
+      ],
+      "explanation": "Adds squares from n down to 0.",
+      "hints": [
+        "2^2 + 1^2",
+        "4 + 1 = 5",
+        "Base case returns 0"
+      ],
+      "tags": [
+        "recursion",
+        "math"
+      ]
     }
   ]
 }

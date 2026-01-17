@@ -616,6 +616,1125 @@
         "euclid",
         "algorithms"
       ]
+    },
+    {
+      "id": "rec_024",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Count Up",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid count_up(int n) {\n    if (n == 0) return;\n    count_up(n - 1);\n    printf(\"%d\", n);\n}\n\nint main() {\n    count_up(3);\n    return 0;\n}",
+      "options": [
+        "123",
+        "321",
+        "333",
+        "No output"
+      ],
+      "correct_answer": "A",
+      "explanation": "The recursive call happens before printing, so it prints 1,2,3.",
+      "hints": [
+        "Print after recursion",
+        "Unwinds in ascending order",
+        "Outputs 123"
+      ],
+      "tags": [
+        "recursion",
+        "printing"
+      ]
+    },
+    {
+      "id": "rec_025",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Count Down",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid count_down(int n) {\n    if (n == 0) return;\n    printf(\"%d\", n);\n    count_down(n - 1);\n}\n\nint main() {\n    count_down(3);\n    return 0;\n}",
+      "options": [
+        "123",
+        "321",
+        "333",
+        "No output"
+      ],
+      "correct_answer": "B",
+      "explanation": "The function prints before the recursive call, so it prints 3,2,1.",
+      "hints": [
+        "Print before recursion",
+        "Outputs descending",
+        "321"
+      ],
+      "tags": [
+        "recursion",
+        "printing"
+      ]
+    },
+    {
+      "id": "rec_026",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Sum of Squares",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint sum_sq(int n) {\n    if (n == 0) return 0;\n    return n * n + sum_sq(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", sum_sq(3));\n    return 0;\n}",
+      "options": [
+        "6",
+        "9",
+        "14",
+        "15"
+      ],
+      "correct_answer": "C",
+      "explanation": "sum_sq(3) = 9 + 4 + 1 = 14.",
+      "hints": [
+        "Add 3^2, 2^2, 1^2",
+        "9+4+1",
+        "14"
+      ],
+      "tags": [
+        "recursion",
+        "math"
+      ]
+    },
+    {
+      "id": "rec_027",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Reverse Print",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid print_rev(int n) {\n    if (n == 0) return;\n    printf(\"%d\", n % 10);\n    print_rev(n / 10);\n}\n\nint main() {\n    print_rev(123);\n    return 0;\n}",
+      "options": [
+        "123",
+        "321",
+        "312",
+        "No output"
+      ],
+      "correct_answer": "B",
+      "explanation": "Each call prints the last digit, then recurses on the rest. 123 prints 3,2,1.",
+      "hints": [
+        "n % 10 gives last digit",
+        "Recurse on n/10",
+        "Outputs 321"
+      ],
+      "tags": [
+        "recursion",
+        "digits"
+      ]
+    },
+    {
+      "id": "rec_028",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Power Base Case",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint pow_n(int base, int exp) {\n    if (exp == 0) return 1;\n    return base * pow_n(base, exp - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", pow_n(5, 0));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "5",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "Any number to the power of 0 is 1, and the base case returns 1.",
+      "hints": [
+        "exp == 0 base case",
+        "Return 1",
+        "5^0 = 1"
+      ],
+      "tags": [
+        "recursion",
+        "power"
+      ]
+    },
+    {
+      "id": "rec_029",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Tail Recursion",
+      "description": "Which statement is TRUE about this function?",
+      "code_template": "int sum_tail(int n, int acc) {\n    if (n == 0) return acc;\n    return sum_tail(n - 1, acc + n);\n}",
+      "options": [
+        "It is not recursive",
+        "It is tail-recursive",
+        "It has no base case",
+        "It returns incorrect sums"
+      ],
+      "correct_answer": "B",
+      "explanation": "The recursive call is the last operation, so it is tail-recursive.",
+      "hints": [
+        "Return is the recursive call",
+        "No work after call",
+        "Tail recursion"
+      ],
+      "tags": [
+        "recursion",
+        "tail_recursion"
+      ]
+    },
+    {
+      "id": "rec_030",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Factorial Base Case",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint fact(int n) {\n    if (n <= 1) return 1;\n    return n * fact(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", fact(1));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "The base case returns 1 when n <= 1.",
+      "hints": [
+        "n <= 1 returns 1",
+        "fact(1) = 1",
+        "Base case"
+      ],
+      "tags": [
+        "recursion",
+        "factorial"
+      ]
+    },
+    {
+      "id": "rec_031",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Sum of Array",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint sum_arr(int *a, int n) {\n    if (n == 0) return 0;\n    return a[n - 1] + sum_arr(a, n - 1);\n}\n\nint main() {\n    int a[] = {2, 4, 6};\n    printf(\"%d\\n\", sum_arr(a, 3));\n    return 0;\n}",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct_answer": "D",
+      "explanation": "2 + 4 + 6 = 12.",
+      "hints": [
+        "Sum all elements",
+        "2+4+6",
+        "Result is 12"
+      ],
+      "tags": [
+        "recursion",
+        "arrays"
+      ]
+    },
+    {
+      "id": "rec_032",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Fibonacci",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint fib(int n) {\n    if (n <= 1) return n;\n    return fib(n - 1) + fib(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", fib(5));\n    return 0;\n}",
+      "options": [
+        "3",
+        "5",
+        "8",
+        "13"
+      ],
+      "correct_answer": "B",
+      "explanation": "Fibonacci sequence: 0,1,1,2,3,5. fib(5) = 5.",
+      "hints": [
+        "Sequence starts 0,1",
+        "fib(5)=5",
+        "Compute recursively"
+      ],
+      "tags": [
+        "recursion",
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "rec_033",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Count Digits",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint digits(int n) {\n    if (n < 10) return 1;\n    return 1 + digits(n / 10);\n}\n\nint main() {\n    printf(\"%d\\n\", digits(999));\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "B",
+      "explanation": "999 has 3 digits.",
+      "hints": [
+        "Divide by 10 each step",
+        "999 -> 99 -> 9",
+        "Count is 3"
+      ],
+      "tags": [
+        "recursion",
+        "digits"
+      ]
+    },
+    {
+      "id": "rec_034",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Missing Base Case",
+      "description": "What happens here?",
+      "code_template": "int f(int n) {\n    return f(n - 1) + 1;\n}\n",
+      "options": [
+        "Returns n",
+        "Compilation error",
+        "Infinite recursion / stack overflow",
+        "Returns 1"
+      ],
+      "correct_answer": "C",
+      "explanation": "There is no base case, so it recurses forever until the stack overflows.",
+      "hints": [
+        "No base case",
+        "Recurses indefinitely",
+        "Stack overflow"
+      ],
+      "tags": [
+        "recursion",
+        "base_case"
+      ]
+    },
+    {
+      "id": "rec_035",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sum to N",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint sum_n(int n) {\n    if (n == 0) return 0;\n    return n + sum_n(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", sum_n(4));\n    return 0;\n}",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct_answer": "C",
+      "explanation": "4 + 3 + 2 + 1 = 10.",
+      "hints": [
+        "Sum from 1 to 4",
+        "4+3+2+1",
+        "Result is 10"
+      ],
+      "tags": [
+        "recursion",
+        "summation"
+      ]
+    },
+    {
+      "id": "rec_036",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Min",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint min2(int a, int b) {\n    if (a < b) return a;\n    return b;\n}\n\nint main() {\n    printf(\"%d\\n\", min2(7, 3));\n    return 0;\n}",
+      "options": [
+        "3",
+        "7",
+        "10",
+        "0"
+      ],
+      "correct_answer": "A",
+      "explanation": "min2 returns the smaller value: 3.",
+      "hints": [
+        "Compare 7 and 3",
+        "Return smaller",
+        "Result is 3"
+      ],
+      "tags": [
+        "recursion",
+        "min"
+      ]
+    },
+    {
+      "id": "rec_037",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive String Length",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint len(const char *s) {\n    if (*s == '\\0') return 0;\n    return 1 + len(s + 1);\n}\n\nint main() {\n    printf(\"%d\\n\", len(\"hey\"));\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "B",
+      "explanation": "The length of \"hey\" is 3.",
+      "hints": [
+        "Count characters",
+        "hey has 3 letters",
+        "Result is 3"
+      ],
+      "tags": [
+        "recursion",
+        "strings"
+      ]
+    },
+    {
+      "id": "rec_038",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Mutual Recursion",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint is_even(int n);\nint is_odd(int n);\n\nint is_even(int n) {\n    if (n == 0) return 1;\n    return is_odd(n - 1);\n}\n\nint is_odd(int n) {\n    if (n == 0) return 0;\n    return is_even(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", is_even(4));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "4",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "4 is even, so is_even(4) returns 1.",
+      "hints": [
+        "Even numbers return 1",
+        "Mutual recursion",
+        "is_even(4) is true"
+      ],
+      "tags": [
+        "recursion",
+        "mutual_recursion"
+      ]
+    },
+    {
+      "id": "rec_039",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Binary Search Recursion",
+      "description": "What does this function return?",
+      "code_template": "int search(int *a, int lo, int hi, int target) {\n    if (lo > hi) return -1;\n    int mid = (lo + hi) / 2;\n    if (a[mid] == target) return mid;\n    if (target < a[mid]) return search(a, lo, mid - 1, target);\n    return search(a, mid + 1, hi, target);\n}",
+      "options": [
+        "Always 0",
+        "Index of target or -1",
+        "Always -1",
+        "Number of recursive calls"
+      ],
+      "correct_answer": "B",
+      "explanation": "The function returns the index if found, otherwise -1.",
+      "hints": [
+        "Classic binary search",
+        "Returns index",
+        "Returns -1 when not found"
+      ],
+      "tags": [
+        "recursion",
+        "binary_search"
+      ]
+    },
+    {
+      "id": "rec_040",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Max",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint max2(int a, int b) {\n    if (a > b) return a;\n    return b;\n}\n\nint main() {\n    printf(\"%d\\n\", max2(5, 9));\n    return 0;\n}",
+      "options": [
+        "5",
+        "9",
+        "14",
+        "0"
+      ],
+      "correct_answer": "B",
+      "explanation": "max2 returns the larger value: 9.",
+      "hints": [
+        "Compare 5 and 9",
+        "Return larger",
+        "Result is 9"
+      ],
+      "tags": [
+        "recursion",
+        "max"
+      ]
+    },
+    {
+      "id": "rec_041",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Tower of Hanoi Moves",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint hanoi_moves(int n) {\n    if (n == 1) return 1;\n    return 2 * hanoi_moves(n - 1) + 1;\n}\n\nint main() {\n    printf(\"%d\\n\", hanoi_moves(3));\n    return 0;\n}",
+      "options": [
+        "5",
+        "7",
+        "8",
+        "15"
+      ],
+      "correct_answer": "B",
+      "explanation": "Tower of Hanoi with 3 disks requires 2^3 - 1 = 7 moves. hanoi_moves(3) = 2*hanoi_moves(2) + 1 = 2*(2*hanoi_moves(1) + 1) + 1 = 2*(2*1 + 1) + 1 = 2*3 + 1 = 7.",
+      "hints": [
+        "Formula: 2^n - 1 moves for n disks",
+        "Recursive relation: T(n) = 2*T(n-1) + 1",
+        "For 3 disks: 7 moves"
+      ],
+      "tags": [
+        "recursion",
+        "tower_of_hanoi",
+        "divide_and_conquer"
+      ]
+    },
+    {
+      "id": "rec_042",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Simple Tree Node Count",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\ntypedef struct Node {\n    int val;\n    struct Node *left, *right;\n} Node;\n\nint count_nodes(Node *root) {\n    if (root == NULL) return 0;\n    return 1 + count_nodes(root->left) + count_nodes(root->right);\n}\n\nint main() {\n    Node n3 = {3, NULL, NULL};\n    Node n2 = {2, NULL, NULL};\n    Node n1 = {1, &n2, &n3};\n    printf(\"%d\\n\", count_nodes(&n1));\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "6"
+      ],
+      "correct_answer": "C",
+      "explanation": "The tree has 3 nodes: root (n1) with two children (n2 and n3). count_nodes returns 1 + count_nodes(left) + count_nodes(right) = 1 + 1 + 1 = 3.",
+      "hints": [
+        "Count all nodes in the tree",
+        "Root has two children",
+        "Total: 3 nodes"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "binary_tree"
+      ]
+    },
+    {
+      "id": "rec_043",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Inorder Traversal Output",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\ntypedef struct Node {\n    int val;\n    struct Node *left, *right;\n} Node;\n\nvoid inorder(Node *root) {\n    if (root == NULL) return;\n    inorder(root->left);\n    printf(\"%d\", root->val);\n    inorder(root->right);\n}\n\nint main() {\n    Node n3 = {3, NULL, NULL};\n    Node n2 = {1, NULL, NULL};\n    Node n1 = {2, &n2, &n3};\n    inorder(&n1);\n    return 0;\n}",
+      "options": [
+        "123",
+        "213",
+        "321",
+        "231"
+      ],
+      "correct_answer": "A",
+      "explanation": "Inorder traversal visits: left subtree, root, right subtree. The tree has structure 2(1,3), so inorder prints: 1, 2, 3.",
+      "hints": [
+        "Inorder: left, root, right",
+        "Visit left child (1) first",
+        "Then root (2), then right (3)"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "inorder"
+      ]
+    },
+    {
+      "id": "rec_044",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Preorder Traversal Output",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\ntypedef struct Node {\n    int val;\n    struct Node *left, *right;\n} Node;\n\nvoid preorder(Node *root) {\n    if (root == NULL) return;\n    printf(\"%d\", root->val);\n    preorder(root->left);\n    preorder(root->right);\n}\n\nint main() {\n    Node n3 = {3, NULL, NULL};\n    Node n2 = {1, NULL, NULL};\n    Node n1 = {2, &n2, &n3};\n    preorder(&n1);\n    return 0;\n}",
+      "options": [
+        "123",
+        "213",
+        "321",
+        "231"
+      ],
+      "correct_answer": "B",
+      "explanation": "Preorder traversal visits: root, left subtree, right subtree. The tree has structure 2(1,3), so preorder prints: 2, 1, 3.",
+      "hints": [
+        "Preorder: root, left, right",
+        "Visit root (2) first",
+        "Then left (1), then right (3)"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "preorder"
+      ]
+    },
+    {
+      "id": "rec_045",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Postorder Traversal Output",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\ntypedef struct Node {\n    int val;\n    struct Node *left, *right;\n} Node;\n\nvoid postorder(Node *root) {\n    if (root == NULL) return;\n    postorder(root->left);\n    postorder(root->right);\n    printf(\"%d\", root->val);\n}\n\nint main() {\n    Node n3 = {3, NULL, NULL};\n    Node n2 = {1, NULL, NULL};\n    Node n1 = {2, &n2, &n3};\n    postorder(&n1);\n    return 0;\n}",
+      "options": [
+        "123",
+        "132",
+        "213",
+        "231"
+      ],
+      "correct_answer": "B",
+      "explanation": "Postorder traversal visits: left subtree, right subtree, root. The tree has structure 2(1,3), so postorder prints: 1, 3, 2.",
+      "hints": [
+        "Postorder: left, right, root",
+        "Visit children first",
+        "Then root last"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "postorder"
+      ]
+    },
+    {
+      "id": "rec_046",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Fibonacci with Memoization",
+      "description": "What is the time complexity improvement of this memoized version?",
+      "code_template": "#include <stdio.h>\n#define MAX 100\n\nint memo[MAX];\n\nint fib(int n) {\n    if (n <= 1) return n;\n    if (memo[n] != -1) return memo[n];\n    memo[n] = fib(n - 1) + fib(n - 2);\n    return memo[n];\n}",
+      "options": [
+        "From O(n) to O(1)",
+        "From O(n^2) to O(n log n)",
+        "From O(2^n) to O(n)",
+        "No improvement"
+      ],
+      "correct_answer": "C",
+      "explanation": "Regular recursive Fibonacci is O(2^n) due to repeated calculations. Memoization stores results, reducing it to O(n) as each fib(i) is computed only once.",
+      "hints": [
+        "Regular Fibonacci is exponential",
+        "Memoization avoids recomputation",
+        "Each subproblem solved once"
+      ],
+      "tags": [
+        "recursion",
+        "memoization",
+        "dynamic_programming",
+        "fibonacci"
+      ]
+    },
+    {
+      "id": "rec_047",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Merge Sort Partition",
+      "description": "What does this helper function do in merge sort?",
+      "code_template": "void merge_sort(int arr[], int left, int right) {\n    if (left >= right) return;\n    int mid = left + (right - left) / 2;\n    merge_sort(arr, left, mid);\n    merge_sort(arr, mid + 1, right);\n    merge(arr, left, mid, right);\n}",
+      "options": [
+        "Sorts the array iteratively",
+        "Divides array and recursively sorts halves",
+        "Only merges two arrays",
+        "Finds the median element"
+      ],
+      "correct_answer": "B",
+      "explanation": "This is the classic divide-and-conquer merge sort: divide array in half, recursively sort each half, then merge the sorted halves.",
+      "hints": [
+        "Divide and conquer strategy",
+        "Recursive calls on halves",
+        "Merge combines results"
+      ],
+      "tags": [
+        "recursion",
+        "merge_sort",
+        "divide_and_conquer"
+      ]
+    },
+    {
+      "id": "rec_048",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Quick Sort Partition",
+      "description": "What is the purpose of the recursive calls in quick sort?",
+      "code_template": "void quick_sort(int arr[], int low, int high) {\n    if (low < high) {\n        int pi = partition(arr, low, high);\n        quick_sort(arr, low, pi - 1);\n        quick_sort(arr, pi + 1, high);\n    }\n}",
+      "options": [
+        "Sort elements smaller and larger than pivot",
+        "Find the minimum element",
+        "Merge sorted subarrays",
+        "Count array elements"
+      ],
+      "correct_answer": "A",
+      "explanation": "Quick sort partitions array around pivot, then recursively sorts elements smaller than pivot (left) and larger than pivot (right).",
+      "hints": [
+        "Partition divides by pivot",
+        "Recursive calls on sub-arrays",
+        "Divide and conquer"
+      ],
+      "tags": [
+        "recursion",
+        "quick_sort",
+        "divide_and_conquer"
+      ]
+    },
+    {
+      "id": "rec_049",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Tree Height Calculation",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\ntypedef struct Node {\n    int val;\n    struct Node *left, *right;\n} Node;\n\nint height(Node *root) {\n    if (root == NULL) return 0;\n    int lh = height(root->left);\n    int rh = height(root->right);\n    return 1 + (lh > rh ? lh : rh);\n}\n\nint main() {\n    Node n3 = {3, NULL, NULL};\n    Node n2 = {2, &n3, NULL};\n    Node n1 = {1, &n2, NULL};\n    printf(\"%d\\n\", height(&n1));\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": "C",
+      "explanation": "The tree is a chain: 1->2->3. Height counts nodes from root to deepest leaf: 3 nodes = height 3.",
+      "hints": [
+        "Count nodes from root to leaf",
+        "Tree is linear: 1->2->3",
+        "Height is 3"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "binary_tree"
+      ]
+    },
+    {
+      "id": "rec_050",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "N-Queens Backtracking",
+      "description": "What strategy does this use?",
+      "code_template": "int solve(int board[], int col, int n) {\n    if (col >= n) return 1;\n    for (int i = 0; i < n; i++) {\n        if (is_safe(board, col, i, n)) {\n            board[col] = i;\n            if (solve(board, col + 1, n)) return 1;\n            board[col] = -1; // backtrack\n        }\n    }\n    return 0;\n}",
+      "options": [
+        "Dynamic programming",
+        "Greedy algorithm",
+        "Backtracking",
+        "Divide and conquer"
+      ],
+      "correct_answer": "C",
+      "explanation": "This is classic backtracking: try placing queen, recurse; if it fails, undo (backtrack) and try next position.",
+      "hints": [
+        "Tries options recursively",
+        "Undoes choices that fail",
+        "Backtracking pattern"
+      ],
+      "tags": [
+        "recursion",
+        "backtracking",
+        "n_queens"
+      ]
+    },
+    {
+      "id": "rec_051",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Subset Sum Backtracking",
+      "description": "What does this function check?",
+      "code_template": "int subset_sum(int arr[], int n, int sum) {\n    if (sum == 0) return 1;\n    if (n == 0) return 0;\n    if (arr[n-1] > sum)\n        return subset_sum(arr, n-1, sum);\n    return subset_sum(arr, n-1, sum) || \n           subset_sum(arr, n-1, sum - arr[n-1]);\n}",
+      "options": [
+        "If array is sorted",
+        "If subset exists with given sum",
+        "Maximum possible sum",
+        "Number of subsets"
+      ],
+      "correct_answer": "B",
+      "explanation": "This checks if any subset of array elements sums to the target sum, using recursive backtracking to try including/excluding each element.",
+      "hints": [
+        "Tries including/excluding elements",
+        "Checks if sum achievable",
+        "Returns true/false"
+      ],
+      "tags": [
+        "recursion",
+        "backtracking",
+        "subset_sum",
+        "dynamic_programming"
+      ]
+    },
+    {
+      "id": "rec_052",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Tail Recursion Conversion",
+      "description": "Which version can be optimized by compiler to avoid stack growth?",
+      "code_template": "// Version A\nint sum_a(int n, int acc) {\n    if (n == 0) return acc;\n    return sum_a(n - 1, acc + n);\n}\n\n// Version B\nint sum_b(int n) {\n    if (n == 0) return 0;\n    return n + sum_b(n - 1);\n}",
+      "options": [
+        "Version A (tail recursive)",
+        "Version B (non-tail recursive)",
+        "Both versions",
+        "Neither version"
+      ],
+      "correct_answer": "A",
+      "explanation": "Version A is tail recursive (recursive call is last operation), allowing tail call optimization to reuse stack frame. Version B performs addition after recursion, preventing optimization.",
+      "hints": [
+        "Tail recursion = last operation is recursive call",
+        "Version A has nothing after recursion",
+        "Version B adds after returning"
+      ],
+      "tags": [
+        "recursion",
+        "tail_recursion",
+        "optimization"
+      ]
+    },
+    {
+      "id": "rec_053",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Factorial Tail Recursive",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint fact_tail(int n, int acc) {\n    if (n <= 1) return acc;\n    return fact_tail(n - 1, n * acc);\n}\n\nint main() {\n    printf(\"%d\\n\", fact_tail(5, 1));\n    return 0;\n}",
+      "options": [
+        "24",
+        "60",
+        "120",
+        "720"
+      ],
+      "correct_answer": "C",
+      "explanation": "This is tail-recursive factorial with accumulator. fact_tail(5,1) = fact_tail(4,5) = fact_tail(3,20) = fact_tail(2,60) = fact_tail(1,120) = 120.",
+      "hints": [
+        "Accumulator pattern",
+        "Tail recursive",
+        "5! = 120"
+      ],
+      "tags": [
+        "recursion",
+        "tail_recursion",
+        "factorial"
+      ]
+    },
+    {
+      "id": "rec_054",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Converting to Iteration",
+      "description": "Which iterative version is equivalent to this recursion?",
+      "code_template": "int sum_rec(int n) {\n    if (n == 0) return 0;\n    return n + sum_rec(n - 1);\n}",
+      "options": [
+        "int s=0; for(int i=n; i>0; i--) s+=i;",
+        "int s=1; for(int i=1; i<=n; i++) s*=i;",
+        "int s=n; for(int i=0; i<n; i++) s--;",
+        "int s=0; for(int i=0; i<n; i++) s=i;"
+      ],
+      "correct_answer": "A",
+      "explanation": "The recursive function sums from n down to 1. The equivalent iteration is: s=0; for(i=n; i>0; i--) s+=i;",
+      "hints": [
+        "Recursion sums n + (n-1) + ... + 1",
+        "Loop should add each value",
+        "Start from n, decrement"
+      ],
+      "tags": [
+        "recursion",
+        "iteration",
+        "conversion"
+      ]
+    },
+    {
+      "id": "rec_055",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Stack Depth Limit",
+      "description": "What happens when recursion depth exceeds system limits?",
+      "code_template": "int deep_recursion(int n) {\n    if (n == 0) return 0;\n    return 1 + deep_recursion(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", deep_recursion(100000));\n    return 0;\n}",
+      "options": [
+        "Program runs successfully",
+        "Heap overflow error",
+        "Stack overflow / segmentation fault",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Each recursive call consumes stack space. With 100,000 calls, the stack will overflow, causing segmentation fault or stack overflow error.",
+      "hints": [
+        "Each call uses stack frame",
+        "Stack has size limit",
+        "Too many calls crash"
+      ],
+      "tags": [
+        "recursion",
+        "stack_overflow",
+        "limits"
+      ]
+    },
+    {
+      "id": "rec_056",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Palindrome Check Recursion",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n#include <string.h>\n\nint is_palindrome(char *s, int start, int end) {\n    if (start >= end) return 1;\n    if (s[start] != s[end]) return 0;\n    return is_palindrome(s, start + 1, end - 1);\n}\n\nint main() {\n    char s[] = \"racecar\";\n    printf(\"%d\\n\", is_palindrome(s, 0, strlen(s) - 1));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "7",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "\"racecar\" is a palindrome. The function compares characters from both ends moving inward, returns 1 (true) for palindrome.",
+      "hints": [
+        "Compare from both ends",
+        "racecar reads same forwards/backwards",
+        "Returns 1 for palindrome"
+      ],
+      "tags": [
+        "recursion",
+        "strings",
+        "palindrome"
+      ]
+    },
+    {
+      "id": "rec_057",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Ackermann Function",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint ackermann(int m, int n) {\n    if (m == 0) return n + 1;\n    if (n == 0) return ackermann(m - 1, 1);\n    return ackermann(m - 1, ackermann(m, n - 1));\n}\n\nint main() {\n    printf(\"%d\\n\", ackermann(2, 2));\n    return 0;\n}",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "9"
+      ],
+      "correct_answer": "C",
+      "explanation": "Ackermann(2,2) = Ackermann(1, Ackermann(2,1)) = Ackermann(1, Ackermann(1, Ackermann(2,0))) = Ackermann(1, Ackermann(1, Ackermann(1,1))) = ... = 7.",
+      "hints": [
+        "Double recursion",
+        "Very fast growing function",
+        "Trace carefully"
+      ],
+      "tags": [
+        "recursion",
+        "ackermann",
+        "mathematical"
+      ]
+    },
+    {
+      "id": "rec_058",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Binary Search Tree Insert",
+      "description": "What does this function do?",
+      "code_template": "Node* insert(Node *root, int val) {\n    if (root == NULL) {\n        Node *n = malloc(sizeof(Node));\n        n->val = val;\n        n->left = n->right = NULL;\n        return n;\n    }\n    if (val < root->val)\n        root->left = insert(root->left, val);\n    else\n        root->right = insert(root->right, val);\n    return root;\n}",
+      "options": [
+        "Searches for a value",
+        "Deletes a node",
+        "Inserts value maintaining BST property",
+        "Counts tree nodes"
+      ],
+      "correct_answer": "C",
+      "explanation": "Recursively inserts value into BST: if empty, create node; if value < root, insert left; if value >= root, insert right.",
+      "hints": [
+        "Creates new node when NULL",
+        "Chooses left/right based on comparison",
+        "Maintains BST ordering"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "binary_search_tree"
+      ]
+    },
+    {
+      "id": "rec_059",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Fibonacci Base Cases",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint fib(int n) {\n    if (n <= 1) return n;\n    return fib(n - 1) + fib(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", fib(0));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Undefined"
+      ],
+      "correct_answer": "A",
+      "explanation": "Base case: if n <= 1 return n. So fib(0) returns 0.",
+      "hints": [
+        "Check base case condition",
+        "n=0 is <= 1",
+        "Returns n which is 0"
+      ],
+      "tags": [
+        "recursion",
+        "fibonacci",
+        "base_case"
+      ]
+    },
+    {
+      "id": "rec_060",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Memoization Array Setup",
+      "description": "What should memo array be initialized to for memoization?",
+      "code_template": "int memo[100];\n\nint fib(int n) {\n    if (n <= 1) return n;\n    if (memo[n] != ???) return memo[n];\n    memo[n] = fib(n - 1) + fib(n - 2);\n    return memo[n];\n}",
+      "options": [
+        "0",
+        "-1",
+        "NULL",
+        "INT_MAX"
+      ],
+      "correct_answer": "B",
+      "explanation": "Memoization arrays should be initialized to a sentinel value (typically -1) that cannot be a valid result, to distinguish computed from uncomputed values.",
+      "hints": [
+        "Need to detect uncomputed values",
+        "Fibonacci never returns negative",
+        "Use -1 as sentinel"
+      ],
+      "tags": [
+        "recursion",
+        "memoization",
+        "dynamic_programming"
+      ]
+    },
+    {
+      "id": "rec_061",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Permutation Generation",
+      "description": "What does this recursive pattern generate?",
+      "code_template": "void permute(char *str, int l, int r) {\n    if (l == r) {\n        printf(\"%s\\n\", str);\n        return;\n    }\n    for (int i = l; i <= r; i++) {\n        swap(&str[l], &str[i]);\n        permute(str, l + 1, r);\n        swap(&str[l], &str[i]); // backtrack\n    }\n}",
+      "options": [
+        "All subsets",
+        "All permutations",
+        "All combinations",
+        "Sorted output"
+      ],
+      "correct_answer": "B",
+      "explanation": "This generates all permutations using backtracking: swap elements, recurse, then backtrack (undo swap) to try next permutation.",
+      "hints": [
+        "Swaps to try different arrangements",
+        "Backtracks after each try",
+        "Generates all orderings"
+      ],
+      "tags": [
+        "recursion",
+        "backtracking",
+        "permutations"
+      ]
+    },
+    {
+      "id": "rec_062",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Tree Sum Recursive",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\ntypedef struct Node {\n    int val;\n    struct Node *left, *right;\n} Node;\n\nint tree_sum(Node *root) {\n    if (root == NULL) return 0;\n    return root->val + tree_sum(root->left) + tree_sum(root->right);\n}\n\nint main() {\n    Node n3 = {5, NULL, NULL};\n    Node n2 = {3, NULL, NULL};\n    Node n1 = {2, &n2, &n3};\n    printf(\"%d\\n\", tree_sum(&n1));\n    return 0;\n}",
+      "options": [
+        "5",
+        "8",
+        "10",
+        "15"
+      ],
+      "correct_answer": "C",
+      "explanation": "Sum of all node values: 2 + 3 + 5 = 10.",
+      "hints": [
+        "Add all node values",
+        "2 + 3 + 5",
+        "Result is 10"
+      ],
+      "tags": [
+        "recursion",
+        "tree_traversal",
+        "binary_tree"
+      ]
+    },
+    {
+      "id": "rec_063",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Mutual Recursion Even/Odd",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint is_even(int n);\nint is_odd(int n);\n\nint is_even(int n) {\n    if (n == 0) return 1;\n    return is_odd(n - 1);\n}\n\nint is_odd(int n) {\n    if (n == 0) return 0;\n    return is_even(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", is_odd(5));\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "5",
+        "Stack overflow"
+      ],
+      "correct_answer": "B",
+      "explanation": "5 is odd, so is_odd(5) should return 1. Trace: is_odd(5) -> is_even(4) -> is_odd(3) -> is_even(2) -> is_odd(1) -> is_even(0) -> 1.",
+      "hints": [
+        "Mutual recursion pattern",
+        "5 is odd",
+        "Returns 1 (true)"
+      ],
+      "tags": [
+        "recursion",
+        "mutual_recursion"
+      ]
+    },
+    {
+      "id": "rec_064",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursion to Iteration Fibonacci",
+      "description": "Which iterative code is equivalent to recursive Fibonacci?",
+      "code_template": "int fib_rec(int n) {\n    if (n <= 1) return n;\n    return fib_rec(n-1) + fib_rec(n-2);\n}",
+      "options": [
+        "int a=0,b=1; for(int i=2;i<=n;i++){int t=a+b;a=b;b=t;} return b;",
+        "int s=0; for(int i=0;i<n;i++) s+=i; return s;",
+        "int p=1; for(int i=1;i<=n;i++) p*=i; return p;",
+        "int a=n; while(n>0) n--; return a;"
+      ],
+      "correct_answer": "A",
+      "explanation": "Iterative Fibonacci maintains two previous values (a, b) and computes next as their sum, similar to the recurrence fib(n) = fib(n-1) + fib(n-2).",
+      "hints": [
+        "Fibonacci needs two previous values",
+        "Update a and b each iteration",
+        "Option A matches pattern"
+      ],
+      "tags": [
+        "recursion",
+        "iteration",
+        "fibonacci",
+        "conversion"
+      ]
+    },
+    {
+      "id": "rec_065",
+      "category": "recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Maze Solving Backtracking",
+      "description": "What strategy does this maze solver use?",
+      "code_template": "int solve_maze(int maze[][], int x, int y, int sol[][]) {\n    if (x == N-1 && y == N-1) return 1;\n    if (is_safe(maze, x, y)) {\n        sol[x][y] = 1;\n        if (solve_maze(maze, x+1, y, sol)) return 1;\n        if (solve_maze(maze, x, y+1, sol)) return 1;\n        sol[x][y] = 0; // backtrack\n        return 0;\n    }\n    return 0;\n}",
+      "options": [
+        "Breadth-first search",
+        "Dynamic programming",
+        "Backtracking",
+        "Greedy algorithm"
+      ],
+      "correct_answer": "C",
+      "explanation": "This uses backtracking: mark cell as part of path, try moving right/down, if both fail, unmark cell (backtrack) and return false.",
+      "hints": [
+        "Tries moves recursively",
+        "Undoes failed attempts",
+        "Classic backtracking"
+      ],
+      "tags": [
+        "recursion",
+        "backtracking",
+        "maze_solving"
+      ]
     }
   ]
 }

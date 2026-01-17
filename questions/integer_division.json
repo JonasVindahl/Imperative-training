@@ -643,6 +643,1080 @@
         "shift",
         "operators"
       ]
+    },
+    {
+      "id": "int_025",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Negative Division Result",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -9;\n    int b = 4;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "-3 3",
+        "-2 -1",
+        "-2 1",
+        "-3 -1"
+      ],
+      "correct_answer": "B",
+      "explanation": "C truncates toward zero. -9 / 4 is -2, remainder is -1.",
+      "hints": [
+        "Truncates toward zero",
+        "Check a = (a/b)*b + (a%b)",
+        "Remainder follows dividend"
+      ],
+      "tags": [
+        "negative_numbers",
+        "modulo"
+      ]
+    },
+    {
+      "id": "int_026",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Promote to Double",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    int b = 2;\n    double x = a * 1.0 / b;\n    printf(\"%.1f\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2.0",
+        "2.5",
+        "3.0",
+        "5.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "Multiplying by 1.0 promotes to double before division, giving 2.5.",
+      "hints": [
+        "1.0 makes it floating-point",
+        "5.0 / 2 = 2.5",
+        "Prints 2.5"
+      ],
+      "tags": [
+        "floating_point",
+        "type_promotion"
+      ]
+    },
+    {
+      "id": "int_027",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sum of Divisions",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5 / 2 + 5 / 2;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "A",
+      "explanation": "Each 5/2 is 2, so 2 + 2 = 4.",
+      "hints": [
+        "Integer division truncates",
+        "5/2 is 2",
+        "2+2=4"
+      ],
+      "tags": [
+        "integer_division",
+        "expressions"
+      ]
+    },
+    {
+      "id": "int_028",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Negative Divisor",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 9;\n    int b = -4;\n    printf(\"%d\\n\", a % b);\n    return 0;\n}",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "-3"
+      ],
+      "correct_answer": "B",
+      "explanation": "Remainder keeps the dividend's sign. 9 = (-2)*(-4) + 1.",
+      "hints": [
+        "Sign follows dividend",
+        "9 % -4 = 1",
+        "Check division result"
+      ],
+      "tags": [
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_029",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Parentheses Matter",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 3;\n    int b = 4;\n    int c = 2;\n    printf(\"%d\\n\", (a + b) / c);\n    return 0;\n}",
+      "options": [
+        "3",
+        "3.5",
+        "4",
+        "5"
+      ],
+      "correct_answer": "A",
+      "explanation": "(3 + 4) / 2 = 7 / 2 = 3 (integer division).",
+      "hints": [
+        "Sum first",
+        "7 / 2 truncates",
+        "Result is 3"
+      ],
+      "tags": [
+        "integer_division",
+        "parentheses"
+      ]
+    },
+    {
+      "id": "int_030",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Division in Loop",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 1; i <= 3; i++) {\n        printf(\"%d \", i / 2);\n    }\n    return 0;\n}",
+      "options": [
+        "0 1 1",
+        "0 1 2",
+        "0 0 1",
+        "1 1 1"
+      ],
+      "correct_answer": "A",
+      "explanation": "1/2 = 0, 2/2 = 1, 3/2 = 1. Prints 0 1 1.",
+      "hints": [
+        "Integer division truncates",
+        "1/2=0, 2/2=1, 3/2=1",
+        "Output 0 1 1"
+      ],
+      "tags": [
+        "loops",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_031",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Left Shift",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    printf(\"%d\\n\", x << 2);\n    return 0;\n}",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "16"
+      ],
+      "correct_answer": "C",
+      "explanation": "Left shift by 2 multiplies by 4. 3 << 2 = 12.",
+      "hints": [
+        "<< multiplies by 2^n",
+        "3 * 4 = 12",
+        "Result is 12"
+      ],
+      "tags": [
+        "bitwise",
+        "shift"
+      ]
+    },
+    {
+      "id": "int_032",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Modulo by One",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 123;\n    printf(\"%d\\n\", x % 1);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "123",
+        "Undefined"
+      ],
+      "correct_answer": "A",
+      "explanation": "Any number modulo 1 is 0.",
+      "hints": [
+        "Remainder after division by 1",
+        "Always 0",
+        "x % 1 = 0"
+      ],
+      "tags": [
+        "modulo",
+        "basics"
+      ]
+    },
+    {
+      "id": "int_033",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cast Result",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    printf(\"%.1f\\n\", (double)(a / b));\n    return 0;\n}",
+      "options": [
+        "3.5",
+        "3.0",
+        "2.0",
+        "4.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "a / b is integer division (3). Casting after gives 3.0.",
+      "hints": [
+        "Division happens first",
+        "7/2=3",
+        "Cast yields 3.0"
+      ],
+      "tags": [
+        "casting",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_034",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Average as Int",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1;\n    int b = 2;\n    int c = 2;\n    printf(\"%d\\n\", (a + b + c) / 3);\n    return 0;\n}",
+      "options": [
+        "1",
+        "1.6",
+        "2",
+        "3"
+      ],
+      "correct_answer": "A",
+      "explanation": "Sum is 5; 5/3 truncates to 1.",
+      "hints": [
+        "Integer division truncates",
+        "5 / 3 = 1",
+        "Result is 1"
+      ],
+      "tags": [
+        "average",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_035",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mix with Double",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 9;\n    int b = 4;\n    double x = a / (double)b;\n    printf(\"%.2f\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2.00",
+        "2.25",
+        "2.50",
+        "3.00"
+      ],
+      "correct_answer": "B",
+      "explanation": "Casting b to double makes floating-point division: 9 / 4.0 = 2.25.",
+      "hints": [
+        "Cast creates floating division",
+        "9 / 4 = 2.25",
+        "Printed with 2 decimals"
+      ],
+      "tags": [
+        "floating_point",
+        "casting"
+      ]
+    },
+    {
+      "id": "int_036",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Integer Division First",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    double x = (double)(a / b) * 2;\n    printf(\"%.1f\\n\", x);\n    return 0;\n}",
+      "options": [
+        "6.0",
+        "7.0",
+        "8.0",
+        "9.0"
+      ],
+      "correct_answer": "A",
+      "explanation": "a/b is 3, cast to 3.0, then *2 gives 6.0.",
+      "hints": [
+        "Integer division first",
+        "3 * 2 = 6",
+        "Result is 6.0"
+      ],
+      "tags": [
+        "casting",
+        "order_of_operations"
+      ]
+    },
+    {
+      "id": "int_037",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Modulo Relationship",
+      "description": "Which equation is always true for integers a and b (b != 0)?",
+      "code_template": "",
+      "options": [
+        "a = (a % b) * b + (a / b)",
+        "a = (a / b) * b + (a % b)",
+        "a = (a / b) + (a % b)",
+        "a = (a % b) / b + a"
+      ],
+      "correct_answer": "B",
+      "explanation": "By definition: a = (a/b)*b + (a%b).",
+      "hints": [
+        "Division algorithm",
+        "Quotient and remainder",
+        "a = q*b + r"
+      ],
+      "tags": [
+        "modulo",
+        "division"
+      ]
+    },
+    {
+      "id": "int_038",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Zero Dividend",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 0;\n    int b = 5;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "0 0",
+        "0 5",
+        "5 0",
+        "Undefined"
+      ],
+      "correct_answer": "A",
+      "explanation": "0 divided by any nonzero is 0, remainder 0.",
+      "hints": [
+        "0 / b = 0",
+        "0 % b = 0",
+        "Both zero"
+      ],
+      "tags": [
+        "division",
+        "modulo"
+      ]
+    },
+    {
+      "id": "int_039",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Division by One",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 42;\n    printf(\"%d\\n\", a / 1);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "42",
+        "Undefined"
+      ],
+      "correct_answer": "C",
+      "explanation": "Dividing by 1 yields the original number.",
+      "hints": [
+        "a / 1 = a",
+        "No truncation",
+        "Result is 42"
+      ],
+      "tags": [
+        "division",
+        "basics"
+      ]
+    },
+    {
+      "id": "int_040",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Larger Divisor",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 3;\n    int b = 5;\n    printf(\"%d\\n\", a % b);\n    return 0;\n}",
+      "options": [
+        "0",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct_answer": "C",
+      "explanation": "If a < b, then a % b is a.",
+      "hints": [
+        "Divisor is larger",
+        "Quotient is 0",
+        "Remainder is a"
+      ],
+      "tags": [
+        "modulo",
+        "basics"
+      ]
+    },
+    {
+      "id": "int_025",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Integer Division with Negative Dividend",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = -17 / 5;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "-3",
+        "-4",
+        "3",
+        "-3.4"
+      ],
+      "correct_answer": "A",
+      "explanation": "In C, integer division truncates towards zero. -17 / 5 = -3.4, which truncates to -3 (not floor division which would give -4).",
+      "hints": [
+        "Integer division discards the fractional part",
+        "C uses truncation towards zero, not floor division",
+        "The result will be an integer, not a float"
+      ],
+      "tags": [
+        "integer_division",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_026",
+      "category": "integer_division",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Negative Numbers",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -17 % 5;\n    int b = 17 % -5;\n    int c = -17 % -5;\n    printf(\"%d %d %d\\n\", a, b, c);\n    return 0;\n}",
+      "options": [
+        "-2 2 -2",
+        "3 3 3",
+        "-2 2 2",
+        "2 -2 -2"
+      ],
+      "correct_answer": "A",
+      "explanation": "In C, the sign of the modulo result takes the sign of the dividend (first operand). -17 % 5 = -2, 17 % -5 = 2, -17 % -5 = -2.",
+      "hints": [
+        "The sign of the result matches the sign of the dividend",
+        "For a % b, the sign comes from a, not b",
+        "|-17 % 5| equals |17 % 5|, but the sign differs"
+      ],
+      "tags": [
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_027",
+      "category": "bitwise_operators",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic Bitwise AND",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 12 & 10;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "8",
+        "14",
+        "2",
+        "22"
+      ],
+      "correct_answer": "A",
+      "explanation": "12 in binary is 1100, 10 in binary is 1010. Bitwise AND: 1100 & 1010 = 1000 = 8.",
+      "hints": [
+        "Convert both numbers to binary first",
+        "AND returns 1 only when both bits are 1",
+        "12 = 1100, 10 = 1010"
+      ],
+      "tags": [
+        "bitwise",
+        "and_operator"
+      ]
+    },
+    {
+      "id": "int_028",
+      "category": "bitwise_operators",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic Bitwise OR",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 12 | 10;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "14",
+        "8",
+        "22",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "12 in binary is 1100, 10 in binary is 1010. Bitwise OR: 1100 | 1010 = 1110 = 14.",
+      "hints": [
+        "OR returns 1 when at least one bit is 1",
+        "12 = 1100, 10 = 1010",
+        "Combine the bits where either has a 1"
+      ],
+      "tags": [
+        "bitwise",
+        "or_operator"
+      ]
+    },
+    {
+      "id": "int_029",
+      "category": "bitwise_operators",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise XOR Properties",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 42;\n    int result = x ^ x;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "0",
+        "42",
+        "84",
+        "-1"
+      ],
+      "correct_answer": "A",
+      "explanation": "Any number XORed with itself equals 0 because XOR returns 1 only when bits differ. Since all bits are identical, all result bits are 0.",
+      "hints": [
+        "XOR returns 1 when bits are different",
+        "What happens when you compare identical bits?",
+        "This is a useful property for clearing values"
+      ],
+      "tags": [
+        "bitwise",
+        "xor_operator",
+        "properties"
+      ]
+    },
+    {
+      "id": "int_030",
+      "category": "bit_shifting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Left Shift Operation",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 5 << 2;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "20",
+        "10",
+        "7",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Left shifting by n positions multiplies by 2^n. 5 << 2 = 5 * 4 = 20. In binary: 101 << 2 = 10100 = 20.",
+      "hints": [
+        "Left shift is equivalent to multiplying by powers of 2",
+        "Each shift left doubles the value",
+        "5 in binary is 101"
+      ],
+      "tags": [
+        "bit_shifting",
+        "left_shift"
+      ]
+    },
+    {
+      "id": "int_031",
+      "category": "bit_shifting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Right Shift Operation",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 20 >> 2;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "80",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Right shifting by n positions divides by 2^n (for positive integers). 20 >> 2 = 20 / 4 = 5. In binary: 10100 >> 2 = 101 = 5.",
+      "hints": [
+        "Right shift is equivalent to dividing by powers of 2",
+        "Each shift right halves the value",
+        "20 in binary is 10100"
+      ],
+      "tags": [
+        "bit_shifting",
+        "right_shift"
+      ]
+    },
+    {
+      "id": "int_032",
+      "category": "bit_shifting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Arithmetic Right Shift with Negative Numbers",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = -16;\n    int result = x >> 2;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "-4",
+        "4",
+        "-8",
+        "1073741820"
+      ],
+      "correct_answer": "A",
+      "explanation": "For signed integers, right shift is arithmetic (sign-extending). -16 >> 2 = -4. The sign bit is preserved, filling leftmost bits with 1s.",
+      "hints": [
+        "Arithmetic right shift preserves the sign",
+        "Sign bits are copied into the vacated positions",
+        "This maintains the negative value"
+      ],
+      "tags": [
+        "bit_shifting",
+        "right_shift",
+        "negative_numbers",
+        "arithmetic_shift"
+      ]
+    },
+    {
+      "id": "int_033",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Setting a Specific Bit",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 8;  // 1000 in binary\n    x = x | (1 << 1);  // Set bit 1\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "10",
+        "9",
+        "12",
+        "8"
+      ],
+      "correct_answer": "A",
+      "explanation": "To set bit n, use x | (1 << n). Here: 8 (1000) | 2 (0010) = 10 (1010). Bit 1 is now set.",
+      "hints": [
+        "OR operation can set bits without clearing others",
+        "1 << 1 creates a mask with only bit 1 set",
+        "8 in binary is 1000"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "set_bit"
+      ]
+    },
+    {
+      "id": "int_034",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Clearing a Specific Bit",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 15;  // 1111 in binary\n    x = x & ~(1 << 2);  // Clear bit 2\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "11",
+        "13",
+        "14",
+        "7"
+      ],
+      "correct_answer": "A",
+      "explanation": "To clear bit n, use x & ~(1 << n). Here: 15 (1111) & ~4 (1011) = 11 (1011). Bit 2 is now 0.",
+      "hints": [
+        "AND with inverted mask clears specific bits",
+        "~(1 << 2) creates a mask with all bits 1 except bit 2",
+        "15 in binary is 1111"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "clear_bit"
+      ]
+    },
+    {
+      "id": "int_035",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Toggling a Specific Bit",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10;  // 1010 in binary\n    x = x ^ (1 << 2);  // Toggle bit 2\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "14",
+        "10",
+        "6",
+        "8"
+      ],
+      "correct_answer": "A",
+      "explanation": "To toggle bit n, use x ^ (1 << n). Here: 10 (1010) ^ 4 (0100) = 14 (1110). Bit 2 flipped from 0 to 1.",
+      "hints": [
+        "XOR flips bits: 0 becomes 1, 1 becomes 0",
+        "1 << 2 creates a mask with only bit 2 set",
+        "10 in binary is 1010"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "toggle_bit"
+      ]
+    },
+    {
+      "id": "int_036",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Checking if a Bit is Set",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 12;  // 1100 in binary\n    int is_set = (x & (1 << 3)) != 0;\n    printf(\"%d\\n\", is_set);\n    return 0;\n}",
+      "options": [
+        "1",
+        "0",
+        "8",
+        "12"
+      ],
+      "correct_answer": "A",
+      "explanation": "To check bit n, use (x & (1 << n)) != 0. Here: 12 (1100) & 8 (1000) = 8, which is != 0, so result is 1 (true).",
+      "hints": [
+        "AND with a mask isolates the specific bit",
+        "1 << 3 creates a mask for bit 3",
+        "Bit 3 of 1100 is 1"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "check_bit"
+      ]
+    },
+    {
+      "id": "int_037",
+      "category": "bitwise_operators",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise NOT Operator",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    unsigned char x = 5;  // 00000101\n    unsigned char result = ~x;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "250",
+        "5",
+        "-6",
+        "251"
+      ],
+      "correct_answer": "A",
+      "explanation": "Bitwise NOT flips all bits. ~5 (00000101) = 250 (11111010) for unsigned char. Each 0 becomes 1 and vice versa.",
+      "hints": [
+        "NOT inverts every bit in the number",
+        "00000101 becomes 11111010",
+        "11111010 in decimal is 250"
+      ],
+      "tags": [
+        "bitwise",
+        "not_operator"
+      ]
+    },
+    {
+      "id": "int_038",
+      "category": "twos_complement",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Two's Complement Negation",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int result = ~x + 1;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "-5",
+        "5",
+        "-6",
+        "6"
+      ],
+      "correct_answer": "A",
+      "explanation": "In two's complement, -x = ~x + 1. Here: ~5 = -6, then -6 + 1 = -5. This is how negation works at the bit level.",
+      "hints": [
+        "Two's complement negation: invert all bits and add 1",
+        "This is how computers represent negative numbers",
+        "~5 gives -6, then add 1"
+      ],
+      "tags": [
+        "twos_complement",
+        "negation"
+      ]
+    },
+    {
+      "id": "int_039",
+      "category": "type_promotion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Integer to Float Conversion in Division",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    float result = a / b;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.0",
+        "3.5",
+        "4.0",
+        "3.2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Division happens before assignment. Since both a and b are int, integer division is performed (7/2 = 3), then 3 is converted to 3.0 for the float assignment.",
+      "hints": [
+        "The division happens with int operands",
+        "Type conversion happens after the division",
+        "To get 3.5, one operand must be float during division"
+      ],
+      "tags": [
+        "type_promotion",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_040",
+      "category": "type_promotion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mixed Type Arithmetic",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    float b = 2.0;\n    float result = a / b;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.5",
+        "3.0",
+        "4.0",
+        "3.2"
+      ],
+      "correct_answer": "A",
+      "explanation": "When mixing int and float, the int is promoted to float before the operation. 7.0 / 2.0 = 3.5 (floating-point division).",
+      "hints": [
+        "Mixed type operations promote to the wider type",
+        "int is converted to float before division",
+        "This performs floating-point division"
+      ],
+      "tags": [
+        "type_promotion",
+        "mixed_arithmetic"
+      ]
+    },
+    {
+      "id": "int_041",
+      "category": "integer_overflow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Integer Overflow with Left Shift",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    unsigned int x = 1;\n    x = x << 31;\n    printf(\"%u\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2147483648",
+        "0",
+        "-2147483648",
+        "1"
+      ],
+      "correct_answer": "A",
+      "explanation": "1 << 31 sets the most significant bit of a 32-bit unsigned int. This equals 2^31 = 2147483648. No overflow occurs with unsigned types.",
+      "hints": [
+        "Left shift by n multiplies by 2^n",
+        "2^31 = 2147483648",
+        "Unsigned integers wrap around on overflow"
+      ],
+      "tags": [
+        "bit_shifting",
+        "overflow",
+        "unsigned"
+      ]
+    },
+    {
+      "id": "int_042",
+      "category": "operator_precedence",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Bitwise Operator Precedence",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 5 | 3 & 6;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "7",
+        "5",
+        "2",
+        "6"
+      ],
+      "correct_answer": "A",
+      "explanation": "& has higher precedence than |. First: 3 & 6 = 2 (0011 & 0110 = 0010). Then: 5 | 2 = 7 (0101 | 0010 = 0111).",
+      "hints": [
+        "AND has higher precedence than OR",
+        "Evaluate 3 & 6 first",
+        "Then OR the result with 5"
+      ],
+      "tags": [
+        "operator_precedence",
+        "bitwise"
+      ]
+    },
+    {
+      "id": "int_043",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Counting Set Bits Technique",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 7;  // 0111\n    int count = 0;\n    while (x) {\n        count++;\n        x = x & (x - 1);\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "3",
+        "7",
+        "4",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "x & (x-1) clears the rightmost set bit. For 7 (0111): iteration 1: 0111 & 0110 = 0110, iteration 2: 0110 & 0101 = 0100, iteration 3: 0100 & 0011 = 0000. Three set bits.",
+      "hints": [
+        "x & (x-1) is a trick to remove the rightmost 1 bit",
+        "Count how many times you can remove a bit",
+        "7 has three 1 bits in binary"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "counting_bits"
+      ]
+    },
+    {
+      "id": "int_044",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Power of Two Check",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 16;\n    int is_power_of_2 = (x > 0) && ((x & (x - 1)) == 0);\n    printf(\"%d\\n\", is_power_of_2);\n    return 0;\n}",
+      "options": [
+        "1",
+        "0",
+        "16",
+        "-1"
+      ],
+      "correct_answer": "A",
+      "explanation": "Powers of 2 have exactly one set bit. x & (x-1) clears that bit, resulting in 0. 16 (10000) & 15 (01111) = 0, so it's a power of 2.",
+      "hints": [
+        "Powers of 2 have only one bit set",
+        "x & (x-1) removes the rightmost set bit",
+        "If only one bit exists, the result is 0"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "power_of_two"
+      ]
+    },
+    {
+      "id": "int_045",
+      "category": "bitwise_operators",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "XOR for Swapping",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5, b = 7;\n    a = a ^ b;\n    b = a ^ b;\n    a = a ^ b;\n    printf(\"%d %d\\n\", a, b);\n    return 0;\n}",
+      "options": [
+        "7 5",
+        "5 7",
+        "12 0",
+        "0 12"
+      ],
+      "correct_answer": "A",
+      "explanation": "XOR swap trick: after the three operations, a and b are swapped without a temporary variable. Final result: a=7, b=5.",
+      "hints": [
+        "This is a classic XOR swap technique",
+        "XOR properties allow swapping without temp variable",
+        "Trace through each step carefully"
+      ],
+      "tags": [
+        "bitwise",
+        "xor_operator",
+        "swap"
+      ]
+    },
+    {
+      "id": "int_046",
+      "category": "type_promotion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Char to Int Promotion",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char a = 200;\n    int b = a;\n    printf(\"%d\\n\", b);\n    return 0;\n}",
+      "options": [
+        "-56",
+        "200",
+        "56",
+        "0"
+      ],
+      "correct_answer": "A",
+      "explanation": "char is signed by default (typically). 200 exceeds the signed char range (127), causing overflow. 200 in 8-bit two's complement is -56. When promoted to int, it remains -56.",
+      "hints": [
+        "Signed char range is -128 to 127",
+        "200 overflows and wraps to negative",
+        "Sign extension preserves the negative value"
+      ],
+      "tags": [
+        "type_promotion",
+        "char",
+        "overflow"
+      ]
+    },
+    {
+      "id": "int_047",
+      "category": "bit_shifting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Shift Amount Greater Than Width",
+      "description": "What is the behavior of this code?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int result = x << 32;  // Assuming 32-bit int\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "Undefined behavior",
+        "0",
+        "5",
+        "160"
+      ],
+      "correct_answer": "A",
+      "explanation": "Shifting by an amount greater than or equal to the width of the type is undefined behavior in C. On a 32-bit int, shifting by 32 is undefined.",
+      "hints": [
+        "Check the bit width of the type",
+        "Shifting by width or more is problematic",
+        "The C standard leaves this undefined"
+      ],
+      "tags": [
+        "bit_shifting",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "int_048",
+      "category": "integer_overflow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Signed Integer Overflow",
+      "description": "What is the behavior of this code?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 2147483647;  // INT_MAX\n    x = x + 1;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "Undefined behavior (typically -2147483648)",
+        "-2147483648",
+        "2147483648",
+        "0"
+      ],
+      "correct_answer": "A",
+      "explanation": "Signed integer overflow is undefined behavior in C. In practice, on two's complement systems, it typically wraps to INT_MIN (-2147483648), but the standard doesn't guarantee this.",
+      "hints": [
+        "INT_MAX + 1 exceeds the maximum value",
+        "Signed overflow is undefined by the C standard",
+        "Most systems use two's complement wrapping"
+      ],
+      "tags": [
+        "integer_overflow",
+        "undefined_behavior",
+        "twos_complement"
+      ]
+    },
+    {
+      "id": "int_049",
+      "category": "bit_manipulation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Extracting Lower Nibble",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    unsigned char x = 0xAB;  // 10101011\n    unsigned char lower = x & 0x0F;\n    printf(\"%d\\n\", lower);\n    return 0;\n}",
+      "options": [
+        "11",
+        "10",
+        "171",
+        "15"
+      ],
+      "correct_answer": "A",
+      "explanation": "0xAB & 0x0F masks the lower 4 bits (nibble). 10101011 & 00001111 = 00001011 = 11 in decimal (0xB).",
+      "hints": [
+        "0x0F is 00001111 in binary",
+        "AND with 0x0F keeps only the lower 4 bits",
+        "0xB (lower nibble of 0xAB) is 11 in decimal"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "masking",
+        "nibble"
+      ]
     }
   ]
 }

@@ -6,6 +6,14 @@
 <div class="practice-start">
     <h1>Choose Practice Mode</h1>
 
+    {% if has_active_session %}
+    <div class="mode-card resume-card">
+        <h2>Resume Session</h2>
+        <p>You have an active session with {{ remaining_questions }} question{{ '' if remaining_questions == 1 else 's' }} left.</p>
+        <a href="{{ url_for('practice.question') }}" class="btn-primary btn-large">Resume Practice</a>
+    </div>
+    {% endif %}
+
     <div class="practice-modes">
         <form method="POST" action="{{ url_for('practice.start_practice') }}">
             <div class="mode-card featured">
@@ -14,14 +22,20 @@
                 <ul>
                     <li>70% questions from your weakest categories</li>
                     <li>30% review questions</li>
-                    <li>10 questions per session</li>
+                    <li>Choose your session length</li>
                 </ul>
+                <label class="form-label">Questions per session</label>
+                <select name="question_count" class="form-control">
+                    <option value="5">5 questions</option>
+                    <option value="10" selected>10 questions</option>
+                    <option value="15">15 questions</option>
+                </select>
                 <input type="hidden" name="mode" value="smart">
                 <button type="submit" class="btn-primary btn-large">Start Smart Practice</button>
             </div>
         </form>
 
-        <form method="POST" action="{{ url_for('practice.start_practice') }}">
+        <form method="POST" action="{{ url_for('practice.start_practice') }}" class="practice-form">
             <div class="mode-card">
                 <h2>Category Practice</h2>
                 <p>Focus on a specific category</p>
@@ -35,6 +49,13 @@
                     <option value="recursion">Recursion</option>
                     <option value="control_flow">Control Flow</option>
                 </select>
+                <small class="field-message" data-message-for="category"></small>
+                <label class="form-label">Questions per session</label>
+                <select name="question_count" class="form-control">
+                    <option value="5">5 questions</option>
+                    <option value="10" selected>10 questions</option>
+                    <option value="15">15 questions</option>
+                </select>
                 <input type="hidden" name="mode" value="category">
                 <button type="submit" class="btn-secondary btn-large">Start Category Practice</button>
             </div>
@@ -45,14 +66,24 @@
                 <h2>Random Mix</h2>
                 <p>Random questions from all categories</p>
                 <ul>
-                    <li>10 random questions</li>
+                    <li>Choose your session length</li>
                     <li>All categories mixed</li>
                     <li>Great for general review</li>
                 </ul>
+                <label class="form-label">Questions per session</label>
+                <select name="question_count" class="form-control">
+                    <option value="5">5 questions</option>
+                    <option value="10" selected>10 questions</option>
+                    <option value="15">15 questions</option>
+                </select>
                 <input type="hidden" name="mode" value="random">
                 <button type="submit" class="btn-secondary btn-large">Start Random Practice</button>
             </div>
         </form>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/practice_start.js') }}"></script>
 {% endblock %}

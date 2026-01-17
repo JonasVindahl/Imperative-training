@@ -855,6 +855,261 @@
       ]
     },
     {
+      "id": "fill_016",
+      "category": "control_flow",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "If Statement",
+      "description": "Fill in the blanks about if statements:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    if (x > 0) {\n        printf(\"positive\\n\");\n    }\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The condition x > 0 is ___",
+          "blanks": [
+            {
+              "options": [
+                "true",
+                "false",
+                "undefined",
+                "zero"
+              ],
+              "correct": "true"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The program prints ___",
+          "blanks": [
+            {
+              "options": [
+                "positive",
+                "negative",
+                "zero",
+                "nothing"
+              ],
+              "correct": "positive"
+            }
+          ]
+        }
+      ],
+      "explanation": "x is 3, so the condition is true and the message prints.",
+      "hints": [
+        "3 is greater than 0",
+        "If condition is true",
+        "Message is positive"
+      ],
+      "tags": [
+        "if",
+        "conditions"
+      ]
+    },
+    {
+      "id": "fill_017",
+      "category": "strings",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "String Terminator",
+      "description": "Fill in the blanks about string terminators:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char s[] = \"cat\";\n    printf(\"%c\\n\", s[3]);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "s[3] is the ___ terminator",
+          "blanks": [
+            {
+              "options": [
+                "null",
+                "line",
+                "space",
+                "tab"
+              ],
+              "correct": "null"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Printing s[3] as a character shows ___",
+          "blanks": [
+            {
+              "options": [
+                "nothing",
+                "a",
+                "t",
+                "c"
+              ],
+              "correct": "nothing"
+            }
+          ]
+        }
+      ],
+      "explanation": "The string literal includes a '\\0' at index 3, which prints as an empty character.",
+      "hints": [
+        "String length is 3",
+        "Index 3 is '\\0'",
+        "Null prints as empty"
+      ],
+      "tags": [
+        "strings",
+        "null_terminator"
+      ]
+    },
+    {
+      "id": "fill_018",
+      "category": "memory_management",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "malloc Check",
+      "description": "Fill in the blanks about malloc failure:",
+      "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(100 * sizeof(int));\n    if (!p) return 1;\n    free(p);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "malloc returns ___ on failure",
+          "blanks": [
+            {
+              "options": [
+                "NULL",
+                "0",
+                "-1",
+                "false"
+              ],
+              "correct": "NULL"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The pointer should be released with ___",
+          "blanks": [
+            {
+              "options": [
+                "free(p)",
+                "delete p",
+                "malloc(p)",
+                "realloc(p)"
+              ],
+              "correct": "free(p)"
+            }
+          ]
+        }
+      ],
+      "explanation": "malloc can return NULL. Always free successful allocations.",
+      "hints": [
+        "NULL indicates failure",
+        "free releases heap memory",
+        "Always check allocation"
+      ],
+      "tags": [
+        "malloc",
+        "free"
+      ]
+    },
+    {
+      "id": "fill_019",
+      "category": "integer_division",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Integer Division",
+      "description": "Fill in the blanks about integer division:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 7 / 2;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "7 / 2 equals ___ in integer division",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "3.5",
+                "4",
+                "2"
+              ],
+              "correct": "3"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Integer division ___ the fractional part",
+          "blanks": [
+            {
+              "options": [
+                "truncates",
+                "rounds",
+                "keeps",
+                "doubles"
+              ],
+              "correct": "truncates"
+            }
+          ]
+        }
+      ],
+      "explanation": "Integer division truncates toward zero, so 7/2 is 3.",
+      "hints": [
+        "7/2 is 3 in int",
+        "Fraction is dropped",
+        "Truncates toward zero"
+      ],
+      "tags": [
+        "integer_division",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_020",
+      "category": "recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Recursion Terminology",
+      "description": "Fill in the blanks about recursion:",
+      "code_template": "int fact(int n) {\n    if (n == 0) return 1;\n    return n * fact(n - 1);\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The stopping condition is the ___ case",
+          "blanks": [
+            {
+              "options": [
+                "base",
+                "loop",
+                "return",
+                "exit"
+              ],
+              "correct": "base"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Each call reduces n by ___",
+          "blanks": [
+            {
+              "options": [
+                "1",
+                "2",
+                "0",
+                "n"
+              ],
+              "correct": "1"
+            }
+          ]
+        }
+      ],
+      "explanation": "Recursion needs a base case and a step that moves toward it.",
+      "hints": [
+        "Base case stops recursion",
+        "n is reduced by 1",
+        "Eventually reaches 0"
+      ],
+      "tags": [
+        "recursion",
+        "terminology"
+      ]
+    },
+    {
       "id": "fill_en_001",
       "category": "terminology",
       "type": "fill_blanks",

@@ -60,12 +60,52 @@ def stats():
             category_stats[attempt.category]['correct'] += 1
         category_stats[attempt.category]['time'] += attempt.time_spent
 
+    # Build trend data for the last 14 days
+    today = datetime.utcnow().date()
+    last_days = [today - timedelta(days=i) for i in range(13, -1, -1)]
+    attempts_by_day = {}
+    for attempt in all_attempts:
+        attempt_day = attempt.timestamp.date()
+        attempts_by_day.setdefault(attempt_day, []).append(attempt)
+
+    trend_labels = [day.strftime('%b %d') for day in last_days]
+    trend_accuracy = []
+    trend_attempts = []
+    for day in last_days:
+        day_attempts = attempts_by_day.get(day, [])
+        total = len(day_attempts)
+        correct = sum(1 for a in day_attempts if a.correct)
+        trend_attempts.append(total)
+        if total == 0:
+            trend_accuracy.append(None)
+        else:
+            trend_accuracy.append(int((correct / total) * 100))
+
+    category_labels = []
+    category_accuracy = []
+    category_summary = []
+    for category in sorted(category_stats.keys()):
+        stats = category_stats[category]
+        category_labels.append(category.replace('_', ' ').title())
+        if stats['total'] > 0:
+            accuracy = int((stats['correct'] / stats['total']) * 100)
+        else:
+            accuracy = 0
+        category_accuracy.append(accuracy)
+        category_summary.append(f"{category_labels[-1]}: {accuracy}%")
+
     return render_template('stats.html',
                          progress=progress_summary,
                          category_stats=category_stats,
                          total_time=total_time,
                          avg_time=avg_time_per_question,
-                         attempts_count=len(all_attempts))
+                         attempts_count=len(all_attempts),
+                         trend_labels=trend_labels,
+                         trend_accuracy=trend_accuracy,
+                         trend_attempts=trend_attempts,
+                         category_labels=category_labels,
+                         category_accuracy=category_accuracy,
+                         category_summary=category_summary)
 
 
 @progress_bp.route('/api/progress')

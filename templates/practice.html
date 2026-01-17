@@ -24,7 +24,7 @@
                 {% if question.type in ['code_completion', 'code_writing'] %}
                 <textarea id="code-editor" class="code-editor">{{ question.code_template }}</textarea>
                 {% else %}
-                <pre class="code-display" data-line-numbers="true"><code>{{ question.code_template }}</code></pre>
+                <pre class="code-display" data-line-numbers="true"><code class="language-c">{{ question.code_template }}</code></pre>
                 {% endif %}
             </div>
         </div>
@@ -114,12 +114,9 @@
             {% endif %}
         </div>
 
-        <div class="hint-section" id="hint-section" style="display: none;">
+        <div class="hint-section" id="hint-section">
             <h3>Hints:</h3>
             <div id="hints-container"></div>
-            <button type="button" id="show-hint-btn" class="btn-secondary" onclick="showNextHint()">
-                Show Hint
-            </button>
         </div>
 
         <div class="action-buttons">
@@ -128,12 +125,15 @@
                 Compile & Run
             </button>
             {% endif %}
-            <button type="button" id="hint-toggle-btn" class="btn-secondary" onclick="toggleHints()">
-                Need a Hint?
+            <button type="button" id="show-hint-btn" class="btn-secondary{% if has_answered %} is-hidden{% endif %}"
+                    onclick="showNextHint()" {% if has_answered %}disabled aria-disabled="true"{% endif %}>
+                Show Hint
             </button>
-            <button type="button" class="btn-primary" onclick="submitAnswer()">
+            <button type="button" class="btn-primary" onclick="submitAnswer()"
+                    {% if has_answered %}disabled aria-disabled="true"{% endif %}>
                 Submit Answer
             </button>
+            <div class="shortcut-hint">Shortcuts: 1-4 select, Enter submit</div>
         </div>
     </div>
 
@@ -158,17 +158,10 @@
     let currentHintIndex = 0;
     let hintsUsed = 0;
 
-    function toggleHints() {
-        const hintSection = document.getElementById('hint-section');
-        if (hintSection.style.display === 'none') {
-            hintSection.style.display = 'block';
-        } else {
-            hintSection.style.display = 'none';
-        }
-    }
-
     function showNextHint() {
         if (currentHintIndex < hints.length) {
+            const hintSection = document.getElementById('hint-section');
+            hintSection.classList.add('is-visible');
             const hintsContainer = document.getElementById('hints-container');
             const hintDiv = document.createElement('div');
             hintDiv.className = 'hint-item';
@@ -370,6 +363,12 @@
 
         // Scroll to result
         resultSection.scrollIntoView({behavior: 'smooth'});
+
+        const hintButton = document.getElementById('show-hint-btn');
+        if (hintButton) {
+            hintButton.disabled = true;
+            hintButton.classList.add('is-hidden');
+        }
     }
 
     function nextQuestion() {

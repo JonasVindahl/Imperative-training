@@ -9,7 +9,13 @@
       "Bash(curl:*)",
       "Bash(python test_new_features.py:*)",
       "Bash(python:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(echo:*)",
+      "Bash(for file in questions/*.json)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
     ]
   }
 }

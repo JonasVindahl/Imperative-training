@@ -64,6 +64,28 @@
         </div>
     </div>
 
+    <div class="stats-charts">
+        <h2>Performance Trends</h2>
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Accuracy Over Time</h3>
+                <p class="chart-summary" id="accuracySummary">
+                    Daily accuracy over the last 14 days. Missing days have no data.
+                </p>
+                <canvas id="accuracyChart" height="160" aria-describedby="accuracySummary"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Category Accuracy</h3>
+                <p class="chart-summary" id="categorySummary">
+                    {% for item in category_summary %}
+                        {{ item }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                <canvas id="categoryChart" height="160" aria-describedby="categorySummary"></canvas>
+            </div>
+        </div>
+    </div>
+
     <div class="weak-areas">
         <h2>Areas for Improvement</h2>
         <ul>
@@ -87,4 +109,73 @@
         </a>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+    const trendLabels = {{ trend_labels | tojson }};
+    const trendAccuracy = {{ trend_accuracy | tojson }};
+    const categoryLabels = {{ category_labels | tojson }};
+    const categoryAccuracy = {{ category_accuracy | tojson }};
+
+    const accuracyCtx = document.getElementById('accuracyChart');
+    if (accuracyCtx) {
+        new Chart(accuracyCtx, {
+            type: 'line',
+            data: {
+                labels: trendLabels,
+                datasets: [{
+                    label: 'Accuracy (%)',
+                    data: trendAccuracy,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    tension: 0.3,
+                    spanGaps: true
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    }
+
+    const categoryCtx = document.getElementById('categoryChart');
+    if (categoryCtx) {
+        new Chart(categoryCtx, {
+            type: 'bar',
+            data: {
+                labels: categoryLabels,
+                datasets: [{
+                    label: 'Accuracy (%)',
+                    data: categoryAccuracy,
+                    backgroundColor: '#38bdf8'
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    }
+</script>
 {% endblock %}

@@ -614,6 +614,1096 @@
         "functions",
         "pass_by_reference"
       ]
+    },
+    {
+      "id": "ptr_024",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Address-of Operator",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int *p = &x;\n    printf(\"%d\\n\", *p);\n    return 0;\n}",
+      "options": [
+        "0",
+        "5",
+        "Address of x",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p points to x, so *p is 5.",
+      "hints": [
+        "& gets address",
+        "* dereferences",
+        "Value is 5"
+      ],
+      "tags": [
+        "address_of",
+        "dereference"
+      ]
+    },
+    {
+      "id": "ptr_025",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Const Pointer",
+      "description": "Which statement is TRUE?",
+      "code_template": "int x = 1;\nint y = 2;\nint *const p = &x;",
+      "options": [
+        "p can point to y later",
+        "*p can be modified",
+        "p is read-only but *p is not",
+        "Both B and C"
+      ],
+      "correct_answer": "D",
+      "explanation": "A const pointer cannot change its address, but the value it points to can change.",
+      "hints": [
+        "const applies to pointer",
+        "Address is fixed",
+        "Value can change"
+      ],
+      "tags": [
+        "const",
+        "pointers"
+      ]
+    },
+    {
+      "id": "ptr_026",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer to Const",
+      "description": "Which statement is TRUE?",
+      "code_template": "int x = 1;\nint y = 2;\nconst int *p = &x;",
+      "options": [
+        "p can point to y later",
+        "*p can be modified",
+        "p must always be NULL",
+        "p cannot point to y"
+      ],
+      "correct_answer": "A",
+      "explanation": "Pointer to const can change address, but cannot modify the pointed value.",
+      "hints": [
+        "const applies to value",
+        "Pointer can change",
+        "*p is read-only"
+      ],
+      "tags": [
+        "const",
+        "pointers"
+      ]
+    },
+    {
+      "id": "ptr_027",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Array Decay Value",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {4, 5, 6};\n    int *p = arr;\n    printf(\"%d\\n\", p[2]);\n    return 0;\n}",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "Undefined"
+      ],
+      "correct_answer": "C",
+      "explanation": "p points to arr[0], so p[2] is arr[2] = 6.",
+      "hints": [
+        "p points to arr[0]",
+        "p[2] is arr[2]",
+        "Value is 6"
+      ],
+      "tags": [
+        "arrays",
+        "pointer_arithmetic"
+      ]
+    },
+    {
+      "id": "ptr_028",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Increment",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {1, 2, 3};\n    int *p = arr;\n    p++;\n    printf(\"%d\\n\", *p);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "p++ moves to the next element, so *p is 2.",
+      "hints": [
+        "p starts at arr[0]",
+        "p++ moves to arr[1]",
+        "*p is 2"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "increment"
+      ]
+    },
+    {
+      "id": "ptr_029",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Difference",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[10];\n    int *p = &arr[9];\n    int *q = &arr[4];\n    printf(\"%ld\\n\", p - q);\n    return 0;\n}",
+      "options": [
+        "5",
+        "9",
+        "4",
+        "1"
+      ],
+      "correct_answer": "A",
+      "explanation": "Pointer subtraction yields element difference: 9 - 4 = 5.",
+      "hints": [
+        "Subtract indices",
+        "9 - 4 = 5",
+        "Result is 5"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_030",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "NULL Comparison",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int *p = NULL;\n    printf(\"%d\\n\", p == NULL);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "NULL",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p is NULL, so the comparison is true and prints 1.",
+      "hints": [
+        "p is NULL",
+        "NULL == NULL is true",
+        "True prints 1"
+      ],
+      "tags": [
+        "NULL",
+        "comparison"
+      ]
+    },
+    {
+      "id": "ptr_031",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Returning Local Array",
+      "description": "What is the issue with this function?",
+      "code_template": "int* make_array(void) {\n    int arr[3] = {1, 2, 3};\n    return arr;\n}",
+      "options": [
+        "No issue",
+        "Compilation error",
+        "Dangling pointer (returns address of local array)",
+        "Memory leak"
+      ],
+      "correct_answer": "C",
+      "explanation": "arr is local and goes out of scope. Returning its address is undefined behavior.",
+      "hints": [
+        "Local array lives on stack",
+        "Returned pointer dangles",
+        "Undefined behavior"
+      ],
+      "tags": [
+        "dangling_pointer",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_032",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer and sizeof",
+      "description": "What does this program print on a 64-bit system?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[5];\n    int *p = arr;\n    printf(\"%zu %zu\\n\", sizeof(arr), sizeof(p));\n    return 0;\n}",
+      "options": [
+        "20 8",
+        "5 8",
+        "20 4",
+        "5 4"
+      ],
+      "correct_answer": "A",
+      "explanation": "sizeof(arr) is 5 * sizeof(int) = 20. sizeof(p) is 8 on 64-bit.",
+      "hints": [
+        "Array size includes all elements",
+        "Pointer size is fixed",
+        "20 and 8"
+      ],
+      "tags": [
+        "sizeof",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_033",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Pointer to Char",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char str[] = \"abc\";\n    char *p = str;\n    printf(\"%c\\n\", *(p + 2));\n    return 0;\n}",
+      "options": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct_answer": "C",
+      "explanation": "p + 2 points to the third character, which is 'c'.",
+      "hints": [
+        "Index 2 is third char",
+        "String is abc",
+        "Result is c"
+      ],
+      "tags": [
+        "strings",
+        "pointer_arithmetic"
+      ]
+    },
+    {
+      "id": "ptr_034",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Double Pointer Update",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid inc(int **pp) {\n    (*pp)++;\n}\n\nint main() {\n    int arr[] = {5, 6, 7};\n    int *p = arr;\n    inc(&p);\n    printf(\"%d\\n\", *p);\n    return 0;\n}",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "inc increments the pointer, so p points to arr[1] (6).",
+      "hints": [
+        "pp points to p",
+        "*pp is p",
+        "p moves to arr[1]"
+      ],
+      "tags": [
+        "double_pointer",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_035",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer to Array",
+      "description": "What is the type of p?",
+      "code_template": "int arr[3];\nint (*p)[3] = &arr;",
+      "options": [
+        "Pointer to int",
+        "Pointer to array of 3 int",
+        "Array of 3 pointers",
+        "Pointer to pointer"
+      ],
+      "correct_answer": "B",
+      "explanation": "int (*p)[3] is a pointer to an array of 3 ints.",
+      "hints": [
+        "Parentheses bind * to p",
+        "Size 3 array",
+        "Pointer to array"
+      ],
+      "tags": [
+        "pointer_to_array",
+        "types"
+      ]
+    },
+    {
+      "id": "ptr_036",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Wild Pointer",
+      "description": "What is the issue with this code?",
+      "code_template": "int *p;\n*p = 3;",
+      "options": [
+        "No issue",
+        "Compilation error",
+        "Dereferencing uninitialized pointer",
+        "Memory leak"
+      ],
+      "correct_answer": "C",
+      "explanation": "p is uninitialized and points to an unknown address. Dereferencing it is undefined behavior.",
+      "hints": [
+        "p has no valid address",
+        "Dereferencing is unsafe",
+        "Undefined behavior"
+      ],
+      "tags": [
+        "uninitialized",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "ptr_037",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Pointer Array Access",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {2, 4, 6, 8};\n    int *p = arr + 1;\n    printf(\"%d\\n\", *(p + 2));\n    return 0;\n}",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct_answer": "D",
+      "explanation": "p points to arr[1]. p+2 points to arr[3] = 8.",
+      "hints": [
+        "p is arr[1]",
+        "p+2 is arr[3]",
+        "Value is 8"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_038",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Swap by Value",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nvoid swap(int a, int b) {\n    int t = a; a = b; b = t;\n}\n\nint main() {\n    int x = 1, y = 2;\n    swap(x, y);\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}",
+      "options": [
+        "2 1",
+        "1 2",
+        "2 2",
+        "1 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "swap uses pass-by-value. It does not change x and y in main.",
+      "hints": [
+        "Values are copied",
+        "Originals unchanged",
+        "Prints 1 2"
+      ],
+      "tags": [
+        "pass_by_value",
+        "functions"
+      ]
+    },
+    {
+      "id": "ptr_039",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer to Function",
+      "description": "Which declaration is a pointer to a function taking int and returning int?",
+      "code_template": "",
+      "options": [
+        "int *f(int);",
+        "int (*f)(int);",
+        "int f(*int);",
+        "int (f*)(int);"
+      ],
+      "correct_answer": "B",
+      "explanation": "Parentheses make f a pointer to a function: int (*f)(int).",
+      "hints": [
+        "Parentheses around *f",
+        "Takes int, returns int",
+        "Function pointer syntax"
+      ],
+      "tags": [
+        "function_pointer",
+        "types"
+      ]
+    },
+    {
+      "id": "ptr_040",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Pointer Indexing",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {9, 8, 7};\n    int *p = arr;\n    printf(\"%d\\n\", p[1]);\n    return 0;\n}",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "Undefined"
+      ],
+      "correct_answer": "B",
+      "explanation": "p[1] is the same as *(p + 1), which is arr[1] = 8.",
+      "hints": [
+        "p[1] equals arr[1]",
+        "arr[1] is 8",
+        "Prints 8"
+      ],
+      "tags": [
+        "arrays",
+        "indexing"
+      ]
+    },
+    {
+      "id": "ptr_024",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Pointer Arithmetic with int",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {10, 20, 30, 40};\n    int *p = arr;\n    p = p + 2;\n    printf(\"%d\", *p);\n    return 0;\n}",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "correct_answer": "C",
+      "explanation": "The pointer p initially points to arr[0] (10). Adding 2 to p moves it forward by 2 * sizeof(int) bytes, making it point to arr[2], which contains 30.",
+      "hints": [
+        "Pointer arithmetic scales by the size of the pointed-to type",
+        "p + 2 moves the pointer two elements forward",
+        "arr[2] is the third element"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_025",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Arithmetic with Different Types",
+      "description": "What is the difference between p2 and p1 in bytes?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    long arr[5];\n    long *p1 = &arr[1];\n    long *p2 = &arr[4];\n    printf(\"%ld\", (p2 - p1));\n    return 0;\n}",
+      "options": [
+        "3",
+        "12",
+        "24",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "Pointer subtraction returns the number of elements between two pointers, not bytes. p2 - p1 = 4 - 1 = 3 elements. The result is independent of sizeof(long).",
+      "hints": [
+        "Pointer subtraction gives element count, not byte count",
+        "Count the array positions between p1 and p2",
+        "The result is (4 - 1)"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "pointer_subtraction"
+      ]
+    },
+    {
+      "id": "ptr_026",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Double Pointer Basics",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int *p = &x;\n    int **pp = &p;\n    **pp = 10;\n    printf(\"%d\", x);\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "Address of x",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "pp is a pointer to pointer. **pp dereferences twice: *pp gives p, and **pp gives the value p points to (x). Setting **pp = 10 changes x to 10.",
+      "hints": [
+        "**pp dereferences twice to reach x",
+        "The assignment modifies the original variable x",
+        "Follow the pointer chain: pp -> p -> x"
+      ],
+      "tags": [
+        "double_pointers",
+        "indirection"
+      ]
+    },
+    {
+      "id": "ptr_027",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Triple Pointer Manipulation",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1, b = 2;\n    int *p1 = &a, *p2 = &b;\n    int **pp = &p1;\n    int ***ppp = &pp;\n    ***ppp = 5;\n    **ppp = p2;\n    printf(\"%d %d\", a, b);\n    return 0;\n}",
+      "options": [
+        "1 2",
+        "5 2",
+        "5 5",
+        "1 5"
+      ],
+      "correct_answer": "B",
+      "explanation": "First, ***ppp = 5 changes a to 5. Then **ppp = p2 makes pp point to p2 instead of p1. The final values are: a = 5, b = 2.",
+      "hints": [
+        "Follow each operation step by step",
+        "***ppp dereferences three times to reach a",
+        "**ppp = p2 reassigns what pp points to"
+      ],
+      "tags": [
+        "triple_pointers",
+        "indirection"
+      ]
+    },
+    {
+      "id": "ptr_028",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer to Function Basic",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint add(int a, int b) { return a + b; }\nint sub(int a, int b) { return a - b; }\n\nint main() {\n    int (*fp)(int, int) = add;\n    printf(\"%d\", fp(10, 3));\n    return 0;\n}",
+      "options": [
+        "7",
+        "13",
+        "30",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "fp is a pointer to a function that takes two ints and returns an int. It's assigned to point to 'add', so fp(10, 3) calls add(10, 3) which returns 13.",
+      "hints": [
+        "fp points to the add function",
+        "fp(10, 3) is equivalent to add(10, 3)",
+        "10 + 3 = 13"
+      ],
+      "tags": [
+        "function_pointers"
+      ]
+    },
+    {
+      "id": "ptr_029",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Array of Function Pointers",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint f1(int x) { return x * 2; }\nint f2(int x) { return x * 3; }\nint f3(int x) { return x * 4; }\n\nint main() {\n    int (*arr[])(int) = {f1, f2, f3};\n    printf(\"%d\", arr[1](5));\n    return 0;\n}",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "arr is an array of function pointers. arr[1] points to f2, so arr[1](5) calls f2(5) which returns 5 * 3 = 15.",
+      "hints": [
+        "arr[1] is the second element, pointing to f2",
+        "f2 multiplies its argument by 3",
+        "5 * 3 = 15"
+      ],
+      "tags": [
+        "function_pointers",
+        "arrays"
+      ]
+    },
+    {
+      "id": "ptr_030",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Array of Pointers",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1, b = 2, c = 3;\n    int *arr[] = {&a, &b, &c};\n    printf(\"%d\", *arr[2]);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "Address of c"
+      ],
+      "correct_answer": "C",
+      "explanation": "arr is an array of pointers to int. arr[2] contains the address of c (&c), and *arr[2] dereferences it to get the value 3.",
+      "hints": [
+        "arr is an array of three pointers",
+        "arr[2] points to variable c",
+        "*arr[2] dereferences to get c's value"
+      ],
+      "tags": [
+        "array_of_pointers"
+      ]
+    },
+    {
+      "id": "ptr_031",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer to Array",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[3] = {10, 20, 30};\n    int (*p)[3] = &arr;\n    printf(\"%d\", (*p)[1]);\n    return 0;\n}",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p is a pointer to an array of 3 ints. *p dereferences to get the array, and (*p)[1] accesses the second element, which is 20.",
+      "hints": [
+        "p points to the entire array",
+        "*p gives you the array itself",
+        "(*p)[1] is the second element"
+      ],
+      "tags": [
+        "pointer_to_array"
+      ]
+    },
+    {
+      "id": "ptr_032",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Array of Pointers vs Pointer to Array",
+      "description": "What is the key difference in these declarations?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[3] = {1, 2, 3};\n    int *p1[3];     // Line A\n    int (*p2)[3];   // Line B\n    printf(\"%zu %zu\", sizeof(p1), sizeof(p2));\n    return 0;\n}",
+      "options": [
+        "Both have the same size",
+        "p1 is larger than p2",
+        "p2 is larger than p1",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p1 is an array of 3 pointers (size = 3 * sizeof(pointer)), while p2 is a single pointer to an array (size = sizeof(pointer)). On most systems, p1 is 3 times larger.",
+      "hints": [
+        "p1 is an array containing 3 pointers",
+        "p2 is a single pointer",
+        "Count how many pointer-sized objects each holds"
+      ],
+      "tags": [
+        "array_of_pointers",
+        "pointer_to_array",
+        "sizeof"
+      ]
+    },
+    {
+      "id": "ptr_033",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Void Pointer Basics",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 42;\n    void *p = &x;\n    printf(\"%d\", *(int *)p);\n    return 0;\n}",
+      "options": [
+        "42",
+        "0",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "A void pointer can hold any pointer type. To dereference it, we must cast it to the correct type. (int *)p casts p to int*, then * dereferences it to get 42.",
+      "hints": [
+        "void* can point to any type",
+        "Must cast before dereferencing",
+        "(int *)p converts to int pointer"
+      ],
+      "tags": [
+        "void_pointers",
+        "casting"
+      ]
+    },
+    {
+      "id": "ptr_034",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Void Pointer Arithmetic",
+      "description": "What happens with this code?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {1, 2, 3};\n    void *p = arr;\n    p = p + 1;\n    printf(\"%d\", *(int *)p);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "Undefined behavior",
+        "Compilation error"
+      ],
+      "correct_answer": "D",
+      "explanation": "Pointer arithmetic on void* is not allowed in standard C because void has no size. GCC allows it as an extension (treating void as 1 byte), but it's not standard-compliant.",
+      "hints": [
+        "What is sizeof(void)?",
+        "Can you do arithmetic on a type with no size?",
+        "This is a compiler extension, not standard C"
+      ],
+      "tags": [
+        "void_pointers",
+        "pointer_arithmetic"
+      ]
+    },
+    {
+      "id": "ptr_035",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Void Pointer Type Casting",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    double d = 3.14;\n    void *p = &d;\n    int *ip = (int *)p;\n    printf(\"%d\", *ip);\n    return 0;\n}",
+      "options": [
+        "3",
+        "Random/system-dependent value",
+        "3.14",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "This code casts a double* to int* and dereferences it. The bit pattern of a double interpreted as an int produces undefined/system-dependent results due to different representations.",
+      "hints": [
+        "double and int have different memory representations",
+        "Reinterpreting bytes of a double as int is undefined",
+        "This is type punning"
+      ],
+      "tags": [
+        "void_pointers",
+        "casting",
+        "type_punning"
+      ]
+    },
+    {
+      "id": "ptr_036",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Pointer to Const",
+      "description": "Which line causes a compilation error?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10, y = 20;\n    const int *p = &x;\n    *p = 15;      // Line A\n    p = &y;       // Line B\n    return 0;\n}",
+      "options": [
+        "Line A",
+        "Line B",
+        "Both lines",
+        "No error"
+      ],
+      "correct_answer": "A",
+      "explanation": "const int *p means p points to a const int. You cannot modify the value through p (*p = 15 is invalid), but you can change where p points (p = &y is valid).",
+      "hints": [
+        "const int* means the pointed-to value is const",
+        "Can you change what p points to?",
+        "Can you change the value through p?"
+      ],
+      "tags": [
+        "const_pointers",
+        "const_correctness"
+      ]
+    },
+    {
+      "id": "ptr_037",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Const Pointer",
+      "description": "Which line causes a compilation error?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10, y = 20;\n    int *const p = &x;\n    *p = 15;      // Line A\n    p = &y;       // Line B\n    return 0;\n}",
+      "options": [
+        "Line A",
+        "Line B",
+        "Both lines",
+        "No error"
+      ],
+      "correct_answer": "B",
+      "explanation": "int *const p means p is a const pointer to int. You can modify the value through p (*p = 15 is valid), but you cannot change where p points (p = &y is invalid).",
+      "hints": [
+        "int* const means the pointer itself is const",
+        "Can you change the value at the pointed-to location?",
+        "Can you reassign p to point elsewhere?"
+      ],
+      "tags": [
+        "const_pointers",
+        "const_correctness"
+      ]
+    },
+    {
+      "id": "ptr_038",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Const Pointer to Const",
+      "description": "Which lines cause compilation errors?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10, y = 20;\n    const int *const p = &x;\n    *p = 15;      // Line A\n    p = &y;       // Line B\n    printf(\"%d\", *p);\n    return 0;\n}",
+      "options": [
+        "Only Line A",
+        "Only Line B",
+        "Both Line A and Line B",
+        "No error"
+      ],
+      "correct_answer": "C",
+      "explanation": "const int *const p means p is a const pointer to a const int. Both the pointer and the pointed-to value are const, so neither *p = 15 nor p = &y is allowed.",
+      "hints": [
+        "Both const keywords apply restrictions",
+        "The first const protects the value",
+        "The second const protects the pointer"
+      ],
+      "tags": [
+        "const_pointers",
+        "const_correctness"
+      ]
+    },
+    {
+      "id": "ptr_039",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Comparison",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int *p1 = &arr[1];\n    int *p2 = &arr[3];\n    printf(\"%d\", p2 > p1);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "Undefined behavior",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "Pointers to elements of the same array can be compared. p2 points to arr[3] and p1 points to arr[1]. Since arr[3] is at a higher address, p2 > p1 is true (1).",
+      "hints": [
+        "Both pointers point into the same array",
+        "Higher index means higher address",
+        "p2 is at arr[3], p1 is at arr[1]"
+      ],
+      "tags": [
+        "pointer_comparison"
+      ]
+    },
+    {
+      "id": "ptr_040",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Pointer Comparison Across Objects",
+      "description": "What is the behavior of this code?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10;\n    int y = 20;\n    int *p1 = &x;\n    int *p2 = &y;\n    if (p1 < p2) {\n        printf(\"p1 is less\");\n    } else {\n        printf(\"p2 is less or equal\");\n    }\n    return 0;\n}",
+      "options": [
+        "Always prints 'p1 is less'",
+        "Always prints 'p2 is less or equal'",
+        "Implementation-dependent/undefined",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Comparing pointers to different objects (not part of the same array or object) using relational operators (<, >, <=, >=) is undefined behavior in C. Only equality comparison (==, !=) is well-defined.",
+      "hints": [
+        "x and y are separate objects",
+        "Relational comparison requires pointers to the same object/array",
+        "Only == and != are well-defined for unrelated pointers"
+      ],
+      "tags": [
+        "pointer_comparison",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "ptr_041",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Subtraction Same Array",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char str[] = \"HELLO\";\n    char *p1 = &str[1];\n    char *p2 = &str[4];\n    printf(\"%ld\", p2 - p1);\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "12",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "Pointer subtraction returns the number of elements between pointers. p2 points to str[4] and p1 points to str[1], so p2 - p1 = 4 - 1 = 3.",
+      "hints": [
+        "Subtraction gives element count, not bytes",
+        "p2 is at index 4, p1 is at index 1",
+        "4 - 1 = 3"
+      ],
+      "tags": [
+        "pointer_subtraction",
+        "pointer_arithmetic"
+      ]
+    },
+    {
+      "id": "ptr_042",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Pointer Subtraction Different Objects",
+      "description": "What is the behavior of this code?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    int b = 10;\n    int *p1 = &a;\n    int *p2 = &b;\n    printf(\"%ld\", p2 - p1);\n    return 0;\n}",
+      "options": [
+        "The distance in elements",
+        "The distance in bytes",
+        "Undefined behavior",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Pointer subtraction is only defined for pointers to elements of the same array (or one past the end). Subtracting pointers to different objects (a and b) is undefined behavior.",
+      "hints": [
+        "a and b are separate objects, not array elements",
+        "Pointer arithmetic requires pointers to the same array/object",
+        "This violates the rules of pointer subtraction"
+      ],
+      "tags": [
+        "pointer_subtraction",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "ptr_043",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Null Pointer Initialization",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int *p = NULL;\n    if (p == NULL) {\n        printf(\"Null pointer\");\n    } else {\n        printf(\"Valid pointer\");\n    }\n    return 0;\n}",
+      "options": [
+        "Null pointer",
+        "Valid pointer",
+        "Compilation error",
+        "Undefined behavior"
+      ],
+      "correct_answer": "A",
+      "explanation": "NULL is a null pointer constant. p is initialized to NULL, so the condition p == NULL is true and it prints 'Null pointer'.",
+      "hints": [
+        "NULL represents a null pointer",
+        "p is assigned NULL",
+        "The comparison checks if p is null"
+      ],
+      "tags": [
+        "null_pointers"
+      ]
+    },
+    {
+      "id": "ptr_044",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Null Pointer Dereference",
+      "description": "What happens when this code runs?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int *p = NULL;\n    printf(\"%d\", *p);\n    return 0;\n}",
+      "options": [
+        "Prints 0",
+        "Prints garbage value",
+        "Segmentation fault/crash",
+        "Compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "Dereferencing a NULL pointer (*p) is undefined behavior and typically causes a segmentation fault or program crash at runtime.",
+      "hints": [
+        "NULL points to invalid memory",
+        "What happens when you access invalid memory?",
+        "This is a runtime error, not compile-time"
+      ],
+      "tags": [
+        "null_pointers",
+        "undefined_behavior"
+      ]
+    },
+    {
+      "id": "ptr_045",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Double Pointer and NULL",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int *p = NULL;\n    int **pp = &p;\n    if (*pp == NULL) {\n        printf(\"A\");\n    }\n    if (pp == NULL) {\n        printf(\"B\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "AB",
+        "Nothing"
+      ],
+      "correct_answer": "A",
+      "explanation": "pp points to p, which is NULL. *pp dereferences pp to get the value of p (NULL), so *pp == NULL is true. pp itself is not NULL (it points to p), so pp == NULL is false.",
+      "hints": [
+        "pp points to p, not NULL",
+        "*pp gives the value of p",
+        "p is NULL, but pp is not"
+      ],
+      "tags": [
+        "double_pointers",
+        "null_pointers"
+      ]
+    },
+    {
+      "id": "ptr_046",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Arithmetic with Structs",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nstruct Point {\n    int x, y;\n};\n\nint main() {\n    struct Point arr[] = {{1,2}, {3,4}, {5,6}};\n    struct Point *p = arr;\n    p++;\n    printf(\"%d\", p->x);\n    return 0;\n}",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "p initially points to arr[0]. p++ increments p by sizeof(struct Point), making it point to arr[1]. arr[1].x is 3.",
+      "hints": [
+        "p++ moves to the next struct in the array",
+        "p starts at arr[0], then moves to arr[1]",
+        "arr[1].x is 3"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "structs"
+      ]
+    },
+    {
+      "id": "ptr_047",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Function Pointer Return Type",
+      "description": "What does this declaration mean?",
+      "code_template": "#include <stdio.h>\n\nint (*func(int x))(int, int);\n\nint main() {\n    // What is func?\n    return 0;\n}",
+      "options": [
+        "Function taking int, returning pointer to function",
+        "Pointer to function taking int, returning int",
+        "Array of function pointers",
+        "Syntax error"
+      ],
+      "correct_answer": "A",
+      "explanation": "func is a function that takes an int and returns a pointer to a function. The returned function takes two ints and returns an int. Read inside-out: func(int x) is a function, (*...) makes it return a pointer, (int, int) are parameters, and int is the final return type.",
+      "hints": [
+        "Read the declaration inside-out",
+        "func(int x) is a function taking int",
+        "The * means it returns a pointer to a function"
+      ],
+      "tags": [
+        "function_pointers",
+        "complex_declarations"
+      ]
+    },
+    {
+      "id": "ptr_048",
+      "category": "pointers",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pointer Arithmetic and sizeof",
+      "description": "Assuming sizeof(int) is 4, what does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {10, 20, 30};\n    int *p = arr;\n    printf(\"%ld\", (char *)(p + 2) - (char *)p);\n    return 0;\n}",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "Undefined behavior"
+      ],
+      "correct_answer": "C",
+      "explanation": "p + 2 moves 2 ints forward (8 bytes if sizeof(int) = 4). Casting to char* and subtracting gives the byte difference: 2 * 4 = 8 bytes.",
+      "hints": [
+        "p + 2 moves forward by 2 * sizeof(int)",
+        "Casting to char* allows byte-level calculation",
+        "2 * 4 = 8 bytes"
+      ],
+      "tags": [
+        "pointer_arithmetic",
+        "casting",
+        "sizeof"
+      ]
     }
   ]
 }

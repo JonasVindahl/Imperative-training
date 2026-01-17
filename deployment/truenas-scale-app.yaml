@@ -28,7 +28,7 @@ services:
       - PYTHONUNBUFFERED=1
 
     ports:
-      - 5067:5067
+      - 8000:8000
 
     volumes:
       - /mnt/MainPool/Apps/c-practice:/app:rw
@@ -40,7 +40,7 @@ services:
     tty: false
 
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5067').read()"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000').read()"]
       interval: 30s
       timeout: 10s
       retries: 3

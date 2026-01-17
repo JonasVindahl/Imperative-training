@@ -8,15 +8,20 @@
         <h1>Login</h1>
         <p class="subtitle">Welcome back! Continue your C programming journey.</p>
 
-        <form method="POST" action="{{ url_for('auth.login') }}">
+        <form method="POST" action="{{ url_for('auth.login') }}" class="auth-form" novalidate>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required autocomplete="email">
+                <small class="field-message" data-message-for="email"></small>
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required autocomplete="current-password">
+                <div class="input-with-toggle">
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                    <button type="button" class="password-toggle" data-target="password">Show</button>
+                </div>
+                <small class="field-message" data-message-for="password"></small>
             </div>
 
             <button type="submit" class="btn-primary">Login</button>
@@ -27,4 +32,8 @@
         </p>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
 {% endblock %}

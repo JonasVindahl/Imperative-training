@@ -21,8 +21,20 @@ compiler_service = CompilerService()
 def start_practice():
     """Start a new practice session"""
     if request.method == 'POST':
+        # Clear any existing session data before starting a new one
+        session.pop('practice_questions', None)
+        session.pop('current_question_index', None)
+        session.pop('session_start_time', None)
+        session.pop('question_start_time', None)
+        session.pop('answered_questions', None)
+
         mode = request.form.get('mode', 'smart')
         category = request.form.get('category', None)
+        try:
+            requested_count = int(request.form.get('question_count', 10))
+        except (TypeError, ValueError):
+            requested_count = 10
+        requested_count = max(1, min(requested_count, 50))
 
         # Load questions
         all_questions = question_loader.load_all_questions()
@@ -30,10 +42,24 @@ def start_practice():
         if mode == 'smart':
             # Adaptive learning mode
             adaptive_service = AdaptiveLearningService(current_user.id)
-            questions = adaptive_service.generate_practice_session(all_questions, session_size=10)
-        elif mode == 'category' and category:
+            questions = adaptive_service.generate_practice_session(
+                all_questions,
+                session_size=requested_count
+            )
+        elif mode == 'category':
+            if not category:
+                flash('Please select a category before starting.', 'error')
+                question_ids = session.get('practice_questions', [])
+                current_index = session.get('current_question_index', 0)
+                has_active_session = bool(question_ids) and current_index < len(question_ids)
+                remaining_questions = max(len(question_ids) - current_index, 0)
+                return render_template(
+                    'start_practice.html',
+                    has_active_session=has_active_session,
+                    remaining_questions=remaining_questions
+                )
             # Specific category practice
-            questions = question_loader.get_random_questions(category, 10)
+            questions = question_loader.get_random_questions(category, requested_count)
         else:
             # Random mixed practice
             import random
@@ -41,7 +67,7 @@ def start_practice():
             for cat_questions in all_questions.values():
                 all_q.extend(cat_questions)
             unique_questions = list({q.get('id'): q for q in all_q}.values())
-            questions = random.sample(unique_questions, min(10, len(unique_questions)))
+            questions = random.sample(unique_questions, min(requested_count, len(unique_questions)))
 
         # Store session data
         session['practice_questions'] = [q['id'] for q in questions]
@@ -52,7 +78,16 @@ def start_practice():
         return redirect(url_for('practice.question'))
 
     # Show practice mode selection
-    return render_template('start_practice.html')
+    question_ids = session.get('practice_questions', [])
+    current_index = session.get('current_question_index', 0)
+    has_active_session = bool(question_ids) and current_index < len(question_ids)
+    remaining_questions = max(len(question_ids) - current_index, 0)
+
+    return render_template(
+        'start_practice.html',
+        has_active_session=has_active_session,
+        remaining_questions=remaining_questions
+    )
 
 
 @practice_bp.route('/question')
@@ -173,6 +208,16 @@ def session_complete():
     correct_count = sum(1 for a in attempts if a.correct)
     total_time = sum(a.time_spent for a in attempts)
 
+    incorrect_details = []
+    for attempt in attempts:
+        if not attempt.correct:
+            question = question_loader.get_question_by_id(attempt.question_id)
+            if question:
+                incorrect_details.append({
+                    'attempt': attempt,
+                    'question': question
+                })
+
     # Clear session
     session.pop('practice_questions', None)
     session.pop('current_question_index', None)
@@ -183,7 +228,8 @@ def session_complete():
                          attempts=attempts,
                          correct_count=correct_count,
                          total_questions=len(question_ids),
-                         total_time=total_time)
+                         total_time=total_time,
+                         incorrect_details=incorrect_details)
 
 
 @practice_bp.route('/compile', methods=['POST'])
