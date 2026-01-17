@@ -76,6 +76,9 @@
                 </div>
                 <div class="draggable-tokens-container">
                     <h4>Drag these tokens into the blanks above:</h4>
+                    <p style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                        <strong>How to use:</strong> Try dragging tokens. If dragging doesn't work, click a token to select it (it will turn green), then click the blank to place it.
+                    </p>
                     <!-- DEBUG: question.blanks exists = {{ question.blanks is defined }} -->
                     <div class="draggable-tokens" id="token-pool">
                         {% if question.blanks %}
@@ -421,32 +424,105 @@
         }
     }
 
-    // Initialize drag-and-drop if jQuery UI is available
-    if (typeof $ !== 'undefined' && $.ui) {
-        $(document).ready(function() {
-            // Make tokens draggable
-            $('.draggable-token').draggable({
-                revert: 'invalid',
-                helper: 'clone',
-                cursor: 'move',
-                zIndex: 100
+    // Initialize drag-and-drop with fallback to click-to-place
+    function initializeDragDrop() {
+        console.log('Initializing drag-and-drop...');
+        console.log('jQuery available:', typeof $ !== 'undefined');
+        console.log('jQuery UI available:', typeof $ !== 'undefined' && typeof $.ui !== 'undefined');
+        console.log('Tokens found:', $('.draggable-token').length);
+        console.log('Drop zones found:', $('.drop-zone').length);
+
+        if (typeof $ !== 'undefined' && typeof $.ui !== 'undefined') {
+            try {
+                // Make tokens draggable
+                $('.draggable-token').draggable({
+                    revert: 'invalid',
+                    helper: 'clone',
+                    cursor: 'move',
+                    zIndex: 1000,
+                    start: function() {
+                        console.log('Drag started');
+                    }
+                });
+
+                // Make drop zones droppable
+                $('.drop-zone').droppable({
+                    accept: '.draggable-token',
+                    hoverClass: 'drop-zone-hover',
+                    drop: function(event, ui) {
+                        const token = ui.draggable.data('token');
+                        const blankId = $(this).data('blank-id');
+                        console.log('Dropped token:', token, 'into blank:', blankId);
+
+                        // Update the drop zone
+                        $(this).text(token);
+                        $(this).attr('data-placed-token', token);
+                        $(this).addClass('filled');
+                    }
+                });
+
+                console.log('jQuery UI drag-drop initialized successfully');
+            } catch (error) {
+                console.error('Error initializing jQuery UI drag-drop:', error);
+                enableClickToPlace();
+            }
+        } else {
+            console.warn('jQuery UI not available, using click-to-place fallback');
+            enableClickToPlace();
+        }
+    }
+
+    // Fallback: Click-to-place mechanism
+    function enableClickToPlace() {
+        let selectedToken = null;
+
+        // Click on token to select it
+        document.querySelectorAll('.draggable-token').forEach(token => {
+            token.addEventListener('click', function() {
+                // Deselect previous
+                document.querySelectorAll('.draggable-token').forEach(t => t.classList.remove('selected'));
+                // Select this token
+                this.classList.add('selected');
+                selectedToken = this.getAttribute('data-token');
+                console.log('Selected token:', selectedToken);
             });
+        });
 
-            // Make drop zones droppable
-            $('.drop-zone').droppable({
-                accept: '.draggable-token',
-                hoverClass: 'drop-zone-hover',
-                drop: function(event, ui) {
-                    const token = ui.draggable.data('token');
-                    const blankId = $(this).data('blank-id');
+        // Click on drop zone to place selected token
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('click', function() {
+                if (selectedToken) {
+                    this.textContent = selectedToken;
+                    this.setAttribute('data-placed-token', selectedToken);
+                    this.classList.add('filled');
+                    console.log('Placed token:', selectedToken, 'into zone');
 
-                    // Update the drop zone
-                    $(this).text(token);
-                    $(this).attr('data-placed-token', token);
-                    $(this).addClass('filled');
+                    // Deselect token
+                    document.querySelectorAll('.draggable-token').forEach(t => t.classList.remove('selected'));
+                    selectedToken = null;
+                } else {
+                    alert('Please select a token first by clicking on it');
                 }
             });
         });
+
+        console.log('Click-to-place fallback enabled');
     }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeDragDrop);
+    } else {
+        initializeDragDrop();
+    }
+
+    // Also try when window loads (as a backup)
+    window.addEventListener('load', function() {
+        // Only reinitialize if elements weren't initialized
+        if ($('.draggable-token').length > 0 && !$('.draggable-token').hasClass('ui-draggable')) {
+            console.log('Reinitializing on window.load');
+            initializeDragDrop();
+        }
+    });
 </script>
 {% endblock %}
