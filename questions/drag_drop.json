@@ -2572,6 +2572,310 @@
         "initialization",
         "exam_style"
       ]
+    },
+    {
+      "id": "drag_term_001",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Memory Allocation Statement",
+      "description": "Drag the correct tokens to complete a proper dynamic memory allocation:",
+      "code_template": "int *ptr = <span class='drop-zone' data-blank-id='blank1'>[___]</span>(<span class='drop-zone' data-blank-id='blank2'>[___]</span> * <span class='drop-zone' data-blank-id='blank3'>[___]</span>(int));",
+      "blanks": {
+        "blank1": {
+          "correct": "malloc",
+          "options": ["malloc", "calloc", "free", "realloc", "alloc"]
+        },
+        "blank2": {
+          "correct": "10",
+          "options": ["10", "sizeof", "int", "ptr", "*"]
+        },
+        "blank3": {
+          "correct": "sizeof",
+          "options": ["sizeof", "malloc", "10", "int", "size"]
+        }
+      },
+      "explanation": "malloc allocates memory. Use: malloc(count * sizeof(type)). sizeof gets the byte size of a type.",
+      "hints": [
+        "malloc allocates memory",
+        "sizeof returns type size",
+        "Pattern: malloc(count * sizeof(type))"
+      ],
+      "tags": ["terminology", "memory", "malloc", "sizeof"]
+    },
+    {
+      "id": "drag_term_002",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Pointer Declaration",
+      "description": "Drag the correct tokens to declare a pointer to an integer:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span>ptr = <span class='drop-zone' data-blank-id='blank3'>[___]</span>x;",
+      "blanks": {
+        "blank1": {
+          "correct": "int",
+          "options": ["int", "char", "float", "void", "double"]
+        },
+        "blank2": {
+          "correct": "*",
+          "options": ["*", "&", "->", ".", "**"]
+        },
+        "blank3": {
+          "correct": "&",
+          "options": ["&", "*", "->", ".", "NULL"]
+        }
+      },
+      "explanation": "Pointer declaration: type *name. Use & (address-of) to get a variable's address.",
+      "hints": [
+        "Pointer type needs *",
+        "& gets address of variable",
+        "Pattern: int *ptr = &variable"
+      ],
+      "tags": ["terminology", "pointers", "operators"]
+    },
+    {
+      "id": "drag_term_003",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Function Prototype",
+      "description": "Drag the correct tokens to create a function prototype:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> calculate(<span class='drop-zone' data-blank-id='blank2'>[___]</span> a, <span class='drop-zone' data-blank-id='blank3'>[___]</span> b)<span class='drop-zone' data-blank-id='blank4'>[___]</span>",
+      "blanks": {
+        "blank1": {
+          "correct": "int",
+          "options": ["int", "void", "char", "return", "function"]
+        },
+        "blank2": {
+          "correct": "int",
+          "options": ["int", "void", "char", "float", "double"]
+        },
+        "blank3": {
+          "correct": "int",
+          "options": ["int", "void", "char", "float", "double"]
+        },
+        "blank4": {
+          "correct": ";",
+          "options": [";", "{", "}", "return", "()"]
+        }
+      },
+      "explanation": "Function prototype: return_type function_name(parameter_types); Ends with semicolon.",
+      "hints": [
+        "Prototype declares return type",
+        "Parameters need types",
+        "Prototype ends with semicolon"
+      ],
+      "tags": ["terminology", "functions", "prototype"]
+    },
+    {
+      "id": "drag_term_004",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Preprocessor Directive",
+      "description": "Drag the correct tokens to include a standard library header:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span><span class='drop-zone' data-blank-id='blank3'>[___]</span>",
+      "blanks": {
+        "blank1": {
+          "correct": "#include",
+          "options": ["#include", "#define", "#ifdef", "include", "import"]
+        },
+        "blank2": {
+          "correct": "<stdio.h>",
+          "options": ["<stdio.h>", "\"stdio.h\"", "<stdlib.h>", "stdio.h", "(stdio.h)"]
+        },
+        "blank3": {
+          "correct": "",
+          "options": ["", ";", "{}", "//", "/*"]
+        }
+      },
+      "explanation": "#include <header.h> includes standard library headers. No semicolon needed.",
+      "hints": [
+        "#include for header files",
+        "Use <> for standard libraries",
+        "No semicolon after #include"
+      ],
+      "tags": ["terminology", "preprocessor", "include"]
+    },
+    {
+      "id": "drag_term_005",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Struct Access",
+      "description": "Drag the correct tokens to access a struct member through a pointer:",
+      "code_template": "struct Point *p;\np<span class='drop-zone' data-blank-id='blank1'>[___]</span><span class='drop-zone' data-blank-id='blank2'>[___]</span> = 10;",
+      "blanks": {
+        "blank1": {
+          "correct": "->",
+          "options": ["->", ".", "*", "&", "::"]
+        },
+        "blank2": {
+          "correct": "x",
+          "options": ["x", "y", "Point", "p", "member"]
+        }
+      },
+      "explanation": "Use -> (arrow operator) to access struct members through a pointer.",
+      "hints": [
+        "-> for pointer access",
+        ". for direct access",
+        "Arrow operator dereferences automatically"
+      ],
+      "tags": ["terminology", "structs", "operators"]
+    },
+    {
+      "id": "drag_term_006",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Variable Declaration",
+      "description": "Drag the correct tokens to declare a constant integer:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> MAX = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "const",
+          "options": ["const", "static", "extern", "volatile", "register"]
+        },
+        "blank2": {
+          "correct": "int",
+          "options": ["int", "char", "float", "void", "double"]
+        },
+        "blank3": {
+          "correct": "100",
+          "options": ["100", "0", "NULL", "\"100\"", "const"]
+        }
+      },
+      "explanation": "const keyword makes a variable read-only. Must be initialized at declaration.",
+      "hints": [
+        "const for read-only",
+        "Need a data type",
+        "Initialize with a value"
+      ],
+      "tags": ["terminology", "const", "keywords"]
+    },
+    {
+      "id": "drag_term_007",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Typedef Declaration",
+      "description": "Drag the correct tokens to create a type alias for an unsigned integer:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span> uint;",
+      "blanks": {
+        "blank1": {
+          "correct": "typedef",
+          "options": ["typedef", "define", "struct", "type", "alias"]
+        },
+        "blank2": {
+          "correct": "unsigned",
+          "options": ["unsigned", "signed", "int", "const", "static"]
+        },
+        "blank3": {
+          "correct": "int",
+          "options": ["int", "char", "short", "long", "unsigned"]
+        }
+      },
+      "explanation": "typedef creates type aliases. Format: typedef existing_type new_name;",
+      "hints": [
+        "typedef creates aliases",
+        "unsigned means no negative",
+        "int is the base type"
+      ],
+      "tags": ["terminology", "typedef", "types"]
+    },
+    {
+      "id": "drag_term_008",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete String Declaration",
+      "description": "Drag the correct tokens to declare a null-terminated string:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> str<span class='drop-zone' data-blank-id='blank2'>[___]</span> = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "char",
+          "options": ["char", "string", "int", "char*", "str"]
+        },
+        "blank2": {
+          "correct": "[]",
+          "options": ["[]", "[10]", "*", "&", "{}"]
+        },
+        "blank3": {
+          "correct": "\"hello\"",
+          "options": ["\"hello\"", "'hello'", "hello", "NULL", "{h,e,l,l,o}"]
+        }
+      },
+      "explanation": "C strings are char arrays. Use double quotes for string literals. Compiler adds \\0 automatically.",
+      "hints": [
+        "Strings are char arrays",
+        "[] for array without size",
+        "Double quotes for strings"
+      ],
+      "tags": ["terminology", "strings", "arrays"]
+    },
+    {
+      "id": "drag_term_009",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Recursion Base Case",
+      "description": "Drag the correct tokens to complete a recursive function's base case:",
+      "code_template": "int factorial(int n) {\n    <span class='drop-zone' data-blank-id='blank1'>[___]</span> (n <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span>) <span class='drop-zone' data-blank-id='blank4'>[___]</span> 1;\n    return n * factorial(n - 1);\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "if",
+          "options": ["if", "while", "for", "switch", "when"]
+        },
+        "blank2": {
+          "correct": "<=",
+          "options": ["<=", ">=", "==", "!=", "<"]
+        },
+        "blank3": {
+          "correct": "1",
+          "options": ["1", "0", "n", "-1", "NULL"]
+        },
+        "blank4": {
+          "correct": "return",
+          "options": ["return", "break", "continue", "exit", "yield"]
+        }
+      },
+      "explanation": "Base case stops recursion. For factorial, if n <= 1, return 1.",
+      "hints": [
+        "Base case uses if",
+        "Stops when n is small enough",
+        "return ends the function"
+      ],
+      "tags": ["terminology", "recursion", "base_case"]
+    },
+    {
+      "id": "drag_term_010",
+      "category": "terminology",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Memory Freeing",
+      "description": "Drag the correct tokens to properly free allocated memory:",
+      "code_template": "int *arr = malloc(10 * sizeof(int));\n// Use array...\n<span class='drop-zone' data-blank-id='blank1'>[___]</span>(<span class='drop-zone' data-blank-id='blank2'>[___]</span>);\narr = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "free",
+          "options": ["free", "delete", "dealloc", "release", "malloc"]
+        },
+        "blank2": {
+          "correct": "arr",
+          "options": ["arr", "malloc", "*arr", "&arr", "10"]
+        },
+        "blank3": {
+          "correct": "NULL",
+          "options": ["NULL", "0", "free", "arr", "malloc"]
+        }
+      },
+      "explanation": "Use free() to release malloc'd memory. Set pointer to NULL after freeing to avoid dangling pointer.",
+      "hints": [
+        "free releases memory",
+        "Pass the pointer to free",
+        "Set to NULL after freeing"
+      ],
+      "tags": ["terminology", "memory", "free"]
     }
   ]
 }
