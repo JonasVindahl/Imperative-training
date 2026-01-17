@@ -199,12 +199,22 @@ class GraderService:
                 'blank_id': blank_id,
                 'user_answer': user_token,
                 'correct_answer': correct_token,
+                'expected': correct_token,  # For UI compatibility
+                'received': user_token,     # For UI compatibility
+                'passed': is_correct,       # For UI compatibility
                 'correct': is_correct
             })
+
+        # Build summary for UI
+        user_summary = ', '.join([f"{r['blank_id']}: {r['received']}" for r in results])
+        correct_summary = ', '.join([f"{r['blank_id']}: {r['expected']}" for r in results])
 
         return {
             'correct': all_correct,
             'blank_results': results,
+            'test_results': results,  # For UI compatibility
+            'expected': correct_summary,
+            'received': user_summary,
             'explanation': question.get('explanation', ''),
             'correct_code': self._build_code_from_blanks(question, blanks)
         }
@@ -235,6 +245,9 @@ class GraderService:
                 'input': test_case.get('input', ''),
                 'user_answer': user_val,
                 'correct_answer': correct_val,
+                'expected': correct_val,  # For UI compatibility
+                'received': user_val,     # For UI compatibility
+                'passed': is_correct,     # For UI compatibility
                 'correct': is_correct,
                 'trace': test_case.get('trace', [])
             })

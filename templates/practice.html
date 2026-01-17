@@ -72,12 +72,19 @@
                 </div>
                 <div class="draggable-tokens-container">
                     <h4>Drag these tokens into the blanks above:</h4>
+                    <!-- DEBUG: Blanks type={{ question.blanks|string|truncate(200) }} -->
                     <div class="draggable-tokens" id="token-pool">
-                        {% for blank_id, blank_data in question.blanks.items() %}
-                            {% for option in blank_data.options %}
+                        {% if question.blanks %}
+                            {% for blank_id, blank_data in question.blanks.items() %}
+                                {% if blank_data.options %}
+                                    {% for option in blank_data.options %}
                         <span class="draggable-token" data-token="{{ option }}">{{ option }}</span>
+                                    {% endfor %}
+                                {% endif %}
                             {% endfor %}
-                        {% endfor %}
+                        {% else %}
+                        <!-- DEBUG: No blanks found! -->
+                        {% endif %}
                     </div>
                 </div>
             </div>
