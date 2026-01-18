@@ -2829,12 +2829,12 @@
       "points": 2,
       "title": "Hvad betyder 'int' i C?",
       "question": "Hvad er datatypen 'int' i C?",
-      "options": {
-        "A": "Et heltal (integer)",
-        "B": "Et decimaltal",
-        "C": "En tekststreng",
-        "D": "En pointer"
-      },
+      "options": [
+        "Et heltal (integer)",
+        "Et decimaltal",
+        "En tekststreng",
+        "En pointer"
+      ],
       "correct_answer": "A",
       "explanation": "'int' st\u00e5r for integer og bruges til at gemme heltal."
     },
@@ -2846,12 +2846,12 @@
       "points": 2,
       "title": "Hvad betyder 'char' i C?",
       "question": "Hvad er datatypen 'char' i C?",
-      "options": {
-        "A": "Et heltal",
-        "B": "Et enkelt tegn (character)",
-        "C": "En tekststreng",
-        "D": "En boolean v\u00e6rdi"
-      },
+      "options": [
+        "Et heltal",
+        "Et enkelt tegn (character)",
+        "En tekststreng",
+        "En boolean v\u00e6rdi"
+      ],
       "correct_answer": "B",
       "explanation": "'char' st\u00e5r for character og bruges til at gemme et enkelt tegn (1 byte)."
     },
@@ -2863,12 +2863,12 @@
       "points": 2,
       "title": "Hvad betyder 'float' i C?",
       "question": "Hvad er datatypen 'float' i C?",
-      "options": {
-        "A": "Et heltal",
-        "B": "Et tegn",
-        "C": "Et decimaltal med enkelt pr\u00e6cision",
-        "D": "En pointer"
-      },
+      "options": [
+        "Et heltal",
+        "Et tegn",
+        "Et decimaltal med enkelt pr\u00e6cision",
+        "En pointer"
+      ],
       "correct_answer": "C",
       "explanation": "'float' bruges til at gemme decimaltal med enkelt pr\u00e6cision (floating point)."
     },
@@ -2880,12 +2880,12 @@
       "points": 2,
       "title": "Hvad betyder 'double' i C?",
       "question": "Hvad er datatypen 'double' i C?",
-      "options": {
-        "A": "To gange et heltal",
-        "B": "Et decimaltal med dobbelt pr\u00e6cision",
-        "C": "To char v\u00e6rdier",
-        "D": "En array af to elementer"
-      },
+      "options": [
+        "To gange et heltal",
+        "Et decimaltal med dobbelt pr\u00e6cision",
+        "To char v\u00e6rdier",
+        "En array af to elementer"
+      ],
       "correct_answer": "B",
       "explanation": "'double' bruges til at gemme decimaltal med dobbelt pr\u00e6cision - mere pr\u00e6cist end float."
     },
@@ -2897,12 +2897,12 @@
       "points": 2,
       "title": "Hvad betyder 'void' i C?",
       "question": "Hvad betyder 'void' i C?",
-      "options": {
-        "A": "En tom datatype / ingen v\u00e6rdi",
-        "B": "Et heltal",
-        "C": "Null pointer",
-        "D": "En fejl"
-      },
+      "options": [
+        "En tom datatype / ingen v\u00e6rdi",
+        "Et heltal",
+        "Null pointer",
+        "En fejl"
+      ],
       "correct_answer": "A",
       "explanation": "'void' betyder 'tom' eller 'ingen v\u00e6rdi' og bruges fx til funktioner der ikke returnerer noget."
     },
@@ -2914,12 +2914,12 @@
       "points": 3,
       "title": "Hvad betyder '*' operator i C?",
       "question": "Hvad er '*' operatoren i C (i kontekst af pointere)?",
-      "options": {
-        "A": "Multiplikation",
-        "B": "Dereference - f\u00e5 v\u00e6rdien en pointer peger p\u00e5",
-        "C": "Address-of operator",
-        "D": "Division"
-      },
+      "options": [
+        "Multiplikation",
+        "Dereference - f\u00e5 v\u00e6rdien en pointer peger p\u00e5",
+        "Address-of operator",
+        "Division"
+      ],
       "correct_answer": "B",
       "explanation": "'*' foran en pointer (dereference) giver adgang til den v\u00e6rdi pointeren peger p\u00e5. Fx: *ptr f\u00e5r v\u00e6rdien."
     },
@@ -2931,12 +2931,12 @@
       "points": 3,
       "title": "Hvad betyder '&' operator i C?",
       "question": "Hvad er '&' operatoren i C (i kontekst af pointere)?",
-      "options": {
-        "A": "Bitwise AND",
-        "B": "Logical AND",
-        "C": "Address-of operator - f\u00e5 adressen p\u00e5 en variabel",
-        "D": "Reference operator"
-      },
+      "options": [
+        "Bitwise AND",
+        "Logical AND",
+        "Address-of operator - f\u00e5 adressen p\u00e5 en variabel",
+        "Reference operator"
+      ],
       "correct_answer": "C",
       "explanation": "'&' foran en variabel giver dens hukommelsesadresse. Fx: &x giver adressen hvor x er gemt."
     },
@@ -2948,12 +2948,12 @@
       "points": 3,
       "title": "Hvad er 'malloc' i C?",
       "question": "Hvad g\u00f8r funktionen 'malloc' i C?",
-      "options": {
-        "A": "Frigiver hukommelse",
-        "B": "Allokerer dynamisk hukommelse p\u00e5 heap",
-        "C": "Kopierer hukommelse",
-        "D": "Initialiserer variabler til 0"
-      },
+      "options": [
+        "Frigiver hukommelse",
+        "Allokerer dynamisk hukommelse p\u00e5 heap",
+        "Kopierer hukommelse",
+        "Initialiserer variabler til 0"
+      ],
       "correct_answer": "B",
       "explanation": "'malloc' (memory allocation) allokerer hukommelse dynamisk p\u00e5 heap og returnerer en pointer til den."
     },
@@ -2965,12 +2965,12 @@
       "points": 3,
       "title": "Hvad er 'free' i C?",
       "question": "Hvad g\u00f8r funktionen 'free' i C?",
-      "options": {
-        "A": "Allokerer hukommelse",
-        "B": "Frigiver dynamisk allokeret hukommelse",
-        "C": "Nulstiller variabler",
-        "D": "Returnerer en gratis v\u00e6rdi"
-      },
+      "options": [
+        "Allokerer hukommelse",
+        "Frigiver dynamisk allokeret hukommelse",
+        "Nulstiller variabler",
+        "Returnerer en gratis v\u00e6rdi"
+      ],
       "correct_answer": "B",
       "explanation": "'free' frigiver hukommelse der tidligere er blevet allokeret med malloc/calloc/realloc."
     },
@@ -2982,12 +2982,12 @@
       "points": 3,
       "title": "Hvad er 'sizeof' i C?",
       "question": "Hvad g\u00f8r 'sizeof' operatoren i C?",
-      "options": {
-        "A": "Returnerer antallet af elementer i et array",
-        "B": "Returnerer st\u00f8rrelsen (i bytes) af en datatype eller variabel",
-        "C": "T\u00e6ller antal tegn i en streng",
-        "D": "Returnerer l\u00e6ngden af en fil"
-      },
+      "options": [
+        "Returnerer antallet af elementer i et array",
+        "Returnerer st\u00f8rrelsen (i bytes) af en datatype eller variabel",
+        "T\u00e6ller antal tegn i en streng",
+        "Returnerer l\u00e6ngden af en fil"
+      ],
       "correct_answer": "B",
       "explanation": "'sizeof' returnerer st\u00f8rrelsen i bytes af en datatype eller variabel. Fx: sizeof(int) giver typisk 4."
     },
@@ -2999,12 +2999,12 @@
       "points": 2,
       "title": "Hvad er 'stack' i C?",
       "question": "Hvad er stack (stakken) i C programmering?",
-      "options": {
-        "A": "En dynamisk hukommelsesomr\u00e5de",
-        "B": "Et omr\u00e5de til globale variabler",
-        "C": "Et hukommelsesomr\u00e5de til lokale variabler og funktionskald",
-        "D": "En datastruktur du skal implementere selv"
-      },
+      "options": [
+        "En dynamisk hukommelsesomr\u00e5de",
+        "Et omr\u00e5de til globale variabler",
+        "Et hukommelsesomr\u00e5de til lokale variabler og funktionskald",
+        "En datastruktur du skal implementere selv"
+      ],
       "correct_answer": "C",
       "explanation": "Stack er et hukommelsesomr\u00e5de hvor lokale variabler og funktionskald gemmes. Den arbejder efter LIFO princippet."
     },
@@ -3016,12 +3016,12 @@
       "points": 2,
       "title": "Hvad er 'heap' i C?",
       "question": "Hvad er heap i C programmering?",
-      "options": {
-        "A": "Et omr\u00e5de til lokale variabler",
-        "B": "Et omr\u00e5de til dynamisk hukommelsesallokering",
-        "C": "En sorteringsalgoritme",
-        "D": "Et omr\u00e5de til konstanter"
-      },
+      "options": [
+        "Et omr\u00e5de til lokale variabler",
+        "Et omr\u00e5de til dynamisk hukommelsesallokering",
+        "En sorteringsalgoritme",
+        "Et omr\u00e5de til konstanter"
+      ],
       "correct_answer": "B",
       "explanation": "Heap er et hukommelsesomr\u00e5de hvor dynamisk allokeret hukommelse (malloc, calloc, etc.) gemmes."
     },
@@ -3033,12 +3033,12 @@
       "points": 3,
       "title": "Hvad er 'NULL' i C?",
       "question": "Hvad er NULL i C?",
-      "options": {
-        "A": "En tom streng",
-        "B": "Tallet 0",
-        "C": "En null pointer - en pointer der ikke peger p\u00e5 noget gyldigt",
-        "D": "En fejlkode"
-      },
+      "options": [
+        "En tom streng",
+        "Tallet 0",
+        "En null pointer - en pointer der ikke peger p\u00e5 noget gyldigt",
+        "En fejlkode"
+      ],
       "correct_answer": "C",
       "explanation": "NULL er en speciel pointer v\u00e6rdi (typisk 0) der indikerer at pointeren ikke peger p\u00e5 noget gyldigt."
     },
@@ -3050,12 +3050,12 @@
       "points": 3,
       "title": "Hvad er 'struct' i C?",
       "question": "Hvad er en 'struct' i C?",
-      "options": {
-        "A": "En funktion",
-        "B": "En sammensat datatype der grupperer forskellige variabler",
-        "C": "Et array",
-        "D": "En pointer type"
-      },
+      "options": [
+        "En funktion",
+        "En sammensat datatype der grupperer forskellige variabler",
+        "Et array",
+        "En pointer type"
+      ],
       "correct_answer": "B",
       "explanation": "En struct er en sammensat datatype der kan indeholde flere variabler af forskellige typer."
     },
@@ -3067,12 +3067,12 @@
       "points": 3,
       "title": "Hvad er 'typedef' i C?",
       "question": "Hvad g\u00f8r 'typedef' i C?",
-      "options": {
-        "A": "Definerer en ny datatype",
-        "B": "Opretter et alias (nyt navn) for en eksisterende datatype",
-        "C": "Erkl\u00e6rer en konstant",
-        "D": "Importerer en header fil"
-      },
+      "options": [
+        "Definerer en ny datatype",
+        "Opretter et alias (nyt navn) for en eksisterende datatype",
+        "Erkl\u00e6rer en konstant",
+        "Importerer en header fil"
+      ],
       "correct_answer": "B",
       "explanation": "'typedef' opretter et nyt navn (alias) for en eksisterende datatype, fx: typedef int myInt;"
     },
@@ -3084,12 +3084,12 @@
       "points": 2,
       "title": "Hvad er 'return' i C?",
       "question": "Hvad g\u00f8r 'return' statement i C?",
-      "options": {
-        "A": "Starter en funktion",
-        "B": "Afslutter en funktion og returnerer en v\u00e6rdi",
-        "C": "Erkl\u00e6rer en variabel",
-        "D": "Kalder en funktion"
-      },
+      "options": [
+        "Starter en funktion",
+        "Afslutter en funktion og returnerer en v\u00e6rdi",
+        "Erkl\u00e6rer en variabel",
+        "Kalder en funktion"
+      ],
       "correct_answer": "B",
       "explanation": "'return' afslutter udf\u00f8relsen af en funktion og returnerer en v\u00e6rdi til kalderen."
     },
@@ -3101,12 +3101,12 @@
       "points": 3,
       "title": "Hvad er 'static' i C?",
       "question": "Hvad betyder 'static' keyword i C?",
-      "options": {
-        "A": "Variablen kan ikke \u00e6ndres",
-        "B": "Variablen beholder sin v\u00e6rdi mellem funktionskald / begr\u00e6nser scope",
-        "C": "Variablen er global",
-        "D": "Variablen er konstant"
-      },
+      "options": [
+        "Variablen kan ikke \u00e6ndres",
+        "Variablen beholder sin v\u00e6rdi mellem funktionskald / begr\u00e6nser scope",
+        "Variablen er global",
+        "Variablen er konstant"
+      ],
       "correct_answer": "B",
       "explanation": "'static' g\u00f8r at en lokal variabel beholder sin v\u00e6rdi mellem funktionskald, og begr\u00e6nser globale variable/funktioner til filen."
     },
@@ -3118,12 +3118,12 @@
       "points": 3,
       "title": "Hvad er 'const' i C?",
       "question": "Hvad betyder 'const' keyword i C?",
-      "options": {
-        "A": "Variablen er global",
-        "B": "Variablen er statisk",
-        "C": "Variablen er read-only (kan ikke \u00e6ndres)",
-        "D": "Variablen er privat"
-      },
+      "options": [
+        "Variablen er global",
+        "Variablen er statisk",
+        "Variablen er read-only (kan ikke \u00e6ndres)",
+        "Variablen er privat"
+      ],
       "correct_answer": "C",
       "explanation": "'const' markerer en variabel som read-only - dens v\u00e6rdi kan ikke \u00e6ndres efter initialisering."
     },
@@ -3135,12 +3135,12 @@
       "points": 3,
       "title": "Hvad er 'extern' i C?",
       "question": "Hvad betyder 'extern' keyword i C?",
-      "options": {
-        "A": "Erkl\u00e6rer en variabel der er defineret i en anden fil",
-        "B": "G\u00f8r en variabel privat",
-        "C": "Allokerer hukommelse",
-        "D": "Importerer et bibliotek"
-      },
+      "options": [
+        "Erkl\u00e6rer en variabel der er defineret i en anden fil",
+        "G\u00f8r en variabel privat",
+        "Allokerer hukommelse",
+        "Importerer et bibliotek"
+      ],
       "correct_answer": "A",
       "explanation": "'extern' erkl\u00e6rer at en variabel eller funktion er defineret et andet sted (typisk i en anden fil)."
     },
@@ -3152,12 +3152,12 @@
       "points": 2,
       "title": "Hvad er '#include' i C?",
       "question": "Hvad g\u00f8r '#include' direktiv i C?",
-      "options": {
-        "A": "Kompilerer kode",
-        "B": "Inkluderer indholdet af en header fil",
-        "C": "Definerer en makro",
-        "D": "Importerer et bibliotek"
-      },
+      "options": [
+        "Kompilerer kode",
+        "Inkluderer indholdet af en header fil",
+        "Definerer en makro",
+        "Importerer et bibliotek"
+      ],
       "correct_answer": "B",
       "explanation": "#include er et preprocessor direktiv der inkluderer indholdet af en header fil i kildekoden."
     },
@@ -3169,12 +3169,12 @@
       "points": 2,
       "title": "Hvad er '#define' i C?",
       "question": "Hvad g\u00f8r '#define' direktiv i C?",
-      "options": {
-        "A": "Definerer en funktion",
-        "B": "Definerer en makro eller konstant",
-        "C": "Inkluderer en fil",
-        "D": "Erkl\u00e6rer en variabel"
-      },
+      "options": [
+        "Definerer en funktion",
+        "Definerer en makro eller konstant",
+        "Inkluderer en fil",
+        "Erkl\u00e6rer en variabel"
+      ],
       "correct_answer": "B",
       "explanation": "#define er et preprocessor direktiv der definerer en makro eller symbolsk konstant."
     },
@@ -3186,12 +3186,12 @@
       "points": 3,
       "title": "Hvad er 'printf' i C?",
       "question": "Hvad g\u00f8r funktionen 'printf' i C?",
-      "options": {
-        "A": "L\u00e6ser input fra brugeren",
-        "B": "Printer formateret output til stdout (sk\u00e6rmen)",
-        "C": "Allokerer hukommelse",
-        "D": "Kompilerer kode"
-      },
+      "options": [
+        "L\u00e6ser input fra brugeren",
+        "Printer formateret output til stdout (sk\u00e6rmen)",
+        "Allokerer hukommelse",
+        "Kompilerer kode"
+      ],
       "correct_answer": "B",
       "explanation": "'printf' er en funktion der printer formateret output til standard output (typisk sk\u00e6rmen)."
     },
@@ -3203,12 +3203,12 @@
       "points": 3,
       "title": "Hvad er 'scanf' i C?",
       "question": "Hvad g\u00f8r funktionen 'scanf' i C?",
-      "options": {
-        "A": "Printer til sk\u00e6rmen",
-        "B": "L\u00e6ser formateret input fra stdin (tastaturet)",
-        "C": "Scaner filer",
-        "D": "Konverterer strenge"
-      },
+      "options": [
+        "Printer til sk\u00e6rmen",
+        "L\u00e6ser formateret input fra stdin (tastaturet)",
+        "Scaner filer",
+        "Konverterer strenge"
+      ],
       "correct_answer": "B",
       "explanation": "'scanf' l\u00e6ser formateret input fra standard input (typisk tastaturet) og gemmer det i variabler."
     },
@@ -3220,12 +3220,12 @@
       "points": 4,
       "title": "Hvad er 'segmentation fault'?",
       "question": "Hvad betyder 'segmentation fault' i C?",
-      "options": {
-        "A": "Syntaksfejl i koden",
-        "B": "Ugyldig hukommelsesadgang (fx. dereferencing null pointer)",
-        "C": "Division med nul",
-        "D": "Kompileringsfejl"
-      },
+      "options": [
+        "Syntaksfejl i koden",
+        "Ugyldig hukommelsesadgang (fx. dereferencing null pointer)",
+        "Division med nul",
+        "Kompileringsfejl"
+      ],
       "correct_answer": "B",
       "explanation": "Segmentation fault opst\u00e5r n\u00e5r programmet fors\u00f8ger at tilg\u00e5 hukommelse det ikke har adgang til, fx ved at dereferere en null pointer."
     },
@@ -3237,12 +3237,12 @@
       "points": 3,
       "title": "Hvad er 'strlen' i C?",
       "question": "Hvad g\u00f8r funktionen 'strlen' i C?",
-      "options": {
-        "A": "Returnerer l\u00e6ngden af en streng (uden null terminator)",
-        "B": "Returnerer st\u00f8rrelsen af en struct",
-        "C": "T\u00e6ller antal elementer i et array",
-        "D": "Allokerer hukommelse til en streng"
-      },
+      "options": [
+        "Returnerer l\u00e6ngden af en streng (uden null terminator)",
+        "Returnerer st\u00f8rrelsen af en struct",
+        "T\u00e6ller antal elementer i et array",
+        "Allokerer hukommelse til en streng"
+      ],
       "correct_answer": "A",
       "explanation": "'strlen' returnerer l\u00e6ngden af en null-termineret streng (antal tegn f\u00f8r '\\0')."
     },
@@ -3254,12 +3254,12 @@
       "points": 3,
       "title": "Hvad er 'strcpy' i C?",
       "question": "Hvad g\u00f8r funktionen 'strcpy' i C?",
-      "options": {
-        "A": "Sammenligner to strenge",
-        "B": "Kopierer en streng til en anden",
-        "C": "Konkatenerer to strenge",
-        "D": "Finder l\u00e6ngden af en streng"
-      },
+      "options": [
+        "Sammenligner to strenge",
+        "Kopierer en streng til en anden",
+        "Konkatenerer to strenge",
+        "Finder l\u00e6ngden af en streng"
+      ],
       "correct_answer": "B",
       "explanation": "'strcpy' kopierer indholdet af en streng til en anden (inklusiv null terminator)."
     },
@@ -3271,12 +3271,12 @@
       "points": 3,
       "title": "Hvad er 'strcmp' i C?",
       "question": "Hvad g\u00f8r funktionen 'strcmp' i C?",
-      "options": {
-        "A": "Kopierer en streng",
-        "B": "Sammenligner to strenge leksikografisk",
-        "C": "Finder en substring",
-        "D": "Konverterer til lowercase"
-      },
+      "options": [
+        "Kopierer en streng",
+        "Sammenligner to strenge leksikografisk",
+        "Finder en substring",
+        "Konverterer til lowercase"
+      ],
       "correct_answer": "B",
       "explanation": "'strcmp' sammenligner to strenge og returnerer 0 hvis de er ens, <0 hvis f\u00f8rste er mindre, >0 hvis f\u00f8rste er st\u00f8rre."
     },
@@ -3288,12 +3288,12 @@
       "points": 2,
       "title": "Hvad er 'array' i C?",
       "question": "Hvad er et array i C?",
-      "options": {
-        "A": "En pointer",
-        "B": "En samling af elementer af samme type gemt i sammenh\u00e6ngende hukommelse",
-        "C": "En struct",
-        "D": "En funktion"
-      },
+      "options": [
+        "En pointer",
+        "En samling af elementer af samme type gemt i sammenh\u00e6ngende hukommelse",
+        "En struct",
+        "En funktion"
+      ],
       "correct_answer": "B",
       "explanation": "Et array er en samling af elementer af samme datatype, gemt i sammenh\u00e6ngende hukommelse."
     },
@@ -3305,12 +3305,12 @@
       "points": 3,
       "title": "Hvad er 'pointer arithmetic' i C?",
       "question": "Hvad er pointer arithmetic i C?",
-      "options": {
-        "A": "Normal matematik med tal",
-        "B": "Regneoperationer p\u00e5 pointer adresser (fx ptr + 1)",
-        "C": "Division med pointere",
-        "D": "Multiplikation af hukommelse"
-      },
+      "options": [
+        "Normal matematik med tal",
+        "Regneoperationer p\u00e5 pointer adresser (fx ptr + 1)",
+        "Division med pointere",
+        "Multiplikation af hukommelse"
+      ],
       "correct_answer": "B",
       "explanation": "Pointer arithmetic er operationer p\u00e5 pointere, fx ptr+1 flytter pointeren til n\u00e6ste element (afh\u00e6ngig af datatype st\u00f8rrelse)."
     },
@@ -3322,12 +3322,12 @@
       "points": 4,
       "title": "Hvad er 'dangling pointer'?",
       "question": "Hvad er en dangling pointer i C?",
-      "options": {
-        "A": "En null pointer",
-        "B": "En pointer der peger p\u00e5 hukommelse der er blevet frigivet",
-        "C": "En pointer til en konstant",
-        "D": "En pointer med ugyldig syntaks"
-      },
+      "options": [
+        "En null pointer",
+        "En pointer der peger p\u00e5 hukommelse der er blevet frigivet",
+        "En pointer til en konstant",
+        "En pointer med ugyldig syntaks"
+      ],
       "correct_answer": "B",
       "explanation": "En dangling pointer er en pointer der peger p\u00e5 hukommelse der allerede er blevet frigivet (fx efter free())."
     },
@@ -3339,12 +3339,12 @@
       "points": 4,
       "title": "Hvad er 'memory leak'?",
       "question": "Hvad er en memory leak i C?",
-      "options": {
-        "A": "For meget hukommelse allokeret",
-        "B": "Hukommelse der er allokeret men aldrig frigivet",
-        "C": "En segmentation fault",
-        "D": "En dangling pointer"
-      },
+      "options": [
+        "For meget hukommelse allokeret",
+        "Hukommelse der er allokeret men aldrig frigivet",
+        "En segmentation fault",
+        "En dangling pointer"
+      ],
       "correct_answer": "B",
       "explanation": "En memory leak opst\u00e5r n\u00e5r dynamisk allokeret hukommelse ikke bliver frigivet med free(), hvilket spilde hukommelse."
     },
@@ -3356,12 +3356,12 @@
       "points": 3,
       "title": "Hvad er 'fopen' i C?",
       "question": "Hvad g\u00f8r funktionen 'fopen' i C?",
-      "options": {
-        "A": "Lukker en fil",
-        "B": "\u00c5bner en fil og returnerer en FILE pointer",
-        "C": "L\u00e6ser fra en fil",
-        "D": "Skriver til en fil"
-      },
+      "options": [
+        "Lukker en fil",
+        "\u00c5bner en fil og returnerer en FILE pointer",
+        "L\u00e6ser fra en fil",
+        "Skriver til en fil"
+      ],
       "correct_answer": "B",
       "explanation": "'fopen' \u00e5bner en fil i en specifik mode (l\u00e6s/skriv) og returnerer en FILE pointer til filen."
     },
@@ -3373,12 +3373,12 @@
       "points": 3,
       "title": "Hvad er 'fclose' i C?",
       "question": "Hvad g\u00f8r funktionen 'fclose' i C?",
-      "options": {
-        "A": "\u00c5bner en fil",
-        "B": "Lukker en \u00e5ben fil",
-        "C": "L\u00e6ser fra en fil",
-        "D": "Sletter en fil"
-      },
+      "options": [
+        "\u00c5bner en fil",
+        "Lukker en \u00e5ben fil",
+        "L\u00e6ser fra en fil",
+        "Sletter en fil"
+      ],
       "correct_answer": "B",
       "explanation": "'fclose' lukker en \u00e5ben fil og frigiver ressourcerne associeret med FILE pointeren."
     },
@@ -3390,12 +3390,12 @@
       "points": 2,
       "title": "Hvad er '++' operator i C?",
       "question": "Hvad g\u00f8r '++' operatoren i C?",
-      "options": {
-        "A": "Fordobler en v\u00e6rdi",
-        "B": "Inkrementerer (\u00f8ger) en v\u00e6rdi med 1",
-        "C": "Adderer to tal",
-        "D": "Konkatenerer strenge"
-      },
+      "options": [
+        "Fordobler en v\u00e6rdi",
+        "Inkrementerer (\u00f8ger) en v\u00e6rdi med 1",
+        "Adderer to tal",
+        "Konkatenerer strenge"
+      ],
       "correct_answer": "B",
       "explanation": "'++' er increment operatoren der \u00f8ger en variabels v\u00e6rdi med 1. Kan bruges prefix (++x) eller postfix (x++)."
     },
@@ -3407,12 +3407,12 @@
       "points": 2,
       "title": "Hvad er '--' operator i C?",
       "question": "Hvad g\u00f8r '--' operatoren i C?",
-      "options": {
-        "A": "Halverer en v\u00e6rdi",
-        "B": "Dekrementerer (mindsker) en v\u00e6rdi med 1",
-        "C": "Tr\u00e6kker to tal fra hinanden",
-        "D": "Dividerer med 2"
-      },
+      "options": [
+        "Halverer en v\u00e6rdi",
+        "Dekrementerer (mindsker) en v\u00e6rdi med 1",
+        "Tr\u00e6kker to tal fra hinanden",
+        "Dividerer med 2"
+      ],
       "correct_answer": "B",
       "explanation": "'--' er decrement operatoren der mindsker en variabels v\u00e6rdi med 1. Kan bruges prefix (--x) eller postfix (x--)."
     },
@@ -3424,12 +3424,12 @@
       "points": 3,
       "title": "Hvad er '==' operator i C?",
       "question": "Hvad g\u00f8r '==' operatoren i C?",
-      "options": {
-        "A": "Tildeler en v\u00e6rdi",
-        "B": "Sammenligner to v\u00e6rdier for lighed",
-        "C": "Kopierer en v\u00e6rdi",
-        "D": "Fordobler en v\u00e6rdi"
-      },
+      "options": [
+        "Tildeler en v\u00e6rdi",
+        "Sammenligner to v\u00e6rdier for lighed",
+        "Kopierer en v\u00e6rdi",
+        "Fordobler en v\u00e6rdi"
+      ],
       "correct_answer": "B",
       "explanation": "'==' er sammenligningsoperatoren der tjekker om to v\u00e6rdier er ens (returnerer 1 for sand, 0 for falsk)."
     },
@@ -3441,12 +3441,12 @@
       "points": 3,
       "title": "Hvad er '!=' operator i C?",
       "question": "Hvad g\u00f8r '!=' operatoren i C?",
-      "options": {
-        "A": "Tildeler en v\u00e6rdi",
-        "B": "Sammenligner om to v\u00e6rdier er forskellige",
-        "C": "Negerer en v\u00e6rdi",
-        "D": "Factorial operation"
-      },
+      "options": [
+        "Tildeler en v\u00e6rdi",
+        "Sammenligner om to v\u00e6rdier er forskellige",
+        "Negerer en v\u00e6rdi",
+        "Factorial operation"
+      ],
       "correct_answer": "B",
       "explanation": "'!=' er sammenligningsoperatoren der tjekker om to v\u00e6rdier er forskellige (not equal)."
     },
@@ -3458,12 +3458,12 @@
       "points": 3,
       "title": "Hvad er '&&' operator i C?",
       "question": "Hvad g\u00f8r '&&' operatoren i C?",
-      "options": {
-        "A": "Bitwise AND",
-        "B": "Logical AND - begge betingelser skal v\u00e6re sande",
-        "C": "Address-of operator",
-        "D": "Pointer dereference"
-      },
+      "options": [
+        "Bitwise AND",
+        "Logical AND - begge betingelser skal v\u00e6re sande",
+        "Address-of operator",
+        "Pointer dereference"
+      ],
       "correct_answer": "B",
       "explanation": "'&&' er logical AND operatoren - returnerer sand (1) kun hvis begge operander er sande."
     },
@@ -3475,12 +3475,12 @@
       "points": 3,
       "title": "Hvad er '||' operator i C?",
       "question": "Hvad g\u00f8r '||' operatoren i C?",
-      "options": {
-        "A": "Bitwise OR",
-        "B": "Logical OR - mindst \u00e9n betingelse skal v\u00e6re sand",
-        "C": "Division",
-        "D": "Konkatenering"
-      },
+      "options": [
+        "Bitwise OR",
+        "Logical OR - mindst \u00e9n betingelse skal v\u00e6re sand",
+        "Division",
+        "Konkatenering"
+      ],
       "correct_answer": "B",
       "explanation": "'||' er logical OR operatoren - returnerer sand (1) hvis mindst \u00e9n af operanderne er sand."
     },
@@ -3492,12 +3492,12 @@
       "points": 3,
       "title": "Hvad er '!' operator i C?",
       "question": "Hvad g\u00f8r '!' operatoren i C?",
-      "options": {
-        "A": "Factorial",
-        "B": "Logical NOT - negerer en boolean v\u00e6rdi",
-        "C": "Not equal",
-        "D": "Bitwise NOT"
-      },
+      "options": [
+        "Factorial",
+        "Logical NOT - negerer en boolean v\u00e6rdi",
+        "Not equal",
+        "Bitwise NOT"
+      ],
       "correct_answer": "B",
       "explanation": "'!' er logical NOT operatoren - vender en boolean v\u00e6rdi om (sand bliver falsk, falsk bliver sand)."
     },
@@ -3509,12 +3509,12 @@
       "points": 4,
       "title": "Hvad er 'enum' i C?",
       "question": "Hvad er en 'enum' i C?",
-      "options": {
-        "A": "En funktion",
-        "B": "En opregningstype - navngivne heltalskonstanter",
-        "C": "En struct",
-        "D": "En pointer type"
-      },
+      "options": [
+        "En funktion",
+        "En opregningstype - navngivne heltalskonstanter",
+        "En struct",
+        "En pointer type"
+      ],
       "correct_answer": "B",
       "explanation": "'enum' definerer en opregningstype med navngivne heltalskonstanter, fx enum Color {RED, GREEN, BLUE}."
     },
@@ -3526,12 +3526,12 @@
       "points": 4,
       "title": "Hvad er 'union' i C?",
       "question": "Hvad er en 'union' i C?",
-      "options": {
-        "A": "En struct med flere medlemmer",
-        "B": "En datatype hvor alle medlemmer deler samme hukommelse",
-        "C": "En sammenf\u00f8jning af to arrays",
-        "D": "En type pointer"
-      },
+      "options": [
+        "En struct med flere medlemmer",
+        "En datatype hvor alle medlemmer deler samme hukommelse",
+        "En sammenf\u00f8jning af to arrays",
+        "En type pointer"
+      ],
       "correct_answer": "B",
       "explanation": "En union er en datatype hvor alle medlemmer deler den samme hukommelsesplacering - kun \u00e9t medlem kan bruges ad gangen."
     },
@@ -3543,12 +3543,12 @@
       "points": 3,
       "title": "Hvad er 'argc' i C?",
       "question": "Hvad er 'argc' i main funktionen?",
-      "options": {
-        "A": "Antallet af argumenter",
-        "B": "Argument character count",
-        "C": "Array count",
-        "D": "Architecture code"
-      },
+      "options": [
+        "Antallet af argumenter",
+        "Argument character count",
+        "Array count",
+        "Architecture code"
+      ],
       "correct_answer": "A",
       "explanation": "'argc' (argument count) er antallet af kommandolinje argumenter givet til programmet."
     },
@@ -3560,12 +3560,12 @@
       "points": 3,
       "title": "Hvad er 'argv' i C?",
       "question": "Hvad er 'argv' i main funktionen?",
-      "options": {
-        "A": "Argument value - array af argument strenge",
-        "B": "Argument variable",
-        "C": "Average value",
-        "D": "Array version"
-      },
+      "options": [
+        "Argument value - array af argument strenge",
+        "Argument variable",
+        "Average value",
+        "Array version"
+      ],
       "correct_answer": "A",
       "explanation": "'argv' (argument vector) er et array af strenge der indeholder kommandolinje argumenterne."
     },
@@ -3577,12 +3577,12 @@
       "points": 4,
       "title": "Hvad er 'volatile' i C?",
       "question": "Hvad betyder 'volatile' keyword i C?",
-      "options": {
-        "A": "Variablen er ustabil og kan crashe",
-        "B": "Fort\u00e6ller compileren at variablen kan \u00e6ndres uforudset",
-        "C": "Variablen er midlertidig",
-        "D": "Variablen er konstant"
-      },
+      "options": [
+        "Variablen er ustabil og kan crashe",
+        "Fort\u00e6ller compileren at variablen kan \u00e6ndres uforudset",
+        "Variablen er midlertidig",
+        "Variablen er konstant"
+      ],
       "correct_answer": "B",
       "explanation": "'volatile' fort\u00e6ller compileren at variablen kan \u00e6ndres af eksterne faktorer (fx hardware), s\u00e5 den ikke optimerer adgang v\u00e6k."
     },
@@ -3594,12 +3594,12 @@
       "points": 3,
       "title": "Hvad er 'calloc' i C?",
       "question": "Hvad g\u00f8r funktionen 'calloc' i C?",
-      "options": {
-        "A": "Kalder en funktion",
-        "B": "Allokerer hukommelse og initialiserer den til 0",
-        "C": "T\u00e6ller kalories",
-        "D": "Kopierer hukommelse"
-      },
+      "options": [
+        "Kalder en funktion",
+        "Allokerer hukommelse og initialiserer den til 0",
+        "T\u00e6ller kalories",
+        "Kopierer hukommelse"
+      ],
       "correct_answer": "B",
       "explanation": "'calloc' (contiguous allocation) allokerer hukommelse og initialiserer alle bytes til 0, i mods\u00e6tning til malloc."
     },
@@ -3611,12 +3611,12 @@
       "points": 3,
       "title": "Hvad er 'realloc' i C?",
       "question": "Hvad g\u00f8r funktionen 'realloc' i C?",
-      "options": {
-        "A": "Frigiver hukommelse",
-        "B": "\u00c6ndrer st\u00f8rrelsen af allokeret hukommelse",
-        "C": "Allokerer ny hukommelse",
-        "D": "Genindl\u00e6ser en fil"
-      },
+      "options": [
+        "Frigiver hukommelse",
+        "\u00c6ndrer st\u00f8rrelsen af allokeret hukommelse",
+        "Allokerer ny hukommelse",
+        "Genindl\u00e6ser en fil"
+      ],
       "correct_answer": "B",
       "explanation": "'realloc' \u00e6ndrer st\u00f8rrelsen af tidligere allokeret hukommelse, og kopierer data hvis n\u00f8dvendigt."
     },
@@ -3628,12 +3628,12 @@
       "points": 2,
       "title": "Hvad er 'break' i C?",
       "question": "Hvad g\u00f8r 'break' statement i C?",
-      "options": {
-        "A": "Stopper programmet",
-        "B": "Afslutter den n\u00e6rmeste loop eller switch",
-        "C": "Pauserer udf\u00f8relsen",
-        "D": "Returnerer fra en funktion"
-      },
+      "options": [
+        "Stopper programmet",
+        "Afslutter den n\u00e6rmeste loop eller switch",
+        "Pauserer udf\u00f8relsen",
+        "Returnerer fra en funktion"
+      ],
       "correct_answer": "B",
       "explanation": "'break' afslutter straks den n\u00e6rmeste loop (for/while/do-while) eller switch statement."
     },
@@ -3645,12 +3645,12 @@
       "points": 2,
       "title": "Hvad er 'continue' i C?",
       "question": "Hvad g\u00f8r 'continue' statement i C?",
-      "options": {
-        "A": "Forts\u00e6tter til n\u00e6ste fil",
-        "B": "Springer resten af loop iterationen over og g\u00e5r til n\u00e6ste iteration",
-        "C": "Genoptager efter en pause",
-        "D": "Forts\u00e6tter udf\u00f8relsen efter break"
-      },
+      "options": [
+        "Forts\u00e6tter til n\u00e6ste fil",
+        "Springer resten af loop iterationen over og g\u00e5r til n\u00e6ste iteration",
+        "Genoptager efter en pause",
+        "Forts\u00e6tter udf\u00f8relsen efter break"
+      ],
       "correct_answer": "B",
       "explanation": "'continue' springer resten af den aktuelle loop iteration over og forts\u00e6tter med n\u00e6ste iteration."
     },
@@ -3662,12 +3662,12 @@
       "points": 3,
       "title": "Hvad er 'switch' i C?",
       "question": "Hvad er 'switch' statement i C?",
-      "options": {
-        "A": "En loop struktur",
-        "B": "En multi-vejs beslutningsstruktur baseret p\u00e5 en v\u00e6rdi",
-        "C": "En funktion",
-        "D": "En variabel type"
-      },
+      "options": [
+        "En loop struktur",
+        "En multi-vejs beslutningsstruktur baseret p\u00e5 en v\u00e6rdi",
+        "En funktion",
+        "En variabel type"
+      ],
       "correct_answer": "B",
       "explanation": "'switch' er en kontrol struktur der v\u00e6lger mellem flere cases baseret p\u00e5 v\u00e6rdien af et udtryk."
     },
@@ -3679,12 +3679,12 @@
       "points": 3,
       "title": "Hvad er 'case' i C?",
       "question": "Hvad er 'case' i et switch statement?",
-      "options": {
-        "A": "En betingelse",
-        "B": "En label for en specifik v\u00e6rdi i switch",
-        "C": "En loop",
-        "D": "En funktion"
-      },
+      "options": [
+        "En betingelse",
+        "En label for en specifik v\u00e6rdi i switch",
+        "En loop",
+        "En funktion"
+      ],
       "correct_answer": "B",
       "explanation": "'case' definerer en label for en specifik v\u00e6rdi i et switch statement, efterfulgt af kode der skal udf\u00f8res."
     },
@@ -3696,12 +3696,12 @@
       "points": 3,
       "title": "Hvad er 'default' i C?",
       "question": "Hvad er 'default' case i et switch statement?",
-      "options": {
-        "A": "Standardv\u00e6rdien for en variabel",
-        "B": "Case der udf\u00f8res hvis ingen andre cases matcher",
-        "C": "F\u00f8rste case der udf\u00f8res",
-        "D": "En fejlh\u00e5ndtering"
-      },
+      "options": [
+        "Standardv\u00e6rdien for en variabel",
+        "Case der udf\u00f8res hvis ingen andre cases matcher",
+        "F\u00f8rste case der udf\u00f8res",
+        "En fejlh\u00e5ndtering"
+      ],
       "correct_answer": "B",
       "explanation": "'default' er en valgfri case i switch der udf\u00f8res hvis ingen af de andre cases matcher."
     },
@@ -3713,12 +3713,12 @@
       "points": 4,
       "title": "Hvad er 'inline' i C?",
       "question": "Hvad betyder 'inline' keyword i C?",
-      "options": {
-        "A": "Funktionen skal v\u00e6re p\u00e5 \u00e9n linje",
-        "B": "Hint til compileren om at inds\u00e6tte funktionskode direkte",
-        "C": "Funktionen er privat",
-        "D": "Funktionen er rekursiv"
-      },
+      "options": [
+        "Funktionen skal v\u00e6re p\u00e5 \u00e9n linje",
+        "Hint til compileren om at inds\u00e6tte funktionskode direkte",
+        "Funktionen er privat",
+        "Funktionen er rekursiv"
+      ],
       "correct_answer": "B",
       "explanation": "'inline' er et hint til compileren om at inds\u00e6tte funktionens kode direkte i stedet for at kalde den (for optimering)."
     },
@@ -3730,12 +3730,12 @@
       "points": 4,
       "title": "Hvad er 'register' i C?",
       "question": "Hvad betyder 'register' keyword i C?",
-      "options": {
-        "A": "Registrerer en variabel i en database",
-        "B": "Hint om at gemme variablen i CPU register for hurtig adgang",
-        "C": "G\u00f8r variablen global",
-        "D": "Beskytter variablen mod \u00e6ndringer"
-      },
+      "options": [
+        "Registrerer en variabel i en database",
+        "Hint om at gemme variablen i CPU register for hurtig adgang",
+        "G\u00f8r variablen global",
+        "Beskytter variablen mod \u00e6ndringer"
+      ],
       "correct_answer": "B",
       "explanation": "'register' er et hint til compileren om at gemme variablen i et CPU register for hurtigere adgang."
     },
@@ -3747,12 +3747,12 @@
       "points": 3,
       "title": "Hvad er 'goto' i C?",
       "question": "Hvad g\u00f8r 'goto' statement i C?",
-      "options": {
-        "A": "Kalder en funktion",
-        "B": "Springer direkte til en label i koden",
-        "C": "Returnerer fra en funktion",
-        "D": "Starter en loop"
-      },
+      "options": [
+        "Kalder en funktion",
+        "Springer direkte til en label i koden",
+        "Returnerer fra en funktion",
+        "Starter en loop"
+      ],
       "correct_answer": "B",
       "explanation": "'goto' springer direkte til en navngiven label i koden. Generelt frar\u00e5det da det kan g\u00f8re koden sv\u00e6r at f\u00f8lge."
     },
@@ -3764,12 +3764,12 @@
       "points": 2,
       "title": "Hvad er 'if' i C?",
       "question": "Hvad er 'if' statement i C?",
-      "options": {
-        "A": "En loop",
-        "B": "En betinget struktur - udf\u00f8rer kode hvis betingelse er sand",
-        "C": "En funktion",
-        "D": "En variabel"
-      },
+      "options": [
+        "En loop",
+        "En betinget struktur - udf\u00f8rer kode hvis betingelse er sand",
+        "En funktion",
+        "En variabel"
+      ],
       "correct_answer": "B",
       "explanation": "'if' er en kontrol struktur der udf\u00f8rer kode kun hvis den givne betingelse evaluerer til sand (non-zero)."
     },
@@ -3781,12 +3781,12 @@
       "points": 2,
       "title": "Hvad er 'else' i C?",
       "question": "Hvad er 'else' i C?",
-      "options": {
-        "A": "En alternativ betingelse",
-        "B": "Kode der udf\u00f8res hvis if-betingelsen er falsk",
-        "C": "En loop",
-        "D": "En funktion"
-      },
+      "options": [
+        "En alternativ betingelse",
+        "Kode der udf\u00f8res hvis if-betingelsen er falsk",
+        "En loop",
+        "En funktion"
+      ],
       "correct_answer": "B",
       "explanation": "'else' angiver kode der skal udf\u00f8res hvis if-betingelsen er falsk."
     },
@@ -3798,12 +3798,12 @@
       "points": 2,
       "title": "Hvad er 'for' i C?",
       "question": "Hvad er 'for' loop i C?",
-      "options": {
-        "A": "En betinget struktur",
-        "B": "En loop med initialisering, betingelse og opdatering",
-        "C": "En funktion",
-        "D": "En division operator"
-      },
+      "options": [
+        "En betinget struktur",
+        "En loop med initialisering, betingelse og opdatering",
+        "En funktion",
+        "En division operator"
+      ],
       "correct_answer": "B",
       "explanation": "'for' er en loop struktur med tre dele: initialisering, betingelse og opdatering, fx: for(i=0; i<10; i++)"
     },
@@ -3815,12 +3815,12 @@
       "points": 2,
       "title": "Hvad er 'while' i C?",
       "question": "Hvad er 'while' loop i C?",
-      "options": {
-        "A": "En betinget struktur",
-        "B": "En loop der k\u00f8rer mens betingelsen er sand",
-        "C": "En funktion",
-        "D": "En tidsm\u00e5ling"
-      },
+      "options": [
+        "En betinget struktur",
+        "En loop der k\u00f8rer mens betingelsen er sand",
+        "En funktion",
+        "En tidsm\u00e5ling"
+      ],
       "correct_answer": "B",
       "explanation": "'while' er en loop der gentager kode s\u00e5 l\u00e6nge den givne betingelse er sand (non-zero)."
     },
@@ -3832,12 +3832,12 @@
       "points": 2,
       "title": "Hvad er 'do-while' i C?",
       "question": "Hvad er forskellen p\u00e5 'do-while' og 'while' loop?",
-      "options": {
-        "A": "Ingen forskel",
-        "B": "do-while udf\u00f8rer loop mindst \u00e9n gang f\u00f8r betingelsen tjekkes",
-        "C": "do-while er hurtigere",
-        "D": "do-while kan ikke bruges med break"
-      },
+      "options": [
+        "Ingen forskel",
+        "do-while udf\u00f8rer loop mindst \u00e9n gang f\u00f8r betingelsen tjekkes",
+        "do-while er hurtigere",
+        "do-while kan ikke bruges med break"
+      ],
       "correct_answer": "B",
       "explanation": "'do-while' udf\u00f8rer loop body mindst \u00e9n gang, da betingelsen tjekkes efter udf\u00f8relsen i stedet for f\u00f8r."
     },
@@ -3849,12 +3849,12 @@
       "points": 4,
       "title": "Hvad er 'signed' i C?",
       "question": "Hvad betyder 'signed' i C?",
-      "options": {
-        "A": "Variablen er krypteret",
-        "B": "Variablen kan v\u00e6re negativ (har fortegn)",
-        "C": "Variablen er kun positiv",
-        "D": "Variablen er konstant"
-      },
+      "options": [
+        "Variablen er krypteret",
+        "Variablen kan v\u00e6re negativ (har fortegn)",
+        "Variablen er kun positiv",
+        "Variablen er konstant"
+      ],
       "correct_answer": "B",
       "explanation": "'signed' angiver at variablen kan have b\u00e5de positive og negative v\u00e6rdier (med fortegn). Dette er default for int."
     },
@@ -3866,12 +3866,12 @@
       "points": 4,
       "title": "Hvad er 'unsigned' i C?",
       "question": "Hvad betyder 'unsigned' i C?",
-      "options": {
-        "A": "Variablen er ikke initialiseret",
-        "B": "Variablen kan kun v\u00e6re ikke-negativ (uden fortegn)",
-        "C": "Variablen er konstant",
-        "D": "Variablen er global"
-      },
+      "options": [
+        "Variablen er ikke initialiseret",
+        "Variablen kan kun v\u00e6re ikke-negativ (uden fortegn)",
+        "Variablen er konstant",
+        "Variablen er global"
+      ],
       "correct_answer": "B",
       "explanation": "'unsigned' angiver at variablen kun kan have ikke-negative v\u00e6rdier (0 og positive), hvilket fordobler max v\u00e6rdien."
     },
@@ -3883,12 +3883,12 @@
       "points": 3,
       "title": "Hvad er 'short' i C?",
       "question": "Hvad er 'short' datatype i C?",
-      "options": {
-        "A": "En kort streng",
-        "B": "Et heltal med mindre st\u00f8rrelse end int",
-        "C": "En funktion med f\u00e5 linjer",
-        "D": "En boolean"
-      },
+      "options": [
+        "En kort streng",
+        "Et heltal med mindre st\u00f8rrelse end int",
+        "En funktion med f\u00e5 linjer",
+        "En boolean"
+      ],
       "correct_answer": "B",
       "explanation": "'short' (eller short int) er en heltalstype der typisk bruger f\u00e6rre bytes end int (ofte 2 bytes)."
     },
@@ -3900,12 +3900,12 @@
       "points": 3,
       "title": "Hvad er 'long' i C?",
       "question": "Hvad er 'long' datatype i C?",
-      "options": {
-        "A": "En lang streng",
-        "B": "Et heltal med st\u00f8rre st\u00f8rrelse end int",
-        "C": "En funktion der tager lang tid",
-        "D": "Et decimaltal"
-      },
+      "options": [
+        "En lang streng",
+        "Et heltal med st\u00f8rre st\u00f8rrelse end int",
+        "En funktion der tager lang tid",
+        "Et decimaltal"
+      ],
       "correct_answer": "B",
       "explanation": "'long' (eller long int) er en heltalstype der typisk bruger flere bytes end int for st\u00f8rre v\u00e6rdier."
     },
@@ -3917,12 +3917,12 @@
       "points": 4,
       "title": "Hvad er 'size_t' i C?",
       "question": "Hvad er 'size_t' type i C?",
-      "options": {
-        "A": "En struct for st\u00f8rrelse",
-        "B": "Unsigned integer type til st\u00f8rrelser og indekser",
-        "C": "En funktion der returnerer st\u00f8rrelse",
-        "D": "En konstant"
-      },
+      "options": [
+        "En struct for st\u00f8rrelse",
+        "Unsigned integer type til st\u00f8rrelser og indekser",
+        "En funktion der returnerer st\u00f8rrelse",
+        "En konstant"
+      ],
       "correct_answer": "B",
       "explanation": "'size_t' er en unsigned integer type returneret af sizeof operatoren, brugt til st\u00f8rrelser og array indekser."
     },
@@ -3934,12 +3934,12 @@
       "points": 3,
       "title": "Hvad er 'EOF' i C?",
       "question": "Hvad er EOF i C?",
-      "options": {
-        "A": "Error or Failure",
-        "B": "End Of File - markerer slutningen p\u00e5 en fil",
-        "C": "Execute or Finish",
-        "D": "Error Output Flag"
-      },
+      "options": [
+        "Error or Failure",
+        "End Of File - markerer slutningen p\u00e5 en fil",
+        "Execute or Finish",
+        "Error Output Flag"
+      ],
       "correct_answer": "B",
       "explanation": "EOF (End Of File) er en konstant (typisk -1) der indikerer at slutningen af en fil er n\u00e5et."
     },
@@ -3951,12 +3951,12 @@
       "points": 3,
       "title": "Hvad er 'stdin' i C?",
       "question": "Hvad er 'stdin' i C?",
-      "options": {
-        "A": "Standard input - typisk tastaturet",
-        "B": "String input",
-        "C": "Static input",
-        "D": "Start input"
-      },
+      "options": [
+        "Standard input - typisk tastaturet",
+        "String input",
+        "Static input",
+        "Start input"
+      ],
       "correct_answer": "A",
       "explanation": "'stdin' er standard input stream, typisk forbundet til tastaturet."
     },
@@ -3968,12 +3968,12 @@
       "points": 3,
       "title": "Hvad er 'stdout' i C?",
       "question": "Hvad er 'stdout' i C?",
-      "options": {
-        "A": "Standard output - typisk sk\u00e6rmen",
-        "B": "String output",
-        "C": "Static output",
-        "D": "Start output"
-      },
+      "options": [
+        "Standard output - typisk sk\u00e6rmen",
+        "String output",
+        "Static output",
+        "Start output"
+      ],
       "correct_answer": "A",
       "explanation": "'stdout' er standard output stream, typisk forbundet til sk\u00e6rmen/konsollen."
     },
@@ -3985,12 +3985,12 @@
       "points": 3,
       "title": "Hvad er 'stderr' i C?",
       "question": "Hvad er 'stderr' i C?",
-      "options": {
-        "A": "Standard error - output stream til fejlmeddelelser",
-        "B": "String error",
-        "C": "Static error",
-        "D": "Start error"
-      },
+      "options": [
+        "Standard error - output stream til fejlmeddelelser",
+        "String error",
+        "Static error",
+        "Start error"
+      ],
       "correct_answer": "A",
       "explanation": "'stderr' er standard error stream brugt til fejlmeddelelser, typisk ogs\u00e5 forbundet til sk\u00e6rmen."
     },
@@ -4002,12 +4002,12 @@
       "points": 4,
       "title": "Hvad er 'pragma' i C?",
       "question": "Hvad er '#pragma' direktiv i C?",
-      "options": {
-        "A": "Definerer en konstant",
-        "B": "Compiler-specifikt direktiv for specielle instruktioner",
-        "C": "Inkluderer en header fil",
-        "D": "Erkl\u00e6rer en makro"
-      },
+      "options": [
+        "Definerer en konstant",
+        "Compiler-specifikt direktiv for specielle instruktioner",
+        "Inkluderer en header fil",
+        "Erkl\u00e6rer en makro"
+      ],
       "correct_answer": "B",
       "explanation": "#pragma er et preprocessor direktiv der giver compiler-specifikke instruktioner (varierer mellem compilere)."
     },
@@ -4019,12 +4019,12 @@
       "points": 3,
       "title": "Hvad er 'preprocessor' i C?",
       "question": "Hvad er preprocessor i C?",
-      "options": {
-        "A": "Den del af compileren der behandler direktiver f\u00f8r kompilering",
-        "B": "En funktion der forbereder data",
-        "C": "Et v\u00e6rkt\u00f8j til debugging",
-        "D": "En type variabel"
-      },
+      "options": [
+        "Den del af compileren der behandler direktiver f\u00f8r kompilering",
+        "En funktion der forbereder data",
+        "Et v\u00e6rkt\u00f8j til debugging",
+        "En type variabel"
+      ],
       "correct_answer": "A",
       "explanation": "Preprocessor behandler direktiver (#include, #define, etc.) f\u00f8r den egentlige kompilering starter."
     },
@@ -4036,12 +4036,12 @@
       "points": 3,
       "title": "Hvad er 'macro' i C?",
       "question": "Hvad er en macro i C?",
-      "options": {
-        "A": "En stor funktion",
-        "B": "En preprocessor regel der erstatter tekst",
-        "C": "En type loop",
-        "D": "En header fil"
-      },
+      "options": [
+        "En stor funktion",
+        "En preprocessor regel der erstatter tekst",
+        "En type loop",
+        "En header fil"
+      ],
       "correct_answer": "B",
       "explanation": "En macro er defineret med #define og erstatter tekst f\u00f8r kompilering, fx #define PI 3.14159"
     },
@@ -4053,12 +4053,12 @@
       "points": 4,
       "title": "Hvad er 'header file' i C?",
       "question": "Hvad er en header file (.h) i C?",
-      "options": {
-        "A": "En fil med kun kommentarer",
-        "B": "En fil med function deklarationer og macros",
-        "C": "En fil med kun variabler",
-        "D": "En kompileret fil"
-      },
+      "options": [
+        "En fil med kun kommentarer",
+        "En fil med function deklarationer og macros",
+        "En fil med kun variabler",
+        "En kompileret fil"
+      ],
       "correct_answer": "B",
       "explanation": "En header file (.h) indeholder typisk function deklarationer, macros, typedef og struct definitioner der kan inkluderes i andre filer."
     },
@@ -4070,12 +4070,12 @@
       "points": 3,
       "title": "Hvad er 'compilation' i C?",
       "question": "Hvad er compilation i C?",
-      "options": {
-        "A": "At skrive kode",
-        "B": "Processen der overs\u00e6tter C kode til maskinkode",
-        "C": "At debugge kode",
-        "D": "At k\u00f8re et program"
-      },
+      "options": [
+        "At skrive kode",
+        "Processen der overs\u00e6tter C kode til maskinkode",
+        "At debugge kode",
+        "At k\u00f8re et program"
+      ],
       "correct_answer": "B",
       "explanation": "Compilation er processen hvor compileren overs\u00e6tter C source code til maskinkode (executable)."
     },
@@ -4087,12 +4087,12 @@
       "points": 3,
       "title": "Hvad er 'linking' i C?",
       "question": "Hvad er linking i C?",
-      "options": {
-        "A": "At forbinde to filer med #include",
-        "B": "Processen der kombinerer object filer til en executable",
-        "C": "At oprette pointere",
-        "D": "At dele variabler mellem funktioner"
-      },
+      "options": [
+        "At forbinde to filer med #include",
+        "Processen der kombinerer object filer til en executable",
+        "At oprette pointere",
+        "At dele variabler mellem funktioner"
+      ],
       "correct_answer": "B",
       "explanation": "Linking er processen hvor linker kombinerer object filer og biblioteker til en f\u00e6rdig executable."
     },
@@ -4104,12 +4104,12 @@
       "points": 4,
       "title": "Hvad er 'object file' i C?",
       "question": "Hvad er en object file (.o eller .obj) i C?",
-      "options": {
-        "A": "En fil med structs",
-        "B": "Kompileret maskinkode f\u00f8r linking",
-        "C": "En source code fil",
-        "D": "En header fil"
-      },
+      "options": [
+        "En fil med structs",
+        "Kompileret maskinkode f\u00f8r linking",
+        "En source code fil",
+        "En header fil"
+      ],
       "correct_answer": "B",
       "explanation": "En object file indeholder kompileret maskinkode fra source filer, f\u00f8r de er linket til en executable."
     },
@@ -4121,12 +4121,12 @@
       "points": 3,
       "title": "Hvad er 'executable' i C?",
       "question": "Hvad er en executable fil i C?",
-      "options": {
-        "A": "En source code fil",
-        "B": "Den f\u00e6rdige program fil der kan k\u00f8res",
-        "C": "En header fil",
-        "D": "En tekst fil"
-      },
+      "options": [
+        "En source code fil",
+        "Den f\u00e6rdige program fil der kan k\u00f8res",
+        "En header fil",
+        "En tekst fil"
+      ],
       "correct_answer": "B",
       "explanation": "En executable er den f\u00e6rdige program fil (efter compilation og linking) der kan k\u00f8res direkte af operativsystemet."
     },
@@ -4138,12 +4138,12 @@
       "points": 3,
       "title": "Hvad er 'runtime' i C?",
       "question": "Hvad betyder 'runtime' i C?",
-      "options": {
-        "A": "Tid det tager at kompilere",
-        "B": "Tiden hvor programmet k\u00f8rer / bliver eksekveret",
-        "C": "Tid det tager at skrive kode",
-        "D": "Deadline for projektet"
-      },
+      "options": [
+        "Tid det tager at kompilere",
+        "Tiden hvor programmet k\u00f8rer / bliver eksekveret",
+        "Tid det tager at skrive kode",
+        "Deadline for projektet"
+      ],
       "correct_answer": "B",
       "explanation": "Runtime er den tid hvor programmet faktisk k\u00f8rer/eksekveres, modsat compile-time."
     },
@@ -4155,12 +4155,12 @@
       "points": 3,
       "title": "Hvad er 'compile-time' i C?",
       "question": "Hvad betyder 'compile-time' i C?",
-      "options": {
-        "A": "Tiden hvor programmet k\u00f8rer",
-        "B": "Tiden hvor koden bliver kompileret",
-        "C": "Tiden det tager at debugge",
-        "D": "Tiden det tager at skrive kode"
-      },
+      "options": [
+        "Tiden hvor programmet k\u00f8rer",
+        "Tiden hvor koden bliver kompileret",
+        "Tiden det tager at debugge",
+        "Tiden det tager at skrive kode"
+      ],
       "correct_answer": "B",
       "explanation": "Compile-time er den tid hvor koden bliver kompileret, modsat runtime hvor den eksekveres."
     },
@@ -4172,12 +4172,12 @@
       "points": 4,
       "title": "Hvad er 'declaration' i C?",
       "question": "Hvad er en declaration i C?",
-      "options": {
-        "A": "At tildele en v\u00e6rdi til en variabel",
-        "B": "At introducere et navn og dets type",
-        "C": "At definere en funktion",
-        "D": "At kalde en funktion"
-      },
+      "options": [
+        "At tildele en v\u00e6rdi til en variabel",
+        "At introducere et navn og dets type",
+        "At definere en funktion",
+        "At kalde en funktion"
+      ],
       "correct_answer": "B",
       "explanation": "En declaration introducerer et navn (variabel/funktion) og dets type, fx: int x; eller int foo();"
     },
@@ -4189,12 +4189,12 @@
       "points": 4,
       "title": "Hvad er 'definition' i C?",
       "question": "Hvad er forskellen mellem declaration og definition?",
-      "options": {
-        "A": "Ingen forskel",
-        "B": "Definition allokerer hukommelse/indeholder body, declaration introducerer bare navnet",
-        "C": "Declaration er kun for funktioner",
-        "D": "Definition er kun for variabler"
-      },
+      "options": [
+        "Ingen forskel",
+        "Definition allokerer hukommelse/indeholder body, declaration introducerer bare navnet",
+        "Declaration er kun for funktioner",
+        "Definition er kun for variabler"
+      ],
       "correct_answer": "B",
       "explanation": "Definition allokerer faktisk hukommelse (for variabler) eller indeholder function body, mens declaration bare introducerer navnet."
     },
@@ -4206,12 +4206,12 @@
       "points": 3,
       "title": "Hvad er 'scope' i C?",
       "question": "Hvad er scope i C?",
-      "options": {
-        "A": "St\u00f8rrelsen af en variabel",
-        "B": "Det omr\u00e5de hvor et navn er synligt/tilg\u00e6ngeligt",
-        "C": "En type funktion",
-        "D": "En m\u00e5de at organisere filer"
-      },
+      "options": [
+        "St\u00f8rrelsen af en variabel",
+        "Det omr\u00e5de hvor et navn er synligt/tilg\u00e6ngeligt",
+        "En type funktion",
+        "En m\u00e5de at organisere filer"
+      ],
       "correct_answer": "B",
       "explanation": "Scope er det omr\u00e5de i koden hvor et navn (variabel/funktion) er synligt og kan bruges."
     },
@@ -4223,12 +4223,12 @@
       "points": 3,
       "title": "Hvad er 'local variable' i C?",
       "question": "Hvad er en local variable i C?",
-      "options": {
-        "A": "En variabel i samme land",
-        "B": "En variabel erkl\u00e6ret inde i en funktion/block",
-        "C": "En global variabel",
-        "D": "En static variabel"
-      },
+      "options": [
+        "En variabel i samme land",
+        "En variabel erkl\u00e6ret inde i en funktion/block",
+        "En global variabel",
+        "En static variabel"
+      ],
       "correct_answer": "B",
       "explanation": "En local variable er erkl\u00e6ret inde i en funktion eller block og er kun synlig der."
     },
@@ -4240,12 +4240,12 @@
       "points": 3,
       "title": "Hvad er 'global variable' i C?",
       "question": "Hvad er en global variable i C?",
-      "options": {
-        "A": "En variabel i hele verden",
-        "B": "En variabel erkl\u00e6ret udenfor alle funktioner",
-        "C": "En variabel i main funktionen",
-        "D": "En static variabel"
-      },
+      "options": [
+        "En variabel i hele verden",
+        "En variabel erkl\u00e6ret udenfor alle funktioner",
+        "En variabel i main funktionen",
+        "En static variabel"
+      ],
       "correct_answer": "B",
       "explanation": "En global variable er erkl\u00e6ret udenfor alle funktioner og kan tilg\u00e5s fra hele programmet."
     },
@@ -4257,12 +4257,12 @@
       "points": 4,
       "title": "Hvad er 'lifetime' i C?",
       "question": "Hvad er lifetime af en variabel i C?",
-      "options": {
-        "A": "Hvor l\u00e6nge programmet k\u00f8rer",
-        "B": "Tiden hvor variablens hukommelse eksisterer",
-        "C": "Hvor mange gange variablen bruges",
-        "D": "Variablens scope"
-      },
+      "options": [
+        "Hvor l\u00e6nge programmet k\u00f8rer",
+        "Tiden hvor variablens hukommelse eksisterer",
+        "Hvor mange gange variablen bruges",
+        "Variablens scope"
+      ],
       "correct_answer": "B",
       "explanation": "Lifetime er den periode hvor variablens hukommelse eksisterer (fra allokering til deallokering)."
     },
@@ -4274,12 +4274,12 @@
       "points": 3,
       "title": "Hvad er 'parameter' i C?",
       "question": "Hvad er en parameter i en funktion?",
-      "options": {
-        "A": "Funktionens return v\u00e6rdi",
-        "B": "En variabel i funktionens definition der modtager argumenter",
-        "C": "En global variabel",
-        "D": "En konstant"
-      },
+      "options": [
+        "Funktionens return v\u00e6rdi",
+        "En variabel i funktionens definition der modtager argumenter",
+        "En global variabel",
+        "En konstant"
+      ],
       "correct_answer": "B",
       "explanation": "En parameter er en variabel i funktionsdefinitionen der modtager v\u00e6rdier n\u00e5r funktionen kaldes."
     },
@@ -4291,12 +4291,12 @@
       "points": 3,
       "title": "Hvad er 'argument' i C?",
       "question": "Hvad er forskellen mellem parameter og argument?",
-      "options": {
-        "A": "Ingen forskel",
-        "B": "Argument er den faktiske v\u00e6rdi givet ved funktionskald",
-        "C": "Parameter bruges kun i main",
-        "D": "Argument er en type variabel"
-      },
+      "options": [
+        "Ingen forskel",
+        "Argument er den faktiske v\u00e6rdi givet ved funktionskald",
+        "Parameter bruges kun i main",
+        "Argument er en type variabel"
+      ],
       "correct_answer": "B",
       "explanation": "Argument er den faktiske v\u00e6rdi der gives til funktionen ved kald, mens parameter er variablen i definitionen."
     },
@@ -4308,12 +4308,12 @@
       "points": 4,
       "title": "Hvad er 'pass by value' i C?",
       "question": "Hvad betyder 'pass by value' i C?",
-      "options": {
-        "A": "Funktionen kan \u00e6ndre originalen",
-        "B": "En kopi af v\u00e6rdien sendes til funktionen",
-        "C": "En pointer sendes til funktionen",
-        "D": "Funktionen returnerer en v\u00e6rdi"
-      },
+      "options": [
+        "Funktionen kan \u00e6ndre originalen",
+        "En kopi af v\u00e6rdien sendes til funktionen",
+        "En pointer sendes til funktionen",
+        "Funktionen returnerer en v\u00e6rdi"
+      ],
       "correct_answer": "B",
       "explanation": "Pass by value betyder at en kopi af argumentets v\u00e6rdi sendes - funktionen kan ikke \u00e6ndre originalen."
     },
@@ -4325,12 +4325,12 @@
       "points": 4,
       "title": "Hvad er 'pass by reference' i C?",
       "question": "Hvordan simuleres 'pass by reference' i C?",
-      "options": {
-        "A": "Med & operator",
-        "B": "Ved at sende en pointer til variablen",
-        "C": "Med static keyword",
-        "D": "C har ikke pass by reference"
-      },
+      "options": [
+        "Med & operator",
+        "Ved at sende en pointer til variablen",
+        "Med static keyword",
+        "C har ikke pass by reference"
+      ],
       "correct_answer": "B",
       "explanation": "C har ikke rigtig pass by reference, men det simuleres ved at sende en pointer s\u00e5 funktionen kan \u00e6ndre originalen."
     },
@@ -4342,12 +4342,12 @@
       "points": 3,
       "title": "Hvad er 'recursion' i C?",
       "question": "Hvad er recursion i C?",
-      "options": {
-        "A": "En loop struktur",
-        "B": "N\u00e5r en funktion kalder sig selv",
-        "C": "N\u00e5r to funktioner kalder hinanden",
-        "D": "En type error"
-      },
+      "options": [
+        "En loop struktur",
+        "N\u00e5r en funktion kalder sig selv",
+        "N\u00e5r to funktioner kalder hinanden",
+        "En type error"
+      ],
       "correct_answer": "B",
       "explanation": "Recursion er n\u00e5r en funktion kalder sig selv, direkte eller indirekte."
     },
@@ -4359,12 +4359,12 @@
       "points": 4,
       "title": "Hvad er 'base case' i recursion?",
       "question": "Hvad er base case i en rekursiv funktion?",
-      "options": {
-        "A": "Den f\u00f8rste gang funktionen kaldes",
-        "B": "Betingelsen der stopper recursionen",
-        "C": "Den sidste linje i funktionen",
-        "D": "Return v\u00e6rdien"
-      },
+      "options": [
+        "Den f\u00f8rste gang funktionen kaldes",
+        "Betingelsen der stopper recursionen",
+        "Den sidste linje i funktionen",
+        "Return v\u00e6rdien"
+      ],
       "correct_answer": "B",
       "explanation": "Base case er betingelsen der stopper recursionen for at undg\u00e5 infinite recursion."
     },
@@ -4376,12 +4376,12 @@
       "points": 3,
       "title": "Hvad er 'overflow' i C?",
       "question": "Hvad er overflow i C?",
-      "options": {
-        "A": "For meget data i en fil",
-        "B": "N\u00e5r en beregning resulterer i en v\u00e6rdi st\u00f8rre end variablens max",
-        "C": "For mange funktionskald",
-        "D": "Memory leak"
-      },
+      "options": [
+        "For meget data i en fil",
+        "N\u00e5r en beregning resulterer i en v\u00e6rdi st\u00f8rre end variablens max",
+        "For mange funktionskald",
+        "Memory leak"
+      ],
       "correct_answer": "B",
       "explanation": "Overflow opst\u00e5r n\u00e5r en beregning giver en v\u00e6rdi der er for stor til variablens datatype."
     },
@@ -4393,12 +4393,12 @@
       "points": 3,
       "title": "Hvad er 'underflow' i C?",
       "question": "Hvad er underflow i C?",
-      "options": {
-        "A": "For lidt data",
-        "B": "N\u00e5r en beregning resulterer i en v\u00e6rdi mindre end variablens min",
-        "C": "Tom hukommelse",
-        "D": "En tom fil"
-      },
+      "options": [
+        "For lidt data",
+        "N\u00e5r en beregning resulterer i en v\u00e6rdi mindre end variablens min",
+        "Tom hukommelse",
+        "En tom fil"
+      ],
       "correct_answer": "B",
       "explanation": "Underflow opst\u00e5r n\u00e5r en beregning giver en v\u00e6rdi der er for lille (for floating point) eller under minimum (for integers)."
     },
@@ -4410,12 +4410,12 @@
       "points": 4,
       "title": "Hvad er 'buffer overflow' i C?",
       "question": "Hvad er buffer overflow i C?",
-      "options": {
-        "A": "For meget output",
-        "B": "Skrive ud over gr\u00e6nserne af et array/buffer",
-        "C": "For stor fil",
-        "D": "Stack overflow"
-      },
+      "options": [
+        "For meget output",
+        "Skrive ud over gr\u00e6nserne af et array/buffer",
+        "For stor fil",
+        "Stack overflow"
+      ],
       "correct_answer": "B",
       "explanation": "Buffer overflow opst\u00e5r n\u00e5r man skriver mere data end der er plads til i et array/buffer, hvilket kan overskrive anden hukommelse."
     },
@@ -4427,12 +4427,12 @@
       "points": 4,
       "title": "Hvad er 'stack overflow' i C?",
       "question": "Hvad er stack overflow i C?",
-      "options": {
-        "A": "For mange variabler",
-        "B": "N\u00e5r stack l\u00f8ber t\u00f8r for plads (fx for dyb recursion)",
-        "C": "En hjemmeside for programm\u00f8rer",
-        "D": "Buffer overflow p\u00e5 stacken"
-      },
+      "options": [
+        "For mange variabler",
+        "N\u00e5r stack l\u00f8ber t\u00f8r for plads (fx for dyb recursion)",
+        "En hjemmeside for programm\u00f8rer",
+        "Buffer overflow p\u00e5 stacken"
+      ],
       "correct_answer": "B",
       "explanation": "Stack overflow opst\u00e5r n\u00e5r stacken l\u00f8ber t\u00f8r for plads, typisk pga. for dyb recursion eller for mange lokale variabler."
     },
@@ -4444,12 +4444,12 @@
       "points": 3,
       "title": "Hvad er 'null terminator' i C?",
       "question": "Hvad er null terminator i C strenge?",
-      "options": {
-        "A": "En NULL pointer",
-        "B": "Tegnet '\\0' der markerer slutningen af en streng",
-        "C": "En tom streng",
-        "D": "EOF"
-      },
+      "options": [
+        "En NULL pointer",
+        "Tegnet '\\0' der markerer slutningen af en streng",
+        "En tom streng",
+        "EOF"
+      ],
       "correct_answer": "B",
       "explanation": "Null terminator er tegnet '\\0' (v\u00e6rdi 0) der markerer slutningen af en C streng."
     },
@@ -4461,12 +4461,12 @@
       "points": 3,
       "title": "Hvad er 'escape sequence' i C?",
       "question": "Hvad er en escape sequence i C?",
-      "options": {
-        "A": "En m\u00e5de at undslippe loops",
-        "B": "Specielle tegn startet med backslash (fx \\n, \\t)",
-        "C": "En sikkerhedsfunktion",
-        "D": "En exit kommando"
-      },
+      "options": [
+        "En m\u00e5de at undslippe loops",
+        "Specielle tegn startet med backslash (fx \\n, \\t)",
+        "En sikkerhedsfunktion",
+        "En exit kommando"
+      ],
       "correct_answer": "B",
       "explanation": "En escape sequence er et backslash efterfulgt af et tegn, der repr\u00e6senterer specielle tegn (fx \\n = newline)."
     },
@@ -4478,12 +4478,12 @@
       "points": 3,
       "title": "Hvad er '\\n' i C?",
       "question": "Hvad betyder '\\n' escape sequence i C?",
-      "options": {
-        "A": "Backslash n",
-        "B": "Newline (ny linje)",
-        "C": "Null",
-        "D": "Number"
-      },
+      "options": [
+        "Backslash n",
+        "Newline (ny linje)",
+        "Null",
+        "Number"
+      ],
       "correct_answer": "B",
       "explanation": "'\\n' er escape sequence for newline - flytter til n\u00e6ste linje."
     },
@@ -4495,12 +4495,12 @@
       "points": 3,
       "title": "Hvad er '\\t' i C?",
       "question": "Hvad betyder '\\t' escape sequence i C?",
-      "options": {
-        "A": "Text",
-        "B": "Tab (horizontal tabulator)",
-        "C": "Time",
-        "D": "Terminal"
-      },
+      "options": [
+        "Text",
+        "Tab (horizontal tabulator)",
+        "Time",
+        "Terminal"
+      ],
       "correct_answer": "B",
       "explanation": "'\\t' er escape sequence for horizontal tab - inds\u00e6tter en tab afstand."
     },
@@ -4512,12 +4512,12 @@
       "points": 3,
       "title": "Hvad er '\\0' i C?",
       "question": "Hvad betyder '\\0' escape sequence i C?",
-      "options": {
-        "A": "Nul tallet",
-        "B": "Null character (v\u00e6rdi 0, string terminator)",
-        "C": "NULL pointer",
-        "D": "Zero"
-      },
+      "options": [
+        "Nul tallet",
+        "Null character (v\u00e6rdi 0, string terminator)",
+        "NULL pointer",
+        "Zero"
+      ],
       "correct_answer": "B",
       "explanation": "'\\0' er null character med v\u00e6rdi 0, bruges som string terminator i C."
     }
