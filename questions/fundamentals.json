@@ -1,0 +1,4525 @@
+{
+  "questions": [
+    {
+      "id": "div_001",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic Integer Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 3;\n    printf(\"%d\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "2",
+        "2.33",
+        "2.333333",
+        "3"
+      ],
+      "correct_answer": "A",
+      "explanation": "When dividing two integers in C, the result is also an integer. 7 / 3 = 2.333..., but integer division truncates (not rounds) the result, giving us 2.",
+      "hints": [
+        "Integer division truncates the decimal part",
+        "7 / 3 in integer division is 2, not 3",
+        "The decimal .333... is simply discarded"
+      ],
+      "tags": [
+        "integer_division",
+        "truncation"
+      ]
+    },
+    {
+      "id": "div_002",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Float Division from Integers",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 3;\n    printf(\"%.2f\\n\", (double)a / b);\n    return 0;\n}",
+      "options": [
+        "2.00",
+        "2.33",
+        "2.34",
+        "3.00"
+      ],
+      "correct_answer": "B",
+      "explanation": "Casting 'a' to double before division makes this a floating-point division. 7.0 / 3 = 2.333..., which is printed with 2 decimal places as 2.33.",
+      "hints": [
+        "The (double) cast converts a to a floating-point number",
+        "When one operand is a double, the division is floating-point",
+        "%.2f formats the output to 2 decimal places"
+      ],
+      "tags": [
+        "casting",
+        "float_division",
+        "printf"
+      ]
+    },
+    {
+      "id": "div_003",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Division Order of Operations",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 3;\n    printf(\"%f\\n\", (double)(a / b));\n    return 0;\n}",
+      "options": [
+        "2.000000",
+        "2.333333",
+        "2.330000",
+        "3.000000"
+      ],
+      "correct_answer": "A",
+      "explanation": "The division a / b happens first (both are ints), resulting in 2. Then 2 is cast to double, giving 2.0. The parentheses around (a / b) ensure integer division happens before the cast.",
+      "hints": [
+        "Pay attention to where the cast is placed",
+        "The division happens inside the parentheses first",
+        "Integer division gives 2, then it's cast to 2.0"
+      ],
+      "tags": [
+        "casting",
+        "integer_division",
+        "operator_precedence"
+      ]
+    },
+    {
+      "id": "div_004",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Negative Integer Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -7;\n    int b = 3;\n    printf(\"%d\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "-3",
+        "-2",
+        "-1",
+        "2"
+      ],
+      "correct_answer": "B",
+      "explanation": "Integer division of -7 / 3 truncates toward zero, giving -2 (not -3). In C, integer division always truncates toward zero.",
+      "hints": [
+        "Integer division truncates toward zero",
+        "-7 / 3 = -2.333...",
+        "Truncating toward zero gives -2"
+      ],
+      "tags": [
+        "integer_division",
+        "negative_numbers",
+        "truncation"
+      ]
+    },
+    {
+      "id": "div_005",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Average Calculation Bug",
+      "description": "This code tries to calculate an average but gives the wrong result. What needs to be fixed?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int sum = 100;\n    int count = 3;\n    double average = sum / count;\n    printf(\"Average: %.2f\\n\", average);\n    return 0;\n}",
+      "options": [
+        "Nothing - it's correct",
+        "Need to cast sum or count to double: (double)sum / count",
+        "Need to change sum to a double",
+        "Need to use float instead of double"
+      ],
+      "correct_answer": "B",
+      "explanation": "Line 6 performs integer division (sum / count = 100 / 3 = 33), then assigns the result to a double. This gives 33.0 instead of 33.33. Fix: Cast one operand to double: 'double average = (double)sum / count;'",
+      "hints": [
+        "The division happens before assignment to average",
+        "sum and count are both integers",
+        "You need to cast at least one operand to double"
+      ],
+      "tags": [
+        "integer_division",
+        "casting",
+        "average"
+      ]
+    },
+    {
+      "id": "div_006",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Which Cast is Needed?",
+      "description": "To get a floating-point result from '5 / 2', which cast(s) will work?",
+      "code_template": "A) (double)(5 / 2)\nB) (double)5 / 2\nC) 5 / (double)2\nD) Both B and C",
+      "options": [
+        "Only A",
+        "Only B",
+        "Only C",
+        "Both B and C"
+      ],
+      "correct_answer": "D",
+      "explanation": "Options B and C both work because casting either operand to double promotes the entire operation to floating-point division. Option A doesn't work because the integer division happens first, giving 2, which is then cast to 2.0.",
+      "hints": [
+        "Casting either operand makes it floating-point division",
+        "Option A casts after the division is already done",
+        "Both B and C cast before division"
+      ],
+      "tags": [
+        "casting",
+        "float_division"
+      ]
+    },
+    {
+      "id": "div_007",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mixed Division Output",
+      "description": "What are ALL the outputs of this program (in order)?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", 10 / 4);\n    printf(\"%f\\n\", 10.0 / 4);\n    printf(\"%f\\n\", 10 / 4.0);\n    return 0;\n}",
+      "options": [
+        "2, 2.500000, 2.500000",
+        "2.5, 2.5, 2.5",
+        "2, 2.0, 2.0",
+        "2, 2.500000, 2.0"
+      ],
+      "correct_answer": "A",
+      "explanation": "Line 4: 10 / 4 is integer division = 2. Line 5: 10.0 / 4 is float division = 2.5. Line 6: 10 / 4.0 is also float division = 2.5. When either operand is a float, the result is a float.",
+      "hints": [
+        "Integer / Integer = Integer division",
+        "Float / Integer = Float division",
+        "Integer / Float = Float division"
+      ],
+      "tags": [
+        "integer_division",
+        "float_division",
+        "type_promotion"
+      ]
+    },
+    {
+      "id": "div_008",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Function Return Type",
+      "description": "What should the return statement be to correctly calculate the average as a float?",
+      "code_template": "#include <stdio.h>\n\ndouble calculate_average(int a, int b, int c) {\n    int sum = a + b + c;\n    // What goes here?\n}",
+      "options": [
+        "return sum / 3;",
+        "return (double)sum / 3;",
+        "return sum / 3.0;",
+        "Both B and C work"
+      ],
+      "correct_answer": "D",
+      "explanation": "To get a floating-point average, you need to cast either sum or 3 to double before division. Both 'return (double)sum / 3;' and 'return sum / 3.0;' work correctly.",
+      "hints": [
+        "You need to return a double",
+        "Cast sum to double before dividing",
+        "Or divide by 3.0 instead of 3"
+      ],
+      "tags": [
+        "casting",
+        "function",
+        "average"
+      ]
+    },
+    {
+      "id": "div_009",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Complex Division Expression",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    int b = 2;\n    double result = a / b * 1.0;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "2.5",
+        "2.0",
+        "5.0",
+        "1.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "Due to left-to-right evaluation, a / b is calculated first as integer division (5 / 2 = 2), then 2 * 1.0 = 2.0. If you wanted 2.5, you'd need to multiply by 1.0 first: 'a * 1.0 / b' or use casting.",
+      "hints": [
+        "Operations are evaluated left to right",
+        "a / b happens before * 1.0",
+        "Integer division gives 2 before the multiplication"
+      ],
+      "tags": [
+        "integer_division",
+        "operator_precedence",
+        "type_promotion"
+      ]
+    },
+    {
+      "id": "div_010",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Division with Remainder",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int dividend = 17;\n    int divisor = 5;\n    int quotient = dividend / divisor;\n    int remainder = dividend % divisor;\n    printf(\"%d %d\\n\", quotient, remainder);\n    return 0;\n}",
+      "options": [
+        "3 2",
+        "4 2",
+        "3 3",
+        "2 7"
+      ],
+      "correct_answer": "A",
+      "explanation": "Integer division: 17 / 5 = 3. The modulo operator %: 17 % 5 = 2 (the remainder). So it prints '3 2'.",
+      "hints": [
+        "/ gives the quotient in integer division",
+        "% gives the remainder",
+        "17 = 5 * 3 + 2"
+      ],
+      "tags": [
+        "integer_division",
+        "modulo",
+        "remainder"
+      ]
+    },
+    {
+      "id": "div_011",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Negative Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -7;\n    int b = 2;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "-4 1",
+        "-3 -1",
+        "3 -1",
+        "-3 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "In C, integer division truncates toward zero. -7 / 2 is -3, and the remainder is -1 because -7 = (-3) * 2 + (-1).",
+      "hints": [
+        "C truncates toward zero",
+        "Check the equation: a = (a/b) * b + (a%b)",
+        "Remainder keeps the sign of the dividend"
+      ],
+      "tags": [
+        "integer_division",
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "div_012",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Casting to Double",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    double result = (double)a / b;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.0",
+        "3.5",
+        "3.7",
+        "4.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "Casting a to double makes the division floating-point. 7.0 / 2 = 3.5.",
+      "hints": [
+        "Casting promotes a to double",
+        "Floating-point division keeps the fraction",
+        "7 / 2 becomes 7.0 / 2.0"
+      ],
+      "tags": [
+        "type_casting",
+        "floating_point",
+        "division"
+      ]
+    },
+    {
+      "id": "div_013",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cast After Division",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    double result = (double)(a / b);\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.5",
+        "3.0",
+        "2.0",
+        "4.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "a / b is integer division first (7 / 2 = 3). Casting after the division makes 3.0.",
+      "hints": [
+        "Division happens before the cast",
+        "Integer division yields 3",
+        "Casting 3 to double gives 3.0"
+      ],
+      "tags": [
+        "type_casting",
+        "integer_division",
+        "order_of_operations"
+      ]
+    },
+    {
+      "id": "div_014",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Mixed Types",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    double b = 2;\n    printf(\"%.1f\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "2.0",
+        "2.5",
+        "3.0",
+        "5.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "a is promoted to double, so the division is floating-point: 5.0 / 2.0 = 2.5.",
+      "hints": [
+        "One operand is double",
+        "Promotion makes the division floating-point",
+        "5.0 / 2.0 = 2.5"
+      ],
+      "tags": [
+        "type_promotion",
+        "floating_point",
+        "division"
+      ]
+    },
+    {
+      "id": "div_015",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Negative Divisor",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = -3;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "-2 1",
+        "-2 -1",
+        "2 1",
+        "2 -1"
+      ],
+      "correct_answer": "A",
+      "explanation": "C truncates toward zero, so 7 / -3 is -2. The remainder keeps the sign of the dividend: 7 = (-2) * (-3) + 1.",
+      "hints": [
+        "Division truncates toward zero",
+        "Check the equation a = (a/b) * b + (a%b)",
+        "Remainder matches the dividend's sign"
+      ],
+      "tags": [
+        "integer_division",
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "drag_030",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Absolute Value",
+      "description": "Drag the correct tokens to compute absolute value:",
+      "code_template": "int abs_val(int x) {\n    return x <span class='drop-zone' data-blank-id='blank1'>[___]</span> 0 <span class='drop-zone' data-blank-id='blank2'>[___]</span> -x : x;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "<",
+          "options": [
+            "<",
+            ">",
+            "==",
+            "!="
+          ]
+        },
+        "blank2": {
+          "correct": "?",
+          "options": [
+            "?",
+            ":",
+            "&&",
+            "||"
+          ]
+        }
+      },
+      "explanation": "Use the ternary operator to return -x when x < 0.",
+      "hints": [
+        "Condition uses < 0",
+        "Ternary uses ? and :",
+        "Return -x for negative"
+      ],
+      "tags": [
+        "ternary",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_039",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Bit Manipulation",
+      "description": "Drag tokens to complete bit operations:",
+      "code_template": "// Check if bit n is set\nint is_bit_set(int value, int n) {\n    return (value <span class='drop-zone' data-blank-id='blank1'>[___]</span> (1 <span class='drop-zone' data-blank-id='blank2'>[___]</span> n)) <span class='drop-zone' data-blank-id='blank3'>[___]</span> 0;\n}\n\n// Set bit n\nint set_bit(int value, int n) {\n    return value <span class='drop-zone' data-blank-id='blank4'>[___]</span> (1 <span class='drop-zone' data-blank-id='blank5'>[___]</span> n);\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "&",
+          "options": [
+            "&",
+            "|",
+            "^",
+            "~"
+          ]
+        },
+        "blank2": {
+          "correct": "<<",
+          "options": [
+            "<<",
+            ">>",
+            "&",
+            "|"
+          ]
+        },
+        "blank3": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank4": {
+          "correct": "|",
+          "options": [
+            "|",
+            "&",
+            "^",
+            "~"
+          ]
+        },
+        "blank5": {
+          "correct": "<<",
+          "options": [
+            "<<",
+            ">>",
+            "&",
+            "|"
+          ]
+        }
+      },
+      "explanation": "Bit operations: AND (&) with mask to check bit, left shift (<<) to create mask, OR (|) to set bit.",
+      "hints": [
+        "& checks if bit is set",
+        "<< shifts 1 to create mask",
+        "!= 0 checks if result is non-zero",
+        "| sets bit to 1"
+      ],
+      "tags": [
+        "bitwise",
+        "bit_manipulation",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_040",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Ternary Operator",
+      "description": "Drag tokens to complete ternary operations:",
+      "code_template": "// Return maximum of two numbers\nint max(int a, int b) {\n    return (a <span class='drop-zone' data-blank-id='blank1'>[___]</span> b) <span class='drop-zone' data-blank-id='blank2'>[___]</span> a <span class='drop-zone' data-blank-id='blank3'>[___]</span> b;\n}\n\n// Return absolute value\nint abs_value(int x) {\n    return (x <span class='drop-zone' data-blank-id='blank4'>[___]</span> 0) <span class='drop-zone' data-blank-id='blank5'>[___]</span> x <span class='drop-zone' data-blank-id='blank6'>[___]</span> -x;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": ">",
+          "options": [
+            ">",
+            "<",
+            ">=",
+            "<="
+          ]
+        },
+        "blank2": {
+          "correct": "?",
+          "options": [
+            "?",
+            ":",
+            "&&",
+            "||"
+          ]
+        },
+        "blank3": {
+          "correct": ":",
+          "options": [
+            ":",
+            "?",
+            "&&",
+            "||"
+          ]
+        },
+        "blank4": {
+          "correct": ">=",
+          "options": [
+            ">=",
+            "<",
+            ">",
+            "<="
+          ]
+        },
+        "blank5": {
+          "correct": "?",
+          "options": [
+            "?",
+            ":",
+            "&&",
+            "||"
+          ]
+        },
+        "blank6": {
+          "correct": ":",
+          "options": [
+            ":",
+            "?",
+            "&&",
+            "||"
+          ]
+        }
+      },
+      "explanation": "Ternary operator: condition ? true_value : false_value. Compact if-else alternative.",
+      "hints": [
+        "Syntax: condition ? if_true : if_false",
+        "Max: if a > b return a, else b",
+        "Abs: if x >= 0 return x, else -x"
+      ],
+      "tags": [
+        "ternary",
+        "conditionals",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_term_001",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Memory Allocation Statement",
+      "description": "Drag the correct tokens to complete a proper dynamic memory allocation:",
+      "code_template": "int *ptr = <span class='drop-zone' data-blank-id='blank1'>[___]</span>(<span class='drop-zone' data-blank-id='blank2'>[___]</span> * <span class='drop-zone' data-blank-id='blank3'>[___]</span>(int));",
+      "blanks": {
+        "blank1": {
+          "correct": "malloc",
+          "options": [
+            "malloc",
+            "calloc",
+            "free",
+            "realloc",
+            "alloc"
+          ]
+        },
+        "blank2": {
+          "correct": "10",
+          "options": [
+            "10",
+            "sizeof",
+            "int",
+            "ptr",
+            "*"
+          ]
+        },
+        "blank3": {
+          "correct": "sizeof",
+          "options": [
+            "sizeof",
+            "malloc",
+            "10",
+            "int",
+            "size"
+          ]
+        }
+      },
+      "explanation": "malloc allocates memory. Use: malloc(count * sizeof(type)). sizeof gets the byte size of a type.",
+      "hints": [
+        "malloc allocates memory",
+        "sizeof returns type size",
+        "Pattern: malloc(count * sizeof(type))"
+      ],
+      "tags": [
+        "terminology",
+        "memory",
+        "malloc",
+        "sizeof"
+      ]
+    },
+    {
+      "id": "drag_term_002",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Pointer Declaration",
+      "description": "Drag the correct tokens to declare a pointer to an integer:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span>ptr = <span class='drop-zone' data-blank-id='blank3'>[___]</span>x;",
+      "blanks": {
+        "blank1": {
+          "correct": "int",
+          "options": [
+            "int",
+            "char",
+            "float",
+            "void",
+            "double"
+          ]
+        },
+        "blank2": {
+          "correct": "*",
+          "options": [
+            "*",
+            "&",
+            "->",
+            ".",
+            "**"
+          ]
+        },
+        "blank3": {
+          "correct": "&",
+          "options": [
+            "&",
+            "*",
+            "->",
+            ".",
+            "NULL"
+          ]
+        }
+      },
+      "explanation": "Pointer declaration: type *name. Use & (address-of) to get a variable's address.",
+      "hints": [
+        "Pointer type needs *",
+        "& gets address of variable",
+        "Pattern: int *ptr = &variable"
+      ],
+      "tags": [
+        "terminology",
+        "pointers",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_term_003",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Function Prototype",
+      "description": "Drag the correct tokens to create a function prototype:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> calculate(<span class='drop-zone' data-blank-id='blank2'>[___]</span> a, <span class='drop-zone' data-blank-id='blank3'>[___]</span> b)<span class='drop-zone' data-blank-id='blank4'>[___]</span>",
+      "blanks": {
+        "blank1": {
+          "correct": "int",
+          "options": [
+            "int",
+            "void",
+            "char",
+            "return",
+            "function"
+          ]
+        },
+        "blank2": {
+          "correct": "int",
+          "options": [
+            "int",
+            "void",
+            "char",
+            "float",
+            "double"
+          ]
+        },
+        "blank3": {
+          "correct": "int",
+          "options": [
+            "int",
+            "void",
+            "char",
+            "float",
+            "double"
+          ]
+        },
+        "blank4": {
+          "correct": ";",
+          "options": [
+            ";",
+            "{",
+            "}",
+            "return",
+            "()"
+          ]
+        }
+      },
+      "explanation": "Function prototype: return_type function_name(parameter_types); Ends with semicolon.",
+      "hints": [
+        "Prototype declares return type",
+        "Parameters need types",
+        "Prototype ends with semicolon"
+      ],
+      "tags": [
+        "terminology",
+        "functions",
+        "prototype"
+      ]
+    },
+    {
+      "id": "drag_term_004",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Preprocessor Directive",
+      "description": "Drag the correct tokens to include a standard library header:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span><span class='drop-zone' data-blank-id='blank3'>[___]</span>",
+      "blanks": {
+        "blank1": {
+          "correct": "#include",
+          "options": [
+            "#include",
+            "#define",
+            "#ifdef",
+            "include",
+            "import"
+          ]
+        },
+        "blank2": {
+          "correct": "<stdio.h>",
+          "options": [
+            "<stdio.h>",
+            "\"stdio.h\"",
+            "<stdlib.h>",
+            "stdio.h",
+            "(stdio.h)"
+          ]
+        },
+        "blank3": {
+          "correct": "",
+          "options": [
+            "",
+            ";",
+            "{}",
+            "//",
+            "/*"
+          ]
+        }
+      },
+      "explanation": "#include <header.h> includes standard library headers. No semicolon needed.",
+      "hints": [
+        "#include for header files",
+        "Use <> for standard libraries",
+        "No semicolon after #include"
+      ],
+      "tags": [
+        "terminology",
+        "preprocessor",
+        "include"
+      ]
+    },
+    {
+      "id": "drag_term_005",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Struct Access",
+      "description": "Drag the correct tokens to access a struct member through a pointer:",
+      "code_template": "struct Point *p;\np<span class='drop-zone' data-blank-id='blank1'>[___]</span><span class='drop-zone' data-blank-id='blank2'>[___]</span> = 10;",
+      "blanks": {
+        "blank1": {
+          "correct": "->",
+          "options": [
+            "->",
+            ".",
+            "*",
+            "&",
+            "::"
+          ]
+        },
+        "blank2": {
+          "correct": "x",
+          "options": [
+            "x",
+            "y",
+            "Point",
+            "p",
+            "member"
+          ]
+        }
+      },
+      "explanation": "Use -> (arrow operator) to access struct members through a pointer.",
+      "hints": [
+        "-> for pointer access",
+        ". for direct access",
+        "Arrow operator dereferences automatically"
+      ],
+      "tags": [
+        "terminology",
+        "structs",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_term_006",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete Variable Declaration",
+      "description": "Drag the correct tokens to declare a constant integer:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> MAX = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "const",
+          "options": [
+            "const",
+            "static",
+            "extern",
+            "volatile",
+            "register"
+          ]
+        },
+        "blank2": {
+          "correct": "int",
+          "options": [
+            "int",
+            "char",
+            "float",
+            "void",
+            "double"
+          ]
+        },
+        "blank3": {
+          "correct": "100",
+          "options": [
+            "100",
+            "0",
+            "NULL",
+            "\"100\"",
+            "const"
+          ]
+        }
+      },
+      "explanation": "const keyword makes a variable read-only. Must be initialized at declaration.",
+      "hints": [
+        "const for read-only",
+        "Need a data type",
+        "Initialize with a value"
+      ],
+      "tags": [
+        "terminology",
+        "const",
+        "keywords"
+      ]
+    },
+    {
+      "id": "drag_term_007",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Typedef Declaration",
+      "description": "Drag the correct tokens to create a type alias for an unsigned integer:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span> uint;",
+      "blanks": {
+        "blank1": {
+          "correct": "typedef",
+          "options": [
+            "typedef",
+            "define",
+            "struct",
+            "type",
+            "alias"
+          ]
+        },
+        "blank2": {
+          "correct": "unsigned",
+          "options": [
+            "unsigned",
+            "signed",
+            "int",
+            "const",
+            "static"
+          ]
+        },
+        "blank3": {
+          "correct": "int",
+          "options": [
+            "int",
+            "char",
+            "short",
+            "long",
+            "unsigned"
+          ]
+        }
+      },
+      "explanation": "typedef creates type aliases. Format: typedef existing_type new_name;",
+      "hints": [
+        "typedef creates aliases",
+        "unsigned means no negative",
+        "int is the base type"
+      ],
+      "tags": [
+        "terminology",
+        "typedef",
+        "types"
+      ]
+    },
+    {
+      "id": "drag_term_008",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Complete String Declaration",
+      "description": "Drag the correct tokens to declare a null-terminated string:",
+      "code_template": "<span class='drop-zone' data-blank-id='blank1'>[___]</span> str<span class='drop-zone' data-blank-id='blank2'>[___]</span> = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "char",
+          "options": [
+            "char",
+            "string",
+            "int",
+            "char*",
+            "str"
+          ]
+        },
+        "blank2": {
+          "correct": "[]",
+          "options": [
+            "[]",
+            "[10]",
+            "*",
+            "&",
+            "{}"
+          ]
+        },
+        "blank3": {
+          "correct": "\"hello\"",
+          "options": [
+            "\"hello\"",
+            "'hello'",
+            "hello",
+            "NULL",
+            "{h,e,l,l,o}"
+          ]
+        }
+      },
+      "explanation": "C strings are char arrays. Use double quotes for string literals. Compiler adds \\0 automatically.",
+      "hints": [
+        "Strings are char arrays",
+        "[] for array without size",
+        "Double quotes for strings"
+      ],
+      "tags": [
+        "terminology",
+        "strings",
+        "arrays"
+      ]
+    },
+    {
+      "id": "drag_term_009",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Recursion Base Case",
+      "description": "Drag the correct tokens to complete a recursive function's base case:",
+      "code_template": "int factorial(int n) {\n    <span class='drop-zone' data-blank-id='blank1'>[___]</span> (n <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span>) <span class='drop-zone' data-blank-id='blank4'>[___]</span> 1;\n    return n * factorial(n - 1);\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "if",
+          "options": [
+            "if",
+            "while",
+            "for",
+            "switch",
+            "when"
+          ]
+        },
+        "blank2": {
+          "correct": "<=",
+          "options": [
+            "<=",
+            ">=",
+            "==",
+            "!=",
+            "<"
+          ]
+        },
+        "blank3": {
+          "correct": "1",
+          "options": [
+            "1",
+            "0",
+            "n",
+            "-1",
+            "NULL"
+          ]
+        },
+        "blank4": {
+          "correct": "return",
+          "options": [
+            "return",
+            "break",
+            "continue",
+            "exit",
+            "yield"
+          ]
+        }
+      },
+      "explanation": "Base case stops recursion. For factorial, if n <= 1, return 1.",
+      "hints": [
+        "Base case uses if",
+        "Stops when n is small enough",
+        "return ends the function"
+      ],
+      "tags": [
+        "terminology",
+        "recursion",
+        "base_case"
+      ]
+    },
+    {
+      "id": "drag_term_010",
+      "category": "fundamentals",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete Memory Freeing",
+      "description": "Drag the correct tokens to properly free allocated memory:",
+      "code_template": "int *arr = malloc(10 * sizeof(int));\n// Use array...\n<span class='drop-zone' data-blank-id='blank1'>[___]</span>(<span class='drop-zone' data-blank-id='blank2'>[___]</span>);\narr = <span class='drop-zone' data-blank-id='blank3'>[___]</span>;",
+      "blanks": {
+        "blank1": {
+          "correct": "free",
+          "options": [
+            "free",
+            "delete",
+            "dealloc",
+            "release",
+            "malloc"
+          ]
+        },
+        "blank2": {
+          "correct": "arr",
+          "options": [
+            "arr",
+            "malloc",
+            "*arr",
+            "&arr",
+            "10"
+          ]
+        },
+        "blank3": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "free",
+            "arr",
+            "malloc"
+          ]
+        }
+      },
+      "explanation": "Use free() to release malloc'd memory. Set pointer to NULL after freeing to avoid dangling pointer.",
+      "hints": [
+        "free releases memory",
+        "Pass the pointer to free",
+        "Set to NULL after freeing"
+      ],
+      "tags": [
+        "terminology",
+        "memory",
+        "free"
+      ]
+    },
+    {
+      "id": "fill_001",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Function Parameters and Variables",
+      "description": "Fill in the blanks about function parameters and local variables:",
+      "code_template": "#include <stdio.h>\n\nint print_example(int a, double b, char* c) {\n    int p1 = 10;\n    int p2 = 2 * a;\n    if (c != NULL) {\n        p1 = 20;\n    }\n    printf(\"%d, %lf\\n\", p1 + p2, a + b);\n    return p2 - p1;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "p1 and p2 are ___ in ___",
+          "blanks": [
+            {
+              "options": [
+                "local variables",
+                "formal parameters",
+                "global variables",
+                "constants"
+              ],
+              "correct": "local variables"
+            },
+            {
+              "options": [
+                "the function",
+                "the module",
+                "the struct",
+                "the header"
+              ],
+              "correct": "the function"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "In print_example, a, b, and c are the ___",
+          "blanks": [
+            {
+              "options": [
+                "formal parameters",
+                "local variables",
+                "return values",
+                "global variables"
+              ],
+              "correct": "formal parameters"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "From the type, we know that a can contain ___",
+          "blanks": [
+            {
+              "options": [
+                "integers",
+                "floating-point numbers",
+                "characters",
+                "strings"
+              ],
+              "correct": "integers"
+            }
+          ]
+        }
+      ],
+      "explanation": "Local variables are declared inside a function. Formal parameters are the variables declared in the function signature. The type 'int' indicates integer values.",
+      "hints": [
+        "Variables declared inside the function are local to that function",
+        "Parameters are listed in the function signature (inside parentheses)",
+        "The 'int' type holds integer values"
+      ],
+      "tags": [
+        "functions",
+        "variables",
+        "parameters",
+        "types"
+      ]
+    },
+    {
+      "id": "fill_012",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Modulo Meaning",
+      "description": "Fill in the blanks about modulo:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int r = 17 % 5;\n    printf(\"%d\\n\", r);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The % operator returns the ___",
+          "blanks": [
+            {
+              "options": [
+                "remainder",
+                "quotient",
+                "sum",
+                "product"
+              ],
+              "correct": "remainder"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "17 % 5 equals ___",
+          "blanks": [
+            {
+              "options": [
+                "2",
+                "3",
+                "1",
+                "0"
+              ],
+              "correct": "2"
+            }
+          ]
+        }
+      ],
+      "explanation": "Modulo returns the remainder after integer division. 17 / 5 leaves remainder 2.",
+      "hints": [
+        "17 = 5 * 3 + 2",
+        "Remainder is 2",
+        "% gives remainder"
+      ],
+      "tags": [
+        "modulo",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "fill_019",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Integer Division",
+      "description": "Fill in the blanks about integer division:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 7 / 2;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "7 / 2 equals ___ in integer division",
+          "blanks": [
+            {
+              "options": [
+                "3",
+                "3.5",
+                "4",
+                "2"
+              ],
+              "correct": "3"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Integer division ___ the fractional part",
+          "blanks": [
+            {
+              "options": [
+                "truncates",
+                "rounds",
+                "keeps",
+                "doubles"
+              ],
+              "correct": "truncates"
+            }
+          ]
+        }
+      ],
+      "explanation": "Integer division truncates toward zero, so 7/2 is 3.",
+      "hints": [
+        "7/2 is 3 in int",
+        "Fraction is dropped",
+        "Truncates toward zero"
+      ],
+      "tags": [
+        "integer_division",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_da_001",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "C Programmering - Overs\u00e6ttelsesprocessen (Danish)",
+      "description": "Udfyld felterne om C-overs\u00e6ttelsesprocessen:",
+      "code_template": "// C overs\u00e6ttelses trin:\n// 1. Forbehandling\n// 2. Kompilering\n// 3. Assemblering\n// 4. Linking",
+      "questions": [
+        {
+          "id": 0,
+          "text": "Pr\u00e6processoren h\u00e5ndterer ___ som #include og #define",
+          "blanks": [
+            {
+              "options": [
+                "direktiver",
+                "funktioner",
+                "variabler",
+                "konstanter"
+              ],
+              "correct": "direktiver"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Linkeren kombinerer ___ til en eksekverbar fil",
+          "blanks": [
+            {
+              "options": [
+                "objektfiler",
+                "kildefiler",
+                "headerfiler",
+                "biblioteker"
+              ],
+              "correct": "objektfiler"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Compileren overs\u00e6tter C-kode til ___",
+          "blanks": [
+            {
+              "options": [
+                "assemblykode",
+                "maskinkode",
+                "bytekode",
+                "objektkode"
+              ],
+              "correct": "assemblykode"
+            }
+          ]
+        }
+      ],
+      "explanation": "Overs\u00e6ttelsesprocessen har 4 trin: forbehandling (#include, #define), kompilering (C til assembly), assemblering (assembly til objekt), linking (objekter til eksekverbar).",
+      "hints": [
+        "Pr\u00e6processoren behandler # direktiver",
+        "Linkeren samler separate filer",
+        "Compileren laver assembly sprog"
+      ],
+      "tags": [
+        "kompilering",
+        "terminologi",
+        "grundl\u00e6ggende"
+      ]
+    },
+    {
+      "id": "fill_da_003",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Datatyper og Lagring (Danish)",
+      "description": "Udfyld felterne om C datatyper:",
+      "code_template": "int x;      // Fortegnet heltal\nunsigned y; // Ufortegnet heltal\nchar c;     // Tegn\nfloat f;    // Kommatal\ndouble d;   // Dobbelt pr\u00e6cision",
+      "questions": [
+        {
+          "id": 0,
+          "text": "En ___ type kan gemme negative tal, en ___ kan ikke",
+          "blanks": [
+            {
+              "options": [
+                "fortegnet",
+                "ufortegnet",
+                "char",
+                "float"
+              ],
+              "correct": "fortegnet"
+            },
+            {
+              "options": [
+                "ufortegnet",
+                "fortegnet",
+                "double",
+                "pointer"
+              ],
+              "correct": "ufortegnet"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "___ typen har mere pr\u00e6cision end ___",
+          "blanks": [
+            {
+              "options": [
+                "double",
+                "float",
+                "int",
+                "char"
+              ],
+              "correct": "double"
+            },
+            {
+              "options": [
+                "float",
+                "double",
+                "int",
+                "long"
+              ],
+              "correct": "float"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "En ___ bruger typisk 1 byte og repr\u00e6senterer ___",
+          "blanks": [
+            {
+              "options": [
+                "char",
+                "int",
+                "float",
+                "double"
+              ],
+              "correct": "char"
+            },
+            {
+              "options": [
+                "et tegn eller lille heltal",
+                "kommatal",
+                "pointere",
+                "store heltal"
+              ],
+              "correct": "et tegn eller lille heltal"
+            }
+          ]
+        }
+      ],
+      "explanation": "C har forskellige datatyper med forskellige st\u00f8rrelser og muligheder. Fortegnede typer kan v\u00e6re negative, ufortegnede kan ikke. Double har mere pr\u00e6cision end float.",
+      "hints": [
+        "Fortegnet betyder kan v\u00e6re negativ",
+        "Double har dobbelt pr\u00e6cision",
+        "char er 1 byte"
+      ],
+      "tags": [
+        "typer",
+        "data",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_da_005",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Funktions Terminologi (Danish)",
+      "description": "Udfyld felterne om C funktioner:",
+      "code_template": "int add(int a, int b);  // Erkl\u00e6ring/Prototype\n\nint add(int a, int b) { // Definition\n    return a + b;       // Return statement\n}\n\nint main() {\n    int x = add(5, 3);  // Funktionskald\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "En funktions ___ fort\u00e6ller compileren at funktionen eksisterer, en ___ giver implementeringen",
+          "blanks": [
+            {
+              "options": [
+                "erkl\u00e6ring",
+                "definition",
+                "kald",
+                "invokation"
+              ],
+              "correct": "erkl\u00e6ring"
+            },
+            {
+              "options": [
+                "definition",
+                "erkl\u00e6ring",
+                "kald",
+                "prototype"
+              ],
+              "correct": "definition"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "Variablerne i funktionssignaturen kaldes ___",
+          "blanks": [
+            {
+              "options": [
+                "formelle parametre",
+                "aktuelle parametre",
+                "argumenter",
+                "lokale variabler"
+              ],
+              "correct": "formelle parametre"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "V\u00e6rdierne der sendes n\u00e5r funktionen kaldes hedder ___",
+          "blanks": [
+            {
+              "options": [
+                "argumenter",
+                "parametre",
+                "variabler",
+                "konstanter"
+              ],
+              "correct": "argumenter"
+            }
+          ]
+        }
+      ],
+      "explanation": "Funktionserkl\u00e6ring (prototype) annoncerer funktionen. Definition giver kroppen. Parametre er i signaturen, argumenter sendes ved kald.",
+      "hints": [
+        "Erkl\u00e6ring = l\u00f8fte, Definition = implementering",
+        "Parametre = placeholder navne",
+        "Argumenter = faktiske v\u00e6rdier sendt"
+      ],
+      "tags": [
+        "funktioner",
+        "terminologi",
+        "grundl\u00e6ggende"
+      ]
+    },
+    {
+      "id": "fill_da_007",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Variabel Scope og Levetid (Danish)",
+      "description": "Udfyld felterne om scope og levetid:",
+      "code_template": "int global = 1;         // Fil scope, statisk levetid\n\nvoid func() {\n    static int s = 0;   // Blok scope, statisk levetid\n    int lokal = 2;      // Blok scope, automatisk levetid\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ variabler eksisterer hele programmets varighed",
+          "blanks": [
+            {
+              "options": [
+                "Globale",
+                "Lokale",
+                "Register",
+                "Midlertidige"
+              ],
+              "correct": "Globale"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "___ variabler oprettes n\u00e5r funktionen kaldes og destrueres n\u00e5r den returnerer",
+          "blanks": [
+            {
+              "options": [
+                "Automatiske (lokale)",
+                "Statiske",
+                "Globale",
+                "Eksterne"
+              ],
+              "correct": "Automatiske (lokale)"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Variabler erkl\u00e6ret med ___ n\u00f8gleord bevarer deres v\u00e6rdi mellem funktionskald",
+          "blanks": [
+            {
+              "options": [
+                "static",
+                "const",
+                "extern",
+                "volatile"
+              ],
+              "correct": "static"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "___ bestemmer hvor en variabel kan tilg\u00e5s, ___ bestemmer hvor l\u00e6nge den eksisterer",
+          "blanks": [
+            {
+              "options": [
+                "Scope",
+                "Levetid",
+                "Type",
+                "Lagring"
+              ],
+              "correct": "Scope"
+            },
+            {
+              "options": [
+                "Levetid",
+                "Scope",
+                "Type",
+                "Varighed"
+              ],
+              "correct": "Levetid"
+            }
+          ]
+        }
+      ],
+      "explanation": "Scope er hvor variablen er synlig. Levetid er hvor l\u00e6nge den eksisterer. Global = hele programmet. Lokal = kun funktion. Static = beholder v\u00e6rdi mellem kald.",
+      "hints": [
+        "Globale variabler lever evigt",
+        "Lokale variabler er automatiske",
+        "Static beholder sin v\u00e6rdi",
+        "Scope = synlighed, Levetid = varighed"
+      ],
+      "tags": [
+        "scope",
+        "levetid",
+        "terminologi"
+      ]
+    },
+    {
+      "id": "fill_en_001",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "C Programming Basics - Compilation Process",
+      "description": "Fill in the blanks about the C compilation process:",
+      "code_template": "// C compilation stages:\n// 1. Preprocessing\n// 2. Compilation\n// 3. Assembly\n// 4. Linking",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The ___ processes directives like #include and #define",
+          "blanks": [
+            {
+              "options": [
+                "preprocessor",
+                "compiler",
+                "linker",
+                "assembler"
+              ],
+              "correct": "preprocessor"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The ___ combines object files into an executable",
+          "blanks": [
+            {
+              "options": [
+                "linker",
+                "compiler",
+                "preprocessor",
+                "assembler"
+              ],
+              "correct": "linker"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "The compiler translates C code to ___",
+          "blanks": [
+            {
+              "options": [
+                "assembly code",
+                "machine code",
+                "bytecode",
+                "object code"
+              ],
+              "correct": "assembly code"
+            }
+          ]
+        }
+      ],
+      "explanation": "The compilation process has 4 stages: preprocessing (#include, #define), compilation (C to assembly), assembly (assembly to object), linking (objects to executable).",
+      "hints": [
+        "Preprocessing handles # directives",
+        "Linking combines separate files",
+        "Compiler outputs assembly language"
+      ],
+      "tags": [
+        "compilation",
+        "terminology",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_en_003",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Data Types and Storage",
+      "description": "Fill in the blanks about C data types:",
+      "code_template": "int x;      // Signed integer\nunsigned y; // Unsigned integer\nchar c;     // Character\nfloat f;    // Floating point\ndouble d;   // Double precision",
+      "questions": [
+        {
+          "id": 0,
+          "text": "An ___ can store negative numbers, a ___ cannot",
+          "blanks": [
+            {
+              "options": [
+                "signed integer",
+                "unsigned integer",
+                "char",
+                "float"
+              ],
+              "correct": "signed integer"
+            },
+            {
+              "options": [
+                "unsigned integer",
+                "signed integer",
+                "double",
+                "pointer"
+              ],
+              "correct": "unsigned integer"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The ___ type has more precision than ___",
+          "blanks": [
+            {
+              "options": [
+                "double",
+                "float",
+                "int",
+                "char"
+              ],
+              "correct": "double"
+            },
+            {
+              "options": [
+                "float",
+                "double",
+                "int",
+                "long"
+              ],
+              "correct": "float"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "A ___ typically stores 1 byte and represents ___",
+          "blanks": [
+            {
+              "options": [
+                "char",
+                "int",
+                "float",
+                "double"
+              ],
+              "correct": "char"
+            },
+            {
+              "options": [
+                "a character or small integer",
+                "floating-point numbers",
+                "pointers",
+                "large integers"
+              ],
+              "correct": "a character or small integer"
+            }
+          ]
+        }
+      ],
+      "explanation": "C has various data types with different sizes and capabilities. Signed types store negative numbers, unsigned don't. Double has more precision than float.",
+      "hints": [
+        "Signed means can be negative",
+        "Double has double the precision",
+        "char is 1 byte"
+      ],
+      "tags": [
+        "types",
+        "data",
+        "terminology"
+      ]
+    },
+    {
+      "id": "fill_en_005",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Function Terminology",
+      "description": "Fill in the blanks about C functions:",
+      "code_template": "int add(int a, int b);  // Declaration/Prototype\n\nint add(int a, int b) { // Definition\n    return a + b;       // Return statement\n}\n\nint main() {\n    int x = add(5, 3);  // Function call\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "A function ___ tells the compiler the function exists, a ___ provides the implementation",
+          "blanks": [
+            {
+              "options": [
+                "declaration",
+                "definition",
+                "call",
+                "invocation"
+              ],
+              "correct": "declaration"
+            },
+            {
+              "options": [
+                "definition",
+                "declaration",
+                "call",
+                "prototype"
+              ],
+              "correct": "definition"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The variables in the function signature are called ___",
+          "blanks": [
+            {
+              "options": [
+                "formal parameters",
+                "actual parameters",
+                "arguments",
+                "local variables"
+              ],
+              "correct": "formal parameters"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "The values passed when calling a function are called ___",
+          "blanks": [
+            {
+              "options": [
+                "arguments",
+                "parameters",
+                "variables",
+                "constants"
+              ],
+              "correct": "arguments"
+            }
+          ]
+        }
+      ],
+      "explanation": "Function declaration (prototype) announces the function. Definition provides the body. Parameters are in the signature, arguments are passed at call time.",
+      "hints": [
+        "Declaration = promise, Definition = implementation",
+        "Parameters = placeholder names",
+        "Arguments = actual values passed"
+      ],
+      "tags": [
+        "functions",
+        "terminology",
+        "basics"
+      ]
+    },
+    {
+      "id": "fill_en_007",
+      "category": "fundamentals",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Variable Scope and Lifetime",
+      "description": "Fill in the blanks about scope and lifetime:",
+      "code_template": "int global = 1;         // File scope, static lifetime\n\nvoid func() {\n    static int s = 0;   // Block scope, static lifetime\n    int local = 2;      // Block scope, automatic lifetime\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "___ variables exist for the entire program duration",
+          "blanks": [
+            {
+              "options": [
+                "Global",
+                "Local",
+                "Register",
+                "Temporary"
+              ],
+              "correct": "Global"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "___ variables are created when function is called and destroyed when it returns",
+          "blanks": [
+            {
+              "options": [
+                "Automatic (local)",
+                "Static",
+                "Global",
+                "Extern"
+              ],
+              "correct": "Automatic (local)"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Variables declared with ___ keyword retain their value between function calls",
+          "blanks": [
+            {
+              "options": [
+                "static",
+                "const",
+                "extern",
+                "volatile"
+              ],
+              "correct": "static"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "___ determines where a variable can be accessed, ___ determines how long it exists",
+          "blanks": [
+            {
+              "options": [
+                "Scope",
+                "Lifetime",
+                "Type",
+                "Storage"
+              ],
+              "correct": "Scope"
+            },
+            {
+              "options": [
+                "Lifetime",
+                "Scope",
+                "Type",
+                "Duration"
+              ],
+              "correct": "Lifetime"
+            }
+          ]
+        }
+      ],
+      "explanation": "Scope is where variable is visible. Lifetime is how long it exists. Global = entire program. Local = function only. Static = keeps value between calls.",
+      "hints": [
+        "Global variables live forever",
+        "Local variables are automatic",
+        "Static keeps its value",
+        "Scope = visibility, Lifetime = duration"
+      ],
+      "tags": [
+        "scope",
+        "lifetime",
+        "terminology"
+      ]
+    },
+    {
+      "id": "int_021",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise AND",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 12;  // 1100 in binary\n    int b = 10;  // 1010 in binary\n    printf(\"%d\\n\", a & b);\n    return 0;\n}",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "correct_answer": "A",
+      "explanation": "Bitwise AND: 1100 & 1010 = 1000 = 8 in decimal.",
+      "hints": [
+        "Bitwise AND compares bits",
+        "1100 & 1010",
+        "Result: 1000 = 8"
+      ],
+      "tags": [
+        "bitwise",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_022",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise OR",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 12;  // 1100 in binary\n    int b = 10;  // 1010 in binary\n    printf(\"%d\\n\", a | b);\n    return 0;\n}",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "correct_answer": "D",
+      "explanation": "Bitwise OR: 1100 | 1010 = 1110 = 14 in decimal.",
+      "hints": [
+        "Bitwise OR combines bits",
+        "1100 | 1010",
+        "Result: 1110 = 14"
+      ],
+      "tags": [
+        "bitwise",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_023",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Left Shift",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    printf(\"%d\\n\", x << 1);\n    return 0;\n}",
+      "options": [
+        "2",
+        "5",
+        "10",
+        "20"
+      ],
+      "correct_answer": "C",
+      "explanation": "Left shift by 1 multiplies by 2. 5 << 1 = 10.",
+      "hints": [
+        "<< shifts bits left",
+        "Equivalent to multiply by 2",
+        "5 * 2 = 10"
+      ],
+      "tags": [
+        "bitwise",
+        "shift",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_024",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Right Shift",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 16;\n    printf(\"%d\\n\", x >> 2);\n    return 0;\n}",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "correct_answer": "B",
+      "explanation": "Right shift by 2 divides by 4. 16 >> 2 = 4.",
+      "hints": [
+        ">> shifts bits right",
+        "Divides by 2^n",
+        "16 / 4 = 4"
+      ],
+      "tags": [
+        "bitwise",
+        "shift",
+        "operators"
+      ]
+    },
+    {
+      "id": "int_025",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Negative Division Result",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -9;\n    int b = 4;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "-3 3",
+        "-2 -1",
+        "-2 1",
+        "-3 -1"
+      ],
+      "correct_answer": "B",
+      "explanation": "C truncates toward zero. -9 / 4 is -2, remainder is -1.",
+      "hints": [
+        "Truncates toward zero",
+        "Check a = (a/b)*b + (a%b)",
+        "Remainder follows dividend"
+      ],
+      "tags": [
+        "negative_numbers",
+        "modulo"
+      ]
+    },
+    {
+      "id": "int_025",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Integer Division with Negative Dividend",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = -17 / 5;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "-3",
+        "-4",
+        "3",
+        "-3.4"
+      ],
+      "correct_answer": "A",
+      "explanation": "In C, integer division truncates towards zero. -17 / 5 = -3.4, which truncates to -3 (not floor division which would give -4).",
+      "hints": [
+        "Integer division discards the fractional part",
+        "C uses truncation towards zero, not floor division",
+        "The result will be an integer, not a float"
+      ],
+      "tags": [
+        "integer_division",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_026",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Promote to Double",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    int b = 2;\n    double x = a * 1.0 / b;\n    printf(\"%.1f\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2.0",
+        "2.5",
+        "3.0",
+        "5.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "Multiplying by 1.0 promotes to double before division, giving 2.5.",
+      "hints": [
+        "1.0 makes it floating-point",
+        "5.0 / 2 = 2.5",
+        "Prints 2.5"
+      ],
+      "tags": [
+        "floating_point",
+        "type_promotion"
+      ]
+    },
+    {
+      "id": "int_026",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Negative Numbers",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = -17 % 5;\n    int b = 17 % -5;\n    int c = -17 % -5;\n    printf(\"%d %d %d\\n\", a, b, c);\n    return 0;\n}",
+      "options": [
+        "-2 2 -2",
+        "3 3 3",
+        "-2 2 2",
+        "2 -2 -2"
+      ],
+      "correct_answer": "A",
+      "explanation": "In C, the sign of the modulo result takes the sign of the dividend (first operand). -17 % 5 = -2, 17 % -5 = 2, -17 % -5 = -2.",
+      "hints": [
+        "The sign of the result matches the sign of the dividend",
+        "For a % b, the sign comes from a, not b",
+        "|-17 % 5| equals |17 % 5|, but the sign differs"
+      ],
+      "tags": [
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_027",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sum of Divisions",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5 / 2 + 5 / 2;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "A",
+      "explanation": "Each 5/2 is 2, so 2 + 2 = 4.",
+      "hints": [
+        "Integer division truncates",
+        "5/2 is 2",
+        "2+2=4"
+      ],
+      "tags": [
+        "integer_division",
+        "expressions"
+      ]
+    },
+    {
+      "id": "int_028",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Negative Divisor",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 9;\n    int b = -4;\n    printf(\"%d\\n\", a % b);\n    return 0;\n}",
+      "options": [
+        "-1",
+        "1",
+        "3",
+        "-3"
+      ],
+      "correct_answer": "B",
+      "explanation": "Remainder keeps the dividend's sign. 9 = (-2)*(-4) + 1.",
+      "hints": [
+        "Sign follows dividend",
+        "9 % -4 = 1",
+        "Check division result"
+      ],
+      "tags": [
+        "modulo",
+        "negative_numbers"
+      ]
+    },
+    {
+      "id": "int_029",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Parentheses Matter",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 3;\n    int b = 4;\n    int c = 2;\n    printf(\"%d\\n\", (a + b) / c);\n    return 0;\n}",
+      "options": [
+        "3",
+        "3.5",
+        "4",
+        "5"
+      ],
+      "correct_answer": "A",
+      "explanation": "(3 + 4) / 2 = 7 / 2 = 3 (integer division).",
+      "hints": [
+        "Sum first",
+        "7 / 2 truncates",
+        "Result is 3"
+      ],
+      "tags": [
+        "integer_division",
+        "parentheses"
+      ]
+    },
+    {
+      "id": "int_030",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Division in Loop",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 1; i <= 3; i++) {\n        printf(\"%d \", i / 2);\n    }\n    return 0;\n}",
+      "options": [
+        "0 1 1",
+        "0 1 2",
+        "0 0 1",
+        "1 1 1"
+      ],
+      "correct_answer": "A",
+      "explanation": "1/2 = 0, 2/2 = 1, 3/2 = 1. Prints 0 1 1.",
+      "hints": [
+        "Integer division truncates",
+        "1/2=0, 2/2=1, 3/2=1",
+        "Output 0 1 1"
+      ],
+      "tags": [
+        "loops",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_031",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Left Shift",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    printf(\"%d\\n\", x << 2);\n    return 0;\n}",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "16"
+      ],
+      "correct_answer": "C",
+      "explanation": "Left shift by 2 multiplies by 4. 3 << 2 = 12.",
+      "hints": [
+        "<< multiplies by 2^n",
+        "3 * 4 = 12",
+        "Result is 12"
+      ],
+      "tags": [
+        "bitwise",
+        "shift"
+      ]
+    },
+    {
+      "id": "int_032",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Modulo by One",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 123;\n    printf(\"%d\\n\", x % 1);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "123",
+        "Undefined"
+      ],
+      "correct_answer": "A",
+      "explanation": "Any number modulo 1 is 0.",
+      "hints": [
+        "Remainder after division by 1",
+        "Always 0",
+        "x % 1 = 0"
+      ],
+      "tags": [
+        "modulo",
+        "basics"
+      ]
+    },
+    {
+      "id": "int_033",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cast Result",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    printf(\"%.1f\\n\", (double)(a / b));\n    return 0;\n}",
+      "options": [
+        "3.5",
+        "3.0",
+        "2.0",
+        "4.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "a / b is integer division (3). Casting after gives 3.0.",
+      "hints": [
+        "Division happens first",
+        "7/2=3",
+        "Cast yields 3.0"
+      ],
+      "tags": [
+        "casting",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_034",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Average as Int",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1;\n    int b = 2;\n    int c = 2;\n    printf(\"%d\\n\", (a + b + c) / 3);\n    return 0;\n}",
+      "options": [
+        "1",
+        "1.6",
+        "2",
+        "3"
+      ],
+      "correct_answer": "A",
+      "explanation": "Sum is 5; 5/3 truncates to 1.",
+      "hints": [
+        "Integer division truncates",
+        "5 / 3 = 1",
+        "Result is 1"
+      ],
+      "tags": [
+        "average",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_035",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mix with Double",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 9;\n    int b = 4;\n    double x = a / (double)b;\n    printf(\"%.2f\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2.00",
+        "2.25",
+        "2.50",
+        "3.00"
+      ],
+      "correct_answer": "B",
+      "explanation": "Casting b to double makes floating-point division: 9 / 4.0 = 2.25.",
+      "hints": [
+        "Cast creates floating division",
+        "9 / 4 = 2.25",
+        "Printed with 2 decimals"
+      ],
+      "tags": [
+        "floating_point",
+        "casting"
+      ]
+    },
+    {
+      "id": "int_036",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Integer Division First",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    double x = (double)(a / b) * 2;\n    printf(\"%.1f\\n\", x);\n    return 0;\n}",
+      "options": [
+        "6.0",
+        "7.0",
+        "8.0",
+        "9.0"
+      ],
+      "correct_answer": "A",
+      "explanation": "a/b is 3, cast to 3.0, then *2 gives 6.0.",
+      "hints": [
+        "Integer division first",
+        "3 * 2 = 6",
+        "Result is 6.0"
+      ],
+      "tags": [
+        "casting",
+        "order_of_operations"
+      ]
+    },
+    {
+      "id": "int_037",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Modulo Relationship",
+      "description": "Which equation is always true for integers a and b (b != 0)?",
+      "code_template": "",
+      "options": [
+        "a = (a % b) * b + (a / b)",
+        "a = (a / b) * b + (a % b)",
+        "a = (a / b) + (a % b)",
+        "a = (a % b) / b + a"
+      ],
+      "correct_answer": "B",
+      "explanation": "By definition: a = (a/b)*b + (a%b).",
+      "hints": [
+        "Division algorithm",
+        "Quotient and remainder",
+        "a = q*b + r"
+      ],
+      "tags": [
+        "modulo",
+        "division"
+      ]
+    },
+    {
+      "id": "int_037",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bitwise NOT Operator",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    unsigned char x = 5;  // 00000101\n    unsigned char result = ~x;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "250",
+        "5",
+        "-6",
+        "251"
+      ],
+      "correct_answer": "A",
+      "explanation": "Bitwise NOT flips all bits. ~5 (00000101) = 250 (11111010) for unsigned char. Each 0 becomes 1 and vice versa.",
+      "hints": [
+        "NOT inverts every bit in the number",
+        "00000101 becomes 11111010",
+        "11111010 in decimal is 250"
+      ],
+      "tags": [
+        "bitwise",
+        "not_operator"
+      ]
+    },
+    {
+      "id": "int_038",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Zero Dividend",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 0;\n    int b = 5;\n    printf(\"%d %d\\n\", a / b, a % b);\n    return 0;\n}",
+      "options": [
+        "0 0",
+        "0 5",
+        "5 0",
+        "Undefined"
+      ],
+      "correct_answer": "A",
+      "explanation": "0 divided by any nonzero is 0, remainder 0.",
+      "hints": [
+        "0 / b = 0",
+        "0 % b = 0",
+        "Both zero"
+      ],
+      "tags": [
+        "division",
+        "modulo"
+      ]
+    },
+    {
+      "id": "int_039",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Division by One",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 42;\n    printf(\"%d\\n\", a / 1);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "42",
+        "Undefined"
+      ],
+      "correct_answer": "C",
+      "explanation": "Dividing by 1 yields the original number.",
+      "hints": [
+        "a / 1 = a",
+        "No truncation",
+        "Result is 42"
+      ],
+      "tags": [
+        "division",
+        "basics"
+      ]
+    },
+    {
+      "id": "int_039",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Integer to Float Conversion in Division",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    int b = 2;\n    float result = a / b;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.0",
+        "3.5",
+        "4.0",
+        "3.2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Division happens before assignment. Since both a and b are int, integer division is performed (7/2 = 3), then 3 is converted to 3.0 for the float assignment.",
+      "hints": [
+        "The division happens with int operands",
+        "Type conversion happens after the division",
+        "To get 3.5, one operand must be float during division"
+      ],
+      "tags": [
+        "type_promotion",
+        "integer_division"
+      ]
+    },
+    {
+      "id": "int_040",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Larger Divisor",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 3;\n    int b = 5;\n    printf(\"%d\\n\", a % b);\n    return 0;\n}",
+      "options": [
+        "0",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct_answer": "C",
+      "explanation": "If a < b, then a % b is a.",
+      "hints": [
+        "Divisor is larger",
+        "Quotient is 0",
+        "Remainder is a"
+      ],
+      "tags": [
+        "modulo",
+        "basics"
+      ]
+    },
+    {
+      "id": "int_040",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mixed Type Arithmetic",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    float b = 2.0;\n    float result = a / b;\n    printf(\"%.1f\\n\", result);\n    return 0;\n}",
+      "options": [
+        "3.5",
+        "3.0",
+        "4.0",
+        "3.2"
+      ],
+      "correct_answer": "A",
+      "explanation": "When mixing int and float, the int is promoted to float before the operation. 7.0 / 2.0 = 3.5 (floating-point division).",
+      "hints": [
+        "Mixed type operations promote to the wider type",
+        "int is converted to float before division",
+        "This performs floating-point division"
+      ],
+      "tags": [
+        "type_promotion",
+        "mixed_arithmetic"
+      ]
+    },
+    {
+      "id": "int_042",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Bitwise Operator Precedence",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 5 | 3 & 6;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "7",
+        "5",
+        "2",
+        "6"
+      ],
+      "correct_answer": "A",
+      "explanation": "& has higher precedence than |. First: 3 & 6 = 2 (0011 & 0110 = 0010). Then: 5 | 2 = 7 (0101 | 0010 = 0111).",
+      "hints": [
+        "AND has higher precedence than OR",
+        "Evaluate 3 & 6 first",
+        "Then OR the result with 5"
+      ],
+      "tags": [
+        "operator_precedence",
+        "bitwise"
+      ]
+    },
+    {
+      "id": "int_046",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Char to Int Promotion",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char a = 200;\n    int b = a;\n    printf(\"%d\\n\", b);\n    return 0;\n}",
+      "options": [
+        "-56",
+        "200",
+        "56",
+        "0"
+      ],
+      "correct_answer": "A",
+      "explanation": "char is signed by default (typically). 200 exceeds the signed char range (127), causing overflow. 200 in 8-bit two's complement is -56. When promoted to int, it remains -56.",
+      "hints": [
+        "Signed char range is -128 to 127",
+        "200 overflows and wraps to negative",
+        "Sign extension preserves the negative value"
+      ],
+      "tags": [
+        "type_promotion",
+        "char",
+        "overflow"
+      ]
+    },
+    {
+      "id": "int_049",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Extracting Lower Nibble",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    unsigned char x = 0xAB;  // 10101011\n    unsigned char lower = x & 0x0F;\n    printf(\"%d\\n\", lower);\n    return 0;\n}",
+      "options": [
+        "11",
+        "10",
+        "171",
+        "15"
+      ],
+      "correct_answer": "A",
+      "explanation": "0xAB & 0x0F masks the lower 4 bits (nibble). 10101011 & 00001111 = 00001011 = 11 in decimal (0xB).",
+      "hints": [
+        "0x0F is 00001111 in binary",
+        "AND with 0x0F keeps only the lower 4 bits",
+        "0xB (lower nibble of 0xAB) is 11 in decimal"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "masking",
+        "nibble"
+      ]
+    },
+    {
+      "id": "int_div_021",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Negative Division",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", -7 / 2);\n    return 0;\n}",
+      "options": [
+        "-3",
+        "-4",
+        "3",
+        "-3.5"
+      ],
+      "correct_answer": "A",
+      "explanation": "Integer division truncates toward zero. -7 / 2 = -3.5 truncated to -3.",
+      "hints": [
+        "Integer division discards decimal",
+        "Truncates toward zero",
+        "-7 / 2 = -3"
+      ],
+      "tags": [
+        "integer_division",
+        "negative",
+        "truncation"
+      ]
+    },
+    {
+      "id": "int_div_022",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modulo with Negative",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", -7 % 3);\n    return 0;\n}",
+      "options": [
+        "-1",
+        "1",
+        "-2",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "In C, result of % has same sign as dividend. -7 = -2 * 3 + (-1), so -7 % 3 = -1.",
+      "hints": [
+        "Modulo result has dividend's sign",
+        "-7 divided by 3 is -2 remainder -1",
+        "Result is -1"
+      ],
+      "tags": [
+        "modulo",
+        "negative",
+        "remainder"
+      ]
+    },
+    {
+      "id": "int_div_023",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Division Order",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    printf(\"%d\\n\", 10 / 2 / 2);\n    return 0;\n}",
+      "options": [
+        "2",
+        "2.5",
+        "5",
+        "10"
+      ],
+      "correct_answer": "A",
+      "explanation": "Division is left-associative. 10 / 2 = 5, then 5 / 2 = 2.",
+      "hints": [
+        "Evaluate left to right",
+        "10 / 2 = 5",
+        "5 / 2 = 2"
+      ],
+      "tags": [
+        "integer_division",
+        "associativity",
+        "order"
+      ]
+    },
+    {
+      "id": "int_div_024",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Mixed Type Division",
+      "description": "What does this print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 7;\n    double b = 2;\n    printf(\"%f\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "3.0",
+        "3.5",
+        "3",
+        "Error"
+      ],
+      "correct_answer": "B",
+      "explanation": "Mixed int/double promotes to double division. 7.0 / 2.0 = 3.5.",
+      "hints": [
+        "int promoted to double",
+        "Becomes floating-point division",
+        "7.0 / 2.0 = 3.5"
+      ],
+      "tags": [
+        "division",
+        "type_conversion",
+        "promotion"
+      ]
+    },
+    {
+      "id": "int_div_025",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Rounding Up Division",
+      "description": "Which expression rounds up integer division a/b?",
+      "code_template": "int a = 7, b = 3;\n// Want ceiling of 7/3 = 3 (not 2)",
+      "options": [
+        "a / b",
+        "(a + b - 1) / b",
+        "a / b + 1",
+        "(a / b) + 0.5"
+      ],
+      "correct_answer": "B",
+      "explanation": "(a + b - 1) / b rounds up. For 7/3: (7 + 3 - 1) / 3 = 9/3 = 3.",
+      "hints": [
+        "Normal division truncates down",
+        "Add (b-1) before dividing",
+        "7+2=9, 9/3=3"
+      ],
+      "tags": [
+        "integer_division",
+        "ceiling",
+        "rounding"
+      ]
+    },
+    {
+      "id": "term_001",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad betyder 'int' i C?",
+      "question": "Hvad er datatypen 'int' i C?",
+      "options": {
+        "A": "Et heltal (integer)",
+        "B": "Et decimaltal",
+        "C": "En tekststreng",
+        "D": "En pointer"
+      },
+      "correct_answer": "A",
+      "explanation": "'int' st\u00e5r for integer og bruges til at gemme heltal."
+    },
+    {
+      "id": "term_002",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad betyder 'char' i C?",
+      "question": "Hvad er datatypen 'char' i C?",
+      "options": {
+        "A": "Et heltal",
+        "B": "Et enkelt tegn (character)",
+        "C": "En tekststreng",
+        "D": "En boolean v\u00e6rdi"
+      },
+      "correct_answer": "B",
+      "explanation": "'char' st\u00e5r for character og bruges til at gemme et enkelt tegn (1 byte)."
+    },
+    {
+      "id": "term_003",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad betyder 'float' i C?",
+      "question": "Hvad er datatypen 'float' i C?",
+      "options": {
+        "A": "Et heltal",
+        "B": "Et tegn",
+        "C": "Et decimaltal med enkelt pr\u00e6cision",
+        "D": "En pointer"
+      },
+      "correct_answer": "C",
+      "explanation": "'float' bruges til at gemme decimaltal med enkelt pr\u00e6cision (floating point)."
+    },
+    {
+      "id": "term_004",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad betyder 'double' i C?",
+      "question": "Hvad er datatypen 'double' i C?",
+      "options": {
+        "A": "To gange et heltal",
+        "B": "Et decimaltal med dobbelt pr\u00e6cision",
+        "C": "To char v\u00e6rdier",
+        "D": "En array af to elementer"
+      },
+      "correct_answer": "B",
+      "explanation": "'double' bruges til at gemme decimaltal med dobbelt pr\u00e6cision - mere pr\u00e6cist end float."
+    },
+    {
+      "id": "term_005",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad betyder 'void' i C?",
+      "question": "Hvad betyder 'void' i C?",
+      "options": {
+        "A": "En tom datatype / ingen v\u00e6rdi",
+        "B": "Et heltal",
+        "C": "Null pointer",
+        "D": "En fejl"
+      },
+      "correct_answer": "A",
+      "explanation": "'void' betyder 'tom' eller 'ingen v\u00e6rdi' og bruges fx til funktioner der ikke returnerer noget."
+    },
+    {
+      "id": "term_006",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad betyder '*' operator i C?",
+      "question": "Hvad er '*' operatoren i C (i kontekst af pointere)?",
+      "options": {
+        "A": "Multiplikation",
+        "B": "Dereference - f\u00e5 v\u00e6rdien en pointer peger p\u00e5",
+        "C": "Address-of operator",
+        "D": "Division"
+      },
+      "correct_answer": "B",
+      "explanation": "'*' foran en pointer (dereference) giver adgang til den v\u00e6rdi pointeren peger p\u00e5. Fx: *ptr f\u00e5r v\u00e6rdien."
+    },
+    {
+      "id": "term_007",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad betyder '&' operator i C?",
+      "question": "Hvad er '&' operatoren i C (i kontekst af pointere)?",
+      "options": {
+        "A": "Bitwise AND",
+        "B": "Logical AND",
+        "C": "Address-of operator - f\u00e5 adressen p\u00e5 en variabel",
+        "D": "Reference operator"
+      },
+      "correct_answer": "C",
+      "explanation": "'&' foran en variabel giver dens hukommelsesadresse. Fx: &x giver adressen hvor x er gemt."
+    },
+    {
+      "id": "term_008",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'malloc' i C?",
+      "question": "Hvad g\u00f8r funktionen 'malloc' i C?",
+      "options": {
+        "A": "Frigiver hukommelse",
+        "B": "Allokerer dynamisk hukommelse p\u00e5 heap",
+        "C": "Kopierer hukommelse",
+        "D": "Initialiserer variabler til 0"
+      },
+      "correct_answer": "B",
+      "explanation": "'malloc' (memory allocation) allokerer hukommelse dynamisk p\u00e5 heap og returnerer en pointer til den."
+    },
+    {
+      "id": "term_009",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'free' i C?",
+      "question": "Hvad g\u00f8r funktionen 'free' i C?",
+      "options": {
+        "A": "Allokerer hukommelse",
+        "B": "Frigiver dynamisk allokeret hukommelse",
+        "C": "Nulstiller variabler",
+        "D": "Returnerer en gratis v\u00e6rdi"
+      },
+      "correct_answer": "B",
+      "explanation": "'free' frigiver hukommelse der tidligere er blevet allokeret med malloc/calloc/realloc."
+    },
+    {
+      "id": "term_010",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'sizeof' i C?",
+      "question": "Hvad g\u00f8r 'sizeof' operatoren i C?",
+      "options": {
+        "A": "Returnerer antallet af elementer i et array",
+        "B": "Returnerer st\u00f8rrelsen (i bytes) af en datatype eller variabel",
+        "C": "T\u00e6ller antal tegn i en streng",
+        "D": "Returnerer l\u00e6ngden af en fil"
+      },
+      "correct_answer": "B",
+      "explanation": "'sizeof' returnerer st\u00f8rrelsen i bytes af en datatype eller variabel. Fx: sizeof(int) giver typisk 4."
+    },
+    {
+      "id": "term_011",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'stack' i C?",
+      "question": "Hvad er stack (stakken) i C programmering?",
+      "options": {
+        "A": "En dynamisk hukommelsesomr\u00e5de",
+        "B": "Et omr\u00e5de til globale variabler",
+        "C": "Et hukommelsesomr\u00e5de til lokale variabler og funktionskald",
+        "D": "En datastruktur du skal implementere selv"
+      },
+      "correct_answer": "C",
+      "explanation": "Stack er et hukommelsesomr\u00e5de hvor lokale variabler og funktionskald gemmes. Den arbejder efter LIFO princippet."
+    },
+    {
+      "id": "term_012",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'heap' i C?",
+      "question": "Hvad er heap i C programmering?",
+      "options": {
+        "A": "Et omr\u00e5de til lokale variabler",
+        "B": "Et omr\u00e5de til dynamisk hukommelsesallokering",
+        "C": "En sorteringsalgoritme",
+        "D": "Et omr\u00e5de til konstanter"
+      },
+      "correct_answer": "B",
+      "explanation": "Heap er et hukommelsesomr\u00e5de hvor dynamisk allokeret hukommelse (malloc, calloc, etc.) gemmes."
+    },
+    {
+      "id": "term_013",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'NULL' i C?",
+      "question": "Hvad er NULL i C?",
+      "options": {
+        "A": "En tom streng",
+        "B": "Tallet 0",
+        "C": "En null pointer - en pointer der ikke peger p\u00e5 noget gyldigt",
+        "D": "En fejlkode"
+      },
+      "correct_answer": "C",
+      "explanation": "NULL er en speciel pointer v\u00e6rdi (typisk 0) der indikerer at pointeren ikke peger p\u00e5 noget gyldigt."
+    },
+    {
+      "id": "term_014",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'struct' i C?",
+      "question": "Hvad er en 'struct' i C?",
+      "options": {
+        "A": "En funktion",
+        "B": "En sammensat datatype der grupperer forskellige variabler",
+        "C": "Et array",
+        "D": "En pointer type"
+      },
+      "correct_answer": "B",
+      "explanation": "En struct er en sammensat datatype der kan indeholde flere variabler af forskellige typer."
+    },
+    {
+      "id": "term_015",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'typedef' i C?",
+      "question": "Hvad g\u00f8r 'typedef' i C?",
+      "options": {
+        "A": "Definerer en ny datatype",
+        "B": "Opretter et alias (nyt navn) for en eksisterende datatype",
+        "C": "Erkl\u00e6rer en konstant",
+        "D": "Importerer en header fil"
+      },
+      "correct_answer": "B",
+      "explanation": "'typedef' opretter et nyt navn (alias) for en eksisterende datatype, fx: typedef int myInt;"
+    },
+    {
+      "id": "term_016",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'return' i C?",
+      "question": "Hvad g\u00f8r 'return' statement i C?",
+      "options": {
+        "A": "Starter en funktion",
+        "B": "Afslutter en funktion og returnerer en v\u00e6rdi",
+        "C": "Erkl\u00e6rer en variabel",
+        "D": "Kalder en funktion"
+      },
+      "correct_answer": "B",
+      "explanation": "'return' afslutter udf\u00f8relsen af en funktion og returnerer en v\u00e6rdi til kalderen."
+    },
+    {
+      "id": "term_017",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'static' i C?",
+      "question": "Hvad betyder 'static' keyword i C?",
+      "options": {
+        "A": "Variablen kan ikke \u00e6ndres",
+        "B": "Variablen beholder sin v\u00e6rdi mellem funktionskald / begr\u00e6nser scope",
+        "C": "Variablen er global",
+        "D": "Variablen er konstant"
+      },
+      "correct_answer": "B",
+      "explanation": "'static' g\u00f8r at en lokal variabel beholder sin v\u00e6rdi mellem funktionskald, og begr\u00e6nser globale variable/funktioner til filen."
+    },
+    {
+      "id": "term_018",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'const' i C?",
+      "question": "Hvad betyder 'const' keyword i C?",
+      "options": {
+        "A": "Variablen er global",
+        "B": "Variablen er statisk",
+        "C": "Variablen er read-only (kan ikke \u00e6ndres)",
+        "D": "Variablen er privat"
+      },
+      "correct_answer": "C",
+      "explanation": "'const' markerer en variabel som read-only - dens v\u00e6rdi kan ikke \u00e6ndres efter initialisering."
+    },
+    {
+      "id": "term_019",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'extern' i C?",
+      "question": "Hvad betyder 'extern' keyword i C?",
+      "options": {
+        "A": "Erkl\u00e6rer en variabel der er defineret i en anden fil",
+        "B": "G\u00f8r en variabel privat",
+        "C": "Allokerer hukommelse",
+        "D": "Importerer et bibliotek"
+      },
+      "correct_answer": "A",
+      "explanation": "'extern' erkl\u00e6rer at en variabel eller funktion er defineret et andet sted (typisk i en anden fil)."
+    },
+    {
+      "id": "term_020",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er '#include' i C?",
+      "question": "Hvad g\u00f8r '#include' direktiv i C?",
+      "options": {
+        "A": "Kompilerer kode",
+        "B": "Inkluderer indholdet af en header fil",
+        "C": "Definerer en makro",
+        "D": "Importerer et bibliotek"
+      },
+      "correct_answer": "B",
+      "explanation": "#include er et preprocessor direktiv der inkluderer indholdet af en header fil i kildekoden."
+    },
+    {
+      "id": "term_021",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er '#define' i C?",
+      "question": "Hvad g\u00f8r '#define' direktiv i C?",
+      "options": {
+        "A": "Definerer en funktion",
+        "B": "Definerer en makro eller konstant",
+        "C": "Inkluderer en fil",
+        "D": "Erkl\u00e6rer en variabel"
+      },
+      "correct_answer": "B",
+      "explanation": "#define er et preprocessor direktiv der definerer en makro eller symbolsk konstant."
+    },
+    {
+      "id": "term_022",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'printf' i C?",
+      "question": "Hvad g\u00f8r funktionen 'printf' i C?",
+      "options": {
+        "A": "L\u00e6ser input fra brugeren",
+        "B": "Printer formateret output til stdout (sk\u00e6rmen)",
+        "C": "Allokerer hukommelse",
+        "D": "Kompilerer kode"
+      },
+      "correct_answer": "B",
+      "explanation": "'printf' er en funktion der printer formateret output til standard output (typisk sk\u00e6rmen)."
+    },
+    {
+      "id": "term_023",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'scanf' i C?",
+      "question": "Hvad g\u00f8r funktionen 'scanf' i C?",
+      "options": {
+        "A": "Printer til sk\u00e6rmen",
+        "B": "L\u00e6ser formateret input fra stdin (tastaturet)",
+        "C": "Scaner filer",
+        "D": "Konverterer strenge"
+      },
+      "correct_answer": "B",
+      "explanation": "'scanf' l\u00e6ser formateret input fra standard input (typisk tastaturet) og gemmer det i variabler."
+    },
+    {
+      "id": "term_024",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'segmentation fault'?",
+      "question": "Hvad betyder 'segmentation fault' i C?",
+      "options": {
+        "A": "Syntaksfejl i koden",
+        "B": "Ugyldig hukommelsesadgang (fx. dereferencing null pointer)",
+        "C": "Division med nul",
+        "D": "Kompileringsfejl"
+      },
+      "correct_answer": "B",
+      "explanation": "Segmentation fault opst\u00e5r n\u00e5r programmet fors\u00f8ger at tilg\u00e5 hukommelse det ikke har adgang til, fx ved at dereferere en null pointer."
+    },
+    {
+      "id": "term_025",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'strlen' i C?",
+      "question": "Hvad g\u00f8r funktionen 'strlen' i C?",
+      "options": {
+        "A": "Returnerer l\u00e6ngden af en streng (uden null terminator)",
+        "B": "Returnerer st\u00f8rrelsen af en struct",
+        "C": "T\u00e6ller antal elementer i et array",
+        "D": "Allokerer hukommelse til en streng"
+      },
+      "correct_answer": "A",
+      "explanation": "'strlen' returnerer l\u00e6ngden af en null-termineret streng (antal tegn f\u00f8r '\\0')."
+    },
+    {
+      "id": "term_026",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'strcpy' i C?",
+      "question": "Hvad g\u00f8r funktionen 'strcpy' i C?",
+      "options": {
+        "A": "Sammenligner to strenge",
+        "B": "Kopierer en streng til en anden",
+        "C": "Konkatenerer to strenge",
+        "D": "Finder l\u00e6ngden af en streng"
+      },
+      "correct_answer": "B",
+      "explanation": "'strcpy' kopierer indholdet af en streng til en anden (inklusiv null terminator)."
+    },
+    {
+      "id": "term_027",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'strcmp' i C?",
+      "question": "Hvad g\u00f8r funktionen 'strcmp' i C?",
+      "options": {
+        "A": "Kopierer en streng",
+        "B": "Sammenligner to strenge leksikografisk",
+        "C": "Finder en substring",
+        "D": "Konverterer til lowercase"
+      },
+      "correct_answer": "B",
+      "explanation": "'strcmp' sammenligner to strenge og returnerer 0 hvis de er ens, <0 hvis f\u00f8rste er mindre, >0 hvis f\u00f8rste er st\u00f8rre."
+    },
+    {
+      "id": "term_028",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'array' i C?",
+      "question": "Hvad er et array i C?",
+      "options": {
+        "A": "En pointer",
+        "B": "En samling af elementer af samme type gemt i sammenh\u00e6ngende hukommelse",
+        "C": "En struct",
+        "D": "En funktion"
+      },
+      "correct_answer": "B",
+      "explanation": "Et array er en samling af elementer af samme datatype, gemt i sammenh\u00e6ngende hukommelse."
+    },
+    {
+      "id": "term_029",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'pointer arithmetic' i C?",
+      "question": "Hvad er pointer arithmetic i C?",
+      "options": {
+        "A": "Normal matematik med tal",
+        "B": "Regneoperationer p\u00e5 pointer adresser (fx ptr + 1)",
+        "C": "Division med pointere",
+        "D": "Multiplikation af hukommelse"
+      },
+      "correct_answer": "B",
+      "explanation": "Pointer arithmetic er operationer p\u00e5 pointere, fx ptr+1 flytter pointeren til n\u00e6ste element (afh\u00e6ngig af datatype st\u00f8rrelse)."
+    },
+    {
+      "id": "term_030",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'dangling pointer'?",
+      "question": "Hvad er en dangling pointer i C?",
+      "options": {
+        "A": "En null pointer",
+        "B": "En pointer der peger p\u00e5 hukommelse der er blevet frigivet",
+        "C": "En pointer til en konstant",
+        "D": "En pointer med ugyldig syntaks"
+      },
+      "correct_answer": "B",
+      "explanation": "En dangling pointer er en pointer der peger p\u00e5 hukommelse der allerede er blevet frigivet (fx efter free())."
+    },
+    {
+      "id": "term_031",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'memory leak'?",
+      "question": "Hvad er en memory leak i C?",
+      "options": {
+        "A": "For meget hukommelse allokeret",
+        "B": "Hukommelse der er allokeret men aldrig frigivet",
+        "C": "En segmentation fault",
+        "D": "En dangling pointer"
+      },
+      "correct_answer": "B",
+      "explanation": "En memory leak opst\u00e5r n\u00e5r dynamisk allokeret hukommelse ikke bliver frigivet med free(), hvilket spilde hukommelse."
+    },
+    {
+      "id": "term_032",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'fopen' i C?",
+      "question": "Hvad g\u00f8r funktionen 'fopen' i C?",
+      "options": {
+        "A": "Lukker en fil",
+        "B": "\u00c5bner en fil og returnerer en FILE pointer",
+        "C": "L\u00e6ser fra en fil",
+        "D": "Skriver til en fil"
+      },
+      "correct_answer": "B",
+      "explanation": "'fopen' \u00e5bner en fil i en specifik mode (l\u00e6s/skriv) og returnerer en FILE pointer til filen."
+    },
+    {
+      "id": "term_033",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'fclose' i C?",
+      "question": "Hvad g\u00f8r funktionen 'fclose' i C?",
+      "options": {
+        "A": "\u00c5bner en fil",
+        "B": "Lukker en \u00e5ben fil",
+        "C": "L\u00e6ser fra en fil",
+        "D": "Sletter en fil"
+      },
+      "correct_answer": "B",
+      "explanation": "'fclose' lukker en \u00e5ben fil og frigiver ressourcerne associeret med FILE pointeren."
+    },
+    {
+      "id": "term_034",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er '++' operator i C?",
+      "question": "Hvad g\u00f8r '++' operatoren i C?",
+      "options": {
+        "A": "Fordobler en v\u00e6rdi",
+        "B": "Inkrementerer (\u00f8ger) en v\u00e6rdi med 1",
+        "C": "Adderer to tal",
+        "D": "Konkatenerer strenge"
+      },
+      "correct_answer": "B",
+      "explanation": "'++' er increment operatoren der \u00f8ger en variabels v\u00e6rdi med 1. Kan bruges prefix (++x) eller postfix (x++)."
+    },
+    {
+      "id": "term_035",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er '--' operator i C?",
+      "question": "Hvad g\u00f8r '--' operatoren i C?",
+      "options": {
+        "A": "Halverer en v\u00e6rdi",
+        "B": "Dekrementerer (mindsker) en v\u00e6rdi med 1",
+        "C": "Tr\u00e6kker to tal fra hinanden",
+        "D": "Dividerer med 2"
+      },
+      "correct_answer": "B",
+      "explanation": "'--' er decrement operatoren der mindsker en variabels v\u00e6rdi med 1. Kan bruges prefix (--x) eller postfix (x--)."
+    },
+    {
+      "id": "term_036",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '==' operator i C?",
+      "question": "Hvad g\u00f8r '==' operatoren i C?",
+      "options": {
+        "A": "Tildeler en v\u00e6rdi",
+        "B": "Sammenligner to v\u00e6rdier for lighed",
+        "C": "Kopierer en v\u00e6rdi",
+        "D": "Fordobler en v\u00e6rdi"
+      },
+      "correct_answer": "B",
+      "explanation": "'==' er sammenligningsoperatoren der tjekker om to v\u00e6rdier er ens (returnerer 1 for sand, 0 for falsk)."
+    },
+    {
+      "id": "term_037",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '!=' operator i C?",
+      "question": "Hvad g\u00f8r '!=' operatoren i C?",
+      "options": {
+        "A": "Tildeler en v\u00e6rdi",
+        "B": "Sammenligner om to v\u00e6rdier er forskellige",
+        "C": "Negerer en v\u00e6rdi",
+        "D": "Factorial operation"
+      },
+      "correct_answer": "B",
+      "explanation": "'!=' er sammenligningsoperatoren der tjekker om to v\u00e6rdier er forskellige (not equal)."
+    },
+    {
+      "id": "term_038",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '&&' operator i C?",
+      "question": "Hvad g\u00f8r '&&' operatoren i C?",
+      "options": {
+        "A": "Bitwise AND",
+        "B": "Logical AND - begge betingelser skal v\u00e6re sande",
+        "C": "Address-of operator",
+        "D": "Pointer dereference"
+      },
+      "correct_answer": "B",
+      "explanation": "'&&' er logical AND operatoren - returnerer sand (1) kun hvis begge operander er sande."
+    },
+    {
+      "id": "term_039",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '||' operator i C?",
+      "question": "Hvad g\u00f8r '||' operatoren i C?",
+      "options": {
+        "A": "Bitwise OR",
+        "B": "Logical OR - mindst \u00e9n betingelse skal v\u00e6re sand",
+        "C": "Division",
+        "D": "Konkatenering"
+      },
+      "correct_answer": "B",
+      "explanation": "'||' er logical OR operatoren - returnerer sand (1) hvis mindst \u00e9n af operanderne er sand."
+    },
+    {
+      "id": "term_040",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '!' operator i C?",
+      "question": "Hvad g\u00f8r '!' operatoren i C?",
+      "options": {
+        "A": "Factorial",
+        "B": "Logical NOT - negerer en boolean v\u00e6rdi",
+        "C": "Not equal",
+        "D": "Bitwise NOT"
+      },
+      "correct_answer": "B",
+      "explanation": "'!' er logical NOT operatoren - vender en boolean v\u00e6rdi om (sand bliver falsk, falsk bliver sand)."
+    },
+    {
+      "id": "term_041",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'enum' i C?",
+      "question": "Hvad er en 'enum' i C?",
+      "options": {
+        "A": "En funktion",
+        "B": "En opregningstype - navngivne heltalskonstanter",
+        "C": "En struct",
+        "D": "En pointer type"
+      },
+      "correct_answer": "B",
+      "explanation": "'enum' definerer en opregningstype med navngivne heltalskonstanter, fx enum Color {RED, GREEN, BLUE}."
+    },
+    {
+      "id": "term_042",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'union' i C?",
+      "question": "Hvad er en 'union' i C?",
+      "options": {
+        "A": "En struct med flere medlemmer",
+        "B": "En datatype hvor alle medlemmer deler samme hukommelse",
+        "C": "En sammenf\u00f8jning af to arrays",
+        "D": "En type pointer"
+      },
+      "correct_answer": "B",
+      "explanation": "En union er en datatype hvor alle medlemmer deler den samme hukommelsesplacering - kun \u00e9t medlem kan bruges ad gangen."
+    },
+    {
+      "id": "term_043",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'argc' i C?",
+      "question": "Hvad er 'argc' i main funktionen?",
+      "options": {
+        "A": "Antallet af argumenter",
+        "B": "Argument character count",
+        "C": "Array count",
+        "D": "Architecture code"
+      },
+      "correct_answer": "A",
+      "explanation": "'argc' (argument count) er antallet af kommandolinje argumenter givet til programmet."
+    },
+    {
+      "id": "term_044",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'argv' i C?",
+      "question": "Hvad er 'argv' i main funktionen?",
+      "options": {
+        "A": "Argument value - array af argument strenge",
+        "B": "Argument variable",
+        "C": "Average value",
+        "D": "Array version"
+      },
+      "correct_answer": "A",
+      "explanation": "'argv' (argument vector) er et array af strenge der indeholder kommandolinje argumenterne."
+    },
+    {
+      "id": "term_045",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'volatile' i C?",
+      "question": "Hvad betyder 'volatile' keyword i C?",
+      "options": {
+        "A": "Variablen er ustabil og kan crashe",
+        "B": "Fort\u00e6ller compileren at variablen kan \u00e6ndres uforudset",
+        "C": "Variablen er midlertidig",
+        "D": "Variablen er konstant"
+      },
+      "correct_answer": "B",
+      "explanation": "'volatile' fort\u00e6ller compileren at variablen kan \u00e6ndres af eksterne faktorer (fx hardware), s\u00e5 den ikke optimerer adgang v\u00e6k."
+    },
+    {
+      "id": "term_046",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'calloc' i C?",
+      "question": "Hvad g\u00f8r funktionen 'calloc' i C?",
+      "options": {
+        "A": "Kalder en funktion",
+        "B": "Allokerer hukommelse og initialiserer den til 0",
+        "C": "T\u00e6ller kalories",
+        "D": "Kopierer hukommelse"
+      },
+      "correct_answer": "B",
+      "explanation": "'calloc' (contiguous allocation) allokerer hukommelse og initialiserer alle bytes til 0, i mods\u00e6tning til malloc."
+    },
+    {
+      "id": "term_047",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'realloc' i C?",
+      "question": "Hvad g\u00f8r funktionen 'realloc' i C?",
+      "options": {
+        "A": "Frigiver hukommelse",
+        "B": "\u00c6ndrer st\u00f8rrelsen af allokeret hukommelse",
+        "C": "Allokerer ny hukommelse",
+        "D": "Genindl\u00e6ser en fil"
+      },
+      "correct_answer": "B",
+      "explanation": "'realloc' \u00e6ndrer st\u00f8rrelsen af tidligere allokeret hukommelse, og kopierer data hvis n\u00f8dvendigt."
+    },
+    {
+      "id": "term_048",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'break' i C?",
+      "question": "Hvad g\u00f8r 'break' statement i C?",
+      "options": {
+        "A": "Stopper programmet",
+        "B": "Afslutter den n\u00e6rmeste loop eller switch",
+        "C": "Pauserer udf\u00f8relsen",
+        "D": "Returnerer fra en funktion"
+      },
+      "correct_answer": "B",
+      "explanation": "'break' afslutter straks den n\u00e6rmeste loop (for/while/do-while) eller switch statement."
+    },
+    {
+      "id": "term_049",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'continue' i C?",
+      "question": "Hvad g\u00f8r 'continue' statement i C?",
+      "options": {
+        "A": "Forts\u00e6tter til n\u00e6ste fil",
+        "B": "Springer resten af loop iterationen over og g\u00e5r til n\u00e6ste iteration",
+        "C": "Genoptager efter en pause",
+        "D": "Forts\u00e6tter udf\u00f8relsen efter break"
+      },
+      "correct_answer": "B",
+      "explanation": "'continue' springer resten af den aktuelle loop iteration over og forts\u00e6tter med n\u00e6ste iteration."
+    },
+    {
+      "id": "term_050",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'switch' i C?",
+      "question": "Hvad er 'switch' statement i C?",
+      "options": {
+        "A": "En loop struktur",
+        "B": "En multi-vejs beslutningsstruktur baseret p\u00e5 en v\u00e6rdi",
+        "C": "En funktion",
+        "D": "En variabel type"
+      },
+      "correct_answer": "B",
+      "explanation": "'switch' er en kontrol struktur der v\u00e6lger mellem flere cases baseret p\u00e5 v\u00e6rdien af et udtryk."
+    },
+    {
+      "id": "term_051",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'case' i C?",
+      "question": "Hvad er 'case' i et switch statement?",
+      "options": {
+        "A": "En betingelse",
+        "B": "En label for en specifik v\u00e6rdi i switch",
+        "C": "En loop",
+        "D": "En funktion"
+      },
+      "correct_answer": "B",
+      "explanation": "'case' definerer en label for en specifik v\u00e6rdi i et switch statement, efterfulgt af kode der skal udf\u00f8res."
+    },
+    {
+      "id": "term_052",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'default' i C?",
+      "question": "Hvad er 'default' case i et switch statement?",
+      "options": {
+        "A": "Standardv\u00e6rdien for en variabel",
+        "B": "Case der udf\u00f8res hvis ingen andre cases matcher",
+        "C": "F\u00f8rste case der udf\u00f8res",
+        "D": "En fejlh\u00e5ndtering"
+      },
+      "correct_answer": "B",
+      "explanation": "'default' er en valgfri case i switch der udf\u00f8res hvis ingen af de andre cases matcher."
+    },
+    {
+      "id": "term_053",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'inline' i C?",
+      "question": "Hvad betyder 'inline' keyword i C?",
+      "options": {
+        "A": "Funktionen skal v\u00e6re p\u00e5 \u00e9n linje",
+        "B": "Hint til compileren om at inds\u00e6tte funktionskode direkte",
+        "C": "Funktionen er privat",
+        "D": "Funktionen er rekursiv"
+      },
+      "correct_answer": "B",
+      "explanation": "'inline' er et hint til compileren om at inds\u00e6tte funktionens kode direkte i stedet for at kalde den (for optimering)."
+    },
+    {
+      "id": "term_054",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'register' i C?",
+      "question": "Hvad betyder 'register' keyword i C?",
+      "options": {
+        "A": "Registrerer en variabel i en database",
+        "B": "Hint om at gemme variablen i CPU register for hurtig adgang",
+        "C": "G\u00f8r variablen global",
+        "D": "Beskytter variablen mod \u00e6ndringer"
+      },
+      "correct_answer": "B",
+      "explanation": "'register' er et hint til compileren om at gemme variablen i et CPU register for hurtigere adgang."
+    },
+    {
+      "id": "term_055",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'goto' i C?",
+      "question": "Hvad g\u00f8r 'goto' statement i C?",
+      "options": {
+        "A": "Kalder en funktion",
+        "B": "Springer direkte til en label i koden",
+        "C": "Returnerer fra en funktion",
+        "D": "Starter en loop"
+      },
+      "correct_answer": "B",
+      "explanation": "'goto' springer direkte til en navngiven label i koden. Generelt frar\u00e5det da det kan g\u00f8re koden sv\u00e6r at f\u00f8lge."
+    },
+    {
+      "id": "term_056",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'if' i C?",
+      "question": "Hvad er 'if' statement i C?",
+      "options": {
+        "A": "En loop",
+        "B": "En betinget struktur - udf\u00f8rer kode hvis betingelse er sand",
+        "C": "En funktion",
+        "D": "En variabel"
+      },
+      "correct_answer": "B",
+      "explanation": "'if' er en kontrol struktur der udf\u00f8rer kode kun hvis den givne betingelse evaluerer til sand (non-zero)."
+    },
+    {
+      "id": "term_057",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'else' i C?",
+      "question": "Hvad er 'else' i C?",
+      "options": {
+        "A": "En alternativ betingelse",
+        "B": "Kode der udf\u00f8res hvis if-betingelsen er falsk",
+        "C": "En loop",
+        "D": "En funktion"
+      },
+      "correct_answer": "B",
+      "explanation": "'else' angiver kode der skal udf\u00f8res hvis if-betingelsen er falsk."
+    },
+    {
+      "id": "term_058",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'for' i C?",
+      "question": "Hvad er 'for' loop i C?",
+      "options": {
+        "A": "En betinget struktur",
+        "B": "En loop med initialisering, betingelse og opdatering",
+        "C": "En funktion",
+        "D": "En division operator"
+      },
+      "correct_answer": "B",
+      "explanation": "'for' er en loop struktur med tre dele: initialisering, betingelse og opdatering, fx: for(i=0; i<10; i++)"
+    },
+    {
+      "id": "term_059",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'while' i C?",
+      "question": "Hvad er 'while' loop i C?",
+      "options": {
+        "A": "En betinget struktur",
+        "B": "En loop der k\u00f8rer mens betingelsen er sand",
+        "C": "En funktion",
+        "D": "En tidsm\u00e5ling"
+      },
+      "correct_answer": "B",
+      "explanation": "'while' er en loop der gentager kode s\u00e5 l\u00e6nge den givne betingelse er sand (non-zero)."
+    },
+    {
+      "id": "term_060",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "points": 2,
+      "title": "Hvad er 'do-while' i C?",
+      "question": "Hvad er forskellen p\u00e5 'do-while' og 'while' loop?",
+      "options": {
+        "A": "Ingen forskel",
+        "B": "do-while udf\u00f8rer loop mindst \u00e9n gang f\u00f8r betingelsen tjekkes",
+        "C": "do-while er hurtigere",
+        "D": "do-while kan ikke bruges med break"
+      },
+      "correct_answer": "B",
+      "explanation": "'do-while' udf\u00f8rer loop body mindst \u00e9n gang, da betingelsen tjekkes efter udf\u00f8relsen i stedet for f\u00f8r."
+    },
+    {
+      "id": "term_061",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'signed' i C?",
+      "question": "Hvad betyder 'signed' i C?",
+      "options": {
+        "A": "Variablen er krypteret",
+        "B": "Variablen kan v\u00e6re negativ (har fortegn)",
+        "C": "Variablen er kun positiv",
+        "D": "Variablen er konstant"
+      },
+      "correct_answer": "B",
+      "explanation": "'signed' angiver at variablen kan have b\u00e5de positive og negative v\u00e6rdier (med fortegn). Dette er default for int."
+    },
+    {
+      "id": "term_062",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'unsigned' i C?",
+      "question": "Hvad betyder 'unsigned' i C?",
+      "options": {
+        "A": "Variablen er ikke initialiseret",
+        "B": "Variablen kan kun v\u00e6re ikke-negativ (uden fortegn)",
+        "C": "Variablen er konstant",
+        "D": "Variablen er global"
+      },
+      "correct_answer": "B",
+      "explanation": "'unsigned' angiver at variablen kun kan have ikke-negative v\u00e6rdier (0 og positive), hvilket fordobler max v\u00e6rdien."
+    },
+    {
+      "id": "term_063",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'short' i C?",
+      "question": "Hvad er 'short' datatype i C?",
+      "options": {
+        "A": "En kort streng",
+        "B": "Et heltal med mindre st\u00f8rrelse end int",
+        "C": "En funktion med f\u00e5 linjer",
+        "D": "En boolean"
+      },
+      "correct_answer": "B",
+      "explanation": "'short' (eller short int) er en heltalstype der typisk bruger f\u00e6rre bytes end int (ofte 2 bytes)."
+    },
+    {
+      "id": "term_064",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'long' i C?",
+      "question": "Hvad er 'long' datatype i C?",
+      "options": {
+        "A": "En lang streng",
+        "B": "Et heltal med st\u00f8rre st\u00f8rrelse end int",
+        "C": "En funktion der tager lang tid",
+        "D": "Et decimaltal"
+      },
+      "correct_answer": "B",
+      "explanation": "'long' (eller long int) er en heltalstype der typisk bruger flere bytes end int for st\u00f8rre v\u00e6rdier."
+    },
+    {
+      "id": "term_065",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'size_t' i C?",
+      "question": "Hvad er 'size_t' type i C?",
+      "options": {
+        "A": "En struct for st\u00f8rrelse",
+        "B": "Unsigned integer type til st\u00f8rrelser og indekser",
+        "C": "En funktion der returnerer st\u00f8rrelse",
+        "D": "En konstant"
+      },
+      "correct_answer": "B",
+      "explanation": "'size_t' er en unsigned integer type returneret af sizeof operatoren, brugt til st\u00f8rrelser og array indekser."
+    },
+    {
+      "id": "term_066",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'EOF' i C?",
+      "question": "Hvad er EOF i C?",
+      "options": {
+        "A": "Error or Failure",
+        "B": "End Of File - markerer slutningen p\u00e5 en fil",
+        "C": "Execute or Finish",
+        "D": "Error Output Flag"
+      },
+      "correct_answer": "B",
+      "explanation": "EOF (End Of File) er en konstant (typisk -1) der indikerer at slutningen af en fil er n\u00e5et."
+    },
+    {
+      "id": "term_067",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'stdin' i C?",
+      "question": "Hvad er 'stdin' i C?",
+      "options": {
+        "A": "Standard input - typisk tastaturet",
+        "B": "String input",
+        "C": "Static input",
+        "D": "Start input"
+      },
+      "correct_answer": "A",
+      "explanation": "'stdin' er standard input stream, typisk forbundet til tastaturet."
+    },
+    {
+      "id": "term_068",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'stdout' i C?",
+      "question": "Hvad er 'stdout' i C?",
+      "options": {
+        "A": "Standard output - typisk sk\u00e6rmen",
+        "B": "String output",
+        "C": "Static output",
+        "D": "Start output"
+      },
+      "correct_answer": "A",
+      "explanation": "'stdout' er standard output stream, typisk forbundet til sk\u00e6rmen/konsollen."
+    },
+    {
+      "id": "term_069",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'stderr' i C?",
+      "question": "Hvad er 'stderr' i C?",
+      "options": {
+        "A": "Standard error - output stream til fejlmeddelelser",
+        "B": "String error",
+        "C": "Static error",
+        "D": "Start error"
+      },
+      "correct_answer": "A",
+      "explanation": "'stderr' er standard error stream brugt til fejlmeddelelser, typisk ogs\u00e5 forbundet til sk\u00e6rmen."
+    },
+    {
+      "id": "term_070",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'pragma' i C?",
+      "question": "Hvad er '#pragma' direktiv i C?",
+      "options": {
+        "A": "Definerer en konstant",
+        "B": "Compiler-specifikt direktiv for specielle instruktioner",
+        "C": "Inkluderer en header fil",
+        "D": "Erkl\u00e6rer en makro"
+      },
+      "correct_answer": "B",
+      "explanation": "#pragma er et preprocessor direktiv der giver compiler-specifikke instruktioner (varierer mellem compilere)."
+    },
+    {
+      "id": "term_071",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'preprocessor' i C?",
+      "question": "Hvad er preprocessor i C?",
+      "options": {
+        "A": "Den del af compileren der behandler direktiver f\u00f8r kompilering",
+        "B": "En funktion der forbereder data",
+        "C": "Et v\u00e6rkt\u00f8j til debugging",
+        "D": "En type variabel"
+      },
+      "correct_answer": "A",
+      "explanation": "Preprocessor behandler direktiver (#include, #define, etc.) f\u00f8r den egentlige kompilering starter."
+    },
+    {
+      "id": "term_072",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'macro' i C?",
+      "question": "Hvad er en macro i C?",
+      "options": {
+        "A": "En stor funktion",
+        "B": "En preprocessor regel der erstatter tekst",
+        "C": "En type loop",
+        "D": "En header fil"
+      },
+      "correct_answer": "B",
+      "explanation": "En macro er defineret med #define og erstatter tekst f\u00f8r kompilering, fx #define PI 3.14159"
+    },
+    {
+      "id": "term_073",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'header file' i C?",
+      "question": "Hvad er en header file (.h) i C?",
+      "options": {
+        "A": "En fil med kun kommentarer",
+        "B": "En fil med function deklarationer og macros",
+        "C": "En fil med kun variabler",
+        "D": "En kompileret fil"
+      },
+      "correct_answer": "B",
+      "explanation": "En header file (.h) indeholder typisk function deklarationer, macros, typedef og struct definitioner der kan inkluderes i andre filer."
+    },
+    {
+      "id": "term_074",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'compilation' i C?",
+      "question": "Hvad er compilation i C?",
+      "options": {
+        "A": "At skrive kode",
+        "B": "Processen der overs\u00e6tter C kode til maskinkode",
+        "C": "At debugge kode",
+        "D": "At k\u00f8re et program"
+      },
+      "correct_answer": "B",
+      "explanation": "Compilation er processen hvor compileren overs\u00e6tter C source code til maskinkode (executable)."
+    },
+    {
+      "id": "term_075",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'linking' i C?",
+      "question": "Hvad er linking i C?",
+      "options": {
+        "A": "At forbinde to filer med #include",
+        "B": "Processen der kombinerer object filer til en executable",
+        "C": "At oprette pointere",
+        "D": "At dele variabler mellem funktioner"
+      },
+      "correct_answer": "B",
+      "explanation": "Linking er processen hvor linker kombinerer object filer og biblioteker til en f\u00e6rdig executable."
+    },
+    {
+      "id": "term_076",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'object file' i C?",
+      "question": "Hvad er en object file (.o eller .obj) i C?",
+      "options": {
+        "A": "En fil med structs",
+        "B": "Kompileret maskinkode f\u00f8r linking",
+        "C": "En source code fil",
+        "D": "En header fil"
+      },
+      "correct_answer": "B",
+      "explanation": "En object file indeholder kompileret maskinkode fra source filer, f\u00f8r de er linket til en executable."
+    },
+    {
+      "id": "term_077",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'executable' i C?",
+      "question": "Hvad er en executable fil i C?",
+      "options": {
+        "A": "En source code fil",
+        "B": "Den f\u00e6rdige program fil der kan k\u00f8res",
+        "C": "En header fil",
+        "D": "En tekst fil"
+      },
+      "correct_answer": "B",
+      "explanation": "En executable er den f\u00e6rdige program fil (efter compilation og linking) der kan k\u00f8res direkte af operativsystemet."
+    },
+    {
+      "id": "term_078",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'runtime' i C?",
+      "question": "Hvad betyder 'runtime' i C?",
+      "options": {
+        "A": "Tid det tager at kompilere",
+        "B": "Tiden hvor programmet k\u00f8rer / bliver eksekveret",
+        "C": "Tid det tager at skrive kode",
+        "D": "Deadline for projektet"
+      },
+      "correct_answer": "B",
+      "explanation": "Runtime er den tid hvor programmet faktisk k\u00f8rer/eksekveres, modsat compile-time."
+    },
+    {
+      "id": "term_079",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'compile-time' i C?",
+      "question": "Hvad betyder 'compile-time' i C?",
+      "options": {
+        "A": "Tiden hvor programmet k\u00f8rer",
+        "B": "Tiden hvor koden bliver kompileret",
+        "C": "Tiden det tager at debugge",
+        "D": "Tiden det tager at skrive kode"
+      },
+      "correct_answer": "B",
+      "explanation": "Compile-time er den tid hvor koden bliver kompileret, modsat runtime hvor den eksekveres."
+    },
+    {
+      "id": "term_080",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'declaration' i C?",
+      "question": "Hvad er en declaration i C?",
+      "options": {
+        "A": "At tildele en v\u00e6rdi til en variabel",
+        "B": "At introducere et navn og dets type",
+        "C": "At definere en funktion",
+        "D": "At kalde en funktion"
+      },
+      "correct_answer": "B",
+      "explanation": "En declaration introducerer et navn (variabel/funktion) og dets type, fx: int x; eller int foo();"
+    },
+    {
+      "id": "term_081",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'definition' i C?",
+      "question": "Hvad er forskellen mellem declaration og definition?",
+      "options": {
+        "A": "Ingen forskel",
+        "B": "Definition allokerer hukommelse/indeholder body, declaration introducerer bare navnet",
+        "C": "Declaration er kun for funktioner",
+        "D": "Definition er kun for variabler"
+      },
+      "correct_answer": "B",
+      "explanation": "Definition allokerer faktisk hukommelse (for variabler) eller indeholder function body, mens declaration bare introducerer navnet."
+    },
+    {
+      "id": "term_082",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'scope' i C?",
+      "question": "Hvad er scope i C?",
+      "options": {
+        "A": "St\u00f8rrelsen af en variabel",
+        "B": "Det omr\u00e5de hvor et navn er synligt/tilg\u00e6ngeligt",
+        "C": "En type funktion",
+        "D": "En m\u00e5de at organisere filer"
+      },
+      "correct_answer": "B",
+      "explanation": "Scope er det omr\u00e5de i koden hvor et navn (variabel/funktion) er synligt og kan bruges."
+    },
+    {
+      "id": "term_083",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'local variable' i C?",
+      "question": "Hvad er en local variable i C?",
+      "options": {
+        "A": "En variabel i samme land",
+        "B": "En variabel erkl\u00e6ret inde i en funktion/block",
+        "C": "En global variabel",
+        "D": "En static variabel"
+      },
+      "correct_answer": "B",
+      "explanation": "En local variable er erkl\u00e6ret inde i en funktion eller block og er kun synlig der."
+    },
+    {
+      "id": "term_084",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'global variable' i C?",
+      "question": "Hvad er en global variable i C?",
+      "options": {
+        "A": "En variabel i hele verden",
+        "B": "En variabel erkl\u00e6ret udenfor alle funktioner",
+        "C": "En variabel i main funktionen",
+        "D": "En static variabel"
+      },
+      "correct_answer": "B",
+      "explanation": "En global variable er erkl\u00e6ret udenfor alle funktioner og kan tilg\u00e5s fra hele programmet."
+    },
+    {
+      "id": "term_085",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'lifetime' i C?",
+      "question": "Hvad er lifetime af en variabel i C?",
+      "options": {
+        "A": "Hvor l\u00e6nge programmet k\u00f8rer",
+        "B": "Tiden hvor variablens hukommelse eksisterer",
+        "C": "Hvor mange gange variablen bruges",
+        "D": "Variablens scope"
+      },
+      "correct_answer": "B",
+      "explanation": "Lifetime er den periode hvor variablens hukommelse eksisterer (fra allokering til deallokering)."
+    },
+    {
+      "id": "term_086",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'parameter' i C?",
+      "question": "Hvad er en parameter i en funktion?",
+      "options": {
+        "A": "Funktionens return v\u00e6rdi",
+        "B": "En variabel i funktionens definition der modtager argumenter",
+        "C": "En global variabel",
+        "D": "En konstant"
+      },
+      "correct_answer": "B",
+      "explanation": "En parameter er en variabel i funktionsdefinitionen der modtager v\u00e6rdier n\u00e5r funktionen kaldes."
+    },
+    {
+      "id": "term_087",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'argument' i C?",
+      "question": "Hvad er forskellen mellem parameter og argument?",
+      "options": {
+        "A": "Ingen forskel",
+        "B": "Argument er den faktiske v\u00e6rdi givet ved funktionskald",
+        "C": "Parameter bruges kun i main",
+        "D": "Argument er en type variabel"
+      },
+      "correct_answer": "B",
+      "explanation": "Argument er den faktiske v\u00e6rdi der gives til funktionen ved kald, mens parameter er variablen i definitionen."
+    },
+    {
+      "id": "term_088",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'pass by value' i C?",
+      "question": "Hvad betyder 'pass by value' i C?",
+      "options": {
+        "A": "Funktionen kan \u00e6ndre originalen",
+        "B": "En kopi af v\u00e6rdien sendes til funktionen",
+        "C": "En pointer sendes til funktionen",
+        "D": "Funktionen returnerer en v\u00e6rdi"
+      },
+      "correct_answer": "B",
+      "explanation": "Pass by value betyder at en kopi af argumentets v\u00e6rdi sendes - funktionen kan ikke \u00e6ndre originalen."
+    },
+    {
+      "id": "term_089",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'pass by reference' i C?",
+      "question": "Hvordan simuleres 'pass by reference' i C?",
+      "options": {
+        "A": "Med & operator",
+        "B": "Ved at sende en pointer til variablen",
+        "C": "Med static keyword",
+        "D": "C har ikke pass by reference"
+      },
+      "correct_answer": "B",
+      "explanation": "C har ikke rigtig pass by reference, men det simuleres ved at sende en pointer s\u00e5 funktionen kan \u00e6ndre originalen."
+    },
+    {
+      "id": "term_090",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'recursion' i C?",
+      "question": "Hvad er recursion i C?",
+      "options": {
+        "A": "En loop struktur",
+        "B": "N\u00e5r en funktion kalder sig selv",
+        "C": "N\u00e5r to funktioner kalder hinanden",
+        "D": "En type error"
+      },
+      "correct_answer": "B",
+      "explanation": "Recursion er n\u00e5r en funktion kalder sig selv, direkte eller indirekte."
+    },
+    {
+      "id": "term_091",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'base case' i recursion?",
+      "question": "Hvad er base case i en rekursiv funktion?",
+      "options": {
+        "A": "Den f\u00f8rste gang funktionen kaldes",
+        "B": "Betingelsen der stopper recursionen",
+        "C": "Den sidste linje i funktionen",
+        "D": "Return v\u00e6rdien"
+      },
+      "correct_answer": "B",
+      "explanation": "Base case er betingelsen der stopper recursionen for at undg\u00e5 infinite recursion."
+    },
+    {
+      "id": "term_092",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'overflow' i C?",
+      "question": "Hvad er overflow i C?",
+      "options": {
+        "A": "For meget data i en fil",
+        "B": "N\u00e5r en beregning resulterer i en v\u00e6rdi st\u00f8rre end variablens max",
+        "C": "For mange funktionskald",
+        "D": "Memory leak"
+      },
+      "correct_answer": "B",
+      "explanation": "Overflow opst\u00e5r n\u00e5r en beregning giver en v\u00e6rdi der er for stor til variablens datatype."
+    },
+    {
+      "id": "term_093",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'underflow' i C?",
+      "question": "Hvad er underflow i C?",
+      "options": {
+        "A": "For lidt data",
+        "B": "N\u00e5r en beregning resulterer i en v\u00e6rdi mindre end variablens min",
+        "C": "Tom hukommelse",
+        "D": "En tom fil"
+      },
+      "correct_answer": "B",
+      "explanation": "Underflow opst\u00e5r n\u00e5r en beregning giver en v\u00e6rdi der er for lille (for floating point) eller under minimum (for integers)."
+    },
+    {
+      "id": "term_094",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'buffer overflow' i C?",
+      "question": "Hvad er buffer overflow i C?",
+      "options": {
+        "A": "For meget output",
+        "B": "Skrive ud over gr\u00e6nserne af et array/buffer",
+        "C": "For stor fil",
+        "D": "Stack overflow"
+      },
+      "correct_answer": "B",
+      "explanation": "Buffer overflow opst\u00e5r n\u00e5r man skriver mere data end der er plads til i et array/buffer, hvilket kan overskrive anden hukommelse."
+    },
+    {
+      "id": "term_095",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "points": 4,
+      "title": "Hvad er 'stack overflow' i C?",
+      "question": "Hvad er stack overflow i C?",
+      "options": {
+        "A": "For mange variabler",
+        "B": "N\u00e5r stack l\u00f8ber t\u00f8r for plads (fx for dyb recursion)",
+        "C": "En hjemmeside for programm\u00f8rer",
+        "D": "Buffer overflow p\u00e5 stacken"
+      },
+      "correct_answer": "B",
+      "explanation": "Stack overflow opst\u00e5r n\u00e5r stacken l\u00f8ber t\u00f8r for plads, typisk pga. for dyb recursion eller for mange lokale variabler."
+    },
+    {
+      "id": "term_096",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'null terminator' i C?",
+      "question": "Hvad er null terminator i C strenge?",
+      "options": {
+        "A": "En NULL pointer",
+        "B": "Tegnet '\\0' der markerer slutningen af en streng",
+        "C": "En tom streng",
+        "D": "EOF"
+      },
+      "correct_answer": "B",
+      "explanation": "Null terminator er tegnet '\\0' (v\u00e6rdi 0) der markerer slutningen af en C streng."
+    },
+    {
+      "id": "term_097",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er 'escape sequence' i C?",
+      "question": "Hvad er en escape sequence i C?",
+      "options": {
+        "A": "En m\u00e5de at undslippe loops",
+        "B": "Specielle tegn startet med backslash (fx \\n, \\t)",
+        "C": "En sikkerhedsfunktion",
+        "D": "En exit kommando"
+      },
+      "correct_answer": "B",
+      "explanation": "En escape sequence er et backslash efterfulgt af et tegn, der repr\u00e6senterer specielle tegn (fx \\n = newline)."
+    },
+    {
+      "id": "term_098",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '\\n' i C?",
+      "question": "Hvad betyder '\\n' escape sequence i C?",
+      "options": {
+        "A": "Backslash n",
+        "B": "Newline (ny linje)",
+        "C": "Null",
+        "D": "Number"
+      },
+      "correct_answer": "B",
+      "explanation": "'\\n' er escape sequence for newline - flytter til n\u00e6ste linje."
+    },
+    {
+      "id": "term_099",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '\\t' i C?",
+      "question": "Hvad betyder '\\t' escape sequence i C?",
+      "options": {
+        "A": "Text",
+        "B": "Tab (horizontal tabulator)",
+        "C": "Time",
+        "D": "Terminal"
+      },
+      "correct_answer": "B",
+      "explanation": "'\\t' er escape sequence for horizontal tab - inds\u00e6tter en tab afstand."
+    },
+    {
+      "id": "term_100",
+      "category": "fundamentals",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "points": 3,
+      "title": "Hvad er '\\0' i C?",
+      "question": "Hvad betyder '\\0' escape sequence i C?",
+      "options": {
+        "A": "Nul tallet",
+        "B": "Null character (v\u00e6rdi 0, string terminator)",
+        "C": "NULL pointer",
+        "D": "Zero"
+      },
+      "correct_answer": "B",
+      "explanation": "'\\0' er null character med v\u00e6rdi 0, bruges som string terminator i C."
+    }
+  ]
+}

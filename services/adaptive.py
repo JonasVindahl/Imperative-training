@@ -7,19 +7,14 @@ class AdaptiveLearningService:
     """Service for generating adaptive practice sessions based on user performance"""
 
     CATEGORIES = [
-        'memory_management',
-        'integer_division',
-        'strings',
-        'structs',
-        'pointers',
-        'recursion',
+        'pointers_and_memory',
+        'arrays_and_strings',
+        'structs_and_data_structures',
         'control_flow',
+        'functions_and_recursion',
         'file_io',
-        'fill_blanks',
-        'drag_drop',
-        'recursive_trace',
-        'programming_tasks',
-        'terminology'
+        'fundamentals',
+        'programming_challenges'
     ]
 
     def __init__(self, user_id: int):

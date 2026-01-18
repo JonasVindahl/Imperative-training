@@ -32,8 +32,12 @@ def test_fill_blanks():
     grader = GraderService()
     loader = QuestionLoader('questions')
 
-    # Load fill_blanks questions
-    questions = loader.load_category('fill_blanks')
+    # Find fill_blanks questions across all categories
+    all_questions = loader.load_all_questions()
+    questions = []
+    for cat_questions in all_questions.values():
+        questions.extend([q for q in cat_questions if q.get('type') == 'fill_blanks'])
+
     if not questions:
         print_test("Load fill_blanks questions", False)
         return False
@@ -80,8 +84,12 @@ def test_drag_drop():
     grader = GraderService()
     loader = QuestionLoader('questions')
 
-    # Load drag_drop questions
-    questions = loader.load_category('drag_drop')
+    # Find drag_drop questions across all categories
+    all_questions = loader.load_all_questions()
+    questions = []
+    for cat_questions in all_questions.values():
+        questions.extend([q for q in cat_questions if q.get('type') == 'drag_drop'])
+
     if not questions:
         print_test("Load drag_drop questions", False)
         return False
@@ -149,8 +157,12 @@ def test_recursive_trace():
     grader = GraderService()
     loader = QuestionLoader('questions')
 
-    # Load recursive_trace questions
-    questions = loader.load_category('recursive_trace')
+    # Find recursive_trace questions across all categories
+    all_questions = loader.load_all_questions()
+    questions = []
+    for cat_questions in all_questions.values():
+        questions.extend([q for q in cat_questions if q.get('type') == 'recursive_trace'])
+
     if not questions:
         print_test("Load recursive_trace questions", False)
         return False
@@ -224,10 +236,10 @@ def test_question_count():
 
     print(f"\n{Colors.BOLD}Total Questions: {total}{Colors.END}")
 
-    # Check specific counts
-    test1 = print_test("Fill-blanks has >= 40 questions", len(all_questions.get('fill_blanks', [])) >= 40)
-    test2 = print_test("Drag-drop has >= 55 questions", len(all_questions.get('drag_drop', [])) >= 55)
-    test3 = print_test("Recursive-trace has >= 40 questions", len(all_questions.get('recursive_trace', [])) >= 40)
+    # Check specific counts for new categories
+    test1 = print_test("Pointers & Memory has >= 100 questions", len(all_questions.get('pointers_and_memory', [])) >= 100)
+    test2 = print_test("Fundamentals has >= 100 questions", len(all_questions.get('fundamentals', [])) >= 100)
+    test3 = print_test("Functions & Recursion has >= 100 questions", len(all_questions.get('functions_and_recursion', [])) >= 100)
     test4 = print_test(f"Total questions >= 700", total >= 700)
 
     return test1 and test2 and test3 and test4
@@ -238,10 +250,11 @@ def test_question_structure():
     print("=" * 60)
 
     loader = QuestionLoader('questions')
+    all_questions = loader.load_all_questions()
     all_tests_passed = True
 
-    # Test fill_blanks structure
-    fill_blanks = loader.load_category('fill_blanks')
+    # Find fill_blanks questions across all categories
+    fill_blanks = [q for cat_q in all_questions.values() for q in cat_q if q.get('type') == 'fill_blanks']
     for q in fill_blanks:
         has_required = all([
             'id' in q,
@@ -253,11 +266,11 @@ def test_question_structure():
             print_test(f"Fill-blanks {q.get('id', 'unknown')} has required fields", False)
             all_tests_passed = False
 
-    if all_tests_passed:
+    if all_tests_passed and fill_blanks:
         print_test("Fill-blanks questions have correct structure", True)
 
-    # Test drag_drop structure
-    drag_drop = loader.load_category('drag_drop')
+    # Find drag_drop questions
+    drag_drop = [q for cat_q in all_questions.values() for q in cat_q if q.get('type') == 'drag_drop']
     for q in drag_drop:
         has_required = all([
             'id' in q,
@@ -270,11 +283,11 @@ def test_question_structure():
             print_test(f"Drag-drop {q.get('id', 'unknown')} has required fields", False)
             all_tests_passed = False
 
-    if all_tests_passed:
+    if all_tests_passed and drag_drop:
         print_test("Drag-drop questions have correct structure", True)
 
-    # Test recursive_trace structure
-    recursive_trace = loader.load_category('recursive_trace')
+    # Find recursive_trace questions
+    recursive_trace = [q for cat_q in all_questions.values() for q in cat_q if q.get('type') == 'recursive_trace']
     for q in recursive_trace:
         has_required = all([
             'id' in q,
@@ -287,7 +300,7 @@ def test_question_structure():
             print_test(f"Recursive-trace {q.get('id', 'unknown')} has required fields", False)
             all_tests_passed = False
 
-    if all_tests_passed:
+    if all_tests_passed and recursive_trace:
         print_test("Recursive-trace questions have correct structure", True)
 
     return all_tests_passed
@@ -300,11 +313,11 @@ def test_multiple_select():
     grader = GraderService()
     loader = QuestionLoader('questions')
 
-    # Load memory_management questions
-    questions = loader.load_category('memory_management')
-
-    # Find multiple_select questions
-    ms_questions = [q for q in questions if q.get('type') == 'multiple_select']
+    # Find multiple_select questions across all categories
+    all_questions = loader.load_all_questions()
+    ms_questions = []
+    for cat_questions in all_questions.values():
+        ms_questions.extend([q for q in cat_questions if q.get('type') == 'multiple_select'])
 
     test1 = print_test(f"Found {len(ms_questions)} multiple_select questions", len(ms_questions) >= 3)
 
@@ -343,11 +356,11 @@ def test_linked_list_questions():
 
     loader = QuestionLoader('questions')
 
-    # Load programming_tasks questions
-    questions = loader.load_category('programming_tasks')
-
-    # Find linked list questions
-    ll_questions = [q for q in questions if 'linked_lists' in q.get('tags', [])]
+    # Find linked list questions across all categories
+    all_questions = loader.load_all_questions()
+    ll_questions = []
+    for cat_questions in all_questions.values():
+        ll_questions.extend([q for q in cat_questions if 'linked_lists' in q.get('tags', [])])
 
     test1 = print_test(f"Found {len(ll_questions)} linked list questions", len(ll_questions) >= 4)
 
@@ -367,24 +380,22 @@ def test_exam_coverage():
     print("=" * 60)
 
     loader = QuestionLoader('questions')
+    all_questions = loader.load_all_questions()
 
     # Check for mixed drag-drop tokens
-    drag_drop = loader.load_category('drag_drop')
-    exam_drag = sum(1 for q in drag_drop if 'exam_style' in q.get('tags', []))
+    exam_drag = sum(1 for cat_q in all_questions.values() for q in cat_q if 'exam_style' in q.get('tags', []))
     test1 = print_test(f"Mixed drag-drop tokens (Q12, Q14): {exam_drag} questions", exam_drag > 0)
 
     # Check for multiple_select
-    memory = loader.load_category('memory_management')
-    ms_count = sum(1 for q in memory if q.get('type') == 'multiple_select')
+    ms_count = sum(1 for cat_q in all_questions.values() for q in cat_q if q.get('type') == 'multiple_select')
     test2 = print_test(f"Multiple select checkboxes (Q13, Q15): {ms_count} questions", ms_count >= 3)
 
-    # Check for conceptual questions
-    terminology = loader.load_category('terminology')
-    test3 = print_test(f"Conceptual/terminology questions (Q17): {len(terminology)} questions", len(terminology) >= 50)
+    # Check for conceptual questions (fundamentals category)
+    fundamentals = all_questions.get('fundamentals', [])
+    test3 = print_test(f"Conceptual/fundamentals questions (Q17): {len(fundamentals)} questions", len(fundamentals) >= 50)
 
     # Check for linked list questions
-    programming = loader.load_category('programming_tasks')
-    ll_count = sum(1 for q in programming if 'linked_lists' in q.get('tags', []))
+    ll_count = sum(1 for cat_q in all_questions.values() for q in cat_q if 'linked_lists' in q.get('tags', []))
     test4 = print_test(f"Linked list programming (Q18): {ll_count} questions", ll_count >= 4)
 
     print(f"\n{Colors.GREEN}✓ All exam question types (Q1-Q19) are now supported!{Colors.END}")

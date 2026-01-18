@@ -1,6 +1,83 @@
 {
   "questions": [
     {
+      "id": "drag_038",
+      "category": "file_io",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete File Reading Code",
+      "description": "Drag tokens to complete file reading:",
+      "code_template": "FILE* file = fopen(\"data.txt\", <span class='drop-zone' data-blank-id='blank1'>[___]</span>);\nif (file <span class='drop-zone' data-blank-id='blank2'>[___]</span> <span class='drop-zone' data-blank-id='blank3'>[___]</span>) {\n    return;\n}\nchar buffer[100];\nwhile (fgets(buffer, <span class='drop-zone' data-blank-id='blank4'>[___]</span>, file) <span class='drop-zone' data-blank-id='blank5'>[___]</span> NULL) {\n    printf(\"%s\", buffer);\n}\n<span class='drop-zone' data-blank-id='blank6'>[___]</span>(file);",
+      "blanks": {
+        "blank1": {
+          "correct": "\"r\"",
+          "options": [
+            "\"r\"",
+            "\"w\"",
+            "\"a\"",
+            "\"rb\""
+          ]
+        },
+        "blank2": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank3": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "-1",
+            "EOF"
+          ]
+        },
+        "blank4": {
+          "correct": "100",
+          "options": [
+            "100",
+            "sizeof(buffer)",
+            "99",
+            "strlen(buffer)"
+          ]
+        },
+        "blank5": {
+          "correct": "!=",
+          "options": [
+            "!=",
+            "==",
+            "<",
+            ">"
+          ]
+        },
+        "blank6": {
+          "correct": "fclose",
+          "options": [
+            "fclose",
+            "close",
+            "free",
+            "delete"
+          ]
+        }
+      },
+      "explanation": "File reading: fopen with \"r\" for read, check for NULL, fgets reads lines while != NULL, fclose closes file.",
+      "hints": [
+        "\"r\" mode opens for reading",
+        "Check if fopen returned NULL",
+        "fgets returns NULL at end of file",
+        "Always fclose the file"
+      ],
+      "tags": [
+        "file_io",
+        "fopen",
+        "fgets"
+      ]
+    },
+    {
       "id": "io_001",
       "category": "file_io",
       "type": "multiple_choice",
@@ -1044,6 +1121,35 @@
       "tags": [
         "fwrite",
         "binary"
+      ]
+    },
+    {
+      "id": "prog_016",
+      "category": "file_io",
+      "type": "code_writing",
+      "difficulty": "hard",
+      "points": 10,
+      "title": "Implementer fil skrivning",
+      "description": "Skriv en funktion med signaturen `int write_numbers(const char *filename, int *arr, int n)` der skriver tallene i arrayet til en fil (et tal per linje).\n\nReturn\u00e9r 0 hvis succesfuld, -1 hvis filen ikke kan \u00e5bnes.\n\nBrug fopen, fprintf og fclose.",
+      "code_template": "#include <stdio.h>\n\n/* YOUR CODE HERE */\n\n\nint main() {\n    int numbers[] = {10, 20, 30, 40};\n    int result = write_numbers(\"output.txt\", numbers, 4);\n    printf(\"Result: %d\\n\", result);  // 0 if successful\n    return 0;\n}",
+      "expected_output": "Result: 0",
+      "test_cases": [
+        {
+          "input": "write_numbers('output.txt', [10,20,30,40], 4)",
+          "expected": "0"
+        }
+      ],
+      "hints": [
+        "Brug fopen(filename, \"w\") til at \u00e5bne filen for skrivning",
+        "Check om fopen returnerede NULL",
+        "Loop gennem arrayet og brug fprintf(file, \"%d\\n\", arr[i])",
+        "Husk at kalde fclose(file)"
+      ],
+      "tags": [
+        "file_io",
+        "fopen",
+        "fprintf",
+        "programming_task"
       ]
     }
   ]

@@ -21,19 +21,14 @@ class QuestionLoader:
             return self._questions_cache
 
         categories = [
-            'memory_management',
-            'integer_division',
-            'strings',
-            'structs',
-            'pointers',
-            'recursion',
+            'pointers_and_memory',
+            'arrays_and_strings',
+            'structs_and_data_structures',
             'control_flow',
+            'functions_and_recursion',
             'file_io',
-            'fill_blanks',
-            'drag_drop',
-            'recursive_trace',
-            'programming_tasks',
-            'terminology'
+            'fundamentals',
+            'programming_challenges'
         ]
 
         questions = {}

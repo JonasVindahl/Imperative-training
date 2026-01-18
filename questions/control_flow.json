@@ -1,401 +1,6 @@
 {
   "questions": [
     {
-      "id": "ctrl_001",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Prefix vs Postfix Increment",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 5;\n    printf(\"%d \", i++);\n    printf(\"%d \", ++i);\n    printf(\"%d\\n\", i);\n    return 0;\n}",
-      "options": [
-        "5 6 6",
-        "5 7 7",
-        "6 7 7",
-        "5 6 7"
-      ],
-      "correct_answer": "B",
-      "explanation": "i++ returns 5 then increments to 6. ++i increments to 7 then returns 7. Final value of i is 7. Output: 5 7 7",
-      "hints": [
-        "i++ uses the value then increments",
-        "++i increments then uses the value",
-        "After i++, i becomes 6. After ++i, i becomes 7"
-      ],
-      "tags": [
-        "increment",
-        "prefix",
-        "postfix"
-      ]
-    },
-    {
-      "id": "ctrl_002",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Short-Circuit Safety",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x != 0 && 10 / x > 1) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
-      "options": [
-        "A",
-        "B",
-        "Division by zero error",
-        "Compilation error"
-      ],
-      "correct_answer": "B",
-      "explanation": "The left side of && is false (x != 0), so the right side is never evaluated. That prevents division by zero, and the else branch prints B.",
-      "hints": [
-        "&& short-circuits when the left side is false",
-        "The division is skipped",
-        "The else branch runs"
-      ],
-      "tags": [
-        "short_circuit",
-        "logical_and",
-        "control_flow"
-      ]
-    },
-    {
-      "id": "ctrl_003",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Switch Fallthrough",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 2;\n    switch (x) {\n        case 1:\n            printf(\"A\");\n        case 2:\n            printf(\"B\");\n            break;\n        default:\n            printf(\"C\");\n    }\n    return 0;\n}",
-      "options": [
-        "A",
-        "B",
-        "AB",
-        "BC"
-      ],
-      "correct_answer": "B",
-      "explanation": "Execution jumps to case 2 and prints B, then breaks. Case 1 is not executed because the switch matches case 2 directly.",
-      "hints": [
-        "The switch jumps directly to case 2",
-        "Only case 2 executes before break",
-        "No fallthrough occurs from case 1"
-      ],
-      "tags": [
-        "switch",
-        "fallthrough",
-        "control_flow"
-      ]
-    },
-    {
-      "id": "ctrl_004",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Dangling Else",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1;\n    int b = 0;\n    if (a)\n        if (b)\n            printf(\"X\\n\");\n        else\n            printf(\"Y\\n\");\n    return 0;\n}",
-      "options": [
-        "X",
-        "Y",
-        "No output",
-        "Compilation error"
-      ],
-      "correct_answer": "B",
-      "explanation": "The else binds to the nearest if (the inner one). Since b is 0, it prints Y.",
-      "hints": [
-        "Else pairs with the closest unmatched if",
-        "The inner if checks b",
-        "b is 0"
-      ],
-      "tags": [
-        "if_else",
-        "dangling_else"
-      ]
-    },
-    {
-      "id": "ctrl_005",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "For Loop Sum",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int sum = 0;\n    for (int i = 0; i < 3; i++) {\n        sum += i;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}",
-      "options": [
-        "0",
-        "1",
-        "3",
-        "6"
-      ],
-      "correct_answer": "C",
-      "explanation": "The loop adds 0 + 1 + 2, which is 3.",
-      "hints": [
-        "i runs 0, 1, 2",
-        "Sum is 0+1+2",
-        "Total is 3"
-      ],
-      "tags": [
-        "for_loop",
-        "sum"
-      ]
-    },
-    {
-      "id": "ctrl_006",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Continue Skips",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int count = 0;\n    for (int i = 0; i < 5; i++) {\n        if (i % 2 == 0) {\n            continue;\n        }\n        count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
-      "options": [
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "correct_answer": "A",
-      "explanation": "The odd numbers between 0 and 4 are 1 and 3, so count increments twice.",
-      "hints": [
-        "Even numbers are skipped",
-        "Odd numbers are 1 and 3",
-        "Count increments twice"
-      ],
-      "tags": [
-        "continue",
-        "for_loop"
-      ]
-    },
-    {
-      "id": "ctrl_007",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Switch Fallthrough to Default",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    switch (x) {\n        case 1:\n            printf(\"A\");\n            break;\n        case 3:\n            printf(\"C\");\n        default:\n            printf(\"D\");\n    }\n    return 0;\n}",
-      "options": [
-        "C",
-        "D",
-        "CD",
-        "AD"
-      ],
-      "correct_answer": "C",
-      "explanation": "Case 3 prints C, then falls through to default and prints D.",
-      "hints": [
-        "No break after case 3",
-        "Default executes after case 3",
-        "Both C and D print"
-      ],
-      "tags": [
-        "switch",
-        "fallthrough",
-        "default"
-      ]
-    },
-    {
-      "id": "ctrl_008",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Ternary Operator",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int y = (x > 3) ? x - 1 : x + 1;\n    printf(\"%d\\n\", y);\n    return 0;\n}",
-      "options": [
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "correct_answer": "B",
-      "explanation": "Since x > 3 is true, y becomes x - 1, which is 4.",
-      "hints": [
-        "Condition is true",
-        "Use the first branch",
-        "5 - 1 = 4"
-      ],
-      "tags": [
-        "ternary",
-        "conditionals"
-      ]
-    },
-    {
-      "id": "ctrl_009",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Do-While Runs Once",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    do {\n        x++;\n    } while (x < 0);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
-      "options": [
-        "0",
-        "1",
-        "2",
-        "No output"
-      ],
-      "correct_answer": "B",
-      "explanation": "The do-while loop executes once before checking the condition, so x becomes 1.",
-      "hints": [
-        "do-while runs at least once",
-        "x increments once",
-        "x is 1"
-      ],
-      "tags": [
-        "do_while",
-        "loops"
-      ]
-    },
-    {
-      "id": "ctrl_010",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Empty Loop Body",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int i;\n    for (i = 0; i < 5; i++);\n    printf(\"%d\\n\", i);\n    return 0;\n}",
-      "options": [
-        "0",
-        "4",
-        "5",
-        "Undefined"
-      ],
-      "correct_answer": "C",
-      "explanation": "The semicolon makes the loop body empty. The loop runs until i == 5, then prints 5.",
-      "hints": [
-        "The semicolon ends the loop body",
-        "i increments until 5",
-        "Prints 5"
-      ],
-      "tags": [
-        "for_loop",
-        "pitfall"
-      ]
-    },
-    {
-      "id": "ctrl_011",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Short-Circuit OR",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x == 0 || 10 / x > 1) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
-      "options": [
-        "A",
-        "B",
-        "Division by zero error",
-        "Compilation error"
-      ],
-      "correct_answer": "A",
-      "explanation": "The left side of || is true, so the right side is not evaluated. It prints A.",
-      "hints": [
-        "|| short-circuits on true",
-        "Division is skipped",
-        "A is printed"
-      ],
-      "tags": [
-        "short_circuit",
-        "logical_or"
-      ]
-    },
-    {
-      "id": "ctrl_012",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Nested Loop Count",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int count = 0;\n    for (int i = 1; i <= 3; i++) {\n        for (int j = 1; j <= i; j++) {\n            count++;\n        }\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
-      "options": [
-        "3",
-        "4",
-        "6",
-        "9"
-      ],
-      "correct_answer": "C",
-      "explanation": "The inner loop runs 1 + 2 + 3 times, so count becomes 6.",
-      "hints": [
-        "Add the iterations: 1+2+3",
-        "Count increments each inner loop",
-        "Total is 6"
-      ],
-      "tags": [
-        "nested_loops",
-        "counting"
-      ]
-    },
-    {
-      "id": "ctrl_013",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "easy",
-      "title": "Switch with char",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    char c = 'b';\n    switch (c) {\n        case 'a':\n            printf(\"A\\n\");\n            break;\n        case 'b':\n            printf(\"B\\n\");\n            break;\n        default:\n            printf(\"C\\n\");\n    }\n    return 0;\n}",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "AB"
-      ],
-      "correct_answer": "B",
-      "explanation": "The switch matches case 'b' and prints B.",
-      "hints": [
-        "c is 'b'",
-        "Case 'b' matches",
-        "Prints B"
-      ],
-      "tags": [
-        "switch",
-        "char"
-      ]
-    },
-    {
-      "id": "ctrl_014",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "hard",
-      "title": "Assignment in Condition",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x = 5) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
-      "options": [
-        "A",
-        "B",
-        "No output",
-        "Compilation error"
-      ],
-      "correct_answer": "A",
-      "explanation": "x = 5 assigns 5 to x, and the expression is nonzero, so the if condition is true.",
-      "hints": [
-        "This is assignment, not comparison",
-        "The expression value is 5",
-        "Nonzero is true"
-      ],
-      "tags": [
-        "assignment",
-        "if_else",
-        "pitfall"
-      ]
-    },
-    {
-      "id": "ctrl_015",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Post-Decrement in While",
-      "description": "What does this program print?",
-      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 3;\n    int count = 0;\n    while (i--) {\n        count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
-      "options": [
-        "2",
-        "3",
-        "4",
-        "0"
-      ],
-      "correct_answer": "B",
-      "explanation": "i-- returns 3, 2, 1, then 0. The loop runs three times, so count is 3.",
-      "hints": [
-        "The condition uses the old value of i",
-        "Loop runs while the value is nonzero",
-        "Three iterations"
-      ],
-      "tags": [
-        "while_loop",
-        "post_decrement"
-      ]
-    },
-    {
       "id": "cf_016",
       "category": "control_flow",
       "type": "multiple_choice",
@@ -634,32 +239,6 @@
       "tags": [
         "enum",
         "constants"
-      ]
-    },
-    {
-      "id": "cf_025",
-      "category": "control_flow",
-      "type": "multiple_choice",
-      "difficulty": "medium",
-      "title": "Typedef for Struct",
-      "description": "What does this code demonstrate?",
-      "code_template": "typedef struct {\n    int x;\n    int y;\n} Point;\n\nPoint p = {10, 20};",
-      "options": [
-        "Compilation error",
-        "Creates alias 'Point' for the struct",
-        "Creates a new type incompatible with struct",
-        "Only works with pointers"
-      ],
-      "correct_answer": "B",
-      "explanation": "typedef creates an alias. You can use 'Point' instead of 'struct Point'.",
-      "hints": [
-        "typedef creates type alias",
-        "Simplifies syntax",
-        "No 'struct' keyword needed"
-      ],
-      "tags": [
-        "typedef",
-        "structs"
       ]
     },
     {
@@ -1711,6 +1290,1340 @@
         "short_circuit",
         "logical_operators",
         "side_effects"
+      ]
+    },
+    {
+      "id": "ctrl_001",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Prefix vs Postfix Increment",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 5;\n    printf(\"%d \", i++);\n    printf(\"%d \", ++i);\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+      "options": [
+        "5 6 6",
+        "5 7 7",
+        "6 7 7",
+        "5 6 7"
+      ],
+      "correct_answer": "B",
+      "explanation": "i++ returns 5 then increments to 6. ++i increments to 7 then returns 7. Final value of i is 7. Output: 5 7 7",
+      "hints": [
+        "i++ uses the value then increments",
+        "++i increments then uses the value",
+        "After i++, i becomes 6. After ++i, i becomes 7"
+      ],
+      "tags": [
+        "increment",
+        "prefix",
+        "postfix"
+      ]
+    },
+    {
+      "id": "ctrl_002",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Short-Circuit Safety",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x != 0 && 10 / x > 1) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "Division by zero error",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "The left side of && is false (x != 0), so the right side is never evaluated. That prevents division by zero, and the else branch prints B.",
+      "hints": [
+        "&& short-circuits when the left side is false",
+        "The division is skipped",
+        "The else branch runs"
+      ],
+      "tags": [
+        "short_circuit",
+        "logical_and",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "ctrl_003",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Switch Fallthrough",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 2;\n    switch (x) {\n        case 1:\n            printf(\"A\");\n        case 2:\n            printf(\"B\");\n            break;\n        default:\n            printf(\"C\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "AB",
+        "BC"
+      ],
+      "correct_answer": "B",
+      "explanation": "Execution jumps to case 2 and prints B, then breaks. Case 1 is not executed because the switch matches case 2 directly.",
+      "hints": [
+        "The switch jumps directly to case 2",
+        "Only case 2 executes before break",
+        "No fallthrough occurs from case 1"
+      ],
+      "tags": [
+        "switch",
+        "fallthrough",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "ctrl_004",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Dangling Else",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 1;\n    int b = 0;\n    if (a)\n        if (b)\n            printf(\"X\\n\");\n        else\n            printf(\"Y\\n\");\n    return 0;\n}",
+      "options": [
+        "X",
+        "Y",
+        "No output",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "The else binds to the nearest if (the inner one). Since b is 0, it prints Y.",
+      "hints": [
+        "Else pairs with the closest unmatched if",
+        "The inner if checks b",
+        "b is 0"
+      ],
+      "tags": [
+        "if_else",
+        "dangling_else"
+      ]
+    },
+    {
+      "id": "ctrl_005",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "For Loop Sum",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int sum = 0;\n    for (int i = 0; i < 3; i++) {\n        sum += i;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "3",
+        "6"
+      ],
+      "correct_answer": "C",
+      "explanation": "The loop adds 0 + 1 + 2, which is 3.",
+      "hints": [
+        "i runs 0, 1, 2",
+        "Sum is 0+1+2",
+        "Total is 3"
+      ],
+      "tags": [
+        "for_loop",
+        "sum"
+      ]
+    },
+    {
+      "id": "ctrl_006",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Continue Skips",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int count = 0;\n    for (int i = 0; i < 5; i++) {\n        if (i % 2 == 0) {\n            continue;\n        }\n        count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "A",
+      "explanation": "The odd numbers between 0 and 4 are 1 and 3, so count increments twice.",
+      "hints": [
+        "Even numbers are skipped",
+        "Odd numbers are 1 and 3",
+        "Count increments twice"
+      ],
+      "tags": [
+        "continue",
+        "for_loop"
+      ]
+    },
+    {
+      "id": "ctrl_007",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Switch Fallthrough to Default",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    switch (x) {\n        case 1:\n            printf(\"A\");\n            break;\n        case 3:\n            printf(\"C\");\n        default:\n            printf(\"D\");\n    }\n    return 0;\n}",
+      "options": [
+        "C",
+        "D",
+        "CD",
+        "AD"
+      ],
+      "correct_answer": "C",
+      "explanation": "Case 3 prints C, then falls through to default and prints D.",
+      "hints": [
+        "No break after case 3",
+        "Default executes after case 3",
+        "Both C and D print"
+      ],
+      "tags": [
+        "switch",
+        "fallthrough",
+        "default"
+      ]
+    },
+    {
+      "id": "ctrl_008",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Ternary Operator",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int y = (x > 3) ? x - 1 : x + 1;\n    printf(\"%d\\n\", y);\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct_answer": "B",
+      "explanation": "Since x > 3 is true, y becomes x - 1, which is 4.",
+      "hints": [
+        "Condition is true",
+        "Use the first branch",
+        "5 - 1 = 4"
+      ],
+      "tags": [
+        "ternary",
+        "conditionals"
+      ]
+    },
+    {
+      "id": "ctrl_009",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Do-While Runs Once",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    do {\n        x++;\n    } while (x < 0);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "No output"
+      ],
+      "correct_answer": "B",
+      "explanation": "The do-while loop executes once before checking the condition, so x becomes 1.",
+      "hints": [
+        "do-while runs at least once",
+        "x increments once",
+        "x is 1"
+      ],
+      "tags": [
+        "do_while",
+        "loops"
+      ]
+    },
+    {
+      "id": "ctrl_010",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Empty Loop Body",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i;\n    for (i = 0; i < 5; i++);\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+      "options": [
+        "0",
+        "4",
+        "5",
+        "Undefined"
+      ],
+      "correct_answer": "C",
+      "explanation": "The semicolon makes the loop body empty. The loop runs until i == 5, then prints 5.",
+      "hints": [
+        "The semicolon ends the loop body",
+        "i increments until 5",
+        "Prints 5"
+      ],
+      "tags": [
+        "for_loop",
+        "pitfall"
+      ]
+    },
+    {
+      "id": "ctrl_011",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Short-Circuit OR",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x == 0 || 10 / x > 1) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "Division by zero error",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "The left side of || is true, so the right side is not evaluated. It prints A.",
+      "hints": [
+        "|| short-circuits on true",
+        "Division is skipped",
+        "A is printed"
+      ],
+      "tags": [
+        "short_circuit",
+        "logical_or"
+      ]
+    },
+    {
+      "id": "ctrl_012",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Nested Loop Count",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int count = 0;\n    for (int i = 1; i <= 3; i++) {\n        for (int j = 1; j <= i; j++) {\n            count++;\n        }\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "9"
+      ],
+      "correct_answer": "C",
+      "explanation": "The inner loop runs 1 + 2 + 3 times, so count becomes 6.",
+      "hints": [
+        "Add the iterations: 1+2+3",
+        "Count increments each inner loop",
+        "Total is 6"
+      ],
+      "tags": [
+        "nested_loops",
+        "counting"
+      ]
+    },
+    {
+      "id": "ctrl_013",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Switch with char",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    char c = 'b';\n    switch (c) {\n        case 'a':\n            printf(\"A\\n\");\n            break;\n        case 'b':\n            printf(\"B\\n\");\n            break;\n        default:\n            printf(\"C\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "AB"
+      ],
+      "correct_answer": "B",
+      "explanation": "The switch matches case 'b' and prints B.",
+      "hints": [
+        "c is 'b'",
+        "Case 'b' matches",
+        "Prints B"
+      ],
+      "tags": [
+        "switch",
+        "char"
+      ]
+    },
+    {
+      "id": "ctrl_014",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Assignment in Condition",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    if (x = 5) {\n        printf(\"A\\n\");\n    } else {\n        printf(\"B\\n\");\n    }\n    return 0;\n}",
+      "options": [
+        "A",
+        "B",
+        "No output",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "x = 5 assigns 5 to x, and the expression is nonzero, so the if condition is true.",
+      "hints": [
+        "This is assignment, not comparison",
+        "The expression value is 5",
+        "Nonzero is true"
+      ],
+      "tags": [
+        "assignment",
+        "if_else",
+        "pitfall"
+      ]
+    },
+    {
+      "id": "ctrl_015",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Post-Decrement in While",
+      "description": "What does this program print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int i = 3;\n    int count = 0;\n    while (i--) {\n        count++;\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "0"
+      ],
+      "correct_answer": "B",
+      "explanation": "i-- returns 3, 2, 1, then 0. The loop runs three times, so count is 3.",
+      "hints": [
+        "The condition uses the old value of i",
+        "Loop runs while the value is nonzero",
+        "Three iterations"
+      ],
+      "tags": [
+        "while_loop",
+        "post_decrement"
+      ]
+    },
+    {
+      "id": "drag_002",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Complete While Loop",
+      "description": "Drag the correct tokens to complete a while loop that sums numbers from 1 to n:",
+      "code_template": "int sum_to_n(int n) {\n    int sum = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n    \n    while (i <span class='drop-zone' data-blank-id='blank3'>[___]</span> n) {\n        sum <span class='drop-zone' data-blank-id='blank4'>[___]</span> i;\n        i<span class='drop-zone' data-blank-id='blank5'>[___]</span>;\n    }\n    \n    return sum;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "NULL"
+          ]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": [
+            "1",
+            "0",
+            "n",
+            "-1"
+          ]
+        },
+        "blank3": {
+          "correct": "<=",
+          "options": [
+            "<=",
+            "<",
+            ">=",
+            ">",
+            "=="
+          ]
+        },
+        "blank4": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "*=",
+            "=="
+          ]
+        },
+        "blank5": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "*=2"
+          ]
+        }
+      },
+      "explanation": "Initialize sum to 0, start i at 1, loop while i <= n, add i to sum each iteration, and increment i by 1.",
+      "hints": [
+        "Sum starts at 0",
+        "Loop from 1 to n inclusive",
+        "+= adds to the sum",
+        "++ increments by 1"
+      ],
+      "tags": [
+        "loops",
+        "while",
+        "operators"
+      ]
+    },
+    {
+      "id": "drag_003",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Find Max in Array",
+      "description": "Drag the correct tokens to complete a function that finds the maximum element in an array:",
+      "code_template": "int max_in(int *arr, int n) {\n    int max = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n\n    for (int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>; i < <span class='drop-zone' data-blank-id='blank3'>[___]</span>; i<span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        if (<span class='drop-zone' data-blank-id='blank5'>[___]</span> > max) {\n            max = <span class='drop-zone' data-blank-id='blank6'>[___]</span>;\n        }\n    }\n\n    return max;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "arr[0]",
+          "options": [
+            "arr[0]",
+            "arr[1]",
+            "0",
+            "n"
+          ]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "arr[0]"
+          ]
+        },
+        "blank3": {
+          "correct": "n",
+          "options": [
+            "n",
+            "n-1",
+            "arr[0]",
+            "i"
+          ]
+        },
+        "blank4": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank5": {
+          "correct": "arr[i]",
+          "options": [
+            "arr[i]",
+            "arr[i+1]",
+            "max",
+            "*arr"
+          ]
+        },
+        "blank6": {
+          "correct": "arr[i]",
+          "options": [
+            "arr[i]",
+            "arr[i+1]",
+            "max",
+            "*arr"
+          ]
+        }
+      },
+      "explanation": "Initialize max with arr[0], then scan from i=1 to n-1. If a larger element is found, update max. Return max at the end.",
+      "hints": [
+        "Start max with the first element",
+        "Loop from index 1 to n-1",
+        "Update max when a bigger value appears"
+      ],
+      "tags": [
+        "arrays",
+        "loops",
+        "comparison"
+      ]
+    },
+    {
+      "id": "drag_007",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Even Check",
+      "description": "Drag the correct tokens to complete an even check:",
+      "code_template": "int is_even(int x) {\n    return x <span class='drop-zone' data-blank-id='blank1'>[___]</span> 2 <span class='drop-zone' data-blank-id='blank2'>[___]</span> 0;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "%",
+          "options": [
+            "%",
+            "/",
+            "*",
+            "+"
+          ]
+        },
+        "blank2": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        }
+      },
+      "explanation": "A number is even when x % 2 equals 0.",
+      "hints": [
+        "Use modulo to check remainder",
+        "Even numbers leave remainder 0",
+        "Compare with =="
+      ],
+      "tags": [
+        "operators",
+        "control_flow",
+        "modulo"
+      ]
+    },
+    {
+      "id": "drag_008",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Factorial Loop",
+      "description": "Drag the correct tokens to complete a factorial loop:",
+      "code_template": "int factorial(int n) {\n    int result = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    for (int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>; i <span class='drop-zone' data-blank-id='blank3'>[___]</span> n; i<span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        result <span class='drop-zone' data-blank-id='blank5'>[___]</span> i;\n    }\n    return result;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "1",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "2"
+          ]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "2"
+          ]
+        },
+        "blank3": {
+          "correct": "<=",
+          "options": [
+            "<=",
+            "<",
+            ">=",
+            "=="
+          ]
+        },
+        "blank4": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank5": {
+          "correct": "*=",
+          "options": [
+            "*=",
+            "+=",
+            "-=",
+            "="
+          ]
+        }
+      },
+      "explanation": "Start result at 1 and multiply by each i from 1 to n.",
+      "hints": [
+        "Factorial multiplies numbers",
+        "Loop from 1 to n inclusive",
+        "Use *= to accumulate"
+      ],
+      "tags": [
+        "loops",
+        "factorial",
+        "multiplication"
+      ]
+    },
+    {
+      "id": "drag_012",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Count Positives",
+      "description": "Drag the correct tokens to count positive values:",
+      "code_template": "int count_pos(int *arr, int n) {\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        if (arr[i] <span class='drop-zone' data-blank-id='blank1'>[___]</span> 0) {\n            count<span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n        }\n    }\n    return count;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": ">",
+          "options": [
+            ">",
+            "<",
+            "==",
+            "!="
+          ]
+        },
+        "blank2": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        }
+      },
+      "explanation": "Increment count when the element is greater than 0.",
+      "hints": [
+        "Positive means greater than 0",
+        "Increment count on a match",
+        "Use ++"
+      ],
+      "tags": [
+        "arrays",
+        "comparison",
+        "loops"
+      ]
+    },
+    {
+      "id": "drag_014",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Find First Match",
+      "description": "Drag the correct tokens to return the first matching index:",
+      "code_template": "int find_first(int *arr, int n, int target) {\n    for (int i = 0; i < n; i++) {\n        if (arr[i] <span class='drop-zone' data-blank-id='blank1'>[___]</span> target) {\n            return i;\n        }\n    }\n    return <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank2": {
+          "correct": "-1",
+          "options": [
+            "-1",
+            "0",
+            "n",
+            "target"
+          ]
+        }
+      },
+      "explanation": "Return the index when a match is found; otherwise return -1.",
+      "hints": [
+        "Compare for equality",
+        "Return -1 when not found",
+        "First match stops the loop"
+      ],
+      "tags": [
+        "arrays",
+        "search",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "drag_016",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Sum Even Numbers",
+      "description": "Drag the correct tokens to sum only even numbers in an array:",
+      "code_template": "int sum_even(int *arr, int n) {\n    int sum = <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n    for (int i = <span class='drop-zone' data-blank-id='blank2'>[___]</span>; i < <span class='drop-zone' data-blank-id='blank3'>[___]</span>; i<span class='drop-zone' data-blank-id='blank4'>[___]</span>) {\n        if (arr[i] <span class='drop-zone' data-blank-id='blank5'>[___]</span> 2 <span class='drop-zone' data-blank-id='blank6'>[___]</span> 0) {\n            sum <span class='drop-zone' data-blank-id='blank7'>[___]</span> arr[i];\n        }\n    }\n    return sum;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "arr[0]",
+            "n"
+          ]
+        },
+        "blank2": {
+          "correct": "0",
+          "options": [
+            "0",
+            "1",
+            "n",
+            "arr[0]"
+          ]
+        },
+        "blank3": {
+          "correct": "n",
+          "options": [
+            "n",
+            "n-1",
+            "i",
+            "arr[0]"
+          ]
+        },
+        "blank4": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        },
+        "blank5": {
+          "correct": "%",
+          "options": [
+            "%",
+            "/",
+            "*",
+            "+"
+          ]
+        },
+        "blank6": {
+          "correct": "==",
+          "options": [
+            "==",
+            "!=",
+            "<",
+            ">"
+          ]
+        },
+        "blank7": {
+          "correct": "+=",
+          "options": [
+            "+=",
+            "=",
+            "-=",
+            "*="
+          ]
+        }
+      },
+      "explanation": "Loop over all elements and add those with arr[i] % 2 == 0.",
+      "hints": [
+        "Even numbers have remainder 0",
+        "Use % and ==",
+        "Accumulate with +="
+      ],
+      "tags": [
+        "arrays",
+        "loops",
+        "modulo"
+      ]
+    },
+    {
+      "id": "drag_019",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Sign Function",
+      "description": "Drag the correct tokens to return -1, 0, or 1:",
+      "code_template": "int sign(int x) {\n    if (x <span class='drop-zone' data-blank-id='blank1'>[___]</span> 0) return -1;\n    if (x <span class='drop-zone' data-blank-id='blank2'>[___]</span> 0) return 1;\n    return 0;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "<",
+          "options": [
+            "<",
+            ">",
+            "==",
+            "!="
+          ]
+        },
+        "blank2": {
+          "correct": ">",
+          "options": [
+            ">",
+            "<",
+            "==",
+            "!="
+          ]
+        }
+      },
+      "explanation": "Return -1 for negative, 1 for positive, else 0.",
+      "hints": [
+        "Negative uses < 0",
+        "Positive uses > 0",
+        "Else 0"
+      ],
+      "tags": [
+        "control_flow",
+        "comparisons"
+      ]
+    },
+    {
+      "id": "drag_021",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "easy",
+      "title": "Loop Over Array",
+      "description": "Drag the correct tokens to loop over all elements:",
+      "code_template": "void print_all(int *arr, int n) {\n    for (int i = 0; i <span class='drop-zone' data-blank-id='blank1'>[___]</span> n; i<span class='drop-zone' data-blank-id='blank2'>[___]</span>) {\n        printf(\"%d \", arr[i]);\n    }\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "<",
+          "options": [
+            "<",
+            "<=",
+            ">",
+            "=="
+          ]
+        },
+        "blank2": {
+          "correct": "++",
+          "options": [
+            "++",
+            "--",
+            "+=2",
+            "=+1"
+          ]
+        }
+      },
+      "explanation": "Loop from 0 to n-1 using i < n and ++.",
+      "hints": [
+        "Stop before n",
+        "Use <",
+        "Increment with ++"
+      ],
+      "tags": [
+        "arrays",
+        "loops"
+      ]
+    },
+    {
+      "id": "drag_024",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Do-While Input",
+      "description": "Drag the correct tokens to repeat until positive:",
+      "code_template": "int read_pos(int x) {\n    do {\n        x++;\n    } while (x <span class='drop-zone' data-blank-id='blank1'>[___]</span> 0);\n    return x;\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "<=",
+          "options": [
+            "<=",
+            "<",
+            ">",
+            "=="
+          ]
+        }
+      },
+      "explanation": "The loop continues while x <= 0 and stops when x is positive.",
+      "hints": [
+        "Continue for negative and zero",
+        "Use <=",
+        "Stop when positive"
+      ],
+      "tags": [
+        "loops",
+        "do_while"
+      ]
+    },
+    {
+      "id": "drag_028",
+      "category": "control_flow",
+      "type": "drag_drop",
+      "difficulty": "medium",
+      "title": "Switch Case",
+      "description": "Drag the correct tokens to complete a switch:",
+      "code_template": "int grade(int x) {\n    switch (x) {\n        case 1: return <span class='drop-zone' data-blank-id='blank1'>[___]</span>;\n        case 2: return <span class='drop-zone' data-blank-id='blank2'>[___]</span>;\n        default: return <span class='drop-zone' data-blank-id='blank3'>[___]</span>;\n    }\n}",
+      "blanks": {
+        "blank1": {
+          "correct": "10",
+          "options": [
+            "10",
+            "20",
+            "0",
+            "-1"
+          ]
+        },
+        "blank2": {
+          "correct": "20",
+          "options": [
+            "20",
+            "10",
+            "0",
+            "-1"
+          ]
+        },
+        "blank3": {
+          "correct": "0",
+          "options": [
+            "0",
+            "-1",
+            "10",
+            "20"
+          ]
+        }
+      },
+      "explanation": "Return 10 for case 1, 20 for case 2, else 0.",
+      "hints": [
+        "Case 1 returns 10",
+        "Case 2 returns 20",
+        "Default returns 0"
+      ],
+      "tags": [
+        "switch",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "fill_009",
+      "category": "control_flow",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "For Loop Parts",
+      "description": "Fill in the blanks about a for loop:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    for (int i = 0; i < 3; i++) {\n        printf(\"%d \", i);\n    }\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The loop initialization sets i to ___",
+          "blanks": [
+            {
+              "options": [
+                "0",
+                "1",
+                "3",
+                "-1"
+              ],
+              "correct": "0"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The loop condition is i ___ 3",
+          "blanks": [
+            {
+              "options": [
+                "<",
+                ">",
+                "==",
+                ">="
+              ],
+              "correct": "<"
+            }
+          ]
+        }
+      ],
+      "explanation": "The loop starts at 0 and continues while i < 3.",
+      "hints": [
+        "Initialization runs once",
+        "Condition controls the loop",
+        "i increments each time"
+      ],
+      "tags": [
+        "for_loop",
+        "control_flow"
+      ]
+    },
+    {
+      "id": "fill_013",
+      "category": "control_flow",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Do-While",
+      "description": "Fill in the blanks about do-while:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 0;\n    do {\n        x++;\n    } while (x < 0);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "A do-while loop executes at least ___ time",
+          "blanks": [
+            {
+              "options": [
+                "one",
+                "zero",
+                "two",
+                "three"
+              ],
+              "correct": "one"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The value printed is ___",
+          "blanks": [
+            {
+              "options": [
+                "1",
+                "0",
+                "2",
+                "-1"
+              ],
+              "correct": "1"
+            }
+          ]
+        }
+      ],
+      "explanation": "The body runs once before checking the condition, so x becomes 1.",
+      "hints": [
+        "Do-while checks after the body",
+        "x increments once",
+        "Printed value is 1"
+      ],
+      "tags": [
+        "do_while",
+        "loops"
+      ]
+    },
+    {
+      "id": "fill_016",
+      "category": "control_flow",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "If Statement",
+      "description": "Fill in the blanks about if statements:",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 3;\n    if (x > 0) {\n        printf(\"positive\\n\");\n    }\n    return 0;\n}",
+      "questions": [
+        {
+          "id": 0,
+          "text": "The condition x > 0 is ___",
+          "blanks": [
+            {
+              "options": [
+                "true",
+                "false",
+                "undefined",
+                "zero"
+              ],
+              "correct": "true"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "The program prints ___",
+          "blanks": [
+            {
+              "options": [
+                "positive",
+                "negative",
+                "zero",
+                "nothing"
+              ],
+              "correct": "positive"
+            }
+          ]
+        }
+      ],
+      "explanation": "x is 3, so the condition is true and the message prints.",
+      "hints": [
+        "3 is greater than 0",
+        "If condition is true",
+        "Message is positive"
+      ],
+      "tags": [
+        "if",
+        "conditions"
+      ]
+    },
+    {
+      "id": "int_030",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Left Shift Operation",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 5 << 2;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "20",
+        "10",
+        "7",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Left shifting by n positions multiplies by 2^n. 5 << 2 = 5 * 4 = 20. In binary: 101 << 2 = 10100 = 20.",
+      "hints": [
+        "Left shift is equivalent to multiplying by powers of 2",
+        "Each shift left doubles the value",
+        "5 in binary is 101"
+      ],
+      "tags": [
+        "bit_shifting",
+        "left_shift"
+      ]
+    },
+    {
+      "id": "int_031",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Right Shift Operation",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int result = 20 >> 2;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "5",
+        "10",
+        "80",
+        "2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Right shifting by n positions divides by 2^n (for positive integers). 20 >> 2 = 20 / 4 = 5. In binary: 10100 >> 2 = 101 = 5.",
+      "hints": [
+        "Right shift is equivalent to dividing by powers of 2",
+        "Each shift right halves the value",
+        "20 in binary is 10100"
+      ],
+      "tags": [
+        "bit_shifting",
+        "right_shift"
+      ]
+    },
+    {
+      "id": "int_032",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Arithmetic Right Shift with Negative Numbers",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = -16;\n    int result = x >> 2;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "-4",
+        "4",
+        "-8",
+        "1073741820"
+      ],
+      "correct_answer": "A",
+      "explanation": "For signed integers, right shift is arithmetic (sign-extending). -16 >> 2 = -4. The sign bit is preserved, filling leftmost bits with 1s.",
+      "hints": [
+        "Arithmetic right shift preserves the sign",
+        "Sign bits are copied into the vacated positions",
+        "This maintains the negative value"
+      ],
+      "tags": [
+        "bit_shifting",
+        "right_shift",
+        "negative_numbers",
+        "arithmetic_shift"
+      ]
+    },
+    {
+      "id": "int_033",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Setting a Specific Bit",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 8;  // 1000 in binary\n    x = x | (1 << 1);  // Set bit 1\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "10",
+        "9",
+        "12",
+        "8"
+      ],
+      "correct_answer": "A",
+      "explanation": "To set bit n, use x | (1 << n). Here: 8 (1000) | 2 (0010) = 10 (1010). Bit 1 is now set.",
+      "hints": [
+        "OR operation can set bits without clearing others",
+        "1 << 1 creates a mask with only bit 1 set",
+        "8 in binary is 1000"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "set_bit"
+      ]
+    },
+    {
+      "id": "int_035",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Toggling a Specific Bit",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 10;  // 1010 in binary\n    x = x ^ (1 << 2);  // Toggle bit 2\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "14",
+        "10",
+        "6",
+        "8"
+      ],
+      "correct_answer": "A",
+      "explanation": "To toggle bit n, use x ^ (1 << n). Here: 10 (1010) ^ 4 (0100) = 14 (1110). Bit 2 flipped from 0 to 1.",
+      "hints": [
+        "XOR flips bits: 0 becomes 1, 1 becomes 0",
+        "1 << 2 creates a mask with only bit 2 set",
+        "10 in binary is 1010"
+      ],
+      "tags": [
+        "bit_manipulation",
+        "toggle_bit"
+      ]
+    },
+    {
+      "id": "int_041",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Integer Overflow with Left Shift",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    unsigned int x = 1;\n    x = x << 31;\n    printf(\"%u\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2147483648",
+        "0",
+        "-2147483648",
+        "1"
+      ],
+      "correct_answer": "A",
+      "explanation": "1 << 31 sets the most significant bit of a 32-bit unsigned int. This equals 2^31 = 2147483648. No overflow occurs with unsigned types.",
+      "hints": [
+        "Left shift by n multiplies by 2^n",
+        "2^31 = 2147483648",
+        "Unsigned integers wrap around on overflow"
+      ],
+      "tags": [
+        "bit_shifting",
+        "overflow",
+        "unsigned"
+      ]
+    },
+    {
+      "id": "int_045",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "XOR for Swapping",
+      "description": "What does this code print?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int a = 5, b = 7;\n    a = a ^ b;\n    b = a ^ b;\n    a = a ^ b;\n    printf(\"%d %d\\n\", a, b);\n    return 0;\n}",
+      "options": [
+        "7 5",
+        "5 7",
+        "12 0",
+        "0 12"
+      ],
+      "correct_answer": "A",
+      "explanation": "XOR swap trick: after the three operations, a and b are swapped without a temporary variable. Final result: a=7, b=5.",
+      "hints": [
+        "This is a classic XOR swap technique",
+        "XOR properties allow swapping without temp variable",
+        "Trace through each step carefully"
+      ],
+      "tags": [
+        "bitwise",
+        "xor_operator",
+        "swap"
+      ]
+    },
+    {
+      "id": "int_047",
+      "category": "control_flow",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Shift Amount Greater Than Width",
+      "description": "What is the behavior of this code?",
+      "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 5;\n    int result = x << 32;  // Assuming 32-bit int\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "Undefined behavior",
+        "0",
+        "5",
+        "160"
+      ],
+      "correct_answer": "A",
+      "explanation": "Shifting by an amount greater than or equal to the width of the type is undefined behavior in C. On a 32-bit int, shifting by 32 is undefined.",
+      "hints": [
+        "Check the bit width of the type",
+        "Shifting by width or more is problematic",
+        "The C standard leaves this undefined"
+      ],
+      "tags": [
+        "bit_shifting",
+        "undefined_behavior"
       ]
     }
   ]
