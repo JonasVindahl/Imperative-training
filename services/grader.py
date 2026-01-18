@@ -126,10 +126,17 @@ class GraderService:
         correct = question['correct_answer']
         is_correct = user_answer.strip().upper() == correct.strip().upper()
 
+        # Get option text for better user feedback
+        options = question.get('options', [])
+        option_map = {chr(65 + i): opt for i, opt in enumerate(options)}  # A=0, B=1, etc.
+
+        correct_text = option_map.get(correct.strip().upper(), correct)
+        user_text = option_map.get(user_answer.strip().upper(), user_answer)
+
         return {
             'correct': is_correct,
-            'expected': correct,
-            'received': user_answer,
+            'expected': f"{correct.strip().upper()}: {correct_text}",
+            'received': f"{user_answer.strip().upper()}: {user_text}",
             'explanation': question.get('explanation', '')
         }
 
@@ -154,10 +161,18 @@ class GraderService:
 
         is_correct = user_selections == correct_selections
 
+        # Get option text for better user feedback
+        options = question.get('options', [])
+        option_map = {chr(65 + i): opt for i, opt in enumerate(options)}  # A=0, B=1, etc.
+
+        # Build detailed text showing letter: option text
+        correct_details = [f"{letter}: {option_map.get(letter, letter)}" for letter in sorted(correct_selections)]
+        user_details = [f"{letter}: {option_map.get(letter, letter)}" for letter in sorted(user_selections)]
+
         return {
             'correct': is_correct,
-            'expected': ','.join(sorted(correct_selections)),
-            'received': ','.join(sorted(user_selections)),
+            'expected': ', '.join(correct_details) if correct_details else '(none)',
+            'received': ', '.join(user_details) if user_details else '(none)',
             'explanation': question.get('explanation', ''),
             'correct_selections': list(correct_selections),
             'user_selections': list(user_selections)
