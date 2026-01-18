@@ -1974,7 +1974,7 @@
       ]
     },
     {
-      "id": "mem_021",
+      "id": "pnm_mem_022",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2026,7 +2026,7 @@
       ]
     },
     {
-      "id": "mem_022",
+      "id": "pnm_mem_023",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2079,7 +2079,7 @@
       ]
     },
     {
-      "id": "mem_023",
+      "id": "pnm_mem_024",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2132,7 +2132,7 @@
       ]
     },
     {
-      "id": "mem_024",
+      "id": "pnm_mem_025",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -2186,7 +2186,7 @@
       ]
     },
     {
-      "id": "mem_025",
+      "id": "pnm_mem_026",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2240,7 +2240,7 @@
       ]
     },
     {
-      "id": "mem_026",
+      "id": "pnm_mem_027",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2293,7 +2293,7 @@
       ]
     },
     {
-      "id": "mem_027",
+      "id": "pnm_mem_028",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -2346,7 +2346,7 @@
       ]
     },
     {
-      "id": "mem_028",
+      "id": "pnm_mem_029",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2399,7 +2399,7 @@
       ]
     },
     {
-      "id": "mem_029",
+      "id": "pnm_mem_030",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2453,7 +2453,7 @@
       ]
     },
     {
-      "id": "mem_030",
+      "id": "pnm_mem_031",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2507,7 +2507,7 @@
       ]
     },
     {
-      "id": "mem_031",
+      "id": "pnm_mem_032",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -2561,7 +2561,7 @@
       ]
     },
     {
-      "id": "mem_032",
+      "id": "pnm_mem_033",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2614,7 +2614,7 @@
       ]
     },
     {
-      "id": "mem_033",
+      "id": "pnm_mem_034",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2667,7 +2667,7 @@
       ]
     },
     {
-      "id": "mem_034",
+      "id": "pnm_mem_035",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -2721,7 +2721,7 @@
       ]
     },
     {
-      "id": "mem_035",
+      "id": "pnm_mem_036",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2775,7 +2775,7 @@
       ]
     },
     {
-      "id": "mem_036",
+      "id": "pnm_mem_037",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2829,7 +2829,7 @@
       ]
     },
     {
-      "id": "mem_037",
+      "id": "pnm_mem_038",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2883,7 +2883,7 @@
       ]
     },
     {
-      "id": "mem_038",
+      "id": "pnm_mem_039",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -2937,7 +2937,7 @@
       ]
     },
     {
-      "id": "mem_039",
+      "id": "pnm_mem_040",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2991,7 +2991,7 @@
       ]
     },
     {
-      "id": "mem_040",
+      "id": "pnm_mem_041",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -3895,7 +3895,7 @@
       ]
     },
     {
-      "id": "ptr_024",
+      "id": "pnm_ptr_025",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -3947,7 +3947,7 @@
       ]
     },
     {
-      "id": "ptr_025",
+      "id": "pnm_ptr_026",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -3999,7 +3999,7 @@
       ]
     },
     {
-      "id": "ptr_026",
+      "id": "pnm_ptr_027",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4051,7 +4051,7 @@
       ]
     },
     {
-      "id": "ptr_027",
+      "id": "pnm_ptr_028",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -4103,7 +4103,7 @@
       ]
     },
     {
-      "id": "ptr_028",
+      "id": "pnm_ptr_029",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4154,7 +4154,7 @@
       ]
     },
     {
-      "id": "ptr_029",
+      "id": "pnm_ptr_030",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -4206,7 +4206,7 @@
       ]
     },
     {
-      "id": "ptr_030",
+      "id": "pnm_ptr_031",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -4257,7 +4257,7 @@
       ]
     },
     {
-      "id": "ptr_031",
+      "id": "pnm_ptr_032",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4308,7 +4308,7 @@
       ]
     },
     {
-      "id": "ptr_032",
+      "id": "pnm_ptr_033",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -4361,7 +4361,7 @@
       ]
     },
     {
-      "id": "ptr_033",
+      "id": "pnm_ptr_034",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -4413,7 +4413,7 @@
       ]
     },
     {
-      "id": "ptr_034",
+      "id": "pnm_ptr_035",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4465,7 +4465,7 @@
       ]
     },
     {
-      "id": "ptr_035",
+      "id": "pnm_ptr_036",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4518,7 +4518,7 @@
       ]
     },
     {
-      "id": "ptr_036",
+      "id": "pnm_ptr_037",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -4570,7 +4570,7 @@
       ]
     },
     {
-      "id": "ptr_037",
+      "id": "pnm_ptr_038",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -4622,7 +4622,7 @@
       ]
     },
     {
-      "id": "ptr_038",
+      "id": "pnm_ptr_039",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4674,7 +4674,7 @@
       ]
     },
     {
-      "id": "ptr_039",
+      "id": "pnm_ptr_040",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -4725,7 +4725,7 @@
       ]
     },
     {
-      "id": "ptr_040",
+      "id": "pnm_ptr_041",
       "category": "pointers_and_memory",
       "type": "multiple_choice",
       "difficulty": "hard",

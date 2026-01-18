@@ -1763,7 +1763,7 @@
       ]
     },
     {
-      "id": "str_035",
+      "id": "ars_str_036",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -1815,7 +1815,7 @@
       ]
     },
     {
-      "id": "str_036",
+      "id": "ars_str_037",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -1867,7 +1867,7 @@
       ]
     },
     {
-      "id": "str_037",
+      "id": "ars_str_038",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -1920,7 +1920,7 @@
       ]
     },
     {
-      "id": "str_038",
+      "id": "ars_str_039",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -1972,7 +1972,7 @@
       ]
     },
     {
-      "id": "str_039",
+      "id": "ars_str_040",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2024,7 +2024,7 @@
       ]
     },
     {
-      "id": "str_040",
+      "id": "ars_str_041",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2076,7 +2076,7 @@
       ]
     },
     {
-      "id": "str_041",
+      "id": "ars_str_042",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2129,7 +2129,7 @@
       ]
     },
     {
-      "id": "str_042",
+      "id": "ars_str_043",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "medium",
@@ -2181,7 +2181,7 @@
       ]
     },
     {
-      "id": "str_043",
+      "id": "ars_str_044",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "hard",
@@ -2234,7 +2234,7 @@
       ]
     },
     {
-      "id": "str_044",
+      "id": "ars_str_045",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "easy",
@@ -2286,7 +2286,7 @@
       ]
     },
     {
-      "id": "str_045",
+      "id": "ars_str_046",
       "category": "arrays_and_strings",
       "type": "multiple_choice",
       "difficulty": "medium",

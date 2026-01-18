@@ -2286,7 +2286,7 @@
       ]
     },
     {
-      "id": "trace_004",
+      "id": "fnr_trace_005",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "easy",
@@ -2391,7 +2391,7 @@
       ]
     },
     {
-      "id": "trace_005",
+      "id": "fnr_trace_006",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "medium",
@@ -2486,7 +2486,7 @@
       ]
     },
     {
-      "id": "trace_006",
+      "id": "fnr_trace_007",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "hard",
@@ -2578,7 +2578,7 @@
       ]
     },
     {
-      "id": "trace_007",
+      "id": "fnr_trace_008",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "medium",
@@ -2664,7 +2664,7 @@
       ]
     },
     {
-      "id": "trace_008",
+      "id": "fnr_trace_009",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "medium",
@@ -2757,7 +2757,7 @@
       ]
     },
     {
-      "id": "trace_009",
+      "id": "fnr_trace_010",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "medium",
@@ -2846,7 +2846,7 @@
       ]
     },
     {
-      "id": "trace_010",
+      "id": "fnr_trace_011",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "hard",
@@ -2945,7 +2945,7 @@
       ]
     },
     {
-      "id": "trace_011",
+      "id": "fnr_trace_012",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "medium",
@@ -3029,7 +3029,7 @@
       ]
     },
     {
-      "id": "trace_012",
+      "id": "fnr_trace_013",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "easy",
@@ -3131,7 +3131,7 @@
       ]
     },
     {
-      "id": "trace_013",
+      "id": "fnr_trace_014",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "easy",
@@ -3216,7 +3216,7 @@
       ]
     },
     {
-      "id": "trace_014",
+      "id": "fnr_trace_015",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "easy",
@@ -3288,7 +3288,7 @@
       ]
     },
     {
-      "id": "trace_015",
+      "id": "fnr_trace_016",
       "category": "functions_and_recursion",
       "type": "recursive_trace",
       "difficulty": "easy",
