@@ -1,0 +1,1323 @@
+{
+  "questions": [
+    {
+      "id": "oop_intro_001",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java Compilation Command",
+      "description": "Which command is used to compile a Java source file named HelloWorld.java?",
+      "options": [
+        "java HelloWorld.java",
+        "javac HelloWorld.java",
+        "compile HelloWorld.java",
+        "jvm HelloWorld.java"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'javac' command is the Java compiler. It takes a .java source file and compiles it into bytecode, producing a .class file. The 'java' command is used to run an already-compiled program, not to compile it.",
+      "hints": [
+        "The compiler command name stands for 'Java Compiler'",
+        "Think about the distinction between compiling and running"
+      ],
+      "tags": [
+        "javac",
+        "compilation",
+        "jdk"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_002",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Running a Compiled Java Program",
+      "description": "After compiling HelloWorld.java, which command runs the program?",
+      "options": [
+        "run HelloWorld.java",
+        "javac HelloWorld",
+        "java HelloWorld.class",
+        "java HelloWorld"
+      ],
+      "correct_answer": "D",
+      "explanation": "The 'java' command launches the JVM and runs a compiled Java program. You provide the class name without the .class extension. Writing 'java HelloWorld.class' is a common mistake — you should not include the .class extension.",
+      "hints": [
+        "You do not include the file extension when running a Java program",
+        "The 'java' command takes the class name, not the file name"
+      ],
+      "tags": [
+        "java",
+        "execution",
+        "jvm"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_003",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java Source File Extension",
+      "description": "What is the file extension for a Java source code file?",
+      "options": [
+        ".jav",
+        ".class",
+        ".jar",
+        ".java"
+      ],
+      "correct_answer": "D",
+      "explanation": "Java source code files use the .java extension. After compilation, the bytecode is stored in .class files. A .jar file is a Java Archive that bundles multiple .class files together for distribution.",
+      "hints": [
+        "Source files contain human-readable code before compilation",
+        "The extension matches the language name"
+      ],
+      "tags": [
+        "file_extension",
+        "source_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_004",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Output of Java Bytecode Compilation",
+      "description": "When you compile a Java source file, what type of file is produced?",
+      "options": [
+        ".out file containing binary code",
+        ".exe file containing machine code",
+        ".obj file containing object code",
+        ".class file containing bytecode"
+      ],
+      "correct_answer": "D",
+      "explanation": "The Java compiler (javac) produces .class files that contain Java bytecode. This bytecode is platform-independent and is executed by the Java Virtual Machine (JVM). Unlike C/C++, Java does not compile directly to machine-specific executable files.",
+      "hints": [
+        "Java uses an intermediate representation that runs on a virtual machine",
+        "The output is not platform-specific machine code"
+      ],
+      "tags": [
+        "bytecode",
+        "compilation",
+        "class_file"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_005",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "What is the JVM?",
+      "description": "What does JVM stand for, and what is its primary role?",
+      "options": [
+        "Java Virtual Machine — it executes Java bytecode",
+        "Java Variable Manager — it manages memory allocation",
+        "Java Version Monitor — it tracks Java versions",
+        "Java Visual Maker — it creates graphical interfaces"
+      ],
+      "correct_answer": "A",
+      "explanation": "JVM stands for Java Virtual Machine. It is the runtime engine that executes Java bytecode (.class files). The JVM is what makes Java platform-independent: the same bytecode can run on any system that has a compatible JVM installed, following the 'write once, run anywhere' principle.",
+      "hints": [
+        "It acts as an abstraction layer between Java programs and the operating system",
+        "It is the reason Java programs can run on multiple platforms"
+      ],
+      "tags": [
+        "jvm",
+        "virtual_machine",
+        "platform_independence"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_006",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "JDK vs JRE",
+      "description": "What is the difference between JDK and JRE?",
+      "options": [
+        "JDK is for running programs; JRE is for developing programs",
+        "JDK includes development tools (like javac) plus the JRE; JRE only includes the JVM and libraries to run programs",
+        "JDK is an older version of Java; JRE is the newer version",
+        "JDK and JRE are two different names for the same thing"
+      ],
+      "correct_answer": "B",
+      "explanation": "The JDK (Java Development Kit) is a superset of the JRE (Java Runtime Environment). The JDK includes everything in the JRE plus development tools such as the Java compiler (javac), debugger (jdb), and documentation generator (javadoc). If you only need to run Java programs, the JRE is sufficient, but to develop Java programs you need the JDK.",
+      "hints": [
+        "One is for development, the other is just for running",
+        "Think about what tools a developer needs that an end-user does not"
+      ],
+      "tags": [
+        "jdk",
+        "jre",
+        "development_tools"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_007",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Correct main Method Signature",
+      "description": "Which is the correct signature for the main method in Java?",
+      "options": [
+        "static void main(String args)",
+        "public void main(String[] args)",
+        "public static void main(String[] args)",
+        "public static int main(String[] args)"
+      ],
+      "correct_answer": "C",
+      "explanation": "The correct main method signature is 'public static void main(String[] args)'. It must be public (accessible from outside), static (callable without creating an object), void (returns nothing), and accept a String array parameter. If any of these parts are changed, the JVM will not recognize it as the entry point.",
+      "hints": [
+        "The main method must be accessible by the JVM without instantiating the class",
+        "It does not return a value to the operating system like in C"
+      ],
+      "tags": [
+        "main_method",
+        "method_signature",
+        "entry_point"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_008",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Printing to Console",
+      "description": "Which statement correctly prints \"Hello, World!\" followed by a newline in Java?",
+      "options": [
+        "print(\"Hello, World!\");",
+        "System.out.println(\"Hello, World!\");",
+        "Console.writeLine(\"Hello, World!\");",
+        "System.println(\"Hello, World!\");"
+      ],
+      "correct_answer": "B",
+      "explanation": "In Java, System.out.println() is the standard way to print text to the console followed by a newline. 'System' is a class in java.lang, 'out' is a static PrintStream field, and 'println' is a method that prints a line. Unlike Python's print() or C#'s Console.writeLine(), Java uses this fully qualified approach.",
+      "hints": [
+        "Java uses the System class for standard I/O",
+        "'out' refers to the standard output stream"
+      ],
+      "tags": [
+        "println",
+        "console_output",
+        "system_out"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_009",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "println vs print",
+      "description": "What is the difference between System.out.println() and System.out.print()?",
+      "options": [
+        "print() adds a newline after the output; println() does not",
+        "println() adds a newline after the output; print() does not",
+        "println() can only print strings; print() can print any type",
+        "There is no difference between them"
+      ],
+      "correct_answer": "B",
+      "explanation": "System.out.println() prints the argument and then moves the cursor to the next line (adds a newline character). System.out.print() prints the argument but keeps the cursor on the same line. Both methods can print any data type. The 'ln' in println stands for 'line'.",
+      "hints": [
+        "The 'ln' suffix in println gives a clue about what it does",
+        "Think about what happens to the cursor position after each call"
+      ],
+      "tags": [
+        "println",
+        "print",
+        "console_output"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_010",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java Class and File Naming",
+      "description": "If a Java file contains a public class named MyProgram, what must the file be named?",
+      "options": [
+        "MyProgram.java",
+        "myprogram.java",
+        "my_program.java",
+        "The file can be named anything"
+      ],
+      "correct_answer": "A",
+      "explanation": "In Java, the file name must exactly match the name of the public class it contains, including capitalization, and must have the .java extension. So a public class named MyProgram must be in a file called MyProgram.java. This is a strict rule enforced by the Java compiler.",
+      "hints": [
+        "Java is case-sensitive, including file names",
+        "There is a strict naming convention between public classes and files"
+      ],
+      "tags": [
+        "naming_convention",
+        "public_class",
+        "file_naming"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_011",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java Statement Terminator",
+      "description": "How must every statement in Java be terminated?",
+      "options": [
+        "With a colon (:)",
+        "With a newline",
+        "With a period (.)",
+        "With a semicolon (;)"
+      ],
+      "correct_answer": "D",
+      "explanation": "Every statement in Java must end with a semicolon (;). This is a syntactic requirement of the language. Forgetting a semicolon is one of the most common compilation errors for beginners. Unlike Python, Java does not use newlines to delimit statements.",
+      "hints": [
+        "This is similar to C, C++, and C#",
+        "Forgetting this character is one of the most common beginner errors"
+      ],
+      "tags": [
+        "syntax",
+        "semicolon",
+        "common_errors"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_012",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Scanner Import Statement",
+      "description": "Which import statement is needed to use the Scanner class for reading console input?",
+      "options": [
+        "import java.io.Scanner;",
+        "import java.util.Scanner;",
+        "import java.scanner.Scanner;",
+        "No import is needed — Scanner is in java.lang"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Scanner class is located in the java.util package, so you must write 'import java.util.Scanner;' at the top of your file. Unlike classes in java.lang (such as String and System), classes in java.util are not automatically imported and must be explicitly imported.",
+      "hints": [
+        "Scanner is a utility class for parsing input",
+        "Only java.lang classes are automatically available without import"
+      ],
+      "tags": [
+        "scanner",
+        "import",
+        "java_util"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_013",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Creating a Scanner Object",
+      "description": "Which line correctly creates a Scanner object to read from the keyboard?",
+      "options": [
+        "Scanner sc = new Scanner(System.in);",
+        "Scanner sc = new Scanner(System.out);",
+        "Scanner sc = Scanner.create(System.in);",
+        "Scanner sc = new Scanner();"
+      ],
+      "correct_answer": "A",
+      "explanation": "To read from the keyboard, you create a Scanner object with System.in as the argument. System.in represents the standard input stream (keyboard). System.out is the output stream, not the input stream. Scanner requires an input source in its constructor, so 'new Scanner()' without arguments would not compile.",
+      "hints": [
+        "System.in represents the standard input (keyboard)",
+        "Scanner needs to know which input source to read from"
+      ],
+      "tags": [
+        "scanner",
+        "system_in",
+        "object_creation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_014",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Reading an Integer with Scanner",
+      "description": "Given 'Scanner sc = new Scanner(System.in);', which method reads an integer from the user?",
+      "options": [
+        "sc.parseInt()",
+        "sc.readInt()",
+        "sc.getInt()",
+        "sc.nextInt()"
+      ],
+      "correct_answer": "D",
+      "explanation": "The Scanner method for reading an integer is nextInt(). Scanner uses the naming pattern next___() for its reading methods: nextInt(), nextDouble(), nextLine(), next(), etc. There is no readInt(), getInt(), or parseInt() method in the Scanner class.",
+      "hints": [
+        "Scanner methods follow a consistent naming convention with 'next'",
+        "Think about the method names for other types like nextDouble()"
+      ],
+      "tags": [
+        "scanner",
+        "nextInt",
+        "input_reading"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_015",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java's Write Once Run Anywhere",
+      "description": "What does Java's 'Write Once, Run Anywhere' (WORA) principle mean?",
+      "options": [
+        "Java programs are automatically distributed to all platforms",
+        "Java code does not need to be compiled",
+        "Java programs can only be written once and cannot be modified",
+        "Java bytecode can run on any platform that has a JVM installed"
+      ],
+      "correct_answer": "D",
+      "explanation": "The WORA principle means that once Java code is compiled to bytecode, it can run on any platform (Windows, macOS, Linux, etc.) that has a compatible JVM. The JVM abstracts away the differences between operating systems, making the bytecode portable. The source code still needs to be compiled, but only once.",
+      "hints": [
+        "This is related to how bytecode and the JVM interact",
+        "Think about why Java uses an intermediate representation"
+      ],
+      "tags": [
+        "wora",
+        "platform_independence",
+        "bytecode"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_016",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java Comments — Single Line",
+      "description": "Which of the following is a valid single-line comment in Java?",
+      "options": [
+        "/* This is a comment",
+        "# This is a comment",
+        "// This is a comment",
+        "-- This is a comment"
+      ],
+      "correct_answer": "C",
+      "explanation": "In Java, single-line comments start with //. Everything after // on that line is ignored by the compiler. The # symbol is used for comments in Python and shell scripts. The /* symbol starts a multi-line comment but requires a closing */. The -- symbol is used in SQL.",
+      "hints": [
+        "Java shares this comment syntax with C, C++, and C#",
+        "There are two types of comments in Java: single-line and multi-line"
+      ],
+      "tags": [
+        "comments",
+        "syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_017",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Java is Object-Oriented",
+      "description": "Which of the following best describes Java as a programming language?",
+      "options": [
+        "A procedural language like C with no support for objects",
+        "A purely functional programming language with no state",
+        "An object-oriented programming language where (almost) everything is organized into classes and objects",
+        "A markup language like HTML"
+      ],
+      "correct_answer": "C",
+      "explanation": "Java is fundamentally an object-oriented programming language. In Java, all code must be written inside classes, and programs are built by creating objects that interact with each other. While Java supports some procedural and functional features, its core paradigm is object-oriented. Primitive types (int, double, etc.) are the exception — they are not objects.",
+      "hints": [
+        "Think about what must contain every piece of Java code",
+        "Consider the role of classes in Java programs"
+      ],
+      "tags": [
+        "oop",
+        "object_oriented",
+        "java_paradigm"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_018",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Primitive Type — int",
+      "description": "What is the size of the 'int' primitive type in Java?",
+      "options": [
+        "32 bits (4 bytes)",
+        "16 bits (2 bytes)",
+        "64 bits (8 bytes)",
+        "It depends on the platform"
+      ],
+      "correct_answer": "A",
+      "explanation": "In Java, an int is always 32 bits (4 bytes), regardless of the platform. This is different from C/C++, where the size of int can vary between platforms. Java guarantees fixed sizes for all primitive types, which is part of its platform independence. An int can hold values from -2,147,483,648 to 2,147,483,647.",
+      "hints": [
+        "Java guarantees the same size for primitive types on all platforms",
+        "This is different from C where sizes can vary"
+      ],
+      "tags": [
+        "primitive_types",
+        "int",
+        "data_types"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_019",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Boolean Type in Java",
+      "description": "Which of the following is a valid boolean literal in Java?",
+      "options": [
+        "yes",
+        "True",
+        "1",
+        "true"
+      ],
+      "correct_answer": "D",
+      "explanation": "In Java, the boolean literals are 'true' and 'false' (all lowercase). Unlike C/C++, Java does not treat 1 and 0 as boolean values. 'True' with a capital T is not a valid boolean literal (unlike Python). Java's boolean type is strict — it only accepts true or false.",
+      "hints": [
+        "Java is case-sensitive, even for literals",
+        "Java booleans are not interchangeable with integers"
+      ],
+      "tags": [
+        "boolean",
+        "primitive_types",
+        "literals"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_020",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "String Declaration in Java",
+      "description": "Which of the following correctly declares and initializes a String variable in Java?",
+      "options": [
+        "String name = \"Alice\";",
+        "string name = \"Alice\";",
+        "String name = 'Alice';",
+        "char[] name = \"Alice\";"
+      ],
+      "correct_answer": "A",
+      "explanation": "In Java, String is a class (capital S), and string literals are enclosed in double quotes. 'string' (lowercase) is not a type in Java. Single quotes are for char literals only, not strings. A char array and a String are different types in Java and cannot be assigned interchangeably.",
+      "hints": [
+        "String is a class in Java, and class names are capitalized",
+        "Single quotes and double quotes have different meanings in Java"
+      ],
+      "tags": [
+        "string",
+        "declaration",
+        "data_types"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_021",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Compilation Error vs Runtime Error",
+      "description": "Which of the following errors would be caught at compile time (by javac) rather than at runtime?",
+      "options": [
+        "NullPointerException",
+        "Dividing an integer by zero",
+        "ArrayIndexOutOfBoundsException",
+        "Missing semicolon at the end of a statement"
+      ],
+      "correct_answer": "D",
+      "explanation": "A missing semicolon is a syntax error that the Java compiler (javac) detects during compilation. The program cannot be compiled until this is fixed. Division by zero, array index out of bounds, and null pointer access are all runtime errors — they occur while the program is running and result in exceptions.",
+      "hints": [
+        "The compiler checks syntax and type rules before the program can run",
+        "Errors that depend on actual data values cannot be detected at compile time"
+      ],
+      "tags": [
+        "compilation_error",
+        "runtime_error",
+        "debugging"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_022",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "What is Bytecode?",
+      "description": "What is Java bytecode?",
+      "options": [
+        "Machine code specific to the operating system",
+        "The original Java source code stored in a .java file",
+        "An intermediate representation of Java code that is executed by the JVM",
+        "A compressed version of the Java source code"
+      ],
+      "correct_answer": "C",
+      "explanation": "Java bytecode is the intermediate instruction set that the Java compiler produces from source code. It is stored in .class files and is not specific to any hardware platform. The JVM interprets or JIT-compiles this bytecode into native machine code at runtime. This two-step process (source -> bytecode -> machine code) is what enables Java's platform independence.",
+      "hints": [
+        "Bytecode sits between source code and native machine code",
+        "It is designed for a virtual machine, not real hardware"
+      ],
+      "tags": [
+        "bytecode",
+        "jvm",
+        "compilation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_023",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Java main Method — Why Static?",
+      "description": "Why must the main method in Java be declared as 'static'?",
+      "options": [
+        "So the method cannot be overridden by subclasses",
+        "So the JVM can call it without creating an instance of the class",
+        "So the method runs faster than non-static methods",
+        "So the method can access instance variables directly"
+      ],
+      "correct_answer": "B",
+      "explanation": "The main method must be static because it is the entry point of the program, and the JVM needs to call it before any objects have been created. A non-static method requires an instance of the class to be invoked, but at program startup, no objects exist yet. By making main static, the JVM can invoke it directly on the class itself.",
+      "hints": [
+        "Think about what exists before the program starts running",
+        "Static methods belong to the class, not to an instance"
+      ],
+      "tags": [
+        "main_method",
+        "static",
+        "entry_point"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_024",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "What Happens When main is Missing",
+      "description": "What happens if you compile and try to run a Java class that does not contain a main method?",
+      "options": [
+        "The code compiles successfully, but a runtime error occurs when you try to run it",
+        "A compilation error occurs because every class must have a main method",
+        "The program runs but produces no output",
+        "The JVM automatically generates a default main method"
+      ],
+      "correct_answer": "A",
+      "explanation": "A Java class without a main method will compile without errors — not every class needs a main method. However, if you try to run that class with the 'java' command, the JVM will throw an error: 'Main method not found in class'. Only the class you try to run as the entry point needs a main method.",
+      "hints": [
+        "Compilation and execution are separate steps in Java",
+        "The compiler does not require main — it just checks syntax and types"
+      ],
+      "tags": [
+        "main_method",
+        "compilation",
+        "runtime_error"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_025",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Scanner — nextLine() After nextInt()",
+      "description": "What is a common problem when calling nextLine() immediately after nextInt() on a Scanner?",
+      "options": [
+        "nextLine() throws an InputMismatchException",
+        "nextLine() reads the leftover newline character and returns an empty string",
+        "nextInt() consumes the newline, so there is no issue",
+        "nextLine() blocks and waits for new input indefinitely"
+      ],
+      "correct_answer": "B",
+      "explanation": "When you call nextInt(), it reads the integer but leaves the newline character (from pressing Enter) in the input buffer. The subsequent nextLine() call reads this leftover newline and returns an empty string, appearing to skip the input. The solution is to add an extra sc.nextLine() call after nextInt() to consume the leftover newline before reading the actual line of text.",
+      "hints": [
+        "nextInt() does not consume the newline character after the number",
+        "Think about what remains in the input buffer after reading an integer"
+      ],
+      "tags": [
+        "scanner",
+        "nextLine",
+        "nextInt",
+        "common_errors"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_026",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "What is an IDE?",
+      "description": "What is the primary purpose of an IDE (Integrated Development Environment) like IntelliJ IDEA or Eclipse for Java development?",
+      "options": [
+        "To convert Java code directly to machine code without using bytecode",
+        "To replace the JVM so programs run faster",
+        "To provide a unified environment with code editor, compiler, debugger, and build tools in one application",
+        "To provide a runtime environment for executing Java programs on servers"
+      ],
+      "correct_answer": "C",
+      "explanation": "An IDE integrates multiple development tools into a single application: a code editor with syntax highlighting, a compiler/build system, a debugger, code completion, project management, and more. It does not replace the JDK or JVM — it uses them under the hood. Popular Java IDEs include IntelliJ IDEA, Eclipse, and NetBeans.",
+      "hints": [
+        "Think about what 'Integrated' means in the name",
+        "An IDE combines tools that you could also use separately from the command line"
+      ],
+      "tags": [
+        "ide",
+        "development_tools",
+        "intellij"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_027",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Java Primitive Types Count",
+      "description": "How many primitive data types does Java have?",
+      "options": [
+        "8 (byte, short, int, long, float, double, char, boolean)",
+        "6 (int, long, float, double, char, boolean)",
+        "10 (including String and Array)",
+        "4 (int, double, char, boolean)"
+      ],
+      "correct_answer": "A",
+      "explanation": "Java has exactly 8 primitive data types: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), char (16-bit Unicode), and boolean. String and arrays are not primitive types — they are reference types. Every other type in Java is a reference type (object).",
+      "hints": [
+        "There are four integer types, two floating-point types, and two other types",
+        "String is NOT a primitive type in Java"
+      ],
+      "tags": [
+        "primitive_types",
+        "data_types"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_028",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Variable Declaration and Initialization",
+      "description": "What happens if you try to use a local variable in Java without initializing it?",
+      "options": [
+        "A compilation error occurs — Java requires local variables to be initialized before use",
+        "The variable is automatically initialized to 0 or null",
+        "A runtime warning is printed but the program continues",
+        "The variable contains a random garbage value"
+      ],
+      "correct_answer": "A",
+      "explanation": "Unlike instance variables (which get default values), local variables in Java must be explicitly initialized before they are used. If you try to use an uninitialized local variable, the compiler will generate an error such as 'variable might not have been initialized'. This is a safety feature that prevents bugs caused by undefined values.",
+      "hints": [
+        "Java has stricter rules about initialization than C",
+        "There is a difference between local variables and instance variables regarding defaults"
+      ],
+      "tags": [
+        "variables",
+        "initialization",
+        "compilation_error"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_029",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "String Concatenation with +",
+      "description": "What is the output of the following Java code?\n\nSystem.out.println(\"Value: \" + 5 + 3);",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Value: \" + 5 + 3);\n    }\n}",
+      "options": [
+        "Value: 5 + 3",
+        "Value: 8",
+        "Value: 53",
+        "A compilation error"
+      ],
+      "correct_answer": "C",
+      "explanation": "When the + operator is used with a String, it performs string concatenation from left to right. First, \"Value: \" + 5 produces the string \"Value: 5\". Then \"Value: 5\" + 3 produces \"Value: 53\". The integers are converted to strings and concatenated, not added. To get 8, you would need parentheses: \"Value: \" + (5 + 3).",
+      "hints": [
+        "The + operator associates left to right",
+        "When one operand is a String, + performs concatenation"
+      ],
+      "tags": [
+        "string_concatenation",
+        "operator_precedence",
+        "output"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_030",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Classpath Purpose",
+      "description": "What is the purpose of the classpath in Java?",
+      "options": [
+        "It defines the order in which methods are called in a program",
+        "It specifies the path where Java source files should be saved",
+        "It tells the JVM where to find compiled .class files and libraries",
+        "It sets the maximum memory the JVM can use"
+      ],
+      "correct_answer": "C",
+      "explanation": "The classpath is an environment variable or command-line argument that tells the JVM and Java compiler where to look for user-defined classes and packages. When you run 'java -cp /path/to/classes MyApp', you specify that the JVM should search /path/to/classes for the compiled MyApp.class file and any other classes it depends on.",
+      "hints": [
+        "Think about what the JVM needs to find in order to execute a program",
+        "It is analogous to the PATH environment variable for executables"
+      ],
+      "tags": [
+        "classpath",
+        "jvm",
+        "class_loading"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_031",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Type Casting — Narrowing",
+      "description": "What happens when you write: int x = (int) 3.9;",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        int x = (int) 3.9;\n        System.out.println(x);\n    }\n}",
+      "options": [
+        "A compilation error occurs because double cannot be converted to int",
+        "x is assigned the value 4 (rounded up)",
+        "x is assigned the value 3 (the decimal part is truncated)",
+        "A runtime exception is thrown"
+      ],
+      "correct_answer": "C",
+      "explanation": "Casting a double to int in Java performs truncation, not rounding. The decimal part is simply removed, so 3.9 becomes 3. This is called a narrowing conversion and requires an explicit cast — without (int), the compiler would report an error because data could be lost. If you want rounding, use Math.round() instead.",
+      "hints": [
+        "Explicit casting truncates rather than rounds",
+        "Java does not allow implicit narrowing conversions"
+      ],
+      "tags": [
+        "type_casting",
+        "narrowing",
+        "truncation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_032",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Escape Sequences in Java Strings",
+      "description": "What does the escape sequence \\n represent in a Java string?",
+      "options": [
+        "A newline character",
+        "The literal characters backslash and n",
+        "A null character",
+        "A tab character"
+      ],
+      "correct_answer": "A",
+      "explanation": "In Java strings, \\n is the escape sequence for a newline character, which moves the output cursor to the next line. Other common escape sequences include \\t (tab), \\\\ (literal backslash), \\\" (literal double quote), and \\' (literal single quote). These are used to represent special characters that cannot be typed directly in string literals.",
+      "hints": [
+        "The backslash indicates an escape sequence, not a literal character",
+        "This is the same convention used in C, C++, and many other languages"
+      ],
+      "tags": [
+        "escape_sequences",
+        "strings",
+        "newline"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_033",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Java Package Declaration",
+      "description": "What is the purpose of a package declaration like 'package com.example.myapp;' at the top of a Java file?",
+      "options": [
+        "It organizes the class into a namespace to avoid naming conflicts and structure the project",
+        "It imports all classes from the com.example.myapp library",
+        "It specifies the version of Java required to compile the file",
+        "It declares that the file depends on the com.example.myapp framework"
+      ],
+      "correct_answer": "A",
+      "explanation": "A package declaration groups related classes into a namespace, which helps avoid naming conflicts between classes with the same name from different libraries. The package also corresponds to the directory structure: com.example.myapp means the .java file must be in the directory com/example/myapp/. Packages also control access with package-private visibility.",
+      "hints": [
+        "Packages relate to the directory structure on disk",
+        "They prevent naming collisions when different libraries have classes with the same name"
+      ],
+      "tags": [
+        "packages",
+        "namespace",
+        "project_structure"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_034",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "JIT Compilation",
+      "description": "What is JIT (Just-In-Time) compilation in the context of the JVM?",
+      "options": [
+        "The JVM compiles frequently executed bytecode into native machine code at runtime for better performance",
+        "The JVM compiles Java source code (.java) into bytecode (.class) on the fly",
+        "The JVM precompiles all bytecode before the program starts",
+        "The JVM compiles native machine code back into bytecode for portability"
+      ],
+      "correct_answer": "A",
+      "explanation": "JIT compilation is a JVM optimization technique where frequently executed (\"hot\") bytecode is compiled into native machine code during program execution. This gives near-native performance while maintaining the portability of bytecode. The JVM initially interprets bytecode, then identifies hot spots and compiles them to native code for faster subsequent execution.",
+      "hints": [
+        "It is an optimization that happens during runtime, not before",
+        "It bridges the performance gap between interpreted and compiled languages"
+      ],
+      "tags": [
+        "jit",
+        "jvm",
+        "performance",
+        "compilation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_035",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Multiple Classes in One File",
+      "description": "Can a single .java file contain multiple class definitions?",
+      "options": [
+        "No, each .java file can only contain exactly one class",
+        "Yes, but only one class can be declared as public, and the file must be named after that public class",
+        "Yes, and all classes can be public",
+        "Yes, but the file must be named after the first class listed"
+      ],
+      "correct_answer": "B",
+      "explanation": "A single .java file can contain multiple class definitions, but at most one of them can be declared as public. The file name must match the name of the public class. The non-public classes in the same file will each produce their own .class file when compiled. In practice, it is considered best practice to put each class in its own file.",
+      "hints": [
+        "Think about the naming rule: file name must match the public class",
+        "Non-public classes do not have the file naming restriction"
+      ],
+      "tags": [
+        "class_definition",
+        "file_structure",
+        "public_class"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_036",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "System.out.printf Formatting",
+      "description": "What is the output of System.out.printf(\"%.2f\", 3.14159);?",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        System.out.printf(\"%.2f\", 3.14159);\n    }\n}",
+      "options": [
+        "3.15",
+        "3.14",
+        "3.14159",
+        "3.1"
+      ],
+      "correct_answer": "B",
+      "explanation": "The format specifier %.2f means: print a floating-point number with exactly 2 decimal places. 3.14159 rounded to 2 decimal places is 3.14 (the third decimal digit 1 is less than 5, so it rounds down). System.out.printf works similarly to printf in C and uses the same format specifiers.",
+      "hints": [
+        "The .2 in %.2f specifies the number of decimal places",
+        "printf performs rounding when limiting decimal places"
+      ],
+      "tags": [
+        "printf",
+        "formatting",
+        "output"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_037",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Compilation Error — Type Mismatch",
+      "description": "Which line causes a compilation error?",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        int x = 10;        // Line 1\n        double y = 3.14;   // Line 2\n        int z = x + y;     // Line 3\n        System.out.println(z); // Line 4\n    }\n}",
+      "options": [
+        "Line 4 — println cannot print an int",
+        "Line 2 — 3.14 is not a valid double literal",
+        "Line 1 — int cannot be assigned a value",
+        "Line 3 — cannot assign a double result to an int without explicit casting"
+      ],
+      "correct_answer": "D",
+      "explanation": "On Line 3, x + y evaluates to a double (because y is a double, and int + double promotes to double). Assigning a double to an int is a narrowing conversion that could lose data, so Java requires an explicit cast: int z = (int)(x + y);. This is a compile-time error, not a runtime error — the compiler catches it before the program can run.",
+      "hints": [
+        "When you add an int and a double, the result is a double",
+        "Java does not allow implicit narrowing conversions"
+      ],
+      "tags": [
+        "type_mismatch",
+        "compilation_error",
+        "type_promotion"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_038",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "What is an Object in OOP?",
+      "description": "In object-oriented programming, what is an object?",
+      "options": [
+        "A function that can be called from anywhere in the program",
+        "A blueprint for creating variables",
+        "An instance of a class that has state (fields) and behavior (methods)",
+        "A data type like int or double"
+      ],
+      "correct_answer": "C",
+      "explanation": "In OOP, an object is a concrete instance of a class. It has state, represented by its fields (also called attributes or instance variables), and behavior, represented by its methods. For example, if 'Car' is a class, then a specific car like 'myToyota' is an object. A class is the blueprint; an object is the thing built from that blueprint.",
+      "hints": [
+        "Think about the relationship between a blueprint and a building",
+        "An object combines data and the operations that act on that data"
+      ],
+      "tags": [
+        "oop",
+        "object",
+        "class",
+        "instance"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_039",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "What is a Class in OOP?",
+      "description": "What is a class in Java?",
+      "options": [
+        "A built-in data type like int or boolean",
+        "A running instance of a program",
+        "A collection of unrelated functions",
+        "A blueprint or template that defines the fields and methods that objects of that type will have"
+      ],
+      "correct_answer": "D",
+      "explanation": "A class in Java is a template or blueprint that defines what data (fields) and behaviors (methods) its objects will have. You can create multiple objects (instances) from a single class, each with its own values for the fields. For example, a Student class might define fields like name and grade, and methods like getGPA().",
+      "hints": [
+        "A class describes what an object looks like and what it can do",
+        "Multiple objects can be created from the same class"
+      ],
+      "tags": [
+        "class",
+        "oop",
+        "blueprint",
+        "template"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_040",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "InputMismatchException with Scanner",
+      "description": "What happens if the user types \"hello\" when the program calls sc.nextInt()?",
+      "options": [
+        "The value 0 is assigned to the variable",
+        "An InputMismatchException is thrown at runtime",
+        "A compilation error occurs",
+        "The Scanner waits until the user enters a valid integer"
+      ],
+      "correct_answer": "B",
+      "explanation": "If the input cannot be parsed as an integer, Scanner's nextInt() method throws an InputMismatchException at runtime. This is a runtime error, not a compilation error, because the compiler cannot know what the user will type. Proper programs should handle this with try-catch blocks or use hasNextInt() to check before reading.",
+      "hints": [
+        "The compiler cannot predict what the user will enter",
+        "Scanner methods throw exceptions when input does not match the expected type"
+      ],
+      "tags": [
+        "scanner",
+        "exception",
+        "input_mismatch",
+        "runtime_error"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_041",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Java Compilation and Execution Stages",
+      "description": "What is the correct sequence of stages when you write, compile, and run a Java program?",
+      "options": [
+        "Write .java source -> JVM converts to .class -> javac compiles .class to native code -> program executes",
+        "Write .java source -> javac compiles to .class bytecode -> JVM interprets/JIT-compiles bytecode to native code -> program executes",
+        "Write .java source -> javac compiles directly to native machine code -> OS executes the binary",
+        "Write .java source -> JVM compiles to .class -> IDE converts to native code -> program executes"
+      ],
+      "correct_answer": "B",
+      "explanation": "The correct sequence is: (1) The developer writes Java source code in a .java file. (2) The javac compiler compiles the source into platform-independent bytecode stored in a .class file. (3) The JVM loads the bytecode and either interprets it or uses JIT (Just-In-Time) compilation to convert frequently executed sections to native machine code. (4) The program executes on the target platform. This two-stage compilation is key to Java's portability.",
+      "hints": [
+        "There is an intermediate step between source code and machine execution",
+        "The JVM can both interpret and compile bytecode"
+      ],
+      "tags": [
+        "compilation",
+        "execution",
+        "javac",
+        "jvm",
+        "jit"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_042",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "args Parameter in main",
+      "description": "What does the 'args' parameter in 'public static void main(String[] args)' contain when you run: java MyProgram hello world?",
+      "options": [
+        "args[0] is \"java\", args[1] is \"MyProgram\", args[2] is \"hello\", args[3] is \"world\"",
+        "args[0] is \"MyProgram\", args[1] is \"hello\", and args[2] is \"world\"",
+        "args[0] is \"hello\" and args[1] is \"world\" — it contains command-line arguments",
+        "args is empty because no arguments were explicitly passed with a flag"
+      ],
+      "correct_answer": "C",
+      "explanation": "The String[] args parameter receives command-line arguments passed after the class name. When you run 'java MyProgram hello world', args[0] is \"hello\" and args[1] is \"world\". Unlike C's argv, Java's args does NOT include the program name — it only contains the arguments. args.length would be 2 in this case.",
+      "hints": [
+        "Unlike C, Java does not include the program name in the arguments array",
+        "The arguments start from index 0"
+      ],
+      "tags": [
+        "main_method",
+        "command_line_args",
+        "string_array"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_043",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Tracing Output — Multiple print Statements",
+      "description": "What is the output of the following program?",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        System.out.print(\"A\");\n        System.out.println(\"B\");\n        System.out.print(\"C\");\n        System.out.print(\"D\");\n    }\n}",
+      "options": [
+        "ABCD",
+        "A\nB\nC\nD",
+        "AB\nCD",
+        "AB\nC\nD"
+      ],
+      "correct_answer": "C",
+      "explanation": "Let us trace through: print(\"A\") outputs 'A' with no newline. println(\"B\") outputs 'B' followed by a newline. print(\"C\") outputs 'C' on the new line with no newline. print(\"D\") outputs 'D' immediately after 'C'. The result is 'AB' on the first line and 'CD' on the second line.",
+      "hints": [
+        "print() does not add a newline; println() does",
+        "Trace each statement and track the cursor position"
+      ],
+      "tags": [
+        "print",
+        "println",
+        "output_tracing"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_044",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Java char Type and Unicode",
+      "description": "What is the output of the following Java code?",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        char c = 'A';\n        System.out.println(c + 1);\n    }\n}",
+      "options": [
+        "66",
+        "B",
+        "A1",
+        "A compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "In Java, char is a 16-bit numeric type representing a Unicode character. When you use + with a char and an int, the char is promoted to int via its Unicode value. 'A' has the Unicode (and ASCII) value 65, so c + 1 evaluates to the integer 66. The result is an int, so println prints the number 66, not the character 'B'. To get 'B', you would need to cast: (char)(c + 1).",
+      "hints": [
+        "char is a numeric type in Java — arithmetic is performed on its integer value",
+        "The + operator with char and int produces an int result"
+      ],
+      "tags": [
+        "char",
+        "unicode",
+        "type_promotion",
+        "arithmetic"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_045",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Garbage Collection in Java",
+      "description": "How does Java handle memory deallocation for objects?",
+      "options": [
+        "Memory is released when the variable goes out of scope, similar to stack allocation in C",
+        "The programmer must manually call free() or delete to release memory",
+        "The JVM's garbage collector automatically reclaims memory when objects are no longer referenced",
+        "Objects are never deallocated — memory is only freed when the program terminates"
+      ],
+      "correct_answer": "C",
+      "explanation": "Java uses automatic garbage collection: the JVM periodically identifies objects that are no longer reachable (i.e., no active references point to them) and reclaims their memory. Unlike C/C++, Java does not require manual memory deallocation — there is no free() or delete operator. This eliminates common bugs like memory leaks and dangling pointers, though the programmer can still cause logical memory leaks by holding unnecessary references.",
+      "hints": [
+        "Java was designed to avoid the manual memory management problems in C and C++",
+        "The JVM handles memory cleanup automatically"
+      ],
+      "tags": [
+        "garbage_collection",
+        "memory_management",
+        "jvm"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_046",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "String Comparison — == vs equals()",
+      "description": "What is the output of the following code?",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        String a = new String(\"hello\");\n        String b = new String(\"hello\");\n        System.out.println(a == b);\n        System.out.println(a.equals(b));\n    }\n}",
+      "options": [
+        "true followed by false",
+        "true followed by true",
+        "false followed by false",
+        "false followed by true"
+      ],
+      "correct_answer": "D",
+      "explanation": "The == operator compares object references (memory addresses), not content. Since 'a' and 'b' are created with 'new', they are distinct objects in memory, so a == b is false. The equals() method compares the actual character content of the strings, so a.equals(b) is true because both contain \"hello\". This distinction between identity (==) and equality (equals) is fundamental in Java.",
+      "hints": [
+        "== checks if two references point to the same object in memory",
+        "equals() checks if the content of two objects is logically the same"
+      ],
+      "tags": [
+        "string_comparison",
+        "equals",
+        "reference_equality",
+        "oop"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_047",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Encapsulation Overview",
+      "description": "Which OOP concept is described as 'bundling data and the methods that operate on that data into a single unit, and restricting direct access to the data'?",
+      "options": [
+        "Inheritance",
+        "Encapsulation",
+        "Polymorphism",
+        "Abstraction"
+      ],
+      "correct_answer": "B",
+      "explanation": "Encapsulation is the OOP principle of bundling data (fields) and behavior (methods) together in a class, while hiding the internal state from outside code. In Java, this is achieved by declaring fields as private and providing public getter and setter methods. Encapsulation protects the integrity of an object's state and reduces coupling between components.",
+      "hints": [
+        "This concept is about data hiding and protecting internal state",
+        "It involves using access modifiers like private and public"
+      ],
+      "tags": [
+        "encapsulation",
+        "oop",
+        "data_hiding",
+        "access_modifiers"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_048",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "The Four Pillars of OOP",
+      "description": "Which of the following lists all four fundamental principles (pillars) of Object-Oriented Programming?",
+      "options": [
+        "Encapsulation, Compilation, Polymorphism, Abstraction",
+        "Encapsulation, Inheritance, Polymorphism, Abstraction",
+        "Encapsulation, Inheritance, Recursion, Abstraction",
+        "Encapsulation, Inheritance, Polymorphism, Serialization"
+      ],
+      "correct_answer": "B",
+      "explanation": "The four pillars of OOP are: (1) Encapsulation — hiding internal state and requiring interaction through methods. (2) Inheritance — creating new classes based on existing ones. (3) Polymorphism — allowing objects to be treated as instances of their parent type. (4) Abstraction — hiding complex implementation details and showing only essential features. Recursion and serialization are programming concepts but not OOP pillars.",
+      "hints": [
+        "These are the foundational principles that define the OOP paradigm",
+        "Compilation and recursion are general programming concepts, not specific to OOP"
+      ],
+      "tags": [
+        "oop",
+        "four_pillars",
+        "encapsulation",
+        "inheritance",
+        "polymorphism",
+        "abstraction"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_049",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Scanner — Detecting Available Input",
+      "description": "Which Scanner method checks if there is another integer available to read without actually consuming the input?",
+      "options": [
+        "isNextInt()",
+        "peekInt()",
+        "checkInt()",
+        "hasNextInt()"
+      ],
+      "correct_answer": "D",
+      "explanation": "The hasNextInt() method returns true if the next token in the Scanner's input can be interpreted as an int, without actually reading or consuming the token. This is useful for validating input before reading it, preventing InputMismatchException. Scanner provides similar methods for all types: hasNextDouble(), hasNextLine(), hasNext(), etc.",
+      "hints": [
+        "Scanner 'has' methods check for the presence of data without consuming it",
+        "The naming pattern matches the 'next' methods: hasNextInt() pairs with nextInt()"
+      ],
+      "tags": [
+        "scanner",
+        "hasNextInt",
+        "input_validation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_intro_050",
+      "category": "intro_oop",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Java Compilation Error — Mismatched Braces",
+      "description": "What error occurs when you try to compile this code?",
+      "code_template": "public class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    \n}",
+      "options": [
+        "A compilation error: the class body is missing a closing brace",
+        "A runtime error: the program crashes when the JVM tries to execute it",
+        "No error: the program compiles and runs normally",
+        "A warning but the program still compiles"
+      ],
+      "correct_answer": "A",
+      "explanation": "The code is missing the closing brace '}' for the class body. The method's closing brace closes the method, but the class itself is left open. The Java compiler will report an error such as 'reached end of file while parsing'. Mismatched braces are one of the most common syntax errors, especially in larger programs. Using proper indentation and an IDE that highlights matching braces helps avoid this.",
+      "hints": [
+        "Count the opening and closing braces to see if they match",
+        "The compiler checks that all code blocks are properly closed"
+      ],
+      "tags": [
+        "compilation_error",
+        "syntax_error",
+        "braces",
+        "common_errors"
+      ],
+      "points": 1
+    }
+  ]
+}

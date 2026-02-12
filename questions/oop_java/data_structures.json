@@ -1,0 +1,1373 @@
+{
+  "questions": [
+    {
+      "id": "oop_ds_001",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Primitive vs Reference Types",
+      "description": "Which of the following is a primitive data type in Java?",
+      "options": [
+        "String",
+        "int",
+        "Integer",
+        "ArrayList"
+      ],
+      "correct_answer": "B",
+      "explanation": "In Java, 'int' is a primitive data type that stores a 32-bit integer value directly in memory. 'String' is a class (reference type), 'Integer' is the wrapper class for int (also a reference type), and 'ArrayList' is a collection class. Java has 8 primitive types: byte, short, int, long, float, double, char, and boolean.",
+      "hints": [
+        "Think about which types start with a lowercase letter by convention",
+        "Primitive types store values directly, not references to objects"
+      ],
+      "tags": [
+        "primitive_types",
+        "data_types",
+        "java_basics"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_002",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Array Declaration in Java",
+      "description": "Which of the following correctly declares and initializes an array of integers in Java?",
+      "options": [
+        "int numbers = {1, 2, 3, 4, 5};",
+        "int numbers[] = new int[](1, 2, 3, 4, 5);",
+        "Array<int> numbers = new Array<>(1, 2, 3, 4, 5);",
+        "int[] numbers = {1, 2, 3, 4, 5};"
+      ],
+      "correct_answer": "D",
+      "explanation": "In Java, arrays can be declared and initialized using curly braces: int[] numbers = {1, 2, 3, 4, 5}; This creates an array of size 5 with the given values. Option B has invalid syntax for the constructor. Option C uses a non-existent Array generic class (and primitives cannot be used as generic type arguments). Option D is missing the array brackets.",
+      "hints": [
+        "Arrays in Java use square brackets [] in the declaration",
+        "Curly braces {} can be used for array initialization"
+      ],
+      "tags": [
+        "arrays",
+        "declaration",
+        "initialization"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_003",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "ArrayList Basic Operation",
+      "description": "What is the output of the following code?\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"A\");\nlist.add(\"B\");\nlist.add(\"C\");\nSystem.out.println(list.size());",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"A\");\n        list.add(\"B\");\n        list.add(\"C\");\n        System.out.println(list.size());\n    }\n}",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "3"
+      ],
+      "correct_answer": "D",
+      "explanation": "The ArrayList starts empty. Three elements (\"A\", \"B\", \"C\") are added using the add() method, so size() returns 3. The size() method returns the number of elements currently in the list, not the capacity of the underlying array.",
+      "hints": [
+        "Count how many times add() is called",
+        "size() returns the number of elements, not the internal capacity"
+      ],
+      "tags": [
+        "arraylist",
+        "size",
+        "add"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_004",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "String Immutability",
+      "description": "What is the output of the following code?\n\nString s = \"Hello\";\ns.concat(\" World\");\nSystem.out.println(s);",
+      "code_template": "public class Main {\n    public static void main(String[] args) {\n        String s = \"Hello\";\n        s.concat(\" World\");\n        System.out.println(s);\n    }\n}",
+      "options": [
+        "A compilation error occurs",
+        "Hello World",
+        "World",
+        "Hello"
+      ],
+      "correct_answer": "D",
+      "explanation": "Strings in Java are immutable. The concat() method does not modify the original String; it returns a new String. Since the return value is not assigned to any variable, the original string 's' remains \"Hello\". To get \"Hello World\", you would need to write: s = s.concat(\" World\");",
+      "hints": [
+        "Strings in Java are immutable - they cannot be changed after creation",
+        "String methods return new String objects rather than modifying the original"
+      ],
+      "tags": [
+        "string",
+        "immutability",
+        "concat"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_005",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "HashMap Basics",
+      "description": "Which data structure stores key-value pairs and allows O(1) average time lookup by key?",
+      "options": [
+        "HashMap",
+        "ArrayList",
+        "LinkedList",
+        "Stack"
+      ],
+      "correct_answer": "A",
+      "explanation": "A HashMap stores key-value pairs and uses a hash function to compute an index, providing average O(1) time complexity for put, get, and remove operations. ArrayList and LinkedList store individual elements in a sequence. Stack is a LIFO (Last-In-First-Out) data structure for individual elements.",
+      "hints": [
+        "Think about which data structure uses hashing to store and retrieve values",
+        "Key-value pairs are a defining feature of map-type data structures"
+      ],
+      "tags": [
+        "hashmap",
+        "key_value",
+        "time_complexity"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_006",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Stack LIFO Principle",
+      "description": "What is the output of the following code?\n\nStack<Integer> stack = new Stack<>();\nstack.push(10);\nstack.push(20);\nstack.push(30);\nSystem.out.println(stack.pop());",
+      "code_template": "import java.util.Stack;\n\npublic class Main {\n    public static void main(String[] args) {\n        Stack<Integer> stack = new Stack<>();\n        stack.push(10);\n        stack.push(20);\n        stack.push(30);\n        System.out.println(stack.pop());\n    }\n}",
+      "options": [
+        "10",
+        "30",
+        "20",
+        "An exception is thrown"
+      ],
+      "correct_answer": "B",
+      "explanation": "A Stack follows the LIFO (Last-In, First-Out) principle. Elements are pushed onto the top: first 10, then 20, then 30 on top. When pop() is called, it removes and returns the top element, which is 30. The stack now contains [10, 20].",
+      "hints": [
+        "LIFO means the last element added is the first one removed",
+        "pop() removes and returns the top element of the stack"
+      ],
+      "tags": [
+        "stack",
+        "lifo",
+        "push",
+        "pop"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_007",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Queue FIFO Principle",
+      "description": "What is the output of the following code?\n\nQueue<String> queue = new LinkedList<>();\nqueue.add(\"First\");\nqueue.add(\"Second\");\nqueue.add(\"Third\");\nSystem.out.println(queue.poll());",
+      "code_template": "import java.util.Queue;\nimport java.util.LinkedList;\n\npublic class Main {\n    public static void main(String[] args) {\n        Queue<String> queue = new LinkedList<>();\n        queue.add(\"First\");\n        queue.add(\"Second\");\n        queue.add(\"Third\");\n        System.out.println(queue.poll());\n    }\n}",
+      "options": [
+        "Second",
+        "Third",
+        "First",
+        "null"
+      ],
+      "correct_answer": "C",
+      "explanation": "A Queue follows the FIFO (First-In, First-Out) principle. Elements are added to the back: \"First\", then \"Second\", then \"Third\". When poll() is called, it removes and returns the element at the front of the queue, which is \"First\". poll() returns null if the queue is empty, unlike remove() which throws an exception.",
+      "hints": [
+        "FIFO means the first element added is the first one removed",
+        "poll() retrieves and removes the head of the queue"
+      ],
+      "tags": [
+        "queue",
+        "fifo",
+        "poll",
+        "linkedlist"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_008",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "2D Array Access",
+      "description": "What is the output of the following code?\n\nint[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};\nSystem.out.println(matrix[1][2]);",
+      "code_template": "public class Main {\n    public static void main(String[] args) {\n        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};\n        System.out.println(matrix[1][2]);\n    }\n}",
+      "options": [
+        "2",
+        "6",
+        "5",
+        "8"
+      ],
+      "correct_answer": "B",
+      "explanation": "In a 2D array, matrix[1][2] accesses row index 1 (the second row: {4, 5, 6}) and column index 2 (the third element: 6). Remember that array indices start at 0 in Java. Row 0 is {1,2,3}, row 1 is {4,5,6}, and row 2 is {7,8,9}.",
+      "hints": [
+        "Array indices start at 0 in Java",
+        "The first index selects the row, the second index selects the column"
+      ],
+      "tags": [
+        "2d_array",
+        "indexing",
+        "matrix"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_009",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "ArrayList vs Array",
+      "description": "What is a key difference between an ArrayList and a standard Java array?",
+      "options": [
+        "An array can store objects, while an ArrayList can only store primitives",
+        "An ArrayList can dynamically grow and shrink in size, while an array has a fixed size",
+        "An ArrayList is faster than an array for all operations",
+        "An array can hold different types of elements, while an ArrayList cannot"
+      ],
+      "correct_answer": "B",
+      "explanation": "The key difference is that an ArrayList dynamically resizes as elements are added or removed, while a standard Java array has a fixed size that is set at creation time. Arrays can store both primitives and objects, while ArrayList can only store objects (using wrapper classes for primitives). ArrayList is not necessarily faster - array access by index is identical in time complexity, but ArrayList has overhead from dynamic resizing.",
+      "hints": [
+        "Think about what happens when you need to add more elements than the initial size",
+        "Consider how each handles memory allocation"
+      ],
+      "tags": [
+        "arraylist",
+        "array",
+        "comparison",
+        "dynamic_sizing"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_010",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Generics Type Parameter",
+      "description": "What does the <String> in ArrayList<String> specify?",
+      "options": [
+        "The type of elements that the ArrayList can hold",
+        "The name of the ArrayList variable",
+        "The initial capacity of the ArrayList",
+        "The superclass of ArrayList"
+      ],
+      "correct_answer": "A",
+      "explanation": "The angle brackets <String> define a generic type parameter that specifies the type of elements the ArrayList can hold. In this case, ArrayList<String> can only hold String objects. Generics provide compile-time type safety, preventing you from accidentally adding elements of the wrong type. This is part of Java's generics feature introduced in Java 5.",
+      "hints": [
+        "Generics are a way to parameterize types in Java",
+        "The type inside angle brackets restricts what can be stored"
+      ],
+      "tags": [
+        "generics",
+        "type_parameter",
+        "arraylist"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_011",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Array Length Property",
+      "description": "How do you get the number of elements in a Java array named 'arr'?",
+      "options": [
+        "arr.count()",
+        "arr.size()",
+        "arr.length()",
+        "arr.length"
+      ],
+      "correct_answer": "D",
+      "explanation": "In Java, arrays have a 'length' field (not a method) that returns the number of elements. Note that it is 'arr.length' without parentheses, unlike String's length() method which uses parentheses. ArrayList uses size() to return the number of elements. This is a common source of confusion for beginners.",
+      "hints": [
+        "Arrays use a field, not a method, to report their size",
+        "Pay attention to whether parentheses are needed"
+      ],
+      "tags": [
+        "array",
+        "length",
+        "syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_012",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Contains Method",
+      "description": "What is the output of the following code?\n\nArrayList<String> fruits = new ArrayList<>();\nfruits.add(\"Apple\");\nfruits.add(\"Banana\");\nfruits.add(\"Cherry\");\nSystem.out.println(fruits.contains(\"Banana\"));",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> fruits = new ArrayList<>();\n        fruits.add(\"Apple\");\n        fruits.add(\"Banana\");\n        fruits.add(\"Cherry\");\n        System.out.println(fruits.contains(\"Banana\"));\n    }\n}",
+      "options": [
+        "false",
+        "true",
+        "1",
+        "Banana"
+      ],
+      "correct_answer": "B",
+      "explanation": "The contains() method checks whether the ArrayList contains the specified element and returns a boolean value. Since \"Banana\" was added to the list, contains(\"Banana\") returns true. The method uses the equals() method internally to compare elements.",
+      "hints": [
+        "contains() returns a boolean value",
+        "It checks for the presence of an element using equals()"
+      ],
+      "tags": [
+        "arraylist",
+        "contains",
+        "boolean"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_013",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "LinkedList Interface",
+      "description": "Which of the following interfaces does LinkedList implement in Java?",
+      "options": [
+        "Both List and Deque",
+        "Only List",
+        "Only Queue",
+        "Only Deque"
+      ],
+      "correct_answer": "A",
+      "explanation": "Java's LinkedList class implements both the List interface and the Deque interface (which extends Queue). This means LinkedList can be used as a list with indexed access, as a queue (FIFO), as a deque (double-ended queue), or as a stack (LIFO). This makes LinkedList one of the most versatile collection classes in Java.",
+      "hints": [
+        "LinkedList is a doubly-linked list implementation",
+        "Think about what operations a doubly-linked list naturally supports"
+      ],
+      "tags": [
+        "linkedlist",
+        "interfaces",
+        "list",
+        "deque"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_014",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "HashMap put and get",
+      "description": "What is the output of the following code?\n\nHashMap<String, Integer> map = new HashMap<>();\nmap.put(\"Alice\", 90);\nmap.put(\"Bob\", 85);\nmap.put(\"Alice\", 95);\nSystem.out.println(map.get(\"Alice\"));",
+      "code_template": "import java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> map = new HashMap<>();\n        map.put(\"Alice\", 90);\n        map.put(\"Bob\", 85);\n        map.put(\"Alice\", 95);\n        System.out.println(map.get(\"Alice\"));\n    }\n}",
+      "options": [
+        "An exception is thrown",
+        "90",
+        "85",
+        "95"
+      ],
+      "correct_answer": "D",
+      "explanation": "In a HashMap, each key must be unique. When you call put(\"Alice\", 95) after \"Alice\" already exists with value 90, the old value is replaced with the new value 95. The get() method then returns the current value associated with \"Alice\", which is 95. HashMap does not allow duplicate keys but does allow duplicate values.",
+      "hints": [
+        "HashMap keys must be unique",
+        "What happens when you put a value with a key that already exists?"
+      ],
+      "tags": [
+        "hashmap",
+        "put",
+        "get",
+        "duplicate_keys"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_015",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Vector vs ArrayList",
+      "description": "What is the primary difference between Vector and ArrayList in Java?",
+      "options": [
+        "ArrayList has a fixed size, while Vector can grow dynamically",
+        "ArrayList is synchronized, while Vector is not",
+        "Vector can only store integers, while ArrayList can store any type",
+        "Vector is synchronized (thread-safe), while ArrayList is not"
+      ],
+      "correct_answer": "D",
+      "explanation": "The primary difference is that Vector is synchronized (thread-safe), meaning its methods are synchronized to prevent concurrent modification issues in multi-threaded environments. ArrayList is not synchronized, which makes it faster in single-threaded scenarios. Both can dynamically grow, and both can store any object type. Vector is considered a legacy class, and Collections.synchronizedList() or CopyOnWriteArrayList are preferred for thread-safe lists.",
+      "hints": [
+        "Think about thread safety",
+        "Vector is an older class from Java 1.0"
+      ],
+      "tags": [
+        "vector",
+        "arraylist",
+        "synchronization",
+        "thread_safety"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_016",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "ArrayList Remove by Index",
+      "description": "What is the output of the following code?\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"A\");\nlist.add(\"B\");\nlist.add(\"C\");\nlist.add(\"D\");\nlist.remove(1);\nSystem.out.println(list);",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"A\");\n        list.add(\"B\");\n        list.add(\"C\");\n        list.add(\"D\");\n        list.remove(1);\n        System.out.println(list);\n    }\n}",
+      "options": [
+        "[B, C, D]",
+        "[A, B, D]",
+        "[A, C, D]",
+        "[A, B, C]"
+      ],
+      "correct_answer": "C",
+      "explanation": "The remove(1) call removes the element at index 1. Since list indices start at 0, the element at index 1 is \"B\". After removing \"B\", the remaining elements shift left to fill the gap, resulting in [A, C, D]. Note that remove(int) removes by index, while remove(Object) removes by value.",
+      "hints": [
+        "Indices start at 0, so index 1 is the second element",
+        "After removal, elements shift to fill the gap"
+      ],
+      "tags": [
+        "arraylist",
+        "remove",
+        "index",
+        "shifting"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_017",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "ArrayList vs LinkedList Access Time",
+      "description": "What is the time complexity of accessing an element by index in an ArrayList versus a LinkedList?",
+      "options": [
+        "Both are O(1)",
+        "ArrayList: O(n), LinkedList: O(1)",
+        "ArrayList: O(1), LinkedList: O(n)",
+        "Both are O(n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "ArrayList uses an internal array, so accessing an element by index is O(1) - it simply calculates the memory address from the base address and index. LinkedList must traverse the list from the head (or tail) node by node to reach the desired index, making it O(n) in the worst case. This is a fundamental performance difference that affects which data structure you should choose based on your access patterns.",
+      "hints": [
+        "Think about how each data structure stores elements internally",
+        "An array provides direct access via memory address calculation"
+      ],
+      "tags": [
+        "arraylist",
+        "linkedlist",
+        "time_complexity",
+        "random_access"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_018",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "LinkedList Insertion Performance",
+      "description": "Where does LinkedList have better insertion performance compared to ArrayList?",
+      "options": [
+        "Inserting at the beginning or middle of the list",
+        "Inserting at the end of the list",
+        "LinkedList is always slower than ArrayList for insertion",
+        "Both have identical insertion performance in all cases"
+      ],
+      "correct_answer": "A",
+      "explanation": "LinkedList excels at inserting elements at the beginning or middle of the list because it only needs to update a few node references (O(1) once at the position). ArrayList, on the other hand, must shift all subsequent elements when inserting at the beginning or middle, which is O(n). For insertion at the end, both are amortized O(1), though ArrayList occasionally needs to resize its internal array. Note: finding the position in a LinkedList is O(n), but the actual insertion operation is O(1).",
+      "hints": [
+        "Consider what happens to existing elements when you insert in the middle",
+        "ArrayList must shift elements, LinkedList only changes pointers"
+      ],
+      "tags": [
+        "linkedlist",
+        "arraylist",
+        "insertion",
+        "performance"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_019",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "PriorityQueue Ordering",
+      "description": "What is the output of the following code?\n\nPriorityQueue<Integer> pq = new PriorityQueue<>();\npq.add(30);\npq.add(10);\npq.add(20);\nSystem.out.println(pq.poll() + \" \" + pq.poll() + \" \" + pq.poll());",
+      "code_template": "import java.util.PriorityQueue;\n\npublic class Main {\n    public static void main(String[] args) {\n        PriorityQueue<Integer> pq = new PriorityQueue<>();\n        pq.add(30);\n        pq.add(10);\n        pq.add(20);\n        System.out.println(pq.poll() + \" \" + pq.poll() + \" \" + pq.poll());\n    }\n}",
+      "options": [
+        "10 30 20",
+        "30 20 10",
+        "30 10 20",
+        "10 20 30"
+      ],
+      "correct_answer": "D",
+      "explanation": "A PriorityQueue in Java is a min-heap by default, meaning the smallest element has the highest priority and is always at the head. When poll() is called repeatedly, elements are removed in ascending order: 10, 20, 30. If you wanted descending order, you could use PriorityQueue<>(Collections.reverseOrder()).",
+      "hints": [
+        "PriorityQueue is a min-heap by default in Java",
+        "poll() always removes the element with the highest priority (lowest value)"
+      ],
+      "tags": [
+        "priorityqueue",
+        "min_heap",
+        "ordering",
+        "poll"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_020",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Enhanced For Loop with ArrayList",
+      "description": "What is the output of the following code?\n\nArrayList<Integer> nums = new ArrayList<>();\nnums.add(1);\nnums.add(2);\nnums.add(3);\nint sum = 0;\nfor (int n : nums) {\n    sum += n;\n}\nSystem.out.println(sum);",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<Integer> nums = new ArrayList<>();\n        nums.add(1);\n        nums.add(2);\n        nums.add(3);\n        int sum = 0;\n        for (int n : nums) {\n            sum += n;\n        }\n        System.out.println(sum);\n    }\n}",
+      "options": [
+        "6",
+        "3",
+        "5",
+        "A compilation error occurs"
+      ],
+      "correct_answer": "A",
+      "explanation": "The enhanced for loop (for-each loop) iterates over each element in the ArrayList. The Integer values are auto-unboxed to int. The loop adds 1 + 2 + 3 = 6. The enhanced for loop works with any class that implements the Iterable interface, which all Java collections do.",
+      "hints": [
+        "The for-each loop visits every element in order",
+        "Auto-unboxing converts Integer objects to int primitives"
+      ],
+      "tags": [
+        "for_each",
+        "iteration",
+        "arraylist",
+        "auto_unboxing"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_021",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "HashMap containsKey vs containsValue",
+      "description": "What is the output of the following code?\n\nHashMap<String, Integer> map = new HashMap<>();\nmap.put(\"X\", 10);\nmap.put(\"Y\", 20);\nSystem.out.println(map.containsKey(\"X\") + \" \" + map.containsValue(10) + \" \" + map.containsKey(\"10\"));",
+      "code_template": "import java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> map = new HashMap<>();\n        map.put(\"X\", 10);\n        map.put(\"Y\", 20);\n        System.out.println(map.containsKey(\"X\") + \" \" + map.containsValue(10) + \" \" + map.containsKey(\"10\"));\n    }\n}",
+      "options": [
+        "false true false",
+        "true true true",
+        "true false false",
+        "true true false"
+      ],
+      "correct_answer": "D",
+      "explanation": "containsKey(\"X\") returns true because \"X\" is a key in the map. containsValue(10) returns true because 10 is a value in the map (auto-boxed to Integer). containsKey(\"10\") returns false because \"10\" (the String) is not a key - it is a value. Keys and values are separate concepts in a HashMap, and the string \"10\" is different from the integer 10.",
+      "hints": [
+        "Distinguish between keys and values in a HashMap",
+        "The string \"10\" and the integer 10 are different things"
+      ],
+      "tags": [
+        "hashmap",
+        "containsKey",
+        "containsValue",
+        "keys_vs_values"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_022",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Iterating with Iterator",
+      "description": "What is the correct way to safely remove elements from an ArrayList while iterating over it?",
+      "options": [
+        "Use a standard for loop and call list.remove(i) without adjusting i",
+        "Use a for-each loop and call list.remove(element)",
+        "Use an Iterator and call iterator.remove()",
+        "You cannot remove elements during iteration in Java"
+      ],
+      "correct_answer": "C",
+      "explanation": "The Iterator's remove() method is the only safe way to remove elements during iteration. Using a for-each loop with list.remove() will throw a ConcurrentModificationException because the for-each loop uses an Iterator internally, and structural modifications outside the Iterator invalidate it. A standard for loop with remove can work but requires careful index adjustment. The Iterator approach is the recommended pattern.",
+      "hints": [
+        "Modifying a collection during for-each iteration causes problems",
+        "The Iterator interface provides a safe remove() method"
+      ],
+      "tags": [
+        "iterator",
+        "remove",
+        "concurrent_modification",
+        "iteration"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_023",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "2D Array Row Lengths",
+      "description": "What is the output of the following code?\n\nint[][] jagged = new int[3][];\njagged[0] = new int[]{1, 2};\njagged[1] = new int[]{3, 4, 5};\njagged[2] = new int[]{6};\nSystem.out.println(jagged[1].length);",
+      "code_template": "public class Main {\n    public static void main(String[] args) {\n        int[][] jagged = new int[3][];\n        jagged[0] = new int[]{1, 2};\n        jagged[1] = new int[]{3, 4, 5};\n        jagged[2] = new int[]{6};\n        System.out.println(jagged[1].length);\n    }\n}",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "A compilation error occurs"
+      ],
+      "correct_answer": "B",
+      "explanation": "Java supports jagged arrays (arrays of arrays) where each row can have a different length. jagged[1] is assigned {3, 4, 5} which has 3 elements. Unlike true 2D arrays in some languages, Java's 2D arrays are actually arrays of arrays, so each sub-array can have a different length. jagged[0] has length 2, jagged[1] has length 3, and jagged[2] has length 1.",
+      "hints": [
+        "Java 2D arrays are actually arrays of arrays",
+        "Each row can have a different length (jagged array)"
+      ],
+      "tags": [
+        "2d_array",
+        "jagged_array",
+        "length"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_024",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Generics and Type Erasure",
+      "description": "Why can't you create an ArrayList<int> in Java?",
+      "options": [
+        "Generics in Java only work with reference types, not primitive types",
+        "int is not a valid data type in Java",
+        "ArrayList does not support numeric types",
+        "You need to import a special library for numeric ArrayLists"
+      ],
+      "correct_answer": "A",
+      "explanation": "Java generics only work with reference types (objects), not primitive types. This is because of type erasure - at runtime, generic type information is removed and replaced with Object. Primitive types like int, double, boolean are not objects and cannot be used as type parameters. Instead, you must use their wrapper classes: ArrayList<Integer>, ArrayList<Double>, ArrayList<Boolean>. Java auto-boxing and unboxing automatically converts between primitives and their wrapper types.",
+      "hints": [
+        "Consider the difference between primitive types and reference types",
+        "There are wrapper classes for each primitive type"
+      ],
+      "tags": [
+        "generics",
+        "type_erasure",
+        "primitives",
+        "wrapper_classes"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_025",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Choosing the Right Data Structure - Fast Lookup",
+      "description": "You need to store student IDs mapped to their names, and you need to frequently look up names by ID. Which data structure is most appropriate?",
+      "options": [
+        "ArrayList<String>",
+        "HashMap<Integer, String>",
+        "LinkedList<String>",
+        "Stack<String>"
+      ],
+      "correct_answer": "B",
+      "explanation": "HashMap<Integer, String> is the best choice because it provides O(1) average time complexity for lookups by key (student ID). ArrayList and LinkedList would require O(n) time to search for a specific ID. Stack is inappropriate because it only provides efficient access to the top element. When you need key-value associations with fast lookup, HashMap is the standard choice.",
+      "hints": [
+        "Think about which data structure natively supports key-value pairs",
+        "Consider the time complexity of looking up a value by a key"
+      ],
+      "tags": [
+        "hashmap",
+        "data_structure_choice",
+        "lookup",
+        "scenario"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_026",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "ArrayList add at Index",
+      "description": "What is the output of the following code?\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"A\");\nlist.add(\"C\");\nlist.add(1, \"B\");\nSystem.out.println(list);",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"A\");\n        list.add(\"C\");\n        list.add(1, \"B\");\n        System.out.println(list);\n    }\n}",
+      "options": [
+        "[B, A, C]",
+        "[A, C, B]",
+        "[A, B, C]",
+        "[A, B]"
+      ],
+      "correct_answer": "C",
+      "explanation": "The add(int index, E element) method inserts an element at the specified index, shifting existing elements to the right. Initially the list is [A, C]. add(1, \"B\") inserts \"B\" at index 1, pushing \"C\" to index 2. The result is [A, B, C]. This operation is O(n) because elements after the insertion point must be shifted.",
+      "hints": [
+        "add(index, element) inserts at the given position",
+        "Existing elements at and after the index are shifted right"
+      ],
+      "tags": [
+        "arraylist",
+        "add",
+        "insert",
+        "index"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_027",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "String Comparison",
+      "description": "What is the output of the following code?\n\nString a = new String(\"Hello\");\nString b = new String(\"Hello\");\nSystem.out.println(a == b);\nSystem.out.println(a.equals(b));",
+      "code_template": "public class Main {\n    public static void main(String[] args) {\n        String a = new String(\"Hello\");\n        String b = new String(\"Hello\");\n        System.out.println(a == b);\n        System.out.println(a.equals(b));\n    }\n}",
+      "options": [
+        "false followed by true",
+        "true followed by true",
+        "false followed by false",
+        "true followed by false"
+      ],
+      "correct_answer": "A",
+      "explanation": "The == operator compares references (memory addresses), not content. Since a and b are created with 'new', they are two separate objects in memory, so a == b is false. The equals() method compares the actual content of the Strings, and since both contain \"Hello\", a.equals(b) returns true. This is a fundamental distinction in Java: use == for reference comparison and equals() for content comparison.",
+      "hints": [
+        "== compares references, equals() compares content",
+        "The 'new' keyword always creates a new object in memory"
+      ],
+      "tags": [
+        "string",
+        "comparison",
+        "equals",
+        "reference"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_028",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Stack peek vs pop",
+      "description": "What is the output of the following code?\n\nStack<Integer> stack = new Stack<>();\nstack.push(1);\nstack.push(2);\nstack.push(3);\nSystem.out.println(stack.peek());\nSystem.out.println(stack.size());",
+      "code_template": "import java.util.Stack;\n\npublic class Main {\n    public static void main(String[] args) {\n        Stack<Integer> stack = new Stack<>();\n        stack.push(1);\n        stack.push(2);\n        stack.push(3);\n        System.out.println(stack.peek());\n        System.out.println(stack.size());\n    }\n}",
+      "options": [
+        "3 followed by 3",
+        "3 followed by 2",
+        "1 followed by 3",
+        "1 followed by 2"
+      ],
+      "correct_answer": "A",
+      "explanation": "peek() looks at the top element of the stack without removing it, unlike pop() which removes the top element. After pushing 1, 2, and 3, the top element is 3. peek() returns 3 but does not remove it, so the stack still contains all 3 elements. Therefore size() returns 3. If pop() had been used instead of peek(), the size would be 2.",
+      "hints": [
+        "peek() looks at the top without removing it",
+        "pop() removes the element, peek() does not"
+      ],
+      "tags": [
+        "stack",
+        "peek",
+        "pop",
+        "size"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_029",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "HashMap Iteration",
+      "description": "Which of the following correctly iterates over all entries in a HashMap<String, Integer> named 'map'?",
+      "options": [
+        "for (String key : map.keyList()) { ... }",
+        "for (int i = 0; i < map.size(); i++) { map.get(i); }",
+        "for (Map.Entry<String, Integer> entry : map.entrySet()) { ... }",
+        "for (Map.Pair<String, Integer> pair : map.pairs()) { ... }"
+      ],
+      "correct_answer": "C",
+      "explanation": "The correct way to iterate over all entries in a HashMap is using entrySet(), which returns a Set of Map.Entry objects. Each Map.Entry provides getKey() and getValue() methods. Option B is wrong because HashMap does not support integer index access. Option C is wrong because the method is keySet(), not keyList(). Option D is wrong because there is no Map.Pair class or pairs() method. You can also iterate using keySet() for just keys or values() for just values.",
+      "hints": [
+        "HashMap provides entrySet(), keySet(), and values() methods for iteration",
+        "Map.Entry represents a single key-value pair"
+      ],
+      "tags": [
+        "hashmap",
+        "iteration",
+        "entry_set",
+        "map_entry"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_030",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Choosing Data Structure for Undo Feature",
+      "description": "You are implementing an undo feature in a text editor where the most recent action should be undone first. Which data structure is most appropriate?",
+      "options": [
+        "HashMap",
+        "Queue",
+        "Stack",
+        "ArrayList"
+      ],
+      "correct_answer": "C",
+      "explanation": "A Stack is the most appropriate data structure for an undo feature because it follows the LIFO (Last-In, First-Out) principle. The most recent action is pushed onto the stack, and when the user presses undo, the most recent action is popped off and reversed. A Queue would process actions in FIFO order (undoing the oldest action first), which is incorrect. HashMap has no ordering, and ArrayList would require tracking the current position manually.",
+      "hints": [
+        "Think about the order in which actions should be undone",
+        "LIFO means the most recent item is processed first"
+      ],
+      "tags": [
+        "stack",
+        "data_structure_choice",
+        "scenario",
+        "lifo"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_031",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Generics Wildcard",
+      "description": "What does the wildcard <?> mean in the method signature: void printList(List<?> list)?",
+      "options": [
+        "The list can only contain String elements",
+        "The list must be empty",
+        "The list can contain elements of any type",
+        "The method accepts only ArrayList, not LinkedList"
+      ],
+      "correct_answer": "C",
+      "explanation": "The wildcard <?> represents an unknown type. A method with parameter List<?> can accept a List of any element type: List<String>, List<Integer>, List<Object>, etc. This is useful when you want to write a method that works with any type of List but doesn't need to add elements to it. Note that you cannot add elements (except null) to a List<?> because the compiler doesn't know what type is safe to add.",
+      "hints": [
+        "The ? is called a wildcard in Java generics",
+        "It represents an unknown type parameter"
+      ],
+      "tags": [
+        "generics",
+        "wildcard",
+        "type_safety",
+        "method_signature"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_032",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "ArrayList set Method",
+      "description": "What is the output of the following code?\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"Red\");\nlist.add(\"Green\");\nlist.add(\"Blue\");\nlist.set(1, \"Yellow\");\nSystem.out.println(list);",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"Red\");\n        list.add(\"Green\");\n        list.add(\"Blue\");\n        list.set(1, \"Yellow\");\n        System.out.println(list);\n    }\n}",
+      "options": [
+        "[Red, Yellow, Blue]",
+        "[Red, Green, Yellow, Blue]",
+        "[Yellow, Green, Blue]",
+        "[Red, Yellow, Green, Blue]"
+      ],
+      "correct_answer": "A",
+      "explanation": "The set(int index, E element) method replaces the element at the specified index with the new element. It does not insert - it overwrites. list.set(1, \"Yellow\") replaces \"Green\" at index 1 with \"Yellow\". The list size remains 3. This is different from add(int index, E element) which inserts and shifts elements.",
+      "hints": [
+        "set() replaces the element at the given index",
+        "The list size does not change when using set()"
+      ],
+      "tags": [
+        "arraylist",
+        "set",
+        "replace",
+        "index"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_033",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Queue vs Deque",
+      "description": "What additional capability does a Deque provide compared to a regular Queue?",
+      "options": [
+        "Elements can be added and removed from both ends",
+        "Elements are automatically sorted",
+        "It provides random access by index",
+        "It stores key-value pairs"
+      ],
+      "correct_answer": "A",
+      "explanation": "A Deque (Double-Ended Queue) allows elements to be added and removed from both the front and the back. A regular Queue only supports adding at the back and removing from the front (FIFO). Deque provides methods like addFirst(), addLast(), removeFirst(), removeLast(), peekFirst(), and peekLast(). This makes Deque versatile enough to function as both a queue and a stack.",
+      "hints": [
+        "Deque stands for Double-Ended Queue",
+        "Think about where elements can be added and removed"
+      ],
+      "tags": [
+        "deque",
+        "queue",
+        "double_ended",
+        "comparison"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_034",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Data Modelling - Student Records",
+      "description": "You need to model a university system where each student has a unique ID, a name, and a list of courses they are enrolled in. Which combination of data structures best models this?",
+      "options": [
+        "HashMap<Integer, Student> where Student has a name field and an ArrayList<String> of courses",
+        "ArrayList<String> containing all student names and courses mixed together",
+        "A single 2D String array with student names in one dimension and courses in another",
+        "Stack<Student> to keep track of all students"
+      ],
+      "correct_answer": "A",
+      "explanation": "Using a HashMap<Integer, Student> with the student ID as the key provides O(1) lookup by ID. The Student object encapsulates the name and an ArrayList<String> of courses, following object-oriented principles. Option B loses the association between students and courses. Option C is inflexible and doesn't handle varying numbers of courses per student well. Option D provides no efficient way to find a specific student. Good data modelling combines appropriate data structures with object-oriented design.",
+      "hints": [
+        "Think about fast lookup by student ID",
+        "Consider encapsulating related data in an object"
+      ],
+      "tags": [
+        "data_modelling",
+        "hashmap",
+        "arraylist",
+        "scenario",
+        "oop"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_035",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "ArrayList indexOf Method",
+      "description": "What is the output of the following code?\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"A\");\nlist.add(\"B\");\nlist.add(\"C\");\nlist.add(\"B\");\nSystem.out.println(list.indexOf(\"B\") + \" \" + list.lastIndexOf(\"B\"));",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"A\");\n        list.add(\"B\");\n        list.add(\"C\");\n        list.add(\"B\");\n        System.out.println(list.indexOf(\"B\") + \" \" + list.lastIndexOf(\"B\"));\n    }\n}",
+      "options": [
+        "1 1",
+        "1 3",
+        "3 3",
+        "0 3"
+      ],
+      "correct_answer": "B",
+      "explanation": "indexOf() returns the index of the first occurrence of the specified element, which is \"B\" at index 1. lastIndexOf() returns the index of the last occurrence, which is \"B\" at index 3. If the element is not found, both methods return -1. These methods use equals() internally to compare elements.",
+      "hints": [
+        "indexOf() finds the first occurrence",
+        "lastIndexOf() finds the last occurrence"
+      ],
+      "tags": [
+        "arraylist",
+        "indexOf",
+        "lastIndexOf",
+        "search"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_036",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "ConcurrentModificationException",
+      "description": "What happens when the following code is executed?\n\nArrayList<String> list = new ArrayList<>();\nlist.add(\"A\");\nlist.add(\"B\");\nlist.add(\"C\");\nfor (String s : list) {\n    if (s.equals(\"B\")) {\n        list.remove(s);\n    }\n}",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"A\");\n        list.add(\"B\");\n        list.add(\"C\");\n        for (String s : list) {\n            if (s.equals(\"B\")) {\n                list.remove(s);\n            }\n        }\n    }\n}",
+      "options": [
+        "\"B\" is successfully removed and the list becomes [A, C]",
+        "A ConcurrentModificationException is thrown",
+        "A compilation error occurs",
+        "The program runs but the list is unchanged"
+      ],
+      "correct_answer": "B",
+      "explanation": "Modifying a collection while iterating over it with a for-each loop throws a ConcurrentModificationException. The for-each loop internally uses an Iterator, and when the list is structurally modified by list.remove(), the Iterator detects the modification and throws the exception. The correct approach is to use an Iterator explicitly and call iterator.remove(), or use list.removeIf(s -> s.equals(\"B\")) in Java 8+.",
+      "hints": [
+        "For-each loops use an Iterator internally",
+        "Structural modifications during iteration are detected by fail-fast iterators"
+      ],
+      "tags": [
+        "concurrent_modification",
+        "for_each",
+        "iterator",
+        "exception"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_037",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "HashMap Time Complexity Worst Case",
+      "description": "What is the worst-case time complexity for a get() operation on a HashMap?",
+      "options": [
+        "O(n log n)",
+        "O(1)",
+        "O(log n)",
+        "O(n)"
+      ],
+      "correct_answer": "D",
+      "explanation": "While HashMap provides O(1) average-case time complexity for get(), the worst case is O(n). This occurs when many keys hash to the same bucket (hash collision), creating a long chain. In the worst case, all n entries could be in the same bucket, requiring a linear search. In Java 8+, when a bucket has more than 8 entries, the linked list is converted to a balanced binary tree, improving the worst case to O(log n). However, the theoretical worst case with a poor hash function is still O(n) for older implementations.",
+      "hints": [
+        "Consider what happens when multiple keys have the same hash code",
+        "Hash collisions create chains (or trees) within a single bucket"
+      ],
+      "tags": [
+        "hashmap",
+        "time_complexity",
+        "worst_case",
+        "hash_collision"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_038",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Generic Method with Bounded Type",
+      "description": "What does the type bound <T extends Comparable<T>> mean in the following method?\n\npublic static <T extends Comparable<T>> T findMax(List<T> list) { ... }",
+      "code_template": "import java.util.List;\n\npublic class Util {\n    public static <T extends Comparable<T>> T findMax(List<T> list) {\n        T max = list.get(0);\n        for (T item : list) {\n            if (item.compareTo(max) > 0) {\n                max = item;\n            }\n        }\n        return max;\n    }\n}",
+      "options": [
+        "T is limited to numeric types only",
+        "T must be a subclass of both Comparable and T",
+        "T must be a type that implements the Comparable interface for its own type",
+        "T must be exactly the Comparable class"
+      ],
+      "correct_answer": "C",
+      "explanation": "The bound <T extends Comparable<T>> means that the type parameter T must implement the Comparable<T> interface. This guarantees that objects of type T can be compared to each other using the compareTo() method. 'extends' in generics means either extends (for classes) or implements (for interfaces). This allows the findMax method to compare elements safely. Examples of types that satisfy this bound: Integer, String, Double, etc.",
+      "hints": [
+        "In generics, 'extends' covers both class extension and interface implementation",
+        "Comparable<T> requires T to have a compareTo() method"
+      ],
+      "tags": [
+        "generics",
+        "bounded_type",
+        "comparable",
+        "type_constraint"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_039",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "ArrayList Internal Resize",
+      "description": "What happens internally when you add an element to an ArrayList that has reached its current capacity?",
+      "options": [
+        "The ArrayList stays the same size and the element is discarded",
+        "The element is added to a linked list overflow area",
+        "An ArrayIndexOutOfBoundsException is thrown",
+        "A new, larger array is created and all elements are copied to it"
+      ],
+      "correct_answer": "D",
+      "explanation": "When an ArrayList reaches its capacity, it creates a new internal array that is typically 1.5 times the size of the old array (newCapacity = oldCapacity + oldCapacity >> 1). All existing elements are copied from the old array to the new array using System.arraycopy(), and the old array becomes eligible for garbage collection. This resizing operation is O(n) but happens infrequently enough that add() still has amortized O(1) time complexity. This is why ArrayList is sometimes called a 'dynamic array'.",
+      "hints": [
+        "ArrayList is backed by a regular array internally",
+        "Think about what must happen when the backing array is full"
+      ],
+      "tags": [
+        "arraylist",
+        "internal",
+        "resize",
+        "capacity",
+        "amortized"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_040",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "LinkedList vs ArrayList Memory",
+      "description": "Why does a LinkedList typically use more memory per element than an ArrayList?",
+      "options": [
+        "LinkedList stores elements in a larger array than ArrayList",
+        "Each LinkedList node stores references to the previous and next nodes in addition to the data",
+        "LinkedList duplicates each element for safety",
+        "LinkedList uses double-precision floating point for all internal storage"
+      ],
+      "correct_answer": "B",
+      "explanation": "A LinkedList is implemented as a doubly-linked list where each node contains the data element plus two references (pointers): one to the previous node and one to the next node. This per-node overhead means LinkedList uses more memory per element than ArrayList, which simply stores elements contiguously in an array. Each node object also has Java object header overhead. ArrayList may waste some memory on unused capacity, but its per-element overhead is lower.",
+      "hints": [
+        "Consider the internal structure of a doubly-linked list",
+        "Each node needs to know about its neighbors"
+      ],
+      "tags": [
+        "linkedlist",
+        "arraylist",
+        "memory",
+        "node",
+        "overhead"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_041",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "PriorityQueue with Custom Comparator",
+      "description": "What is the output of the following code?\n\nPriorityQueue<String> pq = new PriorityQueue<>((a, b) -> b.length() - a.length());\npq.add(\"Hi\");\npq.add(\"Hello\");\npq.add(\"Hey\");\nSystem.out.println(pq.poll());",
+      "code_template": "import java.util.PriorityQueue;\n\npublic class Main {\n    public static void main(String[] args) {\n        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> b.length() - a.length());\n        pq.add(\"Hi\");\n        pq.add(\"Hello\");\n        pq.add(\"Hey\");\n        System.out.println(pq.poll());\n    }\n}",
+      "options": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "An exception is thrown"
+      ],
+      "correct_answer": "B",
+      "explanation": "The PriorityQueue is created with a custom Comparator that compares strings by length in descending order (b.length() - a.length()). This makes the longest string have the highest priority. \"Hello\" (5 characters) is the longest string, so it is returned first by poll(). Without the custom comparator, PriorityQueue would use natural ordering (alphabetical for Strings). Lambda expressions provide a concise way to define comparators.",
+      "hints": [
+        "The comparator (a, b) -> b.length() - a.length() sorts by length descending",
+        "poll() returns the element with highest priority"
+      ],
+      "tags": [
+        "priorityqueue",
+        "comparator",
+        "lambda",
+        "custom_ordering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_042",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "HashMap equals and hashCode Contract",
+      "description": "If two objects are equal according to the equals() method, which statement must be true about their hashCode() values for HashMap to work correctly?",
+      "options": [
+        "Their hashCode() values are irrelevant",
+        "They must have different hashCode() values",
+        "They must have the same hashCode() value",
+        "One must have hashCode() 0 and the other must have hashCode() 1"
+      ],
+      "correct_answer": "C",
+      "explanation": "The equals-hashCode contract in Java states that if two objects are equal according to equals(), they must return the same hashCode(). This is critical for HashMap because it first uses hashCode() to find the correct bucket, then uses equals() to find the exact entry within that bucket. If equal objects had different hash codes, they would end up in different buckets, and HashMap would not be able to find a previously stored entry. Note: the reverse is not required - objects with the same hashCode do not need to be equal.",
+      "hints": [
+        "Think about how HashMap locates an entry: first by hash, then by equals",
+        "If equals objects had different hashes, lookups would fail"
+      ],
+      "tags": [
+        "hashmap",
+        "equals",
+        "hashCode",
+        "contract",
+        "hashing"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_043",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Type Safety with Raw Types",
+      "description": "What is wrong with the following code?\n\nArrayList list = new ArrayList();\nlist.add(\"Hello\");\nlist.add(42);\nString s = (String) list.get(1);",
+      "code_template": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList list = new ArrayList();\n        list.add(\"Hello\");\n        list.add(42);\n        String s = (String) list.get(1);\n    }\n}",
+      "options": [
+        "The code runs successfully and s becomes \"42\"",
+        "A compilation error occurs because ArrayList must have a type parameter",
+        "A ClassCastException is thrown at runtime because list.get(1) is an Integer, not a String",
+        "A NullPointerException is thrown"
+      ],
+      "correct_answer": "C",
+      "explanation": "Using a raw type ArrayList (without generics) allows any object to be added, bypassing compile-time type checking. The code compiles with warnings but runs until the cast (String) list.get(1) is reached. At that point, list.get(1) returns the Integer 42, which cannot be cast to String, causing a ClassCastException. This demonstrates why generics are important: ArrayList<String> would have caught this error at compile time when trying to add 42.",
+      "hints": [
+        "Raw types bypass compile-time type checking",
+        "Consider what type list.get(1) actually returns"
+      ],
+      "tags": [
+        "raw_types",
+        "generics",
+        "type_safety",
+        "class_cast_exception"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_044",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Choosing Data Structure for Task Scheduling",
+      "description": "You need to implement a print job scheduler where documents with higher priority should be printed first. If two documents have the same priority, the one submitted first should be printed first. Which data structure is most appropriate?",
+      "options": [
+        "PriorityQueue with a custom comparator considering both priority and submission time",
+        "Stack to process the most recent print job first",
+        "ArrayList sorted by document name",
+        "LinkedList with no particular ordering"
+      ],
+      "correct_answer": "A",
+      "explanation": "A PriorityQueue with a custom comparator is ideal because it naturally orders elements by priority. The custom comparator can handle the tie-breaking rule: when two documents have the same priority, compare by submission time (FIFO order). A Stack would process jobs in LIFO order (most recent first), which is incorrect. ArrayList sorted by name has no relation to priority. LinkedList with no ordering would not respect priorities either.",
+      "hints": [
+        "Think about which data structure naturally handles ordering by priority",
+        "A custom comparator can handle multiple sorting criteria"
+      ],
+      "tags": [
+        "priorityqueue",
+        "data_structure_choice",
+        "comparator",
+        "scenario"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_045",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Collections.unmodifiableList",
+      "description": "What happens when the following code is executed?\n\nList<String> original = new ArrayList<>();\noriginal.add(\"A\");\noriginal.add(\"B\");\nList<String> unmod = Collections.unmodifiableList(original);\nunmod.add(\"C\");",
+      "code_template": "import java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<String> original = new ArrayList<>();\n        original.add(\"A\");\n        original.add(\"B\");\n        List<String> unmod = Collections.unmodifiableList(original);\n        unmod.add(\"C\");\n    }\n}",
+      "options": [
+        "\"C\" is added to unmod but not to original",
+        "\"C\" is added successfully to both lists",
+        "An UnsupportedOperationException is thrown",
+        "A compilation error occurs"
+      ],
+      "correct_answer": "C",
+      "explanation": "Collections.unmodifiableList() returns a read-only view of the original list. Any attempt to modify the unmodifiable list (add, remove, set, etc.) throws an UnsupportedOperationException. However, the original list can still be modified, and those changes will be visible through the unmodifiable view. In Java 9+, you can also use List.of() or List.copyOf() for truly immutable lists.",
+      "hints": [
+        "An unmodifiable list does not allow structural modifications",
+        "The unmodifiable list is a view, not an independent copy"
+      ],
+      "tags": [
+        "collections",
+        "unmodifiable",
+        "immutability",
+        "exception"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_046",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Complex HashMap with List Values",
+      "description": "What is the output of the following code?\n\nHashMap<String, ArrayList<Integer>> map = new HashMap<>();\nmap.put(\"evens\", new ArrayList<>());\nmap.put(\"odds\", new ArrayList<>());\nfor (int i = 1; i <= 6; i++) {\n    if (i % 2 == 0) map.get(\"evens\").add(i);\n    else map.get(\"odds\").add(i);\n}\nSystem.out.println(map.get(\"evens\").size() + \" \" + map.get(\"odds\").size());",
+      "code_template": "import java.util.ArrayList;\nimport java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, ArrayList<Integer>> map = new HashMap<>();\n        map.put(\"evens\", new ArrayList<>());\n        map.put(\"odds\", new ArrayList<>());\n        for (int i = 1; i <= 6; i++) {\n            if (i % 2 == 0) map.get(\"evens\").add(i);\n            else map.get(\"odds\").add(i);\n        }\n        System.out.println(map.get(\"evens\").size() + \" \" + map.get(\"odds\").size());\n    }\n}",
+      "options": [
+        "An exception is thrown",
+        "6 6",
+        "2 4",
+        "3 3"
+      ],
+      "correct_answer": "D",
+      "explanation": "The code categorizes numbers 1-6 into evens and odds using a HashMap with ArrayList values. Even numbers (2, 4, 6) are added to the \"evens\" list, and odd numbers (1, 3, 5) are added to the \"odds\" list. Each list gets 3 elements, so the output is \"3 3\". This pattern of HashMap<String, List<T>> is common for grouping data by category and demonstrates combining data structures for effective data modelling.",
+      "hints": [
+        "Count the even and odd numbers from 1 to 6",
+        "map.get() returns the ArrayList, then add() adds to that list"
+      ],
+      "tags": [
+        "hashmap",
+        "arraylist",
+        "nested_collections",
+        "data_modelling"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_047",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Time Complexity Comparison",
+      "description": "Which statement correctly compares the time complexity of common operations between ArrayList and LinkedList?",
+      "options": [
+        "ArrayList has O(n) get by index and O(1) add at front; LinkedList has O(1) get by index and O(n) add at front",
+        "ArrayList has O(1) get by index and O(n) add at front; LinkedList has O(n) get by index and O(1) add at front",
+        "Both have O(1) for get by index and O(1) for add at front",
+        "Both have O(n) for get by index and O(n) for add at front"
+      ],
+      "correct_answer": "B",
+      "explanation": "ArrayList provides O(1) random access by index because it uses an internal array (direct address calculation). However, adding at the front requires shifting all existing elements, which is O(n). LinkedList provides O(1) insertion at the front (just update the head reference and pointers), but accessing an element by index requires traversal from the head, which is O(n). This trade-off is key to choosing between the two: use ArrayList for frequent random access, LinkedList for frequent insertions at the beginning.",
+      "hints": [
+        "Think about the underlying implementation of each",
+        "Array = direct access, Linked list = sequential access"
+      ],
+      "tags": [
+        "time_complexity",
+        "arraylist",
+        "linkedlist",
+        "comparison",
+        "big_o"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_048",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Generic Class Definition",
+      "description": "Which of the following correctly defines a generic Pair class that can hold two values of different types?",
+      "options": [
+        "public class Pair { private Object first; private Object second; }",
+        "public class Pair<A, B> { private A first; private B second; }",
+        "public class Pair<T> { private T first; private T second; }",
+        "public class Pair<A extends B> { private A first; private B second; }"
+      ],
+      "correct_answer": "B",
+      "explanation": "Option A correctly defines a generic class with two independent type parameters A and B, allowing the Pair to hold two values of potentially different types (e.g., Pair<String, Integer>). Option B uses Object instead of generics, losing type safety and requiring casts. Option C uses a single type parameter T, meaning both values must be the same type. Option D incorrectly constrains A to extend B, which is a different concept and would not allow two independent types.",
+      "hints": [
+        "You need two independent type parameters for two different types",
+        "Generic type parameters are defined in angle brackets after the class name"
+      ],
+      "tags": [
+        "generics",
+        "generic_class",
+        "type_parameters",
+        "pair"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_049",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Choosing Data Structure for Browser History",
+      "description": "You are designing a web browser's navigation system that needs to support back and forward buttons. When the user visits a new page, all forward history is cleared. Which data structure(s) would you use?",
+      "options": [
+        "A single ArrayList storing all pages ever visited",
+        "A single Queue for all visited pages",
+        "A HashMap mapping page URLs to timestamps",
+        "Two Stacks: one for back history and one for forward history"
+      ],
+      "correct_answer": "D",
+      "explanation": "Two Stacks are ideal for browser navigation. When navigating to a new page, push the current page onto the back stack and clear the forward stack. When pressing 'back', pop from the back stack and push onto the forward stack. When pressing 'forward', pop from the forward stack and push onto the back stack. This elegantly handles the LIFO nature of navigation history. A Queue would not support going back (FIFO order is wrong). A HashMap loses ordering. A single ArrayList would make clearing forward history and navigating complex.",
+      "hints": [
+        "Consider how the back and forward actions relate to LIFO behavior",
+        "What needs to happen to the forward history when you visit a new page?"
+      ],
+      "tags": [
+        "stack",
+        "data_structure_choice",
+        "scenario",
+        "design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_ds_050",
+      "category": "data_structures",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Iterator Design Pattern with Collections",
+      "description": "What is the output of the following code?\n\nArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));\nIterator<Integer> it = list.iterator();\nwhile (it.hasNext()) {\n    int val = it.next();\n    if (val % 20 == 0) {\n        it.remove();\n    }\n}\nSystem.out.println(list);",
+      "code_template": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Iterator;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));\n        Iterator<Integer> it = list.iterator();\n        while (it.hasNext()) {\n            int val = it.next();\n            if (val % 20 == 0) {\n                it.remove();\n            }\n        }\n        System.out.println(list);\n    }\n}",
+      "options": [
+        "[10, 30, 50]",
+        "[20, 40]",
+        "[10, 20, 30, 40, 50]",
+        "A ConcurrentModificationException is thrown"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Iterator traverses the list and removes elements divisible by 20 (which are 20 and 40). Using it.remove() is the safe way to remove elements during iteration - it does not cause ConcurrentModificationException unlike list.remove() during a for-each loop. After removing 20 and 40, the remaining elements are [10, 30, 50]. This demonstrates the Iterator design pattern, which provides a uniform way to traverse and modify collections safely.",
+      "hints": [
+        "iterator.remove() is safe to use during iteration",
+        "Check which values satisfy val % 20 == 0"
+      ],
+      "tags": [
+        "iterator",
+        "remove",
+        "design_pattern",
+        "safe_removal"
+      ],
+      "points": 1
+    }
+  ]
+}

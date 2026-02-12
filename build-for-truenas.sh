@@ -5,8 +5,8 @@ set -e
 
 echo "🐳 Building Docker image for AMD64 (TrueNAS compatible)..."
 
-# Build for AMD64 platform
-docker buildx build --platform linux/amd64 \
+# Build for AMD64 platform using multiarch builder
+docker buildx build --builder multiarch --platform linux/amd64 \
   -t ghcr.io/jonasvindahl/imperative-training:latest \
   --push \
   .

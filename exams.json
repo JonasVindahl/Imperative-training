@@ -79,6 +79,36 @@
           "file": "counting.json"
         }
       ]
+    },
+    {
+      "id": "oop_java",
+      "name": "OO Analyse, Design & Implementering",
+      "short_name": "OOP Java",
+      "description": "Objektorienteret analyse, design og implementering i Java - UML, klasser, arv, polymorfi, tråde og test.",
+      "icon": "☕",
+      "language": "da",
+      "categories": [
+        {
+          "id": "intro_oop",
+          "name": "Introduction to OOP & Java",
+          "file": "intro_oop.json"
+        },
+        {
+          "id": "uml_usecase_classes",
+          "name": "UML, Use-Case, Classes & Objects",
+          "file": "uml_usecase_classes.json"
+        },
+        {
+          "id": "class_relations",
+          "name": "Class Relations & Diagrams",
+          "file": "class_relations.json"
+        },
+        {
+          "id": "data_structures",
+          "name": "Data Structures & Types",
+          "file": "data_structures.json"
+        }
+      ]
     }
   ],
   "default_exam": "c_programming"

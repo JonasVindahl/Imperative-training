@@ -1,0 +1,1361 @@
+{
+  "questions": [
+    {
+      "id": "oop_rel_001",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic Inheritance Keyword",
+      "description": "Which keyword is used in Java to create a subclass that inherits from a superclass?",
+      "options": [
+        "super",
+        "implements",
+        "inherits",
+        "extends"
+      ],
+      "correct_answer": "D",
+      "explanation": "In Java, the 'extends' keyword is used to declare that a class inherits from another class. For example, 'class Dog extends Animal' means Dog is a subclass of Animal. The 'implements' keyword is used for interfaces, not class inheritance. There is no 'inherits' keyword in Java. The 'super' keyword is used inside a subclass to refer to the parent class, not to declare inheritance.",
+      "hints": [
+        "Think about the keyword that establishes an 'is-a' relationship between classes",
+        "This keyword literally means the subclass 'stretches out' from the superclass"
+      ],
+      "tags": [
+        "inheritance",
+        "java_syntax",
+        "extends"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_002",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Is-a vs Has-a Relationship",
+      "description": "A Car class has a field of type Engine. What type of relationship does this represent?",
+      "options": [
+        "Dependency relationship",
+        "Is-a relationship",
+        "Has-a relationship",
+        "Generalization relationship"
+      ],
+      "correct_answer": "C",
+      "explanation": "When a class contains a field (instance variable) of another class type, it represents a 'has-a' relationship. A Car 'has an' Engine. This is also known as composition or aggregation in UML. An 'is-a' relationship would use inheritance (extends), meaning the subclass IS A type of the superclass. Dependency is a weaker, temporary relationship. Generalization refers to inheritance hierarchies.",
+      "hints": [
+        "Think about what it means for a Car to contain an Engine object",
+        "Does a Car 'have' an Engine or 'be' an Engine?"
+      ],
+      "tags": [
+        "has-a",
+        "composition",
+        "relationships"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_003",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Identifying Is-a Relationship",
+      "description": "Which of the following best represents an 'is-a' relationship?",
+      "options": [
+        "A Car has an Engine",
+        "A Dog is a subclass of Animal",
+        "A Library contains Books",
+        "A Student uses a Calculator"
+      ],
+      "correct_answer": "B",
+      "explanation": "An 'is-a' relationship is modeled through inheritance. A Dog IS AN Animal, so Dog would extend Animal. 'A Car has an Engine' is a has-a relationship (composition/aggregation). 'A Library contains Books' is also a has-a relationship (aggregation). 'A Student uses a Calculator' represents a dependency relationship, which is the weakest form of coupling.",
+      "hints": [
+        "An 'is-a' relationship means the subclass is a specialized type of the superclass",
+        "Which option describes a type hierarchy?"
+      ],
+      "tags": [
+        "is-a",
+        "inheritance",
+        "relationships"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_004",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Association Arrow",
+      "description": "In a UML class diagram, a simple solid line between two classes (without any special arrowheads or decorations) represents which relationship?",
+      "options": [
+        "Association",
+        "Inheritance",
+        "Composition",
+        "Dependency"
+      ],
+      "correct_answer": "A",
+      "explanation": "A simple solid line in UML represents an association between two classes. Inheritance uses a solid line with a hollow triangle arrowhead pointing to the superclass. Composition uses a solid line with a filled diamond at the composite end. Dependency uses a dashed line with an open arrowhead. Association is the most general relationship, indicating that objects of one class are connected to objects of another class.",
+      "hints": [
+        "The simplest line notation represents the most general relationship",
+        "Special arrowheads and decorations indicate more specific relationship types"
+      ],
+      "tags": [
+        "UML",
+        "association",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_005",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Method Overriding Basics",
+      "description": "What is method overriding in Java?",
+      "options": [
+        "A class defines two methods with the same name but different parameters",
+        "A subclass provides its own implementation of a method already defined in its superclass",
+        "A method calls itself recursively",
+        "A method in a class is made private so subclasses cannot access it"
+      ],
+      "correct_answer": "B",
+      "explanation": "Method overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. The overriding method must have the same name, return type, and parameter list. Option B describes method overloading (same name, different parameters), not overriding. Option C describes recursion. Option D describes access restriction, which does not relate to overriding.",
+      "hints": [
+        "Overriding means the subclass replaces the superclass behavior",
+        "The method signature must match exactly"
+      ],
+      "tags": [
+        "method_overriding",
+        "inheritance",
+        "polymorphism"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_006",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Super Keyword Purpose",
+      "description": "What is the primary purpose of the 'super' keyword in Java?",
+      "options": [
+        "To create a new instance of the current class",
+        "To refer to the immediate parent class and access its members or constructor",
+        "To declare a class as a superclass",
+        "To prevent a method from being overridden"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'super' keyword in Java is used to refer to the immediate parent (superclass). It can be used to call the superclass constructor (super()), access superclass methods (super.methodName()), and access superclass fields (super.fieldName). It is particularly useful when the subclass overrides a method but still wants to call the original implementation from the parent class. The 'new' keyword creates instances, there is no keyword to 'declare' a superclass, and the 'final' keyword prevents overriding.",
+      "hints": [
+        "Think about how a child class can communicate with its parent class",
+        "This keyword lets you access the parent's version of an overridden method"
+      ],
+      "tags": [
+        "super",
+        "inheritance",
+        "java_syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_007",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Inheritance Notation",
+      "description": "In UML, how is inheritance (generalization) represented between two classes?",
+      "options": [
+        "A solid line with a filled diamond at one end",
+        "A dashed line with an open arrowhead",
+        "A solid line with a hollow triangle arrowhead pointing to the superclass",
+        "A solid line with a filled triangle arrowhead pointing to the subclass"
+      ],
+      "correct_answer": "C",
+      "explanation": "In UML, inheritance (also called generalization) is shown as a solid line with a hollow (unfilled) triangle arrowhead pointing from the subclass toward the superclass. The direction of the arrow is important: it points from the specific (subclass) to the general (superclass). A dashed line with an open arrowhead represents dependency. A filled diamond represents composition. The triangle always points to the superclass, not the subclass.",
+      "hints": [
+        "The arrow always points toward the more general class",
+        "The triangle arrowhead is hollow (not filled)"
+      ],
+      "tags": [
+        "UML",
+        "generalization",
+        "inheritance",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_008",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Composition vs Aggregation",
+      "description": "What is the key difference between composition and aggregation?",
+      "options": [
+        "In composition, the part cannot exist without the whole; in aggregation, it can",
+        "Composition is stronger than inheritance; aggregation is weaker",
+        "Aggregation uses a filled diamond in UML; composition uses a hollow diamond",
+        "Composition is only used with interfaces; aggregation is used with classes"
+      ],
+      "correct_answer": "A",
+      "explanation": "The key difference between composition and aggregation is the lifecycle dependency. In composition (strong has-a), the part cannot exist independently of the whole. For example, a Room cannot exist without a Building. In aggregation (weak has-a), the part can exist independently. For example, a Student can exist without a University. In UML, composition uses a filled diamond and aggregation uses a hollow diamond (option C has them reversed). Neither is related to interfaces specifically.",
+      "hints": [
+        "Think about whether the contained object can survive if the container is destroyed",
+        "A Room in a Building vs a Student in a University"
+      ],
+      "tags": [
+        "composition",
+        "aggregation",
+        "relationships",
+        "UML"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_009",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Multiplicity Notation",
+      "description": "In a UML class diagram, the multiplicity notation '1..*' means:",
+      "options": [
+        "Zero or one",
+        "Zero or more",
+        "Exactly one",
+        "One or more (at least one)"
+      ],
+      "correct_answer": "D",
+      "explanation": "The multiplicity '1..*' means 'one or more', indicating that there must be at least one instance but there can be many. The first number (1) is the lower bound and the asterisk (*) means unlimited upper bound. '0..*' or simply '*' means zero or more. '1' or '1..1' means exactly one. '0..1' means zero or one (optional).",
+      "hints": [
+        "The format is 'lower_bound..upper_bound'",
+        "The asterisk (*) means unlimited"
+      ],
+      "tags": [
+        "UML",
+        "multiplicity",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_010",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Abstract Class Basics",
+      "description": "Which statement about abstract classes in Java is correct?",
+      "options": [
+        "An abstract class cannot be instantiated directly",
+        "An abstract class must contain only abstract methods",
+        "An abstract class cannot have a constructor",
+        "An abstract class cannot have instance variables"
+      ],
+      "correct_answer": "A",
+      "explanation": "An abstract class cannot be instantiated directly using the 'new' keyword - you must create a concrete subclass that extends it. However, abstract classes CAN contain both abstract and concrete (non-abstract) methods. They CAN have constructors (which are called by subclass constructors using super()). They CAN have instance variables. Abstract classes serve as partial implementations that define a common interface and shared behavior for their subclasses.",
+      "hints": [
+        "Think about what makes a class 'abstract' - it is incomplete",
+        "You need a concrete subclass to create objects"
+      ],
+      "tags": [
+        "abstract_class",
+        "instantiation",
+        "OOP"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_011",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Dependency Notation",
+      "description": "In UML, a dependency relationship between two classes is shown as:",
+      "options": [
+        "A dashed line with an open arrowhead",
+        "A solid line with a hollow triangle arrowhead",
+        "A solid line with a filled diamond",
+        "A solid line without any arrowhead"
+      ],
+      "correct_answer": "A",
+      "explanation": "A dependency in UML is represented by a dashed line with an open arrowhead pointing from the dependent class to the class it depends on. Dependency is the weakest relationship between classes, indicating that one class uses another temporarily (e.g., as a method parameter or local variable). A solid line with a hollow triangle is inheritance. A solid line with a filled diamond is composition. A plain solid line is a simple association.",
+      "hints": [
+        "Dependency is the weakest relationship, so it gets the 'weakest' line type",
+        "Dashed lines indicate a less permanent connection than solid lines"
+      ],
+      "tags": [
+        "UML",
+        "dependency",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_012",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Generalization Concept",
+      "description": "In object-oriented design, generalization refers to:",
+      "options": [
+        "Adding more specific details to a class",
+        "Extracting common features from multiple specific classes into a shared superclass",
+        "Creating multiple instances of a class",
+        "Hiding the internal details of a class"
+      ],
+      "correct_answer": "B",
+      "explanation": "Generalization is the process of extracting common attributes and behaviors from two or more specific classes and creating a more general superclass. For example, if you have Dog, Cat, and Bird classes that all share 'name' and 'age' attributes, you can generalize them into an Animal superclass. The reverse process (creating specific subclasses from a general class) is called specialization. Option B describes specialization. Option C describes instantiation. Option D describes encapsulation.",
+      "hints": [
+        "Think about moving from specific classes to a more general parent class",
+        "It is the opposite of specialization"
+      ],
+      "tags": [
+        "generalization",
+        "inheritance",
+        "OOP_concepts"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_013",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Multiplicity: Zero or One",
+      "description": "In a UML class diagram, the multiplicity '0..1' on an association end means:",
+      "options": [
+        "Any number of instances is allowed",
+        "Exactly zero or exactly one instances, never more",
+        "At least one instance is required",
+        "The association is optional - zero or one instance"
+      ],
+      "correct_answer": "D",
+      "explanation": "The multiplicity '0..1' means that the association is optional: there can be zero or one instance of the associated class. This is commonly used to model optional relationships. For example, an Employee may have 0 or 1 ParkingSpot (some employees might not have a parking spot). Option B is essentially saying the same thing but less precisely. Option C describes '1..*'. Option D describes '*' or '0..*'.",
+      "hints": [
+        "The lower bound of 0 means the relationship is not mandatory",
+        "The upper bound of 1 means at most one"
+      ],
+      "tags": [
+        "UML",
+        "multiplicity",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_014",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Composition Diamond",
+      "description": "In UML, a filled (solid black) diamond on an association line indicates:",
+      "options": [
+        "Inheritance - an is-a relationship",
+        "Aggregation - a weak whole-part relationship",
+        "Composition - a strong whole-part relationship",
+        "Dependency - a uses relationship"
+      ],
+      "correct_answer": "C",
+      "explanation": "A filled (solid black) diamond in UML indicates composition, which is the strongest form of association. The diamond is placed at the 'whole' end of the relationship. In composition, the parts have the same lifecycle as the whole - if the whole is destroyed, so are the parts. A hollow (unfilled) diamond indicates aggregation (weaker whole-part). A hollow triangle arrowhead indicates inheritance. A dashed arrow indicates dependency.",
+      "hints": [
+        "Filled means stronger, hollow means weaker",
+        "Composition is the stronger form of has-a relationship"
+      ],
+      "tags": [
+        "UML",
+        "composition",
+        "class_diagram",
+        "notation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_015",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Simple Inheritance Code",
+      "description": "What is the output of the following Java code?\n\nclass Animal {\n    String sound() { return \"...\"; }\n}\n\nclass Dog extends Animal {\n    String sound() { return \"Woof\"; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        System.out.println(a.sound());\n    }\n}",
+      "code_template": "class Animal {\n    String sound() { return \"...\"; }\n}\n\nclass Dog extends Animal {\n    String sound() { return \"Woof\"; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        System.out.println(a.sound());\n    }\n}",
+      "options": [
+        "Woof",
+        "...",
+        "Compilation error",
+        "Runtime error"
+      ],
+      "correct_answer": "A",
+      "explanation": "Even though the variable 'a' is declared as type Animal, the actual object created is a Dog (new Dog()). In Java, method calls are resolved at runtime based on the actual object type (dynamic dispatch/polymorphism), not the declared variable type. Since Dog overrides the sound() method, the Dog version is called, printing 'Woof'. This is a fundamental example of polymorphism in action.",
+      "hints": [
+        "Consider what type of object is actually created with 'new Dog()'",
+        "Java uses dynamic dispatch for method calls - the actual object type matters"
+      ],
+      "tags": [
+        "inheritance",
+        "polymorphism",
+        "method_overriding",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_016",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Super Constructor Call",
+      "description": "What is the output of the following Java code?\n\nclass Vehicle {\n    String type;\n    Vehicle(String type) {\n        this.type = type;\n        System.out.print(\"Vehicle:\" + type + \" \");\n    }\n}\n\nclass Car extends Vehicle {\n    Car() {\n        super(\"Car\");\n        System.out.print(\"Car created\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n    }\n}",
+      "code_template": "class Vehicle {\n    String type;\n    Vehicle(String type) {\n        this.type = type;\n        System.out.print(\"Vehicle:\" + type + \" \");\n    }\n}\n\nclass Car extends Vehicle {\n    Car() {\n        super(\"Car\");\n        System.out.print(\"Car created\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Car c = new Car();\n    }\n}",
+      "options": [
+        "Compilation error",
+        "Car created Vehicle:Car",
+        "Car created",
+        "Vehicle:Car Car created"
+      ],
+      "correct_answer": "D",
+      "explanation": "When creating a Car object, the Car constructor is called. The first statement is super(\"Car\"), which calls the Vehicle constructor with the argument \"Car\". The Vehicle constructor sets the type and prints \"Vehicle:Car \". After the super() call completes, execution returns to the Car constructor which prints \"Car created\". The superclass constructor always runs before the rest of the subclass constructor. This is why the output is \"Vehicle:Car Car created\".",
+      "hints": [
+        "super() must be the first statement in a constructor",
+        "The superclass constructor runs before the subclass constructor body"
+      ],
+      "tags": [
+        "super",
+        "constructor",
+        "inheritance",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_017",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Method Overriding with Super",
+      "description": "What is the output of the following Java code?\n\nclass Shape {\n    String describe() {\n        return \"I am a shape\";\n    }\n}\n\nclass Circle extends Shape {\n    String describe() {\n        return super.describe() + \" - specifically a circle\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Circle c = new Circle();\n        System.out.println(c.describe());\n    }\n}",
+      "code_template": "class Shape {\n    String describe() {\n        return \"I am a shape\";\n    }\n}\n\nclass Circle extends Shape {\n    String describe() {\n        return super.describe() + \" - specifically a circle\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Circle c = new Circle();\n        System.out.println(c.describe());\n    }\n}",
+      "options": [
+        "I am a shape - specifically a circle",
+        "I am a shape",
+        "specifically a circle",
+        "Compilation error"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Circle class overrides the describe() method from Shape, but uses super.describe() to call the parent class version first. super.describe() returns \"I am a shape\", and then \" - specifically a circle\" is concatenated to it. This pattern is common when you want to extend the behavior of a parent method rather than completely replacing it. The super keyword allows the subclass to reuse the parent's implementation while adding its own behavior.",
+      "hints": [
+        "super.describe() calls the Shape version of describe()",
+        "The return value of super.describe() is used as part of a string concatenation"
+      ],
+      "tags": [
+        "super",
+        "method_overriding",
+        "inheritance",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_018",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Aggregation Example",
+      "description": "A University has multiple Departments. If the University is dissolved, the Departments can continue to exist independently (perhaps as independent research units). Which UML relationship best models this?",
+      "options": [
+        "Composition (filled diamond at University end)",
+        "Aggregation (hollow diamond at University end)",
+        "Inheritance (hollow triangle at University end)",
+        "Dependency (dashed arrow from Department to University)"
+      ],
+      "correct_answer": "B",
+      "explanation": "This is an aggregation relationship because the parts (Departments) can exist independently of the whole (University). If the University ceases to exist, the Departments could survive as independent entities. Aggregation is shown in UML with a hollow (unfilled) diamond at the whole end (University). Composition would mean the Departments cannot exist without the University. Inheritance would mean a Department 'is a' University. Dependency would be too weak for this structural relationship.",
+      "hints": [
+        "The key question is: can the parts survive without the whole?",
+        "Hollow diamond = weaker whole-part relationship (parts can exist independently)"
+      ],
+      "tags": [
+        "aggregation",
+        "UML",
+        "relationships",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_019",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Composition Example",
+      "description": "A House has multiple Rooms. If the House is demolished, the Rooms also cease to exist. Which UML relationship best models this?",
+      "options": [
+        "Association (plain line between House and Room)",
+        "Aggregation (hollow diamond at House end)",
+        "Composition (filled diamond at House end)",
+        "Dependency (dashed line from Room to House)"
+      ],
+      "correct_answer": "C",
+      "explanation": "This is composition because the Rooms cannot exist independently of the House. When the House is demolished, its Rooms are also destroyed - they share the lifecycle of the whole. Composition is the strongest form of association and is represented in UML with a filled (solid) diamond at the whole end (House). Aggregation would be wrong because it implies the parts can exist independently. A plain association is too weak to express the lifecycle dependency.",
+      "hints": [
+        "Do the Rooms make sense without the House? Can a Room exist on its own?",
+        "Filled diamond = strong ownership with shared lifecycle"
+      ],
+      "tags": [
+        "composition",
+        "UML",
+        "relationships",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_020",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Identifying Dependency",
+      "description": "Consider a method: void printReport(Printer printer) { printer.print(this.report); }. What type of UML relationship exists between the class containing this method and the Printer class?",
+      "options": [
+        "Dependency - the class temporarily uses Printer",
+        "Composition - the class owns a Printer",
+        "Association - the class has a permanent link to Printer",
+        "Inheritance - the class extends Printer"
+      ],
+      "correct_answer": "A",
+      "explanation": "This is a dependency relationship because the class uses the Printer only temporarily as a method parameter. The class does not store a reference to the Printer as a field - it only uses it within the scope of the printReport method. Dependency is the weakest relationship, indicated by a dashed arrow in UML. It would be an association or composition if the Printer were stored as an instance variable. Inheritance would require the 'extends' keyword.",
+      "hints": [
+        "The Printer is only used as a parameter, not stored as a field",
+        "Dependency means the class 'uses' another class temporarily"
+      ],
+      "tags": [
+        "dependency",
+        "UML",
+        "relationships",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_021",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Abstract Method in Abstract Class",
+      "description": "What is the output of the following Java code?\n\nabstract class Animal {\n    abstract String makeSound();\n    String describe() {\n        return \"This animal says: \" + makeSound();\n    }\n}\n\nclass Cat extends Animal {\n    String makeSound() {\n        return \"Meow\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Cat();\n        System.out.println(a.describe());\n    }\n}",
+      "code_template": "abstract class Animal {\n    abstract String makeSound();\n    String describe() {\n        return \"This animal says: \" + makeSound();\n    }\n}\n\nclass Cat extends Animal {\n    String makeSound() {\n        return \"Meow\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Cat();\n        System.out.println(a.describe());\n    }\n}",
+      "options": [
+        "This animal says: Meow",
+        "Compilation error - cannot call abstract method",
+        "Meow",
+        "Runtime error - abstract method has no implementation"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Animal class is abstract and has an abstract method makeSound() and a concrete method describe(). The describe() method calls makeSound() internally. When we create a Cat and call describe(), the concrete describe() method from Animal runs, and when it calls makeSound(), Java's dynamic dispatch calls Cat's implementation which returns \"Meow\". This is the Template Method pattern - the abstract class defines the algorithm structure, and subclasses fill in the specifics.",
+      "hints": [
+        "describe() is a concrete method in Animal that calls the abstract makeSound()",
+        "At runtime, the Cat version of makeSound() is used because the object is a Cat"
+      ],
+      "tags": [
+        "abstract_class",
+        "polymorphism",
+        "template_method",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_022",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Constructor Chaining with Super",
+      "description": "What happens if a subclass constructor does NOT include an explicit call to super()?",
+      "options": [
+        "A compilation error always occurs",
+        "The superclass constructor is never called",
+        "The compiler automatically inserts a call to super() (the no-argument constructor of the superclass)",
+        "The subclass constructor runs twice"
+      ],
+      "correct_answer": "C",
+      "explanation": "If a subclass constructor does not explicitly call super() or super(args), the Java compiler automatically inserts a call to the no-argument constructor super() as the first statement. This ensures that the superclass is always properly initialized. However, if the superclass does NOT have a no-argument constructor (it only has parameterized constructors), then a compilation error will occur because the implicit super() call would have no matching constructor to call.",
+      "hints": [
+        "Java ensures the parent class is always initialized before the child",
+        "This implicit call is to the no-argument version of the parent constructor"
+      ],
+      "tags": [
+        "super",
+        "constructor",
+        "inheritance",
+        "java_syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_023",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Object Diagram vs Class Diagram",
+      "description": "What is the main difference between a UML class diagram and a UML object diagram?",
+      "options": [
+        "A class diagram shows classes and their relationships; an object diagram shows specific instances at a point in time",
+        "A class diagram is used in design; an object diagram is used only in testing",
+        "A class diagram shows inheritance only; an object diagram shows all relationships",
+        "There is no difference - they are two names for the same diagram"
+      ],
+      "correct_answer": "A",
+      "explanation": "A UML class diagram shows the static structure of a system: classes, their attributes, methods, and relationships. An object diagram shows a snapshot of the system at a particular point in time, displaying specific instances (objects) of classes and the links between them. Object names are underlined and written as 'objectName:ClassName'. Object diagrams are useful for illustrating examples and verifying that a class design works with concrete data. Both diagrams can be used in design phases.",
+      "hints": [
+        "Class diagrams are abstract (types), object diagrams are concrete (instances)",
+        "Object diagrams show actual values of attributes, not just their types"
+      ],
+      "tags": [
+        "UML",
+        "object_diagram",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_024",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Inheritance and Field Access",
+      "description": "What is the output of the following Java code?\n\nclass Parent {\n    String name = \"Parent\";\n    String getName() { return name; }\n}\n\nclass Child extends Parent {\n    String name = \"Child\";\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        System.out.println(p.name + \" \" + p.getName());\n    }\n}",
+      "code_template": "class Parent {\n    String name = \"Parent\";\n    String getName() { return name; }\n}\n\nclass Child extends Parent {\n    String name = \"Child\";\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Parent p = new Child();\n        System.out.println(p.name + \" \" + p.getName());\n    }\n}",
+      "options": [
+        "Parent Child",
+        "Child Child",
+        "Parent Parent",
+        "Child Parent"
+      ],
+      "correct_answer": "C",
+      "explanation": "This question illustrates the difference between field access and method calls in Java. Fields are NOT polymorphic - field access is resolved at compile time based on the declared type of the variable. Since p is declared as type Parent, p.name refers to Parent's name field (\"Parent\"). The getName() method is inherited from Parent and returns this.name, which in the context of the Parent class refers to Parent's name field (\"Parent\"). Unlike methods, fields are not overridden - the Child class has its own separate name field that hides the parent's field. The output is \"Parent Parent\".",
+      "hints": [
+        "In Java, field access is resolved at compile time, not at runtime",
+        "Fields are not polymorphic - they use the declared type, not the actual type"
+      ],
+      "tags": [
+        "inheritance",
+        "field_hiding",
+        "polymorphism",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_025",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Reading UML Multiplicity",
+      "description": "In a UML class diagram, there is an association between Order and OrderLine with multiplicity '1' on the Order side and '1..*' on the OrderLine side. What does this mean?",
+      "options": [
+        "Each Order has exactly one OrderLine, and each OrderLine belongs to one or more Orders",
+        "Each Order has one or more OrderLines, and each OrderLine belongs to exactly one Order",
+        "Each Order can have zero or more OrderLines",
+        "Orders and OrderLines have no specific cardinality constraint"
+      ],
+      "correct_answer": "B",
+      "explanation": "Reading UML multiplicities: the multiplicity on the Order side ('1') tells us how many Orders each OrderLine is associated with - exactly one. The multiplicity on the OrderLine side ('1..*') tells us how many OrderLines each Order can have - one or more. So every Order must have at least one OrderLine, and every OrderLine must belong to exactly one Order. This is a common pattern for order systems: an order cannot exist without at least one item.",
+      "hints": [
+        "Read the multiplicity near a class to understand how many of THAT class are involved",
+        "The multiplicity near OrderLine tells you how many OrderLines an Order can have"
+      ],
+      "tags": [
+        "UML",
+        "multiplicity",
+        "class_diagram",
+        "association"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_026",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Abstract Class vs Concrete Class",
+      "description": "Which of the following is true about abstract classes in Java?",
+      "options": [
+        "A concrete class cannot extend an abstract class",
+        "All methods in an abstract class must be abstract",
+        "An abstract class cannot extend another class",
+        "An abstract class can have both abstract and concrete methods"
+      ],
+      "correct_answer": "D",
+      "explanation": "Abstract classes can contain a mix of abstract methods (declared without a body using the 'abstract' keyword) and concrete methods (with a full implementation). This is one of the key advantages of abstract classes over interfaces (in older Java versions). Abstract classes CAN extend other classes (abstract or concrete). Concrete classes CAN and often DO extend abstract classes - this is how the abstract methods get their implementations. Abstract classes serve as partial blueprints for subclasses.",
+      "hints": [
+        "Abstract classes provide a mix of defined behavior and undefined behavior",
+        "Think of abstract classes as partially complete blueprints"
+      ],
+      "tags": [
+        "abstract_class",
+        "OOP_concepts",
+        "java_syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_027",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Association Navigability",
+      "description": "In a UML class diagram, if there is an arrow from class A to class B on an association line, what does this indicate?",
+      "options": [
+        "A knows about B (A can navigate to B), but B does not necessarily know about A",
+        "B inherits from A",
+        "A is composed of B",
+        "B depends on A"
+      ],
+      "correct_answer": "A",
+      "explanation": "A navigability arrow on an association line indicates the direction in which the association can be traversed. If the arrow points from A to B, it means A has a reference to B and can access it, but B does not necessarily have a reference back to A. This is called a unidirectional association. In Java, this typically means A has a field of type B. A bidirectional association (arrows in both directions or no arrows) means both classes know about each other. This is different from inheritance arrows (hollow triangle) or dependency arrows (dashed line).",
+      "hints": [
+        "The arrow shows which class 'knows about' the other class",
+        "In code, it means class A has a field or reference to class B"
+      ],
+      "tags": [
+        "UML",
+        "association",
+        "navigability",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_028",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Override Annotation",
+      "description": "What is the purpose of the @Override annotation in Java?",
+      "options": [
+        "It is required for method overriding to work",
+        "It tells the compiler to verify that the method actually overrides a method in the superclass",
+        "It makes the method run faster by enabling compiler optimizations",
+        "It prevents the method from being overridden by further subclasses"
+      ],
+      "correct_answer": "B",
+      "explanation": "The @Override annotation is an optional but highly recommended annotation that tells the Java compiler to check that the annotated method actually overrides a method declared in a superclass or interface. If the method does not correctly override (e.g., the method name is misspelled or parameters are wrong), the compiler will produce an error. Without @Override, such mistakes would silently create a new method instead of overriding. The annotation is not required for overriding to work, does not affect performance, and does not prevent further overriding (that would be the 'final' keyword).",
+      "hints": [
+        "It is a safety check, not a requirement",
+        "Think about what happens if you accidentally misspell the method name"
+      ],
+      "tags": [
+        "method_overriding",
+        "annotation",
+        "java_syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_029",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Inheritance Chain Constructor Order",
+      "description": "What is the output of the following Java code?\n\nclass A {\n    A() { System.out.print(\"A \"); }\n}\n\nclass B extends A {\n    B() { System.out.print(\"B \"); }\n}\n\nclass C extends B {\n    C() { System.out.print(\"C \"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        C obj = new C();\n    }\n}",
+      "code_template": "class A {\n    A() { System.out.print(\"A \"); }\n}\n\nclass B extends A {\n    B() { System.out.print(\"B \"); }\n}\n\nclass C extends B {\n    C() { System.out.print(\"C \"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        C obj = new C();\n    }\n}",
+      "options": [
+        "C B A",
+        "A B C",
+        "C A B",
+        "A C B"
+      ],
+      "correct_answer": "B",
+      "explanation": "When creating an object of class C, the constructors are called from the top of the inheritance chain downward. C's constructor implicitly calls super() which calls B's constructor, which in turn implicitly calls super() calling A's constructor. A's constructor runs first printing \"A \", then B's constructor prints \"B \", and finally C's constructor prints \"C \". Constructors always execute from the most general (top of hierarchy) to the most specific (bottom).",
+      "hints": [
+        "The superclass constructor always runs before the subclass constructor",
+        "Think about it: the parent must be initialized before the child can use it"
+      ],
+      "tags": [
+        "constructor",
+        "inheritance",
+        "super",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_030",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Relationship Strength Ordering",
+      "description": "Which correctly orders UML relationships from weakest to strongest?",
+      "options": [
+        "Inheritance → Composition → Aggregation → Association → Dependency",
+        "Association → Dependency → Composition → Aggregation → Inheritance",
+        "Dependency → Association → Aggregation → Composition → Inheritance",
+        "Dependency → Aggregation → Association → Composition → Inheritance"
+      ],
+      "correct_answer": "C",
+      "explanation": "The correct ordering from weakest to strongest coupling is: Dependency (temporary use) → Association (structural link) → Aggregation (weak has-a, parts can exist independently) → Composition (strong has-a, parts cannot exist without the whole) → Inheritance (is-a, tightest coupling since the subclass is bound to the superclass structure). Understanding relationship strength is crucial for good design: prefer weaker relationships when possible to reduce coupling between classes.",
+      "hints": [
+        "Dependency is the weakest - it is just a temporary use",
+        "Inheritance is the strongest - the subclass is tightly coupled to the superclass"
+      ],
+      "tags": [
+        "UML",
+        "relationships",
+        "coupling",
+        "OOP_concepts"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_031",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Abstract Class Cannot Be Instantiated",
+      "description": "What happens when you try to compile and run the following Java code?\n\nabstract class Shape {\n    abstract double area();\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Shape s = new Shape();\n        System.out.println(s.area());\n    }\n}",
+      "code_template": "abstract class Shape {\n    abstract double area();\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Shape s = new Shape();\n        System.out.println(s.area());\n    }\n}",
+      "options": [
+        "Prints null",
+        "Runtime error - abstract method has no body",
+        "Prints 0.0",
+        "Compilation error - cannot instantiate abstract class Shape"
+      ],
+      "correct_answer": "D",
+      "explanation": "You cannot create an instance of an abstract class using the 'new' keyword. The line 'Shape s = new Shape()' will cause a compilation error. Abstract classes are incomplete - they may contain abstract methods without implementations. To use an abstract class, you must create a concrete subclass that provides implementations for all abstract methods, and then instantiate that subclass. You can still declare variables of the abstract type (Shape s), but you must assign them instances of concrete subclasses.",
+      "hints": [
+        "Abstract classes are like incomplete blueprints - you cannot build from an incomplete plan",
+        "The error happens at compile time, not at runtime"
+      ],
+      "tags": [
+        "abstract_class",
+        "instantiation",
+        "compilation_error",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_032",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Class Diagram Reading",
+      "description": "In a UML class diagram, a class box is divided into three compartments from top to bottom. What does each compartment contain?",
+      "options": [
+        "Class name, attributes (fields), methods (operations)",
+        "Class name, methods (operations), attributes (fields)",
+        "Package name, class name, attributes (fields)",
+        "Class name, constructors, attributes (fields)"
+      ],
+      "correct_answer": "A",
+      "explanation": "A UML class box has three compartments: the top compartment contains the class name (centered and in bold, italic if abstract). The middle compartment lists the attributes (instance variables/fields) with their visibility, name, and type. The bottom compartment lists the operations (methods) with their visibility, name, parameters, and return type. The standard visibility markers are + for public, - for private, # for protected, and ~ for package-private.",
+      "hints": [
+        "The order goes from most general (name) to most specific (behavior)",
+        "Attributes describe what the class HAS, methods describe what the class DOES"
+      ],
+      "tags": [
+        "UML",
+        "class_diagram",
+        "notation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_033",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Identifying Relationship from Code",
+      "description": "Given the following Java code, which UML relationship exists between Classroom and Student?\n\nclass Classroom {\n    private List<Student> students;\n    \n    public Classroom() {\n        this.students = new ArrayList<>();\n    }\n    \n    public void addStudent(Student s) {\n        students.add(s);\n    }\n}",
+      "code_template": "class Classroom {\n    private List<Student> students;\n    \n    public Classroom() {\n        this.students = new ArrayList<>();\n    }\n    \n    public void addStudent(Student s) {\n        students.add(s);\n    }\n}",
+      "options": [
+        "Composition - Students cannot exist without the Classroom",
+        "Aggregation - Classroom has Students, but Students can exist without the Classroom",
+        "Inheritance - Classroom extends Student",
+        "Dependency - Classroom temporarily uses Student"
+      ],
+      "correct_answer": "B",
+      "explanation": "This is an aggregation relationship. The Classroom has a collection of Students (has-a), but Students exist independently of the Classroom. A Student can exist without being in a particular Classroom. The Student objects are created elsewhere and added to the Classroom through addStudent() - the Classroom does not create the Students itself. If the Classroom is destroyed, the Student objects still exist. This distinguishes it from composition, where the whole creates and owns the parts.",
+      "hints": [
+        "Students are added from outside the Classroom - they are not created by it",
+        "Can a Student exist without being in any particular Classroom?"
+      ],
+      "tags": [
+        "aggregation",
+        "relationships",
+        "java_code",
+        "UML"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_034",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Super Field Access",
+      "description": "What is the output of the following Java code?\n\nclass Base {\n    protected int value = 10;\n}\n\nclass Derived extends Base {\n    private int value = 20;\n    \n    void printValues() {\n        System.out.println(super.value + \" \" + this.value);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        new Derived().printValues();\n    }\n}",
+      "code_template": "class Base {\n    protected int value = 10;\n}\n\nclass Derived extends Base {\n    private int value = 20;\n    \n    void printValues() {\n        System.out.println(super.value + \" \" + this.value);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        new Derived().printValues();\n    }\n}",
+      "options": [
+        "20 20",
+        "10 20",
+        "10 10",
+        "Compilation error"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Derived class declares its own 'value' field which hides (shadows) the 'value' field from Base. Inside printValues(), 'super.value' accesses the Base class field (10), while 'this.value' accesses the Derived class field (20). This demonstrates field hiding (not overriding - fields cannot be overridden in Java) and the use of 'super' to access hidden parent fields. Note that unlike method overriding, field hiding depends on the reference type, not the object type.",
+      "hints": [
+        "super.value accesses the parent's field, this.value accesses the current class's field",
+        "Fields are hidden (shadowed), not overridden in Java"
+      ],
+      "tags": [
+        "super",
+        "field_hiding",
+        "inheritance",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_035",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Object Diagram Notation",
+      "description": "In a UML object diagram, how is an object typically represented?",
+      "options": [
+        ":ClassName in italic with no attributes shown",
+        "ClassName.objectName in bold with methods listed below",
+        "Same as a class diagram box but with a dashed border",
+        "objectName:ClassName with the text underlined, and attribute values shown below"
+      ],
+      "correct_answer": "D",
+      "explanation": "In a UML object diagram, an object is shown as a rectangle with the object name and class name underlined in the format 'objectName:ClassName' (e.g., 'myDog:Dog'). The bottom compartment shows attribute values (not types), such as 'name = \"Rex\"'. If the object name is omitted, it can be written as ':ClassName' (an anonymous object). The underlining distinguishes object diagram elements from class diagram elements. Object diagrams do not show methods, as methods belong to classes, not individual instances.",
+      "hints": [
+        "The underline is the key visual difference from class diagram boxes",
+        "Object diagrams show values, not types"
+      ],
+      "tags": [
+        "UML",
+        "object_diagram",
+        "notation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_036",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Complex Inheritance with Overriding",
+      "description": "What is the output of the following Java code?\n\nclass A {\n    String info() { return \"A\"; }\n    String display() { return info(); }\n}\n\nclass B extends A {\n    String info() { return \"B\"; }\n}\n\nclass C extends B {\n    String display() { return super.display() + info(); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        A obj = new C();\n        System.out.println(obj.display());\n    }\n}",
+      "code_template": "class A {\n    String info() { return \"A\"; }\n    String display() { return info(); }\n}\n\nclass B extends A {\n    String info() { return \"B\"; }\n}\n\nclass C extends B {\n    String display() { return super.display() + info(); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        A obj = new C();\n        System.out.println(obj.display());\n    }\n}",
+      "options": [
+        "BA",
+        "AB",
+        "BB",
+        "AA"
+      ],
+      "correct_answer": "C",
+      "explanation": "Let's trace through: obj is of type C. Calling obj.display() invokes C's display(). C.display() calls super.display() which goes to A.display() (B does not override display()). A.display() calls info(). Due to dynamic dispatch, info() resolves to B's info() (since B overrides it and C does not override it further), returning \"B\". So super.display() returns \"B\". Then C.display() also calls info(), which again resolves to B's info() returning \"B\". The result is \"B\" + \"B\" = \"BB\".",
+      "hints": [
+        "Trace which version of info() gets called - remember dynamic dispatch",
+        "super.display() calls A's display(), but A's display() calls info() polymorphically"
+      ],
+      "tags": [
+        "inheritance",
+        "polymorphism",
+        "method_overriding",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_037",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Abstract Class with Constructor",
+      "description": "What is the output of the following Java code?\n\nabstract class Vehicle {\n    String type;\n    \n    Vehicle(String type) {\n        this.type = type;\n        System.out.print(describe() + \" \");\n    }\n    \n    abstract String describe();\n}\n\nclass Truck extends Vehicle {\n    int wheels;\n    \n    Truck() {\n        super(\"Truck\");\n        this.wheels = 6;\n        System.out.print(wheels);\n    }\n    \n    String describe() {\n        return type + \" with \" + wheels + \" wheels\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        new Truck();\n    }\n}",
+      "code_template": "abstract class Vehicle {\n    String type;\n    \n    Vehicle(String type) {\n        this.type = type;\n        System.out.print(describe() + \" \");\n    }\n    \n    abstract String describe();\n}\n\nclass Truck extends Vehicle {\n    int wheels;\n    \n    Truck() {\n        super(\"Truck\");\n        this.wheels = 6;\n        System.out.print(wheels);\n    }\n    \n    String describe() {\n        return type + \" with \" + wheels + \" wheels\";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        new Truck();\n    }\n}",
+      "options": [
+        "Runtime error",
+        "Truck with 6 wheels 6",
+        "Compilation error - cannot call abstract method in constructor",
+        "Truck with 0 wheels 6"
+      ],
+      "correct_answer": "D",
+      "explanation": "This is a tricky example of calling an overrideable method from a constructor. When super(\"Truck\") is called in Truck's constructor, the Vehicle constructor runs. It sets type to \"Truck\" and then calls describe(). Due to dynamic dispatch, Truck's describe() is called. However, at this point, the Truck constructor has not yet executed 'this.wheels = 6', so 'wheels' has its default int value of 0. Thus describe() returns \"Truck with 0 wheels\". After the super constructor completes, 'this.wheels = 6' is executed, and then '6' is printed. This demonstrates why calling overrideable methods from constructors is dangerous.",
+      "hints": [
+        "When does the super constructor run relative to the subclass field initialization?",
+        "What is the default value of an int in Java before it is explicitly assigned?"
+      ],
+      "tags": [
+        "abstract_class",
+        "constructor",
+        "super",
+        "java_code",
+        "pitfall"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_038",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Multiple Relationship Types in Code",
+      "description": "Consider the following Java code. How many different types of class relationships can you identify?\n\nclass Engine { }\n\nclass Logger {\n    static void log(String msg) { System.out.println(msg); }\n}\n\nabstract class Vehicle {\n    abstract void drive();\n}\n\nclass Car extends Vehicle {\n    private Engine engine = new Engine();\n    \n    void drive() {\n        Logger.log(\"Driving\");\n    }\n}",
+      "code_template": "class Engine { }\n\nclass Logger {\n    static void log(String msg) { System.out.println(msg); }\n}\n\nabstract class Vehicle {\n    abstract void drive();\n}\n\nclass Car extends Vehicle {\n    private Engine engine = new Engine();\n    \n    void drive() {\n        Logger.log(\"Driving\");\n    }\n}",
+      "options": [
+        "One: Inheritance only",
+        "Two: Inheritance (Car → Vehicle), Association (Car → Engine)",
+        "Four: Inheritance, Composition, Dependency, and Aggregation",
+        "Three: Inheritance (Car → Vehicle), Composition (Car → Engine), Dependency (Car → Logger)"
+      ],
+      "correct_answer": "D",
+      "explanation": "There are three distinct relationships: (1) Inheritance: Car extends Vehicle (is-a relationship). (2) Composition: Car has a private Engine field that is created inside Car (new Engine()) - the Engine is created by the Car and cannot exist independently in this design. (3) Dependency: Car uses Logger only within its drive() method to call Logger.log(). Logger is not stored as a field - it is used temporarily, making it a dependency. There is no aggregation visible in this code (aggregation would require the parts to be passed in from outside).",
+      "hints": [
+        "Look for extends (inheritance), fields (association/composition/aggregation), and method-only usage (dependency)",
+        "Is the Engine created inside the Car or passed from outside?"
+      ],
+      "tags": [
+        "relationships",
+        "inheritance",
+        "composition",
+        "dependency",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_039",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "UML Multiplicity Complex Scenario",
+      "description": "A UML class diagram shows: Professor (1..*) teaches (1..5) Course. What does this mean?",
+      "options": [
+        "There are between 1 and 5 Professors and unlimited Courses",
+        "Each Professor teaches one or more Courses, and each Course has 1 to 5 Professors",
+        "Each Course is taught by one or more Professors, and each Professor teaches 1 to 5 Courses",
+        "Each Professor can have between 1 and 5 students in a Course"
+      ],
+      "correct_answer": "C",
+      "explanation": "In UML, multiplicities are read from the perspective of the opposite class. The multiplicity near Professor ('1..*') is read from Course's perspective: each Course is taught by one or more Professors. The multiplicity near Course ('1..5') is read from Professor's perspective: each Professor teaches between 1 and 5 Courses. This is a common source of confusion - the multiplicity is placed at the end of the association nearest to the class it counts. Always read multiplicity from the perspective of the class at the other end of the association.",
+      "hints": [
+        "The multiplicity near a class tells how many of THAT class are involved per instance of the OTHER class",
+        "Read the multiplicity from the opposite end's perspective"
+      ],
+      "tags": [
+        "UML",
+        "multiplicity",
+        "class_diagram",
+        "association"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_040",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Preventing Method Overriding",
+      "description": "In Java, which approach prevents a method from being overridden by subclasses?",
+      "options": [
+        "Declare the method as abstract",
+        "Declare the method as final",
+        "Declare the method as static and private",
+        "Use the @Override annotation"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'final' keyword on a method prevents subclasses from overriding it. A final method's implementation is guaranteed to be the one that is called. Declaring a method as abstract does the opposite - it requires subclasses to override it. While static methods cannot be truly overridden (they can be hidden), declaring a method as 'static and private' is not the standard way to prevent overriding and would change the method's behavior entirely. @Override only verifies that overriding is correct; it does not prevent further overriding.",
+      "hints": [
+        "Think about which keyword means 'this is the definitive version'",
+        "The keyword literally means 'this is the final version and cannot be changed'"
+      ],
+      "tags": [
+        "method_overriding",
+        "final",
+        "java_syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_041",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Polymorphic Method Resolution",
+      "description": "What is the output of the following Java code?\n\nclass Animal {\n    String type() { return \"Animal\"; }\n    void printType() { System.out.print(type() + \" \"); }\n}\n\nclass Dog extends Animal {\n    String type() { return \"Dog\"; }\n    void printType() {\n        super.printType();\n        System.out.print(type());\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        a.printType();\n    }\n}",
+      "code_template": "class Animal {\n    String type() { return \"Animal\"; }\n    void printType() { System.out.print(type() + \" \"); }\n}\n\nclass Dog extends Animal {\n    String type() { return \"Dog\"; }\n    void printType() {\n        super.printType();\n        System.out.print(type());\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        a.printType();\n    }\n}",
+      "options": [
+        "Animal Animal",
+        "Animal Dog",
+        "Dog Animal",
+        "Dog Dog"
+      ],
+      "correct_answer": "D",
+      "explanation": "Let's trace through: a.printType() calls Dog's printType() (dynamic dispatch). Dog.printType() first calls super.printType(), which is Animal.printType(). Inside Animal.printType(), type() is called - but since the actual object is a Dog, dynamic dispatch calls Dog's type(), which returns \"Dog\". So \"Dog \" is printed. Then back in Dog.printType(), type() is called directly, which also returns \"Dog\" (it is the same object). So \"Dog\" is printed. The full output is \"Dog Dog\". This demonstrates that even inside a super method call, the actual object type still determines which overridden methods are called.",
+      "hints": [
+        "super.printType() calls Animal's printType, but type() inside Animal.printType still uses dynamic dispatch",
+        "The actual object type is always Dog, regardless of which class's method is executing"
+      ],
+      "tags": [
+        "polymorphism",
+        "method_overriding",
+        "super",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_042",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "UML Abstract Class Notation",
+      "description": "In a UML class diagram, how is an abstract class and its abstract methods typically indicated?",
+      "options": [
+        "The class name is underlined and abstract methods are in bold",
+        "The class box has a dashed border and abstract methods have a # symbol",
+        "The class name and abstract method names are written in italics",
+        "The class box is shaded gray and abstract methods have no return type"
+      ],
+      "correct_answer": "C",
+      "explanation": "In UML, abstract classes and abstract methods are denoted by writing their names in italics. Alternatively, the stereotype <<abstract>> can be placed above the class name. Abstract method names are also italicized in the operations compartment. A dashed border is not used for abstract classes. Underlining is used in object diagrams (not class diagrams). The # symbol indicates protected visibility, not abstraction. These notation conventions help readers quickly identify which classes cannot be instantiated and which methods must be implemented by subclasses.",
+      "hints": [
+        "The italic style signals 'not fully defined yet'",
+        "Alternatively, the <<abstract>> stereotype can be used"
+      ],
+      "tags": [
+        "UML",
+        "abstract_class",
+        "notation",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_043",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Covariant Return Type Override",
+      "description": "What is the output of the following Java code?\n\nclass Animal {\n    Animal create() {\n        System.out.print(\"Animal \");\n        return new Animal();\n    }\n}\n\nclass Dog extends Animal {\n    Dog create() {\n        System.out.print(\"Dog \");\n        return new Dog();\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        Animal result = a.create();\n        System.out.print(result.getClass().getSimpleName());\n    }\n}",
+      "code_template": "class Animal {\n    Animal create() {\n        System.out.print(\"Animal \");\n        return new Animal();\n    }\n}\n\nclass Dog extends Animal {\n    Dog create() {\n        System.out.print(\"Dog \");\n        return new Dog();\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        Animal result = a.create();\n        System.out.print(result.getClass().getSimpleName());\n    }\n}",
+      "options": [
+        "Animal Dog",
+        "Animal Animal",
+        "Dog Dog",
+        "Compilation error - return type mismatch"
+      ],
+      "correct_answer": "C",
+      "explanation": "This demonstrates covariant return types in Java. Dog's create() method overrides Animal's create() and returns Dog instead of Animal. This is valid because Dog is a subtype of Animal (covariant return type). When a.create() is called, dynamic dispatch calls Dog's create(), printing \"Dog \" and returning a new Dog object. Then result.getClass().getSimpleName() returns \"Dog\" since the actual object is a Dog. Covariant return types have been supported since Java 5 and allow a subclass to narrow the return type when overriding.",
+      "hints": [
+        "Java allows overriding methods to return a more specific type (covariant return type)",
+        "Dog IS-AN Animal, so returning Dog where Animal is expected is valid"
+      ],
+      "tags": [
+        "method_overriding",
+        "covariant_return",
+        "polymorphism",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_044",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Choosing Between Association Types",
+      "description": "A Library system has the following requirement: 'A Library catalog contains CatalogEntry objects. Each CatalogEntry references a Book. When a CatalogEntry is removed, the Book still exists in the system.' Which relationships should be modeled?",
+      "options": [
+        "Composition between Library and CatalogEntry; Aggregation between CatalogEntry and Book",
+        "Aggregation between Library and CatalogEntry; Composition between CatalogEntry and Book",
+        "Composition for both relationships",
+        "Aggregation for both relationships"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Library owns the CatalogEntry objects - if the Library's catalog is destroyed, the entries in it are also destroyed (they have no meaning outside the catalog). This is composition (filled diamond at Library). However, the Book exists independently of any CatalogEntry - removing a catalog entry does not destroy the book it references. This is aggregation (hollow diamond at CatalogEntry). This distinction is crucial in domain modeling: composition implies lifecycle ownership while aggregation implies a reference to an independently-existing object.",
+      "hints": [
+        "Ask: does the CatalogEntry make sense without the Library? Does the Book make sense without the CatalogEntry?",
+        "Composition = shared lifecycle, Aggregation = independent lifecycle"
+      ],
+      "tags": [
+        "composition",
+        "aggregation",
+        "UML",
+        "design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_045",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Super and This in Constructor",
+      "description": "What happens when you try to compile the following Java code?\n\nclass Base {\n    Base() { System.out.println(\"Base\"); }\n    Base(int x) { System.out.println(\"Base:\" + x); }\n}\n\nclass Derived extends Base {\n    Derived() {\n        this(10);\n        super();\n    }\n    Derived(int x) {\n        super(x);\n        System.out.println(\"Derived:\" + x);\n    }\n}",
+      "code_template": "class Base {\n    Base() { System.out.println(\"Base\"); }\n    Base(int x) { System.out.println(\"Base:\" + x); }\n}\n\nclass Derived extends Base {\n    Derived() {\n        this(10);\n        super();\n    }\n    Derived(int x) {\n        super(x);\n        System.out.println(\"Derived:\" + x);\n    }\n}",
+      "options": [
+        "Prints Base then Base:10 then Derived:10",
+        "Prints Base:10 then Derived:10",
+        "Compilation error - this() and super() cannot both appear in the same constructor",
+        "Runtime error"
+      ],
+      "correct_answer": "C",
+      "explanation": "In Java, both this() and super() must be the first statement in a constructor. Since only one statement can be first, you cannot have both this() and super() in the same constructor. The Derived() constructor tries to call this(10) first and then super(), but this is illegal. You must choose one: either delegate to another constructor in the same class with this(), or delegate to a superclass constructor with super(). The other constructor in the chain will eventually call a superclass constructor.",
+      "hints": [
+        "Both this() and super() must be the FIRST statement in a constructor",
+        "Only one call can be first - so you cannot have both"
+      ],
+      "tags": [
+        "constructor",
+        "super",
+        "this",
+        "compilation_error",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_046",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "UML Diagram to Java Code",
+      "description": "A UML class diagram shows: abstract class Shape with abstract method +area():double, class Circle extends Shape with attribute -radius:double and method +area():double, and a composition relationship from Drawing to Shape with multiplicity 1 on Drawing and * on Shape. Which Java code correctly implements this?",
+      "options": [
+        "interface Shape { double area(); }\nclass Circle implements Shape { private double radius; public double area() { return Math.PI * radius * radius; } }\nclass Drawing { private List<Shape> shapes; }",
+        "class Shape { public double area() { return 0; } }\nclass Circle extends Shape { public double radius; public double area() { return Math.PI * radius * radius; } }\nclass Drawing { public Shape shapes; }",
+        "abstract class Shape { protected abstract double area(); }\nclass Circle implements Shape { private double radius; public double area() { return Math.PI * radius * radius; } }\nclass Drawing { private Shape shape; }",
+        "abstract class Shape { public abstract double area(); }\nclass Circle extends Shape { private double radius; public double area() { return Math.PI * radius * radius; } }\nclass Drawing { private List<Shape> shapes = new ArrayList<>(); }"
+      ],
+      "correct_answer": "D",
+      "explanation": "The correct implementation follows the UML diagram precisely: Shape is an abstract class (not an interface) with an abstract area() method that is public (+) and returns double. Circle extends Shape (inheritance), has a private (-) radius field of type double, and implements the area() method publicly. Drawing has a composition (private ownership) relationship with Shape with multiplicity * (zero or more), modeled as a List<Shape>. Option B uses a concrete class and a single reference. Option C uses 'implements' with a class and has the wrong access modifier. Option D uses an interface instead of an abstract class.",
+      "hints": [
+        "Pay attention to the + and - visibility markers in the UML diagram",
+        "Multiplicity * means zero or more, which requires a collection"
+      ],
+      "tags": [
+        "UML",
+        "abstract_class",
+        "composition",
+        "java_code",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_047",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Multi-level Inheritance and Super",
+      "description": "What is the output of the following Java code?\n\nclass A {\n    String name() { return \"A\"; }\n}\n\nclass B extends A {\n    String name() { return \"B\"; }\n    String superName() { return super.name(); }\n}\n\nclass C extends B {\n    String name() { return \"C\"; }\n    String superName() { return super.name(); }\n    String grandparentName() { return super.superName(); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        C c = new C();\n        System.out.println(c.name() + \" \" + c.superName() + \" \" + c.grandparentName());\n    }\n}",
+      "code_template": "class A {\n    String name() { return \"A\"; }\n}\n\nclass B extends A {\n    String name() { return \"B\"; }\n    String superName() { return super.name(); }\n}\n\nclass C extends B {\n    String name() { return \"C\"; }\n    String superName() { return super.name(); }\n    String grandparentName() { return super.superName(); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        C c = new C();\n        System.out.println(c.name() + \" \" + c.superName() + \" \" + c.grandparentName());\n    }\n}",
+      "options": [
+        "C A A",
+        "C B B",
+        "C C A",
+        "C B A"
+      ],
+      "correct_answer": "D",
+      "explanation": "Let's trace through each call: (1) c.name() returns \"C\" (C overrides name()). (2) c.superName() calls C's superName() which calls super.name(), i.e., B's name(), returning \"B\". (3) c.grandparentName() calls super.superName(), which calls B's superName(). B's superName() calls super.name(), which is A's name(), returning \"A\". Note that super.super.name() is not valid Java syntax - you cannot skip levels. Instead, C calls B's superName() which in turn calls A's name(). This chain correctly produces \"C B A\".",
+      "hints": [
+        "super only refers to the immediate parent class",
+        "You cannot write super.super to skip a level in Java"
+      ],
+      "tags": [
+        "inheritance",
+        "super",
+        "method_overriding",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_048",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Abstract Class Partial Implementation",
+      "description": "What happens when you compile the following Java code?\n\nabstract class Shape {\n    abstract double area();\n    abstract double perimeter();\n}\n\nabstract class RegularPolygon extends Shape {\n    protected int sides;\n    protected double sideLength;\n    \n    double perimeter() {\n        return sides * sideLength;\n    }\n}\n\nclass Square extends RegularPolygon {\n    Square(double side) {\n        this.sides = 4;\n        this.sideLength = side;\n    }\n    \n    double area() {\n        return sideLength * sideLength;\n    }\n}",
+      "code_template": "abstract class Shape {\n    abstract double area();\n    abstract double perimeter();\n}\n\nabstract class RegularPolygon extends Shape {\n    protected int sides;\n    protected double sideLength;\n    \n    double perimeter() {\n        return sides * sideLength;\n    }\n}\n\nclass Square extends RegularPolygon {\n    Square(double side) {\n        this.sides = 4;\n        this.sideLength = side;\n    }\n    \n    double area() {\n        return sideLength * sideLength;\n    }\n}",
+      "options": [
+        "Compiles successfully - RegularPolygon implements perimeter() and Square implements area()",
+        "Compilation error - RegularPolygon must implement all abstract methods from Shape",
+        "Compilation error - Square must implement perimeter() again",
+        "Compilation error - abstract classes cannot have fields"
+      ],
+      "correct_answer": "A",
+      "explanation": "This code compiles successfully. Shape declares two abstract methods: area() and perimeter(). RegularPolygon extends Shape and is also abstract, so it is not required to implement all abstract methods - it only implements perimeter(). The area() method remains abstract (inherited from Shape). Square extends RegularPolygon and is concrete, so it must implement all remaining abstract methods. It implements area(), and perimeter() is inherited from RegularPolygon. This demonstrates how abstract class hierarchies allow incremental implementation across multiple levels.",
+      "hints": [
+        "An abstract class does not have to implement all inherited abstract methods",
+        "Only concrete (non-abstract) classes must implement all abstract methods"
+      ],
+      "tags": [
+        "abstract_class",
+        "inheritance",
+        "method_overriding",
+        "java_code"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_049",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Designing Class Relationships",
+      "description": "You are designing a system where an Order contains OrderLines. Each OrderLine references a Product. When an Order is deleted, its OrderLines should also be deleted, but the Products should remain. An OrderProcessor class has a method that takes an Order as a parameter to process it. Which set of UML relationships is most appropriate?",
+      "options": [
+        "Aggregation: Order → OrderLine, Composition: OrderLine → Product, Association: OrderProcessor → Order",
+        "Composition: Order → OrderLine, Aggregation: OrderLine → Product, Dependency: OrderProcessor → Order",
+        "Composition: Order → OrderLine, Composition: OrderLine → Product, Dependency: OrderProcessor → Order",
+        "Association: Order → OrderLine, Association: OrderLine → Product, Inheritance: OrderProcessor → Order"
+      ],
+      "correct_answer": "B",
+      "explanation": "The correct design uses: (1) Composition between Order and OrderLine because OrderLines are owned by the Order and are destroyed when the Order is deleted (shared lifecycle). (2) Aggregation between OrderLine and Product because Products exist independently and should remain when an OrderLine is deleted. (3) Dependency between OrderProcessor and Order because OrderProcessor only uses Order as a method parameter (temporary usage, not stored as a field). Option B incorrectly swaps composition and aggregation. Option C would incorrectly destroy Products when OrderLines are deleted. Option D uses inheritance, which makes no sense here.",
+      "hints": [
+        "Consider the lifecycle of each object: which objects are destroyed when their parent is destroyed?",
+        "The OrderProcessor only uses Order in a method, not as a stored field"
+      ],
+      "tags": [
+        "composition",
+        "aggregation",
+        "dependency",
+        "UML",
+        "design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_rel_050",
+      "category": "class_relations",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Complex UML Diagram Interpretation",
+      "description": "A UML class diagram shows the following: abstract class Employee (italic name) with attributes -name:String, -salary:double and methods +getName():String, +calculatePay():double (italic). Two classes Manager and Developer both have generalization arrows pointing to Employee. Manager has an additional attribute -bonus:double. There is a composition from Department to Employee with multiplicity 1 on Department and 1..* on Employee. What can you conclude?",
+      "options": [
+        "Department can have zero Employees; Employee can be instantiated; calculatePay() is fully implemented in Employee",
+        "Department must have at least one Employee; Manager and Developer must each implement calculatePay(); Employee cannot be instantiated directly",
+        "Manager and Developer are the same class; Department inherits from Employee",
+        "Employee is an interface; Manager and Developer implement it; Department aggregates Employees"
+      ],
+      "correct_answer": "B",
+      "explanation": "From the UML diagram: (1) Employee is abstract (italic name), so it cannot be instantiated directly. (2) calculatePay() is in italics, meaning it is abstract and must be implemented by concrete subclasses Manager and Developer. (3) getName() is not italic, so it is a concrete method inherited by subclasses. (4) The composition (filled diamond) from Department to Employee with multiplicity 1..* means each Department must have at least one Employee, and Employees cannot exist without a Department. (5) Manager and Developer have generalization (inheritance) arrows to Employee, making them concrete subclasses. (6) Manager has an additional bonus field for its pay calculation.",
+      "hints": [
+        "Italic text in UML means abstract (both for class names and method names)",
+        "The multiplicity 1..* means 'at least one'"
+      ],
+      "tags": [
+        "UML",
+        "abstract_class",
+        "class_diagram",
+        "generalization",
+        "composition",
+        "multiplicity"
+      ],
+      "points": 1
+    }
+  ]
+}

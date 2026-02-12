@@ -1,0 +1,1451 @@
+{
+  "questions": [
+    {
+      "id": "oop_uml_001",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "What is UML?",
+      "description": "What does UML stand for?",
+      "options": [
+        "Unified Management Logic",
+        "Universal Markup Language",
+        "Unified Modeling Language",
+        "Universal Modeling Layout"
+      ],
+      "correct_answer": "C",
+      "explanation": "UML stands for Unified Modeling Language. It is a standardized visual modeling language used in software engineering to specify, visualize, construct, and document the artifacts of software systems. UML provides a common vocabulary and set of diagrams for modeling object-oriented systems.",
+      "hints": [
+        "It is a language for creating visual models of software",
+        "The first word refers to the fact that it combines several earlier modeling approaches"
+      ],
+      "tags": [
+        "uml",
+        "terminology"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_002",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Purpose of UML",
+      "description": "What is the primary purpose of UML in software development?",
+      "options": [
+        "To visually model and communicate the design of a software system",
+        "To compile Java source code into bytecode",
+        "To replace all written documentation in a project",
+        "To automatically generate finished applications"
+      ],
+      "correct_answer": "A",
+      "explanation": "The primary purpose of UML is to provide a standardized way to visually model and communicate the design of a software system. UML diagrams help developers, designers, and stakeholders understand the structure and behavior of a system before and during implementation. UML is a communication and design tool, not a code generator or compiler.",
+      "hints": [
+        "Think about what visual diagrams are used for in engineering",
+        "UML is about planning and communication, not execution"
+      ],
+      "tags": [
+        "uml",
+        "software_design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_003",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Class Diagram Components",
+      "description": "In a UML class diagram, a class is typically represented as a rectangle divided into three compartments. What do these three compartments contain, from top to bottom?",
+      "options": [
+        "Class name, methods, attributes",
+        "Class name, attributes, methods",
+        "Package name, class name, attributes",
+        "Class name, constructors, destructor"
+      ],
+      "correct_answer": "B",
+      "explanation": "In a UML class diagram, a class is drawn as a rectangle divided into three horizontal compartments. The top compartment contains the class name, the middle compartment lists the attributes (fields/instance variables), and the bottom compartment lists the methods (operations). This standard layout helps developers quickly understand the structure of each class.",
+      "hints": [
+        "The name is always at the top",
+        "Think about the data a class holds versus the actions it can perform"
+      ],
+      "tags": [
+        "uml",
+        "class_diagram"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_004",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Access Modifier Notation",
+      "description": "In UML class diagrams, which symbol represents a private member?",
+      "options": [
+        "- (minus)",
+        "+ (plus)",
+        "# (hash)",
+        "~ (tilde)"
+      ],
+      "correct_answer": "A",
+      "explanation": "In UML, visibility (access modifier) is shown with symbols before member names: '-' means private, '+' means public, '#' means protected, and '~' means package-private (default in Java). For example, '- name: String' represents a private attribute called name of type String.",
+      "hints": [
+        "The minus symbol suggests restriction or subtraction of visibility",
+        "Public uses the plus symbol, which suggests openness"
+      ],
+      "tags": [
+        "uml",
+        "access_modifiers",
+        "notation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_005",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UML Public Visibility",
+      "description": "In a UML class diagram, which symbol indicates that an attribute or method is public?",
+      "options": [
+        "* (asterisk)",
+        "- (minus)",
+        "# (hash)",
+        "+ (plus)"
+      ],
+      "correct_answer": "D",
+      "explanation": "In UML class diagrams, the '+' (plus) symbol before a member name indicates public visibility. This means the member is accessible from any other class. For example, '+ getName(): String' represents a public method that returns a String.",
+      "hints": [
+        "Think of the plus symbol as 'adding' accessibility",
+        "It is the opposite of the minus symbol used for private"
+      ],
+      "tags": [
+        "uml",
+        "access_modifiers",
+        "notation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_006",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Protected Visibility",
+      "description": "In UML, what does the '#' symbol before a member indicate, and how does it correspond to Java?",
+      "options": [
+        "Package-private visibility — accessible only within the same package",
+        "Private visibility — accessible only within the class itself",
+        "Protected visibility — accessible within the class, its subclasses, and same package in Java",
+        "Public visibility — accessible from anywhere"
+      ],
+      "correct_answer": "C",
+      "explanation": "The '#' symbol in UML represents protected visibility. In Java, protected members are accessible within the declaring class itself, any subclass (even in different packages), and any class in the same package. This is more permissive than private but more restrictive than public.",
+      "hints": [
+        "Protected is a middle ground between private and public",
+        "Subclasses are the key beneficiaries of protected access"
+      ],
+      "tags": [
+        "uml",
+        "access_modifiers",
+        "protected"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_007",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Use-Case Diagram Actors",
+      "description": "In a UML use-case diagram, what does an 'actor' represent?",
+      "options": [
+        "An external entity (person, system, or device) that interacts with the system",
+        "A Java class that handles user input",
+        "A database that stores user data",
+        "An internal component of the system being modeled"
+      ],
+      "correct_answer": "A",
+      "explanation": "In a use-case diagram, an actor represents any external entity that interacts with the system being modeled. This can be a human user, another software system, a hardware device, or any external entity that exchanges information with the system. Actors are drawn as stick figures and placed outside the system boundary.",
+      "hints": [
+        "Actors are always external to the system",
+        "Think about who or what uses the system from the outside"
+      ],
+      "tags": [
+        "uml",
+        "use_case",
+        "actors"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_008",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Use-Case Diagram Purpose",
+      "description": "What is the main purpose of a use-case diagram?",
+      "options": [
+        "To show inheritance relationships between classes",
+        "To show the internal data structures of the system",
+        "To show the order in which methods are called",
+        "To show the functional requirements of a system from the user's perspective"
+      ],
+      "correct_answer": "D",
+      "explanation": "Use-case diagrams capture the functional requirements of a system by showing what the system does from the perspective of its users (actors). Each use case represents a specific goal or task that an actor can accomplish using the system. They are particularly useful early in the design process for understanding what a system should do, before deciding how to implement it.",
+      "hints": [
+        "Use cases focus on 'what' the system does, not 'how'",
+        "They are about the user's goals and interactions"
+      ],
+      "tags": [
+        "uml",
+        "use_case",
+        "requirements"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_009",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Use-Case and OO Design Relationship",
+      "description": "How does use-case analysis relate to object-oriented design?",
+      "options": [
+        "Use cases and object-oriented design are unrelated methodologies",
+        "Use cases replace the need for class diagrams entirely",
+        "Use cases are only used after all classes have been implemented",
+        "Use cases help identify the objects, classes, and responsibilities needed in the system"
+      ],
+      "correct_answer": "D",
+      "explanation": "Use-case analysis is an important early step in the object-oriented design process. By analyzing the interactions between actors and the system, designers can identify candidate classes, their responsibilities (methods), and the data they need to manage (attributes). Use cases bridge the gap between requirements gathering and class design, helping ensure the system meets user needs.",
+      "hints": [
+        "Think about how understanding user interactions helps you design classes",
+        "Use cases come before class design in the development process"
+      ],
+      "tags": [
+        "uml",
+        "use_case",
+        "oo_design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_010",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Include Relationship",
+      "description": "In a UML use-case diagram, what does an <<include>> relationship mean?",
+      "options": [
+        "The two use cases are alternative paths for the same goal",
+        "The included use case optionally extends the base use case",
+        "The base use case always includes the behavior of the included use case",
+        "The included use case replaces the base use case"
+      ],
+      "correct_answer": "C",
+      "explanation": "An <<include>> relationship in a use-case diagram means that the base use case always incorporates the behavior of the included use case. It represents mandatory, shared behavior. For example, 'Place Order' might <<include>> 'Authenticate User', meaning authentication always happens as part of placing an order. This is useful for extracting common behavior shared by multiple use cases.",
+      "hints": [
+        "Include means the behavior is mandatory, not optional",
+        "Think of it as one use case requiring another"
+      ],
+      "tags": [
+        "uml",
+        "use_case",
+        "include"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_011",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Extend Relationship",
+      "description": "In a UML use-case diagram, what does an <<extend>> relationship indicate?",
+      "options": [
+        "The two use cases must always execute together",
+        "The base use case always includes the extending use case",
+        "The extending use case replaces the base use case entirely",
+        "The extending use case optionally adds behavior to the base use case under certain conditions"
+      ],
+      "correct_answer": "D",
+      "explanation": "An <<extend>> relationship indicates that the extending use case may optionally add additional behavior to the base use case under specific conditions. Unlike <<include>>, this behavior is not always performed. For example, 'Place Order' might be extended by 'Apply Discount Code', which only happens when the user has a discount code. The extension point specifies where in the base use case the extension can be inserted.",
+      "hints": [
+        "Extend implies optional or conditional behavior",
+        "Compare this to <<include>>, which is mandatory"
+      ],
+      "tags": [
+        "uml",
+        "use_case",
+        "extend"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_012",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Association in Class Diagram",
+      "description": "In a UML class diagram, what does a solid line between two classes represent?",
+      "options": [
+        "Inheritance — one class extends the other",
+        "An association — a relationship where objects of the two classes are connected",
+        "A dependency — one class temporarily uses the other",
+        "An implementation — one class implements the other's interface"
+      ],
+      "correct_answer": "B",
+      "explanation": "A solid line between two classes in a UML class diagram represents an association. An association indicates that objects of the two classes are related and can communicate with each other. For example, a solid line between 'Student' and 'Course' indicates that students are associated with courses. Associations can have multiplicity labels (like 1..*, 0..1) indicating how many objects participate in the relationship.",
+      "hints": [
+        "The simplest line type represents the simplest relationship",
+        "Inheritance uses a line with a triangle arrowhead"
+      ],
+      "tags": [
+        "uml",
+        "class_diagram",
+        "association"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_013",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "UML Multiplicity",
+      "description": "In a UML class diagram, an association between 'Library' and 'Book' shows '1' on the Library side and '0..*' on the Book side. What does this mean?",
+      "options": [
+        "A library must have at least one book, and each book belongs to one library",
+        "Each library has exactly one book, and a book can belong to zero or more libraries",
+        "Each book belongs to exactly one library, and a library can have zero or more books",
+        "There is exactly one library and an unlimited number of books in the system"
+      ],
+      "correct_answer": "C",
+      "explanation": "In UML, multiplicity labels indicate how many instances of one class can be associated with an instance of the other class. The '1' on the Library side means each Book is associated with exactly one Library. The '0..*' on the Book side means each Library can be associated with zero or more Books. Reading from Book to Library: a book belongs to 1 library. Reading from Library to Book: a library has 0..* books.",
+      "hints": [
+        "Read the multiplicity from the perspective of the opposite class",
+        "0..* means zero to many (any number including zero)"
+      ],
+      "tags": [
+        "uml",
+        "class_diagram",
+        "multiplicity"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_014",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "UML Inheritance Notation",
+      "description": "In a UML class diagram, how is inheritance (generalization) represented?",
+      "options": [
+        "A dotted line with a hollow triangle arrowhead",
+        "A dashed line with an open arrowhead",
+        "A solid line with a filled diamond at the parent end",
+        "A solid line with a hollow triangle arrowhead pointing to the superclass"
+      ],
+      "correct_answer": "D",
+      "explanation": "Inheritance (also called generalization) in UML is represented by a solid line with a hollow (unfilled) triangle arrowhead pointing from the subclass to the superclass. For example, if 'Dog' extends 'Animal', the arrow points from Dog to Animal. The hollow triangle distinguishes it from association arrows and dependency arrows.",
+      "hints": [
+        "The arrow points toward the more general class",
+        "The triangle is hollow, not filled"
+      ],
+      "tags": [
+        "uml",
+        "class_diagram",
+        "inheritance"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_015",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "UML Static Members Notation",
+      "description": "How are static (class-level) members represented in a UML class diagram?",
+      "options": [
+        "They are underlined",
+        "They are written in bold",
+        "They are written in italics",
+        "They are prefixed with the keyword 'static'"
+      ],
+      "correct_answer": "A",
+      "explanation": "In UML class diagrams, static members (both attributes and methods) are represented by underlining their names. For example, '- count: int' (underlined) would represent a private static attribute. This convention distinguishes class-level members from instance-level members. In Java, these correspond to fields and methods declared with the 'static' keyword.",
+      "hints": [
+        "UML uses visual formatting rather than keywords",
+        "Italics in UML are reserved for abstract elements"
+      ],
+      "tags": [
+        "uml",
+        "class_diagram",
+        "static"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_016",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Class vs Object Definition",
+      "description": "What is the relationship between a class and an object in Java?",
+      "options": [
+        "A class and an object are the same thing with different names",
+        "A class is a blueprint or template, and an object is a specific instance created from that class",
+        "An object is a blueprint, and a class is created from an object",
+        "A class can only create one object at a time"
+      ],
+      "correct_answer": "B",
+      "explanation": "A class is a blueprint or template that defines the structure (attributes) and behavior (methods) that objects of that type will have. An object is a concrete instance created from a class. For example, the class 'Car' defines what attributes (color, speed) and methods (accelerate, brake) all cars have, while a specific Car object represents one particular car with specific values for those attributes. You can create many objects from a single class.",
+      "hints": [
+        "Think of the analogy: a class is like an architectural plan, an object is the actual building",
+        "Multiple objects can be created from one class"
+      ],
+      "tags": [
+        "classes",
+        "objects",
+        "fundamentals"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_017",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Creating an Object in Java",
+      "description": "Which of the following correctly creates a new object of the class 'Dog' in Java?",
+      "options": [
+        "new Dog myDog();",
+        "Dog myDog = new Dog();",
+        "Dog myDog = Dog.create();",
+        "Dog myDog = Dog();"
+      ],
+      "correct_answer": "B",
+      "explanation": "In Java, objects are created using the 'new' keyword followed by a call to the class constructor. The syntax is: ClassName variableName = new ClassName(); Here, 'Dog myDog' declares a variable of type Dog, and 'new Dog()' creates a new Dog object and calls its constructor. The '=' assigns the reference to the new object to the variable.",
+      "hints": [
+        "The 'new' keyword is required for object creation in Java",
+        "The constructor call looks like a method call with the class name"
+      ],
+      "tags": [
+        "objects",
+        "new_keyword",
+        "constructors"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_018",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Defining a Class in Java",
+      "description": "Which of the following is the correct way to define a class called 'Student' in Java?",
+      "options": [
+        "define Student class { }",
+        "class: Student { }",
+        "public class Student { }",
+        "public Student class { }"
+      ],
+      "correct_answer": "C",
+      "explanation": "In Java, a class is defined using the keyword 'class' followed by the class name. An access modifier like 'public' can precede the 'class' keyword. The class body is enclosed in curly braces { }. By convention, Java class names use PascalCase (each word starts with a capital letter). A public class must be defined in a file with the same name as the class (e.g., Student.java).",
+      "hints": [
+        "The keyword 'class' is essential and comes before the class name",
+        "Access modifiers come before the 'class' keyword"
+      ],
+      "tags": [
+        "classes",
+        "syntax",
+        "definition"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_019",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Attributes in Java",
+      "description": "What are attributes (instance variables) in a Java class?",
+      "options": [
+        "Variables declared inside a method that store temporary values",
+        "Variables declared inside a class but outside any method that store the state of an object",
+        "Constants that never change value",
+        "Methods that return values"
+      ],
+      "correct_answer": "B",
+      "explanation": "Attributes (also called instance variables or fields) are variables declared inside a class body but outside any method. They define the state or data that each object of the class holds. Each object has its own copy of instance variables. For example, a 'Student' class might have attributes like 'String name' and 'int age' — each Student object would have its own name and age values.",
+      "hints": [
+        "Attributes define what data an object holds",
+        "They are declared at the class level, not inside methods"
+      ],
+      "tags": [
+        "attributes",
+        "instance_variables",
+        "state"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_020",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Methods in Java",
+      "description": "What is the purpose of methods in a Java class?",
+      "options": [
+        "To define the behavior and actions that objects of the class can perform",
+        "To store data values for the object",
+        "To declare the type of the class",
+        "To import other classes into the program"
+      ],
+      "correct_answer": "A",
+      "explanation": "Methods define the behavior of a class — the actions that objects of that class can perform. They contain the code that operates on the object's data (attributes) and can accept parameters and return values. For example, a 'BankAccount' class might have methods like deposit(double amount), withdraw(double amount), and getBalance(). Methods allow objects to interact with each other and with the rest of the program.",
+      "hints": [
+        "Methods are about what an object can DO",
+        "Attributes store data; methods perform actions"
+      ],
+      "tags": [
+        "methods",
+        "behavior",
+        "fundamentals"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_021",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Encapsulation Definition",
+      "description": "What is encapsulation in object-oriented programming?",
+      "options": [
+        "The bundling of data and methods that operate on that data within a single unit, restricting direct access to some components",
+        "The process of creating multiple objects from a single class",
+        "The ability of a class to inherit from multiple parent classes",
+        "The process of converting objects to strings for display"
+      ],
+      "correct_answer": "A",
+      "explanation": "Encapsulation is a fundamental OOP principle that involves bundling the data (attributes) and the methods that operate on that data into a single unit (a class), and restricting direct access to some of the object's components. This is achieved in Java by making attributes private and providing public getter and setter methods. Encapsulation protects the internal state of an object from unintended interference and misuse.",
+      "hints": [
+        "Think of a capsule that contains and protects its contents",
+        "It involves hiding internal details and providing controlled access"
+      ],
+      "tags": [
+        "encapsulation",
+        "oop_principles",
+        "fundamentals"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_022",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Private Access Modifier",
+      "description": "What does the 'private' access modifier mean in Java?",
+      "options": [
+        "The member is accessible from any class in the same package",
+        "The member is accessible only within the class where it is declared",
+        "The member is accessible from any class anywhere",
+        "The member is accessible only from subclasses"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'private' access modifier in Java means that the attribute or method can only be accessed from within the same class where it is declared. No other class — not even subclasses or classes in the same package — can directly access a private member. This is the most restrictive access level and is a key mechanism for achieving encapsulation.",
+      "hints": [
+        "Private means maximum restriction",
+        "Only the class itself can access its own private members"
+      ],
+      "tags": [
+        "access_modifiers",
+        "private",
+        "encapsulation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_023",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Public Access Modifier",
+      "description": "What does the 'public' access modifier mean in Java?",
+      "options": [
+        "The member is accessible only within the same class",
+        "The member is accessible from any other class",
+        "The member is accessible only within the same package",
+        "The member is accessible only from subclasses"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'public' access modifier in Java means that the attribute or method can be accessed from any other class, regardless of the package it belongs to. It is the least restrictive access level. Public methods are commonly used as the interface through which other objects interact with an object (e.g., public getter and setter methods).",
+      "hints": [
+        "Public means no restrictions on access",
+        "Think of 'public' as open to everyone"
+      ],
+      "tags": [
+        "access_modifiers",
+        "public"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_024",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Constructor Purpose",
+      "description": "What is the purpose of a constructor in Java?",
+      "options": [
+        "To declare the attributes of a class",
+        "To destroy an object when it is no longer needed",
+        "To initialize an object's state when it is created",
+        "To import required libraries"
+      ],
+      "correct_answer": "C",
+      "explanation": "A constructor is a special method that is called automatically when a new object is created using the 'new' keyword. Its primary purpose is to initialize the object's attributes to appropriate values. Constructors have the same name as the class and do not have a return type (not even void). For example, 'public Student(String name, int age)' is a constructor that sets up a new Student with a name and age.",
+      "hints": [
+        "Constructors run once when an object is born",
+        "They share their name with the class"
+      ],
+      "tags": [
+        "constructors",
+        "initialization",
+        "objects"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_025",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Getter Method Purpose",
+      "description": "What is the purpose of a getter method in Java?",
+      "options": [
+        "To delete an attribute from the object",
+        "To set the value of a private attribute from outside the class",
+        "To create a new object of the class",
+        "To return the value of a private attribute so it can be read from outside the class"
+      ],
+      "correct_answer": "D",
+      "explanation": "A getter method (also called an accessor) provides read access to a private attribute from outside the class. Since well-encapsulated attributes are private, other classes cannot access them directly. A getter method returns the value of the attribute. By convention, getter methods are named getAttributeName() — for example, getName() returns the value of the private 'name' attribute. For boolean attributes, the convention is isAttributeName().",
+      "hints": [
+        "Getters 'get' or retrieve a value for the caller",
+        "They provide controlled read access to private data"
+      ],
+      "tags": [
+        "getters",
+        "encapsulation",
+        "access"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_026",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Setter Method Purpose",
+      "description": "What is the purpose of a setter method in Java?",
+      "options": [
+        "To return the value of a private attribute",
+        "To modify the value of a private attribute from outside the class, potentially with validation",
+        "To create a copy of the current object",
+        "To compare two objects for equality"
+      ],
+      "correct_answer": "B",
+      "explanation": "A setter method (also called a mutator) allows controlled modification of a private attribute from outside the class. Since private attributes cannot be directly changed from outside, setters provide a way to update them while optionally adding validation logic. For example, setAge(int age) could check that age is positive before assigning it. By convention, setters are named setAttributeName().",
+      "hints": [
+        "Setters 'set' or change a value",
+        "They can include validation to ensure valid data"
+      ],
+      "tags": [
+        "setters",
+        "encapsulation",
+        "validation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_027",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Constructor Syntax",
+      "description": "Which of the following is a valid constructor for a class called 'Car'?",
+      "code_template": "// Option A:\npublic Car(String color) {\n    this.color = color;\n}\n\n// Option B:\npublic void Car(String color) {\n    this.color = color;\n}\n\n// Option C:\nprivate static Car(String color) {\n    this.color = color;\n}\n\n// Option D:\npublic String Car(String color) {\n    this.color = color;\n}",
+      "options": [
+        "Option B: public void Car(String color) { this.color = color; }",
+        "Option A: public Car(String color) { this.color = color; }",
+        "Option C: private static Car(String color) { this.color = color; }",
+        "Option D: public String Car(String color) { this.color = color; }"
+      ],
+      "correct_answer": "B",
+      "explanation": "Option A is correct because constructors must have the same name as the class and must NOT have a return type — not even void. Option B is wrong because it includes 'void' as a return type, which makes it a regular method, not a constructor. Option C is wrong because constructors cannot be static (and using 'this' in a static context would cause an error). Option D is wrong because it specifies 'String' as a return type, making it a regular method.",
+      "hints": [
+        "Constructors never have a return type",
+        "The constructor name must match the class name exactly"
+      ],
+      "tags": [
+        "constructors",
+        "syntax"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_028",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Default Constructor",
+      "description": "What happens if you do not write any constructor in a Java class?",
+      "options": [
+        "All attributes are automatically set to null",
+        "The class cannot be compiled",
+        "Objects of the class cannot be created",
+        "Java automatically provides a default no-argument constructor"
+      ],
+      "correct_answer": "D",
+      "explanation": "If you do not define any constructor in a Java class, the compiler automatically provides a default no-argument constructor. This default constructor takes no parameters and initializes all instance variables to their default values (0 for numeric types, false for boolean, null for object references). However, if you define even one constructor with parameters, the compiler will NOT provide the default no-argument constructor — you must define it explicitly if you still need it.",
+      "hints": [
+        "Java tries to be helpful when no constructor is explicitly written",
+        "The behavior changes if you define your own constructor"
+      ],
+      "tags": [
+        "constructors",
+        "default_constructor"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_029",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "this Keyword",
+      "description": "What does the 'this' keyword refer to in Java?",
+      "code_template": "public class Student {\n    private String name;\n\n    public Student(String name) {\n        this.name = name;\n    }\n}",
+      "options": [
+        "The current object instance on which the method or constructor is being called",
+        "The class itself rather than any particular object",
+        "The parent class of the current class",
+        "The most recently created object of the class"
+      ],
+      "correct_answer": "A",
+      "explanation": "The 'this' keyword in Java refers to the current object — the specific instance on which the method or constructor is being invoked. In the example, 'this.name = name;' distinguishes the instance variable 'name' (this.name) from the constructor parameter 'name'. Without 'this', the parameter would shadow the instance variable, and the assignment would have no effect on the object's state.",
+      "hints": [
+        "'this' helps distinguish between instance variables and parameters with the same name",
+        "It refers to 'this particular object' that is currently being worked with"
+      ],
+      "tags": [
+        "this_keyword",
+        "objects",
+        "constructors"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_030",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Instance vs Static Variable",
+      "description": "What is the difference between an instance variable and a static variable in Java?",
+      "options": [
+        "Instance variables exist only during method execution, while static variables persist",
+        "Instance variables are faster to access than static variables",
+        "Static variables can only hold numeric values",
+        "Each object has its own copy of an instance variable, but all objects share a single copy of a static variable"
+      ],
+      "correct_answer": "D",
+      "explanation": "An instance variable belongs to a specific object — each object gets its own separate copy. If you change an instance variable in one object, it does not affect others. A static variable (declared with the 'static' keyword) belongs to the class itself and is shared by all objects of that class. There is only one copy of a static variable, regardless of how many objects are created. Changing a static variable affects all objects that reference it.",
+      "hints": [
+        "Think of instance variables as personal belongings and static variables as shared resources",
+        "The keyword 'static' means it belongs to the class, not individual objects"
+      ],
+      "tags": [
+        "instance_variables",
+        "static",
+        "class_members"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_031",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Static Method Access",
+      "description": "How can a static method be called in Java?",
+      "code_template": "public class MathHelper {\n    public static int square(int x) {\n        return x * x;\n    }\n}",
+      "options": [
+        "Using the class name: MathHelper.square(5);",
+        "Only through an object: MathHelper m = new MathHelper(); m.square(5);",
+        "Using the 'this' keyword: this.square(5);",
+        "Static methods cannot be called directly"
+      ],
+      "correct_answer": "A",
+      "explanation": "Static methods belong to the class itself, not to any particular object. They can be called directly using the class name followed by a dot and the method name: MathHelper.square(5). While you can also call static methods through an object reference, this is discouraged because it is misleading — the method does not depend on any particular object's state. Static methods cannot use 'this' because there is no current object in a static context.",
+      "hints": [
+        "Static members belong to the class, so they are accessed through the class name",
+        "You do not need to create an object to call a static method"
+      ],
+      "tags": [
+        "static",
+        "methods",
+        "class_members"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_032",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Encapsulation in Practice",
+      "description": "Which of the following best demonstrates proper encapsulation in Java?",
+      "code_template": "// Option A:\npublic class Account {\n    private double balance;\n    public double getBalance() { return balance; }\n    public void deposit(double amount) {\n        if (amount > 0) balance += amount;\n    }\n}\n\n// Option B:\npublic class Account {\n    public double balance;\n    public double getBalance() { return balance; }\n}\n\n// Option C:\npublic class Account {\n    double balance;\n}\n\n// Option D:\npublic class Account {\n    private double balance;\n}",
+      "options": [
+        "Option A: private attribute with public methods that include validation",
+        "Option B: public attribute with getter method",
+        "Option C: package-private attribute with no methods",
+        "Option D: private attribute with no access methods at all"
+      ],
+      "correct_answer": "A",
+      "explanation": "Option A demonstrates proper encapsulation: the attribute 'balance' is private (hidden from outside), and public methods provide controlled access. The deposit() method includes validation (checking amount > 0) to protect the object's integrity. Option B breaks encapsulation by making the attribute public. Option C has no access control and no methods. Option D hides the data but provides no way to interact with it, making the class unusable.",
+      "hints": [
+        "Good encapsulation means private data with controlled public access",
+        "Validation in setter/mutator methods protects data integrity"
+      ],
+      "tags": [
+        "encapsulation",
+        "best_practices",
+        "validation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_033",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Object Method Call",
+      "description": "Given the following class, what does the code print?",
+      "code_template": "public class Counter {\n    private int count = 0;\n    public void increment() { count++; }\n    public int getCount() { return count; }\n}\n\n// In main:\nCounter c = new Counter();\nc.increment();\nc.increment();\nc.increment();\nSystem.out.println(c.getCount());",
+      "options": [
+        "The code does not compile",
+        "0",
+        "1",
+        "3"
+      ],
+      "correct_answer": "D",
+      "explanation": "The Counter object 'c' is created with count initialized to 0. Then increment() is called three times, each time increasing count by 1 (0 -> 1 -> 2 -> 3). Finally, getCount() returns the current value of count, which is 3. This example shows how an object maintains its state (the count variable) across multiple method calls.",
+      "hints": [
+        "Track the value of count after each increment() call",
+        "The object remembers its state between method calls"
+      ],
+      "tags": [
+        "objects",
+        "methods",
+        "state"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_034",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Multiple Objects Independence",
+      "description": "What does the following code print?",
+      "code_template": "public class Dog {\n    private String name;\n    public Dog(String name) { this.name = name; }\n    public String getName() { return name; }\n}\n\n// In main:\nDog d1 = new Dog(\"Rex\");\nDog d2 = new Dog(\"Bella\");\nSystem.out.println(d1.getName() + \" \" + d2.getName());",
+      "options": [
+        "Rex Bella",
+        "Bella Bella",
+        "Rex Rex",
+        "The code does not compile"
+      ],
+      "correct_answer": "A",
+      "explanation": "Each Dog object has its own copy of the 'name' attribute. When d1 is created with 'Rex', that string is stored in d1's name field. When d2 is created with 'Bella', that string is stored in d2's name field. The two objects are completely independent — changing one does not affect the other. This demonstrates a key concept: each object has its own state.",
+      "hints": [
+        "Each object has its own separate copy of instance variables",
+        "Creating a new object does not affect existing objects"
+      ],
+      "tags": [
+        "objects",
+        "instance_variables",
+        "independence"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_035",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Static Variable Shared State",
+      "description": "What does the following code print?",
+      "code_template": "public class Student {\n    private String name;\n    private static int count = 0;\n\n    public Student(String name) {\n        this.name = name;\n        count++;\n    }\n\n    public static int getCount() { return count; }\n}\n\n// In main:\nStudent s1 = new Student(\"Alice\");\nStudent s2 = new Student(\"Bob\");\nStudent s3 = new Student(\"Charlie\");\nSystem.out.println(Student.getCount());",
+      "options": [
+        "3",
+        "1",
+        "0",
+        "The code does not compile"
+      ],
+      "correct_answer": "A",
+      "explanation": "The static variable 'count' is shared among all Student objects. Each time a new Student is created, the constructor increments count. After creating three students (s1, s2, s3), count has been incremented three times (0 -> 1 -> 2 -> 3). Since count is static, Student.getCount() returns 3. This is a common pattern for tracking how many instances of a class have been created.",
+      "hints": [
+        "Static variables are shared across all instances of a class",
+        "Each constructor call increments the same shared counter"
+      ],
+      "tags": [
+        "static",
+        "shared_state",
+        "constructors"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_036",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Static vs Instance Method Restriction",
+      "description": "Why does the following code fail to compile?",
+      "code_template": "public class Example {\n    private int value = 10;\n\n    public static void printValue() {\n        System.out.println(value);\n    }\n}",
+      "options": [
+        "The method is missing a return statement",
+        "The variable 'value' is private and cannot be accessed by any method",
+        "Static methods cannot use System.out.println()",
+        "A static method cannot access instance variables because there is no specific object to read the value from"
+      ],
+      "correct_answer": "D",
+      "explanation": "A static method belongs to the class, not to any particular object. Instance variables (like 'value') belong to specific objects. When a static method runs, there is no 'this' reference — no specific object exists in the context. Therefore, the method does not know which object's 'value' to read. To fix this, either make 'value' static or make the method non-static (an instance method). This is a fundamental distinction between class-level and instance-level members.",
+      "hints": [
+        "Think about which object's 'value' the static method would read",
+        "Static methods have no 'this' reference"
+      ],
+      "tags": [
+        "static",
+        "instance_variables",
+        "compilation_error"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_037",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Constructor Overloading",
+      "description": "What is constructor overloading in Java?",
+      "code_template": "public class Rectangle {\n    private double width;\n    private double height;\n\n    public Rectangle() {\n        this.width = 1;\n        this.height = 1;\n    }\n\n    public Rectangle(double side) {\n        this.width = side;\n        this.height = side;\n    }\n\n    public Rectangle(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n}",
+      "options": [
+        "Calling one constructor from another using the super keyword",
+        "Creating a constructor in a subclass that overrides the parent constructor",
+        "Defining multiple constructors in the same class with different parameter lists",
+        "Making a constructor private so it cannot be used"
+      ],
+      "correct_answer": "C",
+      "explanation": "Constructor overloading means having multiple constructors in the same class, each with a different parameter list (different number or types of parameters). This allows objects to be created in different ways. In the example, Rectangle can be created with no arguments (default 1x1), one argument (a square), or two arguments (custom dimensions). Java determines which constructor to call based on the arguments provided.",
+      "hints": [
+        "Overloading is about having the same name but different parameters",
+        "It provides flexibility in how objects can be initialized"
+      ],
+      "tags": [
+        "constructors",
+        "overloading"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_038",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Object References",
+      "description": "What does the following code print?",
+      "code_template": "public class Point {\n    int x, y;\n    public Point(int x, int y) { this.x = x; this.y = y; }\n}\n\n// In main:\nPoint p1 = new Point(3, 5);\nPoint p2 = p1;\np2.x = 10;\nSystem.out.println(p1.x);",
+      "options": [
+        "10",
+        "3",
+        "5",
+        "The code does not compile"
+      ],
+      "correct_answer": "A",
+      "explanation": "When you write 'Point p2 = p1;', you are NOT creating a new Point object. You are copying the reference — both p1 and p2 now point to the exact same object in memory. Therefore, when you change p2.x to 10, you are modifying the same object that p1 references. So p1.x is also 10. This is a crucial concept: in Java, variables of object types hold references (like addresses) to objects, not the objects themselves.",
+      "hints": [
+        "Assignment of objects copies the reference, not the object itself",
+        "Both variables point to the same object in memory"
+      ],
+      "tags": [
+        "references",
+        "objects",
+        "memory"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_039",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Protected Access Modifier in Java",
+      "description": "Which of the following correctly describes the 'protected' access modifier in Java?",
+      "options": [
+        "The member is accessible only within the same package, regardless of inheritance",
+        "The member is accessible only within its own class and its direct subclasses",
+        "The member is accessible within its own class, subclasses, and all classes in the same package",
+        "The member is accessible from anywhere, just like public"
+      ],
+      "correct_answer": "C",
+      "explanation": "The 'protected' access modifier in Java provides access to the member from three places: (1) within the class itself, (2) from subclasses (even if they are in different packages), and (3) from any class in the same package. This makes it more permissive than private (class-only) but more restrictive than public (everywhere). Protected is commonly used when you want subclasses to access inherited members while still preventing access from unrelated classes in other packages.",
+      "hints": [
+        "Protected is between private and public in terms of access",
+        "Subclasses and same-package classes both get access"
+      ],
+      "tags": [
+        "access_modifiers",
+        "protected",
+        "inheritance"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_040",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Getter and Setter Code",
+      "description": "Given a class with a private attribute 'private int age;', which of the following is the correct pair of getter and setter methods?",
+      "options": [
+        "public int getAge() { return age; } and public void setAge(int age) { this.age = age; }",
+        "public void getAge() { return age; } and public int setAge(int age) { this.age = age; }",
+        "private int getAge() { return age; } and private void setAge(int age) { this.age = age; }",
+        "public int age() { return age; } and public void age(int age) { this.age = age; }"
+      ],
+      "correct_answer": "A",
+      "explanation": "The correct getter returns the attribute's type (int) and is named getAge(). The correct setter returns void, takes a parameter of the attribute's type, and is named setAge(). Both should be public to provide access from outside the class. Option B has the return types swapped. Option C makes the methods private, defeating the purpose. Option D does not follow the Java naming convention (getX/setX).",
+      "hints": [
+        "Getters return the value; setters accept a new value and return void",
+        "The Java naming convention is getAttributeName() and setAttributeName()"
+      ],
+      "tags": [
+        "getters",
+        "setters",
+        "naming_conventions"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_041",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Setter with Validation",
+      "description": "What does the following setter method do?",
+      "code_template": "public class Person {\n    private int age;\n\n    public void setAge(int age) {\n        if (age >= 0 && age <= 150) {\n            this.age = age;\n        }\n    }\n\n    public int getAge() { return age; }\n}\n\n// In main:\nPerson p = new Person();\np.setAge(25);\np.setAge(-5);\nSystem.out.println(p.getAge());",
+      "options": [
+        "Prints 0, because -5 resets the age to default",
+        "Prints -5, because the second call overwrites the first",
+        "Prints 25, because the second call with -5 is rejected by validation",
+        "The code does not compile"
+      ],
+      "correct_answer": "C",
+      "explanation": "The setAge method includes validation: it only updates the age if the value is between 0 and 150 (inclusive). The first call setAge(25) passes validation, so age is set to 25. The second call setAge(-5) fails validation (−5 is not >= 0), so the age remains 25. This is a key benefit of encapsulation — setter methods can protect object integrity by refusing invalid values.",
+      "hints": [
+        "The if statement checks whether the value is in a valid range",
+        "If validation fails, the attribute is not changed"
+      ],
+      "tags": [
+        "setters",
+        "validation",
+        "encapsulation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_042",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Calling Methods on Objects",
+      "description": "Given an object 'myDog' of class 'Dog' with a method 'public void bark()', how do you call the bark method?",
+      "options": [
+        "Dog.bark();",
+        "bark(myDog);",
+        "myDog.bark();",
+        "myDog->bark();"
+      ],
+      "correct_answer": "C",
+      "explanation": "In Java, instance methods are called on an object using the dot operator: objectName.methodName(). So myDog.bark() calls the bark method on the myDog object. Option B uses a function-call syntax that is not how Java calls instance methods. Option C tries to call bark as a static method on the class, which would only work if bark were declared static. Option D uses the '->' syntax from C/C++, which is not valid in Java.",
+      "hints": [
+        "Java uses the dot operator to access an object's methods",
+        "The object reference goes before the dot"
+      ],
+      "tags": [
+        "methods",
+        "objects",
+        "dot_operator"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_043",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Access Modifier Comparison",
+      "description": "Which is the correct order of Java access modifiers from MOST restrictive to LEAST restrictive?",
+      "options": [
+        "default, private, protected, public",
+        "public, protected, default, private",
+        "private, protected, default, public",
+        "private, default (package-private), protected, public"
+      ],
+      "correct_answer": "D",
+      "explanation": "The correct order from most to least restrictive is: private (only within the class), default/package-private (within the same package), protected (same package + subclasses in other packages), public (accessible from everywhere). Note that protected is slightly less restrictive than default because protected members can be accessed by subclasses even in different packages, while default members cannot.",
+      "hints": [
+        "Private is the most restrictive; public is the least",
+        "The tricky part is the order of default and protected"
+      ],
+      "tags": [
+        "access_modifiers",
+        "comparison"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_044",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "No-Arg Constructor Lost",
+      "description": "Why does the following code fail to compile?",
+      "code_template": "public class Book {\n    private String title;\n\n    public Book(String title) {\n        this.title = title;\n    }\n}\n\n// In main:\nBook b = new Book();",
+      "options": [
+        "Because the 'title' field is private and cannot be initialized",
+        "Because defining a parameterized constructor removes the default no-argument constructor, and no explicit no-arg constructor is provided",
+        "Because the 'new' keyword cannot be used without import statements",
+        "Because Book is not declared as public"
+      ],
+      "correct_answer": "B",
+      "explanation": "When you define any constructor in a Java class, the compiler no longer provides the default no-argument constructor. The class Book has only one constructor: Book(String title). The call 'new Book()' tries to invoke a no-argument constructor, which does not exist. To fix this, you must either add an explicit no-arg constructor 'public Book() { }' or provide a title argument: 'new Book(\"Some Title\")'.",
+      "hints": [
+        "Java only provides a default constructor if you define NO constructors at all",
+        "Once you write any constructor, the default one disappears"
+      ],
+      "tags": [
+        "constructors",
+        "default_constructor",
+        "compilation_error"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_045",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Constructor Chaining with this()",
+      "description": "What does the following code do?",
+      "code_template": "public class Circle {\n    private double radius;\n    private String color;\n\n    public Circle() {\n        this(1.0, \"red\");\n    }\n\n    public Circle(double radius, String color) {\n        this.radius = radius;\n        this.color = color;\n    }\n}",
+      "options": [
+        "The code does not compile because you cannot call this() in a constructor",
+        "The two-arg constructor calls the no-arg constructor, creating infinite recursion",
+        "The this() call creates a new separate Circle object",
+        "The no-arg constructor calls the two-arg constructor using this(), setting default values of radius 1.0 and color 'red'"
+      ],
+      "correct_answer": "D",
+      "explanation": "The no-arg constructor uses 'this(1.0, \"red\")' to call the other constructor in the same class that takes a double and a String. This is called constructor chaining. It allows you to reuse initialization logic and provide default values. The call this() must be the first statement in the constructor. This avoids code duplication: the actual initialization logic is written once in the two-arg constructor.",
+      "hints": [
+        "this() calls another constructor in the same class",
+        "It must be the very first statement in the constructor"
+      ],
+      "tags": [
+        "constructors",
+        "chaining",
+        "this"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_046",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "toString Method",
+      "description": "What happens when you pass an object to System.out.println() in Java?",
+      "code_template": "public class Student {\n    private String name;\n    public Student(String name) { this.name = name; }\n\n    public String toString() {\n        return \"Student: \" + name;\n    }\n}\n\n// In main:\nStudent s = new Student(\"Alice\");\nSystem.out.println(s);",
+      "options": [
+        "It prints 'Student@' followed by a hash code",
+        "It prints the memory address of the object",
+        "It prints 'Student: Alice' because println calls the object's toString() method",
+        "The code does not compile because println cannot accept objects"
+      ],
+      "correct_answer": "C",
+      "explanation": "When you pass an object to System.out.println(), Java automatically calls the object's toString() method to get a String representation. Since the Student class overrides toString() to return 'Student: ' followed by the name, it prints 'Student: Alice'. If toString() were not overridden, the default implementation from Object class would print something like 'Student@1a2b3c4d' (the class name and hash code).",
+      "hints": [
+        "println automatically calls toString() on objects",
+        "You can customize what is printed by overriding toString()"
+      ],
+      "tags": [
+        "toString",
+        "methods",
+        "objects"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_047",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Static Method Cannot Use this",
+      "description": "Which statement about static methods in Java is TRUE?",
+      "options": [
+        "Static methods cannot use the 'this' keyword because they are not associated with any specific object",
+        "Static methods can access instance variables directly",
+        "Static methods are automatically inherited by subclasses and cannot be overridden",
+        "Static methods must always return void"
+      ],
+      "correct_answer": "A",
+      "explanation": "Static methods belong to the class rather than any specific object instance. Because of this, there is no 'this' reference available inside a static method — there is no 'current object' to refer to. Static methods can only directly access other static members of the class. To access instance members, a static method would need a reference to a specific object passed as a parameter.",
+      "hints": [
+        "'this' refers to the current object, but static methods have no current object",
+        "Static methods exist at the class level, not the object level"
+      ],
+      "tags": [
+        "static",
+        "this_keyword",
+        "methods"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_048",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Encapsulation Violation",
+      "description": "What is the problem with the following code?",
+      "code_template": "public class BankAccount {\n    public double balance;\n    public String accountNumber;\n\n    public BankAccount(String accountNumber, double balance) {\n        this.accountNumber = accountNumber;\n        this.balance = balance;\n    }\n}",
+      "options": [
+        "The class is missing a main method",
+        "The constructor should be private",
+        "The attributes are public, violating encapsulation — anyone can directly modify balance and accountNumber without validation",
+        "The code does not compile because String and double cannot be combined"
+      ],
+      "correct_answer": "C",
+      "explanation": "The code violates the principle of encapsulation because both 'balance' and 'accountNumber' are declared as public. This means any code anywhere can directly read and modify these values without any validation or control. For example, someone could set balance to a negative value or change the accountNumber to an invalid one. The fix is to make these attributes private and provide getter/setter methods with appropriate validation.",
+      "hints": [
+        "Think about what could go wrong if anyone can change the balance directly",
+        "Encapsulation requires restricting direct access to internal data"
+      ],
+      "tags": [
+        "encapsulation",
+        "access_modifiers",
+        "design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_049",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Class with Multiple Methods",
+      "description": "What does the following code print?",
+      "code_template": "public class Calculator {\n    private int result;\n\n    public Calculator() { this.result = 0; }\n\n    public void add(int value) { result += value; }\n    public void subtract(int value) { result -= value; }\n    public int getResult() { return result; }\n}\n\n// In main:\nCalculator calc = new Calculator();\ncalc.add(10);\ncalc.add(5);\ncalc.subtract(3);\nSystem.out.println(calc.getResult());",
+      "options": [
+        "18",
+        "15",
+        "12",
+        "0"
+      ],
+      "correct_answer": "C",
+      "explanation": "The Calculator object starts with result = 0. Then: add(10) makes result = 0 + 10 = 10. add(5) makes result = 10 + 5 = 15. subtract(3) makes result = 15 - 3 = 12. Finally, getResult() returns 12. This demonstrates how an object maintains mutable state across multiple method calls, and how methods can modify the object's internal state.",
+      "hints": [
+        "Track the value of 'result' after each method call",
+        "Start at 0, then add 10, add 5, subtract 3"
+      ],
+      "tags": [
+        "methods",
+        "state",
+        "objects"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_050",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Static Counter Pattern",
+      "description": "What does the following code print?",
+      "code_template": "public class Ticket {\n    private static int nextId = 1;\n    private int id;\n\n    public Ticket() {\n        this.id = nextId;\n        nextId++;\n    }\n\n    public int getId() { return id; }\n}\n\n// In main:\nTicket t1 = new Ticket();\nTicket t2 = new Ticket();\nTicket t3 = new Ticket();\nSystem.out.println(t1.getId() + \" \" + t2.getId() + \" \" + t3.getId());",
+      "options": [
+        "1 1 1",
+        "1 2 3",
+        "3 3 3",
+        "0 1 2"
+      ],
+      "correct_answer": "B",
+      "explanation": "The static variable 'nextId' is shared across all Ticket objects and starts at 1. When t1 is created: id = 1, nextId becomes 2. When t2 is created: id = 2, nextId becomes 3. When t3 is created: id = 3, nextId becomes 4. Each ticket gets a unique ID because the static counter is incremented after each use. The instance variable 'id' is separate for each object, while 'nextId' is shared.",
+      "hints": [
+        "nextId is static (shared), but id is an instance variable (unique per object)",
+        "Each constructor assigns the current nextId and then increments it"
+      ],
+      "tags": [
+        "static",
+        "instance_variables",
+        "design_pattern"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_051",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Null Reference",
+      "description": "What happens when the following code is executed?",
+      "code_template": "public class Car {\n    private String model;\n    public Car(String model) { this.model = model; }\n    public String getModel() { return model; }\n}\n\n// In main:\nCar myCar = null;\nSystem.out.println(myCar.getModel());",
+      "options": [
+        "It prints an empty string",
+        "It prints 'null'",
+        "A NullPointerException is thrown at runtime",
+        "The code does not compile"
+      ],
+      "correct_answer": "C",
+      "explanation": "The variable 'myCar' is assigned the value null, meaning it does not reference any actual Car object. When myCar.getModel() is called, Java tries to access the getModel method on a null reference, which causes a NullPointerException at runtime. The code compiles successfully because the compiler only checks types, not whether a reference is null. This is one of the most common runtime errors in Java.",
+      "hints": [
+        "null means the variable does not point to any object",
+        "Calling a method on null causes a specific exception"
+      ],
+      "tags": [
+        "null",
+        "exceptions",
+        "references"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_052",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Method Parameters and Return",
+      "description": "What does the following code print?",
+      "code_template": "public class StringHelper {\n    private String text;\n\n    public StringHelper(String text) {\n        this.text = text;\n    }\n\n    public String toUpperCase() {\n        return text.toUpperCase();\n    }\n\n    public int getLength() {\n        return text.length();\n    }\n}\n\n// In main:\nStringHelper sh = new StringHelper(\"hello\");\nSystem.out.println(sh.toUpperCase() + \" \" + sh.getLength());",
+      "options": [
+        "hello 5",
+        "HELLO 5",
+        "HELLO HELLO",
+        "hello hello"
+      ],
+      "correct_answer": "B",
+      "explanation": "The StringHelper is created with text = 'hello'. The toUpperCase() method returns the text converted to uppercase ('HELLO'), and getLength() returns the length of the text (5). Note that toUpperCase() returns a new String — it does not modify the original 'text' attribute. The + operator concatenates the results with a space in between.",
+      "hints": [
+        "toUpperCase() returns a new string; it does not modify the original",
+        "String.length() returns the number of characters"
+      ],
+      "tags": [
+        "methods",
+        "return_values",
+        "strings"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_053",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Immutable Object Design",
+      "description": "What makes the following class effectively immutable?",
+      "code_template": "public class Coordinate {\n    private final double x;\n    private final double y;\n\n    public Coordinate(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    public double getX() { return x; }\n    public double getY() { return y; }\n}",
+      "options": [
+        "The class is declared as public, preventing modifications",
+        "The attributes are private and final with no setter methods, so once an object is created its state cannot change",
+        "The getter methods return copies of the values",
+        "The constructor uses the this keyword"
+      ],
+      "correct_answer": "B",
+      "explanation": "This class is immutable because: (1) the attributes x and y are declared 'private', preventing direct external access; (2) they are declared 'final', meaning they can only be assigned once (in the constructor); (3) there are no setter methods or any other methods that modify the state. Once a Coordinate object is created, its x and y values can never change. Immutable objects are thread-safe and can be shared freely without risk of unexpected state changes.",
+      "hints": [
+        "The 'final' keyword prevents reassignment after initialization",
+        "No methods exist that can modify the private fields"
+      ],
+      "tags": [
+        "immutability",
+        "final",
+        "encapsulation",
+        "design"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_054",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Object Equality vs Reference Equality",
+      "description": "What does the following code print?",
+      "code_template": "public class Point {\n    int x, y;\n    public Point(int x, int y) { this.x = x; this.y = y; }\n}\n\n// In main:\nPoint p1 = new Point(5, 10);\nPoint p2 = new Point(5, 10);\nSystem.out.println(p1 == p2);",
+      "options": [
+        "true, because both points have the same x and y values",
+        "false, because == compares references and p1 and p2 are different objects in memory",
+        "true, because == always compares the contents of objects",
+        "The code does not compile"
+      ],
+      "correct_answer": "B",
+      "explanation": "In Java, the == operator compares references (memory addresses) for objects, not their content. Even though p1 and p2 have the same x and y values, they are two distinct objects created with separate 'new' calls, so they reside at different memory locations. Therefore, p1 == p2 is false. To compare objects by their content, you would need to override the equals() method in the Point class and use p1.equals(p2).",
+      "hints": [
+        "== checks if two variables point to the same object, not if they have the same values",
+        "Each 'new' creates a separate object in memory"
+      ],
+      "tags": [
+        "references",
+        "equality",
+        "objects"
+      ],
+      "points": 1
+    },
+    {
+      "id": "oop_uml_055",
+      "category": "uml_usecase_classes",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Complete Class Design",
+      "description": "Which version of the 'Temperature' class follows best practices for encapsulation and has a correctly working celsius-to-fahrenheit conversion?",
+      "code_template": "// Option A:\npublic class Temperature {\n    private double celsius;\n    public Temperature(double celsius) { this.celsius = celsius; }\n    public double getCelsius() { return celsius; }\n    public void setCelsius(double celsius) { this.celsius = celsius; }\n    public double toFahrenheit() { return celsius * 9.0 / 5.0 + 32; }\n}\n\n// Option B:\npublic class Temperature {\n    public double celsius;\n    public double toFahrenheit() { return celsius * 9 / 5 + 32; }\n}\n\n// Option C:\npublic class Temperature {\n    private double celsius;\n    public double toFahrenheit() { return celsius + 32; }\n}\n\n// Option D:\npublic class Temperature {\n    private double celsius;\n    private double getCelsius() { return celsius; }\n    public double toFahrenheit() { return celsius * 9.0 / 5.0 + 32; }\n}",
+      "options": [
+        "Option D: private getter defeats the purpose of providing access",
+        "Option B: public attribute violates encapsulation, though the formula works for doubles",
+        "Option C: incorrect conversion formula (missing multiplication)",
+        "Option A: private attribute, public getter/setter, correct conversion formula"
+      ],
+      "correct_answer": "D",
+      "explanation": "Option A follows all best practices: the celsius attribute is private (encapsulation), there is a public constructor for initialization, public getter and setter methods for controlled access, and the conversion formula (C * 9/5 + 32) is correct using 9.0/5.0 to ensure floating-point division. Option B violates encapsulation with a public field. Option C uses the wrong formula (celsius + 32 is missing the 9/5 multiplication). Option D makes the getter private, which is valid but defeats the purpose of providing external read access.",
+      "hints": [
+        "Good encapsulation means private fields with public getters/setters",
+        "The Fahrenheit formula is F = C * 9/5 + 32"
+      ],
+      "tags": [
+        "encapsulation",
+        "design",
+        "constructors",
+        "getters",
+        "setters"
+      ],
+      "points": 1
+    }
+  ]
+}
