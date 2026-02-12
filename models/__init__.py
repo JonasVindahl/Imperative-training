@@ -30,6 +30,7 @@ class Attempt(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     question_id = db.Column(db.String(50), nullable=False)
     category = db.Column(db.String(50), nullable=False)
+    exam_id = db.Column(db.String(50), nullable=False, default='c_programming')
     correct = db.Column(db.Boolean, nullable=False)
     time_spent = db.Column(db.Integer, default=0)  # in seconds
     submitted_answer = db.Column(db.Text)
@@ -41,18 +42,19 @@ class Attempt(db.Model):
 
 
 class Progress(db.Model):
-    """Track overall progress per category per user"""
+    """Track overall progress per category per user per exam"""
     __tablename__ = 'progress'
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     category = db.Column(db.String(50), nullable=False)
+    exam_id = db.Column(db.String(50), nullable=False, default='c_programming')
     total_attempted = db.Column(db.Integer, default=0)
     total_correct = db.Column(db.Integer, default=0)
     last_practiced = db.Column(db.DateTime, default=datetime.utcnow)
 
     __table_args__ = (
-        db.UniqueConstraint('user_id', 'category', name='unique_user_category'),
+        db.UniqueConstraint('user_id', 'category', 'exam_id', name='unique_user_category_exam'),
     )
 
     @property
@@ -63,4 +65,4 @@ class Progress(db.Model):
         return int((self.total_correct / self.total_attempted) * 100)
 
     def __repr__(self):
-        return f'<Progress User {self.user_id} - {self.category}: {self.accuracy}%>'
+        return f'<Progress User {self.user_id} - {self.exam_id}/{self.category}: {self.accuracy}%>'

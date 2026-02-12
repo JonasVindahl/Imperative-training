@@ -1,16 +1,19 @@
 version: '3.8'
 
 services:
-  c-practice:
-    build: .
-    container_name: c-programming-practice
+  exam-practice:
+    build: ..
+    container_name: exam-practice
     ports:
       - "8000:8000"
     volumes:
       # Persist database
       - ./instance:/app/instance
-      # Persist temp files (optional)
+      # Persist temp files (optional, for C code compilation)
       - ./temp:/app/temp
+      # Mount exams config + questions externally to add exams without rebuild
+      - ../exams.json:/app/exams.json
+      - ../questions:/app/questions
     environment:
       - FLASK_SECRET_KEY=${FLASK_SECRET_KEY:-your-secret-key-change-me}
       - DATABASE_URL=sqlite:///instance/practice.db

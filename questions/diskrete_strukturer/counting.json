@@ -1,0 +1,1018 @@
+{
+  "questions": [
+    {
+      "id": "ds_cnt_001",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sum Rule - Basic Application",
+      "description": "A student can choose a project from either Group A (which has 5 projects) or Group B (which has 8 projects). How many possible projects can the student choose from?",
+      "options": [
+        "13",
+        "40",
+        "3",
+        "8"
+      ],
+      "correct_answer": "A",
+      "explanation": "By the sum rule, if there are 5 ways to do one task and 8 ways to do another, and these tasks cannot be done at the same time, there are 5 + 8 = 13 ways to do one of the tasks. Since the student picks from Group A OR Group B (mutually exclusive), we add: 5 + 8 = 13.",
+      "hints": [
+        "The student picks from one group OR the other, not both",
+        "The sum rule applies when choosing between disjoint alternatives"
+      ],
+      "tags": ["sum_rule", "basic_counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_002",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Product Rule - Basic Application",
+      "description": "A restaurant offers a meal deal consisting of one main course and one drink. If there are 4 main courses and 3 drinks, how many different meal deals are possible?",
+      "options": [
+        "7",
+        "12",
+        "1",
+        "24"
+      ],
+      "correct_answer": "B",
+      "explanation": "By the product rule, if there are 4 ways to choose a main course AND 3 ways to choose a drink, and these choices are independent, there are 4 x 3 = 12 different meal combinations.",
+      "hints": [
+        "The customer chooses a main course AND a drink",
+        "The product rule applies when making independent sequential choices"
+      ],
+      "tags": ["product_rule", "basic_counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_003",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Produktreglen - Licensplader",
+      "description": "En bilnummerplade bestar af 2 bogstaver (A-Z) efterfulgt af 3 cifre (0-9). Hvor mange forskellige nummerplader kan dannes?",
+      "options": [
+        "676,000",
+        "175,760",
+        "6,760",
+        "260"
+      ],
+      "correct_answer": "A",
+      "explanation": "Ved produktreglen: Der er 26 muligheder for hvert bogstav og 10 muligheder for hvert ciffer. Antallet er 26 x 26 x 10 x 10 x 10 = 676,000.",
+      "hints": [
+        "Brug produktreglen - hvert tegn vaelges uafhaengigt",
+        "Der er 26 bogstaver i det engelske alfabet og 10 cifre (0-9)"
+      ],
+      "tags": ["product_rule", "basic_counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_004",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Factorial Computation",
+      "description": "What is the value of 6! (6 factorial)?",
+      "options": [
+        "120",
+        "720",
+        "360",
+        "5040"
+      ],
+      "correct_answer": "B",
+      "explanation": "6! = 6 x 5 x 4 x 3 x 2 x 1 = 720. Remember that n! is the product of all positive integers from 1 to n.",
+      "hints": [
+        "Compute step by step: 6 x 5 = 30, then 30 x 4 = 120, etc.",
+        "Alternatively, 6! = 6 x 5! = 6 x 120 = 720"
+      ],
+      "tags": ["factorial", "basic_counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_005",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Permutations - Arranging Objects",
+      "description": "In how many ways can 5 different books be arranged on a shelf?",
+      "options": [
+        "25",
+        "120",
+        "60",
+        "10"
+      ],
+      "correct_answer": "B",
+      "explanation": "Arranging 5 distinct objects in a row is a permutation of all 5 objects. The number of permutations is 5! = 5 x 4 x 3 x 2 x 1 = 120.",
+      "hints": [
+        "For the first position there are 5 choices, for the second there are 4, and so on",
+        "This is a permutation of 5 objects: P(5,5) = 5!"
+      ],
+      "tags": ["permutations", "factorial"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_006",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Permutations - Selecting a Subset",
+      "description": "A club has 10 members. In how many ways can a president, a vice-president, and a treasurer be chosen (no person can hold more than one office)?",
+      "options": [
+        "720",
+        "120",
+        "1000",
+        "30"
+      ],
+      "correct_answer": "A",
+      "explanation": "This is a permutation of 10 objects taken 3 at a time: P(10,3) = 10! / (10-3)! = 10 x 9 x 8 = 720. Order matters because the positions are distinct.",
+      "hints": [
+        "There are 10 choices for president, then 9 for vice-president, then 8 for treasurer",
+        "Use P(n,r) = n! / (n-r)! with n=10 and r=3"
+      ],
+      "tags": ["permutations", "r_permutations"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_007",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Combinations - Choosing a Committee",
+      "description": "From a group of 8 students, how many ways can a committee of 3 be selected?",
+      "options": [
+        "336",
+        "56",
+        "24",
+        "512"
+      ],
+      "correct_answer": "B",
+      "explanation": "Since the order of selection does not matter (a committee is just a set of people), this is a combination: C(8,3) = 8! / (3! x 5!) = (8 x 7 x 6) / (3 x 2 x 1) = 336 / 6 = 56.",
+      "hints": [
+        "Order does not matter for a committee - use combinations, not permutations",
+        "C(n,r) = n! / (r!(n-r)!)"
+      ],
+      "tags": ["combinations", "committee"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_008",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Circular Permutations",
+      "description": "How many ways can 5 people be seated around a circular table, where two seatings are considered the same if one can be obtained from the other by rotation?",
+      "options": [
+        "120",
+        "24",
+        "60",
+        "12"
+      ],
+      "correct_answer": "B",
+      "explanation": "The number of circular permutations of n distinct objects is (n-1)!. For 5 people: (5-1)! = 4! = 24. We fix one person's position to eliminate rotational duplicates, then arrange the remaining 4 people in 4! ways.",
+      "hints": [
+        "In circular arrangements, rotations of the same arrangement are considered identical",
+        "Fix one person's position and arrange the rest: (n-1)!"
+      ],
+      "tags": ["permutations", "circular_permutations"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_009",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pigeonhole Principle - Basic",
+      "description": "A drawer contains socks that are either red, blue, or green. What is the minimum number of socks you must pull out (without looking) to guarantee that you have at least two socks of the same color?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "correct_answer": "C",
+      "explanation": "By the pigeonhole principle, with 3 colors (pigeonholes), if you draw 4 socks (pigeons), at least two must be the same color since 4 > 3. Drawing only 3 could result in one of each color, so 4 is the minimum needed to guarantee a match.",
+      "hints": [
+        "Think about the worst case: you draw one of each color first",
+        "The pigeonhole principle: if n items are placed in m containers and n > m, at least one container has more than one item"
+      ],
+      "tags": ["pigeonhole_principle"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_010",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Dueslagsprincippet - Foedselsdage",
+      "description": "Hvor mange personer skal der mindst vaere i et rum for at garantere, at mindst to personer har foedselsdag i samme maned?",
+      "options": [
+        "12",
+        "13",
+        "24",
+        "7"
+      ],
+      "correct_answer": "B",
+      "explanation": "Der er 12 maneder (dueslage). Ved dueslagsprincippet: Hvis vi har 13 personer (duer) og kun 12 maneder (dueslage), ma mindst to personer have foedselsdag i samme maned, da 13 > 12.",
+      "hints": [
+        "Taenk paa det vaerste tilfaelde: hver person har foedselsdag i en forskellig maned",
+        "Dueslagsprincippet: Hvis n > m, og n objekter placeres i m kasser, indeholder mindst en kasse mere end et objekt"
+      ],
+      "tags": ["pigeonhole_principle"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_011",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Generalized Pigeonhole Principle",
+      "description": "What is the minimum number of students in a class to guarantee that at least 3 students receive the same letter grade, if there are 5 possible grades (A, B, C, D, F)?",
+      "options": [
+        "6",
+        "10",
+        "11",
+        "15"
+      ],
+      "correct_answer": "C",
+      "explanation": "By the generalized pigeonhole principle, if N items are placed into k containers, at least one container has at least ceil(N/k) items. We need ceil(N/5) >= 3, so N/5 > 2, meaning N > 10, so N = 11. With 10 students, it is possible that exactly 2 students get each grade. With 11, at least one grade must be shared by 3 or more students.",
+      "hints": [
+        "The generalized pigeonhole principle states: at least ceil(N/k) items in one container",
+        "Consider the worst case where grades are distributed as evenly as possible"
+      ],
+      "tags": ["pigeonhole_principle", "generalized"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_012",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Permutations with Repetition",
+      "description": "How many different strings can be formed by rearranging the letters of the word 'MISSISSIPPI'?",
+      "options": [
+        "39,916,800",
+        "34,650",
+        "4,989,600",
+        "69,300"
+      ],
+      "correct_answer": "B",
+      "explanation": "MISSISSIPPI has 11 letters: M(1), I(4), S(4), P(2). The number of distinguishable permutations is 11! / (1! x 4! x 4! x 2!) = 39,916,800 / (1 x 24 x 24 x 2) = 39,916,800 / 1,152 = 34,650.",
+      "hints": [
+        "Count the frequency of each letter: M=1, I=4, S=4, P=2",
+        "Use the formula for permutations with repetition: n! / (n1! x n2! x ... x nk!)"
+      ],
+      "tags": ["permutations", "repetition"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_013",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Binomial Coefficient - Simple Calculation",
+      "description": "What is the value of C(6,2)?",
+      "options": [
+        "12",
+        "30",
+        "15",
+        "36"
+      ],
+      "correct_answer": "C",
+      "explanation": "C(6,2) = 6! / (2! x 4!) = (6 x 5) / (2 x 1) = 30 / 2 = 15.",
+      "hints": [
+        "C(n,r) = n! / (r!(n-r)!)",
+        "You can simplify: C(6,2) = (6 x 5) / (2 x 1)"
+      ],
+      "tags": ["combinations", "binomial_coefficient"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_014",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Binomial Theorem - Coefficient",
+      "description": "What is the coefficient of x^3 in the expansion of (x + 2)^5?",
+      "options": [
+        "40",
+        "80",
+        "10",
+        "32"
+      ],
+      "correct_answer": "A",
+      "explanation": "By the binomial theorem, (x+2)^5 = sum_{k=0}^{5} C(5,k) x^k 2^(5-k). For the x^3 term, k=3: C(5,3) x^3 2^2 = 10 x 4 x^3 = 40x^3. So the coefficient is 40.",
+      "hints": [
+        "Use the binomial theorem: (a+b)^n = sum C(n,k) a^k b^(n-k)",
+        "Identify which term gives x^3 and compute C(5,3) times 2^2"
+      ],
+      "tags": ["binomial_theorem", "binomial_coefficient"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_015",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Combinations with Repetition",
+      "description": "A candy shop sells 4 types of candy. How many ways can you buy 6 pieces of candy (where you can buy multiple pieces of the same type)?",
+      "options": [
+        "84",
+        "4096",
+        "24",
+        "360"
+      ],
+      "correct_answer": "A",
+      "explanation": "This is a combination with repetition (stars and bars). The number of ways to choose r items from n types with repetition is C(n+r-1, r) = C(4+6-1, 6) = C(9,6) = C(9,3) = (9 x 8 x 7) / (3 x 2 x 1) = 84.",
+      "hints": [
+        "This is a 'stars and bars' problem - choosing with repetition allowed",
+        "The formula for combinations with repetition is C(n+r-1, r)"
+      ],
+      "tags": ["combinations", "repetition", "stars_and_bars"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_016",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Counting Bit Strings",
+      "description": "How many bit strings of length 8 have exactly three 1's?",
+      "options": [
+        "56",
+        "24",
+        "256",
+        "336"
+      ],
+      "correct_answer": "A",
+      "explanation": "We need to choose 3 positions out of 8 for the 1's (the remaining positions will be 0's). This is C(8,3) = 8! / (3! x 5!) = (8 x 7 x 6) / (3 x 2 x 1) = 56.",
+      "hints": [
+        "You need to choose which positions get a 1",
+        "This is equivalent to choosing 3 positions out of 8"
+      ],
+      "tags": ["combinations", "bit_strings"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_017",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Sum and Product Rules Combined",
+      "description": "A password must be either 6 or 7 characters long. Each character is either an uppercase letter (A-Z) or a digit (0-9). How many possible passwords are there?",
+      "options": [
+        "36^6 + 36^7",
+        "36^6 x 36^7",
+        "36^13",
+        "26^6 + 10^7"
+      ],
+      "correct_answer": "A",
+      "explanation": "Each character has 26 + 10 = 36 choices (by the sum rule for each position). By the product rule, a 6-character password has 36^6 possibilities and a 7-character password has 36^7 possibilities. Since the password is either 6 OR 7 characters (sum rule), the total is 36^6 + 36^7.",
+      "hints": [
+        "First determine how many choices there are per character position",
+        "The password length is 6 OR 7, so use the sum rule for the two cases"
+      ],
+      "tags": ["sum_rule", "product_rule", "passwords"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_018",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Pascals Triangle Identity",
+      "description": "Which of the following identities is known as Pascal's identity?",
+      "options": [
+        "C(n,r) = C(n, n-r)",
+        "C(n+1, r) = C(n, r-1) + C(n, r)",
+        "C(n,0) + C(n,1) + ... + C(n,n) = 2^n",
+        "C(n,r) = n! / (r!(n-r)!)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Pascal's identity states that C(n+1, r) = C(n, r-1) + C(n, r), for 1 <= r <= n. This is the identity that underlies the construction of Pascal's triangle, where each entry is the sum of the two entries directly above it.",
+      "hints": [
+        "Think about how each entry in Pascal's triangle relates to entries in the row above",
+        "The identity relates a binomial coefficient to two from the previous row"
+      ],
+      "tags": ["binomial_coefficient", "pascals_identity"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_019",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Symmetry of Binomial Coefficients",
+      "description": "Which of the following is always equal to C(10, 3)?",
+      "options": [
+        "C(10, 7)",
+        "C(10, 4)",
+        "C(3, 10)",
+        "C(7, 3)"
+      ],
+      "correct_answer": "A",
+      "explanation": "By the symmetry property of binomial coefficients, C(n,r) = C(n, n-r). Therefore C(10,3) = C(10, 10-3) = C(10,7). Both equal 120.",
+      "hints": [
+        "Choosing which items to include is equivalent to choosing which to exclude",
+        "C(n,r) = C(n, n-r)"
+      ],
+      "tags": ["binomial_coefficient", "symmetry"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_020",
+      "category": "counting",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Identifying Counting Principles",
+      "description": "Which of the following scenarios correctly apply the pigeonhole principle? Select all that apply.",
+      "options": [
+        "Among 13 people, at least two must share the same birth month",
+        "In a group of 367 people, at least two must share the same birthday (day of year)",
+        "If 5 pairs of socks are distributed among 4 drawers, at least one drawer has 2 or more pairs",
+        "A standard deck of 52 cards must contain at least one pair of cards with the same suit"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A: 13 people > 12 months, so by pigeonhole at least two share a month. B: 367 people > 366 possible birthdays (including Feb 29), so at least two share a birthday. C: 5 pairs > 4 drawers, so at least one drawer has 2+ pairs. D: This is trivially true (13 cards per suit) but it is an observation about the structure of the deck, not an application of the pigeonhole principle in the usual sense - we already know each suit has exactly 13 cards by design.",
+      "hints": [
+        "The pigeonhole principle says: if n items go into m containers and n > m, at least one container has more than one item",
+        "Check each scenario: are there more 'pigeons' than 'pigeonholes'?"
+      ],
+      "tags": ["pigeonhole_principle"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_021",
+      "category": "counting",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "When to Use Combinations vs. Permutations",
+      "description": "Which of the following problems require the use of combinations (not permutations)? Select all that apply.",
+      "options": [
+        "Choosing 3 students from a class of 20 to form a study group",
+        "Choosing a president, vice-president, and secretary from 20 candidates",
+        "Selecting 5 cards from a standard 52-card deck for a poker hand",
+        "Assigning 3 different prizes (gold, silver, bronze) to 20 contestants"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "Combinations are used when the order of selection does not matter. A: A study group is a set - order doesn't matter. C: A poker hand is a set of cards - order doesn't matter. B and D both involve distinct roles/prizes, so order matters and permutations should be used.",
+      "hints": [
+        "Combinations: order does NOT matter. Permutations: order DOES matter.",
+        "Ask yourself: does the arrangement or assignment of roles matter?"
+      ],
+      "tags": ["combinations", "permutations", "conceptual"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_022",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Binomial Theorem - Expansion Sum",
+      "description": "What is the sum of all coefficients in the expansion of (x + y)^8?",
+      "options": [
+        "64",
+        "128",
+        "256",
+        "512"
+      ],
+      "correct_answer": "C",
+      "explanation": "The sum of all coefficients in (x+y)^n is obtained by setting x=1 and y=1, which gives (1+1)^8 = 2^8 = 256. Alternatively, sum_{k=0}^{8} C(8,k) = 2^8 = 256.",
+      "hints": [
+        "What happens when you substitute x=1 and y=1?",
+        "Recall the identity: sum of C(n,k) for k=0 to n equals 2^n"
+      ],
+      "tags": ["binomial_theorem", "binomial_coefficient"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_023",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Distributing Objects into Boxes",
+      "description": "How many ways can 10 identical balls be distributed into 4 distinct boxes?",
+      "options": [
+        "286",
+        "210",
+        "5040",
+        "4^10"
+      ],
+      "correct_answer": "A",
+      "explanation": "Distributing n identical objects into r distinct boxes is a stars-and-bars problem. The answer is C(n+r-1, r-1) = C(10+4-1, 4-1) = C(13,3) = (13 x 12 x 11) / (3 x 2 x 1) = 286.",
+      "hints": [
+        "Identical objects into distinct boxes is a stars-and-bars problem",
+        "Use C(n+r-1, r-1) where n = number of objects and r = number of boxes"
+      ],
+      "tags": ["combinations", "repetition", "stars_and_bars", "distribution"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_024",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Sum and Product Rules - Definitions",
+      "description": "The {blank1} states that if a task can be done in n1 ways or in n2 ways (where these are mutually exclusive), it can be done in n1 + n2 ways. The {blank2} states that if a task involves two independent steps, with n1 ways for the first and n2 for the second, the total is n1 x n2.",
+      "blanks": {
+        "blank1": {
+          "correct": "sum rule",
+          "options": ["sum rule", "product rule", "pigeonhole principle", "inclusion-exclusion principle"]
+        },
+        "blank2": {
+          "correct": "product rule",
+          "options": ["sum rule", "product rule", "pigeonhole principle", "binomial theorem"]
+        }
+      },
+      "explanation": "The sum rule (or rule of sum) applies to OR situations (mutually exclusive alternatives), while the product rule (or rule of product) applies to AND situations (sequential independent choices).",
+      "hints": [
+        "OR -> addition, AND -> multiplication",
+        "The 'sum' rule adds, the 'product' rule multiplies"
+      ],
+      "tags": ["sum_rule", "product_rule", "definitions"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_025",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Combination Formula",
+      "description": "The number of ways to choose {blank1} objects from n objects where order does not matter is denoted C(n,r) = n! / ({blank2}).",
+      "blanks": {
+        "blank1": {
+          "correct": "r",
+          "options": ["r", "n", "n-r", "n+r"]
+        },
+        "blank2": {
+          "correct": "r!(n-r)!",
+          "options": ["r!(n-r)!", "r!n!", "(n-r)!", "r!"]
+        }
+      },
+      "explanation": "The combination formula C(n,r) counts the number of ways to choose r objects from n without regard to order. The denominator r!(n-r)! accounts for the fact that the r chosen objects can be arranged in r! ways (which we don't distinguish), and the remaining (n-r) objects can be arranged in (n-r)! ways.",
+      "hints": [
+        "C(n,r) is read as 'n choose r'",
+        "Compare with the permutation formula P(n,r) = n!/(n-r)! and note the extra r! in the denominator"
+      ],
+      "tags": ["combinations", "formula"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_026",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Permutationer med gentagelse",
+      "description": "Antallet af forskellige permutationer af n objekter, hvor der er n1 ens af type 1, n2 ens af type 2, ..., nk ens af type k, er {blank1}. For eksempel er antallet af anagrammer af ordet 'BANANA' lig med {blank2}.",
+      "blanks": {
+        "blank1": {
+          "correct": "n! / (n1! n2! ... nk!)",
+          "options": ["n! / (n1! n2! ... nk!)", "n! / k!", "n^k", "(n-1)!"]
+        },
+        "blank2": {
+          "correct": "60",
+          "options": ["60", "120", "720", "360"]
+        }
+      },
+      "explanation": "For permutations with repetition, we divide n! by the factorials of the counts of each repeated element. BANANA has 6 letters: B(1), A(3), N(2). So: 6! / (1! x 3! x 2!) = 720 / (1 x 6 x 2) = 60.",
+      "hints": [
+        "Count each distinct letter in BANANA: B=1, A=3, N=2",
+        "Divide the total permutations by the permutations of identical items"
+      ],
+      "tags": ["permutations", "repetition"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_027",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Pigeonhole Principle Statement",
+      "description": "The pigeonhole principle states that if {blank1} objects are placed into k boxes, then at least one box contains at least {blank2} object(s).",
+      "blanks": {
+        "blank1": {
+          "correct": "k + 1",
+          "options": ["k + 1", "k", "k - 1", "2k"]
+        },
+        "blank2": {
+          "correct": "2",
+          "options": ["1", "2", "3", "k"]
+        }
+      },
+      "explanation": "The basic pigeonhole principle says: if more than k objects are placed into k boxes (i.e., at least k+1 objects), then at least one box must contain 2 or more objects.",
+      "hints": [
+        "Think about the worst case: distributing objects as evenly as possible",
+        "If you have more pigeons than holes, some hole must have at least 2"
+      ],
+      "tags": ["pigeonhole_principle", "definitions"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_028",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Binomial Theorem Statement",
+      "description": "According to the binomial theorem, (x + y)^n = sum from k=0 to n of {blank1} * x^k * y^{blank2}.",
+      "blanks": {
+        "blank1": {
+          "correct": "C(n,k)",
+          "options": ["C(n,k)", "P(n,k)", "n^k", "k!"]
+        },
+        "blank2": {
+          "correct": "n-k",
+          "options": ["n-k", "k", "n", "n+k"]
+        }
+      },
+      "explanation": "The binomial theorem states (x+y)^n = sum_{k=0}^{n} C(n,k) x^k y^(n-k). Each term has the binomial coefficient C(n,k), and the exponents of x and y sum to n.",
+      "hints": [
+        "The exponents of x and y in each term must sum to n",
+        "The coefficient of each term is a binomial coefficient 'n choose k'"
+      ],
+      "tags": ["binomial_theorem", "formula"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_029",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Counting Functions",
+      "description": "How many one-to-one (injective) functions are there from a set with 4 elements to a set with 7 elements?",
+      "options": [
+        "840",
+        "2401",
+        "28",
+        "35"
+      ],
+      "correct_answer": "A",
+      "explanation": "An injective function maps each element of the domain to a distinct element of the codomain. For the first element there are 7 choices, for the second 6, for the third 5, for the fourth 4. The number is P(7,4) = 7 x 6 x 5 x 4 = 840.",
+      "hints": [
+        "One-to-one means no two domain elements map to the same codomain element",
+        "This is equivalent to a permutation: P(7,4)"
+      ],
+      "tags": ["permutations", "functions", "injective"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_030",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Counting with Constraints",
+      "description": "How many 4-digit numbers (from 1000 to 9999) have all distinct digits?",
+      "options": [
+        "5040",
+        "4536",
+        "3024",
+        "6561"
+      ],
+      "correct_answer": "B",
+      "explanation": "The first digit has 9 choices (1-9, cannot be 0). The second digit has 9 choices (0-9 except the first digit). The third digit has 8 choices. The fourth digit has 7 choices. Total: 9 x 9 x 8 x 7 = 4536.",
+      "hints": [
+        "The first digit cannot be 0 (otherwise it is not a 4-digit number)",
+        "After choosing the first digit, the second can use 0 but not the first digit"
+      ],
+      "tags": ["product_rule", "permutations", "constraints"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_031",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Poker Hand - Full House",
+      "description": "How many ways can a full house (three of one rank and two of another) be dealt from a standard 52-card deck?",
+      "options": [
+        "3744",
+        "6864",
+        "624",
+        "123,552"
+      ],
+      "correct_answer": "A",
+      "explanation": "Choose the rank for the three-of-a-kind: C(13,1) = 13 ways. Choose 3 suits from 4 for that rank: C(4,3) = 4 ways. Choose a different rank for the pair: C(12,1) = 12 ways. Choose 2 suits from 4 for the pair: C(4,2) = 6 ways. Total: 13 x 4 x 12 x 6 = 3744.",
+      "hints": [
+        "Break it into steps: choose the rank for the triple, then suits, then rank for the pair, then suits",
+        "There are 13 ranks and 4 suits in a standard deck"
+      ],
+      "tags": ["combinations", "product_rule", "cards"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_032",
+      "category": "counting",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Properties of Binomial Coefficients",
+      "description": "Which of the following identities are true for all valid values of n and r? Select all that apply.",
+      "options": [
+        "C(n,0) = 1 for all n >= 0",
+        "C(n,r) = C(n-1, r-1) + C(n-1, r) (Pascal's identity)",
+        "C(n,1) = n for all n >= 1",
+        "C(n,r) = C(r, n) for all n >= r >= 0"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A: C(n,0) = n!/(0!n!) = 1. True for all n >= 0. B: Pascal's identity is a fundamental property of binomial coefficients. C: C(n,1) = n!/(1!(n-1)!) = n. D: This is false in general; the correct symmetry is C(n,r) = C(n, n-r), not C(r,n). For example, C(5,2) = 10 but C(2,5) is not defined (or 0).",
+      "hints": [
+        "Test each identity with small values, e.g., n=5, r=2",
+        "Be careful with the symmetry property - which argument is swapped?"
+      ],
+      "tags": ["binomial_coefficient", "identities"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_033",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Counting Subsets",
+      "description": "How many subsets does a set with 6 elements have?",
+      "options": [
+        "36",
+        "64",
+        "720",
+        "12"
+      ],
+      "correct_answer": "B",
+      "explanation": "A set with n elements has 2^n subsets (including the empty set and the set itself). For n=6: 2^6 = 64. This can also be seen as sum of C(6,k) for k=0 to 6, which equals 2^6 = 64.",
+      "hints": [
+        "For each element, you have 2 choices: include it or not",
+        "Use the identity: total number of subsets = 2^n"
+      ],
+      "tags": ["combinations", "subsets", "product_rule"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_034",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Vandermonde's Identity Application",
+      "description": "Evaluate: C(4,2) * C(6,3) + C(4,3) * C(6,2) + C(4,4) * C(6,1). What is the result?",
+      "options": [
+        "120",
+        "186",
+        "140",
+        "126"
+      ],
+      "correct_answer": "B",
+      "explanation": "Computing directly: C(4,2)*C(6,3) + C(4,3)*C(6,2) + C(4,4)*C(6,1) = 6*20 + 4*15 + 1*6 = 120 + 60 + 6 = 186. Note: This is NOT a direct application of Vandermonde's identity (which would sum over all k), but rather a partial sum requiring direct computation.",
+      "hints": [
+        "Calculate each binomial coefficient separately first",
+        "C(4,2)=6, C(6,3)=20, C(4,3)=4, C(6,2)=15, C(4,4)=1, C(6,1)=6"
+      ],
+      "tags": ["binomial_coefficient", "computation"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_035",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Permutation vs. Combination Identification",
+      "description": "A teacher wants to choose 4 students out of 12 to participate in a quiz competition. The order in which they are chosen does not matter. Which formula should be used?",
+      "options": [
+        "P(12,4) = 12! / 8!",
+        "C(12,4) = 12! / (4! * 8!)",
+        "12^4",
+        "4^12"
+      ],
+      "correct_answer": "B",
+      "explanation": "Since order does not matter (we are just selecting a group, not assigning roles), we use the combination formula: C(12,4) = 12! / (4! * 8!) = 495.",
+      "hints": [
+        "Are we assigning specific roles, or just selecting a group?",
+        "No ordering means combinations"
+      ],
+      "tags": ["combinations", "permutations", "conceptual"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_036",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Stars and Bars Formula",
+      "description": "The number of solutions to x1 + x2 + ... + xr = n in non-negative integers is C({blank1}, {blank2}). This is equivalent to distributing n identical objects into r distinct boxes.",
+      "blanks": {
+        "blank1": {
+          "correct": "n+r-1",
+          "options": ["n+r-1", "n+r", "n-1", "n*r"]
+        },
+        "blank2": {
+          "correct": "r-1",
+          "options": ["r-1", "r", "n-1", "n"]
+        }
+      },
+      "explanation": "The stars and bars theorem states that the number of ways to place n identical objects into r distinct bins is C(n+r-1, r-1), equivalently C(n+r-1, n). Think of n stars (objects) and r-1 bars (dividers between bins).",
+      "hints": [
+        "Think of n stars separated by r-1 bars",
+        "We are choosing positions for the r-1 bars among n+r-1 total positions"
+      ],
+      "tags": ["combinations", "repetition", "stars_and_bars"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_037",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Inclusion-Exclusion Preview",
+      "description": "Out of 100 students, 60 take mathematics, 45 take physics, and 20 take both. How many students take mathematics or physics (or both)?",
+      "options": [
+        "85",
+        "105",
+        "80",
+        "125"
+      ],
+      "correct_answer": "A",
+      "explanation": "By the inclusion-exclusion principle (which extends the sum rule to overlapping sets): |A union B| = |A| + |B| - |A intersect B| = 60 + 45 - 20 = 85. We subtract the intersection to avoid counting those students twice.",
+      "hints": [
+        "If we simply add 60 + 45, we count the 20 students taking both subjects twice",
+        "|A union B| = |A| + |B| - |A intersect B|"
+      ],
+      "tags": ["sum_rule", "inclusion_exclusion"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_038",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Derangements",
+      "description": "A derangement is a permutation where no element appears in its original position. How many derangements of {1, 2, 3, 4} exist?",
+      "options": [
+        "6",
+        "9",
+        "8",
+        "15"
+      ],
+      "correct_answer": "B",
+      "explanation": "The number of derangements D(n) can be computed using the formula D(n) = n! * sum_{k=0}^{n} (-1)^k / k!. For n=4: D(4) = 4!(1 - 1 + 1/2 - 1/6 + 1/24) = 24(1/2 - 1/6 + 1/24) = 24(12/24 - 4/24 + 1/24) = 24(9/24) = 9. The 9 derangements are: (2,1,4,3), (2,3,4,1), (2,4,1,3), (3,1,4,2), (3,4,1,2), (3,4,2,1), (4,1,2,3), (4,3,1,2), (4,3,2,1).",
+      "hints": [
+        "A derangement means no element i is in position i",
+        "Use the formula D(n) = n! * sum_{k=0}^{n} (-1)^k / k!, or count directly for small n"
+      ],
+      "tags": ["permutations", "derangements", "inclusion_exclusion"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_039",
+      "category": "counting",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Correct Counting Formulas",
+      "description": "Which of the following computations are correct? Select all that apply.",
+      "options": [
+        "The number of ways to arrange the letters in 'BOOK' is 4!/2! = 12",
+        "C(5,2) = C(5,3) = 10",
+        "P(6,2) = 6 x 5 = 30",
+        "The number of ways to choose 3 items from 3 items is 6"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A: BOOK has 4 letters with O repeated twice: 4!/2! = 24/2 = 12. Correct. B: C(5,2) = 10 and by symmetry C(5,3) = C(5,5-3) = C(5,2) = 10. Correct. C: P(6,2) = 6!/(6-2)! = 6 x 5 = 30. Correct. D: C(3,3) = 1, not 6. There is exactly one way to choose all 3 items from 3. If the question meant P(3,3) = 3! = 6, that counts arrangements, not just choosing.",
+      "hints": [
+        "Check each computation carefully using the standard formulas",
+        "Remember the symmetry identity: C(n,r) = C(n, n-r)"
+      ],
+      "tags": ["combinations", "permutations", "computation"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_040",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Generalized Pigeonhole Principle",
+      "description": "The generalized pigeonhole principle states that if N objects are placed into k boxes, then at least one box contains at least {blank1} objects. If 100 balls are distributed among 12 boxes, at least one box contains at least {blank2} balls.",
+      "blanks": {
+        "blank1": {
+          "correct": "ceil(N/k)",
+          "options": ["ceil(N/k)", "floor(N/k)", "N/k", "N - k + 1"]
+        },
+        "blank2": {
+          "correct": "9",
+          "options": ["8", "9", "10", "12"]
+        }
+      },
+      "explanation": "The generalized pigeonhole principle says at least one box has at least ceil(N/k) items. For 100 balls in 12 boxes: ceil(100/12) = ceil(8.333...) = 9. So at least one box must contain at least 9 balls.",
+      "hints": [
+        "ceil(x) is the ceiling function: the smallest integer >= x",
+        "100/12 = 8.333..., so ceil(8.333) = 9"
+      ],
+      "tags": ["pigeonhole_principle", "generalized"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_041",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Counting Paths on a Grid",
+      "description": "How many shortest paths are there from the bottom-left corner to the top-right corner of a 4x3 grid (4 steps right and 3 steps up)?",
+      "options": [
+        "12",
+        "35",
+        "210",
+        "5040"
+      ],
+      "correct_answer": "B",
+      "explanation": "A shortest path consists of exactly 4 right steps (R) and 3 up steps (U), for a total of 7 steps. We need to choose which 3 of the 7 steps are 'up' (or equivalently which 4 are 'right'). The answer is C(7,3) = C(7,4) = 35.",
+      "hints": [
+        "Each shortest path is a sequence of R's and U's",
+        "The number of such sequences is the number of ways to arrange 4 R's and 3 U's"
+      ],
+      "tags": ["combinations", "grid_paths"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_042",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Binomial Theorem - Specific Term",
+      "description": "Find the constant term (the term not involving x) in the expansion of (x + 1/x)^6.",
+      "options": [
+        "1",
+        "6",
+        "15",
+        "20"
+      ],
+      "correct_answer": "D",
+      "explanation": "Using the binomial theorem: (x + 1/x)^6 = sum_{k=0}^{6} C(6,k) x^k (1/x)^(6-k) = sum_{k=0}^{6} C(6,k) x^(k-(6-k)) = sum C(6,k) x^(2k-6). The constant term occurs when 2k-6 = 0, i.e., k=3. The coefficient is C(6,3) = 20.",
+      "hints": [
+        "Write the general term and find when the exponent of x is zero",
+        "The general term is C(6,k) * x^k * x^(-(6-k)) = C(6,k) * x^(2k-6)"
+      ],
+      "tags": ["binomial_theorem", "computation"],
+      "points": 2
+    },
+    {
+      "id": "ds_cnt_043",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sumregel - Taelling af heltal",
+      "description": "Hvor mange positive heltal mellem 1 og 100 (inklusive) er delelige med enten 3 eller 5?",
+      "options": [
+        "47",
+        "33",
+        "53",
+        "46"
+      ],
+      "correct_answer": "A",
+      "explanation": "Delelige med 3: floor(100/3) = 33. Delelige med 5: floor(100/5) = 20. Delelige med baade 3 og 5 (dvs. delelige med 15): floor(100/15) = 6. Ved inklusion-eksklusion: 33 + 20 - 6 = 47.",
+      "hints": [
+        "Brug inklusion-eksklusion princippet",
+        "Husk at traekke dem fra, der er delelige med baade 3 og 5 (dvs. delelige med 15)"
+      ],
+      "tags": ["sum_rule", "inclusion_exclusion", "divisibility"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_044",
+      "category": "counting",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Handshake Problem",
+      "description": "At a party of 15 people, everyone shakes hands with everyone else exactly once. How many handshakes take place?",
+      "options": [
+        "210",
+        "105",
+        "225",
+        "120"
+      ],
+      "correct_answer": "B",
+      "explanation": "Each handshake involves 2 people, and we need to count unordered pairs. This is C(15,2) = 15! / (2! x 13!) = (15 x 14) / 2 = 105.",
+      "hints": [
+        "A handshake is an unordered pair of people",
+        "Count the number of ways to choose 2 people from 15"
+      ],
+      "tags": ["combinations", "application"],
+      "points": 1
+    },
+    {
+      "id": "ds_cnt_045",
+      "category": "counting",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Permutations Formula",
+      "description": "The number of r-permutations of a set with n elements is P(n,r) = {blank1}. For example, P(8,3) = {blank2}.",
+      "blanks": {
+        "blank1": {
+          "correct": "n! / (n-r)!",
+          "options": ["n! / (n-r)!", "n! / r!", "n! / (r!(n-r)!)", "n^r"]
+        },
+        "blank2": {
+          "correct": "336",
+          "options": ["336", "56", "512", "120"]
+        }
+      },
+      "explanation": "P(n,r) = n!/(n-r)! counts ordered selections of r objects from n. P(8,3) = 8!/(8-3)! = 8!/5! = 8 x 7 x 6 = 336.",
+      "hints": [
+        "P(n,r) uses factorial division to count ordered selections",
+        "P(8,3) = 8 x 7 x 6 (the first three terms of 8!)"
+      ],
+      "tags": ["permutations", "formula"],
+      "points": 1
+    }
+  ]
+}

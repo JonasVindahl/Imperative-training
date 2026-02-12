@@ -1,4 +1,4 @@
-# Dockerfile for C Programming Practice System
+# Dockerfile for Exam Practice System
 FROM python:3.12-slim
 
 # Install system dependencies

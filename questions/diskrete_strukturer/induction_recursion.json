@@ -1,0 +1,1204 @@
+{
+  "questions": [
+    {
+      "id": "ds_ir_001",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Base Case Identification",
+      "description": "In a proof by mathematical induction of the statement P(n) for all n >= 1, what is the first step?",
+      "options": [
+        "Prove P(1) is true",
+        "Assume P(k) is true for some arbitrary k",
+        "Prove P(k) implies P(k+1)",
+        "Prove P(n) for all n simultaneously"
+      ],
+      "correct_answer": "A",
+      "explanation": "The first step in mathematical induction is the base case: proving that the statement P(1) holds. Only after establishing the base case do we proceed to the inductive step where we assume P(k) and prove P(k+1).",
+      "hints": [
+        "Think about what needs to be established before we can use the domino analogy",
+        "We need a starting point for the chain of implications"
+      ],
+      "tags": ["induction", "base_case", "weak_induction"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_002",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Inductive Hypothesis",
+      "description": "In the inductive step of a proof by weak (simple) induction, what do we assume?",
+      "options": [
+        "P(n) is true for all n",
+        "P(k) is true for some arbitrary positive integer k",
+        "P(k+1) is true",
+        "P(1), P(2), ..., P(k) are all true"
+      ],
+      "correct_answer": "B",
+      "explanation": "In weak (simple) induction, the inductive hypothesis assumes that P(k) holds for some arbitrary but fixed positive integer k. We then use this assumption to prove P(k+1). This is in contrast to strong induction, where we assume P(1), P(2), ..., P(k) are all true.",
+      "hints": [
+        "Weak induction only assumes the statement for a single value",
+        "Compare this to strong induction where more is assumed"
+      ],
+      "tags": ["induction", "inductive_hypothesis", "weak_induction"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_003",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Induktionsprincippet",
+      "description": "Hvad er den korrekte struktur for et bevis ved matematisk induktion?",
+      "options": [
+        "Basisskridt: Vis P(1). Induktionsskridt: Antag P(k), vis P(k+1).",
+        "Antag P(n) for alle n, og vis at det medforer P(n+1).",
+        "Vis P(1), P(2) og P(3), og konkluder at P(n) gaelder for alle n.",
+        "Vis P(k+1) forst, og brug det til at vise P(k)."
+      ],
+      "correct_answer": "A",
+      "explanation": "Matematisk induktion bestaer af to dele: (1) Basisskridt: Vis at P(1) er sand. (2) Induktionsskridt: Antag P(k) er sand for et vilkaarligt k (induktionshypotesen), og vis derefter at P(k+1) ogsaa er sand.",
+      "hints": [
+        "Taenk paa domino-analogien: den forste brik skal vaelte",
+        "Vi skal bevise to ting: et startpunkt og en kaedereaktion"
+      ],
+      "tags": ["induction", "danish", "structure"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_004",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sum Formula Induction",
+      "description": "We want to prove by induction that 1 + 2 + 3 + ... + n = n(n+1)/2 for all n >= 1. In the inductive step, after assuming the formula holds for k, which expression do we need to show equals (k+1)(k+2)/2?",
+      "options": [
+        "k(k+1)/2 + (k+1)",
+        "k(k+1)/2 + k",
+        "(k+1)(k+2)/2 + (k+1)",
+        "k(k+1)/2"
+      ],
+      "correct_answer": "A",
+      "explanation": "In the inductive step, we know (by the inductive hypothesis) that 1 + 2 + ... + k = k(k+1)/2. To prove the formula for k+1, we consider 1 + 2 + ... + k + (k+1) = k(k+1)/2 + (k+1). We then simplify this algebraically: k(k+1)/2 + (k+1) = (k+1)(k/2 + 1) = (k+1)(k+2)/2, which is exactly the formula with n = k+1.",
+      "hints": [
+        "Add the (k+1)-th term to both sides of the inductive hypothesis",
+        "The left side of the equation for k+1 is the left side for k plus one more term"
+      ],
+      "tags": ["induction", "sum_formula", "inductive_step"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_005",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Identifying the Error in an Induction Proof",
+      "description": "A student claims to prove by induction that all horses are the same color. The base case is one horse (trivially the same color). The inductive step: assume any group of k horses has the same color. For a group of k+1 horses, remove one horse to get a group of k (all same color by hypothesis), then put it back and remove a different horse to get another group of k (all same color). Therefore all k+1 horses are the same color. What is wrong?",
+      "options": [
+        "The base case is wrong",
+        "The inductive step fails when going from k=1 to k=2 because the two subgroups don't overlap",
+        "The inductive hypothesis is too weak",
+        "Mathematical induction cannot be applied to properties of sets"
+      ],
+      "correct_answer": "B",
+      "explanation": "The classic 'all horses are the same color' fallacy breaks at the step from k=1 to k=2. When we have 2 horses, removing one gives a group of 1, and removing the other gives a different group of 1. These two singleton groups share no common element, so we cannot conclude the two horses are the same color. For k >= 2 to k+1, the overlap argument works, but the chain breaks at the very first inductive step.",
+      "hints": [
+        "Check what happens at very small values of k",
+        "Do the two subgroups of size k always share a common element?"
+      ],
+      "tags": ["induction", "fallacy", "critical_thinking"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_006",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Strong vs Weak Induction",
+      "description": "What is the key difference between strong induction and weak (simple) induction?",
+      "options": [
+        "Strong induction requires a stronger base case",
+        "In strong induction, the inductive hypothesis assumes P(j) for all j from the base case up to k, not just P(k)",
+        "Strong induction can prove statements that weak induction cannot",
+        "Strong induction does not require a base case"
+      ],
+      "correct_answer": "B",
+      "explanation": "In strong induction, the inductive hypothesis assumes that P(j) is true for all values j from the base case up to k (i.e., P(1), P(2), ..., P(k)). In weak induction, we only assume P(k). Although strong and weak induction are logically equivalent (they can prove exactly the same statements), strong induction is sometimes more convenient when the proof of P(k+1) depends on earlier values, not just P(k).",
+      "hints": [
+        "Think about how much information is available in the inductive hypothesis",
+        "Strong induction gives you a 'stronger' assumption to work with"
+      ],
+      "tags": ["strong_induction", "weak_induction", "comparison"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_007",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "When to Use Strong Induction",
+      "description": "Which of the following statements would most naturally be proved using strong induction rather than weak induction?",
+      "options": [
+        "For all n >= 1: 1 + 2 + ... + n = n(n+1)/2",
+        "Every integer n >= 2 can be written as a product of prime numbers",
+        "For all n >= 1: 2^n > n",
+        "For all n >= 0: the sum of the first n+1 powers of 2 equals 2^(n+1) - 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "The Fundamental Theorem of Arithmetic (every integer >= 2 is a product of primes) is naturally proved by strong induction. If n is prime, it is already a product of one prime. If n is composite, then n = a * b where 2 <= a, b < n. By strong induction, both a and b can be written as products of primes, so n can too. This proof uses the hypothesis for values strictly less than n, not just n-1, making strong induction the natural choice.",
+      "hints": [
+        "Which proof requires information about values other than just the previous one?",
+        "Think about when a composite number is split into factors"
+      ],
+      "tags": ["strong_induction", "prime_factorization"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_008",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Induction Proof Structure",
+      "description": "In a proof by mathematical induction, we first prove the {blank1}. Then, in the inductive step, we assume the statement holds for k (called the {blank2}) and prove it for {blank3}.",
+      "blanks": {
+        "blank1": {
+          "correct": "base case",
+          "options": ["base case", "inductive step", "hypothesis", "conclusion"]
+        },
+        "blank2": {
+          "correct": "inductive hypothesis",
+          "options": ["inductive hypothesis", "base case", "conclusion", "lemma"]
+        },
+        "blank3": {
+          "correct": "k+1",
+          "options": ["k", "k+1", "k-1", "n"]
+        }
+      },
+      "explanation": "A proof by mathematical induction has two parts: (1) the base case, where we show the statement holds for the initial value, and (2) the inductive step, where we assume the statement for k (the inductive hypothesis) and prove it for k+1.",
+      "hints": [
+        "The first part establishes a starting point",
+        "The assumption we make in the inductive step has a special name"
+      ],
+      "tags": ["induction", "terminology", "structure"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_009",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Definition of Factorial",
+      "description": "Which of the following is the correct recursive definition of the factorial function f(n) = n! ?",
+      "options": [
+        "f(0) = 1, f(n) = n * f(n-1) for n >= 1",
+        "f(1) = 1, f(n) = n * f(n+1) for n >= 2",
+        "f(0) = 0, f(n) = n * f(n-1) for n >= 1",
+        "f(1) = 1, f(n) = n + f(n-1) for n >= 2"
+      ],
+      "correct_answer": "A",
+      "explanation": "The recursive definition of factorial is: f(0) = 1 (base case, since 0! = 1 by convention) and f(n) = n * f(n-1) for n >= 1 (recursive step). Option C is wrong because 0! = 1, not 0. Option B has the recursion going in the wrong direction. Option D uses addition instead of multiplication.",
+      "hints": [
+        "Remember that 0! = 1 by definition",
+        "Each step should reduce the problem toward the base case"
+      ],
+      "tags": ["recursion", "factorial", "recursive_definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_010",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Fibonacci Sequence Definition",
+      "description": "The Fibonacci sequence is defined recursively as F(0) = 0, F(1) = 1, and F(n) = F(n-1) + F(n-2) for n >= 2. What is F(6)?",
+      "options": [
+        "8",
+        "13",
+        "5",
+        "21"
+      ],
+      "correct_answer": "A",
+      "explanation": "Computing step by step: F(0)=0, F(1)=1, F(2)=1, F(3)=2, F(4)=3, F(5)=5, F(6)=8. Each value is the sum of the two preceding values.",
+      "hints": [
+        "Build up the sequence from F(0) and F(1)",
+        "F(2) = F(1) + F(0) = 1 + 0 = 1, then continue from there"
+      ],
+      "tags": ["recursion", "fibonacci", "computation"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_011",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Sequence Value",
+      "description": "A sequence is defined by a(1) = 3 and a(n) = 2*a(n-1) + 1 for n >= 2. What is a(4)?",
+      "options": [
+        "31",
+        "15",
+        "25",
+        "63"
+      ],
+      "correct_answer": "A",
+      "explanation": "Computing step by step: a(1) = 3, a(2) = 2*3 + 1 = 7, a(3) = 2*7 + 1 = 15, a(4) = 2*15 + 1 = 31.",
+      "hints": [
+        "Start from a(1) = 3 and apply the recurrence",
+        "Compute a(2) first, then a(3), then a(4)"
+      ],
+      "tags": ["recursion", "sequence", "computation"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_012",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Proving an Inequality by Induction",
+      "description": "We want to prove that 2^n > n^2 for all n >= 5 by induction. In the inductive step (assuming 2^k > k^2 for some k >= 5), we need to show 2^(k+1) > (k+1)^2. We start with 2^(k+1) = 2 * 2^k > 2k^2 (by hypothesis). To complete the proof, we need to show that 2k^2 >= (k+1)^2 for k >= 5. Which is a valid way to establish this?",
+      "options": [
+        "Show that 2k^2 - (k+1)^2 = k^2 - 2k - 1 = (k-1)^2 - 2 >= 0 for k >= 5",
+        "Show that 2k^2 >= k^2 + k which is obviously true",
+        "This cannot be shown; the proof requires strong induction",
+        "Simply state that it follows from the inductive hypothesis directly"
+      ],
+      "correct_answer": "A",
+      "explanation": "We need 2k^2 >= (k+1)^2 = k^2 + 2k + 1. This simplifies to k^2 - 2k - 1 >= 0, which can be rewritten as (k-1)^2 - 2 >= 0. For k >= 5, we have (k-1)^2 >= 16 > 2, so the inequality holds. This algebraic manipulation is the key step that completes the inductive proof.",
+      "hints": [
+        "Expand (k+1)^2 and subtract from 2k^2",
+        "Try completing the square on the resulting expression"
+      ],
+      "tags": ["induction", "inequality", "algebraic_manipulation"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_013",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Well-Ordering Principle",
+      "description": "What does the Well-Ordering Principle state?",
+      "options": [
+        "Every nonempty set of nonnegative integers has a least element",
+        "Every set of integers can be sorted in ascending order",
+        "Every set of real numbers has a minimum",
+        "The integers are well-defined under addition and multiplication"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Well-Ordering Principle states that every nonempty subset of the nonnegative integers (or equivalently, positive integers) has a least (smallest) element. This is logically equivalent to the principle of mathematical induction. Note that this does NOT apply to all sets of integers (the negative integers have no least element) or to real numbers (the open interval (0,1) has no least element).",
+      "hints": [
+        "It is about the nonnegative integers specifically",
+        "Think about which property distinguishes the nonnegative integers from the reals"
+      ],
+      "tags": ["well_ordering", "principle"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_014",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Well-Ordering and Induction Equivalence",
+      "description": "The Well-Ordering Principle, the Principle of Mathematical Induction, and the Principle of Strong Induction are:",
+      "options": [
+        "Logically equivalent -- each can be derived from the others",
+        "Independent axioms that must be assumed separately",
+        "Increasingly stronger statements where each implies the next but not conversely",
+        "Only equivalent when restricted to the positive integers"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Well-Ordering Principle, the Principle of Mathematical Induction, and the Principle of Strong Induction are all logically equivalent. Any one of them can be used to derive the other two. They are different formulations of the same fundamental property of the nonnegative integers.",
+      "hints": [
+        "Think about whether one can be used to prove the other",
+        "Rosen discusses their equivalence in Chapter 5"
+      ],
+      "tags": ["well_ordering", "induction", "equivalence"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_015",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Choosing the Base Case",
+      "description": "We want to prove by induction that n! > 2^n for all n >= 4. What should the base case be?",
+      "options": [
+        "n = 0",
+        "n = 1",
+        "n = 4",
+        "n = 2"
+      ],
+      "correct_answer": "C",
+      "explanation": "Since the statement claims n! > 2^n for all n >= 4, the base case must be n = 4. We verify: 4! = 24 > 16 = 2^4. The statement is actually false for n = 1, 2, 3 (e.g., 3! = 6 < 8 = 2^3), so starting from a smaller base case would not work.",
+      "hints": [
+        "The base case must match the domain of the statement",
+        "Check which is the smallest n for which the claim is made"
+      ],
+      "tags": ["induction", "base_case", "domain"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_016",
+      "category": "induction_recursion",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Properties of Recursive Definitions",
+      "description": "Which of the following are required components of a valid recursive definition of a function? (Select all that apply)",
+      "options": [
+        "A base case specifying the value of the function at the initial point(s)",
+        "A recursive rule expressing the function value in terms of smaller inputs",
+        "A proof that the function is injective",
+        "An explicit closed-form formula"
+      ],
+      "correct_answer": ["A", "B"],
+      "explanation": "A valid recursive definition requires: (1) one or more base cases that provide explicit values without recursion, and (2) a recursive rule that defines the function for larger inputs in terms of previously defined values (smaller inputs). An injective proof or a closed-form formula are not required -- the recursive definition itself defines the function completely.",
+      "hints": [
+        "Think about what is needed to compute f(n) for any n",
+        "Not all recursively defined functions have a known closed form"
+      ],
+      "tags": ["recursion", "recursive_definition", "components"],
+      "points": 2
+    },
+    {
+      "id": "ds_ir_017",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Strong Induction: Fibonacci Inequality",
+      "description": "We want to prove by strong induction that F(n) < 2^n for all n >= 0, where F(n) is the n-th Fibonacci number (F(0)=0, F(1)=1). In the inductive step for n >= 2, assuming F(j) < 2^j for all j < n, which of the following correctly bounds F(n)?",
+      "options": [
+        "F(n) = F(n-1) + F(n-2) < 2^(n-1) + 2^(n-2) < 2^(n-1) + 2^(n-1) = 2^n",
+        "F(n) = F(n-1) + F(n-2) < 2*F(n-1) < 2*2^(n-1) = 2^n",
+        "F(n) = F(n-1) + F(n-2) < 2^n + 2^n = 2^(n+1)",
+        "Both A and B are valid approaches"
+      ],
+      "correct_answer": "D",
+      "explanation": "Both approaches A and B are valid. Approach A directly uses the strong inductive hypothesis on both F(n-1) and F(n-2), then uses 2^(n-2) < 2^(n-1). Approach B uses F(n-2) < F(n-1) (for n >= 2) and then applies the hypothesis to F(n-1). Both successfully show F(n) < 2^n.",
+      "hints": [
+        "Apply the inductive hypothesis to both terms in F(n) = F(n-1) + F(n-2)",
+        "Remember that 2^(n-2) < 2^(n-1) for any n"
+      ],
+      "tags": ["strong_induction", "fibonacci", "inequality"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_018",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Strong Induction Structure",
+      "description": "In strong induction, the inductive hypothesis assumes P(j) is true for all integers j with {blank1} <= j <= {blank2}. We then prove that {blank3} is true.",
+      "blanks": {
+        "blank1": {
+          "correct": "b",
+          "options": ["b", "0", "1", "k+1"]
+        },
+        "blank2": {
+          "correct": "k",
+          "options": ["k", "k+1", "n", "k-1"]
+        },
+        "blank3": {
+          "correct": "P(k+1)",
+          "options": ["P(k+1)", "P(k)", "P(n)", "P(k-1)"]
+        }
+      },
+      "explanation": "In strong induction with base case b, the inductive hypothesis assumes P(j) for all j from the base case b up to k. We then use this to prove P(k+1). The key difference from weak induction is that we have access to all previous cases, not just P(k).",
+      "hints": [
+        "The range starts at the base case value",
+        "We prove the statement for the next value after the range"
+      ],
+      "tags": ["strong_induction", "structure"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_019",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Recursive Definition: Power of 2",
+      "description": "Consider the recursive definition: f(0) = 1, f(n) = 2 * f(n-1) for n >= 1. What does f(n) compute?",
+      "options": [
+        "2^n",
+        "2n",
+        "n^2",
+        "n!"
+      ],
+      "correct_answer": "A",
+      "explanation": "f(0) = 1 = 2^0. f(1) = 2*f(0) = 2*1 = 2 = 2^1. f(2) = 2*f(1) = 2*2 = 4 = 2^2. In general, f(n) = 2^n. Each recursive step multiplies by 2, so after n steps from the base case of 1, we get 2^n.",
+      "hints": [
+        "Compute the first few values: f(0), f(1), f(2), f(3)",
+        "What operation is applied n times starting from 1?"
+      ],
+      "tags": ["recursion", "recursive_definition", "powers"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_020",
+      "category": "induction_recursion",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Identifying Recursive Definitions",
+      "description": "Which of the following are valid recursive definitions? (Select all that apply)",
+      "options": [
+        "f(0) = 1, f(n) = n * f(n-1) for n >= 1",
+        "g(n) = g(n-1) + g(n-2) for n >= 2 (with no base cases specified)",
+        "h(0) = 0, h(1) = 1, h(n) = h(n-1) + h(n-2) for n >= 2",
+        "p(n) = p(n+1) - 1 for all n"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "A is valid -- it defines the factorial function with base case f(0) = 1. C is valid -- it defines the Fibonacci sequence with two base cases. B is invalid because it has no base cases, so no value can actually be computed. D is invalid because it defines p(n) in terms of p(n+1), a larger input, so it never reaches a base case and the function is not well-defined.",
+      "hints": [
+        "A recursive definition needs base case(s) to be computable",
+        "The recursive step must reference smaller inputs, not larger ones"
+      ],
+      "tags": ["recursion", "recursive_definition", "validity"],
+      "points": 2
+    },
+    {
+      "id": "ds_ir_021",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Structural Induction on Binary Trees",
+      "description": "A full binary tree is defined recursively: (1) A single node is a full binary tree. (2) If T1 and T2 are full binary trees, then the tree with a new root connected to T1 and T2 is a full binary tree. We want to prove by structural induction that every full binary tree with n internal nodes has exactly n+1 leaves. What is the base case?",
+      "options": [
+        "A tree with 1 internal node has 2 leaves",
+        "A single node (which is a leaf) has 0 internal nodes and 1 leaf: 0+1 = 1",
+        "A tree with 0 internal nodes has 0 leaves",
+        "A tree with 2 nodes has 1 internal node and 1 leaf"
+      ],
+      "correct_answer": "B",
+      "explanation": "The base case corresponds to the base case of the recursive definition: a single node. A single node is a leaf with 0 internal nodes. The formula gives 0 + 1 = 1 leaf, which matches. In structural induction, the base cases always correspond to the base elements of the recursive definition.",
+      "hints": [
+        "The base case of structural induction matches the base case of the recursive definition",
+        "What is the simplest full binary tree?"
+      ],
+      "tags": ["structural_induction", "binary_tree", "base_case"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_022",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursively Defined Sets",
+      "description": "A set S is defined recursively as follows: (1) 3 is in S. (2) If x is in S, then x + 5 is in S. Which of the following numbers is NOT in S?",
+      "options": [
+        "8",
+        "18",
+        "14",
+        "13"
+      ],
+      "correct_answer": "D",
+      "explanation": "Starting from 3, we can generate: 3, 8, 13, 18, 23, ... Wait -- let's check: 3, 3+5=8, 8+5=13, 13+5=18. So 13 IS in S. Let me reconsider. S = {3, 8, 13, 18, 23, ...} = {3 + 5k : k >= 0}. All elements have the form 3 + 5k. Checking: 8 = 3+5 (in S), 18 = 3+15 (in S), 14 = 3+11 (11 is not a multiple of 5, so 14 is NOT in S), 13 = 3+10 (in S). So 14 is not in S.",
+      "hints": [
+        "Generate elements of S starting from 3 by repeatedly adding 5",
+        "Check which numbers have the form 3 + 5k for some nonneg integer k"
+      ],
+      "tags": ["recursion", "recursive_set", "membership"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_023",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Number of Base Cases",
+      "description": "The Fibonacci sequence is defined as F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2) for n >= 2. How many base cases does this recursive definition have?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_answer": "C",
+      "explanation": "The Fibonacci sequence has two base cases: F(0) = 0 and F(1) = 1. Two base cases are needed because the recurrence F(n) = F(n-1) + F(n-2) refers to two previous terms. Without both base cases, we could not compute F(2) = F(1) + F(0).",
+      "hints": [
+        "How many previous values does the recurrence use?",
+        "If F(n) depends on F(n-1) and F(n-2), how many initial values are needed?"
+      ],
+      "tags": ["recursion", "fibonacci", "base_case"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_024",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Induktionsbevis for sum",
+      "description": "Vi vil bevise at 1 + 3 + 5 + ... + (2n-1) = n^2 for alle n >= 1. I induktionsskridtet antager vi {blank1} og adderer det naeste ulige tal {blank2} til begge sider. Venstre side bliver k^2 + (2k+1), som kan forenkles til {blank3}.",
+      "blanks": {
+        "blank1": {
+          "correct": "1 + 3 + ... + (2k-1) = k^2",
+          "options": ["1 + 3 + ... + (2k-1) = k^2", "1 + 3 + ... + (2k+1) = k^2", "P(k+1) er sand", "summen er n^2"]
+        },
+        "blank2": {
+          "correct": "2k+1",
+          "options": ["2k+1", "2k", "2k-1", "k+1"]
+        },
+        "blank3": {
+          "correct": "(k+1)^2",
+          "options": ["(k+1)^2", "k^2+1", "2k^2", "k^2+2k"]
+        }
+      },
+      "explanation": "I induktionsskridtet antager vi induktionshypotesen: summen af de forste k ulige tal er k^2. Det naeste ulige tal er 2(k+1)-1 = 2k+1. Naar vi adderer dette til begge sider faar vi k^2 + (2k+1) = (k+1)^2, som er praecis formlen for n = k+1.",
+      "hints": [
+        "Induktionshypotesen er formlen med n erstattet af k",
+        "Det (k+1)-te ulige tal er 2(k+1)-1 = 2k+1"
+      ],
+      "tags": ["induction", "sum_formula", "danish"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_025",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Well-Ordering Proof Technique",
+      "description": "To prove a statement P(n) for all nonneg integers n using the Well-Ordering Principle, we assume for contradiction that the set S = {n : P(n) is false} is nonempty. What do we do next?",
+      "options": [
+        "Show that S has no upper bound",
+        "Apply the Well-Ordering Principle to conclude S has a least element, then derive a contradiction",
+        "Show that 0 is in S",
+        "Show that S is finite"
+      ],
+      "correct_answer": "B",
+      "explanation": "By the Well-Ordering Principle, if S (the set of counterexamples) is nonempty, it has a least element m. We then analyze this smallest counterexample and show that its existence leads to a contradiction -- either m cannot be the base case (since we can verify the base case directly), or the existence of m implies a smaller counterexample must exist, contradicting minimality.",
+      "hints": [
+        "What does the Well-Ordering Principle guarantee about S?",
+        "What is special about the smallest counterexample?"
+      ],
+      "tags": ["well_ordering", "proof_technique", "contradiction"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_026",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Definition of Strings",
+      "description": "The set SIGMA* of all strings over an alphabet SIGMA is defined recursively: (1) The empty string lambda is in SIGMA*. (2) If w is in SIGMA* and x is in SIGMA, then wx is in SIGMA*. If SIGMA = {a, b}, which of the following is NOT a valid way to build the string 'ab'?",
+      "options": [
+        "Start with lambda, append a to get 'a', then append b to get 'ab'",
+        "Start with lambda, append b to get 'b', then append a to get 'ba', then rearrange",
+        "Apply rule (2) twice starting from the empty string",
+        "Both A and C describe the same valid construction"
+      ],
+      "correct_answer": "B",
+      "explanation": "The recursive definition only allows appending a character to the right of an existing string. There is no 'rearrange' operation in the definition. Option B attempts to rearrange characters, which is not a valid operation in this recursive definition. Options A and C both describe the same valid construction: lambda -> 'a' -> 'ab'.",
+      "hints": [
+        "The recursive rule only allows appending to the right",
+        "Which option introduces an operation not present in the definition?"
+      ],
+      "tags": ["recursion", "strings", "recursive_structure"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_027",
+      "category": "induction_recursion",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "When Strong Induction is Needed",
+      "description": "For which of the following proofs would strong induction be more natural than weak induction? (Select all that apply)",
+      "options": [
+        "Every integer n >= 2 has a prime factorization",
+        "The sum 1 + 2 + ... + n = n(n+1)/2",
+        "Every amount of postage >= 12 cents can be made using 4-cent and 5-cent stamps",
+        "For all n >= 1, n^3 - n is divisible by 3"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "A: Proving prime factorization requires strong induction because a composite number n = a*b uses the factorization of a and b, which may be much smaller than n-1. C: The stamp problem can use strong induction because to make n cents of postage, we might use the fact that n-4 or n-5 cents can be made, requiring access to cases earlier than n-1. B and D follow directly from the case n-1 (weak induction suffices).",
+      "hints": [
+        "Strong induction is useful when P(k+1) depends on cases earlier than just P(k)",
+        "Think about which proofs need to reference values far below k"
+      ],
+      "tags": ["strong_induction", "weak_induction", "comparison"],
+      "points": 2
+    },
+    {
+      "id": "ds_ir_028",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Tower of Hanoi Recurrence",
+      "description": "The number of moves H(n) needed to solve the Tower of Hanoi with n disks satisfies H(1) = 1 and H(n) = 2*H(n-1) + 1 for n >= 2. What is H(4)?",
+      "options": [
+        "7",
+        "15",
+        "16",
+        "31"
+      ],
+      "correct_answer": "B",
+      "explanation": "H(1) = 1, H(2) = 2*1 + 1 = 3, H(3) = 2*3 + 1 = 7, H(4) = 2*7 + 1 = 15. In general, H(n) = 2^n - 1. The recurrence captures the strategy: move n-1 disks to auxiliary peg (H(n-1) moves), move the largest disk (1 move), then move n-1 disks on top (H(n-1) moves).",
+      "hints": [
+        "Compute step by step from H(1)",
+        "The pattern H(n) = 2^n - 1 can be verified"
+      ],
+      "tags": ["recursion", "tower_of_hanoi", "recurrence"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_029",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Structural Induction on Well-Formed Formulas",
+      "description": "Well-formed propositional formulas are defined recursively: (1) T, F, and propositional variables are formulas. (2) If p is a formula, then (NOT p) is a formula. (3) If p and q are formulas, then (p AND q), (p OR q), (p -> q) are formulas. Using structural induction to prove that every formula has an equal number of left and right parentheses, what is the inductive step for rule (3)?",
+      "options": [
+        "Assume p and q each have equal left and right parentheses; then (p AND q) adds one more left and one more right parenthesis, preserving the property",
+        "Show that the total number of parentheses is even",
+        "Count the number of operators and show it equals the number of parenthesis pairs",
+        "Assume the property holds for all formulas with fewer operators"
+      ],
+      "correct_answer": "A",
+      "explanation": "In structural induction, we assume the property holds for the sub-formulas used in the construction. For rule (3), we assume p has equal left and right parentheses (say, k each) and q has equal left and right parentheses (say, m each). Then (p AND q) has k + m + 1 left parentheses and k + m + 1 right parentheses (the extra pair comes from the outer parentheses), so the property is preserved.",
+      "hints": [
+        "Structural induction assumes the property for the components used in the construction",
+        "Count how many new parentheses are added by the construction"
+      ],
+      "tags": ["structural_induction", "well_formed_formulas", "propositional_logic"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_030",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Recursive Definition Components",
+      "description": "A recursive definition of a function consists of two parts: the {blank1} which gives explicit values, and the {blank2} which defines f(n) in terms of f evaluated at {blank3} arguments.",
+      "blanks": {
+        "blank1": {
+          "correct": "base case",
+          "options": ["base case", "recursive step", "inductive hypothesis", "domain"]
+        },
+        "blank2": {
+          "correct": "recursive step",
+          "options": ["recursive step", "base case", "closed form", "proof"]
+        },
+        "blank3": {
+          "correct": "smaller",
+          "options": ["smaller", "larger", "equal", "random"]
+        }
+      },
+      "explanation": "A recursive definition has a base case (providing initial explicit values) and a recursive step (defining f(n) in terms of f at smaller arguments). The 'smaller arguments' condition ensures that computation always terminates by eventually reaching the base case.",
+      "hints": [
+        "What provides the starting values?",
+        "The recursive step must make progress toward the base case"
+      ],
+      "tags": ["recursion", "recursive_definition", "terminology"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_031",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Geometric Sum by Induction",
+      "description": "We prove by induction that the sum 1 + r + r^2 + ... + r^n = (r^(n+1) - 1)/(r - 1) for r != 1 and n >= 0. What is the base case verification?",
+      "options": [
+        "When n = 0: the left side is 1, the right side is (r - 1)/(r - 1) = 1. They are equal.",
+        "When n = 1: the left side is 1 + r, the right side is (r^2 - 1)/(r - 1) = r + 1. They are equal.",
+        "When n = 0: the left side is 0, the right side is 0. They are equal.",
+        "Both A and B are valid base cases, but A is the standard choice."
+      ],
+      "correct_answer": "D",
+      "explanation": "For n = 0, the left side is just 1 (the sum has one term: r^0 = 1), and the right side is (r^1 - 1)/(r - 1) = (r - 1)/(r - 1) = 1. For n = 1, the left side is 1 + r and the right side is (r^2 - 1)/(r - 1) = (r-1)(r+1)/(r-1) = r + 1. Both are valid base cases since the statement holds for n >= 0, but n = 0 is the standard (smallest) choice.",
+      "hints": [
+        "Substitute n = 0 into both sides of the equation",
+        "Remember that r^0 = 1"
+      ],
+      "tags": ["induction", "geometric_sum", "base_case"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_032",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Lamé's Theorem and Fibonacci",
+      "description": "Lamé's Theorem states that the number of divisions in the Euclidean algorithm for gcd(a, b) with a > b >= 1 is at most 5 times the number of digits of b. The proof uses the Fibonacci sequence and strong induction. Why is the Fibonacci sequence relevant?",
+      "options": [
+        "Fibonacci numbers give the worst-case inputs for the Euclidean algorithm",
+        "The Euclidean algorithm computes Fibonacci numbers directly",
+        "Fibonacci numbers are always relatively prime",
+        "The number of digits in a Fibonacci number is always a prime"
+      ],
+      "correct_answer": "A",
+      "explanation": "Consecutive Fibonacci numbers F(n+1) and F(n) are the worst-case inputs for the Euclidean algorithm: computing gcd(F(n+1), F(n)) requires the maximum number of divisions. This is because the Euclidean algorithm on consecutive Fibonacci numbers reduces by exactly one Fibonacci step each time (F(n+1) = 1*F(n) + F(n-1)), making the remainders decrease as slowly as possible.",
+      "hints": [
+        "Think about which inputs make the Euclidean algorithm take the most steps",
+        "What happens when you apply the division algorithm to consecutive Fibonacci numbers?"
+      ],
+      "tags": ["fibonacci", "euclidean_algorithm", "strong_induction"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_033",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Domino Analogy",
+      "description": "Mathematical induction is often compared to a line of dominoes falling. In this analogy, what does the base case correspond to?",
+      "options": [
+        "Knocking over the first domino",
+        "Proving that all dominoes are the same size",
+        "Showing that each domino is close enough to the next",
+        "Counting the total number of dominoes"
+      ],
+      "correct_answer": "A",
+      "explanation": "In the domino analogy, the base case corresponds to pushing over the first domino. The inductive step corresponds to showing that if any domino falls, the next one will fall too (each domino is close enough to knock over the next). Together, these guarantee that all dominoes fall.",
+      "hints": [
+        "What triggers the chain reaction?",
+        "Without the first push, nothing happens even if all dominoes are lined up"
+      ],
+      "tags": ["induction", "analogy", "conceptual"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_034",
+      "category": "induction_recursion",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Correct Induction Applications",
+      "description": "For which of the following would mathematical induction be an appropriate proof technique? (Select all that apply)",
+      "options": [
+        "Proving that n^2 + n is even for all positive integers n",
+        "Proving that there are infinitely many prime numbers",
+        "Proving that the sum of the first n cubes equals [n(n+1)/2]^2",
+        "Proving that the square root of 2 is irrational"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "A: Can be proved by induction on n (or directly, but induction works). C: This is a classic summation identity proved by induction. B: The infinitude of primes is typically proved by contradiction (Euclid's proof), not induction. D: Irrationality of sqrt(2) is proved by contradiction, not induction, since it is not a statement parameterized by natural numbers.",
+      "hints": [
+        "Induction works for statements of the form 'for all n >= b, P(n)'",
+        "Which statements are naturally parameterized by a natural number?"
+      ],
+      "tags": ["induction", "applicability", "proof_technique"],
+      "points": 2
+    },
+    {
+      "id": "ds_ir_035",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursively Defined Function Evaluation",
+      "description": "Let f be defined by f(0) = 1, f(1) = 2, and f(n) = f(n-1) * f(n-2) for n >= 2. What is f(5)?",
+      "options": [
+        "32",
+        "16",
+        "64",
+        "128"
+      ],
+      "correct_answer": "A",
+      "explanation": "f(0) = 1, f(1) = 2, f(2) = f(1)*f(0) = 2*1 = 2, f(3) = f(2)*f(1) = 2*2 = 4, f(4) = f(3)*f(2) = 4*2 = 8, f(5) = f(4)*f(3) = 8*4 = 32.",
+      "hints": [
+        "Build up from the base cases step by step",
+        "Each value is the product of the two preceding values"
+      ],
+      "tags": ["recursion", "computation", "recursive_definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_036",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Induction Proof: Divisibility",
+      "description": "To prove by induction that 6 divides n^3 - n for all n >= 0: Base case: when n = 0, 0^3 - 0 = {blank1}. Inductive step: (k+1)^3 - (k+1) = k^3 + 3k^2 + 3k + 1 - k - 1 = (k^3 - k) + {blank2}. By the inductive hypothesis 6 | (k^3 - k), and 6 | 3k(k+1) because k(k+1) is always {blank3}.",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": ["0", "1", "6", "-1"]
+        },
+        "blank2": {
+          "correct": "3k^2 + 3k",
+          "options": ["3k^2 + 3k", "3k^2 + 2k", "k^2 + k", "6k"]
+        },
+        "blank3": {
+          "correct": "even",
+          "options": ["even", "odd", "divisible by 3", "prime"]
+        }
+      },
+      "explanation": "Base case: 0^3 - 0 = 0, and 6 | 0. Inductive step: (k+1)^3 - (k+1) = (k^3 - k) + 3k^2 + 3k = (k^3 - k) + 3k(k+1). By hypothesis, 6 | (k^3 - k). Also, 3k(k+1) is divisible by 6 because k(k+1) is the product of consecutive integers, which is always even, so 3 * (even number) is divisible by 6.",
+      "hints": [
+        "Expand (k+1)^3 - (k+1) and group terms",
+        "The product of two consecutive integers is always even"
+      ],
+      "tags": ["induction", "divisibility", "algebraic_manipulation"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_037",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Structural Induction vs Mathematical Induction",
+      "description": "When should structural induction be used instead of mathematical induction?",
+      "options": [
+        "When the domain is recursively defined structures (trees, strings, formulas) rather than natural numbers",
+        "When the proof is too difficult for mathematical induction",
+        "When the statement involves inequalities",
+        "Structural induction and mathematical induction are the same thing"
+      ],
+      "correct_answer": "A",
+      "explanation": "Structural induction is used when we want to prove properties of recursively defined structures such as trees, strings, lists, or well-formed formulas. The base cases correspond to the base elements of the recursive definition, and the inductive step shows the property is preserved by each construction rule. Mathematical induction is a special case where the 'structure' is the natural numbers.",
+      "hints": [
+        "Think about what kinds of objects we are proving properties about",
+        "Mathematical induction is for properties indexed by natural numbers"
+      ],
+      "tags": ["structural_induction", "comparison", "recursive_structure"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_038",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Postage Stamp Problem",
+      "description": "Prove by strong induction that every amount of postage of 12 cents or more can be formed using 4-cent and 5-cent stamps. How many base cases are needed, and what are they?",
+      "options": [
+        "One base case: 12 = 3*4",
+        "Four base cases: 12 = 3*4, 13 = 2*4+5, 14 = 4+2*5, 15 = 3*5",
+        "Two base cases: 12 = 3*4 and 13 = 2*4+5",
+        "Three base cases: 12, 13, and 14"
+      ],
+      "correct_answer": "B",
+      "explanation": "We need four base cases (12, 13, 14, 15) because the inductive step uses P(k-4): if we can make k-4 cents, we add a 4-cent stamp to make k cents. This means we need to go back 4 steps, so we must verify the first 4 values in the range independently. 12 = 3(4), 13 = 2(4)+5, 14 = 4+2(5), 15 = 3(5). Then for any k >= 16, by strong induction P(k-4) holds and adding a 4-cent stamp gives k cents.",
+      "hints": [
+        "The inductive step adds a 4-cent stamp, so it references P(k-4)",
+        "How far back does the recurrence go? That determines how many base cases you need"
+      ],
+      "tags": ["strong_induction", "postage_stamp", "base_case"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_039",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Recursive vs Closed Form",
+      "description": "The sequence defined by a(0) = 0, a(n) = a(n-1) + 2 for n >= 1 can also be written in closed form as:",
+      "options": [
+        "a(n) = 2n",
+        "a(n) = 2^n",
+        "a(n) = n^2",
+        "a(n) = n + 2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Computing the first few values: a(0) = 0, a(1) = 2, a(2) = 4, a(3) = 6. The pattern is a(n) = 2n. This can be proved by induction: base case a(0) = 0 = 2*0, and if a(k) = 2k then a(k+1) = a(k) + 2 = 2k + 2 = 2(k+1).",
+      "hints": [
+        "Compute a(0), a(1), a(2), a(3) and look for a pattern",
+        "Each step adds 2 to the previous value"
+      ],
+      "tags": ["recursion", "closed_form", "sequence"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_040",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Well-Ordering Proof Structure",
+      "description": "To prove P(n) for all n >= 0 using the Well-Ordering Principle, we assume for {blank1} that the set S = {n in N : P(n) is false} is {blank2}. By the Well-Ordering Principle, S has a {blank3}. We then show this leads to a contradiction.",
+      "blanks": {
+        "blank1": {
+          "correct": "contradiction",
+          "options": ["contradiction", "induction", "construction", "exhaustion"]
+        },
+        "blank2": {
+          "correct": "nonempty",
+          "options": ["nonempty", "empty", "finite", "infinite"]
+        },
+        "blank3": {
+          "correct": "least element",
+          "options": ["least element", "greatest element", "median", "unique element"]
+        }
+      },
+      "explanation": "A Well-Ordering Principle proof proceeds by contradiction. We assume the set of counterexamples S is nonempty. The Well-Ordering Principle guarantees that every nonempty set of nonnegative integers has a least element. We then show the existence of this smallest counterexample leads to a contradiction, proving S must actually be empty.",
+      "hints": [
+        "We are assuming the negation of what we want to prove",
+        "The key property of nonneg integers used here is about minimum elements"
+      ],
+      "tags": ["well_ordering", "proof_structure", "contradiction"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_041",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Multiple Base Cases in Strong Induction",
+      "description": "Consider proving by strong induction that a(n) = 3^n for the sequence defined by a(0) = 1, a(1) = 3, a(n) = 4*a(n-1) - 3*a(n-2) for n >= 2. How many base cases must be verified?",
+      "options": [
+        "1 (only n = 0)",
+        "2 (n = 0 and n = 1)",
+        "3 (n = 0, 1, and 2)",
+        "The statement cannot be proved by induction"
+      ],
+      "correct_answer": "B",
+      "explanation": "Since the recurrence a(n) = 4*a(n-1) - 3*a(n-2) references two previous terms, we need two base cases: n = 0 and n = 1. We verify: a(0) = 1 = 3^0 and a(1) = 3 = 3^1. For the inductive step (n >= 2), assuming a(j) = 3^j for all j < n: a(n) = 4*3^(n-1) - 3*3^(n-2) = 4*3^(n-1) - 3^(n-1) = 3*3^(n-1) = 3^n.",
+      "hints": [
+        "The recurrence looks back 2 steps, so how many starting values do we need?",
+        "Try verifying the formula for n = 0 and n = 1"
+      ],
+      "tags": ["strong_induction", "recurrence", "base_case"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_042",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Rekursiv definition af maengder",
+      "description": "Maengden S er defineret rekursivt: (1) 1 er i S. (2) Hvis x er i S og y er i S, saa er x + y i S. (3) Intet andet er i S. Hvilken maengde er S?",
+      "options": [
+        "Maengden af alle positive heltal: {1, 2, 3, 4, ...}",
+        "Maengden {1}",
+        "Maengden af alle heltal",
+        "Maengden af alle ikke-negative heltal: {0, 1, 2, 3, ...}"
+      ],
+      "correct_answer": "A",
+      "explanation": "Fra basistilfaeldet er 1 i S. Ved at addere 1+1 faar vi 2 i S. Ved 1+2 faar vi 3, osv. Generelt kan vi faa ethvert positivt heltal ved gentagen addition af 1. Vi kan ikke faa 0 eller negative tal, da vi starter med 1 og kun adderer elementer fra S (som alle er >= 1). Saa S = {1, 2, 3, ...} = Z+.",
+      "hints": [
+        "Start med 1 og se hvad du kan generere",
+        "Kan du faa 0? Kan du faa negative tal?"
+      ],
+      "tags": ["recursion", "recursive_set", "danish"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_043",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Structural Induction on Rooted Trees",
+      "description": "Rooted trees are defined recursively: (1) A single vertex r is a rooted tree. (2) If T1, T2, ..., Tk are rooted trees, then the graph formed by adding a new root r and edges from r to the roots of T1, ..., Tk is a rooted tree. We want to prove by structural induction that a rooted tree with n vertices has exactly n-1 edges. In the inductive step, if T1 has n1 vertices and n1-1 edges, ..., Tk has nk vertices and nk-1 edges, how many edges does the combined tree have?",
+      "options": [
+        "(n1-1) + (n2-1) + ... + (nk-1) + k = (n1 + n2 + ... + nk) - k + k = n - 1, where n = 1 + n1 + ... + nk",
+        "(n1-1) + (n2-1) + ... + (nk-1) = n - k",
+        "n1 + n2 + ... + nk + k",
+        "(n1-1) + (n2-1) + ... + (nk-1) + k - 1"
+      ],
+      "correct_answer": "A",
+      "explanation": "The combined tree has: edges from T1 (n1-1) + edges from T2 (n2-1) + ... + edges from Tk (nk-1) + k new edges (from the new root to each subtree root). Total edges = (n1-1) + (n2-1) + ... + (nk-1) + k = (n1 + n2 + ... + nk) - k + k = n1 + n2 + ... + nk. Since the total number of vertices is n = 1 + n1 + ... + nk, the number of edges = n - 1.",
+      "hints": [
+        "Count existing edges from all subtrees, then add the new edges from the root",
+        "The new root adds k new edges, one to each subtree"
+      ],
+      "tags": ["structural_induction", "rooted_tree", "edge_count"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_044",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Identifying the Inductive Step",
+      "description": "In a proof by induction that 2^n >= n + 1 for all n >= 1, we assume 2^k >= k + 1. What must we show?",
+      "options": [
+        "2^(k+1) >= (k+1) + 1, i.e., 2^(k+1) >= k + 2",
+        "2^(k-1) >= k",
+        "2^n >= n + 1 for all n",
+        "2^k >= k"
+      ],
+      "correct_answer": "A",
+      "explanation": "In the inductive step, after assuming P(k): 2^k >= k + 1, we must prove P(k+1): 2^(k+1) >= (k+1) + 1 = k + 2. We can do this by noting 2^(k+1) = 2 * 2^k >= 2(k+1) = 2k + 2 >= k + 2 (since k >= 1).",
+      "hints": [
+        "Replace n with k+1 in the original statement",
+        "P(k+1) is the statement with n = k+1"
+      ],
+      "tags": ["induction", "inductive_step", "inequality"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_045",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Fibonacci Closed Form Insight",
+      "description": "The Fibonacci recurrence F(n) = F(n-1) + F(n-2) has characteristic equation {blank1}. The roots of this equation are the golden ratio phi = (1+sqrt(5))/2 and psi = (1-sqrt(5))/2. The closed form (Binet's formula) is F(n) = (phi^n - psi^n) / {blank2}. This can be proved by {blank3} induction.",
+      "blanks": {
+        "blank1": {
+          "correct": "x^2 = x + 1",
+          "options": ["x^2 = x + 1", "x^2 = 2x + 1", "x^2 = x - 1", "x^2 + x + 1 = 0"]
+        },
+        "blank2": {
+          "correct": "sqrt(5)",
+          "options": ["sqrt(5)", "2", "5", "phi"]
+        },
+        "blank3": {
+          "correct": "strong",
+          "options": ["strong", "weak", "structural", "transfinite"]
+        }
+      },
+      "explanation": "The characteristic equation of F(n) = F(n-1) + F(n-2) is x^2 = x + 1 (or x^2 - x - 1 = 0). Its roots are phi = (1+sqrt(5))/2 and psi = (1-sqrt(5))/2. Binet's formula F(n) = (phi^n - psi^n)/sqrt(5) is proved by strong induction (since the recurrence references two previous values, F(n-1) and F(n-2)).",
+      "hints": [
+        "Substitute F(n) = x^n into the recurrence and divide by x^(n-2)",
+        "Strong induction is needed because the Fibonacci recurrence uses two previous terms"
+      ],
+      "tags": ["fibonacci", "closed_form", "strong_induction", "characteristic_equation"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_046",
+      "category": "induction_recursion",
+      "type": "multiple_select",
+      "difficulty": "easy",
+      "title": "Components of an Induction Proof",
+      "description": "Which of the following are essential components of a valid proof by mathematical induction? (Select all that apply)",
+      "options": [
+        "Verifying the base case",
+        "Stating and using the inductive hypothesis",
+        "Providing a closed-form formula",
+        "Completing the inductive step: showing P(k) implies P(k+1)"
+      ],
+      "correct_answer": ["A", "B", "D"],
+      "explanation": "A valid induction proof requires: (A) verifying the base case, (B) clearly stating the inductive hypothesis (assume P(k)), and (D) completing the inductive step by proving P(k+1) using the inductive hypothesis. A closed-form formula (C) is not required -- induction can be used to prove statements that do not involve closed forms, such as divisibility properties or inequalities.",
+      "hints": [
+        "Think about the two main parts of an induction proof",
+        "Is a closed-form formula always involved in induction proofs?"
+      ],
+      "tags": ["induction", "structure", "components"],
+      "points": 2
+    },
+    {
+      "id": "ds_ir_047",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Flawed Induction: Missing Base Case",
+      "description": "A student writes: 'Assume n^2 > 3n for some n. Then (n+1)^2 = n^2 + 2n + 1 > 3n + 2n + 1 = 5n + 1 > 3(n+1) = 3n + 3.' The algebra in the inductive step is correct (for n >= 3). Why is this NOT a complete proof that n^2 > 3n for all positive integers n?",
+      "options": [
+        "The algebra is wrong",
+        "The student never verified a base case, and in fact n^2 > 3n is false for n = 1, 2, 3",
+        "Strong induction should have been used",
+        "The inductive hypothesis is stated incorrectly"
+      ],
+      "correct_answer": "B",
+      "explanation": "The statement n^2 > 3n is false for n = 1 (1 > 3 is false), n = 2 (4 > 6 is false), and n = 3 (9 > 9 is false). It only becomes true for n >= 4. The student's inductive step is algebraically valid for n >= 3, but without a true base case, the proof is incomplete. This illustrates why the base case is essential -- a valid inductive step alone proves nothing.",
+      "hints": [
+        "Check whether the statement is actually true for small values",
+        "What happens if you cannot establish a starting point?"
+      ],
+      "tags": ["induction", "base_case", "common_errors"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_048",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recursive Definition of String Length",
+      "description": "The length function l on strings over an alphabet SIGMA is defined recursively: l(lambda) = 0 (where lambda is the empty string), and l(wx) = l(w) + 1 for any string w and character x. What is l('abcd')?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "1"
+      ],
+      "correct_answer": "B",
+      "explanation": "Applying the recursive definition: l('abcd') = l('abc') + 1 = (l('ab') + 1) + 1 = ((l('a') + 1) + 1) + 1 = (((l(lambda) + 1) + 1) + 1) + 1 = 0 + 1 + 1 + 1 + 1 = 4. Each application of the recursive rule peels off one character and adds 1, so the total is the number of characters.",
+      "hints": [
+        "Apply the recursive rule repeatedly, removing one character at a time",
+        "The base case is the empty string with length 0"
+      ],
+      "tags": ["recursion", "strings", "recursive_definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_049",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Tiling Problem by Induction",
+      "description": "We can prove by induction that for any n >= 1, a 2^n x 2^n chessboard with one square removed can be tiled by L-shaped trominoes (L-shaped pieces covering exactly 3 squares). What is the key idea in the inductive step?",
+      "options": [
+        "Remove a different square and use the inductive hypothesis",
+        "Divide the 2^(k+1) x 2^(k+1) board into four 2^k x 2^k quadrants; place one tromino at the center covering one square from each of the three quadrants that don't contain the removed square, then apply the hypothesis to each quadrant",
+        "Show that the number of remaining squares is divisible by 3",
+        "Tile the board row by row using the inductive hypothesis on each row"
+      ],
+      "correct_answer": "B",
+      "explanation": "The key insight is: divide the 2^(k+1) x 2^(k+1) board into four 2^k x 2^k quadrants. One quadrant already has the removed square. Place an L-tromino at the center of the board so it covers one square in each of the other three quadrants. Now each quadrant is a 2^k x 2^k board with one square removed (either the original or one covered by the central tromino), so by the inductive hypothesis, each can be tiled.",
+      "hints": [
+        "Think about dividing the board into four equal parts",
+        "How can you reduce each quadrant to a problem of the same form?"
+      ],
+      "tags": ["induction", "tiling", "constructive_proof"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_050",
+      "category": "induction_recursion",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Fibonacci Definition",
+      "description": "The Fibonacci sequence is defined as: F(0) = {blank1}, F(1) = {blank2}, and for n >= 2, F(n) = F(n-1) + F({blank3}).",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": ["0", "1", "2", "-1"]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": ["0", "1", "2", "3"]
+        },
+        "blank3": {
+          "correct": "n-2",
+          "options": ["n-2", "n-1", "n+1", "n"]
+        }
+      },
+      "explanation": "The standard Fibonacci definition uses F(0) = 0 and F(1) = 1 as base cases, and the recurrence F(n) = F(n-1) + F(n-2) for n >= 2. This generates the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, ...",
+      "hints": [
+        "The Fibonacci sequence starts with 0, 1, 1, 2, 3, 5, ...",
+        "Each term is the sum of the two preceding terms"
+      ],
+      "tags": ["fibonacci", "recursive_definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_051",
+      "category": "induction_recursion",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Proving Closed Form by Induction",
+      "description": "To prove that the closed form a(n) = 2^(n+1) - 1 satisfies the recurrence a(0) = 1, a(n) = 2*a(n-1) + 1, we substitute into the recurrence. What do we get for the right side?",
+      "options": [
+        "2*(2^n - 1) + 1 = 2^(n+1) - 2 + 1 = 2^(n+1) - 1",
+        "2*(2^(n+1) - 1) + 1 = 2^(n+2) - 1",
+        "2^n + 1",
+        "2*(2^n - 1) = 2^(n+1) - 2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Substituting a(n-1) = 2^((n-1)+1) - 1 = 2^n - 1 into the right side: 2*a(n-1) + 1 = 2*(2^n - 1) + 1 = 2^(n+1) - 2 + 1 = 2^(n+1) - 1 = a(n). This confirms the closed form satisfies the recurrence. We also verify the base case: a(0) = 2^1 - 1 = 1.",
+      "hints": [
+        "Substitute the closed form expression for a(n-1)",
+        "Simplify 2*(2^n - 1) + 1 carefully"
+      ],
+      "tags": ["induction", "closed_form", "recurrence"],
+      "points": 1
+    },
+    {
+      "id": "ds_ir_052",
+      "category": "induction_recursion",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Well-Ordering Principle Applications",
+      "description": "Which of the following can be proved using the Well-Ordering Principle? (Select all that apply)",
+      "options": [
+        "The Division Algorithm: for a >= 0, b > 0, there exist unique q, r with a = bq + r and 0 <= r < b",
+        "Every nonempty set of real numbers has a minimum",
+        "The Principle of Mathematical Induction itself",
+        "Every positive rational number can be written in lowest terms (as p/q with gcd(p,q) = 1)"
+      ],
+      "correct_answer": ["A", "C", "D"],
+      "explanation": "A: The Division Algorithm can be proved using WOP by considering the set S = {a - bq : q >= 0, a - bq >= 0} and taking its least element. B: False -- not every nonempty set of reals has a minimum (e.g., the open interval (0,1)). C: WOP implies mathematical induction -- they are equivalent. D: Given p/q, consider the set of positive denominators that represent this rational; by WOP, there is a smallest, which gives the lowest terms representation.",
+      "hints": [
+        "The Well-Ordering Principle applies to nonneg integers, not all reals",
+        "Think about constructing a specific set of nonneg integers and taking its minimum"
+      ],
+      "tags": ["well_ordering", "applications", "proof_technique"],
+      "points": 2
+    }
+  ]
+}

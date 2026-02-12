@@ -1,0 +1,1254 @@
+{
+  "questions": [
+    {
+      "id": "ds_srf_001",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Set Membership",
+      "description": "Lad A = {1, 2, 3, 4, 5}. Hvilken af følgende udsagn er sand?",
+      "options": [
+        "{1, 2} ∈ A",
+        "3 ∈ A",
+        "6 ∈ A",
+        "{3} ∈ A"
+      ],
+      "correct_answer": "B",
+      "explanation": "The element 3 is a member of A = {1, 2, 3, 4, 5}, so 3 ∈ A is true. Note that {1, 2} is a subset of A, not an element; {3} is also a subset, not an element (unless A explicitly contains the set {3} as an element). 6 is not in A.",
+      "hints": [
+        "∈ means 'is an element of', not 'is a subset of'",
+        "Be careful to distinguish between an element and a set containing that element"
+      ],
+      "tags": ["sets", "membership"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_002",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Set Cardinality",
+      "description": "What is the cardinality |A| of the set A = {a, b, c, {d, e}}?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "correct_answer": "B",
+      "explanation": "|A| = 4 because A has exactly four elements: a, b, c, and the set {d, e}. The set {d, e} counts as a single element of A, even though it itself contains two elements.",
+      "hints": [
+        "A set can contain other sets as elements",
+        "Count {d, e} as one element, not two"
+      ],
+      "tags": ["sets", "cardinality"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_003",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Subset vs. Element",
+      "description": "Let A = {1, 2, {3, 4}, 5}. Which of the following is true?",
+      "options": [
+        "{3, 4} ⊆ A",
+        "{3, 4} ∈ A",
+        "3 ∈ A",
+        "{1, 2, 3} ⊆ A"
+      ],
+      "correct_answer": "B",
+      "explanation": "{3, 4} is listed explicitly as an element of A, so {3, 4} ∈ A is true. {3, 4} ⊆ A would mean that both 3 and 4 are elements of A, but they are not (only the set {3, 4} is). 3 is not directly an element of A. {1, 2, 3} ⊆ A is false because 3 ∉ A.",
+      "hints": [
+        "Look carefully at what elements are listed in A",
+        "Distinguish between ∈ (element of) and ⊆ (subset of)"
+      ],
+      "tags": ["sets", "membership", "subset"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_004",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Union of Sets",
+      "description": "Let A = {1, 2, 3} and B = {3, 4, 5}. What is A ∪ B?",
+      "options": [
+        "{1, 2, 3, 4, 5}",
+        "{3}",
+        "{1, 2, 4, 5}",
+        "{1, 2, 3, 3, 4, 5}"
+      ],
+      "correct_answer": "A",
+      "explanation": "A ∪ B contains all elements that are in A, in B, or in both. Since sets do not contain duplicate elements, 3 appears only once. A ∪ B = {1, 2, 3, 4, 5}.",
+      "hints": [
+        "Union combines all elements from both sets",
+        "Remember: sets cannot have duplicate elements"
+      ],
+      "tags": ["sets", "union"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_005",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Intersection of Sets",
+      "description": "Let A = {1, 2, 3, 4} and B = {2, 4, 6, 8}. What is A ∩ B?",
+      "options": [
+        "{1, 2, 3, 4, 6, 8}",
+        "{2, 4}",
+        "{1, 3, 6, 8}",
+        "∅"
+      ],
+      "correct_answer": "B",
+      "explanation": "A ∩ B contains only the elements that appear in both A and B. The elements common to both sets are 2 and 4, so A ∩ B = {2, 4}.",
+      "hints": [
+        "Intersection finds the common elements",
+        "Check each element of A to see if it also appears in B"
+      ],
+      "tags": ["sets", "intersection"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_006",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Set Difference",
+      "description": "Lad A = {1, 2, 3, 4, 5} og B = {2, 4, 6}. Hvad er A \\ B (A minus B)?",
+      "options": [
+        "{1, 3, 5}",
+        "{6}",
+        "{1, 2, 3, 4, 5, 6}",
+        "{2, 4}"
+      ],
+      "correct_answer": "A",
+      "explanation": "A \\ B (also written A - B) contains elements that are in A but not in B. From A = {1, 2, 3, 4, 5}, removing the elements that are also in B = {2, 4, 6} leaves {1, 3, 5}.",
+      "hints": [
+        "A \\ B means 'elements in A that are not in B'",
+        "Remove from A any element that also appears in B"
+      ],
+      "tags": ["sets", "difference"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_007",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Symmetric Difference",
+      "description": "Let A = {1, 2, 3, 4} and B = {3, 4, 5, 6}. What is A ⊕ B (the symmetric difference)?",
+      "options": [
+        "{3, 4}",
+        "{1, 2, 5, 6}",
+        "{1, 2, 3, 4, 5, 6}",
+        "∅"
+      ],
+      "correct_answer": "B",
+      "explanation": "The symmetric difference A ⊕ B contains elements that are in A or B, but not in both. Equivalently, A ⊕ B = (A \\ B) ∪ (B \\ A) = (A ∪ B) \\ (A ∩ B). Here, A ∩ B = {3, 4}, so A ⊕ B = {1, 2, 3, 4, 5, 6} \\ {3, 4} = {1, 2, 5, 6}.",
+      "hints": [
+        "Symmetric difference = elements in exactly one of the two sets",
+        "A ⊕ B = (A ∪ B) \\ (A ∩ B)"
+      ],
+      "tags": ["sets", "symmetric_difference"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_008",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Complement of a Set",
+      "description": "Let the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} and A = {2, 4, 6, 8, 10}. What is the complement Ā (also written A̅ or Aᶜ)?",
+      "options": [
+        "{1, 3, 5, 7, 9}",
+        "{2, 4, 6, 8, 10}",
+        "∅",
+        "U"
+      ],
+      "correct_answer": "A",
+      "explanation": "The complement of A with respect to U is the set of all elements in U that are not in A. Aᶜ = U \\ A = {1, 3, 5, 7, 9}.",
+      "hints": [
+        "The complement contains everything in U that is not in A",
+        "A contains the even numbers 2-10, so its complement contains..."
+      ],
+      "tags": ["sets", "complement"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_009",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cardinality of Union (Inclusion-Exclusion)",
+      "description": "If |A| = 15, |B| = 10, and |A ∩ B| = 4, what is |A ∪ B|?",
+      "options": [
+        "25",
+        "21",
+        "19",
+        "29"
+      ],
+      "correct_answer": "B",
+      "explanation": "By the inclusion-exclusion principle: |A ∪ B| = |A| + |B| - |A ∩ B| = 15 + 10 - 4 = 21. We subtract the intersection to avoid double-counting elements that are in both A and B.",
+      "hints": [
+        "Use the inclusion-exclusion principle",
+        "|A ∪ B| = |A| + |B| - |A ∩ B|"
+      ],
+      "tags": ["sets", "cardinality", "inclusion_exclusion"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_010",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Power Set",
+      "description": "What is the cardinality of the power set P({a, b, c})?",
+      "options": [
+        "3",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct_answer": "C",
+      "explanation": "The power set of a set with n elements has 2ⁿ elements. Here n = 3, so |P({a, b, c})| = 2³ = 8. The power set is: {∅, {a}, {b}, {c}, {a,b}, {a,c}, {b,c}, {a,b,c}}.",
+      "hints": [
+        "The power set contains all possible subsets, including ∅ and the set itself",
+        "|P(S)| = 2^|S|"
+      ],
+      "tags": ["sets", "power_set", "cardinality"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_011",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "De Morgans Love for Sets",
+      "description": "Hvilken af følgende er De Morgans lov for mængder?",
+      "options": [
+        "(A ∪ B)ᶜ = Aᶜ ∪ Bᶜ",
+        "(A ∪ B)ᶜ = Aᶜ ∩ Bᶜ",
+        "(A ∩ B)ᶜ = Aᶜ ∩ Bᶜ",
+        "(A ∪ B)ᶜ = A ∩ Bᶜ"
+      ],
+      "correct_answer": "B",
+      "explanation": "De Morgan's laws for sets state that: (1) (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ, and (2) (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ. The complement of a union is the intersection of complements, and the complement of an intersection is the union of complements.",
+      "hints": [
+        "De Morgans lov 'bytter' operationen (∪ bliver til ∩ og omvendt)",
+        "Komplementet af en union bliver til et snit af komplementer"
+      ],
+      "tags": ["sets", "de_morgan", "complement"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_012",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cartesian Product Cardinality",
+      "description": "Let A = {1, 2, 3} and B = {x, y}. What is |A × B|?",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct_answer": "B",
+      "explanation": "|A × B| = |A| · |B| = 3 · 2 = 6. The Cartesian product A × B is the set of all ordered pairs (a, b) where a ∈ A and b ∈ B: {(1,x), (1,y), (2,x), (2,y), (3,x), (3,y)}.",
+      "hints": [
+        "|A × B| = |A| · |B|",
+        "List all possible ordered pairs (a, b)"
+      ],
+      "tags": ["cartesian_product", "cardinality"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_013",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cartesian Product Elements",
+      "description": "Let A = {0, 1} and B = {a, b, c}. Which of the following is an element of A × B?",
+      "options": [
+        "(a, 0)",
+        "(0, b)",
+        "{0, a}",
+        "(0, 1)"
+      ],
+      "correct_answer": "B",
+      "explanation": "A × B consists of ordered pairs (x, y) where x ∈ A and y ∈ B. (0, b) has 0 ∈ A and b ∈ B, so it is in A × B. (a, 0) is wrong because a ∉ A; {0, a} is a set, not an ordered pair; (0, 1) has 1 which is in A, not B, and the first element must be from A.",
+      "hints": [
+        "In A × B, the first element must come from A and the second from B",
+        "Ordered pairs use parentheses, not curly braces"
+      ],
+      "tags": ["cartesian_product", "ordered_pairs"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_014",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Relation on a Set",
+      "description": "Let A = {1, 2, 3} and R = {(1,1), (1,2), (2,2), (3,3)} be a relation on A. Which property does R satisfy?",
+      "options": [
+        "R is symmetric",
+        "R is reflexive",
+        "R is antisymmetric and symmetric",
+        "R is an equivalence relation"
+      ],
+      "correct_answer": "B",
+      "explanation": "R is reflexive because (1,1), (2,2), and (3,3) are all in R (every element is related to itself). R is NOT symmetric because (1,2) ∈ R but (2,1) ∉ R. Since R is not symmetric, it is not an equivalence relation either.",
+      "hints": [
+        "Reflexive means (a,a) ∈ R for all a ∈ A",
+        "Check: is (2,1) in R? If not, R is not symmetric"
+      ],
+      "tags": ["relations", "reflexive", "properties"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_015",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Equivalence Relation",
+      "description": "Which of the following relations on the set of integers Z is an equivalence relation?",
+      "options": [
+        "R = {(a, b) | a < b}",
+        "R = {(a, b) | a divides b}",
+        "R = {(a, b) | a ≡ b (mod 3)}",
+        "R = {(a, b) | a + b is even}"
+      ],
+      "correct_answer": "C",
+      "explanation": "a ≡ b (mod 3) is an equivalence relation because it is: (1) Reflexive: a ≡ a (mod 3), (2) Symmetric: if a ≡ b (mod 3) then b ≡ a (mod 3), (3) Transitive: if a ≡ b and b ≡ c (mod 3) then a ≡ c (mod 3). Option D (a + b is even) is also reflexive, symmetric, and transitive, but option C is the classic textbook example. Note: a < b is not reflexive; 'a divides b' is not symmetric (e.g. 2|4 but 4∤2).",
+      "hints": [
+        "An equivalence relation must be reflexive, symmetric, AND transitive",
+        "Check each property for all the options"
+      ],
+      "tags": ["relations", "equivalence_relation"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_016",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Properties of Relations",
+      "description": "Let A = {1, 2, 3} and R = {(1,2), (2,1), (2,3), (3,2)}. Which properties does R have?",
+      "options": [
+        "Reflexive and symmetric",
+        "Symmetric but not reflexive",
+        "Transitive and symmetric",
+        "Symmetric and transitive"
+      ],
+      "correct_answer": "B",
+      "explanation": "R is symmetric: (1,2) and (2,1) are both in R, and (2,3) and (3,2) are both in R. R is NOT reflexive: (1,1), (2,2), (3,3) are not all in R. R is NOT transitive: (1,2) ∈ R and (2,3) ∈ R, but (1,3) ∉ R.",
+      "hints": [
+        "Check reflexivity: are (1,1), (2,2), (3,3) all in R?",
+        "Check transitivity: if (a,b) ∈ R and (b,c) ∈ R, is (a,c) always in R?"
+      ],
+      "tags": ["relations", "symmetric", "reflexive", "transitive"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_017",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Definition of a Function",
+      "description": "Which of the following best describes a function f: A → B?",
+      "options": [
+        "A relation from A to B where every element of B is mapped to by at least one element of A",
+        "A relation from A to B where every element of A is related to exactly one element of B",
+        "A relation from A to B where every element of A is related to at least one element of B",
+        "A bijection from A to B"
+      ],
+      "correct_answer": "B",
+      "explanation": "A function f: A → B is a relation that assigns to each element of A exactly one element of B. This means every element of the domain A must be mapped, and it must be mapped to precisely one element (not zero, not two).",
+      "hints": [
+        "A function must be defined for every element of the domain",
+        "Each input maps to exactly one output"
+      ],
+      "tags": ["functions", "definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_018",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Injective Function",
+      "description": "A function f: A → B is injective (one-to-one) if and only if:",
+      "options": [
+        "Every element of B has a preimage in A",
+        "f(a₁) = f(a₂) implies a₁ = a₂ for all a₁, a₂ ∈ A",
+        "|A| = |B|",
+        "f is both surjective and has an inverse"
+      ],
+      "correct_answer": "B",
+      "explanation": "A function is injective (one-to-one) if different inputs always produce different outputs. Formally: if f(a₁) = f(a₂), then a₁ = a₂. Equivalently, a₁ ≠ a₂ implies f(a₁) ≠ f(a₂). No two distinct elements of the domain map to the same element in the codomain.",
+      "hints": [
+        "Injective means 'no two different inputs give the same output'",
+        "Think about the contrapositive: distinct inputs give distinct outputs"
+      ],
+      "tags": ["functions", "injective"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_019",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Surjective Function",
+      "description": "Let f: {1, 2, 3, 4} → {a, b, c} be defined by f(1) = a, f(2) = b, f(3) = c, f(4) = b. Is f surjective (onto)?",
+      "options": [
+        "No, because f is not injective",
+        "Yes, because every element of {a, b, c} is mapped to by at least one element",
+        "No, because |domain| > |codomain|",
+        "Yes, because f is a bijection"
+      ],
+      "correct_answer": "B",
+      "explanation": "f is surjective because every element of the codomain {a, b, c} has at least one preimage: a ← 1, b ← 2 and 4, c ← 3. A function is surjective if and only if its range equals its codomain. Note: f is not injective (f(2) = f(4) = b), so it is not a bijection.",
+      "hints": [
+        "Surjective means every element of the codomain is 'hit'",
+        "Check: is there at least one input mapping to a? to b? to c?"
+      ],
+      "tags": ["functions", "surjective"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_020",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bijective Function",
+      "description": "Which of the following functions is a bijection from {1, 2, 3} to {a, b, c}?",
+      "options": [
+        "f(1) = a, f(2) = a, f(3) = c",
+        "f(1) = b, f(2) = a, f(3) = c",
+        "f(1) = a, f(2) = b (f(3) is undefined)",
+        "f(1) = a, f(2) = b, f(3) = b"
+      ],
+      "correct_answer": "B",
+      "explanation": "Option B defines f(1) = b, f(2) = a, f(3) = c. This is injective (all outputs are distinct: b, a, c) and surjective (every element of {a, b, c} is an output). Hence it is a bijection. Options A and D are not injective (repeated outputs). Option C is not even a function (f(3) is undefined).",
+      "hints": [
+        "A bijection is both injective and surjective",
+        "Every output must be different, and every element of the codomain must be used"
+      ],
+      "tags": ["functions", "bijective"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_021",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Floor Function",
+      "description": "What is ⌊3.7⌋ (the floor of 3.7)?",
+      "options": [
+        "4",
+        "3",
+        "3.5",
+        "3.0"
+      ],
+      "correct_answer": "B",
+      "explanation": "The floor function ⌊x⌋ returns the greatest integer less than or equal to x. Since 3 ≤ 3.7 < 4, we have ⌊3.7⌋ = 3.",
+      "hints": [
+        "Floor rounds down to the nearest integer",
+        "⌊x⌋ is the largest integer n such that n ≤ x"
+      ],
+      "tags": ["functions", "floor"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_022",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Ceiling Function",
+      "description": "What is ⌈-2.3⌉ (the ceiling of -2.3)?",
+      "options": [
+        "-3",
+        "-2",
+        "-2.3",
+        "-1"
+      ],
+      "correct_answer": "B",
+      "explanation": "The ceiling function ⌈x⌉ returns the smallest integer greater than or equal to x. Since -3 < -2.3 ≤ -2, we have ⌈-2.3⌉ = -2.",
+      "hints": [
+        "Ceiling rounds up to the nearest integer",
+        "Be careful with negative numbers: 'up' means towards zero"
+      ],
+      "tags": ["functions", "ceiling"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_023",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Floor of Negative Number",
+      "description": "What is ⌊-4.2⌋?",
+      "options": [
+        "-4",
+        "-5",
+        "-4.2",
+        "4"
+      ],
+      "correct_answer": "B",
+      "explanation": "⌊-4.2⌋ = -5 because the floor function gives the greatest integer less than or equal to x. Since -5 ≤ -4.2 < -4, the greatest integer ≤ -4.2 is -5. Note: floor does not truncate towards zero, it always rounds down (towards negative infinity).",
+      "hints": [
+        "Floor always rounds towards negative infinity",
+        "For negative numbers, ⌊x⌋ moves away from zero"
+      ],
+      "tags": ["functions", "floor"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_024",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Cardinality of Power Set of Power Set",
+      "description": "What is |P(P({a, b}))|?",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "256"
+      ],
+      "correct_answer": "C",
+      "explanation": "|{a, b}| = 2, so |P({a, b})| = 2² = 4. The power set P({a,b}) = {∅, {a}, {b}, {a,b}}. Then |P(P({a,b}))| = 2⁴ = 16.",
+      "hints": [
+        "|P(S)| = 2^|S|, apply this formula twice",
+        "First find |P({a,b})|, then find the power set of that"
+      ],
+      "tags": ["sets", "power_set", "cardinality"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_025",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Composition of Functions",
+      "description": "Let f: Z → Z be defined by f(x) = 2x + 1 and g: Z → Z be defined by g(x) = x². What is (g ∘ f)(3)?",
+      "options": [
+        "19",
+        "49",
+        "37",
+        "21"
+      ],
+      "correct_answer": "B",
+      "explanation": "(g ∘ f)(3) = g(f(3)). First compute f(3) = 2(3) + 1 = 7. Then g(7) = 7² = 49. Note that (g ∘ f)(x) means 'first apply f, then apply g'.",
+      "hints": [
+        "(g ∘ f)(x) = g(f(x)), so apply f first",
+        "Compute f(3) first, then apply g to the result"
+      ],
+      "tags": ["functions", "composition"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_026",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Injective Function and Cardinality",
+      "description": "If f: A → B is an injective function, which of the following must be true?",
+      "options": [
+        "|A| > |B|",
+        "|A| ≤ |B|",
+        "|A| = |B|",
+        "|B| < |A|"
+      ],
+      "correct_answer": "B",
+      "explanation": "If f: A → B is injective, then every element of A maps to a distinct element of B. Therefore, B must have at least as many elements as A, meaning |A| ≤ |B|. If |A| > |B|, then by the pigeonhole principle, at least two elements of A would have to map to the same element in B, contradicting injectivity.",
+      "hints": [
+        "Injective means distinct inputs give distinct outputs",
+        "Think about the pigeonhole principle"
+      ],
+      "tags": ["functions", "injective", "cardinality"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_027",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Set Identity Law",
+      "description": "Which of the following set identities is correct for all sets A?",
+      "options": [
+        "A ∪ ∅ = ∅",
+        "A ∩ U = ∅",
+        "A ∪ Aᶜ = U",
+        "A ∩ Aᶜ = U"
+      ],
+      "correct_answer": "C",
+      "explanation": "A ∪ Aᶜ = U is the complement law: the union of any set with its complement gives the universal set. Every element is either in A or in Aᶜ, so together they cover all of U. The other identities are: A ∪ ∅ = A (identity law), A ∩ U = A (identity law), A ∩ Aᶜ = ∅ (complement law).",
+      "hints": [
+        "Think about what happens when you combine a set with its complement",
+        "Every element in U is either in A or not in A"
+      ],
+      "tags": ["sets", "set_identities", "complement"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_028",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Partial Order Relation",
+      "description": "The relation 'divides' (a | b) on the set of positive integers Z⁺ is:",
+      "options": [
+        "An equivalence relation",
+        "A partial order (reflexive, antisymmetric, transitive)",
+        "Symmetric and transitive but not reflexive",
+        "Only reflexive"
+      ],
+      "correct_answer": "B",
+      "explanation": "The divides relation on Z⁺ is a partial order: (1) Reflexive: a | a for all a. (2) Antisymmetric: if a | b and b | a, then a = b (for positive integers). (3) Transitive: if a | b and b | c, then a | c. It is NOT symmetric (e.g., 2 | 4 but 4 ∤ 2), so it is not an equivalence relation.",
+      "hints": [
+        "Check each property: reflexive, antisymmetric, transitive",
+        "Is it symmetric? Consider: does 2 | 6 imply 6 | 2?"
+      ],
+      "tags": ["relations", "partial_order", "divisibility"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_029",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Inverse Function Existence",
+      "description": "A function f: A → B has an inverse function f⁻¹: B → A if and only if f is:",
+      "options": [
+        "Injective",
+        "Surjective",
+        "Bijective",
+        "Reflexive"
+      ],
+      "correct_answer": "C",
+      "explanation": "A function has an inverse if and only if it is bijective (both injective and surjective). Injectivity ensures that each element in B maps back to at most one element in A (well-defined inverse), and surjectivity ensures that every element of B is mapped to (the inverse is defined on all of B). Together, bijection guarantees a well-defined inverse function.",
+      "hints": [
+        "For f⁻¹ to be a function, it must be defined for every element of B, and each must map to exactly one element of A",
+        "Think about why both injectivity and surjectivity are needed"
+      ],
+      "tags": ["functions", "bijective", "inverse"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_030",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Surjective Function Definition",
+      "description": "A function f: A → B is {blank1} if every element in the codomain B is mapped to by {blank2} element(s) in the domain A.",
+      "blanks": {
+        "blank1": {
+          "correct": "surjective",
+          "options": ["injective", "surjective", "bijective", "reflexive"]
+        },
+        "blank2": {
+          "correct": "at least one",
+          "options": ["exactly one", "at least one", "at most one", "no"]
+        }
+      },
+      "explanation": "A surjective (onto) function is one where every element of the codomain has at least one preimage in the domain. This means the range of f equals its codomain B.",
+      "hints": [
+        "Which type of function guarantees every output value is actually used?",
+        "Think about the difference between 'exactly one' and 'at least one'"
+      ],
+      "tags": ["functions", "surjective"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_031",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Set Operations Terminology",
+      "description": "The set operation A ∩ B is called the {blank1} of A and B, and it contains all elements that are in {blank2} A and B.",
+      "blanks": {
+        "blank1": {
+          "correct": "intersection",
+          "options": ["union", "intersection", "difference", "complement"]
+        },
+        "blank2": {
+          "correct": "both",
+          "options": ["either", "both", "neither", "only"]
+        }
+      },
+      "explanation": "The intersection A ∩ B is the set of all elements that belong to both A and B simultaneously.",
+      "hints": [
+        "Which operation keeps only the common elements?",
+        "∩ looks like an upside-down U — think of it as 'and'"
+      ],
+      "tags": ["sets", "intersection", "terminology"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_032",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Equivalence Relation Properties",
+      "description": "An equivalence relation must be {blank1}, {blank2}, and {blank3}.",
+      "blanks": {
+        "blank1": {
+          "correct": "reflexive",
+          "options": ["reflexive", "antisymmetric", "irreflexive", "total"]
+        },
+        "blank2": {
+          "correct": "symmetric",
+          "options": ["symmetric", "antisymmetric", "asymmetric", "complete"]
+        },
+        "blank3": {
+          "correct": "transitive",
+          "options": ["transitive", "intransitive", "bijective", "surjective"]
+        }
+      },
+      "explanation": "An equivalence relation must satisfy three properties: (1) Reflexive: aRa for all a, (2) Symmetric: if aRb then bRa, (3) Transitive: if aRb and bRc then aRc. These three properties together define an equivalence relation, which partitions the set into equivalence classes.",
+      "hints": [
+        "Think about the = relation as a prototype equivalence relation",
+        "The three properties are often abbreviated RST"
+      ],
+      "tags": ["relations", "equivalence_relation"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_033",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Floor and Ceiling",
+      "description": "The function ⌊x⌋ is called the {blank1} function and returns the greatest integer {blank2} x.",
+      "blanks": {
+        "blank1": {
+          "correct": "floor",
+          "options": ["floor", "ceiling", "round", "truncate"]
+        },
+        "blank2": {
+          "correct": "less than or equal to",
+          "options": ["less than or equal to", "greater than or equal to", "less than", "equal to"]
+        }
+      },
+      "explanation": "The floor function ⌊x⌋ returns the greatest (largest) integer that is less than or equal to x. For example, ⌊3.7⌋ = 3 and ⌊-2.3⌋ = -3.",
+      "hints": [
+        "Floor means 'going down'",
+        "It finds the integer just below (or equal to) x"
+      ],
+      "tags": ["functions", "floor"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_034",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Bijection and Cardinality",
+      "description": "If there exists a {blank1} from set A to set B, then A and B have the {blank2}. This function must be both {blank3} and surjective.",
+      "blanks": {
+        "blank1": {
+          "correct": "bijection",
+          "options": ["bijection", "surjection", "injection", "relation"]
+        },
+        "blank2": {
+          "correct": "same cardinality",
+          "options": ["same cardinality", "same elements", "same power set", "same complement"]
+        },
+        "blank3": {
+          "correct": "injective",
+          "options": ["injective", "reflexive", "symmetric", "transitive"]
+        }
+      },
+      "explanation": "A bijection (one-to-one correspondence) between sets A and B establishes that |A| = |B|. A bijection is a function that is both injective (one-to-one) and surjective (onto), creating a perfect pairing between elements of A and B.",
+      "hints": [
+        "What type of function creates a perfect 1-to-1 correspondence?",
+        "Think about what guarantees two sets have the same size"
+      ],
+      "tags": ["functions", "bijective", "cardinality"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_035",
+      "category": "sets_relations_functions",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Properties of the Empty Set",
+      "description": "Which of the following statements about the empty set ∅ are true? (Select all that apply)",
+      "options": [
+        "∅ ⊆ A for every set A",
+        "|∅| = 0",
+        "|P(∅)| = 1",
+        "∅ ∈ A for every set A"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A: The empty set is a subset of every set (vacuously true). B: The empty set has no elements, so its cardinality is 0. C: P(∅) = {∅}, which has exactly one element, so |P(∅)| = 1. D: ∅ ∈ A is not true for every set A; for example, if A = {1, 2, 3}, then ∅ ∉ A.",
+      "hints": [
+        "∅ ⊆ A is vacuously true — there are no elements in ∅ that could fail to be in A",
+        "P(∅) has one element: the empty set itself"
+      ],
+      "tags": ["sets", "empty_set", "power_set"],
+      "points": 2
+    },
+    {
+      "id": "ds_srf_036",
+      "category": "sets_relations_functions",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Properties of a Relation",
+      "description": "Let R = {(1,1), (2,2), (3,3), (1,2), (2,1)} be a relation on A = {1, 2, 3}. Which properties does R have? (Select all that apply)",
+      "options": [
+        "Reflexive",
+        "Symmetric",
+        "Transitive",
+        "Antisymmetric"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A: Reflexive — (1,1), (2,2), (3,3) are all in R. B: Symmetric — for every (a,b) ∈ R, (b,a) ∈ R: (1,2) and (2,1) are both present. C: Transitive — check all cases: (1,2) and (2,1) → (1,1) ✓; (2,1) and (1,2) → (2,2) ✓; (1,2) and (2,2) → (1,2) ✓; etc. D: NOT antisymmetric — (1,2) ∈ R and (2,1) ∈ R but 1 ≠ 2.",
+      "hints": [
+        "Check each property systematically",
+        "For transitivity, check all pairs (a,b),(b,c) whether (a,c) is in R"
+      ],
+      "tags": ["relations", "reflexive", "symmetric", "transitive"],
+      "points": 2
+    },
+    {
+      "id": "ds_srf_037",
+      "category": "sets_relations_functions",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Function Classification",
+      "description": "Let f: {1, 2, 3} → {a, b, c} with f(1) = a, f(2) = b, f(3) = c. Which of the following are true? (Select all that apply)",
+      "options": [
+        "f is injective",
+        "f is surjective",
+        "f is bijective",
+        "f has an inverse function f⁻¹"
+      ],
+      "correct_answer": ["A", "B", "C", "D"],
+      "explanation": "f maps each element to a different output (injective), every element of the codomain is used (surjective), so f is bijective. Since f is bijective, it has an inverse f⁻¹: f⁻¹(a) = 1, f⁻¹(b) = 2, f⁻¹(c) = 3. All four statements are true.",
+      "hints": [
+        "Check: are all outputs distinct? Are all elements of {a,b,c} used?",
+        "When is a function invertible?"
+      ],
+      "tags": ["functions", "injective", "surjective", "bijective", "inverse"],
+      "points": 2
+    },
+    {
+      "id": "ds_srf_038",
+      "category": "sets_relations_functions",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Set Identities",
+      "description": "Hvilke af følgende mængdeidentiteter er korrekte? (Vælg alle der gælder)",
+      "options": [
+        "A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)",
+        "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)",
+        "A \\ (B ∪ C) = (A \\ B) ∪ (A \\ C)",
+        "A \\ (B ∩ C) = (A \\ B) ∪ (A \\ C)"
+      ],
+      "correct_answer": ["A", "B", "D"],
+      "explanation": "A: This is the distributive law of union over intersection — correct. B: This is the distributive law of intersection over union — correct. C: A \\ (B ∪ C) = (A \\ B) ∩ (A \\ C), not union — this is incorrect. D: A \\ (B ∩ C) = (A \\ B) ∪ (A \\ C) — this follows from De Morgan's law and is correct.",
+      "hints": [
+        "The distributive laws are analogous to a(b+c) = ab + ac in algebra",
+        "For set difference, think about De Morgan: A \\ (B ∪ C) = A ∩ (B ∪ C)ᶜ = A ∩ Bᶜ ∩ Cᶜ"
+      ],
+      "tags": ["sets", "set_identities", "distributive_law", "de_morgan"],
+      "points": 2
+    },
+    {
+      "id": "ds_srf_039",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Composition Order",
+      "description": "Let f: A → B and g: B → C. If f is surjective and g is injective, what can you conclude about g ∘ f: A → C?",
+      "options": [
+        "g ∘ f is necessarily bijective",
+        "g ∘ f is necessarily injective but not necessarily surjective",
+        "g ∘ f is necessarily surjective but not necessarily injective",
+        "Nothing can be concluded about g ∘ f"
+      ],
+      "correct_answer": "D",
+      "explanation": "When composing functions, the properties do not simply transfer. If f is surjective and g is injective, g ∘ f is not necessarily injective (f might not be injective), and not necessarily surjective (g might not be surjective). For example, f: {1,2} → {a} with f(1)=f(2)=a (surjective), g: {a} → {x,y} with g(a)=x (injective). Then (g∘f)(1) = (g∘f)(2) = x, which is neither injective nor surjective.",
+      "hints": [
+        "Try constructing a counterexample with small sets",
+        "The surjectivity of f does not help with the injectivity of the composition"
+      ],
+      "tags": ["functions", "composition", "injective", "surjective"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_040",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Set Builder Notation",
+      "description": "What is the set S = {x ∈ Z | -2 ≤ x < 3} when listed explicitly?",
+      "options": [
+        "{-2, -1, 0, 1, 2, 3}",
+        "{-2, -1, 0, 1, 2}",
+        "{-1, 0, 1, 2}",
+        "{-2, -1, 0, 1, 2, 3, 4}"
+      ],
+      "correct_answer": "B",
+      "explanation": "S contains all integers x satisfying -2 ≤ x < 3. The integers from -2 up to (but not including) 3 are: -2, -1, 0, 1, 2. Note the strict inequality: x < 3 means 3 is not included.",
+      "hints": [
+        "Pay attention to ≤ vs <",
+        "x < 3 means 3 is NOT included"
+      ],
+      "tags": ["sets", "set_builder_notation"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_041",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Number of Relations",
+      "description": "How many different relations are there from a set A with 2 elements to a set B with 3 elements?",
+      "options": [
+        "6",
+        "8",
+        "32",
+        "64"
+      ],
+      "correct_answer": "D",
+      "explanation": "A relation from A to B is a subset of A × B. |A × B| = 2 · 3 = 6. The number of subsets of A × B is 2^6 = 64. Each of the 6 pairs can either be in or not in the relation, giving 2⁶ = 64 possible relations.",
+      "hints": [
+        "A relation from A to B is any subset of A × B",
+        "How many subsets does a set with n elements have?"
+      ],
+      "tags": ["relations", "cartesian_product", "counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_042",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Number of Functions",
+      "description": "How many different functions f: A → B are there if |A| = 3 and |B| = 4?",
+      "options": [
+        "12",
+        "24",
+        "64",
+        "81"
+      ],
+      "correct_answer": "C",
+      "explanation": "For each element of A, we can choose any of the 4 elements of B as its image. With 3 elements in A, the total number of functions is 4³ = 64. In general, the number of functions from A to B is |B|^|A|.",
+      "hints": [
+        "Each element of A independently chooses an output from B",
+        "Number of functions = |B|^|A|"
+      ],
+      "tags": ["functions", "counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_043",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Transitive Closure Concept",
+      "description": "Let A = {a, b, c} and R = {(a, b), (b, c)}. Which pairs must be added to R to make it transitive?",
+      "options": [
+        "(a, c) only",
+        "(c, a) only",
+        "(a, a), (b, b), (c, c)",
+        "No pairs need to be added; R is already transitive"
+      ],
+      "correct_answer": "A",
+      "explanation": "For transitivity, if (a,b) ∈ R and (b,c) ∈ R, then (a,c) must be in R. Currently (a,b) and (b,c) are in R but (a,c) is not. After adding (a,c), we verify: no other transitivity violations exist. The resulting relation {(a,b), (b,c), (a,c)} is transitive.",
+      "hints": [
+        "Check all pairs: if (x,y) and (y,z) are in R, is (x,z) also in R?",
+        "The only chain is a → b → c"
+      ],
+      "tags": ["relations", "transitive", "transitive_closure"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_044",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Cartesian Product Definition",
+      "description": "The Cartesian product A × B is the set of all {blank1} (a, b) where a ∈ A and b ∈ B. If |A| = m and |B| = n, then |A × B| = {blank2}.",
+      "blanks": {
+        "blank1": {
+          "correct": "ordered pairs",
+          "options": ["ordered pairs", "unordered pairs", "subsets", "elements"]
+        },
+        "blank2": {
+          "correct": "m · n",
+          "options": ["m + n", "m · n", "m^n", "2^(m+n)"]
+        }
+      },
+      "explanation": "The Cartesian product A × B consists of all ordered pairs (a, b) with a from A and b from B. The order matters: (a, b) ≠ (b, a) in general. The cardinality is the product of the individual cardinalities: |A × B| = |A| · |B| = m · n.",
+      "hints": [
+        "Order matters in A × B: (1, 2) ≠ (2, 1)",
+        "Think about how many choices you have for each position in the pair"
+      ],
+      "tags": ["cartesian_product", "definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_045",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Partial Order Properties",
+      "description": "A partial order is a relation that is {blank1}, {blank2}, and transitive. Unlike an equivalence relation, a partial order is {blank3} instead of symmetric.",
+      "blanks": {
+        "blank1": {
+          "correct": "reflexive",
+          "options": ["reflexive", "irreflexive", "symmetric", "total"]
+        },
+        "blank2": {
+          "correct": "antisymmetric",
+          "options": ["symmetric", "antisymmetric", "asymmetric", "surjective"]
+        },
+        "blank3": {
+          "correct": "antisymmetric",
+          "options": ["antisymmetric", "asymmetric", "injective", "irreflexive"]
+        }
+      },
+      "explanation": "A partial order is reflexive, antisymmetric, and transitive. The key difference from an equivalence relation is that a partial order requires antisymmetry (if aRb and bRa then a = b), whereas an equivalence relation requires symmetry (if aRb then bRa). Examples include ≤ on integers and ⊆ on sets.",
+      "hints": [
+        "Think about ≤ as a prototypical partial order",
+        "If a ≤ b and b ≤ a, then a = b — that is antisymmetry"
+      ],
+      "tags": ["relations", "partial_order"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_046",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Floor and Ceiling Relationship",
+      "description": "For any real number x that is NOT an integer, which of the following is always true?",
+      "options": [
+        "⌈x⌉ = ⌊x⌋",
+        "⌈x⌉ = ⌊x⌋ + 1",
+        "⌈x⌉ = ⌊x⌋ - 1",
+        "⌈x⌉ = -⌊-x⌋ + 1"
+      ],
+      "correct_answer": "B",
+      "explanation": "For any real number x that is not an integer, ⌈x⌉ = ⌊x⌋ + 1. For example, ⌈3.2⌉ = 4 = 3 + 1 = ⌊3.2⌋ + 1. For ⌈-1.7⌉ = -1 = -2 + 1 = ⌊-1.7⌋ + 1. If x IS an integer, then ⌈x⌉ = ⌊x⌋ = x.",
+      "hints": [
+        "Try a few examples with both positive and negative non-integers",
+        "The floor is always one less than the ceiling for non-integers"
+      ],
+      "tags": ["functions", "floor", "ceiling"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_047",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Subset Notation",
+      "description": "If A = {1, 2} and B = {1, 2, 3, 4}, which statement is correct?",
+      "options": [
+        "B ⊆ A",
+        "A ⊆ B",
+        "A = B",
+        "A ⊄ B"
+      ],
+      "correct_answer": "B",
+      "explanation": "A ⊆ B because every element of A (namely 1 and 2) is also an element of B. B ⊆ A is false because 3 ∈ B but 3 ∉ A. In fact, A ⊂ B (A is a proper subset of B since A ≠ B).",
+      "hints": [
+        "A ⊆ B means every element of A is also in B",
+        "Check: is every element of A also in B?"
+      ],
+      "tags": ["sets", "subset"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_048",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Cardinality and Surjection",
+      "description": "If f: A → B is a surjective function and |A| = 5, |B| = 3, what is the minimum number of elements in A that must share an image (i.e., map to the same element in B)?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct_answer": "C",
+      "explanation": "Since f is surjective, all 3 elements of B must be hit. We want to distribute 5 elements of A among 3 elements of B such that each element of B gets at least one. By the pigeonhole principle, at least one element of B must be mapped to by ⌈5/3⌉ = 2 elements. The maximum number sharing one image to minimize sharing is when we distribute as evenly as possible: (2, 2, 1) — so at most 3 elements share images with others. But the question asks for the minimum number that must share an image: at least 2 elements must map to the same value (since 5 > 3), and in the best case exactly 3 elements are 'sharing' (two pairs of elements map to the same output while one element maps alone). Actually re-reading the question: at minimum, 3 elements must share an image with at least one other element. With 5 inputs and 3 outputs, 5 - 3 = 2 'extra' mappings mean at least 2 outputs get a second element, giving 3 elements that are not alone.",
+      "hints": [
+        "Use the pigeonhole principle: 5 pigeons in 3 holes",
+        "At least ⌈5/3⌉ elements must map to the same output"
+      ],
+      "tags": ["functions", "surjective", "pigeonhole"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_049",
+      "category": "sets_relations_functions",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Floor Function Values",
+      "description": "Which of the following are correct? (Select all that apply)",
+      "options": [
+        "⌊7.9⌋ = 7",
+        "⌊-3.1⌋ = -4",
+        "⌈4.0⌉ = 5",
+        "⌈-0.5⌉ = 0"
+      ],
+      "correct_answer": ["A", "B", "D"],
+      "explanation": "A: ⌊7.9⌋ = 7 (greatest integer ≤ 7.9). B: ⌊-3.1⌋ = -4 (greatest integer ≤ -3.1 is -4, not -3). C: ⌈4.0⌉ = 4, not 5 (4.0 is already an integer). D: ⌈-0.5⌉ = 0 (smallest integer ≥ -0.5 is 0).",
+      "hints": [
+        "Be careful with negative numbers for floor",
+        "If x is already an integer, then ⌊x⌋ = ⌈x⌉ = x"
+      ],
+      "tags": ["functions", "floor", "ceiling"],
+      "points": 2
+    },
+    {
+      "id": "ds_srf_050",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "A × B vs B × A",
+      "description": "Let A = {1, 2} and B = {a, b}. Is A × B = B × A?",
+      "options": [
+        "Yes, the Cartesian product is always commutative",
+        "No, because (1, a) ∈ A × B but (1, a) ∉ B × A",
+        "Yes, because both have 4 elements",
+        "No, but |A × B| ≠ |B × A|"
+      ],
+      "correct_answer": "B",
+      "explanation": "A × B ≠ B × A in general. A × B = {(1,a), (1,b), (2,a), (2,b)} while B × A = {(a,1), (a,2), (b,1), (b,2)}. The ordered pair (1,a) is in A × B but not in B × A (since B × A contains pairs with first element from B). They have the same cardinality (|A|·|B| = |B|·|A| = 4), but the elements are different.",
+      "hints": [
+        "Remember that ordered pairs care about order: (1, a) ≠ (a, 1)",
+        "Compare the actual elements of each product"
+      ],
+      "tags": ["cartesian_product", "ordered_pairs"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_051",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Counting Injective Functions",
+      "description": "How many injective functions are there from A = {1, 2, 3} to B = {a, b, c, d}?",
+      "options": [
+        "24",
+        "64",
+        "12",
+        "4"
+      ],
+      "correct_answer": "A",
+      "explanation": "For an injective function, each element of A must map to a distinct element of B. The first element has 4 choices, the second has 3 remaining choices, and the third has 2 remaining choices: 4 × 3 × 2 = 24. This is P(4,3) = 4!/(4-3)! = 24.",
+      "hints": [
+        "For injective functions, once an output is used, it cannot be used again",
+        "This is a permutation: P(|B|, |A|)"
+      ],
+      "tags": ["functions", "injective", "counting"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_052",
+      "category": "sets_relations_functions",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Injective Function Definition",
+      "description": "A function f: A → B er {blank1} (en-til-en) hvis f(a₁) = f(a₂) medfører at {blank2}. Ækvivalent: ingen to forskellige elementer i {blank3} afbildes til det samme element.",
+      "blanks": {
+        "blank1": {
+          "correct": "injektiv",
+          "options": ["injektiv", "surjektiv", "bijektiv", "refleksiv"]
+        },
+        "blank2": {
+          "correct": "a₁ = a₂",
+          "options": ["a₁ = a₂", "a₁ ≠ a₂", "f(a₁) ≠ f(a₂)", "a₁ ∈ B"]
+        },
+        "blank3": {
+          "correct": "domænet",
+          "options": ["domænet", "codomænet", "billedmængden", "potensmængden"]
+        }
+      },
+      "explanation": "En injektiv (en-til-en) funktion opfylder: f(a₁) = f(a₂) ⟹ a₁ = a₂. Det vil sige, at ingen to forskellige elementer i domænet A afbildes til det samme element i codomænet B.",
+      "hints": [
+        "Injektiv handler om at 'inputs er unikke for outputs'",
+        "Kontrapositiv: a₁ ≠ a₂ ⟹ f(a₁) ≠ f(a₂)"
+      ],
+      "tags": ["functions", "injective"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_053",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Symmetric Difference Identity",
+      "description": "What is A ⊕ A for any set A?",
+      "options": [
+        "A",
+        "U",
+        "∅",
+        "Aᶜ"
+      ],
+      "correct_answer": "C",
+      "explanation": "A ⊕ A = (A \\ A) ∪ (A \\ A) = ∅ ∪ ∅ = ∅. The symmetric difference of a set with itself is always the empty set, because every element is in both copies of A, so no element is in exactly one of them.",
+      "hints": [
+        "Symmetric difference gives elements in exactly one of the two sets",
+        "If both sets are the same, which elements are in exactly one?"
+      ],
+      "tags": ["sets", "symmetric_difference"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_054",
+      "category": "sets_relations_functions",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Disjoint Sets",
+      "description": "Two sets A and B are said to be disjoint if:",
+      "options": [
+        "A ∪ B = ∅",
+        "A ∩ B = ∅",
+        "A = B",
+        "A ⊆ B"
+      ],
+      "correct_answer": "B",
+      "explanation": "Two sets are disjoint if they have no elements in common, i.e., A ∩ B = ∅. For example, {1, 2} and {3, 4} are disjoint.",
+      "hints": [
+        "Disjoint means 'no overlap'",
+        "Which operation finds common elements?"
+      ],
+      "tags": ["sets", "disjoint"],
+      "points": 1
+    },
+    {
+      "id": "ds_srf_055",
+      "category": "sets_relations_functions",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Relation on Z",
+      "description": "Consider the relation R on Z defined by: aRb if and only if a - b is even. Which properties does R satisfy? (Select all that apply)",
+      "options": [
+        "Reflexive",
+        "Symmetric",
+        "Transitive",
+        "Antisymmetric"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "R is an equivalence relation: (1) Reflexive: a - a = 0 is even. (2) Symmetric: if a - b is even, then b - a = -(a - b) is also even. (3) Transitive: if a - b is even and b - c is even, then a - c = (a - b) + (b - c) is even (sum of two even numbers). NOT antisymmetric: e.g., 2R4 and 4R2, but 2 ≠ 4.",
+      "hints": [
+        "0 is even, so check reflexivity",
+        "The sum of two even numbers is even — useful for transitivity"
+      ],
+      "tags": ["relations", "equivalence_relation", "properties"],
+      "points": 2
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "exams": [
+    {
+      "id": "c_programming",
+      "name": "C Programming",
+      "short_name": "C Prog",
+      "description": "Imperativ programmering i C - grundlæggende begreber, pointers, memory management og mere.",
+      "icon": "💻",
+      "language": "da",
+      "categories": [
+        {
+          "id": "fundamentals",
+          "name": "C Fundamentals & Types",
+          "file": "fundamentals.json"
+        },
+        {
+          "id": "pointers_and_memory",
+          "name": "Pointers & Memory Management",
+          "file": "pointers_and_memory.json"
+        },
+        {
+          "id": "arrays_and_strings",
+          "name": "Arrays & Strings",
+          "file": "arrays_and_strings.json"
+        },
+        {
+          "id": "structs_and_data_structures",
+          "name": "Structs & Data Structures",
+          "file": "structs_and_data_structures.json"
+        },
+        {
+          "id": "control_flow",
+          "name": "Control Flow & Loops",
+          "file": "control_flow.json"
+        },
+        {
+          "id": "functions_and_recursion",
+          "name": "Functions & Recursion",
+          "file": "functions_and_recursion.json"
+        },
+        {
+          "id": "file_io",
+          "name": "File I/O",
+          "file": "file_io.json"
+        },
+        {
+          "id": "programming_challenges",
+          "name": "Programming Challenges",
+          "file": "programming_challenges.json"
+        }
+      ]
+    },
+    {
+      "id": "diskrete_strukturer",
+      "name": "Diskrete Strukturer",
+      "short_name": "Diskret",
+      "description": "Diskrete strukturer - mængder, relationer, talteori, induktion, rekursion og kombinatorik.",
+      "icon": "🔢",
+      "language": "da",
+      "categories": [
+        {
+          "id": "sets_relations_functions",
+          "name": "Sets, Relations & Functions",
+          "file": "sets_relations_functions.json"
+        },
+        {
+          "id": "number_theory",
+          "name": "Number Theory",
+          "file": "number_theory.json"
+        },
+        {
+          "id": "induction_recursion",
+          "name": "Induction & Recursion",
+          "file": "induction_recursion.json"
+        },
+        {
+          "id": "counting",
+          "name": "Counting & Combinatorics",
+          "file": "counting.json"
+        }
+      ]
+    }
+  ],
+  "default_exam": "c_programming"
+}

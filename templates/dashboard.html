@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard - C Programming Practice{% endblock %}
+{% block title %}Dashboard - {{ active_exam.name }}{% endblock %}
 
 {% block content %}
 <div class="dashboard">
@@ -33,7 +33,7 @@
         <div class="grid">
             {% for category, data in progress.category_progress.items() %}
             <div class="category-card">
-                <h3>{{ category.replace('_', ' ').title() }}</h3>
+                <h3>{{ exam_service.get_category_name(active_exam.id, category) }}</h3>
                 <div class="category-progress">
                     <div class="progress-bar-small">
                         <div class="progress-fill" style="width: {{ data.accuracy }}%"></div>
@@ -72,7 +72,7 @@
             <tbody>
                 {% for attempt in recent_attempts %}
                 <tr>
-                    <td>{{ attempt.category.replace('_', ' ').title() }}</td>
+                    <td>{{ exam_service.get_category_name(active_exam.id, attempt.category) }}</td>
                     <td>
                         {% if attempt.correct %}
                         <span class="badge badge-success">Correct</span>

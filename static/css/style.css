@@ -106,6 +106,115 @@ body {
     font-weight: 600;
 }
 
+/* Exam Switcher Dropdown */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.exam-switcher {
+    position: relative;
+}
+
+.exam-switcher-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.375rem 0.5rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    border-radius: 0.25rem;
+    transition: all 0.15s;
+}
+
+.exam-switcher-btn:hover {
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.exam-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1001;
+    padding: 0.375rem;
+    animation: dropdown-fade 0.15s ease-out;
+}
+
+/* Invisible bridge so hover doesn't break between button and dropdown */
+.exam-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+}
+
+@keyframes dropdown-fade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Show on hover or when .open class is toggled by JS */
+.exam-switcher:hover .exam-dropdown,
+.exam-switcher:focus-within .exam-dropdown,
+.exam-switcher.open .exam-dropdown {
+    display: block;
+}
+
+.exam-dropdown form {
+    margin: 0;
+}
+
+.exam-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: background 0.1s;
+    text-align: left;
+}
+
+.exam-dropdown-item:hover {
+    background: var(--bg-color);
+}
+
+.exam-dropdown-item.active {
+    background: #eff6ff;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.exam-dropdown-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.exam-dropdown-name {
+    flex: 1;
+}
+
+.exam-dropdown-check {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
 /* Buttons */
 .btn-primary, .btn-secondary {
     padding: 0.75rem 1.5rem;
@@ -861,6 +970,33 @@ body {
     flex: 1;
     line-height: 1.6;
     font-size: 1rem;
+}
+
+/* Multiple Select Options (checkboxes) */
+.multiple-select-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .option-text {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.checkbox-label:has(input[type="checkbox"]:checked) {
+    border-color: var(--primary-color);
+    background: #eff6ff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .hint-section {

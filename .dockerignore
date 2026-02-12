@@ -47,3 +47,16 @@ test_*.py
 
 # Logs
 *.log
+
+# Legacy question files (now in per-exam subdirectories)
+questions/old_categories/
+
+# Utility scripts not needed in container
+audit_project.py
+fix_duplicate_ids.py
+reorganize_categories.py
+test_new_features.py
+verify_setup.py
+
+# Claude config
+.claude/

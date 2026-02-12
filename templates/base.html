@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}C Programming Practice{% endblock %}</title>
+    <title>{% block title %}Exam Practice{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
@@ -14,7 +14,32 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="{{ url_for('progress.dashboard') }}">C Programming Practice</a>
+                <a href="{{ url_for('progress.dashboard') }}">{{ active_exam.icon }} {{ active_exam.name }}</a>
+                <div class="exam-switcher">
+                    <button class="exam-switcher-btn" aria-label="Switch exam">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M3 5L6 8L9 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="exam-dropdown">
+                        {% for exam in all_exams %}
+                        <form method="POST" action="{{ url_for('exam.switch_exam') }}">
+                            <input type="hidden" name="exam_id" value="{{ exam.id }}">
+                            <button type="submit" class="exam-dropdown-item {% if exam.id == active_exam.id %}active{% endif %}">
+                                <span class="exam-dropdown-icon">{{ exam.icon }}</span>
+                                <span class="exam-dropdown-name">{{ exam.name }}</span>
+                                {% if exam.id == active_exam.id %}
+                                <span class="exam-dropdown-check">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                {% endif %}
+                            </button>
+                        </form>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
             <div class="nav-links">
                 <a href="{{ url_for('progress.dashboard') }}"
@@ -49,7 +74,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>C Programming Practice System | Built for learning fundamental C concepts</p>
+            <p>Exam Practice System | Built for learning</p>
         </div>
     </footer>
 
@@ -57,6 +82,26 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+    <script>
+    // Exam switcher dropdown toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        var switcher = document.querySelector('.exam-switcher');
+        var btn = document.querySelector('.exam-switcher-btn');
+        if (btn && switcher) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                switcher.classList.toggle('open');
+            });
+            // Close when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!switcher.contains(e.target)) {
+                    switcher.classList.remove('open');
+                }
+            });
+        }
+    });
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

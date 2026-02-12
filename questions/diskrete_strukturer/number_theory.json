@@ -1,0 +1,1128 @@
+{
+  "questions": [
+    {
+      "id": "ds_nt_001",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Definition of Divisibility",
+      "description": "Which of the following is the correct definition of 'a divides b' (written a | b)?",
+      "options": [
+        "There exists an integer c such that b = ac",
+        "There exists an integer c such that a = bc",
+        "The remainder when b is divided by a is 1",
+        "a is less than or equal to b"
+      ],
+      "correct_answer": "A",
+      "explanation": "By definition, a | b (a divides b) means there exists an integer c such that b = ac. For example, 3 | 12 because 12 = 3 * 4.",
+      "hints": [
+        "Think about what it means for 3 to divide 12",
+        "The divisor multiplied by some integer should give the dividend"
+      ],
+      "tags": ["divisibility", "definitions"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_002",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Divisibility Check",
+      "description": "Which of the following statements is TRUE?",
+      "options": [
+        "7 | 42",
+        "5 | 37",
+        "3 | 44",
+        "8 | 50"
+      ],
+      "correct_answer": "A",
+      "explanation": "7 | 42 is true because 42 = 7 * 6. For the others: 37 = 5 * 7 + 2 (remainder 2), 44 = 3 * 14 + 2 (remainder 2), 50 = 8 * 6 + 2 (remainder 2).",
+      "hints": [
+        "Check which division gives a remainder of zero",
+        "a | b means b/a has no remainder"
+      ],
+      "tags": ["divisibility"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_003",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Prime Number Identification",
+      "description": "Which of the following numbers is prime?",
+      "options": [
+        "51",
+        "67",
+        "91",
+        "87"
+      ],
+      "correct_answer": "B",
+      "explanation": "67 is prime (divisible only by 1 and 67). 51 = 3 * 17, 91 = 7 * 13, and 87 = 3 * 29, so none of these are prime.",
+      "hints": [
+        "A prime number has exactly two divisors: 1 and itself",
+        "Try dividing each number by small primes (2, 3, 5, 7, ...)"
+      ],
+      "tags": ["primes"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_004",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Primtal (Danish)",
+      "description": "Hvor mange primtal er der mellem 1 og 20 (begge eksklusiv)?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "C",
+      "explanation": "Primtallene mellem 1 og 20 er: 2, 3, 5, 7, 11, 13, 17, 19. Det giver 8 primtal. Husk at 1 ikke er et primtal, og 2 er det eneste lige primtal.",
+      "hints": [
+        "Husk at 1 ikke er et primtal",
+        "2 er det mindste primtal"
+      ],
+      "tags": ["primes"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_005",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "GCD Basic Computation",
+      "description": "What is gcd(24, 36)?",
+      "options": [
+        "6",
+        "8",
+        "12",
+        "24"
+      ],
+      "correct_answer": "C",
+      "explanation": "The divisors of 24 are {1, 2, 3, 4, 6, 8, 12, 24} and the divisors of 36 are {1, 2, 3, 4, 6, 9, 12, 18, 36}. The greatest common divisor is 12. Alternatively, 24 = 2^3 * 3 and 36 = 2^2 * 3^2, so gcd = 2^2 * 3 = 12.",
+      "hints": [
+        "Find the prime factorization of both numbers",
+        "The GCD uses the minimum power of each common prime factor"
+      ],
+      "tags": ["gcd"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_006",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Euclid's Algorithm Step-by-Step",
+      "description": "When computing gcd(252, 198) using Euclid's algorithm, what is the sequence of remainders?",
+      "options": [
+        "54, 36, 18, 0",
+        "54, 36, 12, 0",
+        "54, 18, 0",
+        "198, 54, 36, 18, 0"
+      ],
+      "correct_answer": "A",
+      "explanation": "Euclid's algorithm: 252 = 1 * 198 + 54, then 198 = 3 * 54 + 36, then 54 = 1 * 36 + 18, then 36 = 2 * 18 + 0. The sequence of remainders is 54, 36, 18, 0, and gcd(252, 198) = 18.",
+      "hints": [
+        "At each step, divide the larger number by the smaller and take the remainder",
+        "Continue until the remainder is 0; the last nonzero remainder is the GCD"
+      ],
+      "tags": ["gcd", "euclid"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_007",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "GCD via Euclid's Algorithm",
+      "description": "What is gcd(462, 1071) computed using Euclid's algorithm?",
+      "options": [
+        "3",
+        "7",
+        "21",
+        "42"
+      ],
+      "correct_answer": "C",
+      "explanation": "1071 = 2 * 462 + 147, then 462 = 3 * 147 + 21, then 147 = 7 * 21 + 0. So gcd(462, 1071) = 21.",
+      "hints": [
+        "Start by dividing 1071 by 462",
+        "Keep applying the division algorithm until the remainder is 0"
+      ],
+      "tags": ["gcd", "euclid"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_008",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "LCM Basic Computation",
+      "description": "What is lcm(12, 18)?",
+      "options": [
+        "36",
+        "72",
+        "108",
+        "216"
+      ],
+      "correct_answer": "A",
+      "explanation": "lcm(12, 18) = (12 * 18) / gcd(12, 18) = 216 / 6 = 36. Alternatively, 12 = 2^2 * 3 and 18 = 2 * 3^2, so lcm = 2^2 * 3^2 = 36.",
+      "hints": [
+        "Use the formula: lcm(a,b) = a*b / gcd(a,b)",
+        "First find gcd(12, 18)"
+      ],
+      "tags": ["lcm"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_009",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "GCD and LCM Relationship",
+      "description": "If gcd(a, b) = 14 and lcm(a, b) = 168, what is the product a * b?",
+      "options": [
+        "182",
+        "2352",
+        "1176",
+        "2016"
+      ],
+      "correct_answer": "B",
+      "explanation": "The fundamental identity states that gcd(a,b) * lcm(a,b) = a * b. Therefore a * b = 14 * 168 = 2352.",
+      "hints": [
+        "There is a well-known relationship connecting gcd, lcm, and the product of two numbers",
+        "gcd(a,b) * lcm(a,b) = a * b"
+      ],
+      "tags": ["gcd", "lcm"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_010",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Congruence Basics",
+      "description": "Which of the following congruences is TRUE?",
+      "options": [
+        "17 ≡ 5 (mod 3)",
+        "17 ≡ 2 (mod 3)",
+        "17 ≡ 3 (mod 5)",
+        "17 ≡ 1 (mod 5)"
+      ],
+      "correct_answer": "B",
+      "explanation": "17 mod 3 = 2, since 17 = 5 * 3 + 2. Therefore 17 ≡ 2 (mod 3) is the correct congruence. Checking the others: 17 mod 3 = 2 (not 5), 17 mod 5 = 2 (not 3), 17 mod 5 = 2 (not 1).",
+      "hints": [
+        "a ≡ b (mod m) means m divides (a - b)",
+        "Find the remainder when 17 is divided by the modulus"
+      ],
+      "tags": ["congruences"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_011",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Kongruens (Danish)",
+      "description": "Hvad er 47 mod 7?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "correct_answer": "B",
+      "explanation": "47 = 7 * 6 + 5, så 47 mod 7 = 5. Resten ved division af 47 med 7 er 5.",
+      "hints": [
+        "Del 47 med 7 og find resten",
+        "47 = 7 * q + r, hvor 0 <= r < 7"
+      ],
+      "tags": ["congruences"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_012",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modular Arithmetic: Addition",
+      "description": "In Z_7 (integers modulo 7), what is (5 + 6) mod 7?",
+      "options": [
+        "1",
+        "4",
+        "11",
+        "3"
+      ],
+      "correct_answer": "B",
+      "explanation": "5 + 6 = 11, and 11 mod 7 = 4 (since 11 = 1 * 7 + 4). In modular arithmetic, we always reduce the result modulo m.",
+      "hints": [
+        "First compute 5 + 6, then reduce modulo 7",
+        "11 = 7 + 4"
+      ],
+      "tags": ["modular_arithmetic"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_013",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modular Arithmetic: Multiplication",
+      "description": "What is (13 * 17) mod 10?",
+      "options": [
+        "1",
+        "3",
+        "7",
+        "21"
+      ],
+      "correct_answer": "A",
+      "explanation": "13 * 17 = 221, and 221 mod 10 = 1. Alternatively, we can compute (13 mod 10) * (17 mod 10) = 3 * 7 = 21, and 21 mod 10 = 1.",
+      "hints": [
+        "You can reduce each factor modulo 10 before multiplying",
+        "(a * b) mod m = ((a mod m) * (b mod m)) mod m"
+      ],
+      "tags": ["modular_arithmetic"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_014",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modular Inverse",
+      "description": "What is the multiplicative inverse of 3 modulo 11?",
+      "options": [
+        "4",
+        "7",
+        "8",
+        "3"
+      ],
+      "correct_answer": "A",
+      "explanation": "We need to find x such that 3x ≡ 1 (mod 11). Testing: 3 * 4 = 12 = 11 + 1, so 3 * 4 ≡ 1 (mod 11). Therefore, the inverse of 3 modulo 11 is 4.",
+      "hints": [
+        "Find x such that 3x ≡ 1 (mod 11)",
+        "Try multiplying 3 by each option and check if the result is congruent to 1 mod 11"
+      ],
+      "tags": ["modular_arithmetic", "inverses"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_015",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Existence of Modular Inverse",
+      "description": "For which value of a does a multiplicative inverse of a modulo 15 NOT exist?",
+      "options": [
+        "a = 2",
+        "a = 4",
+        "a = 6",
+        "a = 7"
+      ],
+      "correct_answer": "C",
+      "explanation": "A multiplicative inverse of a modulo m exists if and only if gcd(a, m) = 1. gcd(2, 15) = 1, gcd(4, 15) = 1, gcd(6, 15) = 3 ≠ 1, gcd(7, 15) = 1. So a = 6 has no inverse modulo 15.",
+      "hints": [
+        "The inverse of a mod m exists iff gcd(a, m) = 1",
+        "Check which value shares a common factor with 15"
+      ],
+      "tags": ["inverses", "gcd"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_016",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Solving a Linear Congruence",
+      "description": "Find the solution to 5x ≡ 3 (mod 7).",
+      "options": [
+        "x ≡ 2 (mod 7)",
+        "x ≡ 3 (mod 7)",
+        "x ≡ 4 (mod 7)",
+        "x ≡ 6 (mod 7)"
+      ],
+      "correct_answer": "A",
+      "explanation": "First find the inverse of 5 modulo 7. Since 5 * 3 = 15 ≡ 1 (mod 7), the inverse of 5 is 3. Then x ≡ 3 * 3 = 9 ≡ 2 (mod 7).",
+      "hints": [
+        "First find the multiplicative inverse of 5 modulo 7",
+        "Then multiply both sides of the congruence by the inverse"
+      ],
+      "tags": ["linear_congruences", "inverses"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_017",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Chinese Remainder Theorem: Simple System",
+      "description": "Solve the system: x ≡ 2 (mod 3) and x ≡ 3 (mod 5). What is the unique solution modulo 15?",
+      "options": [
+        "x ≡ 5 (mod 15)",
+        "x ≡ 8 (mod 15)",
+        "x ≡ 11 (mod 15)",
+        "x ≡ 13 (mod 15)"
+      ],
+      "correct_answer": "B",
+      "explanation": "We need x such that x ≡ 2 (mod 3) and x ≡ 3 (mod 5). Testing x = 8: 8 mod 3 = 2 (correct) and 8 mod 5 = 3 (correct). By CRT, the solution is unique modulo 15 (since gcd(3,5) = 1), so x ≡ 8 (mod 15).",
+      "hints": [
+        "Since gcd(3,5) = 1, the CRT guarantees a unique solution modulo 15",
+        "Try listing numbers that satisfy x ≡ 3 (mod 5): 3, 8, 13, ... and check which also satisfies x ≡ 2 (mod 3)"
+      ],
+      "tags": ["crt", "linear_congruences"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_018",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Chinese Remainder Theorem: Three Congruences",
+      "description": "Solve the system: x ≡ 1 (mod 2), x ≡ 2 (mod 3), x ≡ 3 (mod 5). What is x mod 30?",
+      "options": [
+        "x ≡ 17 (mod 30)",
+        "x ≡ 23 (mod 30)",
+        "x ≡ 11 (mod 30)",
+        "x ≡ 29 (mod 30)"
+      ],
+      "correct_answer": "B",
+      "explanation": "We can verify x = 23: 23 mod 2 = 1 (correct), 23 mod 3 = 2 (correct), 23 mod 5 = 3 (correct). By the CRT (since 2, 3, 5 are pairwise coprime), the unique solution modulo 30 is x ≡ 23 (mod 30).",
+      "hints": [
+        "The moduli 2, 3, 5 are pairwise coprime, so CRT applies with modulus 2*3*5 = 30",
+        "Try listing numbers that satisfy x ≡ 3 (mod 5) and are odd: 3, 13, 23, ... then check mod 3"
+      ],
+      "tags": ["crt", "linear_congruences"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_019",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Fermat's Little Theorem: Statement",
+      "description": "According to Fermat's little theorem, if p = 13 and gcd(a, 13) = 1, what is a^12 mod 13?",
+      "options": [
+        "0",
+        "1",
+        "a",
+        "12"
+      ],
+      "correct_answer": "B",
+      "explanation": "Fermat's little theorem states that if p is prime and gcd(a, p) = 1, then a^(p-1) ≡ 1 (mod p). Here p = 13, so a^12 ≡ 1 (mod 13).",
+      "hints": [
+        "Fermat's little theorem involves a^(p-1) mod p",
+        "Since p = 13, we have p - 1 = 12"
+      ],
+      "tags": ["fermat"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_020",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Fermat's Little Theorem: Computation",
+      "description": "Using Fermat's little theorem, what is 2^340 mod 11?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "10"
+      ],
+      "correct_answer": "A",
+      "explanation": "By Fermat's little theorem, since 11 is prime and gcd(2, 11) = 1, we have 2^10 ≡ 1 (mod 11). Since 340 = 34 * 10, we get 2^340 = (2^10)^34 ≡ 1^34 = 1 (mod 11).",
+      "hints": [
+        "By Fermat's little theorem, 2^10 ≡ 1 (mod 11)",
+        "Express 340 as a multiple of 10"
+      ],
+      "tags": ["fermat", "modular_arithmetic"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_021",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "easy",
+      "title": "Divisibility Properties",
+      "description": "Which of the following statements about divisibility are TRUE? (Select all that apply)",
+      "options": [
+        "If a | b and a | c, then a | (b + c)",
+        "If a | b and b | c, then a | c (transitivity)",
+        "If a | b, then b | a",
+        "If a | bc, then a | b or a | c"
+      ],
+      "correct_answer": ["A", "B"],
+      "explanation": "A is true: if b = ak and c = al, then b + c = a(k + l), so a | (b + c). B is true (transitivity of divisibility): if b = ak and c = bl, then c = akl, so a | c. C is false: e.g. 3 | 6 but 6 does not divide 3. D is false in general: e.g. 6 | (4 * 3) but 6 does not divide 4 and 6 does not divide 3. (D is true only if a is prime.)",
+      "hints": [
+        "Use the definition: a | b means b = a * k for some integer k",
+        "Think of specific counterexamples for the false statements"
+      ],
+      "tags": ["divisibility"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_022",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Properties of GCD",
+      "description": "Which of the following are always true for positive integers a and b? (Select all that apply)",
+      "options": [
+        "gcd(a, b) divides both a and b",
+        "gcd(a, b) <= min(a, b)",
+        "gcd(a, 0) = a",
+        "gcd(a, b) = gcd(b, a mod b) when b > 0"
+      ],
+      "correct_answer": ["A", "B", "C", "D"],
+      "explanation": "All four statements are true. A: By definition, the GCD is a common divisor. B: Since gcd(a,b) divides both a and b, it must be at most the smaller of the two. C: Every integer divides 0, so the greatest common divisor of a and 0 is a. D: This is the fundamental property that makes Euclid's algorithm work.",
+      "hints": [
+        "Think about what 'greatest common divisor' means by definition",
+        "Statement D is the key recursion in Euclid's algorithm"
+      ],
+      "tags": ["gcd", "euclid"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_023",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Egenskaber ved kongruenser (Danish)",
+      "description": "Hvilke af nedenstående udsagn om kongruenser er SANDE? (Vælg alle korrekte)",
+      "options": [
+        "Hvis a ≡ b (mod m), så er m | (a - b)",
+        "Hvis a ≡ b (mod m) og c ≡ d (mod m), så er a + c ≡ b + d (mod m)",
+        "Hvis a ≡ b (mod m) og c ≡ d (mod m), så er ac ≡ bd (mod m)",
+        "Hvis ac ≡ bc (mod m), så er a ≡ b (mod m)"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A, B, og C er alle sande egenskaber ved kongruenser. D er FALSK i generel form - man kan kun dividere med c hvis gcd(c, m) = 1. Modeksempel: 2*3 ≡ 2*0 (mod 6) men 3 er ikke kongruent med 0 (mod 6).",
+      "hints": [
+        "Kongruenser bevarer addition og multiplikation",
+        "Vær forsigtig med division/cancellation i modulær aritmetik"
+      ],
+      "tags": ["congruences"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_024",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "When Does a Modular Inverse Exist?",
+      "description": "For which of the following values of a does a^(-1) (mod 12) exist? (Select all that apply)",
+      "options": [
+        "a = 5",
+        "a = 7",
+        "a = 8",
+        "a = 9"
+      ],
+      "correct_answer": ["A", "B"],
+      "explanation": "The inverse of a modulo 12 exists iff gcd(a, 12) = 1. gcd(5, 12) = 1, gcd(7, 12) = 1, gcd(8, 12) = 4, gcd(9, 12) = 3. So only a = 5 and a = 7 have inverses modulo 12.",
+      "hints": [
+        "A modular inverse exists if and only if gcd(a, m) = 1",
+        "12 = 2^2 * 3, so any a sharing a factor of 2 or 3 with 12 has no inverse"
+      ],
+      "tags": ["inverses", "gcd"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_025",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Conditions for CRT Applicability",
+      "description": "The Chinese Remainder Theorem guarantees a unique solution modulo M = m_1 * m_2 * ... * m_k when which conditions hold? (Select all that apply)",
+      "options": [
+        "The moduli m_1, m_2, ..., m_k are pairwise coprime",
+        "The moduli m_1, m_2, ..., m_k are all prime numbers",
+        "Each individual congruence x ≡ a_i (mod m_i) has a solution",
+        "The remainders a_1, a_2, ..., a_k are pairwise distinct"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "The CRT requires that the moduli are pairwise coprime (A). Each congruence x ≡ a_i (mod m_i) trivially has solutions (any a_i works), so C is always satisfied and is part of the setup. B is sufficient but not necessary (e.g., moduli 4 and 9 are coprime but not prime). D is not required (the remainders can repeat).",
+      "hints": [
+        "The key condition for CRT is about the moduli, not the remainders",
+        "Pairwise coprime means gcd(m_i, m_j) = 1 for all i ≠ j"
+      ],
+      "tags": ["crt"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_026",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Division Algorithm",
+      "description": "The Division Algorithm states: for integers a and d with d > 0, there exist unique integers q and r such that a = d * q + r and {blank1} ≤ r < {blank2}.",
+      "blanks": {
+        "blank1": {
+          "correct": "0",
+          "options": ["-d", "-1", "0", "1"]
+        },
+        "blank2": {
+          "correct": "d",
+          "options": ["a", "d", "q", "d-1"]
+        }
+      },
+      "explanation": "The Division Algorithm guarantees unique integers q (quotient) and r (remainder) such that a = dq + r with 0 ≤ r < d. The remainder is always nonnegative and strictly less than the divisor.",
+      "hints": [
+        "The remainder must be nonnegative",
+        "The remainder must be strictly less than the divisor"
+      ],
+      "tags": ["divisibility", "definitions"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_027",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Fermat's Little Theorem",
+      "description": "By Fermat's little theorem, if p is prime and gcd(a, p) = 1, then a^{blank1} ≡ {blank2} (mod p).",
+      "blanks": {
+        "blank1": {
+          "correct": "p-1",
+          "options": ["p", "p-1", "p+1", "p-2"]
+        },
+        "blank2": {
+          "correct": "1",
+          "options": ["0", "1", "a", "p"]
+        }
+      },
+      "explanation": "Fermat's little theorem states that if p is prime and gcd(a, p) = 1, then a^(p-1) ≡ 1 (mod p). This is a fundamental result in number theory with many applications including primality testing and cryptography.",
+      "hints": [
+        "The exponent involves p minus something",
+        "The result of a^(p-1) modulo p is always the multiplicative identity"
+      ],
+      "tags": ["fermat"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_028",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "GCD-LCM Relationship",
+      "description": "For positive integers a and b: gcd(a, b) * {blank1} = {blank2}.",
+      "blanks": {
+        "blank1": {
+          "correct": "lcm(a, b)",
+          "options": ["lcm(a, b)", "a + b", "a - b", "gcd(a, b)"]
+        },
+        "blank2": {
+          "correct": "a * b",
+          "options": ["a * b", "a + b", "(a * b)^2", "a^2 + b^2"]
+        }
+      },
+      "explanation": "The fundamental relationship between GCD and LCM is: gcd(a, b) * lcm(a, b) = a * b. This formula is extremely useful for computing the LCM when the GCD is known.",
+      "hints": [
+        "Think about the prime factorizations and how min/max of exponents relate to sum of exponents",
+        "This identity lets you compute LCM from GCD easily"
+      ],
+      "tags": ["gcd", "lcm"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_029",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Euclid's Algorithm Key Step",
+      "description": "Euclid's algorithm is based on the identity: gcd(a, b) = gcd({blank1}, {blank2}) when b > 0.",
+      "blanks": {
+        "blank1": {
+          "correct": "b",
+          "options": ["a", "b", "a - b", "a mod b"]
+        },
+        "blank2": {
+          "correct": "a mod b",
+          "options": ["a", "b - 1", "a mod b", "a - b"]
+        }
+      },
+      "explanation": "The key identity behind Euclid's algorithm is gcd(a, b) = gcd(b, a mod b). This reduces the problem to smaller numbers at each step, eventually reaching gcd(d, 0) = d.",
+      "hints": [
+        "The arguments swap and the remainder replaces the original first argument",
+        "The modulo operation is the key to reducing the problem size"
+      ],
+      "tags": ["gcd", "euclid"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_030",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Congruence Definition",
+      "description": "a ≡ b (mod m) means that m divides {blank1}, or equivalently, a and b have the same {blank2} when divided by m.",
+      "blanks": {
+        "blank1": {
+          "correct": "a - b",
+          "options": ["a + b", "a - b", "a * b", "a / b"]
+        },
+        "blank2": {
+          "correct": "remainder",
+          "options": ["quotient", "remainder", "divisor", "product"]
+        }
+      },
+      "explanation": "a ≡ b (mod m) means m | (a - b), which is equivalent to saying that a and b leave the same remainder when divided by m.",
+      "hints": [
+        "Think about what it means for two numbers to be 'equivalent' modulo m",
+        "17 ≡ 5 (mod 4) because both leave remainder 1 when divided by 4"
+      ],
+      "tags": ["congruences", "definitions"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_031",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Extended Euclidean Algorithm",
+      "description": "Using the extended Euclidean algorithm on gcd(35, 15), which of the following correctly expresses gcd(35, 15) as a linear combination 35s + 15t?",
+      "options": [
+        "5 = 35(1) + 15(-2)",
+        "5 = 35(-1) + 15(2)",
+        "5 = 35(1) + 15(-1)",
+        "5 = 35(2) + 15(-4)"
+      ],
+      "correct_answer": "A",
+      "explanation": "First, gcd(35, 15): 35 = 2 * 15 + 5, then 15 = 3 * 5 + 0, so gcd = 5. Back-substituting: 5 = 35 - 2 * 15 = 35(1) + 15(-2). We verify: 35 - 30 = 5. Correct!",
+      "hints": [
+        "First run Euclid's algorithm forward, then back-substitute to express the GCD as a linear combination",
+        "Bezout's identity guarantees integers s, t with gcd(a,b) = as + bt"
+      ],
+      "tags": ["euclid", "bezout"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_032",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Linear Congruence: Multiple Solutions",
+      "description": "How many solutions does the congruence 6x ≡ 4 (mod 10) have modulo 10?",
+      "options": [
+        "0 (no solutions)",
+        "1",
+        "2",
+        "5"
+      ],
+      "correct_answer": "C",
+      "explanation": "The congruence ax ≡ b (mod m) has solutions iff gcd(a, m) | b. Here gcd(6, 10) = 2 and 2 | 4, so solutions exist. The number of solutions modulo 10 is gcd(6, 10) = 2. Dividing through by 2: 3x ≡ 2 (mod 5). The inverse of 3 mod 5 is 2 (since 3*2=6≡1), so x ≡ 4 (mod 5). The two solutions mod 10 are x = 4 and x = 9.",
+      "hints": [
+        "The number of solutions of ax ≡ b (mod m) is gcd(a, m) if gcd(a, m) | b, otherwise 0",
+        "First check if gcd(6, 10) divides 4"
+      ],
+      "tags": ["linear_congruences"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_033",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Fundamental Theorem of Arithmetic",
+      "description": "What is the prime factorization of 360?",
+      "options": [
+        "2^3 * 3^2 * 5",
+        "2^2 * 3^2 * 10",
+        "2^3 * 3 * 5 * 3",
+        "2^3 * 45"
+      ],
+      "correct_answer": "A",
+      "explanation": "360 = 2 * 180 = 2 * 2 * 90 = 2 * 2 * 2 * 45 = 2^3 * 45 = 2^3 * 9 * 5 = 2^3 * 3^2 * 5. Option B uses 10 which is not prime. Option C is not in standard form. Option D uses 45 which is not prime.",
+      "hints": [
+        "Keep dividing by the smallest prime possible",
+        "The factorization must use only prime numbers"
+      ],
+      "tags": ["primes", "factorization"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_034",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Fermat's Little Theorem: Finding Inverse",
+      "description": "Using Fermat's little theorem, what is 5^(-1) mod 7 (the multiplicative inverse of 5 modulo 7)?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "correct_answer": "B",
+      "explanation": "By Fermat's little theorem, 5^6 ≡ 1 (mod 7), so 5^5 ≡ 5^(-1) (mod 7). We compute: 5^2 = 25 ≡ 4 (mod 7), 5^4 ≡ 4^2 = 16 ≡ 2 (mod 7), 5^5 ≡ 2 * 5 = 10 ≡ 3 (mod 7). Verification: 5 * 3 = 15 ≡ 1 (mod 7). Correct!",
+      "hints": [
+        "By Fermat's little theorem, a^(p-1) ≡ 1 (mod p), so a^(-1) ≡ a^(p-2) (mod p)",
+        "Compute 5^5 mod 7 using repeated squaring"
+      ],
+      "tags": ["fermat", "inverses"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_035",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Coprime Numbers",
+      "description": "Which pair of numbers is coprime (relatively prime)?",
+      "options": [
+        "14 and 21",
+        "15 and 28",
+        "12 and 18",
+        "9 and 24"
+      ],
+      "correct_answer": "B",
+      "explanation": "Two numbers are coprime if their GCD is 1. gcd(14, 21) = 7, gcd(15, 28) = 1 (since 15 = 3 * 5 and 28 = 2^2 * 7 share no common prime factors), gcd(12, 18) = 6, gcd(9, 24) = 3. Only 15 and 28 are coprime.",
+      "hints": [
+        "Find the GCD of each pair",
+        "Coprime means gcd = 1 (no common prime factors)"
+      ],
+      "tags": ["gcd", "primes"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_036",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modular Exponentiation",
+      "description": "What is 3^100 mod 7?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "6"
+      ],
+      "correct_answer": "C",
+      "explanation": "By Fermat's little theorem, 3^6 ≡ 1 (mod 7). Now 100 = 16 * 6 + 4, so 3^100 = (3^6)^16 * 3^4 ≡ 1^16 * 3^4 (mod 7). We compute 3^4 = 81 = 11 * 7 + 4, so 3^4 ≡ 4 (mod 7). Therefore 3^100 ≡ 4 (mod 7).",
+      "hints": [
+        "Use Fermat's little theorem: 3^6 ≡ 1 (mod 7)",
+        "Write 100 = 6q + r and use the theorem to simplify"
+      ],
+      "tags": ["fermat", "modular_arithmetic"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_037",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "CRT Prerequisites",
+      "description": "Consider the system: x ≡ 3 (mod 6) and x ≡ 5 (mod 10). Which of the following are true? (Select all that apply)",
+      "options": [
+        "The moduli 6 and 10 are coprime",
+        "The standard CRT cannot be directly applied since gcd(6, 10) ≠ 1",
+        "The system has no solution",
+        "The system can still have solutions if the congruences are compatible"
+      ],
+      "correct_answer": ["B", "D"],
+      "explanation": "gcd(6, 10) = 2, so the moduli are not coprime and the standard CRT does not directly apply (A is false, B is true). However, a system with non-coprime moduli can still have solutions if the congruences are compatible: we need 3 ≡ 5 (mod gcd(6,10)), i.e., 3 ≡ 5 (mod 2). Since 3 mod 2 = 1 and 5 mod 2 = 1, they are compatible, so solutions exist (C is false, D is true). For example, x = 15 works: 15 mod 6 = 3 and 15 mod 10 = 5.",
+      "hints": [
+        "First check if gcd(6, 10) = 1",
+        "When moduli are not coprime, solutions can still exist if the remainders are consistent modulo the GCD"
+      ],
+      "tags": ["crt", "gcd"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_038",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "GCD Computation with Large Numbers",
+      "description": "What is gcd(144, 89)?",
+      "options": [
+        "1",
+        "3",
+        "8",
+        "13"
+      ],
+      "correct_answer": "A",
+      "explanation": "Using Euclid's algorithm: 144 = 1 * 89 + 55, then 89 = 1 * 55 + 34, then 55 = 1 * 34 + 21, then 34 = 1 * 21 + 13, then 21 = 1 * 13 + 8, then 13 = 1 * 8 + 5, then 8 = 1 * 5 + 3, then 5 = 1 * 3 + 2, then 3 = 1 * 2 + 1, then 2 = 2 * 1 + 0. So gcd(144, 89) = 1. (Note: 89 and 144 are consecutive Fibonacci numbers, which are always coprime.)",
+      "hints": [
+        "These are consecutive Fibonacci numbers",
+        "Apply Euclid's algorithm - consecutive Fibonacci numbers have a special property"
+      ],
+      "tags": ["gcd", "euclid"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_039",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Bezout's Identity",
+      "description": "Bezout's identity states that for any integers a and b (not both zero), there exist integers s and t such that {blank1} = gcd(a, b). The values s and t can be found using the {blank2} algorithm.",
+      "blanks": {
+        "blank1": {
+          "correct": "as + bt",
+          "options": ["a + b", "as + bt", "a * b", "as - bt"]
+        },
+        "blank2": {
+          "correct": "extended Euclidean",
+          "options": ["extended Euclidean", "Sieve of Eratosthenes", "Fermat", "binary search"]
+        }
+      },
+      "explanation": "Bezout's identity states gcd(a, b) = as + bt for some integers s and t. These coefficients can be found by running Euclid's algorithm forward and then back-substituting, a process known as the extended Euclidean algorithm.",
+      "hints": [
+        "The GCD can always be expressed as a linear combination of a and b",
+        "The algorithm is an extension of the standard Euclidean algorithm"
+      ],
+      "tags": ["bezout", "euclid"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_040",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Chinese Remainder Theorem Statement",
+      "description": "The Chinese Remainder Theorem states that if m_1, m_2, ..., m_k are pairwise {blank1}, then the system x ≡ a_i (mod m_i) for i = 1, ..., k has a {blank2} solution modulo M = m_1 * m_2 * ... * m_k.",
+      "blanks": {
+        "blank1": {
+          "correct": "coprime",
+          "options": ["prime", "coprime", "equal", "distinct"]
+        },
+        "blank2": {
+          "correct": "unique",
+          "options": ["unique", "infinite number of", "no", "even"]
+        }
+      },
+      "explanation": "The CRT requires the moduli to be pairwise coprime (gcd(m_i, m_j) = 1 for all i ≠ j). Under this condition, the system has a unique solution modulo M = m_1 * m_2 * ... * m_k.",
+      "hints": [
+        "The key condition is about the relationship between every pair of moduli",
+        "The uniqueness is modulo the product of all moduli"
+      ],
+      "tags": ["crt"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_041",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Solving a System of Congruences (CRT)",
+      "description": "Solve the system: x ≡ 2 (mod 5), x ≡ 3 (mod 7). What is x mod 35?",
+      "options": [
+        "x ≡ 12 (mod 35)",
+        "x ≡ 17 (mod 35)",
+        "x ≡ 22 (mod 35)",
+        "x ≡ 27 (mod 35)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Using CRT: M = 35, M_1 = 35/5 = 7, M_2 = 35/7 = 5. We need y_1 with 7y_1 ≡ 1 (mod 5): 7 ≡ 2 (mod 5), and 2 * 3 = 6 ≡ 1 (mod 5), so y_1 = 3. We need y_2 with 5y_2 ≡ 1 (mod 7): 5 * 3 = 15 ≡ 1 (mod 7), so y_2 = 3. Then x = 2 * 7 * 3 + 3 * 5 * 3 = 42 + 45 = 87 ≡ 17 (mod 35).",
+      "hints": [
+        "Apply the CRT construction: x = sum of a_i * M_i * y_i",
+        "You need to find the inverses of M_i modulo m_i"
+      ],
+      "tags": ["crt", "linear_congruences"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_042",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sieve of Eratosthenes",
+      "description": "When finding all primes up to 100 using the Sieve of Eratosthenes, what is the largest prime whose multiples you need to cross out?",
+      "options": [
+        "5",
+        "7",
+        "9",
+        "11"
+      ],
+      "correct_answer": "B",
+      "explanation": "You only need to cross out multiples of primes up to sqrt(100) = 10. The primes up to 10 are 2, 3, 5, 7. So 7 is the largest prime whose multiples need to be crossed out. After crossing out multiples of 2, 3, 5, and 7, all remaining numbers up to 100 are prime.",
+      "hints": [
+        "You only need to sieve up to sqrt(n)",
+        "What is sqrt(100)?"
+      ],
+      "tags": ["primes", "sieve"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_043",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Basic Modular Arithmetic",
+      "description": "What is (-7) mod 5?",
+      "options": [
+        "-2",
+        "-7",
+        "3",
+        "2"
+      ],
+      "correct_answer": "C",
+      "explanation": "By the division algorithm, -7 = (-2) * 5 + 3, so the remainder is 3. In number theory, the mod operation always returns a nonnegative result: -7 mod 5 = 3 (since -7 ≡ 3 (mod 5) and 0 ≤ 3 < 5).",
+      "hints": [
+        "The remainder must satisfy 0 ≤ r < 5",
+        "-7 + 10 = 3, and 10 is a multiple of 5"
+      ],
+      "tags": ["modular_arithmetic"],
+      "points": 1
+    },
+    {
+      "id": "ds_nt_044",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "easy",
+      "title": "Properties of Prime Numbers",
+      "description": "Which of the following statements about prime numbers are TRUE? (Select all that apply)",
+      "options": [
+        "2 is the only even prime number",
+        "There are infinitely many prime numbers",
+        "Every integer greater than 1 is either prime or can be written as a product of primes",
+        "The sum of two primes is always prime"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A: 2 is the only even prime (all other even numbers are divisible by 2). B: Euclid proved there are infinitely many primes. C: This is the Fundamental Theorem of Arithmetic. D: Counterexample: 3 + 5 = 8, which is not prime.",
+      "hints": [
+        "Think about why no even number other than 2 can be prime",
+        "For D, try adding small primes together"
+      ],
+      "tags": ["primes"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_045",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Computing with Fermat's Little Theorem",
+      "description": "What is 7^225 mod 11?",
+      "options": [
+        "1",
+        "2",
+        "7",
+        "10"
+      ],
+      "correct_answer": "D",
+      "explanation": "By Fermat's little theorem, 7^10 ≡ 1 (mod 11). Since 225 = 22 * 10 + 5, we get 7^225 = (7^10)^22 * 7^5 ≡ 1^22 * 7^5 (mod 11). We compute: 7^2 = 49 ≡ 5 (mod 11), 7^4 ≡ 5^2 = 25 ≡ 3 (mod 11), 7^5 ≡ 3 * 7 = 21 ≡ 10 (mod 11). Therefore 7^225 ≡ 10 (mod 11).",
+      "hints": [
+        "By Fermat's little theorem, 7^10 ≡ 1 (mod 11)",
+        "Write 225 = q * 10 + r and simplify"
+      ],
+      "tags": ["fermat", "modular_arithmetic"],
+      "points": 3
+    },
+    {
+      "id": "ds_nt_046",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Modular Inverse via Extended Euclidean",
+      "description": "What is 7^(-1) mod 15? (The multiplicative inverse of 7 modulo 15)",
+      "options": [
+        "7",
+        "8",
+        "13",
+        "2"
+      ],
+      "correct_answer": "C",
+      "explanation": "We need x such that 7x ≡ 1 (mod 15). Testing: 7 * 13 = 91 = 6 * 15 + 1, so 7 * 13 ≡ 1 (mod 15). Therefore 7^(-1) ≡ 13 (mod 15). Alternatively, using the extended Euclidean algorithm: 15 = 2*7 + 1, so 1 = 15 - 2*7, giving 7*(-2) ≡ 1 (mod 15), and -2 ≡ 13 (mod 15).",
+      "hints": [
+        "Find x such that 7x leaves remainder 1 when divided by 15",
+        "You can use the extended Euclidean algorithm or try each option"
+      ],
+      "tags": ["inverses", "euclid"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_047",
+      "category": "number_theory",
+      "type": "fill_blanks",
+      "difficulty": "hard",
+      "title": "Linear Congruence Solvability",
+      "description": "The linear congruence ax ≡ b (mod m) has a solution if and only if {blank1} divides b. When a solution exists, there are exactly {blank2} incongruent solutions modulo m.",
+      "blanks": {
+        "blank1": {
+          "correct": "gcd(a, m)",
+          "options": ["a", "m", "gcd(a, m)", "lcm(a, m)"]
+        },
+        "blank2": {
+          "correct": "gcd(a, m)",
+          "options": ["1", "gcd(a, m)", "m", "a"]
+        }
+      },
+      "explanation": "The congruence ax ≡ b (mod m) has solutions iff gcd(a, m) | b. When solutions exist, there are exactly gcd(a, m) incongruent solutions modulo m. If gcd(a, m) = 1, there is a unique solution.",
+      "hints": [
+        "The same expression appears in both the existence condition and the count",
+        "When gcd(a, m) = 1, the solution is unique"
+      ],
+      "tags": ["linear_congruences", "gcd"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_048",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "GCD Using Prime Factorization",
+      "description": "Given that 600 = 2^3 * 3 * 5^2 and 540 = 2^2 * 3^3 * 5, what is gcd(600, 540)?",
+      "options": [
+        "30",
+        "60",
+        "120",
+        "180"
+      ],
+      "correct_answer": "B",
+      "explanation": "gcd is found by taking the minimum power of each common prime: min(3,2)=2 for prime 2, min(1,3)=1 for prime 3, min(2,1)=1 for prime 5. So gcd = 2^2 * 3^1 * 5^1 = 4 * 3 * 5 = 60.",
+      "hints": [
+        "For each prime factor, take the minimum of the two exponents",
+        "gcd(p^a * q^b, p^c * q^d) = p^min(a,c) * q^min(b,d)"
+      ],
+      "tags": ["gcd", "factorization"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_049",
+      "category": "number_theory",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "LCM Using Prime Factorization",
+      "description": "Given that 600 = 2^3 * 3 * 5^2 and 540 = 2^2 * 3^3 * 5, what is lcm(600, 540)?",
+      "options": [
+        "3600",
+        "5400",
+        "10800",
+        "324000"
+      ],
+      "correct_answer": "B",
+      "explanation": "lcm is found by taking the maximum power of each prime: max(3,2)=3 for prime 2, max(1,3)=3 for prime 3, max(2,1)=2 for prime 5. So lcm = 2^3 * 3^3 * 5^2 = 8 * 27 * 25 = 5400. Alternatively: lcm = 600 * 540 / gcd(600, 540) = 324000 / 60 = 5400.",
+      "hints": [
+        "For each prime factor, take the maximum of the two exponents",
+        "You can verify using: lcm(a,b) = a*b / gcd(a,b)"
+      ],
+      "tags": ["lcm", "factorization"],
+      "points": 2
+    },
+    {
+      "id": "ds_nt_050",
+      "category": "number_theory",
+      "type": "multiple_select",
+      "difficulty": "hard",
+      "title": "Fermat's Little Theorem: Conditions",
+      "description": "Which of the following are necessary conditions for Fermat's little theorem (a^(p-1) ≡ 1 (mod p)) to hold? (Select all that apply)",
+      "options": [
+        "p must be a prime number",
+        "a must be a positive integer",
+        "gcd(a, p) = 1 (i.e., p does not divide a)",
+        "a must be less than p"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "Fermat's little theorem requires: (A) p is prime, and (C) gcd(a, p) = 1 (equivalently, p does not divide a). The theorem holds for any integer a (not just positive), so B is not necessary. And a does not need to be less than p (e.g., 8^6 ≡ 1 (mod 7) with a=8 > p=7), so D is not required.",
+      "hints": [
+        "The theorem has two essential conditions on p and on the relationship between a and p",
+        "a can be any integer, as long as it's not divisible by p"
+      ],
+      "tags": ["fermat"],
+      "points": 2
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Start Practice - C Programming Practice{% endblock %}
+{% block title %}Start Practice - {{ active_exam.name }}{% endblock %}
 
 {% block content %}
 <div class="practice-start">
@@ -41,14 +41,9 @@
                 <p>Focus on a specific category</p>
                 <select name="category" class="form-control" required>
                     <option value="">Select Category</option>
-                    <option value="pointers_and_memory">Pointers & Memory Management (159 questions)</option>
-                    <option value="fundamentals">C Fundamentals & Types (172 questions)</option>
-                    <option value="arrays_and_strings">Arrays & Strings (87 questions)</option>
-                    <option value="structs_and_data_structures">Structs & Data Structures (88 questions)</option>
-                    <option value="control_flow">Control Flow & Loops (86 questions)</option>
-                    <option value="functions_and_recursion">Functions & Recursion (109 questions)</option>
-                    <option value="file_io">File I/O (42 questions)</option>
-                    <option value="programming_challenges">Programming Challenges (19 questions)</option>
+                    {% for cat in categories %}
+                    <option value="{{ cat.id }}">{{ cat.name }} ({{ cat.question_count }} questions)</option>
+                    {% endfor %}
                 </select>
                 <small class="field-message" data-message-for="category"></small>
                 <label class="form-label">Questions per session</label>

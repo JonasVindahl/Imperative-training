@@ -6,7 +6,8 @@ from models import Progress, db
 class AdaptiveLearningService:
     """Service for generating adaptive practice sessions based on user performance"""
 
-    CATEGORIES = [
+    # Legacy fallback categories (used when no exam-specific categories are provided)
+    DEFAULT_CATEGORIES = [
         'pointers_and_memory',
         'arrays_and_strings',
         'structs_and_data_structures',
@@ -17,8 +18,10 @@ class AdaptiveLearningService:
         'programming_challenges'
     ]
 
-    def __init__(self, user_id: int):
+    def __init__(self, user_id: int, categories: List[str] = None, exam_id: str = None):
         self.user_id = user_id
+        self.categories = categories or self.DEFAULT_CATEGORIES
+        self.exam_id = exam_id
 
     def get_recommended_categories(self, categories: List[str] = None) -> List[str]:
         """
@@ -27,13 +30,20 @@ class AdaptiveLearningService:
         Returns:
             List of category names sorted by weakest first
         """
-        categories = categories or self.CATEGORIES
-        progress_records = Progress.query.filter_by(user_id=self.user_id).all()
+        categories = categories or self.categories
+
+        if self.exam_id:
+            progress_records = Progress.query.filter_by(
+                user_id=self.user_id, exam_id=self.exam_id
+            ).all()
+        else:
+            progress_records = Progress.query.filter_by(user_id=self.user_id).all()
 
         # Calculate accuracy for each category
         category_scores = {}
         for record in progress_records:
-            category_scores[record.category] = record.accuracy
+            if record.category in categories:
+                category_scores[record.category] = record.accuracy
 
         # Add categories with no attempts (0% accuracy)
         for category in categories:
@@ -57,7 +67,7 @@ class AdaptiveLearningService:
         Returns:
             List of question dictionaries
         """
-        all_categories = list(questions_pool.keys()) or self.CATEGORIES
+        all_categories = list(questions_pool.keys()) or self.categories
         weak_categories = self.get_recommended_categories(all_categories)
 
         # 70% weak areas, 30% review from other areas
@@ -110,7 +120,12 @@ class AdaptiveLearningService:
         Returns:
             Dictionary with progress statistics
         """
-        progress_records = Progress.query.filter_by(user_id=self.user_id).all()
+        if self.exam_id:
+            progress_records = Progress.query.filter_by(
+                user_id=self.user_id, exam_id=self.exam_id
+            ).all()
+        else:
+            progress_records = Progress.query.filter_by(user_id=self.user_id).all()
 
         total_attempted = sum(p.total_attempted for p in progress_records)
         total_correct = sum(p.total_correct for p in progress_records)
@@ -129,7 +144,7 @@ class AdaptiveLearningService:
             }
 
         # Add categories with no attempts
-        categories = categories or self.CATEGORIES
+        categories = categories or self.categories
         for category in categories:
             if category not in category_progress:
                 category_progress[category] = {
@@ -175,15 +190,17 @@ class AdaptiveLearningService:
             category: Question category
             correct: Whether the answer was correct
         """
-        progress = Progress.query.filter_by(
-            user_id=self.user_id,
-            category=category
-        ).first()
+        filter_kwargs = dict(user_id=self.user_id, category=category)
+        if self.exam_id:
+            filter_kwargs['exam_id'] = self.exam_id
+
+        progress = Progress.query.filter_by(**filter_kwargs).first()
 
         if not progress:
             progress = Progress(
                 user_id=self.user_id,
                 category=category,
+                exam_id=self.exam_id or 'c_programming',
                 total_attempted=0,
                 total_correct=0
             )

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint, render_template, jsonify, current_app
 from flask_login import login_required, current_user
 from services.adaptive import AdaptiveLearningService
 from services.question_loader import QuestionLoader
@@ -8,21 +8,32 @@ from datetime import datetime, timedelta
 progress_bp = Blueprint('progress', __name__, url_prefix='/progress')
 
 
+def _get_exam_context():
+    """Get current exam info from the exam service"""
+    exam_service = current_app.config['EXAM_SERVICE']
+    exam_id = exam_service.get_active_exam_id()
+    category_ids = exam_service.get_category_ids_for_exam(exam_id)
+    return exam_id, category_ids
+
+
 @progress_bp.route('/dashboard')
 @login_required
 def dashboard():
     """Main dashboard showing user progress"""
-    adaptive_service = AdaptiveLearningService(current_user.id)
+    exam_id, category_ids = _get_exam_context()
+
+    adaptive_service = AdaptiveLearningService(
+        current_user.id, categories=category_ids, exam_id=exam_id
+    )
     progress_summary = adaptive_service.get_progress_summary()
 
-    # Get recent attempts
-    recent_attempts = Attempt.query.filter_by(user_id=current_user.id)\
-        .order_by(Attempt.timestamp.desc())\
-        .limit(10)\
-        .all()
+    # Get recent attempts for this exam
+    recent_attempts = Attempt.query.filter_by(
+        user_id=current_user.id, exam_id=exam_id
+    ).order_by(Attempt.timestamp.desc()).limit(10).all()
 
     # Calculate streak
-    streak = calculate_streak(current_user.id)
+    streak = calculate_streak(current_user.id, exam_id)
 
     return render_template('dashboard.html',
                          progress=progress_summary,
@@ -35,24 +46,27 @@ def dashboard():
 @login_required
 def stats():
     """Detailed statistics page"""
-    adaptive_service = AdaptiveLearningService(current_user.id)
+    exam_id, category_ids = _get_exam_context()
+
+    adaptive_service = AdaptiveLearningService(
+        current_user.id, categories=category_ids, exam_id=exam_id
+    )
     progress_summary = adaptive_service.get_progress_summary()
 
-    # Get all attempts
-    all_attempts = Attempt.query.filter_by(user_id=current_user.id)\
-        .order_by(Attempt.timestamp.desc())\
-        .all()
+    # Get all attempts for this exam
+    all_attempts = Attempt.query.filter_by(
+        user_id=current_user.id, exam_id=exam_id
+    ).order_by(Attempt.timestamp.desc()).all()
 
     # Calculate additional statistics
     total_time = sum(a.time_spent for a in all_attempts)
     avg_time_per_question = total_time / len(all_attempts) if all_attempts else 0
 
-    # Category breakdown - initialize all categories
-    all_categories = AdaptiveLearningService.CATEGORIES
+    # Category breakdown - initialize all categories for this exam
     category_stats = {}
 
     # Initialize all categories with zero stats
-    for category in all_categories:
+    for category in category_ids:
         category_stats[category] = {
             'correct': 0,
             'total': 0,
@@ -93,18 +107,22 @@ def stats():
         else:
             trend_accuracy.append(int((correct / total) * 100))
 
+    # Get category display names from exam service
+    exam_service = current_app.config['EXAM_SERVICE']
+
     category_labels = []
     category_accuracy = []
     category_summary = []
     for category in sorted(category_stats.keys()):
-        stats = category_stats[category]
-        category_labels.append(category.replace('_', ' ').title())
-        if stats['total'] > 0:
-            accuracy = int((stats['correct'] / stats['total']) * 100)
+        stats_data = category_stats[category]
+        display_name = exam_service.get_category_name(exam_id, category)
+        category_labels.append(display_name)
+        if stats_data['total'] > 0:
+            accuracy = int((stats_data['correct'] / stats_data['total']) * 100)
         else:
             accuracy = 0
         category_accuracy.append(accuracy)
-        category_summary.append(f"{category_labels[-1]}: {accuracy}%")
+        category_summary.append(f"{display_name}: {accuracy}%")
 
     return render_template('stats.html',
                          progress=progress_summary,
@@ -124,24 +142,31 @@ def stats():
 @login_required
 def api_progress():
     """API endpoint for progress data (for charts)"""
-    adaptive_service = AdaptiveLearningService(current_user.id)
+    exam_id, category_ids = _get_exam_context()
+
+    adaptive_service = AdaptiveLearningService(
+        current_user.id, categories=category_ids, exam_id=exam_id
+    )
     progress_summary = adaptive_service.get_progress_summary()
     return jsonify(progress_summary)
 
 
-def calculate_streak(user_id: int) -> int:
+def calculate_streak(user_id: int, exam_id: str = None) -> int:
     """
     Calculate the current practice streak in days
 
     Args:
         user_id: User ID
+        exam_id: Optional exam to filter by
 
     Returns:
         Number of consecutive days practiced
     """
-    attempts = Attempt.query.filter_by(user_id=user_id)\
-        .order_by(Attempt.timestamp.desc())\
-        .all()
+    query = Attempt.query.filter_by(user_id=user_id)
+    if exam_id:
+        query = query.filter_by(exam_id=exam_id)
+
+    attempts = query.order_by(Attempt.timestamp.desc()).all()
 
     if not attempts:
         return 0

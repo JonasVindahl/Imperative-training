@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, current_app
 from flask_login import login_required, current_user
 from services.question_loader import QuestionLoader
 from services.grader import GraderService
@@ -16,10 +16,22 @@ grader_service = GraderService()
 compiler_service = CompilerService()
 
 
+def _get_exam_context():
+    """Get current exam info from the exam service"""
+    exam_service = current_app.config['EXAM_SERVICE']
+    exam_id = exam_service.get_active_exam_id()
+    exam = exam_service.get_active_exam()
+    category_ids = exam_service.get_category_ids_for_exam(exam_id)
+    categories = exam_service.get_categories_for_exam(exam_id)
+    return exam_id, exam, category_ids, categories
+
+
 @practice_bp.route('/start', methods=['GET', 'POST'])
 @login_required
 def start_practice():
     """Start a new practice session"""
+    exam_id, exam, category_ids, categories = _get_exam_context()
+
     if request.method == 'POST':
         # Clear any existing session data before starting a new one
         session.pop('practice_questions', None)
@@ -36,12 +48,19 @@ def start_practice():
             requested_count = 10
         requested_count = max(1, min(requested_count, 50))
 
-        # Load questions
-        all_questions = question_loader.load_all_questions()
+        # Store exam_id in session for the practice run
+        session['practice_exam_id'] = exam_id
+
+        # Load questions for this exam
+        all_questions = question_loader.load_all_questions(
+            exam_id=exam_id, categories=category_ids
+        )
 
         if mode == 'smart':
             # Adaptive learning mode
-            adaptive_service = AdaptiveLearningService(current_user.id)
+            adaptive_service = AdaptiveLearningService(
+                current_user.id, categories=category_ids, exam_id=exam_id
+            )
             questions = adaptive_service.generate_practice_session(
                 all_questions,
                 session_size=requested_count
@@ -56,10 +75,13 @@ def start_practice():
                 return render_template(
                     'start_practice.html',
                     has_active_session=has_active_session,
-                    remaining_questions=remaining_questions
+                    remaining_questions=remaining_questions,
+                    categories=categories
                 )
             # Specific category practice
-            questions = question_loader.get_random_questions(category, requested_count)
+            questions = question_loader.get_random_questions(
+                category, requested_count, exam_id=exam_id
+            )
         else:
             # Random mixed practice
             import random
@@ -83,10 +105,18 @@ def start_practice():
     has_active_session = bool(question_ids) and current_index < len(question_ids)
     remaining_questions = max(len(question_ids) - current_index, 0)
 
+    # Count questions per category for display
+    all_questions = question_loader.load_all_questions(
+        exam_id=exam_id, categories=category_ids
+    )
+    for cat in categories:
+        cat['question_count'] = len(all_questions.get(cat['id'], []))
+
     return render_template(
         'start_practice.html',
         has_active_session=has_active_session,
-        remaining_questions=remaining_questions
+        remaining_questions=remaining_questions,
+        categories=categories
     )
 
 
@@ -99,12 +129,13 @@ def question():
 
     question_ids = session.get('practice_questions', [])
     current_index = session.get('current_question_index', 0)
+    practice_exam_id = session.get('practice_exam_id')
 
     if current_index >= len(question_ids):
         return redirect(url_for('practice.session_complete'))
 
     question_id = question_ids[current_index]
-    question_data = question_loader.get_question_by_id(question_id)
+    question_data = question_loader.get_question_by_id(question_id, exam_id=practice_exam_id)
 
     if not question_data:
         return redirect(url_for('practice.session_complete'))
@@ -133,8 +164,13 @@ def submit_answer():
     if not question_id:
         return jsonify({'error': 'Missing question_id'}), 400
 
+    practice_exam_id = session.get('practice_exam_id')
+    exam_service = current_app.config['EXAM_SERVICE']
+    exam_id = practice_exam_id or exam_service.get_active_exam_id()
+    category_ids = exam_service.get_category_ids_for_exam(exam_id)
+
     # Load question
-    question = question_loader.get_question_by_id(question_id)
+    question = question_loader.get_question_by_id(question_id, exam_id=exam_id)
     if not question:
         return jsonify({'error': 'Question not found'}), 404
 
@@ -153,6 +189,7 @@ def submit_answer():
         user_id=current_user.id,
         question_id=question_id,
         category=question['category'],
+        exam_id=exam_id,
         correct=result['correct'],
         time_spent=time_spent,
         submitted_answer=user_answer,
@@ -161,7 +198,9 @@ def submit_answer():
     db.session.add(attempt)
 
     # Update progress
-    adaptive_service = AdaptiveLearningService(current_user.id)
+    adaptive_service = AdaptiveLearningService(
+        current_user.id, categories=category_ids, exam_id=exam_id
+    )
     adaptive_service.update_progress(question['category'], result['correct'])
 
     answered_questions = session.get('answered_questions', [])
@@ -210,14 +249,16 @@ def session_complete():
     correct_count = sum(1 for a in attempts if a.correct)
     total_time = sum(a.time_spent for a in attempts)
 
+    practice_exam_id = session.get('practice_exam_id')
+
     incorrect_details = []
     for attempt in attempts:
         if not attempt.correct:
-            question = question_loader.get_question_by_id(attempt.question_id)
-            if question:
+            q = question_loader.get_question_by_id(attempt.question_id, exam_id=practice_exam_id)
+            if q:
                 incorrect_details.append({
                     'attempt': attempt,
-                    'question': question
+                    'question': q
                 })
 
     # Clear session
@@ -225,6 +266,7 @@ def session_complete():
     session.pop('current_question_index', None)
     session.pop('session_start_time', None)
     session.pop('answered_questions', None)
+    session.pop('practice_exam_id', None)
 
     return render_template('session_complete.html',
                          attempts=attempts,
