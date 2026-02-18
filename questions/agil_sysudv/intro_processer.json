@@ -1,0 +1,1085 @@
+{
+  "questions": [
+    {
+      "id": "agil_intro_001",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Vandfaldsmodellen",
+      "description": "Hvad kendetegner vandfaldsmodellen?",
+      "options": [
+        "Der er ingen definerede faser",
+        "Faserne gentages i iterationer",
+        "Faserne udføres sekventielt uden overlap",
+        "Kunden er involveret i hver fase"
+      ],
+      "correct_answer": "C",
+      "explanation": "Vandfaldsmodellen er en sekventiel procesmodel hvor faserne udføres én ad gangen: krav, design, implementering, test, vedligeholdelse.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "waterfall"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_002",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Agile Manifesto Værdier",
+      "description": "Hvor mange kerneværdier indeholder Agile Manifesto?",
+      "options": [
+        "12",
+        "4",
+        "6",
+        "8"
+      ],
+      "correct_answer": "B",
+      "explanation": "Agile Manifesto indeholder 4 kerneværdier og 12 principper.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_003",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Agile Manifesto Principper",
+      "description": "Hvor mange principper er der bag Agile Manifesto?",
+      "options": [
+        "12",
+        "8",
+        "4",
+        "16"
+      ],
+      "correct_answer": "A",
+      "explanation": "Der er 12 principper bag Agile Manifesto som uddyber de 4 kerneværdier.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_004",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Individer over processer",
+      "description": "Hvad foretrækker Agile Manifesto frem for processer og værktøjer?",
+      "options": [
+        "Omfattende dokumentation",
+        "Kontraktforhandling",
+        "Individer og interaktioner",
+        "At følge en plan"
+      ],
+      "correct_answer": "C",
+      "explanation": "Agile Manifesto siger: Individer og interaktioner over processer og værktøjer.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_005",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Fungerende software",
+      "description": "Hvad foretrækker Agile Manifesto frem for omfattende dokumentation?",
+      "options": [
+        "Kontraktforhandling",
+        "Processer og værktøjer",
+        "At følge en plan",
+        "Fungerende software"
+      ],
+      "correct_answer": "D",
+      "explanation": "Agile Manifesto: Fungerende software over omfattende dokumentation.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_006",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Plan-drevet kendetegn",
+      "description": "Hvad er typisk for plan-drevne procesmodeller?",
+      "options": [
+        "Ingen dokumentation",
+        "Detaljeret planlægning forud for udvikling",
+        "Korte iterationer",
+        "Selvorganiserende teams"
+      ],
+      "correct_answer": "B",
+      "explanation": "Plan-drevne modeller kendetegnes ved detaljeret planlægning og dokumentation før udvikling.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "plan-driven"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_007",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Iterativ udvikling",
+      "description": "Hvad betyder iterativ udvikling?",
+      "options": [
+        "Man gentager og forfiner gennem flere cyklusser",
+        "Man udvikler alt på én gang",
+        "Man følger en streng plan",
+        "Man springer testfasen over"
+      ],
+      "correct_answer": "A",
+      "explanation": "Iterativ udvikling handler om at gentage cyklusser af udvikling for at forfine produktet.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "iterativ"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_008",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Agil metode eksempel",
+      "description": "Hvilken af følgende er en agil metode?",
+      "options": [
+        "Scrum",
+        "V-modellen",
+        "Vandfaldsmodellen",
+        "PRINCE2"
+      ],
+      "correct_answer": "A",
+      "explanation": "Scrum er den mest udbredte agile metode/framework.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "scrum",
+        "agil"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_009",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Projektfaser",
+      "description": "Hvad er hovedformålet med analysefasen?",
+      "options": [
+        "At forstå og dokumentere hvad systemet skal kunne",
+        "At skrive koden",
+        "At teste systemet",
+        "At deploye systemet"
+      ],
+      "correct_answer": "A",
+      "explanation": "Analysefasen handler om at forstå problemdomænet og dokumentere kravene.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "faser"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_010",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Kundesamarbejde",
+      "description": "Hvad foretrækker Agile Manifesto frem for kontraktforhandling?",
+      "options": [
+        "Processer og værktøjer",
+        "Omfattende dokumentation",
+        "At følge en plan",
+        "Kundesamarbejde"
+      ],
+      "correct_answer": "D",
+      "explanation": "Agile Manifesto: Kundesamarbejde over kontraktforhandling.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_011",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Reagere på forandring",
+      "description": "Hvad foretrækker Agile Manifesto frem for at følge en plan?",
+      "options": [
+        "Processer og værktøjer",
+        "At reagere på forandring",
+        "Kontraktforhandling",
+        "Omfattende dokumentation"
+      ],
+      "correct_answer": "B",
+      "explanation": "Agile Manifesto: At reagere på forandring over at følge en plan.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_012",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "XP",
+      "description": "Hvad står XP for i agil kontekst?",
+      "options": [
+        "Extreme Programming",
+        "Extra Programming",
+        "Extended Process",
+        "External Planning"
+      ],
+      "correct_answer": "A",
+      "explanation": "Extreme Programming (XP) er en agil metode med fokus på tekniske praksisser.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "XP"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_013",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "V-modellen",
+      "description": "Hvad er V-modellen?",
+      "options": [
+        "En udvidelse af vandfaldsmodellen med matchende testfaser",
+        "En agil metode",
+        "En iterativ model",
+        "Et UML-diagram"
+      ],
+      "correct_answer": "A",
+      "explanation": "V-modellen udvider vandfaldsmodellen ved at koble hver udviklingsfase til en testfase.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "v-model"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_014",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Vedligeholdelsesfasen",
+      "description": "Hvad sker i vedligeholdelsesfasen?",
+      "options": [
+        "Fejl rettes og systemet opdateres efter lancering",
+        "Systemet designes",
+        "Krav indsamles",
+        "Koden skrives for første gang"
+      ],
+      "correct_answer": "A",
+      "explanation": "Vedligeholdelse handler om at rette fejl, opdatere og forbedre systemet efter lancering.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "faser"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_015",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Agile højre side",
+      "description": "Hvad siger Agile Manifesto om elementerne på højre side?",
+      "options": [
+        "De skal ignoreres",
+        "De er forbudte",
+        "De er vigtigere",
+        "De har stadig værdi, men venstre side værdsættes højere"
+      ],
+      "correct_answer": "D",
+      "explanation": "Manifestet siger at elementer til højre stadig har værdi, men venstre side prioriteres.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "agile-manifesto"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_016",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Spiralmodellen",
+      "description": "Hvad er spiralmodellens vigtigste kendetegn?",
+      "options": [
+        "Den har ingen faser",
+        "Den bruger ingen dokumentation",
+        "Den er kun til små projekter",
+        "Systematisk risikoanalyse i hver iteration"
+      ],
+      "correct_answer": "D",
+      "explanation": "Spiralmodellen fokuserer på systematisk risikoanalyse i hver iteration af udviklingscyklussen.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "spiralmodel"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_017",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Face-to-face kommunikation",
+      "description": "Hvad siger de agile principper om den mest effektive kommunikationsform?",
+      "options": [
+        "E-mail er mest effektiv",
+        "Skriftlig dokumentation er altid bedst",
+        "Face-to-face samtale er mest effektiv",
+        "Videokonference er den eneste acceptable form"
+      ],
+      "correct_answer": "C",
+      "explanation": "Et agilt princip siger at face-to-face samtale er den mest effektive kommunikationsform.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_018",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Bæredygtigt tempo",
+      "description": "Hvad siger agile principper om arbejdstempo?",
+      "options": [
+        "Teamet skal arbejde så hurtigt som muligt",
+        "Overarbejde er acceptabelt for kunden",
+        "Agile fremmer bæredygtig udvikling med konstant tempo",
+        "Tempo bestemmes af projektlederen"
+      ],
+      "correct_answer": "C",
+      "explanation": "Agile principper fremmer bæredygtig udvikling hvor alle kan opretholde et konstant tempo.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_019",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Selvorganisering",
+      "description": "Hvad siger agile principper om teamorganisering?",
+      "options": [
+        "Projektlederen fordeler alle opgaver",
+        "Kun seniorudviklere træffer beslutninger",
+        "Hierarki er mest effektivt",
+        "De bedste resultater kommer fra selvorganiserende teams"
+      ],
+      "correct_answer": "D",
+      "explanation": "Et agilt princip siger at de bedste resultater kommer fra selvorganiserende teams.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_020",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Enkelhed",
+      "description": "Hvad siger agile principper om enkelhed?",
+      "options": [
+        "Enkelhed er irrelevant",
+        "Enkelhed - kunsten at maksimere arbejde der IKKE udføres - er essentiel",
+        "Systemet skal være så komplekst som muligt",
+        "Enkelhed gælder kun for UI"
+      ],
+      "correct_answer": "B",
+      "explanation": "Et agilt princip: Enkelhed - kunsten at maksimere mængden af arbejde der ikke udføres - er essentiel.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_021",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "RUP",
+      "description": "Hvad kendetegner RUP?",
+      "options": [
+        "Den er udelukkende agil",
+        "Den kombinerer iterativ udvikling med fasedrevet struktur og UML",
+        "Den er kun plan-drevet",
+        "Den fokuserer kun på test"
+      ],
+      "correct_answer": "B",
+      "explanation": "RUP kombinerer iterativ og inkrementel udvikling med fasedrevet struktur og bruger UML.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "RUP"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_022",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Kanban vs Scrum",
+      "description": "Hvad er en nøgleforskel mellem Kanban og Scrum?",
+      "options": [
+        "Kanban har faste sprints",
+        "Kanban bruger WIP-limits og har ingen faste iterationer",
+        "Scrum har ingen roller",
+        "Scrum bruger ikke timeboxing"
+      ],
+      "correct_answer": "B",
+      "explanation": "Kanban bruger WIP-limits og har ingen faste iterationer, i modsætning til Scrums sprints.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "kanban"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_023",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Iterativ vs inkrementel",
+      "description": "Hvad er forskellen på iterativ og inkrementel udvikling?",
+      "options": [
+        "Iterativ gentager og forfiner, inkrementel tilføjer nye dele",
+        "Iterativ bygger stykkevis, inkrementel forfiner",
+        "De er det samme",
+        "Inkrementel bruges kun i vandfald"
+      ],
+      "correct_answer": "A",
+      "explanation": "Iterativ = gentage og forfine. Inkrementel = tilføje ny funktionalitet i bidder.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "iterativ"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_024",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "V-model test",
+      "description": "Hvilken testtype i V-modellen svarer til kravspecifikationen?",
+      "options": [
+        "Unittest",
+        "Integrationstest",
+        "Accepttest",
+        "Systemtest"
+      ],
+      "correct_answer": "C",
+      "explanation": "I V-modellen svarer accepttest til kravspecifikationen - kunden verificerer at krav er opfyldt.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "v-model"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_025",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Fungerende software som mål",
+      "description": "Hvad er det primære mål for fremskridt ifølge agile principper?",
+      "options": [
+        "Antal sider dokumentation",
+        "Timer brugt på projektet",
+        "Fungerende software",
+        "Antal gennemførte møder"
+      ],
+      "correct_answer": "C",
+      "explanation": "Et agilt princip: Fungerende software er det primære mål for fremskridt.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_026",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Motiverede individer",
+      "description": "Hvad siger agile principper om at bygge projekter?",
+      "options": [
+        "Omkring detaljerede planer",
+        "Omkring motiverede individer med tillid og støtte",
+        "Omkring strenge processer",
+        "Omkring avancerede værktøjer"
+      ],
+      "correct_answer": "B",
+      "explanation": "Princip: Byg projekter omkring motiverede individer, giv dem støtte og stol på dem.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_027",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Regelmæssig refleksion",
+      "description": "Hvad siger agile principper om teamets selvforbedring?",
+      "options": [
+        "Regelmæssig refleksion og justering af adfærd",
+        "Kun projektleder vurderer",
+        "Kun evaluering ved projektafslutning",
+        "Selvforbedring er ikke et princip"
+      ],
+      "correct_answer": "A",
+      "explanation": "Princip: Teamet reflekterer regelmæssigt over effektivitet og justerer adfærd.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_028",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hyppige leveringer",
+      "description": "Hvad siger agile principper om leveringer af fungerende software?",
+      "options": [
+        "Kun én gang ved projektafslutning",
+        "Hvert andet år",
+        "Kun når kunden beder om det",
+        "Hyppigt, fra uger til måneder, med præference for kort tidsskala"
+      ],
+      "correct_answer": "D",
+      "explanation": "Princip: Lever fungerende software hyppigt, fra uger til måneder, med præference for kort tidsskala.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_029",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Vandfaldsmodel fordel",
+      "description": "Hvad er en fordel ved vandfaldsmodellen?",
+      "options": [
+        "Klar struktur med milepæle og dokumentation",
+        "Hurtigere feedback",
+        "Bedre til ændrede krav",
+        "Kræver mindre planlægning"
+      ],
+      "correct_answer": "A",
+      "explanation": "Vandfaldsmodellens fordel er klar struktur med definerede faser og milepæle.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "vandfaldsmodel"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_030",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Designfasen",
+      "description": "Hvad sker i designfasen?",
+      "options": [
+        "Krav indsamles fra brugere",
+        "Systemet testes",
+        "Koden implementeres",
+        "Systemets arkitektur og struktur fastlægges"
+      ],
+      "correct_answer": "D",
+      "explanation": "Designfasen handler om at fastlægge systemets arkitektur, struktur og tekniske løsninger.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "faser"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_031",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Teknisk ekspertise",
+      "description": "Hvad siger agile principper om teknisk ekspertise?",
+      "options": [
+        "Det er irrelevant",
+        "Løbende opmærksomhed på teknisk ekspertise og godt design forbedrer agilitet",
+        "Kun senior-udviklere behøver ekspertise",
+        "Teknisk gæld er acceptabelt"
+      ],
+      "correct_answer": "B",
+      "explanation": "Princip: Løbende opmærksomhed på teknisk ekspertise og godt design forbedrer agilitet.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_032",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Velkomne ændringer",
+      "description": "Hvad siger agile principper om kravændringer?",
+      "options": [
+        "Kravændringer er forbudte efter sprint start",
+        "Ændringer kræver ny kontrakt",
+        "Kun product owner kan ændre krav",
+        "Velkommen kravændringer, selv sent i udviklingen"
+      ],
+      "correct_answer": "D",
+      "explanation": "Princip: Velkommen kravændringer, selv sent i udviklingen. Agile processer udnytter forandring.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_033",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Forretningsfolk og udviklere",
+      "description": "Hvad siger agile principper om samarbejde mellem forretningsfolk og udviklere?",
+      "options": [
+        "De skal holdes adskilt",
+        "Kun ved projektstart",
+        "De skal arbejde sammen dagligt gennem hele projektet",
+        "Kun via skriftlig kommunikation"
+      ],
+      "correct_answer": "C",
+      "explanation": "Princip: Forretningsfolk og udviklere skal arbejde sammen dagligt gennem hele projektet.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "principper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_034",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Plan-drevet risiko",
+      "description": "Hvornår er plan-drevet tilgang mere risikabel end agil?",
+      "options": [
+        "Når teamet er stort",
+        "Når krav er stabile",
+        "Når marked og teknologi ændrer sig hurtigt",
+        "Når sikkerhedskrav er kritiske"
+      ],
+      "correct_answer": "C",
+      "explanation": "I dynamiske miljøer er plan-drevne modeller risikable da planen hurtigt forældes.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "procesvalg"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_035",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "RUP Elaboration",
+      "description": "Hvad er hovedmålet med Elaboration-fasen i RUP?",
+      "options": [
+        "Definere forretningscase",
+        "Udvikle al funktionalitet",
+        "Overgive systemet",
+        "Etablere stabil arkitektur og adressere største risici"
+      ],
+      "correct_answer": "D",
+      "explanation": "Elaboration i RUP fokuserer på stabil arkitektur og at adressere de største risici.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "RUP"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_036",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Procesmodel valg",
+      "description": "Hvilken faktor er MINDST relevant ved valg af procesmodel?",
+      "options": [
+        "Kravenes stabilitet",
+        "Programmeringssproget",
+        "Projektets størrelse",
+        "Graden af kundeindvolvering"
+      ],
+      "correct_answer": "B",
+      "explanation": "Programmeringssproget er generelt mindst relevant - procesmodeller er teknologiuafhængige.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "procesvalg"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_037",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Prototyping i procesmodeller",
+      "description": "Hvilken model bruger prototyper mest systematisk til risikohåndtering?",
+      "options": [
+        "Vandfaldsmodellen",
+        "V-modellen",
+        "Spiralmodellen",
+        "Extreme Programming"
+      ],
+      "correct_answer": "C",
+      "explanation": "Spiralmodellen bruger systematisk prototyper som del af risikoanalysen i hver iteration.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "spiralmodel"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_038",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Agil skalering",
+      "description": "Hvad er en udfordring ved at skalere agile metoder?",
+      "options": [
+        "De virker kun for webprojekter",
+        "De kræver for lidt dokumentation",
+        "Koordination mellem flere teams og bevarelse af agile principper",
+        "De er for langsomme"
+      ],
+      "correct_answer": "C",
+      "explanation": "Skalering af agile metoder kræver koordination mellem teams uden at miste agile principper.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "skalering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_039",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Cone of Uncertainty",
+      "description": "Hvad beskriver 'Cone of Uncertainty' i softwareudvikling?",
+      "options": [
+        "At estimater bliver mere præcise jo længere man er i projektet",
+        "At budgettet altid stiger",
+        "At kunder altid ændrer mening",
+        "At teams altid undervurderer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Cone of Uncertainty viser at usikkerhed i estimater reduceres efterhånden som projektet skrider frem.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "estimering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_040",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Inkrementel levering fordel",
+      "description": "Hvad er den primære fordel ved inkrementel levering?",
+      "options": [
+        "Mindre dokumentation kræves",
+        "Teamet kan arbejde mindre",
+        "Tidlig og kontinuerlig feedback og værdi til kunden",
+        "Ingen behov for test"
+      ],
+      "correct_answer": "C",
+      "explanation": "Inkrementel levering giver tidlig feedback og værdi, samt mulighed for kursændring.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "inkrementel"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_041",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Technical debt",
+      "description": "Hvad er teknisk gæld i agil udvikling?",
+      "options": [
+        "Penge man skylder for software",
+        "For mange møder",
+        "Manglende hardware",
+        "Kompromiser i kodekvali som skal rettes senere"
+      ],
+      "correct_answer": "D",
+      "explanation": "Teknisk gæld er bevidste kompromiser i kodekvalitet der giver kort-sigtet gevinst men langsigtet kostnad.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "teknisk-gaeld"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_042",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Empirisk proceskontrol",
+      "description": "Hvad er grundlaget for empirisk proceskontrol i Scrum?",
+      "options": [
+        "Detaljeret planlægning",
+        "Transparens, inspektion og tilpasning",
+        "Hierarkisk ledelse",
+        "Streng dokumentation"
+      ],
+      "correct_answer": "B",
+      "explanation": "Scrum er baseret på empirisk proceskontrol med tre søjler: transparens, inspektion og tilpasning.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_043",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Lean Software Development",
+      "description": "Hvad er et kernekoncept fra Lean Software Development?",
+      "options": [
+        "Mere dokumentation giver bedre kvalitet",
+        "Eliminer spild (waste) i udviklingsprocessen",
+        "Større teams er altid bedre",
+        "Planlæg alt fra start"
+      ],
+      "correct_answer": "B",
+      "explanation": "Lean Software Development fokuserer på at eliminere spild og maksimere værdi.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "lean"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_044",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Vandfaldsmodel ulempe",
+      "description": "Hvad er den største ulempe ved vandfaldsmodellen?",
+      "options": [
+        "For mange møder",
+        "For hurtige leveringer",
+        "For lidt dokumentation",
+        "Svært at håndtere ændringer sent i projektet"
+      ],
+      "correct_answer": "D",
+      "explanation": "Vandfaldsmodellens største ulempe er at ændringer sent i projektet er dyre og svære.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "vandfaldsmodel"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_intro_045",
+      "category": "intro_processer",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Crystal metoder",
+      "description": "Hvad kendetegner Crystal-metodefamilien?",
+      "options": [
+        "Forskellige varianter tilpasset projektets størrelse og kritikalitet",
+        "Kun én fast proces for alle projekter",
+        "Kun til Java-projekter",
+        "Ingen kommunikation mellem teammedlemmer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Crystal er en familie af agile metoder med varianter tilpasset projektets størrelse og kritikalitet.",
+      "hints": [
+        "Tænk over de grundlæggende begreber",
+        "Overvej hvad der passer bedst til konteksten"
+      ],
+      "tags": [
+        "crystal"
+      ],
+      "points": 1
+    }
+  ]
+}

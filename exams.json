@@ -109,6 +109,61 @@
           "file": "data_structures.json"
         }
       ]
+    },
+    {
+      "id": "agil_sysudv",
+      "name": "Agil Systemudvikling",
+      "short_name": "Agil",
+      "description": "Agil systemudvikling - SCRUM, kravspecifikation, UML, analyse, design, modularisering og testning.",
+      "icon": "🔄",
+      "language": "da",
+      "categories": [
+        {
+          "id": "intro_processer",
+          "name": "Intro & Systemudviklingsprocesser",
+          "file": "intro_processer.json"
+        },
+        {
+          "id": "scrum_agile",
+          "name": "SCRUM & Agile Processer",
+          "file": "scrum_agile.json"
+        },
+        {
+          "id": "kravspecifikation",
+          "name": "Kravspecifikation",
+          "file": "kravspecifikation.json"
+        },
+        {
+          "id": "bruger_centreret",
+          "name": "Bruger-centreret Fokus",
+          "file": "bruger_centreret.json"
+        },
+        {
+          "id": "analyse_design_1",
+          "name": "Analyse & Design: Use Cases & UML",
+          "file": "analyse_design_1.json"
+        },
+        {
+          "id": "analyse_design_2",
+          "name": "Analyse & Design: Diagrammer",
+          "file": "analyse_design_2.json"
+        },
+        {
+          "id": "modularisering",
+          "name": "Modularisering & Arkitektur",
+          "file": "modularisering.json"
+        },
+        {
+          "id": "scrum_uml",
+          "name": "SCRUM + UML Kombination",
+          "file": "scrum_uml.json"
+        },
+        {
+          "id": "testning",
+          "name": "Testning",
+          "file": "testning.json"
+        }
+      ]
     }
   ],
   "default_exam": "c_programming"

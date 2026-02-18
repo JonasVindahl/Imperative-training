@@ -1,0 +1,964 @@
+{
+  "questions": [
+    {
+      "id": "agil_bruger_001",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Persona definition",
+      "description": "Hvad er en persona?",
+      "options": [
+        "En rigtig bruger",
+        "En kodestil",
+        "Et testscenarie",
+        "En fiktiv repræsentation af en typisk bruger baseret på research"
+      ],
+      "correct_answer": "D",
+      "explanation": "En persona er en fiktiv, detaljeret repræsentation af en typisk brugertype.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "personas"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_002",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Low-fidelity prototype",
+      "description": "Hvad er en low-fidelity prototype?",
+      "options": [
+        "Et færdigt produkt",
+        "En enkel, hurtig skitse der viser grundlæggende layout og funktionalitet",
+        "En database",
+        "En server"
+      ],
+      "correct_answer": "B",
+      "explanation": "Low-fi prototyper er enkle skitser, ofte på papir, der viser grundlæggende ideer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prototyping"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_003",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "High-fidelity prototype",
+      "description": "Hvad er en high-fidelity prototype?",
+      "options": [
+        "En papirskitse",
+        "En testplan",
+        "Et kravdokument",
+        "En detaljeret, interaktiv prototype der ligner det færdige produkt"
+      ],
+      "correct_answer": "D",
+      "explanation": "High-fi prototyper er detaljerede og interaktive, tæt på det endelige design.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prototyping"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_004",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Wireframe",
+      "description": "Hvad er en wireframe?",
+      "options": [
+        "En skematisk tegning der viser layout og placering af elementer",
+        "En kodningsstil",
+        "En database-skema",
+        "En netværkstopologi"
+      ],
+      "correct_answer": "A",
+      "explanation": "Wireframes er skematiske tegninger der viser strukturen og placering af UI-elementer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "wireframes"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_005",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "UCD",
+      "description": "Hvad står UCD for?",
+      "options": [
+        "Unified Code Design",
+        "Unit Code Debugging",
+        "Universal Component Development",
+        "User-Centered Design"
+      ],
+      "correct_answer": "D",
+      "explanation": "UCD = User-Centered Design - en tilgang der sætter brugeren i centrum.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "ucd"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_006",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Scenarie",
+      "description": "Hvad er et brugerscenarie?",
+      "options": [
+        "En testcase",
+        "En kodebeskrivelse",
+        "En narrativ beskrivelse af hvordan en bruger interagerer med systemet",
+        "Et UML-diagram"
+      ],
+      "correct_answer": "C",
+      "explanation": "Et scenarie beskriver en konkret situation hvor en bruger interagerer med systemet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "scenarier"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_007",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Mockup",
+      "description": "Hvad er forskellen på wireframe og mockup?",
+      "options": [
+        "Der er ingen forskel",
+        "Wireframes er mere detaljerede",
+        "Mockups er mere visuelle og detaljerede med farver og grafik",
+        "Mockups er kun tekst"
+      ],
+      "correct_answer": "C",
+      "explanation": "Mockups tilføjer visuelt design (farver, fonte, grafik) til wireframens struktur.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "mockups"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_008",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Stakeholder analyse",
+      "description": "Hvad er formålet med stakeholder-analyse?",
+      "options": [
+        "At fyre medarbejdere",
+        "At identificere og forstå alle interessenter og deres behov",
+        "At skrive kode",
+        "At teste software"
+      ],
+      "correct_answer": "B",
+      "explanation": "Stakeholder-analyse identificerer hvem der har interesse i systemet og hvad deres behov er.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "stakeholders"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_009",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Papir prototype",
+      "description": "Hvad er en fordel ved papirprototyper?",
+      "options": [
+        "De er dyre",
+        "De kræver programmering",
+        "Hurtige og billige at lave, nemme at ændre",
+        "De er altid digitale"
+      ],
+      "correct_answer": "C",
+      "explanation": "Papirprototyper er hurtige, billige og nemme at modificere baseret på feedback.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prototyping"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_010",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Brugerrejse",
+      "description": "Hvad viser en user journey map?",
+      "options": [
+        "Et UML-diagram",
+        "En databasemodel",
+        "Brugerens samlede oplevelse og interaktioner med systemet over tid",
+        "En netværkstopologi"
+      ],
+      "correct_answer": "C",
+      "explanation": "User journey maps visualiserer brugerens totale oplevelse gennem alle touchpoints.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "user-journey"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_011",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Empathy map",
+      "description": "Hvad er en empathy map?",
+      "options": [
+        "Et geografi-kort",
+        "En database",
+        "Et værktøj der visualiserer hvad brugeren tænker, føler, siger og gør",
+        "En kodestruktur"
+      ],
+      "correct_answer": "C",
+      "explanation": "Empathy maps hjælper med at forstå brugerens perspektiv: tænker, føler, siger, gør.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "empathy-map"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_012",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Design Thinking",
+      "description": "Hvad er Design Thinking?",
+      "options": [
+        "En menneskecentreret tilgang til innovation og problemløsning",
+        "En programmeringsmetode",
+        "Et testframework",
+        "En database"
+      ],
+      "correct_answer": "A",
+      "explanation": "Design Thinking er en kreativ, menneskecentreret tilgang til problemløsning.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "design-thinking"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_013",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Usability",
+      "description": "Hvad betyder usability?",
+      "options": [
+        "Systemets hastighed",
+        "Hvor let og effektivt brugere kan bruge systemet",
+        "Systemets sikkerhed",
+        "Systemets pris"
+      ],
+      "correct_answer": "B",
+      "explanation": "Usability handler om hvor let, effektivt og tilfredsstillende brugere kan bruge systemet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "usability"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_014",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Nielsens heuristikker",
+      "description": "Hvor mange usability-heuristikker definerede Jakob Nielsen?",
+      "options": [
+        "5",
+        "15",
+        "10",
+        "20"
+      ],
+      "correct_answer": "C",
+      "explanation": "Jakob Nielsen definerede 10 usability-heuristikker for brugergrænsefladedesign.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_015",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Synlighed af systemstatus",
+      "description": "Hvad er Nielsens heuristik 'Visibility of system status'?",
+      "options": [
+        "Systemet skal være usynligt",
+        "Systemet skal vise al kode",
+        "Systemet skal altid holde brugeren informeret om hvad der sker",
+        "Systemet skal skjule fejl"
+      ],
+      "correct_answer": "C",
+      "explanation": "Visibility of system status: Systemet skal holde brugeren informeret med passende feedback.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_016",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Persona elementer",
+      "description": "Hvad bør en persona typisk indeholde?",
+      "options": [
+        "Navn, demografi, mål, frustrationer, adfærdsmønstre og kontekst",
+        "Kun et navn",
+        "Kun tekniske specifikationer",
+        "Kun et foto"
+      ],
+      "correct_answer": "A",
+      "explanation": "Personas indeholder navn, demografi, mål, frustrationer, adfærd og brugskontext.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "personas"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_017",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Iterativ prototyping",
+      "description": "Hvad er iterativ prototyping?",
+      "options": [
+        "At lave én prototype",
+        "At programmere uden plan",
+        "At kopiere andres design",
+        "At gentage cyklussen: prototype, test, lær, forbedre"
+      ],
+      "correct_answer": "D",
+      "explanation": "Iterativ prototyping gentager cyklussen af at bygge, teste, lære og forbedre.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prototyping"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_018",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Think-aloud",
+      "description": "Hvad er think-aloud metoden?",
+      "options": [
+        "At tænke i stilhed",
+        "At skrive kode",
+        "At læse dokumentation",
+        "Brugeren siger sine tanker højt mens de bruger systemet"
+      ],
+      "correct_answer": "D",
+      "explanation": "Think-aloud beder brugere verbalisere deres tanker under brug af systemet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "usability-test"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_019",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Error prevention",
+      "description": "Hvad er Nielsens heuristik om error prevention?",
+      "options": [
+        "Fejl er uundgåelige",
+        "Brugere begår aldrig fejl",
+        "Alle fejl skal gemmes",
+        "Design der forhindrer problemer i at opstå er bedre end gode fejlbeskeder"
+      ],
+      "correct_answer": "D",
+      "explanation": "Error prevention: Et godt design forhindrer problemer i at opstå i første omgang.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_020",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Consistency",
+      "description": "Hvad er Nielsens heuristik om consistency?",
+      "options": [
+        "Alt skal være unikt",
+        "Kun farver skal matche",
+        "Inkonsistens er godt",
+        "Brugere skal ikke tænke over om ord og handlinger betyder det samme"
+      ],
+      "correct_answer": "D",
+      "explanation": "Consistency: Brugere skal ikke tvivle på om forskellige ord/handlinger betyder det samme.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_021",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recognition over recall",
+      "description": "Hvad betyder 'recognition rather than recall'?",
+      "options": [
+        "Brugeren skal huske alt",
+        "Gør objekter og handlinger synlige så brugeren ikke behøver huske",
+        "Gem alle handlinger",
+        "Brug kun tekst"
+      ],
+      "correct_answer": "B",
+      "explanation": "Recognition over recall: Minimer brugerens hukommelsesbelastning ved at gøre ting synlige.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_022",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "A/B testing i UCD",
+      "description": "Hvad er A/B testing i brugercentreret design?",
+      "options": [
+        "At teste to programmer",
+        "At teste to kodesprog",
+        "At teste morgen og aften",
+        "At sammenligne to designvarianter for at se hvilken der performer bedst"
+      ],
+      "correct_answer": "D",
+      "explanation": "A/B testing sammenligner to designvarianter med rigtige brugere for at finde den bedste.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "ab-testing"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_023",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Flexibility",
+      "description": "Hvad er Nielsens heuristik om flexibility?",
+      "options": [
+        "Systemet skal være stift",
+        "Kun én måde at gøre ting",
+        "Acceleratorer for erfarne brugere og tilpasning til forskellige brugertyper",
+        "Ingen genveje"
+      ],
+      "correct_answer": "C",
+      "explanation": "Flexibility: Giv acceleratorer til erfarne brugere og lad brugere tilpasse systemet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_024",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Help and documentation",
+      "description": "Hvad siger Nielsens heuristik om help?",
+      "options": [
+        "Det er bedst hvis systemet kan bruges uden hjælp, men god dokumentation skal være tilgængelig",
+        "Help er unødvendig",
+        "Hjælp erstatter godt design",
+        "Kun FAQ er nødvendig"
+      ],
+      "correct_answer": "A",
+      "explanation": "Bedst uden hjælp, men dokumentation skal være søgbar, fokuseret og handlingsrettet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_025",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Prototyping i agile",
+      "description": "Hvordan passer prototyping ind i agile udvikling?",
+      "options": [
+        "Det gør det ikke",
+        "Prototyper bruges i tidlige sprints til at validere design før implementering",
+        "Kun i vandfaldsmodellen",
+        "Kun ved projektstart"
+      ],
+      "correct_answer": "B",
+      "explanation": "I agile bruges prototyper til tidlig validering af design og brugeroplevelse.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "agile-ucd"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_026",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Contextual inquiry",
+      "description": "Hvad er contextual inquiry?",
+      "options": [
+        "At observere og interviewe brugere i deres naturlige arbejdsmiljø",
+        "En kodereview",
+        "En database-forespørgsel",
+        "En testmetode"
+      ],
+      "correct_answer": "A",
+      "explanation": "Contextual inquiry kombinerer observation og interview i brugerens naturlige kontekst.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "elicitation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_027",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Persona anti-pattern",
+      "description": "Hvad er et anti-pattern ved personas?",
+      "options": [
+        "At basere dem på research",
+        "At opdatere dem",
+        "At give dem navne",
+        "At opfinde personas uden data - 'elastiske personas' der passer til alt"
+      ],
+      "correct_answer": "D",
+      "explanation": "Elastiske personas opfundet uden research data giver falsk sikkerhed om brugerforståelse.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "personas"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_028",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Aesthetic and minimalist",
+      "description": "Hvad er Nielsens heuristik om aesthetic design?",
+      "options": [
+        "Så meget information som muligt",
+        "Design er ligegyldigt",
+        "Kun tekst, ingen grafik",
+        "Dialoger skal ikke indeholde irrelevant information der konkurrerer med det relevante"
+      ],
+      "correct_answer": "D",
+      "explanation": "Aesthetic: Hold design minimalistisk - irrelevant info konkurrerer med det relevante.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_029",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Error recovery",
+      "description": "Hvad er Nielsens heuristik om error recovery?",
+      "options": [
+        "Fejlmeddelelser skal udtrykkes i klart sprog, præcist indikere problemet og foreslå en løsning",
+        "Skjul fejl",
+        "Vis fejlkoder",
+        "Luk programmet ved fejl"
+      ],
+      "correct_answer": "A",
+      "explanation": "Fejlmeddelelser: klart sprog, præcis indikation af problem, konstruktivt forslag til løsning.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_030",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Wizard of Oz prototype",
+      "description": "Hvad er en Wizard of Oz prototype?",
+      "options": [
+        "En prototype hvor et menneske simulerer systemets reaktioner bag kulisserne",
+        "En magisk prototype",
+        "Et testværktøj",
+        "Et designmønster"
+      ],
+      "correct_answer": "A",
+      "explanation": "Wizard of Oz: Et menneske simulerer systemets svar mens brugeren tror det er automatisk.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prototyping"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_031",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Design thinking faser",
+      "description": "Hvad er de fem faser i Design Thinking?",
+      "options": [
+        "Empathize, Define, Ideate, Prototype, Test",
+        "Plan, Do, Check, Act, Review",
+        "Krav, Design, Kode, Test, Deploy",
+        "Sprint, Backlog, Review, Retro, Done"
+      ],
+      "correct_answer": "A",
+      "explanation": "Design Thinking: Empathize, Define, Ideate, Prototype, Test.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "design-thinking"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_032",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "UCD og accessibility",
+      "description": "Hvad er accessibility i UCD?",
+      "options": [
+        "At designet er brugbart for mennesker med forskellige evner og handicap",
+        "Kun for synshandicappede",
+        "At systemet er hurtigt",
+        "At koden er læsbar"
+      ],
+      "correct_answer": "A",
+      "explanation": "Accessibility sikrer at systemet er brugbart for mennesker med forskellige evner.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "accessibility"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_033",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Cognitive walkthrough",
+      "description": "Hvad er en cognitive walkthrough?",
+      "options": [
+        "En gåtur",
+        "En evalueringsmetode der simulerer brugerens tankeproces ved opgaveløsning",
+        "En kodereview",
+        "En testautomation"
+      ],
+      "correct_answer": "B",
+      "explanation": "Cognitive walkthrough simulerer hvordan nye brugere tænker når de løser opgaver.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "evaluering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_034",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Heuristic evaluation",
+      "description": "Hvad er en heuristisk evaluering?",
+      "options": [
+        "En brugertest",
+        "Eksperter vurderer interface mod et sæt usability-principper",
+        "En kodereview",
+        "En performance-test"
+      ],
+      "correct_answer": "B",
+      "explanation": "Heuristisk evaluering: Eksperter vurderer interface mod kendte usability-principper.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "evaluering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_035",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Match real world",
+      "description": "Hvad er Nielsens heuristik 'match between system and real world'?",
+      "options": [
+        "Brug teknisk jargon",
+        "Kopiér konkurrenter",
+        "Systemet skal bruge brugerens sprog og følge virkelighedens konventioner",
+        "Brug kun engelske termer"
+      ],
+      "correct_answer": "C",
+      "explanation": "Match real world: Brug brugerens sprog, ikke systemorienteret jargon.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_036",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "User freedom",
+      "description": "Hvad er Nielsens heuristik om user control and freedom?",
+      "options": [
+        "Brugere skal ikke kunne fortryde",
+        "Brugere vælger ofte funktioner ved en fejl og har brug for en tydelig nødudgang",
+        "Fjern alle knapper",
+        "Skjul navigation"
+      ],
+      "correct_answer": "B",
+      "explanation": "User control: Brugere har brug for undo/redo og tydelig nødudgang fra uønskede tilstande.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "nielsen"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_037",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Participatory design",
+      "description": "Hvad er participatory design?",
+      "options": [
+        "Brugere deltager aktivt som meddesignere i designprocessen",
+        "Kun designere designer",
+        "Ledelsen designer",
+        "AI designer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Participatory design involverer brugere som aktive meddesignere.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "participatory"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_038",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Card sorting",
+      "description": "Hvad er card sorting?",
+      "options": [
+        "Et kortspil",
+        "En sorteringsalgoritme",
+        "En teknik hvor brugere organiserer emner i kategorier for at forstå deres mentale model",
+        "En prioriteringsmetode"
+      ],
+      "correct_answer": "C",
+      "explanation": "Card sorting afslører brugeres mentale modeller ved at lade dem kategorisere indhold.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "card-sorting"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_039",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Kvantitativ vs kvalitativ",
+      "description": "Hvad er forskellen på kvantitativ og kvalitativ brugerresearch?",
+      "options": [
+        "Der er ingen forskel",
+        "Kvantitativ måler med tal (hvor meget), kvalitativ udforsker årsager (hvorfor)",
+        "Kvantitativ er bedre",
+        "Kvalitativ bruger kun tal"
+      ],
+      "correct_answer": "B",
+      "explanation": "Kvantitativ = tal og målinger. Kvalitativ = dybere forståelse af årsager og motivation.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "research"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_bruger_040",
+      "category": "bruger_centreret",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Usability test sample size",
+      "description": "Hvor mange brugere anbefaler Nielsen for en usability-test?",
+      "options": [
+        "1",
+        "5",
+        "50",
+        "100"
+      ],
+      "correct_answer": "B",
+      "explanation": "Nielsen anbefaler ca. 5 brugere for at finde ca. 85% af usability-problemer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "usability-test"
+      ],
+      "points": 1
+    }
+  ]
+}

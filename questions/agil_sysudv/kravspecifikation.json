@@ -1,0 +1,1084 @@
+{
+  "questions": [
+    {
+      "id": "agil_krav_001",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Funktionelle krav",
+      "description": "Hvad er et funktionelt krav?",
+      "options": [
+        "Et krav om systemets ydelse",
+        "Et krav om vedligeholdelse",
+        "Et krav om brugergrænsefladen",
+        "Et krav der beskriver hvad systemet skal gøre"
+      ],
+      "correct_answer": "D",
+      "explanation": "Funktionelle krav beskriver hvad systemet skal gøre - dets funktioner og adfærd.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "funktionelle-krav"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_002",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Ikke-funktionelle krav",
+      "description": "Hvad er et ikke-funktionelt krav?",
+      "options": [
+        "En fejlrapport",
+        "En user story",
+        "Et krav om systemets kvalitetsegenskaber som ydelse eller sikkerhed",
+        "Et testscenarie"
+      ],
+      "correct_answer": "C",
+      "explanation": "Ikke-funktionelle krav handler om kvalitet: ydelse, sikkerhed, brugervenlighed osv.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "ikke-funktionelle"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_003",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "User Story",
+      "description": "Hvad er en User Story?",
+      "options": [
+        "En teknisk specifikation",
+        "En testplan",
+        "En kort beskrivelse af funktionalitet fra brugerens perspektiv",
+        "Et UML-diagram"
+      ],
+      "correct_answer": "C",
+      "explanation": "User Stories beskriver funktionalitet fra brugerens perspektiv i et kort format.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "user-stories"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_004",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "MoSCoW M",
+      "description": "Hvad står M for i MoSCoW-prioritering?",
+      "options": [
+        "Maybe",
+        "Must have",
+        "Might have",
+        "Minor"
+      ],
+      "correct_answer": "B",
+      "explanation": "M = Must have - krav der er absolut nødvendige for systemet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "moscow"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_005",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Kravindsamling",
+      "description": "Hvad er en almindelig teknik til kravindsamling?",
+      "options": [
+        "Kodning",
+        "Interviews med stakeholders",
+        "Deployment",
+        "Kompilering"
+      ],
+      "correct_answer": "B",
+      "explanation": "Interviews er en grundlæggende teknik til at indsamle krav fra stakeholders.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "elicitation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_006",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Stakeholder",
+      "description": "Hvad er en stakeholder?",
+      "options": [
+        "En programmør",
+        "En database",
+        "Enhver person der har interesse i eller påvirkes af systemet",
+        "Et testværktøj"
+      ],
+      "correct_answer": "C",
+      "explanation": "Stakeholders er alle der har interesse i, påvirkes af eller kan påvirke systemet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "stakeholders"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_007",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Verificerbare krav",
+      "description": "Hvorfor skal krav være verificerbare?",
+      "options": [
+        "Så man kan teste om kravet er opfyldt",
+        "For at spare penge",
+        "For at imponere kunden",
+        "For dokumentationens skyld"
+      ],
+      "correct_answer": "A",
+      "explanation": "Verificerbare krav kan testes objektivt - man kan afgøre om de er opfyldt.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "verificerbarhed"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_008",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Epic",
+      "description": "Hvad er en Epic i agil kontekst?",
+      "options": [
+        "En fejlrapport",
+        "En sprint",
+        "Et testscenarie",
+        "En stor user story der kan opdeles i mindre stories"
+      ],
+      "correct_answer": "D",
+      "explanation": "En Epic er en stor user story der er for stor til én Sprint og opdeles i mindre stories.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "epics"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_009",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Acceptance Criteria",
+      "description": "Hvad definerer Acceptance Criteria?",
+      "options": [
+        "Betingelser der skal opfyldes for at et krav er accepteret",
+        "Sprintens varighed",
+        "Teamets størrelse",
+        "Budgettet"
+      ],
+      "correct_answer": "A",
+      "explanation": "Acceptance Criteria er specifikke betingelser der skal opfyldes for godkendelse.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "acceptance-criteria"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_010",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "MoSCoW S",
+      "description": "Hvad står S for i MoSCoW?",
+      "options": [
+        "Sometimes",
+        "Sprint",
+        "System",
+        "Should have"
+      ],
+      "correct_answer": "D",
+      "explanation": "S = Should have - vigtige krav der ikke er kritiske for første release.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "moscow"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_011",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "MoSCoW C",
+      "description": "Hvad står C for i MoSCoW?",
+      "options": [
+        "Critical",
+        "Complete",
+        "Core",
+        "Could have"
+      ],
+      "correct_answer": "D",
+      "explanation": "C = Could have - ønskede krav der kan undværes hvis nødvendigt.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "moscow"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_012",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "MoSCoW W",
+      "description": "Hvad står W for i MoSCoW?",
+      "options": [
+        "Will have",
+        "Won't have this time",
+        "Want",
+        "Wish"
+      ],
+      "correct_answer": "B",
+      "explanation": "W = Won't have this time - krav der bevidst udelukkes fra denne release.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "moscow"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_013",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Kravdokument",
+      "description": "Hvad er formålet med et kravspecifikationsdokument?",
+      "options": [
+        "At erstatte koden",
+        "At dokumentere alle krav systematisk",
+        "At erstatte test",
+        "At erstatte møder"
+      ],
+      "correct_answer": "B",
+      "explanation": "Et kravdokument samler alle krav systematisk så alle har fælles forståelse.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "dokumentation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_014",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Brugerkrav vs systemkrav",
+      "description": "Hvad er forskellen på brugerkrav og systemkrav?",
+      "options": [
+        "Der er ingen forskel",
+        "Brugerkrav er tekniske, systemkrav er abstrakte",
+        "Brugerkrav er på højt niveau, systemkrav er detaljerede tekniske specifikationer",
+        "Systemkrav skrives af brugere"
+      ],
+      "correct_answer": "C",
+      "explanation": "Brugerkrav er overordnede; systemkrav er detaljerede tekniske specifikationer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "kravtyper"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_015",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Krav i agile",
+      "description": "Hvordan håndteres krav typisk i agile projekter?",
+      "options": [
+        "I et stort dokument fra start",
+        "Kun mundtligt",
+        "Krav er ikke vigtige i agile",
+        "Som user stories i en Product Backlog der løbende raffineres"
+      ],
+      "correct_answer": "D",
+      "explanation": "I agile projekter håndteres krav som user stories i Product Backlog.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "agile-krav"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_016",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "SMART krav",
+      "description": "Hvad betyder SMART i forbindelse med krav?",
+      "options": [
+        "Specific, Measurable, Achievable, Relevant, Time-bound",
+        "Simple, Manageable, Achievable, Realistic, Timely",
+        "System, Module, Application, Resource, Test",
+        "Standard, Method, Architecture, Review, Test"
+      ],
+      "correct_answer": "A",
+      "explanation": "SMART: Specific, Measurable, Achievable, Relevant, Time-bound.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "smart"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_017",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Ikke-funktionelt eksempel",
+      "description": "Hvilket af følgende er et ikke-funktionelt krav?",
+      "options": [
+        "Systemet skal svare inden for 2 sekunder",
+        "Systemet skal kunne oprette brugere",
+        "Systemet skal have en login-side",
+        "Systemet skal sende e-mails"
+      ],
+      "correct_answer": "A",
+      "explanation": "Svartid er et ikke-funktionelt krav (ydelse/performance).",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "ikke-funktionelle"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_018",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Traceability",
+      "description": "Hvad er krav-traceability?",
+      "options": [
+        "At spore fejl",
+        "At spore budgettet",
+        "At spore teammedlemmer",
+        "Evnen til at følge et krav fra oprindelse til implementering og test"
+      ],
+      "correct_answer": "D",
+      "explanation": "Traceability er evnen til at spore sammenhængen mellem krav, design, kode og test.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "traceability"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_019",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Workshop",
+      "description": "Hvad er en krav-workshop?",
+      "options": [
+        "En kodningsøvelse",
+        "En testaktivitet",
+        "Et faciliteret møde hvor stakeholders samarbejder om at identificere krav",
+        "En deployment-proces"
+      ],
+      "correct_answer": "C",
+      "explanation": "En krav-workshop samler stakeholders til fælles identifikation og prioritering af krav.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "elicitation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_020",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Observation",
+      "description": "Hvad er observation som kravindsamlingsteknik?",
+      "options": [
+        "At læse dokumentation",
+        "At teste software",
+        "At skrive kode",
+        "At se brugere arbejde i deres naturlige miljø for at forstå behov"
+      ],
+      "correct_answer": "D",
+      "explanation": "Observation indebærer at se brugere i deres naturlige arbejdsmiljø for at opdage behov.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "elicitation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_021",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Validering vs verifikation",
+      "description": "Hvad er forskellen på validering og verifikation af krav?",
+      "options": [
+        "Der er ingen forskel",
+        "Validering: bygger vi det rigtige produkt? Verifikation: bygger vi produktet rigtigt?",
+        "Validering er test, verifikation er review",
+        "Verifikation kommer før validering"
+      ],
+      "correct_answer": "B",
+      "explanation": "Validering = rigtige produkt (kundens behov). Verifikation = produktet rigtigt (opfylder spec).",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "validering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_022",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Dårligt krav",
+      "description": "Hvilket krav er dårligt formuleret?",
+      "options": [
+        "Systemet skal kunne registrere nye brugere",
+        "Systemet skal svare inden for 3 sekunder",
+        "Systemet skal være hurtigt",
+        "Login kræver brugernavn og password"
+      ],
+      "correct_answer": "C",
+      "explanation": "'Hurtigt' er uspecifikt og ikke målbart - det er et dårligt formuleret krav.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "kravkvalitet"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_023",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Theme",
+      "description": "Hvad er et Theme i agil kontekst?",
+      "options": [
+        "En farvepalette",
+        "Et Sprint-mål",
+        "Et testscenarie",
+        "En samling af relaterede Epics og User Stories"
+      ],
+      "correct_answer": "D",
+      "explanation": "Et Theme er en overordnet kategori der grupperer relaterede Epics og Stories.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "themes"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_024",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Prototype som kravteknik",
+      "description": "Hvorfor bruges prototyper i kravindsamling?",
+      "options": [
+        "For at hjælpe stakeholders med at visualisere og validere krav",
+        "For at erstatte koden",
+        "For at spare tid",
+        "For at undgå test"
+      ],
+      "correct_answer": "A",
+      "explanation": "Prototyper hjælper stakeholders med at se og forstå krav før fuld implementering.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prototyping"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_025",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Kravændringer i agile",
+      "description": "Hvordan håndterer agile metoder kravændringer?",
+      "options": [
+        "De velkomner ændringer og tilpasser sig løbende",
+        "De forbyder ændringer",
+        "De kræver en formel ændringsproces",
+        "De ignorerer ændringer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Agile metoder velkomner ændringer og tilpasser Product Backlog løbende.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "agile-krav"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_026",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "User Story størrelse",
+      "description": "Hvornår bør en User Story opdeles?",
+      "options": [
+        "Aldrig",
+        "Kun ved projektstart",
+        "Når den er for stor til at færdiggøres i én Sprint",
+        "Kun Product Owner beslutter"
+      ],
+      "correct_answer": "C",
+      "explanation": "Stories bør opdeles når de er for store til at leveres i én Sprint.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "user-stories"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_027",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Definition of Ready",
+      "description": "Hvad er Definition of Ready?",
+      "options": [
+        "Hvornår kode er færdig",
+        "Kriterier for hvornår en backlog item er klar til Sprint Planning",
+        "Hvornår projektet er slut",
+        "Hvornår test er færdig"
+      ],
+      "correct_answer": "B",
+      "explanation": "Definition of Ready definerer hvornår et backlog item er klart nok til at tages ind i en Sprint.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "definition-of-ready"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_028",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Spørgeskemaer",
+      "description": "Hvad er en fordel ved spørgeskemaer som kravteknik?",
+      "options": [
+        "De giver dybdegående indsigt",
+        "De kan nå mange stakeholders effektivt",
+        "De erstatter alle andre teknikker",
+        "De kræver ingen forberedelse"
+      ],
+      "correct_answer": "B",
+      "explanation": "Spørgeskemaer er effektive til at nå mange stakeholders, men giver mindre dybde end interviews.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "elicitation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_029",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Kravprioritering",
+      "description": "Hvorfor er kravprioritering vigtig?",
+      "options": [
+        "For at sikre at de vigtigste krav implementeres først",
+        "For dokumentationens skyld",
+        "For at reducere teamstørrelsen",
+        "For at undgå test"
+      ],
+      "correct_answer": "A",
+      "explanation": "Prioritering sikrer at ressourcer bruges på de vigtigste krav først.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "prioritering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_030",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sikkerhedskrav",
+      "description": "Hvilket af følgende er et sikkerhedskrav?",
+      "options": [
+        "Systemet skal have en søgefunktion",
+        "Systemet skal være blåt",
+        "Passwords skal krypteres med bcrypt",
+        "Systemet skal have en loginside"
+      ],
+      "correct_answer": "C",
+      "explanation": "Passwordkryptering er et ikke-funktionelt sikkerhedskrav.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "sikkerhed"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_031",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Kravkonflikt",
+      "description": "Hvordan håndteres konfliktende krav?",
+      "options": [
+        "Den senest indkomne vinder",
+        "Analyse af stakeholder-prioriteter og forhandling for at finde kompromis",
+        "Ignorer det mindst vigtige",
+        "Implementer begge"
+      ],
+      "correct_answer": "B",
+      "explanation": "Konfliktende krav kræver analyse, prioritering og forhandling mellem stakeholders.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "konflikter"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_032",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Non-functional decomposition",
+      "description": "Hvordan omsættes ikke-funktionelle krav til testbare kriterier?",
+      "options": [
+        "De kan ikke testes",
+        "Ved at kvantificere dem med målbare værdier og grænser",
+        "Ved at ignorere dem",
+        "Ved at konvertere dem til funktionelle krav"
+      ],
+      "correct_answer": "B",
+      "explanation": "Ikke-funktionelle krav kvantificeres: 'hurtig' → 'svartid < 2 sekunder'.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "ikke-funktionelle"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_033",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Krav-elicitation bias",
+      "description": "Hvad er en risiko ved kun at bruge interviews til kravindsamling?",
+      "options": [
+        "Stakeholders kan have bias eller glemme vigtige aspekter",
+        "Interviews er altid perfekte",
+        "Interviews er for dyre",
+        "Interviews tager for lang tid"
+      ],
+      "correct_answer": "A",
+      "explanation": "Interviews alene kan give skæve krav pga. stakeholder-bias og hukommelse.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "elicitation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_034",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Traceability matrix",
+      "description": "Hvad er en traceability matrix?",
+      "options": [
+        "En tabel der viser sammenhængen mellem krav, design, kode og test",
+        "En matematisk model",
+        "En projektplan",
+        "Et Gantt-diagram"
+      ],
+      "correct_answer": "A",
+      "explanation": "En traceability matrix kobler krav til design, implementering og testcases.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "traceability"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_035",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Krav-creep",
+      "description": "Hvad er requirements creep?",
+      "options": [
+        "Hurtig kravindsamling",
+        "Ukontrolleret vækst i antal krav gennem projektet",
+        "Reduktion af krav",
+        "Prioritering af krav"
+      ],
+      "correct_answer": "B",
+      "explanation": "Requirements creep er ukontrolleret tilføjelse af nye krav der udvider scope.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "krav-creep"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_036",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Gold plating",
+      "description": "Hvad er gold plating i kravsammenhæng?",
+      "options": [
+        "At bruge guld i produktet",
+        "At tilføje funktionalitet ud over det specificerede uden kundens anmodning",
+        "At prioritere krav",
+        "At dokumentere krav"
+      ],
+      "correct_answer": "B",
+      "explanation": "Gold plating er at tilføje unødvendig funktionalitet der ikke var specificeret.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "gold-plating"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_037",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Krav-baseline",
+      "description": "Hvad er en krav-baseline?",
+      "options": [
+        "Den første version af koden",
+        "En sprint-plan",
+        "Et testresultat",
+        "Et godkendt snapshot af krav der bruges som reference for ændringsstyring"
+      ],
+      "correct_answer": "D",
+      "explanation": "En baseline er et godkendt sæt krav der fungerer som reference for ændringer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "baseline"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_038",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Implicit vs eksplicit krav",
+      "description": "Hvad er et implicit krav?",
+      "options": [
+        "Et krav der er tydeligt dokumenteret",
+        "Et ikke-funktionelt krav",
+        "Et krav der er så selvfølgeligt at stakeholders ikke nævner det",
+        "Et testscenarie"
+      ],
+      "correct_answer": "C",
+      "explanation": "Implicitte krav er så selvfølgelige for stakeholders at de ikke nævnes eksplicit.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "implicitte-krav"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_039",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "User Story anti-pattern",
+      "description": "Hvad er et anti-pattern for User Stories?",
+      "options": [
+        "Stories med acceptance criteria",
+        "Stories med estimater",
+        "En teknisk opgave forklædt som user story uden brugerværdi",
+        "Stories i Product Backlog"
+      ],
+      "correct_answer": "C",
+      "explanation": "Tekniske opgaver uden brugerværdi bør ikke skrives som User Stories.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "user-stories"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_040",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Kravkvalitet",
+      "description": "Hvad kendetegner et godt krav?",
+      "options": [
+        "Det er så kort som muligt",
+        "Det er kun mundtligt",
+        "Det er skrevet i kode",
+        "Det er entydigt, testbart, konsistent og sporbart"
+      ],
+      "correct_answer": "D",
+      "explanation": "Gode krav er entydige, testbare, konsistente, komplette og sporbare.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "kravkvalitet"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_041",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Emerging requirements",
+      "description": "Hvad er emerging requirements?",
+      "options": [
+        "Krav der er kendte fra start",
+        "Krav der slettes",
+        "Krav der opdages undervejs i projektet efterhånden som forståelsen vokser",
+        "Krav fra konkurrenter"
+      ],
+      "correct_answer": "C",
+      "explanation": "Emerging requirements er krav der først viser sig undervejs i udviklingen.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "emerging"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_042",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Use case vs User Story",
+      "description": "Hvad er en nøgleforskel mellem Use Cases og User Stories?",
+      "options": [
+        "Der er ingen forskel",
+        "Use Cases bruges kun i agile",
+        "User Stories er mere detaljerede",
+        "Use Cases er mere detaljerede med flows og alternative scenarier"
+      ],
+      "correct_answer": "D",
+      "explanation": "Use Cases er detaljerede med main flow, alternative flows og exceptions.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "use-cases"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_043",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Ydelseskrav",
+      "description": "Hvilket er et ydelseskrav?",
+      "options": [
+        "Systemet skal understøtte 1000 samtidige brugere",
+        "Systemet skal have en søgefunktion",
+        "Systemet skal bruge Java",
+        "Systemet skal have en blå baggrund"
+      ],
+      "correct_answer": "A",
+      "explanation": "Antal samtidige brugere er et ikke-funktionelt ydelseskrav (performance).",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "ydelse"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_044",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Backlog refinement og krav",
+      "description": "Hvornår raffineres krav i Scrum?",
+      "options": [
+        "Løbende gennem Backlog Refinement i hele projektets levetid",
+        "Kun ved projektstart",
+        "Kun i Sprint Planning",
+        "Kun ved Sprint Review"
+      ],
+      "correct_answer": "A",
+      "explanation": "Krav raffineres løbende gennem Backlog Refinement aktiviteter.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "agile-krav"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_krav_045",
+      "category": "kravspecifikation",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Persona i kravarbejde",
+      "description": "Hvordan bruges personas i kravindsamling?",
+      "options": [
+        "Som repræsentative brugerprofiler der hjælper med at identificere relevante krav",
+        "Som erstatning for kode",
+        "Som testværktøj",
+        "Som deploymentplan"
+      ],
+      "correct_answer": "A",
+      "explanation": "Personas repræsenterer typiske brugere og hjælper med at identificere relevante krav.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej konteksten"
+      ],
+      "tags": [
+        "personas"
+      ],
+      "points": 1
+    }
+  ]
+}

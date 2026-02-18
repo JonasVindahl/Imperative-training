@@ -1,0 +1,1219 @@
+{
+  "questions": [
+    {
+      "id": "agil_scrum_001",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Product Owner rolle",
+      "description": "Hvem er ansvarlig for at prioritere Product Backlog i Scrum?",
+      "options": [
+        "Scrum Master",
+        "Development Team",
+        "Stakeholders",
+        "Product Owner"
+      ],
+      "correct_answer": "D",
+      "explanation": "Product Owner er ansvarlig for at prioritere og vedligeholde Product Backlog.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "roles"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_002",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Scrum Master rolle",
+      "description": "Hvad er Scrum Masters primære ansvar?",
+      "options": [
+        "At lede teamet",
+        "At fjerne forhindringer og facilitere Scrum-processen",
+        "At skrive kode",
+        "At prioritere backlog"
+      ],
+      "correct_answer": "B",
+      "explanation": "Scrum Master faciliterer processen og fjerner forhindringer for teamet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "roles"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_003",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sprint varighed",
+      "description": "Hvad er den typiske varighed af en Sprint?",
+      "options": [
+        "1 dag",
+        "1-4 uger",
+        "3 måneder",
+        "6 måneder"
+      ],
+      "correct_answer": "B",
+      "explanation": "En Sprint varer typisk 1-4 uger, oftest 2 uger.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_004",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Daily Scrum",
+      "description": "Hvad er formålet med Daily Scrum?",
+      "options": [
+        "At rapportere til ledelsen",
+        "At synkronisere teamets arbejde og planlægge næste 24 timer",
+        "At prioritere backlog",
+        "At demonstrere software"
+      ],
+      "correct_answer": "B",
+      "explanation": "Daily Scrum er et kort møde hvor teamet synkroniserer og planlægger næste 24 timer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "events"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_005",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sprint Review",
+      "description": "Hvad sker ved Sprint Review?",
+      "options": [
+        "Teamet reflekterer over processen",
+        "Teamet demonstrerer det færdige increment for stakeholders",
+        "Backlog prioriteres",
+        "Koden deployes"
+      ],
+      "correct_answer": "B",
+      "explanation": "Sprint Review er hvor teamet demonstrerer det færdige increment for stakeholders.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "events"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_006",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sprint Retrospective",
+      "description": "Hvad er formålet med Sprint Retrospective?",
+      "options": [
+        "At demonstrere software",
+        "At estimere opgaver",
+        "At prioritere backlog",
+        "At reflektere over processen og identificere forbedringer"
+      ],
+      "correct_answer": "D",
+      "explanation": "Sprint Retrospective handler om at reflektere over processen og finde forbedringer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "events"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_007",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Product Backlog",
+      "description": "Hvad er Product Backlog?",
+      "options": [
+        "En liste over opgaver i den aktuelle Sprint",
+        "En prioriteret liste over alt ønsket funktionalitet",
+        "Et testdokument",
+        "En arkitekturplan"
+      ],
+      "correct_answer": "B",
+      "explanation": "Product Backlog er en prioriteret, dynamisk liste over al ønsket funktionalitet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "artifacts"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_008",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sprint Backlog",
+      "description": "Hvad indeholder Sprint Backlog?",
+      "options": [
+        "Alle projektets opgaver",
+        "Kun fejlrapporter",
+        "De udvalgte items fra Product Backlog til den aktuelle Sprint",
+        "Kun dokumentation"
+      ],
+      "correct_answer": "C",
+      "explanation": "Sprint Backlog indeholder de items teamet har committed til at levere i den aktuelle Sprint.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "artifacts"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_009",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Increment",
+      "description": "Hvad er et Increment i Scrum?",
+      "options": [
+        "En bugreport",
+        "En estimeringsteknik",
+        "Et mødereferat",
+        "Summen af alle completed Product Backlog items der opfylder Definition of Done"
+      ],
+      "correct_answer": "D",
+      "explanation": "Increment er summen af alle færdige backlog items der opfylder Definition of Done.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "artifacts"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_010",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "User Story format",
+      "description": "Hvad er det typiske format for en User Story?",
+      "options": [
+        "Hvis X så Y",
+        "Krav nr. [id]: [tekst]",
+        "Bug: [beskrivelse]",
+        "Som [rolle] ønsker jeg [funktionalitet] så [værdi]"
+      ],
+      "correct_answer": "D",
+      "explanation": "User Stories følger formatet: Som [rolle] ønsker jeg [funktionalitet] så jeg kan [opnå værdi].",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "user-stories"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_011",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Timeboxing",
+      "description": "Hvad betyder timeboxing i Scrum?",
+      "options": [
+        "At sætte en fast tidsgrænse for en aktivitet",
+        "At arbejde overid",
+        "At spare tid",
+        "At time opgaver med stopur"
+      ],
+      "correct_answer": "A",
+      "explanation": "Timeboxing er at sætte en fast, maksimal tidsgrænse for en aktivitet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "timeboxing"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_012",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Scrum værdier antal",
+      "description": "Hvor mange værdier har Scrum?",
+      "options": [
+        "3",
+        "7",
+        "5",
+        "12"
+      ],
+      "correct_answer": "C",
+      "explanation": "Scrum har 5 værdier: commitment, courage, focus, openness, respect.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum-values"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_013",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Daily Scrum varighed",
+      "description": "Hvor lang tid er Daily Scrum timeboxed til?",
+      "options": [
+        "5 minutter",
+        "15 minutter",
+        "30 minutter",
+        "1 time"
+      ],
+      "correct_answer": "B",
+      "explanation": "Daily Scrum er timeboxed til 15 minutter.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "daily-scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_014",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Development Team størrelse",
+      "description": "Hvad er den anbefalede størrelse på et Development Team?",
+      "options": [
+        "3-9 personer",
+        "1-3 personer",
+        "10-20 personer",
+        "Over 20 personer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Et Development Team bør være 3-9 personer for optimal effektivitet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "team"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_015",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Sprint Planning",
+      "description": "Hvad sker ved Sprint Planning?",
+      "options": [
+        "Teamet holder retrospective",
+        "Koden deployes",
+        "Teamet vælger items fra Product Backlog og planlægger Sprintens arbejde",
+        "Stakeholders prioriterer"
+      ],
+      "correct_answer": "C",
+      "explanation": "Ved Sprint Planning vælger teamet items og laver en plan for Sprinten.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint-planning"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_016",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Definition of Done",
+      "description": "Hvad er Definition of Done?",
+      "options": [
+        "En fælles forståelse af hvornår et item er komplet",
+        "En liste over alle fejl",
+        "Projektets deadline",
+        "Et estimeringsværktøj"
+      ],
+      "correct_answer": "A",
+      "explanation": "Definition of Done er teamets fælles standard for hvornår arbejde er færdigt.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "definition-of-done"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_017",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Burndown chart",
+      "description": "Hvad viser et burndown chart?",
+      "options": [
+        "Teamets budget",
+        "Kundetilfredshed",
+        "Antal fejl",
+        "Resterende arbejde over tid i en Sprint"
+      ],
+      "correct_answer": "D",
+      "explanation": "Et burndown chart viser hvor meget arbejde der er tilbage over tid.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "burndown"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_018",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Velocity",
+      "description": "Hvad er velocity i Scrum?",
+      "options": [
+        "Hastigheden af kodecompilering",
+        "Antal deployments per dag",
+        "Antal møder per uge",
+        "Mængden af arbejde teamet typisk færdiggør per Sprint"
+      ],
+      "correct_answer": "D",
+      "explanation": "Velocity er den gennemsnitlige mængde arbejde (story points) teamet færdiggør per Sprint.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "velocity"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_019",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Story Points",
+      "description": "Hvad måler story points?",
+      "options": [
+        "Relativ kompleksitet og indsats",
+        "Tid i timer",
+        "Antal kodelinjer",
+        "Antal fejl"
+      ],
+      "correct_answer": "A",
+      "explanation": "Story points måler relativ kompleksitet, indsats og usikkerhed - ikke tid direkte.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "estimation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_020",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sprint ændringer",
+      "description": "Kan Sprint Backlog ændres under en Sprint?",
+      "options": [
+        "Nej, den er låst",
+        "Kun Product Owner kan ændre den",
+        "Ja, teamet kan tilføje/fjerne opgaver, men Sprint Goal ændres ikke",
+        "Kun efter godkendelse fra ledelsen"
+      ],
+      "correct_answer": "C",
+      "explanation": "Development Team kan justere Sprint Backlog, men Sprint Goal forbliver fast.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_021",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvem estimerer",
+      "description": "Hvem estimerer opgaver i Scrum?",
+      "options": [
+        "Product Owner",
+        "Scrum Master",
+        "Development Team",
+        "Stakeholders"
+      ],
+      "correct_answer": "C",
+      "explanation": "Kun Development Team estimerer opgaver, da de udfører arbejdet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "estimation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_022",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sprint Goal",
+      "description": "Hvad er et Sprint Goal?",
+      "options": [
+        "Antallet af story points",
+        "Et KPI for ledelsen",
+        "Et overordnet mål der giver teamet retning i Sprinten",
+        "En testplan"
+      ],
+      "correct_answer": "C",
+      "explanation": "Sprint Goal er et kort, overordnet mål der giver teamet fokus og fleksibilitet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_023",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Backlog Refinement",
+      "description": "Hvad er Backlog Refinement?",
+      "options": [
+        "Løbende at tilføje detaljer, estimater og prioritering til backlog items",
+        "At slette gamle items",
+        "At resette backloggen",
+        "At låse backloggen"
+      ],
+      "correct_answer": "A",
+      "explanation": "Refinement er den løbende aktivitet med at tilføje detaljer og estimater til backlog items.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "backlog"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_024",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Scrum artefakt transparens",
+      "description": "Hvorfor er transparens vigtig for Scrum artefakter?",
+      "options": [
+        "For at alle kan inspicere og tilpasse baseret på fælles forståelse",
+        "For at ledelsen kan kontrollere teamet",
+        "For compliance",
+        "For dokumentation"
+      ],
+      "correct_answer": "A",
+      "explanation": "Transparens sikrer at alle har fælles forståelse og kan inspicere og tilpasse.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_025",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sprint afbrydelse",
+      "description": "Hvem kan afbryde en Sprint?",
+      "options": [
+        "Product Owner",
+        "Development Team",
+        "Scrum Master",
+        "Enhver stakeholder"
+      ],
+      "correct_answer": "A",
+      "explanation": "Kun Product Owner har autoriteten til at afbryde en Sprint.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_026",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Selvorganiserende teams",
+      "description": "Hvad betyder et selvorganiserende team?",
+      "options": [
+        "Teamet beslutter selv hvordan arbejdet udføres",
+        "Teamet har ingen leder",
+        "Teamet sætter sine egne deadlines",
+        "Teamet vælger hvilke krav der skal opfyldes"
+      ],
+      "correct_answer": "A",
+      "explanation": "Selvorganiserende teams beslutter selv hvordan de bedst udfører arbejdet.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "team"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_027",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Planning Poker",
+      "description": "Hvad er Planning Poker?",
+      "options": [
+        "Et kortspil for teambuilding",
+        "En prioriteringsmetode",
+        "En konsensusbaseret estimeringsteknik",
+        "En testmetode"
+      ],
+      "correct_answer": "C",
+      "explanation": "Planning Poker er en teknik hvor teamet estimerer ved konsensus med nummererede kort.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "estimation"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_028",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sprint Review vs Retrospective",
+      "description": "Hvad er forskellen på Sprint Review og Retrospective?",
+      "options": [
+        "Der er ingen forskel",
+        "Review fokuserer på produktet, Retrospective på processen",
+        "Review er for teamet, Retrospective for stakeholders",
+        "Review er valgfri, Retrospective er obligatorisk"
+      ],
+      "correct_answer": "B",
+      "explanation": "Sprint Review inspicerer produktet, Sprint Retrospective inspicerer processen.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "events"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_029",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Scrum of Scrums",
+      "description": "Hvad er Scrum of Scrums?",
+      "options": [
+        "Et Scrum-event",
+        "Et Scrum-artefakt",
+        "En estimeringsmetode",
+        "En teknik til at koordinere flere Scrum-teams"
+      ],
+      "correct_answer": "D",
+      "explanation": "Scrum of Scrums er en teknik til koordination mellem flere teams der arbejder på samme produkt.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "skalering"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_030",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "INVEST kriterier",
+      "description": "Hvad står INVEST for i forbindelse med User Stories?",
+      "options": [
+        "En investeringsmodel",
+        "Independent, Negotiable, Valuable, Estimable, Small, Testable",
+        "En projektmodel",
+        "En risikoprofil"
+      ],
+      "correct_answer": "B",
+      "explanation": "INVEST er kriterier for gode User Stories: Independent, Negotiable, Valuable, Estimable, Small, Testable.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "user-stories"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_031",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Acceptance Criteria",
+      "description": "Hvad er Acceptance Criteria i en User Story?",
+      "options": [
+        "Krav til teamets adfærd",
+        "Estimeringsregler",
+        "Betingelser der skal opfyldes for at story er done",
+        "Sprintens tidsramme"
+      ],
+      "correct_answer": "C",
+      "explanation": "Acceptance Criteria definerer betingelserne for hvornår en User Story er accepteret.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "user-stories"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_032",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Sprint Planning timebox",
+      "description": "Hvor lang tid er Sprint Planning timeboxed til for en 2-ugers Sprint?",
+      "options": [
+        "1 time",
+        "1 dag",
+        "8 timer",
+        "4 timer"
+      ],
+      "correct_answer": "D",
+      "explanation": "Sprint Planning er timeboxed til 4 timer for en 2-ugers Sprint (8 timer for 4 uger).",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint-planning"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_033",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Cross-functional team",
+      "description": "Hvad betyder at et Scrum-team er cross-functional?",
+      "options": [
+        "Teamet arbejder på tværs af projekter",
+        "Teamet har alle kompetencer til at levere et increment",
+        "Teamet roterer roller",
+        "Teamet er i forskellige lande"
+      ],
+      "correct_answer": "B",
+      "explanation": "Cross-functional betyder at teamet samlet har alle kompetencer til at levere.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "team"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_034",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Scrum værdi: Courage",
+      "description": "Hvad indebærer Scrum-værdien 'courage'?",
+      "options": [
+        "At tage store risici",
+        "At konfrontere stakeholders",
+        "Mod til at gøre det rigtige og arbejde med svære problemer",
+        "At skippe testning for at nå deadline"
+      ],
+      "correct_answer": "C",
+      "explanation": "Courage handler om mod til at arbejde med svære problemer og gøre det rigtige.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum-values"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_035",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Scrum værdi: Focus",
+      "description": "Hvad indebærer Scrum-værdien 'focus'?",
+      "options": [
+        "Kun én person arbejder ad gangen",
+        "Fokus på individuel præstation",
+        "Fokus på dokumentation",
+        "Alle fokuserer på Sprint-arbejdet og teamets mål"
+      ],
+      "correct_answer": "D",
+      "explanation": "Focus handler om at alle koncentrerer sig om Sprint-arbejdet og teamets mål.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum-values"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_036",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Scrum Master som servant leader",
+      "description": "Hvad betyder det at Scrum Master er en servant leader?",
+      "options": [
+        "SM er teamets chef",
+        "SM rapporterer til ledelsen",
+        "SM gør hvad teamet siger",
+        "SM tjener teamet ved at facilitere, beskytte og fjerne forhindringer"
+      ],
+      "correct_answer": "D",
+      "explanation": "Servant leadership betyder at SM tjener teamet ved at facilitere og fjerne forhindringer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "roles"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_037",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Empirisk proceskontrol",
+      "description": "Hvad er de tre søjler i empirisk proceskontrol i Scrum?",
+      "options": [
+        "Plan, Do, Check",
+        "Transparens, Inspektion, Tilpasning",
+        "Roller, Events, Artefakter",
+        "Backlog, Sprint, Increment"
+      ],
+      "correct_answer": "B",
+      "explanation": "De tre søjler er Transparens, Inspektion og Tilpasning.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_038",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Anti-patterns i Daily",
+      "description": "Hvad er et anti-pattern i Daily Scrum?",
+      "options": [
+        "Stående møde",
+        "Mødet varer under 15 min",
+        "Teammedlemmer rapporterer kun til Scrum Master i stedet for at tale med hinanden",
+        "Alle deltager"
+      ],
+      "correct_answer": "C",
+      "explanation": "Et anti-pattern er at teamet rapporterer til SM i stedet for at synkronisere med hinanden.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "daily-scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_039",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "PO delegering",
+      "description": "Kan Product Owner delegere ansvaret for Product Backlog?",
+      "options": [
+        "Nej, aldrig",
+        "Ja, men PO forbliver accountable",
+        "Ja, helt og holdent",
+        "Kun til Scrum Master"
+      ],
+      "correct_answer": "B",
+      "explanation": "PO kan delegere opgaver, men er altid den ultimative ansvarlige for Product Backlog.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "roles"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_040",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Sprint Retrospective output",
+      "description": "Hvad bør Sprint Retrospective resultere i?",
+      "options": [
+        "Identificerede forbedringer og handlingsplan til næste Sprint",
+        "En ny Product Backlog",
+        "En rapport til ledelsen",
+        "Ændring af Sprint-varighed"
+      ],
+      "correct_answer": "A",
+      "explanation": "Retrospective bør resultere i konkrete forbedringer og handlingsplan.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "retrospective"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_041",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Velocity misuse",
+      "description": "Hvad er et misbrug af velocity?",
+      "options": [
+        "At sammenligne velocity mellem forskellige teams",
+        "At bruge den til sprint planning",
+        "At bruge den til forecasting",
+        "At spore den over tid"
+      ],
+      "correct_answer": "A",
+      "explanation": "At sammenligne velocity mellem teams er misvisende da teams estimerer forskelligt.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "velocity"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_042",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Technical Debt i Scrum",
+      "description": "Hvordan bør teknisk gæld håndteres i Scrum?",
+      "options": [
+        "Ignoreres",
+        "Tilføjes som items i Product Backlog og prioriteres af PO",
+        "Kun fixes i sidste Sprint",
+        "Fixes kun af Scrum Master"
+      ],
+      "correct_answer": "B",
+      "explanation": "Teknisk gæld bør være synlig i Product Backlog og prioriteres som andet arbejde.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "teknisk-gaeld"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_043",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Scrum og fixed scope",
+      "description": "Hvad gør Scrum med projekter med fast scope og deadline?",
+      "options": [
+        "Scope kan justeres inden for Sprint, men Sprint Goal bevares",
+        "Scrum virker ikke med fast scope",
+        "Alle krav skal være færdige",
+        "Sprints forlænges efter behov"
+      ],
+      "correct_answer": "A",
+      "explanation": "I Scrum er scope fleksibelt - teamet leverer det vigtigste først inden for tidsrammen.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_044",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Sprint Review timebox",
+      "description": "Hvor lang er Sprint Review timeboxed til for en 1-måneds Sprint?",
+      "options": [
+        "1 time",
+        "2 timer",
+        "8 timer",
+        "4 timer"
+      ],
+      "correct_answer": "D",
+      "explanation": "Sprint Review er timeboxed til 4 timer for en 1-måneds Sprint.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint-review"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_045",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Done vs Undone",
+      "description": "Hvad sker med items der ikke opfylder Definition of Done?",
+      "options": [
+        "De tæller som halvfærdige",
+        "De slettes",
+        "De flyttes tilbage til Product Backlog",
+        "De godkendes alligevel"
+      ],
+      "correct_answer": "C",
+      "explanation": "Items der ikke opfylder DoD flyttes tilbage til Product Backlog for fremtidig prioritering.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "definition-of-done"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_046",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Scrum og kontrakter",
+      "description": "Hvordan håndteres kontrakter i agile/Scrum-projekter?",
+      "options": [
+        "Traditionelle fastpris-kontrakter",
+        "Kun mundtlige aftaler",
+        "Ingen kontrakter",
+        "Time-and-materials eller agile kontrakter med fokus på samarbejde"
+      ],
+      "correct_answer": "D",
+      "explanation": "Agile kontrakter fokuserer på samarbejde og fleksibilitet frem for fast scope.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_047",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Sprint varighed ændring",
+      "description": "Hvornår bør Sprint-varigheden ændres?",
+      "options": [
+        "Hver Sprint",
+        "Aldrig",
+        "Sjældent, og kun hvis teamet oplever vedvarende problemer med den nuværende",
+        "Kun PO kan ændre"
+      ],
+      "correct_answer": "C",
+      "explanation": "Sprint-varigheden bør være konsistent og kun ændres ved vedvarende udfordringer.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_048",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Multiple Product Owners",
+      "description": "Kan et Scrum-team have flere Product Owners?",
+      "options": [
+        "Nej, der skal være præcis én PO per produkt",
+        "Ja, jo flere jo bedre",
+        "Ja, én per Sprint",
+        "Kun i store organisationer"
+      ],
+      "correct_answer": "A",
+      "explanation": "Der skal være præcis én Product Owner per produkt for klar prioritering.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum",
+        "roles"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_049",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Scrum og dokumentation",
+      "description": "Hvordan forholder Scrum sig til dokumentation?",
+      "options": [
+        "Tilstrækkelig dokumentation - nok til at støtte udviklingen",
+        "Ingen dokumentation overhovedet",
+        "Omfattende dokumentation for alt",
+        "Kun kode er dokumentation"
+      ],
+      "correct_answer": "A",
+      "explanation": "Scrum kræver tilstrækkelig dokumentation - nok til at støtte teamet og stakeholders.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "scrum"
+      ],
+      "points": 1
+    },
+    {
+      "id": "agil_scrum_050",
+      "category": "scrum_agile",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Sprint commitment",
+      "description": "Hvad betyder 'commitment' i Sprint Planning?",
+      "options": [
+        "Et juridisk bindende løfte",
+        "Teamets bedste forecast og forpligtelse til Sprint Goal",
+        "Garanti for alle items",
+        "PO's godkendelse"
+      ],
+      "correct_answer": "B",
+      "explanation": "Commitment er teamets bedste forecast og forpligtelse til at arbejde mod Sprint Goal.",
+      "hints": [
+        "Tænk over kernekoncepterne",
+        "Overvej de vigtigste principper"
+      ],
+      "tags": [
+        "sprint-planning"
+      ],
+      "points": 1
+    }
+  ]
+}

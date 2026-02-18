@@ -1,0 +1,1216 @@
+{
+  "questions": [
+    {
+      "id": "agil_analyse1_1",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad er formålet med en Use Case?",
+      "description": "Hvad beskriver en Use Case primært i systemudvikling?",
+      "options": {
+        "A": "En brugers interaktion med systemet for at opnå et mål",
+        "B": "Systemets interne datastruktur",
+        "C": "Databasens ER-diagram",
+        "D": "Klassernes arvehierarki"
+      },
+      "correct_answer": "A",
+      "explanation": "En Use Case beskriver en aktørs interaktion med systemet for at opnå et specifikt mål. Det er en funktionel beskrivelse set fra brugerens perspektiv.",
+      "hints": [
+        "Tænk på hvad brugeren vil opnå",
+        "Det handler om interaktion"
+      ],
+      "tags": [
+        "use case",
+        "aktør",
+        "interaktion"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_2",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad er en aktør i Use Case modellering?",
+      "description": "Hvordan defineres en aktør i forbindelse med Use Cases?",
+      "options": {
+        "A": "En database-tabel",
+        "B": "En person eller et system der interagerer med systemet",
+        "C": "En programmeringsfejl",
+        "D": "En type af loop i koden"
+      },
+      "correct_answer": "B",
+      "explanation": "En aktør er en ekstern entitet (person, organisation eller system) der interagerer med systemet. Aktører er altid uden for systemgrænsen.",
+      "hints": [
+        "Tænk på hvem der bruger systemet",
+        "Aktører er eksterne"
+      ],
+      "tags": [
+        "aktør",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_3",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad er en primær aktør?",
+      "description": "Hvad kendetegner en primær aktør i Use Case modellering?",
+      "options": {
+        "A": "Systemadministratoren",
+        "B": "Den vigtigste bruger i systemet",
+        "C": "Den aktør der initierer Use Casen",
+        "D": "Den aktør der modtager output"
+      },
+      "correct_answer": "C",
+      "explanation": "En primær aktør er den der initierer interaktionen med systemet og har et mål, som Use Casen skal opfylde.",
+      "hints": [
+        "Hvem starter interaktionen?",
+        "Tænk på initiativtager"
+      ],
+      "tags": [
+        "primær aktør",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_4",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er en sekundær aktør?",
+      "description": "Hvilken rolle har en sekundær aktør i en Use Case?",
+      "options": {
+        "A": "En backup-administrator",
+        "B": "En bruger der sjældent logger ind",
+        "C": "En aktør der aldrig bruger systemet",
+        "D": "En aktør systemet interagerer med for at udføre Use Casen"
+      },
+      "correct_answer": "D",
+      "explanation": "En sekundær aktør er en aktør som systemet har brug for at interagere med for at fuldføre Use Casen, men som ikke initierer den.",
+      "hints": [
+        "Tænk på hjælpende systemer",
+        "F.eks. en betalingsgateway"
+      ],
+      "tags": [
+        "sekundær aktør",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_5",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad indeholder et Use Case diagram?",
+      "description": "Hvilke elementer indgår typisk i et Use Case diagram?",
+      "options": {
+        "A": "Aktører, use cases, systemgrænse og relationer",
+        "B": "Klasser, attributter og metoder",
+        "C": "Tilstande og overgange",
+        "D": "Sekvenser af metodekald"
+      },
+      "correct_answer": "A",
+      "explanation": "Et Use Case diagram viser aktører (stregmænd), use cases (ellipser), systemgrænsen (rektangel) og relationer mellem dem.",
+      "hints": [
+        "Tænk på stregmænd og ellipser",
+        "UML-notation"
+      ],
+      "tags": [
+        "use case diagram",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_6",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad repræsenterer systemgrænsen i et Use Case diagram?",
+      "description": "Hvad angiver rektanglet i et Use Case diagram?",
+      "options": {
+        "A": "En database-tabel",
+        "B": "Grænsen mellem systemet og den eksterne verden",
+        "C": "En klasses grænse",
+        "D": "Et netværks firewall"
+      },
+      "correct_answer": "B",
+      "explanation": "Systemgrænsen (system boundary) viser hvad der er inden for systemet (use cases) og hvad der er uden for (aktører).",
+      "hints": [
+        "Tænk på hvad der er \"inden i\" systemet"
+      ],
+      "tags": [
+        "systemgrænse",
+        "use case diagram"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_7",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad betyder <<include>> relationen i Use Cases?",
+      "description": "Hvordan bruges <<include>> relationen mellem Use Cases?",
+      "options": {
+        "A": "En aktør arver fra en anden aktør",
+        "B": "En Use Case kan valgfrit udvide en anden",
+        "C": "En Use Case inkluderer altid en anden Use Cases funktionalitet",
+        "D": "Et system erstatter et andet"
+      },
+      "correct_answer": "C",
+      "explanation": "Include-relationen betyder at basis-Use Casen ALTID inkluderer den inkluderede Use Cases adfærd. Det er en obligatorisk del.",
+      "hints": [
+        "Tænk \"altid inkluderet\"",
+        "Det er ikke valgfrit"
+      ],
+      "tags": [
+        "include",
+        "use case relation"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_8",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad betyder <<extend>> relationen i Use Cases?",
+      "description": "Hvordan fungerer <<extend>> relationen?",
+      "options": {
+        "A": "Et interface implementeres",
+        "B": "En Use Case inkluderer altid en anden",
+        "C": "En klasse arver fra en anden",
+        "D": "En Use Case kan valgfrit udvide en anden under visse betingelser"
+      },
+      "correct_answer": "D",
+      "explanation": "Extend-relationen betyder at en Use Case KAN udvide en anden Use Case under bestemte betingelser. Det er valgfrit og betinget.",
+      "hints": [
+        "Tænk \"valgfri udvidelse\"",
+        "Det er betinget"
+      ],
+      "tags": [
+        "extend",
+        "use case relation"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_9",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Forskel på include og extend",
+      "description": "Hvad er den primære forskel mellem <<include>> og <<extend>> relationer?",
+      "options": {
+        "A": "Include er obligatorisk, extend er valgfri",
+        "B": "Include er valgfri, extend er obligatorisk",
+        "C": "De er identiske",
+        "D": "Include bruges kun til aktører"
+      },
+      "correct_answer": "A",
+      "explanation": "Include er altid obligatorisk - den inkluderede Use Case udføres altid. Extend er valgfri og sker kun under bestemte betingelser.",
+      "hints": [
+        "Tænk på obligatorisk vs. valgfri"
+      ],
+      "tags": [
+        "include",
+        "extend",
+        "forskel"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_10",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Generalisering mellem aktører",
+      "description": "Hvad betyder generalisering mellem aktører i et Use Case diagram?",
+      "options": {
+        "A": "En aktør sletter en anden",
+        "B": "En aktør arver alle Use Cases fra en mere generel aktør",
+        "C": "To aktører smelter sammen",
+        "D": "En aktør bliver til en Use Case"
+      },
+      "correct_answer": "B",
+      "explanation": "Generalisering mellem aktører betyder at den specialiserede aktør arver alle Use Cases fra den generelle aktør, plus kan have sine egne.",
+      "hints": [
+        "Tænk på arv fra OOP",
+        "Den specialiserede aktør kan mere"
+      ],
+      "tags": [
+        "generalisering",
+        "aktør",
+        "arv"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_11",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad er en \"Fully Dressed\" Use Case?",
+      "description": "Hvad kendetegner en fully dressed Use Case beskrivelse?",
+      "options": {
+        "A": "En Use Case uden aktører",
+        "B": "En Use Case med kun et navn",
+        "C": "En detaljeret beskrivelse med alle sektioner udfyldt",
+        "D": "En grafisk Use Case"
+      },
+      "correct_answer": "C",
+      "explanation": "En fully dressed Use Case indeholder alle detaljer: navn, aktører, preconditions, main flow, alternative flows, postconditions, osv.",
+      "hints": [
+        "Tænk på den mest detaljerede form",
+        "Alle sektioner er med"
+      ],
+      "tags": [
+        "fully dressed",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_12",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er preconditions i en Use Case?",
+      "description": "Hvad beskriver preconditions i en Use Case specifikation?",
+      "options": {
+        "A": "Fejlhåndtering",
+        "B": "Betingelser efter Use Casen er afsluttet",
+        "C": "Alternative scenarier",
+        "D": "Betingelser der skal være opfyldt før Use Casen kan starte"
+      },
+      "correct_answer": "D",
+      "explanation": "Preconditions er betingelser der SKAL være opfyldt før Use Casen kan påbegyndes, f.eks. at brugeren er logget ind.",
+      "hints": [
+        "Hvad skal være sandt FØR start?"
+      ],
+      "tags": [
+        "preconditions",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_13",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er postconditions i en Use Case?",
+      "description": "Hvad beskriver postconditions?",
+      "options": {
+        "A": "Systemets tilstand efter Use Casen er gennemført",
+        "B": "Betingelser før start",
+        "C": "Alternative flows",
+        "D": "Aktørens baggrund"
+      },
+      "correct_answer": "A",
+      "explanation": "Postconditions beskriver den garanterede tilstand af systemet efter en succesfuld gennemførelse af Use Casen.",
+      "hints": [
+        "Hvad er sandt EFTER afslutning?"
+      ],
+      "tags": [
+        "postconditions",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_14",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er Main Success Scenario?",
+      "description": "Hvad beskriver Main Success Scenario (MSS) i en Use Case?",
+      "options": {
+        "A": "Alle mulige fejlscenarier",
+        "B": "Den normale, succesfulde vej gennem Use Casen",
+        "C": "Systemets arkitektur",
+        "D": "Databasens struktur"
+      },
+      "correct_answer": "B",
+      "explanation": "Main Success Scenario er den \"happy path\" - den ideelle sekvens af trin fra start til succesfuld afslutning.",
+      "hints": [
+        "Tænk \"happy path\"",
+        "Ingen fejl undervejs"
+      ],
+      "tags": [
+        "main success scenario",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_15",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er alternative flows?",
+      "description": "Hvad beskriver alternative flows i en Use Case?",
+      "options": {
+        "A": "Systemets hardware-krav",
+        "B": "Kun den normale succesfulde vej",
+        "C": "Afvigelser fra den normale vej, inkl. fejl og variationer",
+        "D": "Testresultater"
+      },
+      "correct_answer": "C",
+      "explanation": "Alternative flows beskriver hvad der sker når noget afviger fra Main Success Scenario - fejl, undtagelser eller alternative veje.",
+      "hints": [
+        "Hvad sker når noget går galt?",
+        "Tænk på variationer"
+      ],
+      "tags": [
+        "alternative flows",
+        "use case"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_16",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad står UML for?",
+      "description": "Hvad er den fulde betegnelse for UML?",
+      "options": {
+        "A": "User Management Layer",
+        "B": "Universal Machine Learning",
+        "C": "Unique Method Library",
+        "D": "Unified Modeling Language"
+      },
+      "correct_answer": "D",
+      "explanation": "UML står for Unified Modeling Language - et standardiseret modelleringssprog til visualisering af software-systemer.",
+      "hints": [
+        "Det handler om modellering",
+        "Det er et \"sprog\""
+      ],
+      "tags": [
+        "UML",
+        "grundlæggende"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_17",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad er formålet med UML?",
+      "description": "Hvorfor bruger vi UML i systemudvikling?",
+      "options": {
+        "A": "At visualisere, specificere og dokumentere software-systemer",
+        "B": "At kompilere kode hurtigere",
+        "C": "At teste software automatisk",
+        "D": "At erstatte programmering"
+      },
+      "correct_answer": "A",
+      "explanation": "UML bruges til at visualisere systemarkitektur, specificere systemdesign og dokumentere beslutninger på en standardiseret måde.",
+      "hints": [
+        "Tænk på kommunikation",
+        "Det er ikke et programmeringssprog"
+      ],
+      "tags": [
+        "UML",
+        "formål"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_18",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvilke to hovedkategorier af UML-diagrammer findes?",
+      "description": "UML-diagrammer opdeles i to overordnede kategorier. Hvilke?",
+      "options": {
+        "A": "Klasse- og objektdiagrammer",
+        "B": "Strukturdiagrammer og adfærdsdiagrammer",
+        "C": "Statiske og dynamiske klasser",
+        "D": "Input- og outputdiagrammer"
+      },
+      "correct_answer": "B",
+      "explanation": "UML har strukturdiagrammer (statiske: klasse, objekt, komponent, deployment) og adfærdsdiagrammer (dynamiske: sekvens, aktivitet, tilstand, use case).",
+      "hints": [
+        "Tænk statisk vs. dynamisk",
+        "Struktur vs. opførsel"
+      ],
+      "tags": [
+        "UML",
+        "kategorier"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_19",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvilket UML-diagram viser klassers struktur?",
+      "description": "Hvilket UML-diagram bruges til at vise klasser, attributter, metoder og relationer?",
+      "options": {
+        "A": "Aktivitetsdiagram",
+        "B": "Sekvensdiagram",
+        "C": "Klassediagram",
+        "D": "Use Case diagram"
+      },
+      "correct_answer": "C",
+      "explanation": "Klassediagrammet er det mest brugte strukturdiagram i UML og viser klasser med attributter, metoder og relationer mellem dem.",
+      "hints": [
+        "Det hedder næsten det samme som det viser"
+      ],
+      "tags": [
+        "klassediagram",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_20",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad viser et sekvensdiagram?",
+      "description": "Hvad er formålet med et sekvensdiagram i UML?",
+      "options": {
+        "A": "Systemets deployment",
+        "B": "Klassernes arvehierarki",
+        "C": "Databasens struktur",
+        "D": "Rækkefølgen af beskeder mellem objekter over tid"
+      },
+      "correct_answer": "D",
+      "explanation": "Et sekvensdiagram viser interaktionen mellem objekter som en sekvens af beskeder ordnet i tid (oppefra og ned).",
+      "hints": [
+        "Tænk på tid og rækkefølge",
+        "Beskeder mellem objekter"
+      ],
+      "tags": [
+        "sekvensdiagram",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_21",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad indeholder en klasse-boks i et klassediagram?",
+      "description": "Hvilke tre sektioner har en klasse i UML klassediagrammet?",
+      "options": {
+        "A": "Klassenavn, attributter og metoder",
+        "B": "Klassenavn, databaser og filer",
+        "C": "Klassenavn, aktører og use cases",
+        "D": "Klassenavn, tests og resultater"
+      },
+      "correct_answer": "A",
+      "explanation": "En klasse i UML har tre sektioner: øverst klassenavnet, i midten attributterne og nederst metoderne.",
+      "hints": [
+        "Tre sektioner lodret",
+        "Navn øverst"
+      ],
+      "tags": [
+        "klassediagram",
+        "klasse",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_22",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad betyder + foran en attribut i UML?",
+      "description": "I et UML klassediagram, hvad angiver + tegnet?",
+      "options": {
+        "A": "Private - kun synlig internt",
+        "B": "Public - synlig for alle",
+        "C": "Protected - synlig for subklasser",
+        "D": "Package - synlig i pakken"
+      },
+      "correct_answer": "B",
+      "explanation": "I UML angiver + at attributten eller metoden er public og dermed tilgængelig for alle andre klasser.",
+      "hints": [
+        "Tænk på synlighed",
+        "Plus = åben for alle"
+      ],
+      "tags": [
+        "synlighed",
+        "public",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_23",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad betyder - foran en attribut i UML?",
+      "description": "I et UML klassediagram, hvad angiver - tegnet?",
+      "options": {
+        "A": "Protected - synlig for subklasser",
+        "B": "Public - synlig for alle",
+        "C": "Private - kun synlig internt i klassen",
+        "D": "Static - delt mellem alle"
+      },
+      "correct_answer": "C",
+      "explanation": "Minus-tegnet (-) i UML angiver private synlighed, som betyder at attributten kun er tilgængelig inden for selve klassen.",
+      "hints": [
+        "Minus = lukket",
+        "Kun klassen selv kan se den"
+      ],
+      "tags": [
+        "synlighed",
+        "private",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_24",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad betyder # foran en attribut i UML?",
+      "description": "I UML notation, hvad angiver # tegnet?",
+      "options": {
+        "A": "Abstract - ikke implementeret",
+        "B": "Public - synlig for alle",
+        "C": "Private - kun internt",
+        "D": "Protected - synlig for klassen og dens subklasser"
+      },
+      "correct_answer": "D",
+      "explanation": "Hash-tegnet (#) angiver protected synlighed i UML, som betyder at attributten er tilgængelig for klassen selv og dens subklasser (arv).",
+      "hints": [
+        "Mellem public og private",
+        "Subklasser kan tilgå den"
+      ],
+      "tags": [
+        "synlighed",
+        "protected",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_25",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er en association i UML?",
+      "description": "Hvad repræsenterer en association mellem to klasser i UML?",
+      "options": {
+        "A": "En relation eller forbindelse mellem to klasser",
+        "B": "En arverelation",
+        "C": "En fejl i koden",
+        "D": "En databaseforbindelse"
+      },
+      "correct_answer": "A",
+      "explanation": "En association repræsenterer en strukturel forbindelse mellem klasser, der viser at objekter af disse klasser er relaterede.",
+      "hints": [
+        "Tænk på en forbindelse",
+        "Vises som en streg"
+      ],
+      "tags": [
+        "association",
+        "UML",
+        "relation"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_26",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er multiplicitet i UML?",
+      "description": "Hvad angiver multiplicitet (multiplicity) på en association?",
+      "options": {
+        "A": "Hvor mange metoder en klasse har",
+        "B": "Hvor mange objekter der kan deltage i relationen",
+        "C": "Hvor mange attributter der er synlige",
+        "D": "Antal linjer kode i klassen"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiplicitet angiver antallet af objekter der kan deltage i en association, f.eks. 1..* (en til mange) eller 0..1 (nul eller en).",
+      "hints": [
+        "Tænk på antal",
+        "F.eks. 1..*, 0..1"
+      ],
+      "tags": [
+        "multiplicitet",
+        "association",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_27",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hvad betyder multipliciteten 0..*?",
+      "description": "I UML, hvad angiver multipliciteten 0..*?",
+      "options": {
+        "A": "Præcis ét objekt",
+        "B": "Præcis nul objekter",
+        "C": "Nul til mange - valgfrit antal objekter",
+        "D": "Mellem 0 og 1 objekt"
+      },
+      "correct_answer": "C",
+      "explanation": "0..* (nul til mange) betyder at der kan være nul, et eller flere objekter i relationen. Det er valgfrit og ubegrænset.",
+      "hints": [
+        "Stjernen betyder \"mange\"",
+        "Nul er minimum"
+      ],
+      "tags": [
+        "multiplicitet",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_28",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er aggregation i UML?",
+      "description": "Hvad repræsenterer aggregation som relation i UML?",
+      "options": {
+        "A": "En implementering af interface",
+        "B": "Et \"er-en\" arveforhold",
+        "C": "En tvungen afhængighed",
+        "D": "Et \"har-en\" forhold hvor delene kan eksistere uafhængigt"
+      },
+      "correct_answer": "D",
+      "explanation": "Aggregation er en speciel association der viser et \"hele-del\" forhold, hvor delene kan eksistere uafhængigt af helheden. Vises med tom diamant.",
+      "hints": [
+        "Tænk \"har-en\" løst",
+        "Tom diamant"
+      ],
+      "tags": [
+        "aggregation",
+        "UML",
+        "relation"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_29",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er komposition i UML?",
+      "description": "Hvordan adskiller komposition sig fra aggregation i UML?",
+      "options": {
+        "A": "Delene kan IKKE eksistere uden helheden",
+        "B": "Delene kan eksistere uafhængigt",
+        "C": "Der er ingen forskel",
+        "D": "Komposition bruges kun til interfaces"
+      },
+      "correct_answer": "A",
+      "explanation": "Komposition er en stærk form for aggregation hvor delene IKKE kan eksistere uafhængigt af helheden. Vises med fyldt diamant.",
+      "hints": [
+        "Stærkere end aggregation",
+        "Fyldt diamant"
+      ],
+      "tags": [
+        "komposition",
+        "UML",
+        "relation"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_30",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvordan vises aggregation grafisk i UML?",
+      "description": "Hvilket symbol bruges til at vise aggregation i et klassediagram?",
+      "options": {
+        "A": "Fyldt (sort) diamant ved helheden",
+        "B": "Tom (åben) diamant ved helheden",
+        "C": "En pil med trekantet spids",
+        "D": "En stiplet linje"
+      },
+      "correct_answer": "B",
+      "explanation": "Aggregation vises med en tom (hvid/åben) diamant placeret ved den klasse der repræsenterer helheden.",
+      "hints": [
+        "Diamant ved helheden",
+        "Ikke fyldt"
+      ],
+      "tags": [
+        "aggregation",
+        "notation",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_31",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvordan vises komposition grafisk i UML?",
+      "description": "Hvilket symbol bruges til at vise komposition i et klassediagram?",
+      "options": {
+        "A": "Stiplet pil",
+        "B": "Tom (åben) diamant ved helheden",
+        "C": "Fyldt (sort) diamant ved helheden",
+        "D": "Dobbelt streg"
+      },
+      "correct_answer": "C",
+      "explanation": "Komposition vises med en fyldt (sort) diamant placeret ved den klasse der repræsenterer helheden. Den fyldte diamant signalerer stærkere binding.",
+      "hints": [
+        "Sort diamant = stærk binding",
+        "Fyldt = komposition"
+      ],
+      "tags": [
+        "komposition",
+        "notation",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_32",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvordan vises arv (generalisering) i UML?",
+      "description": "Hvilket symbol bruges til at vise arv i et klassediagram?",
+      "options": {
+        "A": "En dobbelt streg",
+        "B": "En stiplet linje med åben pil",
+        "C": "En fyldt diamant",
+        "D": "En hel linje med tom trekantpil mod superklassen"
+      },
+      "correct_answer": "D",
+      "explanation": "Arv (generalisering) vises i UML med en hel linje og en tom (hvid) trekantpil der peger mod superklassen (den generelle klasse).",
+      "hints": [
+        "Trekant peger mod superklassen",
+        "Hel linje"
+      ],
+      "tags": [
+        "arv",
+        "generalisering",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_33",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvordan vises interface-implementering i UML?",
+      "description": "Hvilket symbol bruges når en klasse implementerer et interface i UML?",
+      "options": {
+        "A": "Stiplet linje med tom trekantpil mod interfacet",
+        "B": "Hel linje med tom trekantpil",
+        "C": "Fyldt diamant",
+        "D": "Tom diamant"
+      },
+      "correct_answer": "A",
+      "explanation": "Interface-implementering (realization) vises med en stiplet linje og tom trekantpil der peger mod interfacet.",
+      "hints": [
+        "Stiplet = implementering",
+        "Trekant peger mod interfacet"
+      ],
+      "tags": [
+        "interface",
+        "realization",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_34",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er et interface i UML?",
+      "description": "Hvad beskriver et interface i UML klassediagrammet?",
+      "options": {
+        "A": "En klasse med kun private metoder",
+        "B": "En kontrakt med metode-signaturer uden implementering",
+        "C": "En database-tabel",
+        "D": "En type test"
+      },
+      "correct_answer": "B",
+      "explanation": "Et interface i UML definerer en kontrakt - et sæt af metode-signaturer som implementerende klasser skal realisere. Markeres med <<interface>>.",
+      "hints": [
+        "Tænk kontrakt",
+        "Ingen implementering"
+      ],
+      "tags": [
+        "interface",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_35",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er en abstrakt klasse i UML?",
+      "description": "Hvordan kendetegnes en abstrakt klasse i UML?",
+      "options": {
+        "A": "Den har kun private attributter",
+        "B": "Den har ingen metoder",
+        "C": "Klassens navn skrives i kursiv og den kan ikke instantieres direkte",
+        "D": "Den kan kun arve fra interfaces"
+      },
+      "correct_answer": "C",
+      "explanation": "En abstrakt klasse i UML skrives med kursiv navn (eller {abstract}). Den kan ikke instantieres direkte og kan indeholde abstrakte metoder.",
+      "hints": [
+        "Kursiv = abstrakt",
+        "Kan ikke laves objekter af"
+      ],
+      "tags": [
+        "abstrakt klasse",
+        "UML"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_36",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er en domænemodel?",
+      "description": "Hvad beskriver en domænemodel i systemudvikling?",
+      "options": {
+        "A": "Brugergrænsefladen",
+        "B": "Systemets kildekode",
+        "C": "Databasens fysiske struktur",
+        "D": "Vigtige begreber og deres relationer i problemdomænet"
+      },
+      "correct_answer": "D",
+      "explanation": "En domænemodel identificerer og visualiserer de vigtigste begreber, entiteter og relationer i det domæne systemet skal understøtte.",
+      "hints": [
+        "Tænk på forretningsbegreber",
+        "Ikke teknisk implementering"
+      ],
+      "tags": [
+        "domænemodel",
+        "analyse"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_37",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvornår laves en domænemodel typisk?",
+      "description": "I hvilken fase af systemudviklingen udarbejdes domænemodellen typisk?",
+      "options": {
+        "A": "I analysefasen, før design",
+        "B": "Efter implementering",
+        "C": "Under test",
+        "D": "Ved deployment"
+      },
+      "correct_answer": "A",
+      "explanation": "Domænemodellen laves i analysefasen for at forstå problemdomænet inden man begynder at designe løsningen.",
+      "hints": [
+        "Tidligt i processen",
+        "Før man designer"
+      ],
+      "tags": [
+        "domænemodel",
+        "analysefase"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_38",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Forskel på domænemodel og designklassediagram",
+      "description": "Hvad er den primære forskel mellem en domænemodel og et designklassediagram?",
+      "options": {
+        "A": "De er identiske",
+        "B": "Domænemodellen viser forretningsbegreber, designklassediagrammet viser software-klasser",
+        "C": "Domænemodellen er mere detaljeret",
+        "D": "Designklassediagrammet laves først"
+      },
+      "correct_answer": "B",
+      "explanation": "Domænemodellen fokuserer på forretningsbegreber uden tekniske detaljer, mens designklassediagrammet viser faktiske software-klasser med attributter, metoder og typer.",
+      "hints": [
+        "Forretning vs. software",
+        "Analyse vs. design"
+      ],
+      "tags": [
+        "domænemodel",
+        "designklassediagram"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_39",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er Use Case realisering?",
+      "description": "Hvad beskriver Use Case realisering i UML?",
+      "options": {
+        "A": "Hvordan man finder aktører",
+        "B": "Hvordan man tegner Use Case diagrammer",
+        "C": "Hvordan en Use Case implementeres med samarbejdende objekter",
+        "D": "Hvordan man tester Use Cases"
+      },
+      "correct_answer": "C",
+      "explanation": "Use Case realisering viser hvordan en Use Case implementeres ved at beskrive samarbejdet mellem objekter via sekvens- eller kommunikationsdiagrammer.",
+      "hints": [
+        "Fra krav til design",
+        "Objekter samarbejder"
+      ],
+      "tags": [
+        "use case realisering",
+        "design"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_40",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvilket diagram bruges typisk til Use Case realisering?",
+      "description": "Hvilket UML-diagram bruges mest til at vise Use Case realisering?",
+      "options": {
+        "A": "Pakke diagram",
+        "B": "Use Case diagram",
+        "C": "Deployment diagram",
+        "D": "Sekvensdiagram"
+      },
+      "correct_answer": "D",
+      "explanation": "Sekvensdiagrammet bruges typisk til at realisere Use Cases ved at vise den tidsmæssige rækkefølge af beskeder mellem objekter.",
+      "hints": [
+        "Viser interaktion over tid",
+        "Beskeder mellem objekter"
+      ],
+      "tags": [
+        "sekvensdiagram",
+        "realisering"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_41",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er forskellen på analyse og design?",
+      "description": "Hvad er den primære forskel mellem analyse og design i systemudvikling?",
+      "options": {
+        "A": "Analyse fokuserer på HVAD systemet skal gøre, design på HVORDAN",
+        "B": "Analyse kommer efter design",
+        "C": "De er det samme",
+        "D": "Design handler om krav"
+      },
+      "correct_answer": "A",
+      "explanation": "Analyse handler om at forstå og specificere HVAD systemet skal gøre (problemdomænet), mens design handler om HVORDAN det skal implementeres (løsningsdomænet).",
+      "hints": [
+        "HVAD vs. HVORDAN",
+        "Problem vs. løsning"
+      ],
+      "tags": [
+        "analyse",
+        "design",
+        "forskel"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_42",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er SSD (System Sequence Diagram)?",
+      "description": "Hvad viser et System Sequence Diagram?",
+      "options": {
+        "A": "Klassernes interne struktur",
+        "B": "Interaktionen mellem aktør og system som en \"black box\"",
+        "C": "Databasens tabeller",
+        "D": "Systemets deployment"
+      },
+      "correct_answer": "B",
+      "explanation": "Et SSD viser systemet som en black box og fokuserer på interaktionen mellem aktøren og systemet - hvilke beskeder der sendes frem og tilbage.",
+      "hints": [
+        "Systemet som black box",
+        "Aktør-system interaktion"
+      ],
+      "tags": [
+        "SSD",
+        "sekvensdiagram",
+        "analyse"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_43",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Hvad er GRASP patterns?",
+      "description": "Hvad står GRASP for i objektorienteret design?",
+      "options": {
+        "A": "Group Responsibility And Shared Processing",
+        "B": "Graphical Representation And System Planning",
+        "C": "General Responsibility Assignment Software Patterns",
+        "D": "General Requirements Analysis for Software Projects"
+      },
+      "correct_answer": "C",
+      "explanation": "GRASP står for General Responsibility Assignment Software Patterns - principper for at tildele ansvar til klasser og objekter.",
+      "hints": [
+        "Handler om ansvarstildeling",
+        "Software patterns"
+      ],
+      "tags": [
+        "GRASP",
+        "design patterns"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_44",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Hvad er Information Expert princippet?",
+      "description": "Hvad siger GRASP-princippet Information Expert?",
+      "options": {
+        "A": "Opret en ny klasse for hvert ansvar",
+        "B": "Tildel alt ansvar til én controller-klasse",
+        "C": "Brug altid arv frem for komposition",
+        "D": "Tildel ansvar til den klasse der har den nødvendige information"
+      },
+      "correct_answer": "D",
+      "explanation": "Information Expert siger at ansvar bør tildeles den klasse der har den information (data) der er nødvendig for at udføre opgaven.",
+      "hints": [
+        "Hvem har informationen?",
+        "Data og ansvar hører sammen"
+      ],
+      "tags": [
+        "information expert",
+        "GRASP"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_45",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Hvad er Creator princippet i GRASP?",
+      "description": "Hvornår bør klasse A oprette objekter af klasse B ifølge Creator-princippet?",
+      "options": {
+        "A": "Når A indeholder, aggregerer eller har tæt relation til B",
+        "B": "Altid når A er en controller",
+        "C": "Kun når B er en abstrakt klasse",
+        "D": "Aldrig - brug altid factory pattern"
+      },
+      "correct_answer": "A",
+      "explanation": "Creator-princippet siger at A bør oprette B hvis A indeholder/aggregerer B, registrerer B, har initialiseringsdata for B, eller tæt bruger B.",
+      "hints": [
+        "Hvem \"ejer\" objektet?",
+        "Indeholder eller aggregerer"
+      ],
+      "tags": [
+        "creator",
+        "GRASP"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_46",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Hvad er Controller princippet i GRASP?",
+      "description": "Hvad siger GRASP Controller-princippet om håndtering af systemhændelser?",
+      "options": {
+        "A": "Alle hændelser skal håndteres i GUI-klassen",
+        "B": "En controller-klasse bør modtage og koordinere systemhændelser",
+        "C": "Hver klasse håndterer sine egne hændelser",
+        "D": "Kun main-metoden håndterer hændelser"
+      },
+      "correct_answer": "B",
+      "explanation": "Controller-princippet siger at en dedikeret controller-klasse (facade controller eller use case controller) bør modtage og koordinere systemhændelser fra UI-laget.",
+      "hints": [
+        "Koordinerer systemhændelser",
+        "Mellem UI og domæne"
+      ],
+      "tags": [
+        "controller",
+        "GRASP"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_47",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er Low Coupling princippet?",
+      "description": "Hvad tilstræber Low Coupling princippet i GRASP?",
+      "options": {
+        "A": "At alle klasser kender alle andre",
+        "B": "At maksimere afhængigheder for bedre kommunikation",
+        "C": "At minimere afhængigheder mellem klasser",
+        "D": "At bruge kun én klasse"
+      },
+      "correct_answer": "C",
+      "explanation": "Low Coupling tilstræber at minimere afhængigheder mellem klasser, så ændringer i én klasse har minimal påvirkning på andre klasser.",
+      "hints": [
+        "Færre afhængigheder = bedre",
+        "Lettere at ændre"
+      ],
+      "tags": [
+        "low coupling",
+        "GRASP"
+      ],
+      "points": 10
+    },
+    {
+      "id": "agil_analyse1_48",
+      "category": "analyse_design_1",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hvad er High Cohesion princippet?",
+      "description": "Hvad tilstræber High Cohesion princippet i GRASP?",
+      "options": {
+        "A": "At klasser ikke har metoder",
+        "B": "At en klasse har så mange ansvarsområder som muligt",
+        "C": "At alle metoder er i én klasse",
+        "D": "At en klasse har fokuseret og relateret ansvar"
+      },
+      "correct_answer": "D",
+      "explanation": "High Cohesion tilstræber at en klasses ansvarsområder er stærkt relaterede og fokuserede, så klassen er let at forstå og vedligeholde.",
+      "hints": [
+        "Fokuseret ansvar",
+        "Relaterede opgaver hører sammen"
+      ],
+      "tags": [
+        "high cohesion",
+        "GRASP"
+      ],
+      "points": 10
+    }
+  ]
+}
