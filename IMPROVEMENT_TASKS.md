@@ -148,6 +148,11 @@ Tasks to raise the quality of the Imperative-training exam practice app across f
 
 ## DevOps & Deployment
 
+- [ ] **Replace the manual `docker buildx … --push` script with a GitHub Actions image-publish workflow.** Currently a local `build-and-push.sh` is the only path to ghcr.io, so deploys depend on one developer's laptop, builds aren't reproducible, and there's no SHA-tagged artefact for rollback. Workflow should: build the `Dockerfile` for `linux/amd64` (and `linux/arm64` if useful), log in via `GITHUB_TOKEN`, push `ghcr.io/jonasvindahl/imperative-training:latest` plus `:sha-<short>` and `:<git-tag>` on releases, and use SHA-pinned `docker/login-action` and `docker/build-push-action`. Trigger on push to `main` and on tags.
+- [ ] Add a `:sha-<short>` tag to every published image so TrueNAS can pin to a specific build instead of the floating `:latest` (enables clean rollback by changing one field in the iX App).
+- [ ] Document the deploy flow end-to-end in `DEPLOYMENT.md`: push to main → workflow builds & pushes → TrueNAS *Update* pulls new image → readiness check via `/readyz`. Include rollback steps.
+- [ ] Add a smoke job after publish that pulls the freshly-pushed image, runs the container, and `curl`s `/healthz` + `/readyz` so a broken image never reaches `:latest`.
+- [ ] Configure Dependabot (or Renovate) for the `Dockerfile` base image and the GitHub Actions versions used by the publish workflow.
 - [ ] Multi-stage `Dockerfile`: separate build, install, and runtime stages; produce a < 200 MB final image with non-root user.
 - [ ] Pin Python base image by digest; renovate-bot or dependabot to update.
 - [ ] Replace `app.run(...)` for production with `gunicorn` invocation in `Dockerfile`/`docker-compose.yml`; document worker count guidance.
