@@ -1,0 +1,788 @@
+{
+  "questions": [
+    {
+      "id": "ds_alg_001",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Definition of an Algorithm",
+      "description": "Which of the following is the best definition of an algorithm?",
+      "options": [
+        "Any program written in C or Python",
+        "A finite sequence of well-defined steps that solves a class of problems",
+        "A procedure that always uses recursion",
+        "A heuristic that produces approximate answers"
+      ],
+      "correct_answer": "B",
+      "explanation": "An algorithm is a finite, well-defined sequence of steps that, when applied to a valid input, terminates and produces a correct output for the problem it solves. It is a language- and machine-independent concept; the C/Python program is just one implementation.",
+      "hints": [
+        "Focus on the abstract definition, not on a specific programming language",
+        "Key properties: finite, well-defined, deterministic, terminating"
+      ],
+      "tags": ["algorithms", "definition"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_002",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Partial vs. Total Correctness",
+      "description": "An algorithm is said to be totally correct if:",
+      "options": [
+        "It produces the correct output whenever it terminates",
+        "It always terminates for valid inputs and produces the correct output",
+        "It terminates within polynomial time",
+        "It uses no more than O(1) extra memory"
+      ],
+      "correct_answer": "B",
+      "explanation": "Total correctness = partial correctness + termination. Partial correctness alone only requires that the algorithm produces the right output IF it terminates. Total correctness additionally requires that the algorithm always terminates for every valid input.",
+      "hints": [
+        "Partial correctness is a conditional statement (IF it terminates...)",
+        "Total correctness adds a guarantee of termination"
+      ],
+      "tags": ["correctness", "termination"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_003",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Loop Invariant",
+      "description": "What is a loop invariant?",
+      "options": [
+        "A value that never changes during the loop",
+        "A condition that holds before the loop, after every iteration, and after the loop terminates",
+        "A guarantee that the loop terminates",
+        "A bound on the number of iterations"
+      ],
+      "correct_answer": "B",
+      "explanation": "A loop invariant is a logical statement (a property of the program state) that is true before the loop starts, is preserved by every iteration, and is therefore true after the loop terminates. Together with the termination condition it lets us conclude what the loop establishes.",
+      "hints": [
+        "It is a logical condition, not a single variable",
+        "Three things: initialisation, maintenance, termination"
+      ],
+      "tags": ["correctness", "loop_invariant"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_004",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Loop Invariant for Sum",
+      "description": "Consider the loop: s = 0; for i = 1 to n: s = s + i. Which is a correct loop invariant just before the test of iteration i (i.e., when i is about to take the value k)?",
+      "options": [
+        "s = k",
+        "s = 1 + 2 + ... + (k-1)",
+        "s = 1 + 2 + ... + k",
+        "s = n(n+1)/2"
+      ],
+      "correct_answer": "B",
+      "explanation": "Just before iteration k runs, the previous iterations have added 1, 2, ..., k-1. So the invariant is s = 1 + 2 + ... + (k-1) = (k-1)k/2. After iteration k completes we then have s = 1 + 2 + ... + k.",
+      "hints": [
+        "Think about which values have already been added when iteration k is about to start",
+        "The invariant should be true at the moment the loop test is evaluated"
+      ],
+      "tags": ["correctness", "loop_invariant", "sum"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_005",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Big-O Definition",
+      "description": "f(n) = O(g(n)) means that there exist positive constants c and n0 such that for all n >= n0:",
+      "options": [
+        "f(n) >= c * g(n)",
+        "f(n) <= c * g(n)",
+        "f(n) = c * g(n)",
+        "|f(n) - g(n)| <= c"
+      ],
+      "correct_answer": "B",
+      "explanation": "Big-O is an asymptotic upper bound. f(n) = O(g(n)) iff there exist c > 0 and n0 such that 0 <= f(n) <= c*g(n) for all n >= n0. It says g grows at least as fast as f, ignoring constants and small inputs.",
+      "hints": [
+        "Big-O is an upper bound",
+        "We only care about behaviour for large n"
+      ],
+      "tags": ["asymptotic", "big_o"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_006",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Big-Omega Definition",
+      "description": "f(n) = Omega(g(n)) means that there exist positive constants c and n0 such that for all n >= n0:",
+      "options": [
+        "f(n) <= c * g(n)",
+        "f(n) >= c * g(n)",
+        "f(n) = g(n)",
+        "f(n) - g(n) is bounded"
+      ],
+      "correct_answer": "B",
+      "explanation": "Big-Omega is an asymptotic lower bound. f(n) = Omega(g(n)) iff there exist c > 0 and n0 such that f(n) >= c*g(n) for all n >= n0. It says g grows at most as fast as f.",
+      "hints": [
+        "Omega is the dual of O (lower vs upper)",
+        "Flip the inequality compared to Big-O"
+      ],
+      "tags": ["asymptotic", "big_omega"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_007",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Big-Theta Definition",
+      "description": "f(n) = Theta(g(n)) is equivalent to:",
+      "options": [
+        "f(n) = O(g(n)) only",
+        "f(n) = Omega(g(n)) only",
+        "f(n) = O(g(n)) and f(n) = Omega(g(n))",
+        "f(n) = g(n) for all n"
+      ],
+      "correct_answer": "C",
+      "explanation": "Big-Theta is a tight bound: f(n) = Theta(g(n)) iff f is both O(g(n)) and Omega(g(n)). Equivalently, there exist constants c1, c2 > 0 and n0 with c1*g(n) <= f(n) <= c2*g(n) for all n >= n0.",
+      "hints": [
+        "Theta = both upper and lower bound",
+        "The two functions grow at the same rate"
+      ],
+      "tags": ["asymptotic", "big_theta"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_008",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Asymptotic Ordering",
+      "description": "Order the following functions from slowest growing to fastest growing as n -> infinity: log n, n, n log n, n^2, 2^n.",
+      "options": [
+        "log n < n < n log n < n^2 < 2^n",
+        "n < log n < n log n < n^2 < 2^n",
+        "log n < n log n < n < n^2 < 2^n",
+        "log n < n < n^2 < n log n < 2^n"
+      ],
+      "correct_answer": "A",
+      "explanation": "The standard asymptotic ordering is: 1 < log n < sqrt(n) < n < n log n < n^2 < n^3 < 2^n < n!. So the correct ascending order here is log n < n < n log n < n^2 < 2^n.",
+      "hints": [
+        "log n grows slower than any positive power of n",
+        "Exponential beats every polynomial"
+      ],
+      "tags": ["asymptotic", "growth_rates"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_009",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Big-O of a Polynomial",
+      "description": "Which is the tightest correct bound for f(n) = 5n^3 + 100 n^2 + 17?",
+      "options": [
+        "O(n^2)",
+        "O(n^3)",
+        "O(n^4)",
+        "O(2^n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "For a polynomial of degree d, the tight bound is Theta(n^d), so it is also O(n^d). The dominant term 5n^3 determines the growth rate. O(n^4) and O(2^n) are correct but not tight; O(n^2) is incorrect (lower order).",
+      "hints": [
+        "Constants and lower-order terms drop out",
+        "Look at the highest power of n"
+      ],
+      "tags": ["asymptotic", "big_o", "polynomial"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_010",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Logarithm Base in Big-O",
+      "description": "True or false: O(log_2 n) and O(log_10 n) describe the same set of functions.",
+      "options": [
+        "True, because log_a n and log_b n differ only by a constant factor",
+        "False, because base-2 logarithms grow faster",
+        "False, because base-10 logarithms grow faster",
+        "True, but only when n is a power of 10"
+      ],
+      "correct_answer": "A",
+      "explanation": "log_a n = log_b n / log_b a, so logarithms in different bases differ only by a multiplicative constant. Big-O ignores constant factors, so O(log_2 n) = O(log_10 n) = O(log n). That is why we usually write 'log n' without specifying the base in complexity analysis.",
+      "hints": [
+        "Use the change-of-base formula",
+        "Big-O hides constant factors"
+      ],
+      "tags": ["asymptotic", "logarithms"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_011",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Linear Search Worst Case",
+      "description": "What is the worst-case running time of linear search in an unsorted array of n elements?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Linear search may have to inspect every one of the n elements (when the target is the last one or absent), giving worst-case time O(n).",
+      "hints": [
+        "What if the element is not present?",
+        "Each element is inspected at most once"
+      ],
+      "tags": ["search", "linear_search"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_012",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Binary Search Requirement",
+      "description": "Binary search has worst-case running time O(log n), but only if:",
+      "options": [
+        "The array contains no duplicates",
+        "The array is sorted",
+        "The array length is a power of two",
+        "All elements are integers"
+      ],
+      "correct_answer": "B",
+      "explanation": "Binary search relies on dividing the search interval in half at each step using the order of the elements. It therefore requires the array to be sorted. Duplicates, length, and element type do not affect correctness.",
+      "hints": [
+        "How does binary search decide which half to recurse into?",
+        "Without order, halving the array tells you nothing"
+      ],
+      "tags": ["search", "binary_search"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_013",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Insertion Sort Complexity",
+      "description": "What are the best-case and worst-case running times of insertion sort?",
+      "options": [
+        "Best O(n), worst O(n^2)",
+        "Best O(n log n), worst O(n^2)",
+        "Best O(1), worst O(n)",
+        "Best O(n log n), worst O(n log n)"
+      ],
+      "correct_answer": "A",
+      "explanation": "Insertion sort runs in O(n) on an already-sorted array (each element is compared once and never shifted) and O(n^2) on a reverse-sorted array (each new element must be shifted past all previous ones).",
+      "hints": [
+        "Think about an already sorted input",
+        "Think about a reverse sorted input"
+      ],
+      "tags": ["sorting", "insertion_sort"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_014",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Merge Sort Complexity",
+      "description": "What is the worst-case running time of merge sort on an array of size n?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(2^n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Merge sort splits the array in half (log n levels of recursion) and merges in linear time at each level, giving Theta(n log n) in best, average, and worst case.",
+      "hints": [
+        "It uses divide and conquer",
+        "Recurrence: T(n) = 2 T(n/2) + n"
+      ],
+      "tags": ["sorting", "merge_sort"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_015",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Quicksort Worst Case",
+      "description": "What is the worst-case running time of quicksort, and when does it occur?",
+      "options": [
+        "O(n log n), always",
+        "O(n^2), when the pivot is always the smallest or largest element",
+        "O(n^2), when the input is random",
+        "O(n), when the input is sorted"
+      ],
+      "correct_answer": "B",
+      "explanation": "Quicksort runs in O(n^2) in the worst case, which arises when the pivot at each step is the minimum or maximum (e.g., choosing the first element as pivot on an already-sorted input). The recurrence becomes T(n) = T(n-1) + n. With random pivots the expected time is O(n log n).",
+      "hints": [
+        "What recurrence does an extremely unbalanced split produce?",
+        "Sorted input with first-element pivot is the classic bad case"
+      ],
+      "tags": ["sorting", "quicksort"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_016",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Stable Sorting",
+      "description": "Which of the following sorting algorithms is NOT stable in its standard implementation?",
+      "options": [
+        "Insertion sort",
+        "Merge sort",
+        "Quicksort",
+        "Bubble sort"
+      ],
+      "correct_answer": "C",
+      "explanation": "A sort is stable if equal elements keep their relative order. Insertion, merge, and bubble sort are stable. Standard in-place quicksort is NOT stable because the partition step can swap equal elements past each other.",
+      "hints": [
+        "Stability concerns equal keys, not the running time",
+        "In-place partitioning is the troublemaker"
+      ],
+      "tags": ["sorting", "stability"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_017",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Selection Sort Comparisons",
+      "description": "Selection sort on an array of n elements performs how many comparisons in the worst case?",
+      "options": [
+        "n",
+        "n - 1",
+        "n(n-1)/2",
+        "n^2"
+      ],
+      "correct_answer": "C",
+      "explanation": "Selection sort makes (n-1) + (n-2) + ... + 1 = n(n-1)/2 comparisons regardless of the input, since it always scans the unsorted suffix to find the minimum.",
+      "hints": [
+        "Sum 1 + 2 + ... + (n-1)",
+        "Number of comparisons does not depend on the input order"
+      ],
+      "tags": ["sorting", "selection_sort"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_018",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recurrence for Merge Sort",
+      "description": "Which recurrence describes the worst-case running time of merge sort?",
+      "options": [
+        "T(n) = T(n-1) + 1",
+        "T(n) = T(n/2) + 1",
+        "T(n) = 2 T(n/2) + n",
+        "T(n) = 2 T(n-1) + 1"
+      ],
+      "correct_answer": "C",
+      "explanation": "Merge sort splits the input into two halves (two recursive calls of size n/2) and combines them with a linear-time merge, giving T(n) = 2 T(n/2) + n. By the Master Theorem this solves to Theta(n log n).",
+      "hints": [
+        "Two subproblems, each of half the size",
+        "The merge step is linear in n"
+      ],
+      "tags": ["recurrence", "merge_sort"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_019",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Master Theorem Application",
+      "description": "By the Master Theorem, what is the asymptotic solution to T(n) = 2 T(n/2) + n^2?",
+      "options": [
+        "Theta(n)",
+        "Theta(n log n)",
+        "Theta(n^2)",
+        "Theta(n^2 log n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Here a = 2, b = 2, so n^{log_b a} = n^1 = n. The driving function f(n) = n^2 grows polynomially faster than n (case 3 of the Master Theorem), and the regularity condition holds. Therefore T(n) = Theta(f(n)) = Theta(n^2).",
+      "hints": [
+        "Compute n^{log_b a} = n^{log_2 2} = n",
+        "Compare f(n) = n^2 to n^1"
+      ],
+      "tags": ["recurrence", "master_theorem"],
+      "points": 3
+    },
+    {
+      "id": "ds_alg_020",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Recurrence: Halving",
+      "description": "What is the asymptotic solution to T(n) = T(n/2) + 1, with T(1) = 1?",
+      "options": [
+        "Theta(1)",
+        "Theta(log n)",
+        "Theta(n)",
+        "Theta(n log n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Each step halves n and does O(1) work, giving log_2 n levels of recursion. By the Master Theorem with a=1, b=2, f(n)=1, n^{log_b a} = 1, case 2 applies and T(n) = Theta(log n). This is the recurrence for binary search.",
+      "hints": [
+        "How many times can you halve n before reaching 1?",
+        "This is the classic binary search recurrence"
+      ],
+      "tags": ["recurrence", "binary_search"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_021",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Greedy Algorithm Idea",
+      "description": "Which best describes a greedy algorithm?",
+      "options": [
+        "It explores all possibilities and returns the global optimum",
+        "It makes the locally optimal choice at each step, hoping to find a global optimum",
+        "It always uses recursion",
+        "It always solves problems in O(log n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "A greedy algorithm builds up a solution piece by piece, always choosing the option that looks best at the current step (the locally optimal choice). For some problems (e.g., minimum spanning tree, activity selection) this provably yields a global optimum; for others it does not.",
+      "hints": [
+        "Greedy = best-looking choice right now",
+        "It does not backtrack"
+      ],
+      "tags": ["greedy", "design_paradigm"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_022",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Greedy: Activity Selection",
+      "description": "For the activity-selection problem (choose the maximum number of non-overlapping activities), which greedy criterion is provably optimal?",
+      "options": [
+        "Pick the activity with the earliest start time",
+        "Pick the activity with the shortest duration",
+        "Pick the activity with the earliest finish time",
+        "Pick the activity with the latest start time"
+      ],
+      "correct_answer": "C",
+      "explanation": "Selecting the compatible activity that finishes earliest leaves the resource free as soon as possible for the next activity, and an exchange argument shows this strategy is optimal. The other criteria can produce sub-optimal selections on simple counter-examples.",
+      "hints": [
+        "Which criterion leaves the most room for future activities?",
+        "Earliest start and shortest duration both have classic counter-examples"
+      ],
+      "tags": ["greedy", "activity_selection"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_023",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Divide and Conquer Steps",
+      "description": "The classical divide-and-conquer paradigm has three steps. Which list is correct?",
+      "options": [
+        "Initialise, iterate, terminate",
+        "Divide, conquer, combine",
+        "Sort, search, return",
+        "Recurse, memoise, return"
+      ],
+      "correct_answer": "B",
+      "explanation": "Divide-and-conquer: (1) DIVIDE the problem into smaller subproblems of the same form; (2) CONQUER the subproblems by solving them recursively (or directly when small enough); (3) COMBINE the subproblem solutions into a solution for the original problem.",
+      "hints": [
+        "Three D's and C's",
+        "Merge sort follows exactly this template"
+      ],
+      "tags": ["divide_and_conquer", "design_paradigm"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_024",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Counting Steps in a Loop",
+      "description": "A nested loop runs: for i = 1..n: for j = 1..i: do O(1) work. What is the total running time?",
+      "options": [
+        "Theta(n)",
+        "Theta(n log n)",
+        "Theta(n^2)",
+        "Theta(n^3)"
+      ],
+      "correct_answer": "C",
+      "explanation": "The inner loop runs i times, so the total work is sum_{i=1..n} i = n(n+1)/2 = Theta(n^2).",
+      "hints": [
+        "Sum 1 + 2 + ... + n",
+        "Use the closed form n(n+1)/2"
+      ],
+      "tags": ["analysis", "loops", "summation"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_025",
+      "category": "algorithms_correctness",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Properties of a Loop Invariant",
+      "description": "Which of the following must a loop invariant satisfy in order to prove a loop correct? (Select all that apply)",
+      "options": [
+        "Initialisation: it holds before the first iteration",
+        "Maintenance: if it holds before an iteration, it holds before the next",
+        "Termination: when the loop ends, it (together with the exit condition) implies the desired postcondition",
+        "It must be expressible as a single arithmetic equation"
+      ],
+      "correct_answer": ["A", "B", "C"],
+      "explanation": "A loop invariant proof has three parts: Initialisation (the invariant is true before the loop starts), Maintenance (each iteration preserves it), and Termination (when the loop ends, the invariant plus the negated guard gives the postcondition). The invariant can be any logical predicate; it does not have to be a single equation.",
+      "hints": [
+        "Three I/M/T parts",
+        "The invariant is a predicate, not necessarily a formula"
+      ],
+      "tags": ["correctness", "loop_invariant"],
+      "points": 3
+    },
+    {
+      "id": "ds_alg_026",
+      "category": "algorithms_correctness",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Algorithms Running in Theta(n log n)",
+      "description": "Which of the following sorting algorithms run in Theta(n log n) on every input (worst case)? (Select all that apply)",
+      "options": [
+        "Merge sort",
+        "Heapsort",
+        "Quicksort (with first-element pivot)",
+        "Insertion sort"
+      ],
+      "correct_answer": ["A", "B"],
+      "explanation": "Merge sort and heapsort have worst-case running time Theta(n log n). Quicksort with first-element pivot is O(n^2) on already-sorted input, and insertion sort is O(n^2) in the worst case (reverse-sorted).",
+      "hints": [
+        "Worst-case, not average-case",
+        "Heapsort uses a binary heap to repeatedly extract the maximum"
+      ],
+      "tags": ["sorting", "asymptotic"],
+      "points": 3
+    },
+    {
+      "id": "ds_alg_027",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Recurrence: Linear Recursion",
+      "description": "What is the asymptotic solution to T(n) = T(n-1) + n with T(0) = 0?",
+      "options": [
+        "Theta(log n)",
+        "Theta(n)",
+        "Theta(n^2)",
+        "Theta(2^n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Unfolding the recurrence: T(n) = n + (n-1) + (n-2) + ... + 1 = n(n+1)/2 = Theta(n^2). This is the recurrence describing quicksort's worst case and selection sort's running time.",
+      "hints": [
+        "Unfold the recurrence and recognise an arithmetic sum",
+        "1 + 2 + ... + n = n(n+1)/2"
+      ],
+      "tags": ["recurrence", "summation"],
+      "points": 3
+    },
+    {
+      "id": "ds_alg_028",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Master Theorem: Case 1",
+      "description": "By the Master Theorem, what is the solution to T(n) = 8 T(n/2) + n^2?",
+      "options": [
+        "Theta(n^2)",
+        "Theta(n^2 log n)",
+        "Theta(n^3)",
+        "Theta(n log n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "a = 8, b = 2, so n^{log_b a} = n^{log_2 8} = n^3. f(n) = n^2 grows polynomially slower than n^3 (case 1), so T(n) = Theta(n^{log_b a}) = Theta(n^3).",
+      "hints": [
+        "log_2 8 = 3",
+        "Case 1: f(n) = O(n^{log_b a - eps})"
+      ],
+      "tags": ["recurrence", "master_theorem"],
+      "points": 3
+    },
+    {
+      "id": "ds_alg_029",
+      "category": "algorithms_correctness",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Fill: Loop Invariant Proof Steps",
+      "description": "A proof using a loop invariant has three steps: {blank1}, {blank2}, and {blank3}.",
+      "blanks": {
+        "blank1": {
+          "correct": "initialisation",
+          "options": ["initialisation", "termination", "maintenance", "iteration"]
+        },
+        "blank2": {
+          "correct": "maintenance",
+          "options": ["maintenance", "iteration", "comparison", "swap"]
+        },
+        "blank3": {
+          "correct": "termination",
+          "options": ["termination", "completion", "halt", "return"]
+        }
+      },
+      "explanation": "Initialisation: the invariant holds before the loop starts. Maintenance: each iteration preserves the invariant. Termination: when the loop exits, the invariant (together with the negated guard) implies the desired postcondition.",
+      "hints": [
+        "Three steps starting with I, M, T",
+        "Same structure as induction (base case, inductive step)"
+      ],
+      "tags": ["correctness", "loop_invariant"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_030",
+      "category": "algorithms_correctness",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Fill: Asymptotic Notation Names",
+      "description": "f(n) = {blank1}(g(n)) means g is an asymptotic upper bound; f(n) = {blank2}(g(n)) means g is an asymptotic lower bound; f(n) = {blank3}(g(n)) means f and g grow at the same rate.",
+      "blanks": {
+        "blank1": {
+          "correct": "O",
+          "options": ["O", "Omega", "Theta", "o"]
+        },
+        "blank2": {
+          "correct": "Omega",
+          "options": ["Omega", "O", "Theta", "o"]
+        },
+        "blank3": {
+          "correct": "Theta",
+          "options": ["Theta", "O", "Omega", "o"]
+        }
+      },
+      "explanation": "Big-O is an upper bound, Big-Omega is a lower bound, Big-Theta is a tight bound (both upper and lower).",
+      "hints": [
+        "O for upper, Omega for lower, Theta for tight",
+        "Theta = O AND Omega"
+      ],
+      "tags": ["asymptotic", "notation"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_031",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Average Case vs Worst Case",
+      "description": "Which statement about quicksort is correct?",
+      "options": [
+        "Worst case Theta(n log n), average case Theta(n log n)",
+        "Worst case Theta(n^2), average case Theta(n log n)",
+        "Worst case Theta(n^2), average case Theta(n^2)",
+        "Worst case Theta(n log n), average case Theta(n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Quicksort has worst-case running time Theta(n^2) (e.g. already-sorted input with naive pivot) but its expected (average) running time on a random permutation is Theta(n log n), which is also why it is fast in practice.",
+      "hints": [
+        "Different inputs give different running times",
+        "Average is over random inputs / random pivot choices"
+      ],
+      "tags": ["sorting", "quicksort", "asymptotic"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_032",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Lower Bound for Comparison Sorts",
+      "description": "Any comparison-based sorting algorithm requires, in the worst case, at least how many comparisons to sort n elements?",
+      "options": [
+        "Omega(n)",
+        "Omega(n log n)",
+        "Omega(n^2)",
+        "Omega(2^n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "A decision-tree argument shows that any comparison-based sort must distinguish n! permutations, requiring a tree of depth at least log_2(n!) = Omega(n log n). Algorithms like merge sort and heapsort achieve this bound.",
+      "hints": [
+        "Think of the decision tree of comparisons",
+        "log(n!) = Theta(n log n) by Stirling's approximation"
+      ],
+      "tags": ["sorting", "lower_bound", "decision_tree"],
+      "points": 3
+    },
+    {
+      "id": "ds_alg_033",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Termination Argument",
+      "description": "To prove that a loop terminates, we typically:",
+      "options": [
+        "Exhibit an integer-valued quantity that strictly decreases each iteration and is bounded below",
+        "Show that the loop body has constant time",
+        "Show that the invariant holds after the loop",
+        "Use Big-O notation"
+      ],
+      "correct_answer": "A",
+      "explanation": "A standard termination argument exhibits a 'variant' or 'measure': a non-negative integer expression that strictly decreases on each iteration. Since a strictly decreasing sequence of non-negative integers must reach 0, the loop must terminate.",
+      "hints": [
+        "Look for a quantity that gets smaller each iteration",
+        "Integers cannot decrease forever if bounded below"
+      ],
+      "tags": ["termination", "variant"],
+      "points": 1
+    },
+    {
+      "id": "ds_alg_034",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Best vs Worst Case for Insertion Sort",
+      "description": "Why is the best case of insertion sort O(n)?",
+      "options": [
+        "Because the array is already sorted, so each new element only needs one comparison and no shifts",
+        "Because the algorithm uses divide and conquer when the array is sorted",
+        "Because sorting always takes linear time",
+        "Because there are no comparisons in the best case"
+      ],
+      "correct_answer": "A",
+      "explanation": "If the array is already sorted, the inner while-loop of insertion sort exits immediately after one comparison, performing no shifts. The outer loop runs n-1 times with O(1) work each, giving total O(n).",
+      "hints": [
+        "What does the inner loop do on a sorted array?",
+        "Each new element is already in the correct position"
+      ],
+      "tags": ["sorting", "insertion_sort", "best_case"],
+      "points": 2
+    },
+    {
+      "id": "ds_alg_035",
+      "category": "algorithms_correctness",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Total Number of Operations",
+      "description": "An algorithm performs T(n) = 3 n^2 + 5 n + 7 operations on an input of size n. Which statements are true?",
+      "options": [
+        "T(n) = O(n) and T(n) = Omega(n)",
+        "T(n) = Theta(n^2)",
+        "T(n) = Theta(n^3)",
+        "T(n) = Theta(n log n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Polynomials of degree d are Theta(n^d). Here d = 2, so T(n) = Theta(n^2). It is also O(n^2), Omega(n^2), and O(n^3), but those are not tight; Theta is the tight description.",
+      "hints": [
+        "Drop constants and lower-order terms",
+        "Theta is the tight bound"
+      ],
+      "tags": ["asymptotic", "big_theta"],
+      "points": 2
+    }
+  ]
+}

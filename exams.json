@@ -77,6 +77,16 @@
           "id": "counting",
           "name": "Counting & Combinatorics",
           "file": "counting.json"
+        },
+        {
+          "id": "algorithms_correctness",
+          "name": "Algorithms & Correctness",
+          "file": "algorithms_correctness.json"
+        },
+        {
+          "id": "data_structures_basic",
+          "name": "Basic Data Structures",
+          "file": "data_structures_basic.json"
         }
       ]
     },

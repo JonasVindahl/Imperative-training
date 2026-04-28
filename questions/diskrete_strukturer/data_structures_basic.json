@@ -1,0 +1,792 @@
+{
+  "questions": [
+    {
+      "id": "ds_dsb_001",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "ADT vs Implementation",
+      "description": "What is the difference between an Abstract Data Type (ADT) and a data structure?",
+      "options": [
+        "There is no difference",
+        "An ADT specifies operations and behaviour; a data structure is a concrete way to implement an ADT",
+        "An ADT is faster than any data structure",
+        "A data structure is always object-oriented; an ADT is procedural"
+      ],
+      "correct_answer": "B",
+      "explanation": "An Abstract Data Type defines a set of values and operations on them (their behaviour), independent of how they are represented in memory. A data structure is a concrete implementation choice (e.g., array vs. linked list) that realises an ADT. The same ADT (e.g., 'list') can have many implementations.",
+      "hints": [
+        "ADT = the WHAT, data structure = the HOW",
+        "Stack is an ADT; an array-based stack is a data structure"
+      ],
+      "tags": ["adt", "fundamentals"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_002",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Array Random Access",
+      "description": "What is the time complexity of accessing the element at a given index in an array?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "A",
+      "explanation": "Arrays provide O(1) random access because each element is stored at a fixed offset from the array's base address: address(a[i]) = base + i * elem_size, computed in constant time.",
+      "hints": [
+        "Memory layout is contiguous",
+        "Constant-time pointer arithmetic"
+      ],
+      "tags": ["array", "complexity"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_003",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Insert at Front of Array",
+      "description": "What is the worst-case time complexity of inserting an element at the front of an array of size n (preserving order)?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n^2)"
+      ],
+      "correct_answer": "C",
+      "explanation": "All n existing elements must be shifted one position to the right to make room at index 0, giving O(n) work. This is one of the main reasons linked lists exist: they allow O(1) front insertion.",
+      "hints": [
+        "Where do all the existing elements have to go?",
+        "Every element shifts by one position"
+      ],
+      "tags": ["array", "insertion", "complexity"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_004",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Singly Linked List Node",
+      "description": "A node in a singly linked list typically contains:",
+      "options": [
+        "A value and two pointers (to previous and next)",
+        "A value and one pointer (to the next node)",
+        "Only a value",
+        "Two values (key and data) and no pointers"
+      ],
+      "correct_answer": "B",
+      "explanation": "A singly linked list node has a value (data) plus a single pointer to the next node. The last node's next pointer is NULL. A doubly linked list node also stores a pointer to the previous node.",
+      "hints": [
+        "'Singly' = one direction",
+        "Compare with doubly linked lists"
+      ],
+      "tags": ["linked_list", "singly"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_005",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Linked List Search",
+      "description": "What is the worst-case time complexity of searching for a value in an unsorted singly linked list of n elements?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "Linked lists do not support random access; we must traverse from the head following next pointers, examining up to n nodes in the worst case. Binary search is impossible because we cannot jump to the middle in O(1).",
+      "hints": [
+        "Can you jump straight to the middle?",
+        "You must follow pointers one by one"
+      ],
+      "tags": ["linked_list", "search", "complexity"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_006",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Insert at Head of Linked List",
+      "description": "What is the time complexity of inserting a new node at the head of a singly linked list?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "Depends on the list length"
+      ],
+      "correct_answer": "A",
+      "explanation": "Insertion at the head is O(1): allocate a new node, set its next pointer to the current head, and update head to point to the new node. No traversal is needed.",
+      "hints": [
+        "Only the head pointer needs to change",
+        "No traversal required"
+      ],
+      "tags": ["linked_list", "insertion"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_007",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Stack LIFO",
+      "description": "A stack is a data structure with which access discipline?",
+      "options": [
+        "FIFO (First In, First Out)",
+        "LIFO (Last In, First Out)",
+        "Random access",
+        "Sorted access by priority"
+      ],
+      "correct_answer": "B",
+      "explanation": "A stack is LIFO: the most recently pushed element is the first to be popped. Common operations are push (add to top) and pop (remove from top), both O(1).",
+      "hints": [
+        "Think of a stack of plates",
+        "Last in is first out"
+      ],
+      "tags": ["stack", "lifo"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_008",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Queue FIFO",
+      "description": "A queue is a data structure with which access discipline?",
+      "options": [
+        "FIFO (First In, First Out)",
+        "LIFO (Last In, First Out)",
+        "Random access",
+        "Sorted access by priority"
+      ],
+      "correct_answer": "A",
+      "explanation": "A queue is FIFO: elements leave in the same order they entered. Common operations are enqueue (add to rear) and dequeue (remove from front), both O(1) with the right implementation.",
+      "hints": [
+        "Think of a line at a checkout",
+        "First to arrive is first to leave"
+      ],
+      "tags": ["queue", "fifo"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_009",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Stack Operations",
+      "description": "Starting with an empty stack, perform: push(1), push(2), push(3), pop, push(4), pop, pop. What is the final state of the stack (bottom to top)?",
+      "options": [
+        "[1]",
+        "[1, 4]",
+        "[1, 2]",
+        "[]"
+      ],
+      "correct_answer": "A",
+      "explanation": "Trace: push(1) -> [1]; push(2) -> [1,2]; push(3) -> [1,2,3]; pop returns 3 -> [1,2]; push(4) -> [1,2,4]; pop returns 4 -> [1,2]; pop returns 2 -> [1].",
+      "hints": [
+        "Pop removes the top (most recent) element",
+        "Trace each operation step by step"
+      ],
+      "tags": ["stack", "trace"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_010",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Queue Operations",
+      "description": "Starting with an empty queue, perform: enqueue(A), enqueue(B), enqueue(C), dequeue, enqueue(D), dequeue. What is the final queue (front to rear)?",
+      "options": [
+        "[A, B]",
+        "[B, C, D]",
+        "[C, D]",
+        "[A, D]"
+      ],
+      "correct_answer": "C",
+      "explanation": "Trace: enq(A) -> [A]; enq(B) -> [A,B]; enq(C) -> [A,B,C]; dequeue returns A -> [B,C]; enq(D) -> [B,C,D]; dequeue returns B -> [C,D].",
+      "hints": [
+        "Dequeue removes the front element",
+        "Enqueue adds at the rear"
+      ],
+      "tags": ["queue", "trace"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_011",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Binary Tree Definition",
+      "description": "Which is the correct definition of a binary tree?",
+      "options": [
+        "A tree where every node has exactly two children",
+        "A tree where every node has at most two children, conventionally called the left and right child",
+        "A tree where every leaf has exactly two siblings",
+        "A tree with exactly two levels"
+      ],
+      "correct_answer": "B",
+      "explanation": "In a binary tree each node has AT MOST two children, distinguished as the left child and the right child. Some nodes may have only a left child, only a right child, or none (a leaf).",
+      "hints": [
+        "'At most two', not 'exactly two'",
+        "Left and right children are distinguished"
+      ],
+      "tags": ["tree", "binary_tree"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_012",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Binary Search Tree Property",
+      "description": "What property does every node v in a binary search tree (BST) satisfy?",
+      "options": [
+        "All keys in the left subtree are less than v.key, and all keys in the right subtree are greater than v.key",
+        "The left subtree has the same height as the right subtree",
+        "All keys in the left subtree are greater than v.key",
+        "The tree is always balanced"
+      ],
+      "correct_answer": "A",
+      "explanation": "The BST invariant: for every node v, all keys in its left subtree are < v.key and all keys in its right subtree are > v.key (assuming distinct keys). This is what enables O(h) search, where h is the tree's height.",
+      "hints": [
+        "Left subtree < node < right subtree",
+        "Applies recursively at every node"
+      ],
+      "tags": ["bst", "tree"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_013",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "BST Search Complexity",
+      "description": "What is the worst-case time complexity of search in a binary search tree of n nodes?",
+      "options": [
+        "O(1)",
+        "O(log n) regardless of shape",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "C",
+      "explanation": "BST search runs in time proportional to the tree's height h. In the worst case (e.g., inserting elements in sorted order) the BST degenerates into a linked list of length n, giving h = n - 1 and O(n) search. Balanced BSTs (AVL, red-black) restore O(log n).",
+      "hints": [
+        "Height = path from root to deepest leaf",
+        "What if we insert sorted data into an unbalanced BST?"
+      ],
+      "tags": ["bst", "complexity"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_014",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "In-Order Traversal Output",
+      "description": "Perform an in-order traversal of the BST built by inserting (in this order) 5, 3, 8, 1, 4, 7, 9. What sequence is produced?",
+      "options": [
+        "5, 3, 1, 4, 8, 7, 9",
+        "1, 3, 4, 5, 7, 8, 9",
+        "1, 4, 3, 7, 9, 8, 5",
+        "5, 3, 8, 1, 4, 7, 9"
+      ],
+      "correct_answer": "B",
+      "explanation": "In-order traversal of a BST visits keys in sorted order: visit left subtree, then node, then right subtree. The sorted output of the inserted set is 1, 3, 4, 5, 7, 8, 9. Option A is the pre-order, option D is the insertion order.",
+      "hints": [
+        "In-order on a BST yields sorted output",
+        "Left, node, right"
+      ],
+      "tags": ["bst", "traversal", "in_order"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_015",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Tree Traversals",
+      "description": "Which traversal visits a node BEFORE its children?",
+      "options": [
+        "In-order",
+        "Pre-order",
+        "Post-order",
+        "Level-order"
+      ],
+      "correct_answer": "B",
+      "explanation": "Pre-order: visit node, then left subtree, then right subtree. In-order: left, node, right. Post-order: left, right, node. Level-order (BFS): visit nodes level by level using a queue.",
+      "hints": [
+        "Pre = before",
+        "Look at where the node visit appears in the schema"
+      ],
+      "tags": ["tree", "traversal"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_016",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Binary Heap Property",
+      "description": "What is the heap property in a max-heap?",
+      "options": [
+        "Each node's key is less than or equal to its parent's key",
+        "Each node's key is greater than or equal to its parent's key",
+        "The tree is a binary search tree",
+        "Each level is fully filled"
+      ],
+      "correct_answer": "A",
+      "explanation": "In a max-heap, every node's key is <= its parent's key. Equivalently, the parent of any node has a key that is >= both children's keys. The maximum element is always at the root.",
+      "hints": [
+        "Max-heap: parent dominates children",
+        "Root holds the maximum"
+      ],
+      "tags": ["heap", "max_heap"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_017",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Array Representation of Heap",
+      "description": "If a binary heap is stored in an array A[0..n-1] (zero-indexed), the children of node at index i are at indices:",
+      "options": [
+        "i-1 and i+1",
+        "2i and 2i+1",
+        "2i+1 and 2i+2",
+        "i/2 and i/2 + 1"
+      ],
+      "correct_answer": "C",
+      "explanation": "With 0-based indexing the children of A[i] are A[2i+1] (left) and A[2i+2] (right), and the parent of A[i] is A[(i-1)/2]. With 1-based indexing the formulas are 2i, 2i+1, and i/2 respectively.",
+      "hints": [
+        "Different formulas for 0- vs 1-based indexing",
+        "Parent of i (0-based) is (i-1)/2"
+      ],
+      "tags": ["heap", "array_representation"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_018",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Heap Insert Complexity",
+      "description": "Inserting an element into a binary heap of n elements has worst-case complexity:",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Insertion appends the new element at the end (next free slot) and then 'sifts up' by comparing with the parent and swapping until the heap property holds. The path from a leaf to the root has length O(log n) since the heap is a complete binary tree.",
+      "hints": [
+        "Sift up follows a root-to-leaf path",
+        "A complete binary tree has height log n"
+      ],
+      "tags": ["heap", "insertion", "complexity"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_019",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Extract-Max from Heap",
+      "description": "What is the worst-case complexity of extracting the maximum element from a max-heap of n elements?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Reading the max is O(1) (it is the root), but extracting it requires moving the last leaf to the root and 'sifting down' to restore the heap property. The sift-down path has length O(log n).",
+      "hints": [
+        "Reading the max is O(1); restoring the heap is the expensive part",
+        "Sift down follows a path of length log n"
+      ],
+      "tags": ["heap", "extract_max", "complexity"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_020",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Build-Heap Complexity",
+      "description": "Building a binary heap from an arbitrary array of n elements (BUILD-HEAP) takes time:",
+      "options": [
+        "O(log n)",
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)"
+      ],
+      "correct_answer": "B",
+      "explanation": "A naive analysis gives O(n log n), but a tighter analysis using the fact that most nodes are near the leaves (where sift-down does little work) shows BUILD-HEAP runs in O(n). This is why heapsort can build the initial heap in linear time before extracting elements.",
+      "hints": [
+        "Most nodes are leaves and need no work",
+        "Sum n/(2^h) * h over heights gives O(n)"
+      ],
+      "tags": ["heap", "build_heap"],
+      "points": 3
+    },
+    {
+      "id": "ds_dsb_021",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Hash Table Average Lookup",
+      "description": "Under simple uniform hashing assumptions, what is the average-case time complexity of lookup in a hash table?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "correct_answer": "A",
+      "explanation": "With a good hash function and a load factor bounded by a constant, the expected lookup time is O(1) (amortised, expected). The worst case can degrade to O(n) if all keys hash to the same bucket, which is why a good hash function matters.",
+      "hints": [
+        "Expected, not worst case",
+        "Constant load factor + good hash = O(1)"
+      ],
+      "tags": ["hash_table", "complexity"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_022",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hash Collision Strategies",
+      "description": "Which of the following is NOT a standard collision-resolution strategy for hash tables?",
+      "options": [
+        "Separate chaining (each bucket holds a linked list)",
+        "Linear probing (search next slots sequentially)",
+        "Double hashing (use a second hash function for the probe sequence)",
+        "Recursive hashing (rehash the key inside its own bucket)"
+      ],
+      "correct_answer": "D",
+      "explanation": "Standard strategies are: separate chaining and various forms of open addressing (linear probing, quadratic probing, double hashing). 'Recursive hashing' is not a standard collision-resolution method.",
+      "hints": [
+        "Three classic open-addressing schemes plus chaining",
+        "Look for the made-up term"
+      ],
+      "tags": ["hash_table", "collision"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_023",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Hash Table Worst Case",
+      "description": "What is the WORST-case lookup time in a hash table using separate chaining when all n keys collide into one bucket?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n^2)"
+      ],
+      "correct_answer": "C",
+      "explanation": "If every key hashes to the same bucket the chain becomes a linked list of length n, and lookup degrades to a linear search in that list, i.e. O(n). A good hash function and load-factor management make this case rare.",
+      "hints": [
+        "Worst case = all collisions",
+        "Each bucket is a linked list"
+      ],
+      "tags": ["hash_table", "worst_case"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_024",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Choosing Between Array and Linked List",
+      "description": "You need a sequence data structure that supports frequent insertions and deletions in the middle, but rarely needs random access. Which is a better choice?",
+      "options": [
+        "Dynamic array",
+        "Linked list",
+        "Sorted array",
+        "Hash table"
+      ],
+      "correct_answer": "B",
+      "explanation": "Linked lists support O(1) insertion/deletion at a known position (given a pointer to it) without shifting other elements. Dynamic arrays require O(n) shifts for middle inserts/deletes. Random access is O(n) in linked lists but is not needed in this scenario.",
+      "hints": [
+        "Match the operation profile to the structure's strengths",
+        "Arrays shift on insert/delete; linked lists do not"
+      ],
+      "tags": ["array", "linked_list", "tradeoffs"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_025",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Implementing a Stack",
+      "description": "Which of the following can be used to implement a stack with O(1) push and pop?",
+      "options": [
+        "An array with a top index, growing/shrinking at the high end",
+        "A singly linked list, pushing/popping at the head",
+        "Both A and B",
+        "Neither A nor B"
+      ],
+      "correct_answer": "C",
+      "explanation": "Both representations achieve O(1) push and pop. With an array we keep a 'top' index and append/remove at the high end (amortised O(1) for a dynamic array). With a singly linked list we push/pop at the head, which is O(1) without amortisation.",
+      "hints": [
+        "Stacks only need access at one end",
+        "Both arrays and linked lists support that end in O(1)"
+      ],
+      "tags": ["stack", "implementation"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_026",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Min-Priority Queue",
+      "description": "Which data structure most efficiently implements a min-priority queue supporting insert and extract-min in O(log n)?",
+      "options": [
+        "Sorted array",
+        "Unsorted array",
+        "Binary min-heap",
+        "Singly linked list"
+      ],
+      "correct_answer": "C",
+      "explanation": "A binary min-heap supports both insert and extract-min in O(log n). A sorted array gives O(1) extract-min but O(n) insert; an unsorted array gives O(1) insert but O(n) extract-min; a linked list does not improve either. Heaps balance both operations.",
+      "hints": [
+        "Both insert and extract-min must be efficient",
+        "Sorted vs unsorted arrays trade off the two operations"
+      ],
+      "tags": ["priority_queue", "heap"],
+      "points": 3
+    },
+    {
+      "id": "ds_dsb_027",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Tree Terminology",
+      "description": "In a rooted tree, a node with no children is called:",
+      "options": [
+        "A root",
+        "An internal node",
+        "A leaf",
+        "A sibling"
+      ],
+      "correct_answer": "C",
+      "explanation": "A leaf is a node with no children. The root is the unique topmost node (no parent). An internal node has at least one child. Siblings are nodes that share the same parent.",
+      "hints": [
+        "No children = end of the branch",
+        "Compare leaf, root, internal node"
+      ],
+      "tags": ["tree", "terminology"],
+      "points": 1
+    },
+    {
+      "id": "ds_dsb_028",
+      "category": "data_structures_basic",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Properties of a Binary Heap",
+      "description": "Which statements about a binary heap are TRUE? (Select all that apply)",
+      "options": [
+        "It is a complete binary tree (all levels filled except possibly the last, filled left-to-right)",
+        "An in-order traversal yields a sorted sequence",
+        "It can be stored efficiently in an array without explicit pointers",
+        "It supports O(log n) insert and O(log n) extract-extremum"
+      ],
+      "correct_answer": ["A", "C", "D"],
+      "explanation": "Binary heaps are complete binary trees, which lets us store them as arrays using parent/child index arithmetic. Insert and extract-extremum are O(log n). However, the heap property is NOT a BST property: an in-order traversal of a heap does not produce a sorted sequence (only the root is the extremum).",
+      "hints": [
+        "Heap property only relates each node to its parent, not to siblings",
+        "Sorted order in-order traversal is a BST property, not heap"
+      ],
+      "tags": ["heap", "properties"],
+      "points": 3
+    },
+    {
+      "id": "ds_dsb_029",
+      "category": "data_structures_basic",
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "title": "Operations Where Linked List Beats Array",
+      "description": "For which operations does a singly linked list have a strictly better worst-case asymptotic complexity than a fixed-size array (assuming the relevant pointer/index is known)? (Select all that apply)",
+      "options": [
+        "Insert at the head",
+        "Random access by index",
+        "Delete the first element",
+        "Search for a value in an unsorted collection"
+      ],
+      "correct_answer": ["A", "C"],
+      "explanation": "Insert at head and delete first element are O(1) for linked lists vs O(n) for arrays (which must shift elements). Random access is O(1) for arrays vs O(n) for linked lists. Search in an unsorted collection is O(n) for both.",
+      "hints": [
+        "Front operations favour linked lists",
+        "Random access favours arrays"
+      ],
+      "tags": ["linked_list", "array", "tradeoffs"],
+      "points": 3
+    },
+    {
+      "id": "ds_dsb_030",
+      "category": "data_structures_basic",
+      "type": "fill_blanks",
+      "difficulty": "easy",
+      "title": "Fill: Stack and Queue Disciplines",
+      "description": "A stack follows the {blank1} discipline, while a queue follows the {blank2} discipline. The two stack operations are {blank3} and {blank4}.",
+      "blanks": {
+        "blank1": {
+          "correct": "LIFO",
+          "options": ["LIFO", "FIFO", "FILO", "LILO"]
+        },
+        "blank2": {
+          "correct": "FIFO",
+          "options": ["FIFO", "LIFO", "FILO", "random"]
+        },
+        "blank3": {
+          "correct": "push",
+          "options": ["push", "enqueue", "insert", "append"]
+        },
+        "blank4": {
+          "correct": "pop",
+          "options": ["pop", "dequeue", "remove", "delete"]
+        }
+      },
+      "explanation": "Stacks are LIFO with push/pop. Queues are FIFO with enqueue/dequeue.",
+      "hints": [
+        "L=Last, F=First",
+        "Stack: push/pop. Queue: enqueue/dequeue"
+      ],
+      "tags": ["stack", "queue", "terminology"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_031",
+      "category": "data_structures_basic",
+      "type": "fill_blanks",
+      "difficulty": "medium",
+      "title": "Fill: Tree Traversals",
+      "description": "{blank1}-order visits the node before its subtrees, {blank2}-order visits the node between its subtrees, and {blank3}-order visits the node after its subtrees.",
+      "blanks": {
+        "blank1": {
+          "correct": "pre",
+          "options": ["pre", "in", "post", "level"]
+        },
+        "blank2": {
+          "correct": "in",
+          "options": ["in", "pre", "post", "level"]
+        },
+        "blank3": {
+          "correct": "post",
+          "options": ["post", "pre", "in", "level"]
+        }
+      },
+      "explanation": "Pre-order: node, left, right. In-order: left, node, right. Post-order: left, right, node. Level-order is a separate breadth-first traversal using a queue.",
+      "hints": [
+        "Position of the node visit gives the name",
+        "Pre = before, In = between, Post = after"
+      ],
+      "tags": ["tree", "traversal"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_032",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Heapsort Complexity",
+      "description": "Heapsort sorts an array of n elements by building a max-heap and repeatedly extracting the maximum. Its worst-case running time is:",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(2^n)"
+      ],
+      "correct_answer": "B",
+      "explanation": "BUILD-HEAP runs in O(n). Then n - 1 EXTRACT-MAX operations each cost O(log n), giving O(n log n) total. Heapsort therefore has worst-case O(n log n) and uses O(1) extra space (in-place).",
+      "hints": [
+        "Build-heap is O(n)",
+        "n extractions of O(log n) each"
+      ],
+      "tags": ["heap", "heapsort"],
+      "points": 3
+    },
+    {
+      "id": "ds_dsb_033",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "BST Insertion Order Matters",
+      "description": "Inserting the keys 1, 2, 3, 4, 5 into an initially empty BST in this order yields a tree with what shape?",
+      "options": [
+        "A balanced binary tree of height 2",
+        "A right-skewed chain of height 4 (linked-list shape)",
+        "A complete binary tree",
+        "An AVL-balanced tree"
+      ],
+      "correct_answer": "B",
+      "explanation": "Each new key is greater than all previous keys, so each insertion goes to the right. The resulting BST is a right-skewed chain of height n - 1 = 4, which gives O(n) search instead of the desired O(log n). Self-balancing BSTs (AVL, red-black) avoid this.",
+      "hints": [
+        "Each new key is the largest seen so far",
+        "Sorted input is the worst case for naive BSTs"
+      ],
+      "tags": ["bst", "insertion", "balance"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_034",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Doubly vs Singly Linked List",
+      "description": "Compared with a singly linked list, a doubly linked list primarily improves which operation?",
+      "options": [
+        "Random access by index",
+        "Forward traversal",
+        "Deletion of a node given a direct pointer to it",
+        "Memory consumption"
+      ],
+      "correct_answer": "C",
+      "explanation": "A doubly linked list stores both next and prev pointers, so given a pointer to a node we can splice it out in O(1) by updating its neighbours' pointers. In a singly linked list we would need the predecessor, which costs O(n) to find from the head. Random access is still O(n), and memory usage is higher.",
+      "hints": [
+        "Where do you need the predecessor?",
+        "Both directions = O(1) splice"
+      ],
+      "tags": ["linked_list", "doubly"],
+      "points": 2
+    },
+    {
+      "id": "ds_dsb_035",
+      "category": "data_structures_basic",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Heap Order Is Not Total Order",
+      "description": "Looking at a max-heap stored as an array, can you read off the n elements in sorted (descending) order in O(n) time?",
+      "options": [
+        "Yes, because the heap is already sorted",
+        "Yes, by an in-order traversal",
+        "No, the heap only guarantees parent >= children, not full sortedness",
+        "Yes, by reversing the array"
+      ],
+      "correct_answer": "C",
+      "explanation": "The heap property is local (parent dominates each child), not global. Siblings and cousins are unordered with respect to each other. To get a sorted sequence we must extract the max repeatedly, which costs O(n log n) total (this is heapsort).",
+      "hints": [
+        "Local order vs total order",
+        "Siblings can appear in any relative order"
+      ],
+      "tags": ["heap", "ordering"],
+      "points": 1
+    }
+  ]
+}
