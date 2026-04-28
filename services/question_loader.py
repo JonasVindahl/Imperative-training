@@ -4,12 +4,34 @@ import os
 import random
 import re
 
+from services.question_validator import (
+    LEVEL_ERROR,
+    LEVEL_WARNING,
+    validate_question,
+)
+
 logger = logging.getLogger(__name__)
+
+
+def _strict_validation_enabled() -> bool:
+    return os.environ.get('STRICT_QUESTION_VALIDATION', '').lower() in {'1', 'true', 'yes', 'on'}
 
 # Allow only conservative identifiers (letters, digits, underscore, dash)
 # for exam ids and category names. This is the first line of defence against
 # path-traversal — values that fail this check never even touch os.path.join.
 _SAFE_ID = re.compile(r'^[a-zA-Z0-9_\-]+$')
+
+
+def _normalize_options(question: dict) -> None:
+    """Some question files store `options` as a dict {"A": "...", "B": "..."}
+    instead of the canonical list ["...", "..."]. Convert to a list ordered by
+    sorted letter key so the template (which iterates and assigns letters by
+    position) and the grader (which compares against `correct_answer` letter)
+    keep working with one canonical shape.
+    """
+    options = question.get('options')
+    if isinstance(options, dict):
+        question['options'] = [options[key] for key in sorted(options.keys())]
 
 
 class QuestionLoader:
@@ -134,13 +156,34 @@ class QuestionLoader:
         try:
             with open(file_path) as f:
                 data = json.load(f)
-                return data.get('questions', [])
         except json.JSONDecodeError as e:
             logger.error('Error parsing %s: %s', file_path, e)
             return []
         except OSError as e:
             logger.error('Error loading %s: %s', file_path, e)
             return []
+
+        questions = data.get('questions', [])
+        validated: list[dict] = []
+        strict = _strict_validation_enabled()
+        for q in questions:
+            issues = validate_question(q)
+            errors = [i for i in issues if i.level == LEVEL_ERROR]
+            warnings = [i for i in issues if i.level == LEVEL_WARNING]
+            for issue in errors:
+                logger.error('%s: %s', file_path, issue.format())
+            for issue in warnings:
+                logger.warning('%s: %s', file_path, issue.format())
+            if errors:
+                if strict:
+                    raise ValueError(
+                        f'Invalid question in {file_path}: ' + '; '.join(e.format() for e in errors)
+                    )
+                # Skip the broken question rather than crashing the loader.
+                continue
+            _normalize_options(q)
+            validated.append(q)
+        return validated
 
     def get_question_by_id(
         self,

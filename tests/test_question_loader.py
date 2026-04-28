@@ -21,15 +21,28 @@ def questions_root(tmp_path: Path) -> Path:
     """
     exam_dir = tmp_path / 'ds_exam'
     exam_dir.mkdir()
+    base_mc = {
+        'title': 'Sample',
+        'description': 'Pick the right one.',
+        'options': ['x', 'y'],
+        'correct_answer': 'A',
+    }
     (exam_dir / 'arrays.json').write_text(json.dumps({
         'questions': [
-            {'id': 'q1', 'category': 'arrays', 'type': 'multiple_choice'},
-            {'id': 'q2', 'category': 'arrays', 'type': 'multiple_choice'},
+            {'id': 'q1', 'category': 'arrays', 'type': 'multiple_choice', **base_mc},
+            {'id': 'q2', 'category': 'arrays', 'type': 'multiple_choice', **base_mc},
         ]
     }))
     (exam_dir / 'empty.json').write_text(json.dumps({'questions': []}))
     (tmp_path / 'legacy_cat.json').write_text(json.dumps({
-        'questions': [{'id': 'L1', 'category': 'legacy_cat', 'type': 'code_output'}]
+        'questions': [{
+            'id': 'L1',
+            'category': 'legacy_cat',
+            'type': 'code_output',
+            'title': 'Legacy',
+            'description': 'What does this print?',
+            'correct_answer': '42',
+        }]
     }))
     return tmp_path
 
@@ -106,3 +119,42 @@ class TestLoading:
         (questions_root / 'ds_exam' / 'arrays.json').write_text(json.dumps({'questions': []}))
         loader.reload_questions('ds_exam')
         assert loader.load_all_questions(exam_id='ds_exam', categories=['arrays']) == {}
+
+
+class TestOptionsNormalisation:
+    def test_dict_options_become_list_in_letter_order(self, tmp_path: Path):
+        exam_dir = tmp_path / 'demo'
+        exam_dir.mkdir()
+        (exam_dir / 'cat.json').write_text(json.dumps({
+            'questions': [{
+                'id': 'q1',
+                'type': 'multiple_choice',
+                'title': 'Demo',
+                'description': 'Pick one.',
+                'options': {'B': 'second', 'A': 'first', 'D': 'fourth', 'C': 'third'},
+                'correct_answer': 'B',
+            }]
+        }))
+        loader = QuestionLoader(str(tmp_path))
+        q = loader.load_category('cat', exam_id='demo')[0]
+        assert q['options'] == ['first', 'second', 'third', 'fourth']
+        # correct_answer 'B' must still index to 'second'
+        idx = ord(q['correct_answer']) - ord('A')
+        assert q['options'][idx] == 'second'
+
+    def test_list_options_pass_through_unchanged(self, tmp_path: Path):
+        exam_dir = tmp_path / 'demo'
+        exam_dir.mkdir()
+        (exam_dir / 'cat.json').write_text(json.dumps({
+            'questions': [{
+                'id': 'q1',
+                'type': 'multiple_choice',
+                'title': 'Demo',
+                'description': 'Pick one.',
+                'options': ['x', 'y', 'z'],
+                'correct_answer': 'A',
+            }]
+        }))
+        loader = QuestionLoader(str(tmp_path))
+        q = loader.load_category('cat', exam_id='demo')[0]
+        assert q['options'] == ['x', 'y', 'z']

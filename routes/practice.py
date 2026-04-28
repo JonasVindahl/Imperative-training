@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 
 from flask import Blueprint, current_app, flash, jsonify, redirect, render_template, request, session, url_for
@@ -148,11 +149,39 @@ def question():
     answered_questions = set(session.get('answered_questions', []))
     has_answered = question_id in answered_questions
 
+    _attach_fill_blanks_segments(question_data)
+
     return render_template('practice.html',
                          question=question_data,
                          question_number=current_index + 1,
                          total_questions=len(question_ids),
                          has_answered=has_answered)
+
+
+_BLANK_PLACEHOLDER_RE = re.compile(r'\{(blank\d+)\}')
+
+
+def _attach_fill_blanks_segments(question_data: dict) -> None:
+    """For fill_blanks questions whose payload uses the dict-style schema
+    ({blank1} placeholders in `description` + `blanks` dict), expand the
+    description into a list of {text} / {blank_id, options} segments so the
+    template can render `<select>` controls inline."""
+    if question_data.get('type') != 'fill_blanks':
+        return
+    blanks = question_data.get('blanks')
+    if not isinstance(blanks, dict):
+        return
+    description = question_data.get('description', '') or ''
+    parts = _BLANK_PLACEHOLDER_RE.split(description)
+    segments = []
+    for index, part in enumerate(parts):
+        if index % 2 == 0:
+            if part:
+                segments.append({'text': part})
+        else:
+            options = blanks.get(part, {}).get('options', [])
+            segments.append({'blank_id': part, 'options': options})
+    question_data['fill_blanks_segments'] = segments
 
 
 @practice_bp.route('/submit', methods=['POST'])

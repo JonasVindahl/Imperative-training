@@ -43,6 +43,9 @@ jobs:
       - name: Type-check (mypy)
         run: mypy --ignore-missing-imports app.py services routes config.py models
 
+      - name: Validate question schema
+        run: python scripts/validate_questions.py
+
       - name: Run tests
         env:
           DEBUG: 'True'

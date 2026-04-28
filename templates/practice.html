@@ -15,7 +15,9 @@
 
     <div class="question-card">
         <h2>{{ question.title }}</h2>
+        {% if not question.fill_blanks_segments %}
         <p class="question-description">{{ question.description }}</p>
+        {% endif %}
 
         {% if question.code_template and question.type != 'drag_drop' %}
         <div class="code-section">
@@ -49,8 +51,27 @@
         <div class="answer-section">
             <h3>Your Answer:</h3>
 
-            {# Type 1: Fill-in-the-Blanks #}
-            {% if question.type == 'fill_blanks' %}
+            {# Type 1a: Fill-in-the-Blanks — inline placeholder schema (description with {blank1} markers + blanks dict) #}
+            {% if question.fill_blanks_segments %}
+            <div class="fill-blanks-section fill-blanks-inline">
+                <p class="blank-text">
+                    {% for segment in question.fill_blanks_segments %}
+                        {%- if segment.blank_id -%}
+                        <select class="blank-dropdown" data-blank-id="{{ segment.blank_id }}" required>
+                            <option value="">-- {{ segment.blank_id }} --</option>
+                            {% for option in segment.options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                        {%- else -%}
+                        {{ segment.text }}
+                        {%- endif -%}
+                    {% endfor %}
+                </p>
+            </div>
+
+            {# Type 1b: Fill-in-the-Blanks — legacy nested questions[] schema #}
+            {% elif question.type == 'fill_blanks' %}
             <div class="fill-blanks-section">
                 {% for q_item in question.questions %}
                 <div class="fill-blank-question">

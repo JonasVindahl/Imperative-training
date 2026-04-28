@@ -101,6 +101,43 @@ class TestFillBlanks:
         assert result['correct'] is False
         assert any(not r['correct'] for r in result['blank_results'])
 
+    def test_dict_shape_all_correct(self, grader):
+        q = {
+            'type': 'fill_blanks',
+            'description': 'A × B is the set of all {blank1} and |A × B| = {blank2}.',
+            'blanks': {
+                'blank1': {'correct': 'ordered pairs', 'options': ['ordered pairs', 'subsets']},
+                'blank2': {'correct': 'm · n', 'options': ['m + n', 'm · n']},
+            },
+        }
+        answer = json.dumps({'blank1': 'ordered pairs', 'blank2': 'm · n'})
+        result = grader.grade(q, answer)
+        assert result['correct'] is True
+        assert {r['blank_id'] for r in result['blank_results']} == {'blank1', 'blank2'}
+
+    def test_dict_shape_one_wrong(self, grader):
+        q = {
+            'type': 'fill_blanks',
+            'description': 'Pre-order: {blank1}, In-order: {blank2}.',
+            'blanks': {
+                'blank1': {'correct': 'pre', 'options': ['pre', 'in']},
+                'blank2': {'correct': 'in', 'options': ['pre', 'in']},
+            },
+        }
+        answer = json.dumps({'blank1': 'pre', 'blank2': 'pre'})
+        result = grader.grade(q, answer)
+        assert result['correct'] is False
+        wrong = [r for r in result['blank_results'] if not r['correct']]
+        assert len(wrong) == 1 and wrong[0]['blank_id'] == 'blank2'
+
+    def test_dict_shape_case_insensitive(self, grader):
+        q = {
+            'type': 'fill_blanks',
+            'description': '{blank1}',
+            'blanks': {'blank1': {'correct': 'Injektiv', 'options': ['Injektiv']}},
+        }
+        assert grader.grade(q, json.dumps({'blank1': '  injektiv '}))['correct'] is True
+
 
 class TestDragDrop:
     def test_correct_placement(self, grader):

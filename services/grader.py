@@ -217,7 +217,13 @@ class GraderService:
             }
 
     def grade_fill_blanks(self, question: dict, user_answer: str) -> dict:
-        """Grade fill-in-the-blanks questions"""
+        """Grade fill-in-the-blanks questions.
+
+        Supports two payload shapes:
+          - dict shape: {"blanks": {"blank1": {"correct": ..., "options": [...]}, ...}}
+            with {blankN} placeholders inside `description`
+          - legacy nested shape: {"questions": [{"id": ..., "text": ..., "blanks": [...]}]}
+        """
         import json
         try:
             # user_answer is JSON: {"blank1": "answer1", "blank2": "answer2"}
@@ -225,16 +231,14 @@ class GraderService:
         except (json.JSONDecodeError, TypeError, ValueError):
             user_answers = {}
 
-        questions_data = question.get('questions', [])
         all_correct = True
         results = []
 
-        for q_item in questions_data:
-            blanks = q_item.get('blanks', [])
-            for idx, blank in enumerate(blanks):
-                blank_id = f"blank_{q_item.get('id', 0)}_{idx}"
-                user_val = user_answers.get(blank_id, '')
-                correct_val = blank.get('correct', '')
+        blanks_dict = question.get('blanks')
+        if isinstance(blanks_dict, dict) and not question.get('questions'):
+            for blank_id, blank_data in blanks_dict.items():
+                user_val = user_answers.get(blank_id, '') or ''
+                correct_val = blank_data.get('correct', '') or ''
 
                 is_correct = user_val.strip().lower() == correct_val.strip().lower()
                 if not is_correct:
@@ -244,8 +248,26 @@ class GraderService:
                     'blank_id': blank_id,
                     'user_answer': user_val,
                     'correct_answer': correct_val,
-                    'correct': is_correct
+                    'correct': is_correct,
                 })
+        else:
+            for q_item in question.get('questions', []):
+                blanks = q_item.get('blanks', [])
+                for idx, blank in enumerate(blanks):
+                    blank_id = f"blank_{q_item.get('id', 0)}_{idx}"
+                    user_val = user_answers.get(blank_id, '') or ''
+                    correct_val = blank.get('correct', '') or ''
+
+                    is_correct = user_val.strip().lower() == correct_val.strip().lower()
+                    if not is_correct:
+                        all_correct = False
+
+                    results.append({
+                        'blank_id': blank_id,
+                        'user_answer': user_val,
+                        'correct_answer': correct_val,
+                        'correct': is_correct,
+                    })
 
         return {
             'correct': all_correct,
