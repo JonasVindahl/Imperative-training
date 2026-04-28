@@ -18,10 +18,15 @@ services:
         python app.py
 
     environment:
+      # Must be set to a real random value (e.g. `openssl rand -hex 32`)
+      # The app refuses to start with the default 'dev-secret-key' when DEBUG=False
       - FLASK_SECRET_KEY=change-this-to-random-string-abc123xyz
-      - FLASK_ENV=production
-      - FLASK_DEBUG=False
+      - DEBUG=False
+      # Behind Cloudflare Tunnel / reverse proxy: set FORCE_HTTPS=false so
+      # Flask-Talisman doesn't redirect-loop on plain-HTTP traffic from the proxy
+      - FORCE_HTTPS=false
       - DATABASE_URL=sqlite:///instance/practice.db
+      - LOG_LEVEL=INFO
       - MAX_CODE_EXECUTION_TIME=3
       - MAX_MEMORY_MB=50
       - TZ=Europe/Copenhagen
@@ -40,7 +45,7 @@ services:
     tty: false
 
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000').read()"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz').read()"]
       interval: 30s
       timeout: 10s
       retries: 3
