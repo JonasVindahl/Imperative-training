@@ -15,16 +15,17 @@
         "Only works with pointers"
       ],
       "correct_answer": "B",
-      "explanation": "typedef creates an alias. You can use 'Point' instead of 'struct Point'.",
+      "explanation": "Typedef creates an alias. You can use 'Point' instead of 'struct Point'.",
       "hints": [
-        "typedef creates type alias",
-        "Simplifies syntax",
-        "No 'struct' keyword needed"
+        "Consider typedef creates type alias",
+        "Think about simplifies syntax",
+        "Remember that no 'struct' keyword needed"
       ],
       "tags": [
         "typedef",
         "structs"
-      ]
+      ],
+      "hint": "Think about: typedef creates an alias."
     },
     {
       "id": "drag_001",
@@ -132,16 +133,17 @@
       },
       "explanation": "We initialize r to NULL to track the last matching node. We traverse the list while node is not NULL, check if the current node's key matches k, and update r when we find a match. Finally, we return r which points to the last matching node (or NULL if none found).",
       "hints": [
-        "Initialize r to NULL since we haven't found any matches yet",
-        "Use != to check if node is not NULL",
-        "Use -> to access struct members through a pointer",
-        "Update r to point to the current node when keys match"
+        "Remember that initialize r to NULL since we haven't found any matches yet",
+        "Consider using != to check if node is not NULL",
+        "Consider using -> to access struct members through a pointer",
+        "Remember that update r to point to the current node when keys match"
       ],
       "tags": [
         "linked_lists",
         "pointers",
         "traversal"
-      ]
+      ],
+      "hint": "Think about: we initialize r to null to track the last matching node."
     },
     {
       "id": "drag_022",
@@ -162,16 +164,17 @@
           ]
         }
       },
-      "explanation": "Use -> to access members through a pointer.",
+      "explanation": "Use -> to access members through a pointer. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointer access uses ->",
-        "Equivalent to (*p).x",
+        "Consider how pointers relate to memory addresses and values",
+        "Think about equivalent to (*p).x",
         "Return x"
       ],
       "tags": [
         "structs",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: use -> to access members through a pointer."
     },
     {
       "id": "drag_035",
@@ -228,17 +231,18 @@
           ]
         }
       },
-      "explanation": "Struct pointer: parameter is pointer (*p), use arrow operator (->) to access members through pointer, += to modify values.",
+      "explanation": "Struct pointer: parameter is pointer (*p), use arrow operator (->) to access members through pointer, += to modify values. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointer to struct uses *",
-        "Arrow operator -> for pointer access",
+        "Consider how pointers relate to memory addresses and values",
+        "Remember that arrow operator -> for pointer access",
         "+= to add to existing value"
       ],
       "tags": [
         "structs",
         "pointers",
         "arrow_operator"
-      ]
+      ],
+      "hint": "Remember that remember: use '.' for struct variables and '->' for struct pointers."
     },
     {
       "id": "drag_037",
@@ -313,13 +317,13 @@
           ]
         }
       },
-      "explanation": "Insert at head: pointer to pointer (node_t**) to modify head, allocate new node, set data, point new_node->next to current head, update head to new_node.",
+      "explanation": "Insert at head: pointer to pointer (node_t**) to modify head, allocate new node, set data, point new_node->next to current head, update head to new_node. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Double pointer (**) needed to modify head",
-        "malloc allocates space for node_t",
-        "Use -> for pointer member access",
-        "New node points to old head",
-        "Dereference ** to update head"
+        "Consider how pointers relate to memory addresses and values",
+        "Think about malloc allocates space for node_t",
+        "Consider using -> for pointer member access",
+        "Remember that new node points to old head",
+        "Remember that dereference ** to update head"
       ],
       "tags": [
         "linked_lists",
@@ -385,10 +389,10 @@
       },
       "explanation": "Typedef struct pattern: typedef struct name { fields } alias; Creates alias point_t for struct point.",
       "hints": [
-        "typedef creates an alias for a type",
-        "struct keyword defines the structure",
-        "Convention: _t suffix for typedef names",
-        "Fields should match the data type needed"
+        "Consider typedef creates an alias for a type",
+        "Think about struct keyword defines the structure",
+        "Remember that convention: _t suffix for typedef names",
+        "Remember that fields should match the data type needed"
       ],
       "tags": [
         "typedef",
@@ -454,9 +458,9 @@
       },
       "explanation": "Self-referential struct: must use 'struct node' for the next pointer since node_t isn't defined yet inside the struct body.",
       "hints": [
-        "typedef creates an alias",
-        "Self-reference requires 'struct node' for next",
-        "Pointer to next node uses *",
+        "Consider typedef creates an alias",
+        "Remember that self-reference requires 'struct node' for next",
+        "Remember that pointer to next node uses *",
         "_t convention for typedef name"
       ],
       "tags": [
@@ -522,11 +526,11 @@
           ]
         }
       },
-      "explanation": "typedef struct pattern with array member: char name[50] for string, int for age, person_t as alias.",
+      "explanation": "Typedef struct pattern with array member: char name[50] for string, int for age, person_t as alias. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "typedef before struct",
-        "char array for strings",
-        "int for age",
+        "Consider typedef before struct",
+        "Think about char array for strings",
+        "Think about int for age",
         "_t suffix convention"
       ],
       "tags": [
@@ -534,7 +538,8 @@
         "structs",
         "arrays",
         "exam_style"
-      ]
+      ],
+      "hint": "Think about: typedef struct pattern with array member: char name[50] for string, int for age, person_t as alias."
     },
     {
       "id": "drag_044",
@@ -583,10 +588,10 @@
           ]
         }
       },
-      "explanation": "Nested struct with pointer: point_t* for pointer to center, typedef struct pattern creates rect_t alias.",
+      "explanation": "Nested struct with pointer: point_t* for pointer to center, typedef struct pattern creates rect_t alias. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "typedef before struct",
-        "Pointer to another struct uses *",
+        "Consider typedef before struct",
+        "Remember that pointer to another struct uses *",
         "_t convention for alias"
       ],
       "tags": [
@@ -671,12 +676,12 @@
           ]
         }
       },
-      "explanation": "Array of structs initialization: array size [2], outer braces {}, each struct element in inner braces {{x, y}, {x, y}}.",
+      "explanation": "Array of structs initialization: array size [2], outer braces {}, each struct element in inner braces {{x, y}, {x, y}}. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Specify array size [2]",
-        "Outer braces for array",
-        "Inner braces for each struct",
-        "Comma-separated values"
+        "Remember that specify array size [2]",
+        "Remember that outer braces for array",
+        "Remember that inner braces for each struct",
+        "Remember that comma-separated values"
       ],
       "tags": [
         "structs",
@@ -725,17 +730,18 @@
           ]
         }
       ],
-      "explanation": "Use -> for pointers and . for struct values.",
+      "explanation": "Use -> for pointers and . for struct values. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "ptr->x accesses through a pointer",
-        "p.x accesses a value",
+        "Consider how pointers relate to memory addresses and values",
+        "Think about p.x accesses a value",
         "-> equals (*ptr).x"
       ],
       "tags": [
         "structs",
         "pointers",
         "member_access"
-      ]
+      ],
+      "hint": "Remember that remember: use '.' for struct variables and '->' for struct pointers."
     },
     {
       "id": "fill_da_009",
@@ -748,7 +754,7 @@
       "questions": [
         {
           "id": 0,
-          "text": "___ operatoren f\u00e5r adgang til struct medlemmer gennem en variabel, ___ gennem en pointer",
+          "text": "___ operatoren får adgang til struct medlemmer gennem en variabel, ___ gennem en pointer",
           "blanks": [
             {
               "options": [
@@ -787,7 +793,7 @@
         },
         {
           "id": 2,
-          "text": "Ekstra bytes tilf\u00f8jet for alignment kaldes ___",
+          "text": "Ekstra bytes tilføjet for alignment kaldes ___",
           "blanks": [
             {
               "options": [
@@ -803,9 +809,9 @@
       ],
       "explanation": "Struct terminologi: medlemmer/felter (variabler indeni), punktum operator (direkte adgang), pil operator (pointer adgang), padding (alignment bytes).",
       "hints": [
-        "Brug . til direkte adgang",
-        "Brug -> til pointer adgang",
-        "Padding aligner hukommelse"
+        "Remember that brug . til direkte adgang",
+        "Remember that brug -> til pointer adgang",
+        "Remember that padding aligner hukommelse"
       ],
       "tags": [
         "strukturer",
@@ -879,9 +885,9 @@
       ],
       "explanation": "Struct terminology: members/fields (variables inside), dot operator (direct access), arrow operator (pointer access), padding (alignment bytes).",
       "hints": [
-        "Use . for direct access",
-        "Use -> for pointer access",
-        "Padding aligns memory"
+        "Consider using . for direct access",
+        "Consider using -> for pointer access",
+        "Remember that padding aligns memory"
       ],
       "tags": [
         "structs",
@@ -896,7 +902,7 @@
       "difficulty": "hard",
       "points": 12,
       "title": "Implementer linked list insertion (Exam Style)",
-      "description": "Implementer en funktion med signaturen:\n\n`void insert_sorted(node_t **head, int value)`\n\nder inds\u00e6tter en ny node med den givne v\u00e6rdi i en sorteret linked list, s\u00e5 listen forbliver sorteret.\n\nLinked list strukturen er defineret som:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nDu skal allokere hukommelse til den nye node med malloc.",
+      "description": "Implementer en funktion med signaturen:\n\n`void insert_sorted(node_t **head, int value)`\n\nder indsætter en ny node med den givne værdi i en sorteret linked list, så listen forbliver sorteret.\n\nLinked list strukturen er defineret som:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nDu skal allokere hukommelse til den nye node med malloc.",
       "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\n/* YOUR CODE HERE */\n\n\nvoid print_list(node_t *head) {\n    while (head) {\n        printf(\"%d \", head->data);\n        head = head->next;\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    node_t *list = NULL;\n    \n    insert_sorted(&list, 3);\n    insert_sorted(&list, 1);\n    insert_sorted(&list, 5);\n    insert_sorted(&list, 2);\n    \n    print_list(list);  // Should print: 1 2 3 5\n    return 0;\n}",
       "expected_output": "1 2 3 5",
       "test_cases": [
@@ -910,10 +916,10 @@
         }
       ],
       "hints": [
-        "H\u00e5ndter tre tilf\u00e6lde: tom liste, inds\u00e6t f\u00f8rst, inds\u00e6t i midten/slutningen",
-        "Brug malloc(sizeof(node_t)) til at allokere ny node",
-        "Opdater head pointer gennem **head hvis n\u00f8dvendigt",
-        "Husk at s\u00e6tte new_node->next korrekt"
+        "Remember that håndter tre tilfælde: tom liste, indsæt først, indsæt i midten/slutningen",
+        "Remember that brug malloc(sizeof(node_t)) til at allokere ny node",
+        "Remember that opdater head pointer gennem **head hvis nødvendigt",
+        "Remember that husk at sætte new_node->next korrekt"
       ],
       "tags": [
         "linked_lists",
@@ -935,7 +941,7 @@
       "difficulty": "hard",
       "points": 12,
       "title": "Implementer linked list remove duplicates (Exam Style)",
-      "description": "Implementer en funktion med signaturen:\n\n`void remove_duplicates(node_t **head)`\n\nder fjerner alle duplikerede v\u00e6rdier fra en sorteret linked list, s\u00e5 hver v\u00e6rdi kun forekommer \u00e9n gang.\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nDu skal frigive hukommelsen for duplikerede nodes med free.",
+      "description": "Implementer en funktion med signaturen:\n\n`void remove_duplicates(node_t **head)`\n\nder fjerner alle duplikerede værdier fra en sorteret linked list, så hver værdi kun forekommer én gang.\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nDu skal frigive hukommelsen for duplikerede nodes med free.",
       "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nvoid insert_end(node_t **head, int value) {\n    node_t *new_node = malloc(sizeof(node_t));\n    new_node->data = value;\n    new_node->next = NULL;\n    \n    if (*head == NULL) {\n        *head = new_node;\n        return;\n    }\n    \n    node_t *curr = *head;\n    while (curr->next) curr = curr->next;\n    curr->next = new_node;\n}\n\n/* YOUR CODE HERE */\n\n\nvoid print_list(node_t *head) {\n    while (head) {\n        printf(\"%d \", head->data);\n        head = head->next;\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    node_t *list = NULL;\n    insert_end(&list, 1);\n    insert_end(&list, 1);\n    insert_end(&list, 2);\n    insert_end(&list, 3);\n    insert_end(&list, 3);\n    insert_end(&list, 3);\n    insert_end(&list, 4);\n    \n    remove_duplicates(&list);\n    print_list(list);  // Should print: 1 2 3 4\n    return 0;\n}",
       "expected_output": "1 2 3 4",
       "test_cases": [
@@ -945,10 +951,10 @@
         }
       ],
       "hints": [
-        "Loop gennem listen og sammenlign current->data med current->next->data",
-        "Hvis ens, fjern current->next node",
-        "Husk at kalde free() p\u00e5 den fjernede node",
-        "Opdater current->next til at springe over duplikaten"
+        "Remember that loop gennem listen og sammenlign current->data med current->next->data",
+        "Remember that hvis ens, fjern current->next node",
+        "Remember that husk at kalde free() på den fjernede node",
+        "Remember that opdater current->next til at springe over duplikaten"
       ],
       "tags": [
         "linked_lists",
@@ -970,7 +976,7 @@
       "difficulty": "hard",
       "points": 12,
       "title": "Implementer linked list find nth from end (Exam Style)",
-      "description": "Implementer en funktion med signaturen:\n\n`int find_nth_from_end(node_t *head, int n)`\n\nder returnerer v\u00e6rdien af den n'te node fra slutningen af listen. Hvis n er st\u00f8rre end listens l\u00e6ngde, returner -1.\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nEksempel: I listen 1->2->3->4->5, er find_nth_from_end(head, 2) = 4 (den 2. node fra slutningen).",
+      "description": "Implementer en funktion med signaturen:\n\n`int find_nth_from_end(node_t *head, int n)`\n\nder returnerer værdien af den n'te node fra slutningen af listen. Hvis n er større end listens længde, returner -1.\n\nLinked list strukturen:\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nEksempel: I listen 1->2->3->4->5, er find_nth_from_end(head, 2) = 4 (den 2. node fra slutningen).",
       "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct node {\n    int data;\n    struct node *next;\n} node_t;\n\nvoid insert_end(node_t **head, int value) {\n    node_t *new_node = malloc(sizeof(node_t));\n    new_node->data = value;\n    new_node->next = NULL;\n    \n    if (*head == NULL) {\n        *head = new_node;\n        return;\n    }\n    \n    node_t *curr = *head;\n    while (curr->next) curr = curr->next;\n    curr->next = new_node;\n}\n\n/* YOUR CODE HERE */\n\n\nint main() {\n    node_t *list = NULL;\n    insert_end(&list, 1);\n    insert_end(&list, 2);\n    insert_end(&list, 3);\n    insert_end(&list, 4);\n    insert_end(&list, 5);\n    \n    printf(\"%d\\n\", find_nth_from_end(list, 1));  // 5\n    printf(\"%d\\n\", find_nth_from_end(list, 2));  // 4\n    printf(\"%d\\n\", find_nth_from_end(list, 5));  // 1\n    printf(\"%d\\n\", find_nth_from_end(list, 10)); // -1\n    return 0;\n}",
       "expected_output": "5\n4\n1\n-1",
       "test_cases": [
@@ -992,10 +998,10 @@
         }
       ],
       "hints": [
-        "Brug two-pointer teknik: flyt en pointer n steps frem f\u00f8rst",
-        "Derefter flyt begge pointere samtidig indtil den forreste n\u00e5r slutningen",
-        "Den bageste pointer vil nu v\u00e6re ved n'te node fra slutningen",
-        "H\u00e5ndter edge case hvor n > list length"
+        "Remember that brug two-pointer teknik: flyt en pointer n steps frem først",
+        "Remember that derefter flyt begge pointere samtidig indtil den forreste når slutningen",
+        "Remember that den bageste pointer vil nu være ved n'te node fra slutningen",
+        "Remember that håndter edge case hvor n > list length"
       ],
       "tags": [
         "linked_lists",
@@ -1022,10 +1028,10 @@
         }
       ],
       "hints": [
-        "Brug tre pointere: prev, current, next",
-        "Loop gennem listen og vend hver node's next pointer",
-        "Opdater head til at pege p\u00e5 den tidligere sidste node",
-        "H\u00e5ndter edge case: tom liste eller liste med \u00e9n node"
+        "Remember that brug tre pointere: prev, current, next",
+        "Remember that loop gennem listen og vend hver node's next pointer",
+        "Remember that opdater head til at pege på den tidligere sidste node",
+        "Remember that håndter edge case: tom liste eller liste med én node"
       ],
       "tags": [
         "linked_lists",
@@ -1054,17 +1060,18 @@
         "6"
       ],
       "correct_answer": "C",
-      "explanation": "The tree has 3 nodes: root (n1) with two children (n2 and n3). count_nodes returns 1 + count_nodes(left) + count_nodes(right) = 1 + 1 + 1 = 3.",
+      "explanation": "The tree has 3 nodes: root (n1) with two children (n2 and n3). count_nodes returns 1 + count_nodes(left) + count_nodes(right) = 1 + 1 + 1 = 3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Count all nodes in the tree",
-        "Root has two children",
-        "Total: 3 nodes"
+        "Remember that count all nodes in the tree",
+        "Remember that root has two children",
+        "The solution involves total: 3 nodes"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "binary_tree"
-      ]
+      ],
+      "hint": "Think about: the tree has 3 nodes: root (n1) with two children (n2 and n3)."
     },
     {
       "id": "rec_043",
@@ -1081,17 +1088,18 @@
         "231"
       ],
       "correct_answer": "A",
-      "explanation": "Inorder traversal visits: left subtree, root, right subtree. The tree has structure 2(1,3), so inorder prints: 1, 2, 3.",
+      "explanation": "Inorder traversal visits: left subtree, root, right subtree. The tree has structure 2(1,3), so inorder prints: 1, 2, 3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Inorder: left, root, right",
-        "Visit left child (1) first",
-        "Then root (2), then right (3)"
+        "Remember that inorder: left, root, right",
+        "Remember that visit left child (1) first",
+        "Remember that then root (2), then right (3)"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "inorder"
-      ]
+      ],
+      "hint": "Think about: inorder traversal visits: left subtree, root, right subtree."
     },
     {
       "id": "rec_044",
@@ -1108,17 +1116,18 @@
         "231"
       ],
       "correct_answer": "B",
-      "explanation": "Preorder traversal visits: root, left subtree, right subtree. The tree has structure 2(1,3), so preorder prints: 2, 1, 3.",
+      "explanation": "Preorder traversal visits: root, left subtree, right subtree. The tree has structure 2(1,3), so preorder prints: 2, 1, 3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Preorder: root, left, right",
-        "Visit root (2) first",
-        "Then left (1), then right (3)"
+        "Remember that preorder: root, left, right",
+        "Think about visit root (2) first",
+        "Remember that then left (1), then right (3)"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "preorder"
-      ]
+      ],
+      "hint": "Think about: preorder traversal visits: root, left subtree, right subtree."
     },
     {
       "id": "rec_045",
@@ -1135,17 +1144,18 @@
         "231"
       ],
       "correct_answer": "B",
-      "explanation": "Postorder traversal visits: left subtree, right subtree, root. The tree has structure 2(1,3), so postorder prints: 1, 3, 2.",
+      "explanation": "Postorder traversal visits: left subtree, right subtree, root. The tree has structure 2(1,3), so postorder prints: 1, 3, 2. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Postorder: left, right, root",
-        "Visit children first",
+        "Remember that postorder: left, right, root",
+        "Think about visit children first",
         "Then root last"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "postorder"
-      ]
+      ],
+      "hint": "Think about: postorder traversal visits: left subtree, right subtree, root."
     },
     {
       "id": "rec_049",
@@ -1162,17 +1172,18 @@
         "4"
       ],
       "correct_answer": "C",
-      "explanation": "The tree is a chain: 1->2->3. Height counts nodes from root to deepest leaf: 3 nodes = height 3.",
+      "explanation": "The tree is a chain: 1->2->3. Height counts nodes from root to deepest leaf: 3 nodes = height 3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Count nodes from root to leaf",
-        "Tree is linear: 1->2->3",
-        "Height is 3"
+        "Remember that count nodes from root to leaf",
+        "Remember that tree is linear: 1->2->3",
+        "The solution involves height is 3"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "binary_tree"
-      ]
+      ],
+      "hint": "Think about: the tree is a chain: 1->2->3."
     },
     {
       "id": "rec_062",
@@ -1189,17 +1200,18 @@
         "15"
       ],
       "correct_answer": "C",
-      "explanation": "Sum of all node values: 2 + 3 + 5 = 10.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Sum of all node values: 2 + 3 + 5 = 10.",
       "hints": [
-        "Add all node values",
-        "2 + 3 + 5",
-        "Result is 10"
+        "Consider add all node values",
+        "Think about 2 + 3 + 5",
+        "The solution involves result is 10"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "binary_tree"
-      ]
+      ],
+      "hint": "Think about: sum of all node values: 2 + 3 + 5 = 10."
     },
     {
       "id": "struct_001",
@@ -1216,11 +1228,11 @@
         "16 bytes"
       ],
       "correct_answer": "C",
-      "explanation": "With padding: char a (1 byte) + 3 bytes padding + int b (4 bytes) + char c (1 byte) + 3 bytes padding = 12 bytes total. The struct is padded to align to its largest member (int, 4 bytes).",
+      "explanation": "With padding: char a (1 byte) + 3 bytes padding + int b (4 bytes) + char c (1 byte) + 3 bytes padding = 12 bytes total. The struct is padded to align to its largest member (int, 4 bytes). sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
         "Consider alignment requirements",
-        "ints typically require 4-byte alignment",
-        "Padding is added after 'a' and after 'c'"
+        "Think about ints typically require 4-byte alignment",
+        "Remember that padding is added after 'a' and after 'c'"
       ],
       "tags": [
         "sizeof",
@@ -1243,17 +1255,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "ptr points to p, so ptr->y accesses p.y, which is 2.",
+      "explanation": "Ptr points to p, so ptr->y accesses p.y, which is 2. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Use -> for pointers to structs",
-        "ptr points to p",
-        "y was initialized to 2"
+        "Consider how pointers relate to memory addresses and values",
+        "Think about ptr points to p",
+        "The solution involves y was initialized to 2"
       ],
       "tags": [
         "structs",
         "pointers",
         "member_access"
-      ]
+      ],
+      "hint": "Think about: ptr points to p, so ptr->y accesses p."
     },
     {
       "id": "struct_003",
@@ -1272,15 +1285,16 @@
       "correct_answer": "C",
       "explanation": "Struct assignment copies values. b is a copy of a, so changing b.x does not change a.x.",
       "hints": [
-        "Struct assignment copies fields",
-        "b is independent after the copy",
+        "Remember that struct assignment copies fields",
+        "Think about b is independent after the copy",
         "Only b.x changes"
       ],
       "tags": [
         "structs",
         "assignment",
         "copy"
-      ]
+      ],
+      "hint": "Think about: struct assignment copies values."
     },
     {
       "id": "struct_004",
@@ -1297,11 +1311,11 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p.b is initialized to 4.",
+      "explanation": "P.b is initialized to 4. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "Initializer list sets a then b",
-        "p.b is the second value",
-        "Second value is 4"
+        "Remember that initializer list sets a then b",
+        "Think about p.b is the second value",
+        "The solution involves second value is 4"
       ],
       "tags": [
         "structs",
@@ -1325,15 +1339,16 @@
       "correct_answer": "C",
       "explanation": "The double must be 8-byte aligned. The struct becomes 16 bytes due to padding after the char.",
       "hints": [
-        "char is 1 byte",
-        "double needs 8-byte alignment",
-        "Padding brings total to 16"
+        "Consider char is 1 byte",
+        "Think about double needs 8-byte alignment",
+        "Remember that padding brings total to 16"
       ],
       "tags": [
         "structs",
         "padding",
         "alignment"
-      ]
+      ],
+      "hint": "Think about: the double must be 8-byte aligned."
     },
     {
       "id": "struct_006",
@@ -1350,11 +1365,11 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p->id accesses it.id, which is 42.",
+      "explanation": "Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address. P->id accesses it.id, which is 42.",
       "hints": [
-        "p points to it",
-        "Use -> for pointer access",
-        "id is 42"
+        "Consider p points to it",
+        "Consider using -> for pointer access",
+        "The solution involves id is 42"
       ],
       "tags": [
         "structs",
@@ -1379,14 +1394,15 @@
       "correct_answer": "A",
       "explanation": "The struct is passed by value, so set_x modifies a copy, not the original.",
       "hints": [
-        "Function receives a copy",
-        "Original is unchanged",
-        "a.x remains 3"
+        "Remember that function receives a copy",
+        "Remember that original is unchanged",
+        "The solution involves a.x remains 3"
       ],
       "tags": [
         "structs",
         "pass_by_value"
-      ]
+      ],
+      "hint": "Think about: the struct is passed by value, so set_x modifies a copy, not the original."
     },
     {
       "id": "struct_008",
@@ -1403,17 +1419,18 @@
         "4 8"
       ],
       "correct_answer": "A",
-      "explanation": "Two ints make 8 bytes. The pointer size is also 8 on 64-bit.",
+      "explanation": "Two ints make 8 bytes. The pointer size is also 8 on 64-bit. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Two ints total 8 bytes",
-        "Pointer size is 8",
-        "Prints 8 8"
+        "Remember that two ints total 8 bytes",
+        "Think about pointer size is 8",
+        "The solution involves prints 8 8"
       ],
       "tags": [
         "sizeof",
         "structs",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: two ints make 8 bytes."
     },
     {
       "id": "struct_009",
@@ -1430,11 +1447,11 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "o.in.v is initialized to 5.",
+      "explanation": "O.in.v is initialized to 5. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "Nested initialization sets inner value",
-        "Access with o.in.v",
-        "Value is 5"
+        "Remember that nested initialization sets inner value",
+        "Think about access with o.in.v",
+        "The solution involves value is 5"
       ],
       "tags": [
         "structs",
@@ -1457,11 +1474,11 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "arr[1].x accesses the second struct, which has x = 2.",
+      "explanation": "Arr[1].x accesses the second struct, which has x = 2. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "arr[0].x is 1",
-        "arr[1].x is 2",
-        "Prints 2"
+        "Consider arr[0].x is 1",
+        "Think about arr[1].x is 2",
+        "The solution involves prints 2"
       ],
       "tags": [
         "structs",
@@ -1483,16 +1500,17 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "typedef creates an alias. it.id is 9.",
+      "explanation": "Typedef creates an alias. it.id is 9.",
       "hints": [
-        "typedef aliases the struct type",
-        "it.id is initialized to 9",
-        "Prints 9"
+        "Consider typedef aliases the struct type",
+        "Think about it.id is initialized to 9",
+        "The solution involves prints 9"
       ],
       "tags": [
         "structs",
         "typedef"
-      ]
+      ],
+      "hint": "Think about: typedef creates an alias."
     },
     {
       "id": "struct_012",
@@ -1509,17 +1527,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "Passing a pointer allows modifying the original struct. a.x becomes 7.",
+      "explanation": "Passing a pointer allows modifying the original struct. a.x becomes 7. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointer allows mutation",
-        "set_x writes to a",
-        "a.x becomes 7"
+        "Remember that pointer allows mutation",
+        "Think about set_x writes to a",
+        "The solution involves a.x becomes 7"
       ],
       "tags": [
         "structs",
         "pointers",
         "mutation"
-      ]
+      ],
+      "hint": "Think about: passing a pointer allows modifying the original struct."
     },
     {
       "id": "struct_013",
@@ -1538,15 +1557,16 @@
       "correct_answer": "B",
       "explanation": "Layout: char (1) + 3 padding + int (4) = 8 so far, then double (8) = 16. The struct aligns to 8, so total size is 16.",
       "hints": [
-        "char + padding + int aligns to 8",
-        "double adds 8 more",
+        "Consider char + padding + int aligns to 8",
+        "Think about double adds 8 more",
         "Total is 16"
       ],
       "tags": [
         "structs",
         "padding",
         "alignment"
-      ]
+      ],
+      "hint": "Think about: layout: char (1) + 3 padding + int (4) = 8 so far, then double (8) = 16."
     },
     {
       "id": "struct_014",
@@ -1565,14 +1585,15 @@
       "correct_answer": "B",
       "explanation": "The function returns a struct by value. a.x is initialized to 5.",
       "hints": [
-        "Returning a struct by value is allowed",
-        "a receives the returned value",
-        "a.x is 5"
+        "Remember that returning a struct by value is allowed",
+        "Think about a receives the returned value",
+        "The solution involves a.x is 5"
       ],
       "tags": [
         "structs",
         "return_value"
-      ]
+      ],
+      "hint": "Think about: the function returns a struct by value."
     },
     {
       "id": "struct_015",
@@ -1589,17 +1610,18 @@
         "struct *Node next;"
       ],
       "correct_answer": "B",
-      "explanation": "A struct can contain a pointer to its own type: struct Node *next;",
+      "explanation": "A struct can contain a pointer to its own type: struct Node *next;. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Self-referential fields must be pointers",
-        "Use the full struct name",
+        "Remember that self-referential fields must be pointers",
+        "Consider using the full struct name",
         "struct Node *next is valid"
       ],
       "tags": [
         "structs",
         "linked_lists",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: a struct can contain a pointer to its own type: struct node *next;."
     },
     {
       "id": "struct_016",
@@ -1616,10 +1638,10 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "p.x is 10, p.y is 20, so 10 + 20 = 30.",
+      "explanation": "P.x is 10, p.y is 20, so 10 + 20 = 30. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "p.x = 10",
-        "p.y = 20",
+        "Consider p.x = 10",
+        "Think about p.y = 20",
         "Add them together"
       ],
       "tags": [
@@ -1643,17 +1665,18 @@
         "16 bytes"
       ],
       "correct_answer": "C",
-      "explanation": "Due to alignment requirements, padding is added. char (1) + padding (3) + int (4) + char (1) + padding (3) = 12 bytes.",
+      "explanation": "Due to alignment requirements, padding is added. char (1) + padding (3) + int (4) + char (1) + padding (3) = 12 bytes. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Compiler adds padding for alignment",
-        "int typically needs 4-byte alignment",
-        "Total is usually a multiple of largest type"
+        "Remember that compiler adds padding for alignment",
+        "Think about int typically needs 4-byte alignment",
+        "Remember that total is usually a multiple of largest type"
       ],
       "tags": [
         "structs",
         "padding",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about: due to alignment requirements, padding is added."
     },
     {
       "id": "struct_018",
@@ -1672,15 +1695,16 @@
       "correct_answer": "C",
       "explanation": "Struct assignment creates a copy. p2 is a separate copy of p1. Changing p2.x doesn't affect p1.x.",
       "hints": [
-        "Struct assignment copies all members",
-        "p2 is independent of p1",
+        "Remember that struct assignment copies all members",
+        "Think about p2 is independent of p1",
         "p1.x remains 10"
       ],
       "tags": [
         "structs",
         "assignment",
         "copy"
-      ]
+      ],
+      "hint": "Think about: struct assignment creates a copy."
     },
     {
       "id": "struct_019",
@@ -1699,15 +1723,16 @@
       "correct_answer": "B",
       "explanation": "Nested struct initialization: {{42}} initializes o.in.val to 42. Access with o.in.val.",
       "hints": [
-        "Nested braces for nested structs",
-        "o.in accesses inner struct",
-        "o.in.val is 42"
+        "Remember that nested braces for nested structs",
+        "Think about o.in accesses inner struct",
+        "The solution involves o.in.val is 42"
       ],
       "tags": [
         "structs",
         "nested",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: nested struct initialization: {{42}} initializes o."
     },
     {
       "id": "struct_020",
@@ -1724,11 +1749,11 @@
         "p->x only"
       ],
       "correct_answer": "B",
-      "explanation": "Both (*p).x and p->x access members through pointer. p->x is shorthand for (*p).x.",
+      "explanation": "Both (*p).x and p->x access members through pointer. p->x is shorthand for (*p).x. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Need to dereference pointer first",
-        "-> is arrow operator",
-        "Both (*p).x and p->x work"
+        "Consider how pointers relate to memory addresses and values",
+        "Think about -> is arrow operator",
+        "Remember that both (*p).x and p->x work"
       ],
       "tags": [
         "structs",
@@ -1751,17 +1776,18 @@
         "6"
       ],
       "correct_answer": "C",
-      "explanation": "points[1] is the second struct with x=3, y=4. points[1].y is 4.",
+      "explanation": "Points[1] is the second struct with x=3, y=4. points[1].y is 4. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "points[1] is second element",
-        "y is second field",
-        "Value is 4"
+        "Consider points[1] is second element",
+        "Think about y is second field",
+        "The solution involves value is 4"
       ],
       "tags": [
         "structs",
         "arrays",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: points[1] is the second struct with x=3, y=4."
     },
     {
       "id": "struct_022",
@@ -1778,17 +1804,18 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "arr[1] is a pointer to d2. arr[1]->val accesses d2.val which is 20.",
+      "explanation": "Arr[1] is a pointer to d2. arr[1]->val accesses d2.val which is 20. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "arr[1] points to d2",
-        "d2.val is 20",
-        "Arrow operator accesses member"
+        "Consider arr[1] points to d2",
+        "Think about d2.val is 20",
+        "Remember that arrow operator accesses member"
       ],
       "tags": [
         "structs",
         "pointers",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: arr[1] is a pointer to d2."
     },
     {
       "id": "struct_023",
@@ -1807,15 +1834,16 @@
       "correct_answer": "A",
       "explanation": "Designated initializers set specific fields. Uninitialized fields default to 0. x=1, y=0, z=3.",
       "hints": [
-        "Designated initializers",
-        "Unset fields become 0",
+        "Remember that designated initializers",
+        "Remember that unset fields become 0",
         "x=1, y=0, z=3"
       ],
       "tags": [
         "structs",
         "designated_initializers",
         "C99"
-      ]
+      ],
+      "hint": "Think about: designated initializers set specific fields."
     },
     {
       "id": "struct_024",
@@ -1832,16 +1860,17 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "The compound literal initializes a=10 and b=20.",
+      "explanation": "The compound literal initializes a=10 and b=20. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "Compound literal initializes fields",
-        "a is 10",
-        "Prints 10"
+        "Remember that compound literal initializes fields",
+        "Think about a is 10",
+        "The solution involves prints 10"
       ],
       "tags": [
         "structs",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: the compound literal initializes a=10 and b=20."
     },
     {
       "id": "struct_025",
@@ -1858,11 +1887,11 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "(*p).x modifies s.x through the pointer, setting it to 9.",
+      "explanation": "(*p).x modifies s.x through the pointer, setting it to 9. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "(*p).x is same as p->x",
-        "Pointer modifies original",
-        "s.x becomes 9"
+        "Consider (*p).x is same as p->x",
+        "Remember that pointer modifies original",
+        "The solution involves s.x becomes 9"
       ],
       "tags": [
         "structs",
@@ -1884,17 +1913,18 @@
         "32"
       ],
       "correct_answer": "C",
-      "explanation": "Three elements each 8 bytes gives 24 bytes.",
+      "explanation": "Three elements each 8 bytes gives 24 bytes. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Array size = element size * count",
-        "3 * 8 = 24",
-        "sizeof(arr) is 24"
+        "Remember that array size = element size * count",
+        "Think about 3 * 8 = 24",
+        "The solution involves sizeof(arr) is 24"
       ],
       "tags": [
         "structs",
         "sizeof",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: three elements each 8 bytes gives 24 bytes."
     },
     {
       "id": "struct_027",
@@ -1913,14 +1943,15 @@
       "correct_answer": "A",
       "explanation": "Struct assignment copies values. b.x remains 1 after a changes.",
       "hints": [
-        "Assignment copies values",
-        "b is separate",
-        "b.x stays 1"
+        "Remember that assignment copies values",
+        "Think about b is separate",
+        "The solution involves b.x stays 1"
       ],
       "tags": [
         "structs",
         "assignment"
-      ]
+      ],
+      "hint": "Think about: struct assignment copies values."
     },
     {
       "id": "struct_028",
@@ -1939,14 +1970,15 @@
       "correct_answer": "A",
       "explanation": "Nested struct is initialized with v = 7.",
       "hints": [
-        "o.in.v accesses inner value",
-        "Initialized to 7",
-        "Prints 7"
+        "Consider o.in.v accesses inner value",
+        "Think about initialized to 7",
+        "The solution involves prints 7"
       ],
       "tags": [
         "structs",
         "nested"
-      ]
+      ],
+      "hint": "Think about: nested struct is initialized with v = 7."
     },
     {
       "id": "struct_029",
@@ -1963,17 +1995,18 @@
         "32"
       ],
       "correct_answer": "B",
-      "explanation": "double (8) + char (1) + padding (3) + int (4) = 16. Alignment to 8 keeps it at 16.",
+      "explanation": "Double (8) + char (1) + padding (3) + int (4) = 16. Alignment to 8 keeps it at 16.",
       "hints": [
-        "Alignment to 8 bytes",
-        "Double first, then padding",
+        "Consider alignment to 8 bytes",
+        "Remember that double first, then padding",
         "Total 24"
       ],
       "tags": [
         "structs",
         "padding",
         "alignment"
-      ]
+      ],
+      "hint": "Think about: double (8) + char (1) + padding (3) + int (4) = 16."
     },
     {
       "id": "struct_030",
@@ -1990,17 +2023,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p and q point to the same struct. Updating via q updates s.x.",
+      "explanation": "P and q point to the same struct. Updating via q updates s.x. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointers alias",
-        "q->x changes s.x",
-        "Result is 4"
+        "Consider pointers alias",
+        "Think about q->x changes s.x",
+        "The solution involves result is 4"
       ],
       "tags": [
         "structs",
         "pointers",
         "aliasing"
-      ]
+      ],
+      "hint": "Think about: p and q point to the same struct."
     },
     {
       "id": "struct_031",
@@ -2019,14 +2053,15 @@
       "correct_answer": "A",
       "explanation": "The struct is passed by value, so a.x is unchanged.",
       "hints": [
-        "Passed by value",
-        "Change doesn't affect original",
-        "a.x stays 2"
+        "Consider passed by value",
+        "Remember that change doesn't affect original",
+        "The solution involves a.x stays 2"
       ],
       "tags": [
         "structs",
         "pass_by_value"
-      ]
+      ],
+      "hint": "Think about: the struct is passed by value, so a."
     },
     {
       "id": "struct_032",
@@ -2043,16 +2078,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "Passing a pointer allows modifying the original struct.",
+      "explanation": "Passing a pointer allows modifying the original struct. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointer allows mutation",
-        "set writes to a",
-        "a.x becomes 99"
+        "Remember that pointer allows mutation",
+        "Think about set writes to a",
+        "The solution involves a.x becomes 99"
       ],
       "tags": [
         "structs",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: passing a pointer allows modifying the original struct."
     },
     {
       "id": "struct_033",
@@ -2071,14 +2107,15 @@
       "correct_answer": "B",
       "explanation": "Two chars (2) + padding (2) + int (4) = 8.",
       "hints": [
-        "Align int to 4",
-        "Padding after two chars",
-        "Total 8"
+        "Consider align int to 4",
+        "Remember that padding after two chars",
+        "The solution involves total 8"
       ],
       "tags": [
         "structs",
         "padding"
-      ]
+      ],
+      "hint": "Think about: two chars (2) + padding (2) + int (4) = 8."
     },
     {
       "id": "struct_034",
@@ -2095,16 +2132,17 @@
         "struct *Node next;"
       ],
       "correct_answer": "B",
-      "explanation": "A struct can contain a pointer to its own type.",
+      "explanation": "A struct can contain a pointer to its own type. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Self-referential requires pointer",
-        "Use full struct name",
+        "Remember that self-referential requires pointer",
+        "Consider using full struct name",
         "struct Node *next"
       ],
       "tags": [
         "structs",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: a struct can contain a pointer to its own type."
     },
     {
       "id": "struct_035",
@@ -2121,11 +2159,11 @@
         "0"
       ],
       "correct_answer": "C",
-      "explanation": "a[1].x accesses the second element's x, which is 3.",
+      "explanation": "A[1].x accesses the second element's x, which is 3. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Second element",
-        "a[1].x",
-        "Value is 3"
+        "Consider second element",
+        "Think about a[1].x",
+        "The solution involves value is 3"
       ],
       "tags": [
         "structs",
@@ -2149,14 +2187,15 @@
       "correct_answer": "C",
       "explanation": "Bit-fields are packed into an unsigned int, so size is 4 bytes.",
       "hints": [
-        "Bit-fields share storage",
-        "Based on unsigned int",
-        "Size 4 bytes"
+        "Remember that bit-fields share storage",
+        "Remember that based on unsigned int",
+        "The solution involves size 4 bytes"
       ],
       "tags": [
         "structs",
         "bitfields"
-      ]
+      ],
+      "hint": "Think about: bit-fields are packed into an unsigned int, so size is 4 bytes."
     },
     {
       "id": "struct_037",
@@ -2173,11 +2212,11 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "(*p).x accesses s.x, which is 7.",
+      "explanation": "Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address. (*p).x accesses s.x, which is 7.",
       "hints": [
-        "(*p).x equals p->x",
-        "s.x is 7",
-        "Prints 7"
+        "Consider (*p).x equals p->x",
+        "Think about s.x is 7",
+        "The solution involves prints 7"
       ],
       "tags": [
         "structs",
@@ -2199,16 +2238,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "Structs can be returned by value. a.x is 3.",
+      "explanation": "Structs can be returned by value. a.x is 3. Functions should always return a value if they have a non-void return type.",
       "hints": [
-        "Return by value is allowed",
-        "a.x is initialized to 3",
-        "Prints 3"
+        "Remember that return by value is allowed",
+        "Think about a.x is initialized to 3",
+        "The solution involves prints 3"
       ],
       "tags": [
         "structs",
         "return_value"
-      ]
+      ],
+      "hint": "Think about: structs can be returned by value."
     },
     {
       "id": "struct_039",
@@ -2227,14 +2267,15 @@
       "correct_answer": "C",
       "explanation": "C does not allow == comparison for structs.",
       "hints": [
-        "No built-in struct comparison",
-        "Use memcmp or compare fields",
+        "Remember that no built-in struct comparison",
+        "Consider using memcmp or compare fields",
         "== not allowed"
       ],
       "tags": [
         "structs",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: c does not allow == comparison for structs."
     },
     {
       "id": "struct_040",
@@ -2251,16 +2292,17 @@
         "Undefined"
       ],
       "correct_answer": "A",
-      "explanation": "Initializing with {0} sets all fields to 0.",
+      "explanation": "Initializing with {0} sets all fields to 0. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "{0} zero-initializes",
-        "All fields set to 0",
-        "Prints 0 0"
+        "Consider {0} zero-initializes",
+        "Think about all fields set to 0",
+        "The solution involves prints 0 0"
       ],
       "tags": [
         "structs",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: initializing with {0} sets all fields to 0."
     },
     {
       "id": "struct_041",
@@ -2279,15 +2321,16 @@
       "correct_answer": "A",
       "explanation": "Flexible array members (C99) allow variable-length arrays at the end of structs. The allocation reserves space for the struct plus 5 extra bytes for data[].",
       "hints": [
-        "Flexible array member is a C99 feature",
-        "Must be last member in struct",
-        "Memory allocated for size + extra bytes"
+        "Remember that flexible array member is a C99 feature",
+        "Remember that must be last member in struct",
+        "Remember that memory allocated for size + extra bytes"
       ],
       "tags": [
         "structs",
         "flexible_array_member",
         "C99"
-      ]
+      ],
+      "hint": "Think about: flexible array members (c99) allow variable-length arrays at the end of structs."
     },
     {
       "id": "struct_042",
@@ -2306,14 +2349,15 @@
       "correct_answer": "A",
       "explanation": "Bit fields allow packing multiple values into a single storage unit. flag1 and flag2 each use 1 bit, value uses 6 bits.",
       "hints": [
-        "Bit fields specified with : syntax",
-        "flag1:1 means 1 bit wide",
-        "Values fit within specified bit widths"
+        "Remember that bit fields specified with : syntax",
+        "Think about flag1:1 means 1 bit wide",
+        "Remember that values fit within specified bit widths"
       ],
       "tags": [
         "structs",
         "bit_fields"
-      ]
+      ],
+      "hint": "Think about: bit fields allow packing multiple values into a single storage unit."
     },
     {
       "id": "struct_043",
@@ -2332,15 +2376,16 @@
       "correct_answer": "B",
       "explanation": "A 3-bit field can hold values 0-7. The value 10 (binary 1010) is truncated to 010 (2) when stored in 3 bits.",
       "hints": [
-        "3 bits can represent 0-7",
-        "10 in binary is 1010",
-        "Only lower 3 bits stored: 010 = 2"
+        "Consider 3 bits can represent 0-7",
+        "Think about 10 in binary is 1010",
+        "The solution involves remember that only lower 3 bits stored: 010 = 2"
       ],
       "tags": [
         "structs",
         "bit_fields",
         "overflow"
-      ]
+      ],
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
     },
     {
       "id": "struct_044",
@@ -2359,15 +2404,16 @@
       "correct_answer": "A",
       "explanation": "Anonymous unions (C11) allow direct access to union members without naming the union. d.i accesses the int member directly.",
       "hints": [
-        "Anonymous union has no name",
-        "Members accessed directly",
-        "d.i = 10 works"
+        "Remember that anonymous union has no name",
+        "Remember that members accessed directly",
+        "The solution involves d.i = 10 works"
       ],
       "tags": [
         "structs",
         "anonymous_union",
         "C11"
-      ]
+      ],
+      "hint": "Think about: anonymous unions (c11) allow direct access to union members without naming the union."
     },
     {
       "id": "struct_045",
@@ -2386,16 +2432,17 @@
       "correct_answer": "D",
       "explanation": "The result depends on endianness. On little-endian systems it would be 0x3412, on big-endian 0x1234. The anonymous struct shares memory with the short.",
       "hints": [
-        "Union members share memory",
-        "Byte order depends on endianness",
-        "Result varies by architecture"
+        "Remember that union members share memory",
+        "Remember that byte order depends on endianness",
+        "Remember that result varies by architecture"
       ],
       "tags": [
         "structs",
         "anonymous_struct",
         "union",
         "endianness"
-      ]
+      ],
+      "hint": "Think about: the result depends on endianness."
     },
     {
       "id": "struct_046",
@@ -2414,8 +2461,8 @@
       "correct_answer": "A",
       "explanation": "#pragma pack(1) removes all padding. The struct is exactly char(1) + int(4) + char(1) = 6 bytes.",
       "hints": [
-        "#pragma pack(1) disables padding",
-        "Members placed consecutively",
+        "Consider #pragma pack(1) disables padding",
+        "Remember that members placed consecutively",
         "1 + 4 + 1 = 6"
       ],
       "tags": [
@@ -2423,7 +2470,8 @@
         "pragma_pack",
         "padding",
         "alignment"
-      ]
+      ],
+      "hint": "Think about: #pragma pack(1) removes all padding."
     },
     {
       "id": "struct_047",
@@ -2442,15 +2490,16 @@
       "correct_answer": "B",
       "explanation": "Normal struct has padding: char(1) + pad(3) + int(4) = 8. Packed struct has no padding: char(1) + int(4) = 5.",
       "hints": [
-        "Normal struct adds padding for alignment",
-        "Packed removes all padding",
+        "Remember that normal struct adds padding for alignment",
+        "Remember that packed removes all padding",
         "8 vs 5 bytes"
       ],
       "tags": [
         "structs",
         "pragma_pack",
         "padding"
-      ]
+      ],
+      "hint": "Think about: normal struct has padding: char(1) + pad(3) + int(4) = 8."
     },
     {
       "id": "struct_048",
@@ -2467,11 +2516,11 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "n2.next points to n1, so n2.next->data accesses n1.data which is 10.",
+      "explanation": "N2.next points to n1, so n2.next->data accesses n1.data which is 10.",
       "hints": [
-        "n2.next points to n1",
-        "n1.data is 10",
-        "Arrow operator accesses member"
+        "Consider n2.next points to n1",
+        "Think about n1.data is 10",
+        "Remember that arrow operator accesses member"
       ],
       "tags": [
         "structs",
@@ -2494,17 +2543,18 @@
         "Segmentation fault"
       ],
       "correct_answer": "C",
-      "explanation": "p points to n1, p->next is n2, p->next->next is n3, so p->next->next->val is 3.",
+      "explanation": "P points to n1, p->next is n2, p->next->next is n3, so p->next->next->val is 3.",
       "hints": [
-        "p->next moves to second node",
-        "p->next->next moves to third node",
-        "Third node has val = 3"
+        "Consider p->next moves to second node",
+        "Think about p->next->next moves to third node",
+        "The solution involves remember that third node has val = 3"
       ],
       "tags": [
         "structs",
         "linked_list",
         "traversal"
-      ]
+      ],
+      "hint": "Think about: p points to n1, p->next is n2, p->next->next is n3, so p->next->next->val is 3."
     },
     {
       "id": "struct_050",
@@ -2523,15 +2573,16 @@
       "correct_answer": "A",
       "explanation": "Compound literal with designated initializers. Order doesn't matter with designated initializers: x=3, y=5.",
       "hints": [
-        "Designated initializers can be in any order",
-        ".x = 3 sets x to 3",
+        "Remember that designated initializers can be in any order",
+        "Think about .x = 3 sets x to 3",
         ".y = 5 sets y to 5"
       ],
       "tags": [
         "structs",
         "compound_literal",
         "designated_initializers"
-      ]
+      ],
+      "hint": "Think about: compound literal with designated initializers."
     },
     {
       "id": "struct_051",
@@ -2550,15 +2601,16 @@
       "correct_answer": "A",
       "explanation": "With designated initializers, unspecified members are zero-initialized. Only b is set to 10, a and c are 0.",
       "hints": [
-        "Designated initializers zero unspecified members",
-        "Only b = 10",
+        "Remember that designated initializers zero unspecified members",
+        "Think about only b = 10",
         "a and c default to 0"
       ],
       "tags": [
         "structs",
         "designated_initializers",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: with designated initializers, unspecified members are zero-initialized."
     },
     {
       "id": "struct_052",
@@ -2577,16 +2629,17 @@
       "correct_answer": "B",
       "explanation": "A: char(1)+pad(7)+double(8)+int(4)+char(1)+pad(3)=24. B: double(8)+int(4)+char(1)+char(1)+pad(2)=16. Placing larger members first reduces padding.",
       "hints": [
-        "Count padding in each layout",
-        "Larger types need stricter alignment",
-        "Group similar-sized members"
+        "Remember that count padding in each layout",
+        "Remember that larger types need stricter alignment",
+        "Remember that group similar-sized members"
       ],
       "tags": [
         "structs",
         "memory_layout",
         "padding",
         "optimization"
-      ]
+      ],
+      "hint": "Think about: a: char(1)+pad(7)+double(8)+int(4)+char(1)+pad(3)=24."
     },
     {
       "id": "struct_053",
@@ -2603,18 +2656,19 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "memcmp compares bytes including padding. Padding bytes have undefined values, so comparison may fail even when member values match.",
+      "explanation": "Memcmp compares bytes including padding. Padding bytes have undefined values, so comparison may fail even when member values match.",
       "hints": [
-        "Padding bytes are uninitialized",
-        "memcmp compares all bytes",
-        "Use field-by-field comparison instead"
+        "Remember that padding bytes are uninitialized",
+        "Think about memcmp compares all bytes",
+        "Consider using field-by-field comparison instead"
       ],
       "tags": [
         "structs",
         "comparison",
         "memcmp",
         "padding"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "struct_054",
@@ -2633,15 +2687,16 @@
       "correct_answer": "C",
       "explanation": "C does not allow direct comparison of structs with ==. You must compare members individually or use memcmp (with care).",
       "hints": [
-        "No built-in struct equality in C",
-        "Must compare field by field",
+        "Remember that no built-in struct equality in C",
+        "Remember that must compare field by field",
         "== operator not defined for structs"
       ],
       "tags": [
         "structs",
         "comparison",
         "operators"
-      ]
+      ],
+      "hint": "Think about: c does not allow direct comparison of structs with ==."
     },
     {
       "id": "struct_055",
@@ -2660,15 +2715,16 @@
       "correct_answer": "C",
       "explanation": "Passing large structs by value creates a full copy (10KB here), which is inefficient. Pass by pointer instead for better performance.",
       "hints": [
-        "By-value creates complete copy",
-        "10000 bytes copied on each call",
-        "Use pointer for large structs"
+        "Remember that by-value creates complete copy",
+        "Think about 10000 bytes copied on each call",
+        "Consider using pointer for large structs"
       ],
       "tags": [
         "structs",
         "pass_by_value",
         "performance"
-      ]
+      ],
+      "hint": "Think about: passing large structs by value creates a full copy (10kb here), which is inefficient."
     },
     {
       "id": "struct_056",
@@ -2685,17 +2741,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "sizeof(d) gives the size of the pointer (8 on 64-bit), not the struct. sizeof(*d) would give the struct size.",
+      "explanation": "Sizeof(d) gives the size of the pointer (8 on 64-bit), not the struct. sizeof(*d) would give the struct size. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "d is a pointer",
-        "sizeof(pointer) is 8 on 64-bit",
+        "Consider d is a pointer",
+        "Think about sizeof(pointer) is 8 on 64-bit",
         "Not sizeof(struct)"
       ],
       "tags": [
         "structs",
         "pointers",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "struct_057",
@@ -2712,17 +2769,18 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "Flexible array members don't contribute to the struct size. sizeof returns only the size of the fixed members (just length here).",
+      "explanation": "Flexible array members don't contribute to the struct size. sizeof returns only the size of the fixed members (just length here). sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Flexible array has zero size in sizeof",
-        "Only fixed members counted",
+        "Remember that flexible array has zero size in sizeof",
+        "Remember that only fixed members counted",
         "Just size_t counted"
       ],
       "tags": [
         "structs",
         "flexible_array_member",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "struct_058",
@@ -2741,15 +2799,16 @@
       "correct_answer": "C",
       "explanation": "Anonymous struct allows direct access to members. o.z directly accesses the z field which is 3.",
       "hints": [
-        "Anonymous struct has no name",
-        "Members accessed directly",
-        "o.z is 3"
+        "Remember that anonymous struct has no name",
+        "Remember that members accessed directly",
+        "The solution involves o.z is 3"
       ],
       "tags": [
         "structs",
         "anonymous_struct",
         "C11"
-      ]
+      ],
+      "hint": "Think about: anonymous struct allows direct access to members."
     },
     {
       "id": "struct_059",
@@ -2768,16 +2827,17 @@
       "correct_answer": "B",
       "explanation": "A signed 2-bit field can hold -2 to 1. Value 3 (binary 11) is interpreted as -1 in two's complement.",
       "hints": [
-        "Signed 2 bits: -2, -1, 0, 1",
-        "3 = binary 11",
-        "11 in 2-bit signed is -1"
+        "Remember that signed 2 bits: -2, -1, 0, 1",
+        "Think about 3 = binary 11",
+        "The solution involves 11 in 2-bit signed is -1"
       ],
       "tags": [
         "structs",
         "bit_fields",
         "signed",
         "two_s_complement"
-      ]
+      ],
+      "hint": "Think about: a signed 2-bit field can hold -2 to 1."
     },
     {
       "id": "struct_060",
@@ -2794,10 +2854,10 @@
         "Implementation-defined"
       ],
       "correct_answer": "B",
-      "explanation": "The two bit fields (16 bits total) are packed into one int (4 bytes), followed by another int c (4 bytes) = 8 bytes total.",
+      "explanation": "The two bit fields (16 bits total) are packed into one int (4 bytes), followed by another int c (4 bytes) = 8 bytes total. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Bit fields packed into int",
-        "a and b share first 4 bytes",
+        "Remember that bit fields packed into int",
+        "Think about a and b share first 4 bytes",
         "c takes next 4 bytes"
       ],
       "tags": [
@@ -2822,17 +2882,18 @@
         "16"
       ],
       "correct_answer": "B",
-      "explanation": "The array has 2 elements. sizeof(pts) is total size, sizeof(pts[0]) is one element, so 2 elements total.",
+      "explanation": "The array has 2 elements. sizeof(pts) is total size, sizeof(pts[0]) is one element, so 2 elements total. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Two initializers = two elements",
-        "sizeof(array) / sizeof(element) = count",
-        "Result is 2"
+        "Remember that two initializers = two elements",
+        "Think about sizeof(array) / sizeof(element) = count",
+        "The solution involves result is 2"
       ],
       "tags": [
         "structs",
         "arrays",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "struct_062",
@@ -2849,10 +2910,10 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "o.in.b is 2, o.c is 3, so 2 + 3 = 5.",
+      "explanation": "O.in.b is 2, o.c is 3, so 2 + 3 = 5.",
       "hints": [
-        "Nested braces initialize nested struct",
-        "o.in.b = 2",
+        "Remember that nested braces initialize nested struct",
+        "Think about o.in.b = 2",
         "o.c = 3"
       ],
       "tags": [
@@ -2876,18 +2937,19 @@
         "8"
       ],
       "correct_answer": "C",
-      "explanation": "offsetof gives byte offset of a member. char a (1 byte) + padding (3 bytes) puts int b at offset 4.",
+      "explanation": "Offsetof gives byte offset of a member. char a (1 byte) + padding (3 bytes) puts int b at offset 4.",
       "hints": [
-        "offsetof returns byte offset",
-        "int needs 4-byte alignment",
-        "Padding added after char a"
+        "Consider offsetof returns byte offset",
+        "Think about int needs 4-byte alignment",
+        "Remember that padding added after char a"
       ],
       "tags": [
         "structs",
         "offsetof",
         "padding",
         "alignment"
-      ]
+      ],
+      "hint": "Think about: offsetof gives byte offset of a member."
     },
     {
       "id": "struct_064",
@@ -2906,15 +2968,16 @@
       "correct_answer": "C",
       "explanation": "Cannot modify const member after initialization. Assignment to cfg.max_size is a compilation error.",
       "hints": [
-        "const members cannot be modified",
-        "Only initialized, never assigned",
-        "Compiler rejects assignment"
+        "Consider const members cannot be modified",
+        "Remember that only initialized, never assigned",
+        "Remember that compiler rejects assignment"
       ],
       "tags": [
         "structs",
         "const",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: cannot modify const member after initialization."
     },
     {
       "id": "struct_065",
@@ -2931,17 +2994,18 @@
         "1 1"
       ],
       "correct_answer": "C",
-      "explanation": "Empty initializer {} is a C++ feature, not valid in C. In C, use {0} to zero-initialize.",
+      "explanation": "Empty initializer {} is a C++ feature, not valid in C. In C, use {0} to zero-initialize. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "{} is C++ syntax",
-        "C requires at least one value",
-        "Use {0} in C"
+        "Consider {} is C++ syntax",
+        "Remember that c requires at least one value",
+        "Consider using {0} in C"
       ],
       "tags": [
         "structs",
         "initialization",
         "C_vs_C++"
-      ]
+      ],
+      "hint": "Think about: empty initializer {} is a c++ feature, not valid in c."
     }
   ]
 }

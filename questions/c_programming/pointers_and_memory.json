@@ -46,17 +46,18 @@
           ]
         }
       },
-      "explanation": "Use a temporary variable to store *a, assign *a = *b, and then assign *b = tmp.",
+      "explanation": "Use a temporary variable to store *a, assign *a = *b, and then assign *b = tmp. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address. This is because the assignment operator copies the memory address, not the value.",
       "hints": [
-        "Dereference pointers to access values",
-        "Use a temp variable to avoid losing a value",
-        "Both assignments use *a and *b"
+        "Consider how pointers relate to memory addresses and values",
+        "Consider using a temp variable to avoid losing a value",
+        "Remember that both assignments use *a and *b"
       ],
       "tags": [
         "pointers",
         "swap",
         "dereference"
-      ]
+      ],
+      "hint": "Think about: use a temporary variable to store *a, assign *a = *b, and then assign *b = tmp."
     },
     {
       "id": "drag_009",
@@ -77,17 +78,18 @@
           ]
         }
       },
-      "explanation": "arr + 1 points to the second element, and dereferencing yields its value.",
+      "explanation": "Arr + 1 points to the second element, and dereferencing yields its value. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointer arithmetic advances by elements",
-        "arr + 1 points to the second element",
-        "Dereference to get the value"
+        "Remember that pointer arithmetic advances by elements",
+        "Think about arr + 1 points to the second element",
+        "Remember that dereference to get the value"
       ],
       "tags": [
         "pointers",
         "arrays",
         "arithmetic"
-      ]
+      ],
+      "hint": "Think about: arr + 1 points to the second element, and dereferencing yields its value."
     },
     {
       "id": "drag_011",
@@ -126,17 +128,18 @@
           ]
         }
       },
-      "explanation": "Use malloc with n * sizeof(int), and return NULL if allocation fails.",
+      "explanation": "Use malloc with n * sizeof(int), and return NULL if allocation fails. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc allocates bytes",
-        "Use sizeof(int) for element size",
-        "Return NULL on failure"
+        "Consider malloc allocates bytes",
+        "Consider using sizeof(int) for element size",
+        "Remember that return NULL on failure"
       ],
       "tags": [
         "malloc",
         "arrays",
         "memory_management"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "drag_015",
@@ -166,17 +169,18 @@
           ]
         }
       },
-      "explanation": "Dereference p to access the pointer it points to, then add 1 to move to the next element.",
+      "explanation": "Dereference p to access the pointer it points to, then add 1 to move to the next element. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "p points to a pointer",
-        "Use *p to access the pointer value",
+        "Consider p points to a pointer",
+        "Consider using *p to access the pointer value",
         "Add 1 to advance"
       ],
       "tags": [
         "pointers",
         "indirection",
         "arithmetic"
-      ]
+      ],
+      "hint": "Think about: dereference p to access the pointer it points to, then add 1 to move to the next element."
     },
     {
       "id": "drag_017",
@@ -208,15 +212,16 @@
       },
       "explanation": "Call free on the pointer and set it to NULL to avoid dangling use.",
       "hints": [
-        "free releases heap memory",
-        "NULL clears the pointer",
-        "Prevents dangling pointers"
+        "Consider free releases heap memory",
+        "Remember that nULL clears the pointer",
+        "Remember that prevents dangling pointers"
       ],
       "tags": [
         "free",
         "NULL",
         "safety"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "drag_020",
@@ -246,16 +251,17 @@
           ]
         }
       },
-      "explanation": "calloc takes count and size and zero-initializes memory.",
+      "explanation": "Calloc takes count and size and zero-initializes memory.",
       "hints": [
-        "Use calloc",
-        "Count and size",
+        "Consider using calloc",
+        "Think about count and size",
         "Zero-initializes"
       ],
       "tags": [
         "calloc",
         "memory_management"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "drag_026",
@@ -276,16 +282,17 @@
           ]
         }
       },
-      "explanation": "Use int * for a pointer parameter.",
+      "explanation": "Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address. Use int * for a pointer parameter.",
       "hints": [
-        "Pointer needs *",
-        "int *p",
+        "Consider how pointers relate to memory addresses and values",
+        "Think about int *p",
         "Used with *p"
       ],
       "tags": [
         "pointers",
         "parameters"
-      ]
+      ],
+      "hint": "Think about: use int * for a pointer parameter."
     },
     {
       "id": "drag_031",
@@ -351,10 +358,10 @@
           ]
         }
       },
-      "explanation": "To swap values through pointers: parameters are pointers (int *a), dereference to access values (*a), store in temp, swap dereferenced values.",
+      "explanation": "To swap values through pointers: parameters are pointers (int *a), dereference to access values (*a), store in temp, swap dereferenced values. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Parameters must be pointers to modify caller's variables",
-        "Use * to dereference and access the actual values",
+        "Remember that parameters must be pointers to modify caller's variables",
+        "Consider using * to dereference and access the actual values",
         "temp stores the dereferenced value"
       ],
       "tags": [
@@ -427,18 +434,19 @@
           ]
         }
       },
-      "explanation": "Safe malloc: allocate size * sizeof(type) bytes, check if returned NULL (allocation failed), return NULL on failure.",
+      "explanation": "Safe malloc: allocate size * sizeof(type) bytes, check if returned NULL (allocation failed), return NULL on failure. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc allocates memory",
-        "Multiply size by sizeof(type)",
-        "Check if malloc returned NULL",
-        "Return NULL on allocation failure"
+        "Consider malloc allocates memory",
+        "Remember that multiply size by sizeof(type)",
+        "Remember that check if malloc returned NULL",
+        "Remember that return NULL on allocation failure"
       ],
       "tags": [
         "malloc",
         "memory",
         "error_handling"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "fill_002",
@@ -504,17 +512,18 @@
           ]
         }
       ],
-      "explanation": "The & operator gets the memory address of a variable. The * operator dereferences a pointer (accesses the value at that address). Pointers store addresses, not values.",
+      "explanation": "The & operator gets the memory address of a variable. The * operator dereferences a pointer (accesses the value at that address). Pointers store addresses, not values. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "& is the address-of operator",
-        "* is used for dereferencing (getting the value)",
-        "Pointers contain memory addresses"
+        "Consider & is the address-of operator",
+        "Think about * is used for dereferencing (getting the value)",
+        "Remember that pointers contain memory addresses"
       ],
       "tags": [
         "pointers",
         "operators",
         "addresses"
-      ]
+      ],
+      "hint": "Think about: the & operator gets the memory address of a variable."
     },
     {
       "id": "fill_004",
@@ -571,17 +580,18 @@
           ]
         }
       ],
-      "explanation": "malloc returns a void pointer to allocated memory. The size is calculated in bytes, and the memory must be released with free.",
+      "explanation": "Malloc returns a void pointer to allocated memory. The size is calculated in bytes, and the memory must be released with free. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc returns void*",
-        "5 elements times sizeof(int) bytes each",
-        "Use free to release allocated memory"
+        "Consider malloc returns void*",
+        "Think about 5 elements times sizeof(int) bytes each",
+        "Consider using free to release allocated memory"
       ],
       "tags": [
         "malloc",
         "free",
         "memory_management"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "fill_007",
@@ -623,17 +633,18 @@
           ]
         }
       ],
-      "explanation": "free releases heap memory. After freeing, the pointer becomes invalid until reassigned.",
+      "explanation": "Free releases heap memory. After freeing, the pointer becomes invalid until reassigned. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "free releases allocated memory",
-        "Freed pointers must not be dereferenced",
-        "The memory is invalid after free"
+        "Consider free releases allocated memory",
+        "Remember that freed pointers must not be dereferenced",
+        "Remember that the memory is invalid after free"
       ],
       "tags": [
         "free",
         "memory_management",
         "pointers"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "fill_008",
@@ -675,17 +686,18 @@
           ]
         }
       ],
-      "explanation": "NULL is a special pointer value. Dereferencing it is undefined behavior and typically crashes.",
+      "explanation": "NULL is a special pointer value. Dereferencing it is undefined behavior and typically crashes. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "NULL means no valid address",
-        "Dereferencing invalid memory is unsafe",
-        "Always check before use"
+        "Remember that nULL means no valid address",
+        "Remember that dereferencing invalid memory is unsafe",
+        "Remember that always check before use"
       ],
       "tags": [
         "pointers",
         "NULL",
         "safety"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "fill_015",
@@ -727,17 +739,18 @@
           ]
         }
       ],
-      "explanation": "Pointer arithmetic advances by elements. p + 2 points to the third element, which is 3.",
+      "explanation": "Pointer arithmetic advances by elements. p + 2 points to the third element, which is 3. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "p + 1 is second element",
-        "p + 2 is third element",
+        "Consider p + 1 is second element",
+        "Think about p + 2 is third element",
         "Third element is 3"
       ],
       "tags": [
         "pointers",
         "arrays",
         "arithmetic"
-      ]
+      ],
+      "hint": "Think about how pointer arithmetic works with the size of the data type being pointed to."
     },
     {
       "id": "fill_018",
@@ -779,16 +792,17 @@
           ]
         }
       ],
-      "explanation": "malloc can return NULL. Always free successful allocations.",
+      "explanation": "Malloc can return NULL. Always free successful allocations. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "NULL indicates failure",
-        "free releases heap memory",
-        "Always check allocation"
+        "Remember that nULL indicates failure",
+        "Think about free releases heap memory",
+        "Remember that always check allocation"
       ],
       "tags": [
         "malloc",
         "free"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "fill_da_002",
@@ -816,7 +830,7 @@
         },
         {
           "id": 1,
-          "text": "Lokale variabler gemmes p\u00e5 ___",
+          "text": "Lokale variabler gemmes på ___",
           "blanks": [
             {
               "options": [
@@ -847,15 +861,16 @@
       ],
       "explanation": "C-programmer bruger forskellige hukommelsessegmenter: stak (lokale variabler), heap (malloc), data (initialiserede globale), BSS (uinitialiserede globale), tekst (kode).",
       "hints": [
-        "Stakken vokser med funktionskald",
-        "Heap er til dynamisk allokering",
-        "BSS st\u00e5r for Block Started by Symbol"
+        "Remember that stakken vokser med funktionskald",
+        "Remember that heap er til dynamisk allokering",
+        "Remember that bSS står for Block Started by Symbol"
       ],
       "tags": [
         "hukommelse",
         "segmenter",
         "terminologi"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "fill_da_004",
@@ -864,11 +879,11 @@
       "difficulty": "medium",
       "title": "Pointer Terminologi (Danish)",
       "description": "Udfyld felterne om pointer operationer:",
-      "code_template": "int x = 42;\nint *p = &x;   // p gemmer adressen til x\nint y = *p;    // y f\u00e5r v\u00e6rdien p\u00e5 adressen p",
+      "code_template": "int x = 42;\nint *p = &x;   // p gemmer adressen til x\nint y = *p;    // y får værdien på adressen p",
       "questions": [
         {
           "id": 0,
-          "text": "___ operatoren f\u00e5r adressen, ___ operatoren f\u00e5r v\u00e6rdien",
+          "text": "___ operatoren får adressen, ___ operatoren får værdien",
           "blanks": [
             {
               "options": [
@@ -892,7 +907,7 @@
         },
         {
           "id": 1,
-          "text": "At f\u00e5 v\u00e6rdien p\u00e5 en pointer-adresse kaldes ___",
+          "text": "At få værdien på en pointer-adresse kaldes ___",
           "blanks": [
             {
               "options": [
@@ -912,7 +927,7 @@
             {
               "options": [
                 "hukommelsesadresse",
-                "v\u00e6rdi",
+                "værdi",
                 "type",
                 "funktion"
               ],
@@ -920,27 +935,28 @@
             },
             {
               "options": [
-                "v\u00e6rdi",
+                "værdi",
                 "hukommelsesadresse",
                 "type",
                 "funktion"
               ],
-              "correct": "v\u00e6rdi"
+              "correct": "værdi"
             }
           ]
         }
       ],
-      "explanation": "Pointer operationer: & f\u00e5r adresse, * derefererer (f\u00e5r v\u00e6rdi). Pointere gemmer adresser, ikke v\u00e6rdier. Dereferering betyder at f\u00e5 v\u00e6rdien p\u00e5 en adresse.",
+      "explanation": "Pointer operationer: & får adresse, * derefererer (får værdi). Pointere gemmer adresser, ikke værdier. Dereferering betyder at få værdien på en adresse.",
       "hints": [
-        "& er adresse-af operator",
-        "* er dereferering operator",
-        "Pointere indeholder adresser"
+        "Consider & er adresse-af operator",
+        "Think about * er dereferering operator",
+        "Remember that pointere indeholder adresser"
       ],
       "tags": [
         "pointere",
         "operatorer",
         "terminologi"
-      ]
+      ],
+      "hint": "Think about: pointer operationer: & får adresse, * derefererer (får værdi)."
     },
     {
       "id": "fill_da_006",
@@ -949,11 +965,11 @@
       "difficulty": "hard",
       "title": "Almindelige Hukommelsesfejl (Danish)",
       "description": "Udfyld felterne om hukommelsesfejl:",
-      "code_template": "// Almindelige fejl:\n// 1. Memory leak: malloc uden free\n// 2. Dangling pointer: pointer til frigivet hukommelse\n// 3. Use after free: brug af frigivet hukommelse\n// 4. Double free: frigiver samme hukommelse to gange\n// 5. Buffer overflow: skriver ud over array gr\u00e6nser",
+      "code_template": "// Almindelige fejl:\n// 1. Memory leak: malloc uden free\n// 2. Dangling pointer: pointer til frigivet hukommelse\n// 3. Use after free: brug af frigivet hukommelse\n// 4. Double free: frigiver samme hukommelse to gange\n// 5. Buffer overflow: skriver ud over array grænser",
       "questions": [
         {
           "id": 0,
-          "text": "Et ___ opst\u00e5r n\u00e5r allokeret hukommelse aldrig frigives",
+          "text": "Et ___ opstår når allokeret hukommelse aldrig frigives",
           "blanks": [
             {
               "options": [
@@ -968,7 +984,7 @@
         },
         {
           "id": 1,
-          "text": "En ___ peger p\u00e5 hukommelse der er blevet frigivet",
+          "text": "En ___ peger på hukommelse der er blevet frigivet",
           "blanks": [
             {
               "options": [
@@ -983,7 +999,7 @@
         },
         {
           "id": 2,
-          "text": "At skrive ud over et arrays gr\u00e6nser for\u00e5rsager ___",
+          "text": "At skrive ud over et arrays grænser forårsager ___",
           "blanks": [
             {
               "options": [
@@ -998,7 +1014,7 @@
         },
         {
           "id": 3,
-          "text": "At kalde free() to gange p\u00e5 samme pointer er en ___",
+          "text": "At kalde free() to gange på samme pointer er en ___",
           "blanks": [
             {
               "options": [
@@ -1012,18 +1028,19 @@
           ]
         }
       ],
-      "explanation": "Hukommelsesfejl: leaks (ingen free), dinglende pointere (frigivet men stadig brugt), buffer overflow (skriv ud over gr\u00e6nser), double free (frig\u00f8r to gange).",
+      "explanation": "Hukommelsesfejl: leaks (ingen free), dinglende pointere (frigivet men stadig brugt), buffer overflow (skriv ud over grænser), double free (frigør to gange).",
       "hints": [
-        "Leak = glem at frig\u00f8re",
-        "Dinglende = peger til frigivet hukommelse",
-        "Overflow = skriv for meget",
-        "Double free = frig\u00f8r to gange"
+        "Remember that leak = glem at frigøre",
+        "Remember that dinglende = peger til frigivet hukommelse",
+        "Remember that overflow = skriv for meget",
+        "Remember that double free = frigør to gange"
       ],
       "tags": [
         "hukommelse",
         "fejl",
         "terminologi"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "fill_en_002",
@@ -1097,15 +1114,16 @@
       ],
       "explanation": "C programs use different memory segments: stack (local vars), heap (malloc), data (initialized globals), BSS (uninitialized globals), text (code).",
       "hints": [
-        "Stack grows with function calls",
-        "Heap is for dynamic allocation",
-        "BSS stands for Block Started by Symbol"
+        "Remember that stack grows with function calls",
+        "Remember that heap is for dynamic allocation",
+        "Remember that bSS stands for Block Started by Symbol"
       ],
       "tags": [
         "memory",
         "segments",
         "terminology"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "fill_en_004",
@@ -1180,17 +1198,18 @@
           ]
         }
       ],
-      "explanation": "Pointer operations: & gets address, * dereferences (gets value). Pointers store addresses, not values. Dereferencing means accessing the value at an address.",
+      "explanation": "Pointer operations: & gets address, * dereferences (gets value). Pointers store addresses, not values. Dereferencing means accessing the value at an address. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "& is address-of operator",
-        "* is dereference operator",
-        "Pointers hold addresses"
+        "Consider & is address-of operator",
+        "Think about * is dereference operator",
+        "Remember that pointers hold addresses"
       ],
       "tags": [
         "pointers",
         "operators",
         "terminology"
-      ]
+      ],
+      "hint": "Think about: pointer operations: & gets address, * dereferences (gets value)."
     },
     {
       "id": "fill_en_006",
@@ -1264,16 +1283,17 @@
       ],
       "explanation": "Memory errors: leaks (no free), dangling pointers (freed but still used), buffer overflow (write beyond bounds), double free (free twice), use after free.",
       "hints": [
-        "Leak = forget to free",
-        "Dangling = points to freed memory",
-        "Overflow = write too much",
-        "Double free = free twice"
+        "Remember that leak = forget to free",
+        "Remember that dangling = points to freed memory",
+        "Remember that overflow = write too much",
+        "Remember that double free = free twice"
       ],
       "tags": [
         "memory",
         "errors",
         "terminology"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "int_027",
@@ -1292,14 +1312,15 @@
       "correct_answer": "A",
       "explanation": "12 in binary is 1100, 10 in binary is 1010. Bitwise AND: 1100 & 1010 = 1000 = 8.",
       "hints": [
-        "Convert both numbers to binary first",
-        "AND returns 1 only when both bits are 1",
+        "Remember that convert both numbers to binary first",
+        "Remember that aND returns 1 only when both bits are 1",
         "12 = 1100, 10 = 1010"
       ],
       "tags": [
         "bitwise",
         "and_operator"
-      ]
+      ],
+      "hint": "Think about: 12 in binary is 1100, 10 in binary is 1010."
     },
     {
       "id": "int_034",
@@ -1318,14 +1339,15 @@
       "correct_answer": "A",
       "explanation": "To clear bit n, use x & ~(1 << n). Here: 15 (1111) & ~4 (1011) = 11 (1011). Bit 2 is now 0.",
       "hints": [
-        "AND with inverted mask clears specific bits",
-        "~(1 << 2) creates a mask with all bits 1 except bit 2",
-        "15 in binary is 1111"
+        "Remember that aND with inverted mask clears specific bits",
+        "Think about ~(1 << 2) creates a mask with all bits 1 except bit 2",
+        "The solution involves 15 in binary is 1111"
       ],
       "tags": [
         "bit_manipulation",
         "clear_bit"
-      ]
+      ],
+      "hint": "Think about: to clear bit n, use x & ~(1 << n)."
     },
     {
       "id": "int_036",
@@ -1344,14 +1366,15 @@
       "correct_answer": "A",
       "explanation": "To check bit n, use (x & (1 << n)) != 0. Here: 12 (1100) & 8 (1000) = 8, which is != 0, so result is 1 (true).",
       "hints": [
-        "AND with a mask isolates the specific bit",
-        "1 << 3 creates a mask for bit 3",
-        "Bit 3 of 1100 is 1"
+        "Remember that aND with a mask isolates the specific bit",
+        "Think about 1 << 3 creates a mask for bit 3",
+        "The solution involves bit 3 of 1100 is 1"
       ],
       "tags": [
         "bit_manipulation",
         "check_bit"
-      ]
+      ],
+      "hint": "Think about: to check bit n, use (x & (1 << n)) != 0."
     },
     {
       "id": "int_043",
@@ -1368,16 +1391,17 @@
         "2"
       ],
       "correct_answer": "A",
-      "explanation": "x & (x-1) clears the rightmost set bit. For 7 (0111): iteration 1: 0111 & 0110 = 0110, iteration 2: 0110 & 0101 = 0100, iteration 3: 0100 & 0011 = 0000. Three set bits.",
+      "explanation": "X & (x-1) clears the rightmost set bit. For 7 (0111): iteration 1: 0111 & 0110 = 0110, iteration 2: 0110 & 0101 = 0100, iteration 3: 0100 & 0011 = 0000. Three set bits.",
       "hints": [
-        "x & (x-1) is a trick to remove the rightmost 1 bit",
-        "Count how many times you can remove a bit",
+        "Consider x & (x-1) is a trick to remove the rightmost 1 bit",
+        "Remember that count how many times you can remove a bit",
         "7 has three 1 bits in binary"
       ],
       "tags": [
         "bit_manipulation",
         "counting_bits"
-      ]
+      ],
+      "hint": "Think about: x & (x-1) clears the rightmost set bit."
     },
     {
       "id": "int_044",
@@ -1396,14 +1420,15 @@
       "correct_answer": "A",
       "explanation": "Powers of 2 have exactly one set bit. x & (x-1) clears that bit, resulting in 0. 16 (10000) & 15 (01111) = 0, so it's a power of 2.",
       "hints": [
-        "Powers of 2 have only one bit set",
-        "x & (x-1) removes the rightmost set bit",
-        "If only one bit exists, the result is 0"
+        "Remember that powers of 2 have only one bit set",
+        "Think about x & (x-1) removes the rightmost set bit",
+        "Remember that if only one bit exists, the result is 0"
       ],
       "tags": [
         "bit_manipulation",
         "power_of_two"
-      ]
+      ],
+      "hint": "Think about: powers of 2 have exactly one set bit."
     },
     {
       "id": "mem_001",
@@ -1420,17 +1445,18 @@
         "Line 8 - printf"
       ],
       "correct_answer": "B",
-      "explanation": "Line 5 allocates memory with malloc(100), but there is no corresponding free(str) before the program exits. This causes a memory leak. The fix is to add 'free(str);' before 'return 0;'.",
+      "explanation": "Line 5 allocates memory with malloc(100), but there is no corresponding free(str) before the program exits. This causes a memory leak. The fix is to add 'free(str);' before 'return 0;'. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Look for malloc() calls in the code",
-        "Check if every malloc has a matching free()",
-        "The memory is allocated on line 5 with malloc"
+        "Remember that look for malloc() calls in the code",
+        "Remember that check if every malloc has a matching free()",
+        "Remember that the memory is allocated on line 5 with malloc"
       ],
       "tags": [
         "malloc",
         "free",
         "memory_leak"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_002",
@@ -1447,17 +1473,18 @@
         "Line 9 - printf using ptr"
       ],
       "correct_answer": "D",
-      "explanation": "Line 9 attempts to print the contents of 'ptr' after it has been freed on line 8. This is undefined behavior known as 'use after free'. After freeing memory, you should not access it.",
+      "explanation": "Line 9 attempts to print the contents of 'ptr' after it has been freed on line 8. This is undefined behavior known as 'use after free'. After freeing memory, you should not access it. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "Look for where memory is freed",
-        "Check what happens after the free() call",
-        "The printf on line 9 uses the pointer after it's freed"
+        "Remember that look for where memory is freed",
+        "Remember that check what happens after the free() call",
+        "Remember that the printf on line 9 uses the pointer after it's freed"
       ],
       "tags": [
         "free",
         "use_after_free",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "mem_003",
@@ -1476,15 +1503,16 @@
       "correct_answer": "C",
       "explanation": "Line 6 makes q point to the same memory as p. When we free(p) and then free(q), we're freeing the same memory twice, causing a double free error. The fix is to remove one of the free() calls or set the pointer to NULL after freeing.",
       "hints": [
-        "Look at line 6 - what does q = p do?",
-        "Both p and q point to the same memory",
-        "Lines 7 and 8 both free the same memory"
+        "Remember that look at line 6 - what does q = p do?",
+        "Remember that both p and q point to the same memory",
+        "Remember that lines 7 and 8 both free the same memory"
       ],
       "tags": [
         "free",
         "double_free",
         "pointer_aliasing"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_004",
@@ -1501,16 +1529,17 @@
         "40"
       ],
       "correct_answer": "C",
-      "explanation": "sizeof(int) is typically 4 bytes. 5 * 4 = 20 bytes. The program allocates 20 bytes and prints this value.",
+      "explanation": "Sizeof(int) is typically 4 bytes. 5 * 4 = 20 bytes. The program allocates 20 bytes and prints this value. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "What is sizeof(int) on most systems?",
-        "sizeof(int) is typically 4 bytes",
+        "Remember that what is sizeof(int) on most systems?",
+        "Think about sizeof(int) is typically 4 bytes",
         "Multiply 5 * 4"
       ],
       "tags": [
         "malloc",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "mem_005",
@@ -1529,16 +1558,17 @@
       "correct_answer": "C",
       "explanation": "The loop allocates memory 10 times, but each new malloc() overwrites the previous pointer value. Only the last allocation is freed on line 10. This means 9 out of 10 allocations are leaked. The fix is to free(ptr) at the end of each iteration inside the loop.",
       "hints": [
-        "How many times does the loop run?",
-        "How many times is malloc called?",
-        "Each malloc overwrites the previous pointer, losing access to that memory"
+        "Remember that how many times does the loop run?",
+        "Remember that how many times is malloc called?",
+        "Remember that each malloc overwrites the previous pointer, losing access to that memory"
       ],
       "tags": [
         "malloc",
         "free",
         "memory_leak",
         "loop"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_006",
@@ -1557,15 +1587,16 @@
       "correct_answer": "C",
       "explanation": "The function returns a pointer to the local array 'name', which goes out of scope when the function returns. This is undefined behavior. The fix is to either allocate memory with malloc() or use static storage.",
       "hints": [
-        "What happens to local variables when a function returns?",
-        "The array 'name' is allocated on the stack",
-        "Returning a pointer to stack memory is dangerous"
+        "Remember that what happens to local variables when a function returns?",
+        "Remember that the array 'name' is allocated on the stack",
+        "Remember that returning a pointer to stack memory is dangerous"
       ],
       "tags": [
         "pointer",
         "stack",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_007",
@@ -1584,15 +1615,16 @@
       "correct_answer": "B",
       "explanation": "For a string of 20 characters, you need 21 bytes: 20 for the characters plus 1 for the null terminator '\\0'. Always allocate strlen + 1 bytes for strings. Option D is also valid for stack allocation.",
       "hints": [
-        "Strings need a null terminator",
-        "The null terminator takes 1 byte",
-        "Allocate length + 1 for the '\\0'"
+        "Remember that strings need a null terminator",
+        "Remember that the null terminator takes 1 byte",
+        "Remember that allocate length + 1 for the '\\0'"
       ],
       "tags": [
         "malloc",
         "string",
         "null_terminator"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "mem_008",
@@ -1612,14 +1644,15 @@
       "explanation": "When malloc() fails to allocate the requested memory (e.g., due to insufficient memory), it returns NULL. It's important to check for NULL before using the pointer to avoid dereferencing a null pointer.",
       "hints": [
         "Think about error handling",
-        "It returns a special pointer value",
-        "NULL indicates failure"
+        "Remember that it returns a special pointer value",
+        "Remember that nULL indicates failure"
       ],
       "tags": [
         "malloc",
         "NULL",
         "error_handling"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_009",
@@ -1636,18 +1669,19 @@
         "Missing sizeof in malloc"
       ],
       "correct_answer": "B",
-      "explanation": "With such a large allocation, malloc will likely fail and return NULL. Line 6 then dereferences NULL, causing a segmentation fault. The fix is to add 'if (arr == NULL) { /* handle error */ }' after malloc.",
+      "explanation": "With such a large allocation, malloc will likely fail and return NULL. Line 6 then dereferences NULL, causing a segmentation fault. The fix is to add 'if (arr == NULL) { /* handle error */ }' after malloc. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc can fail if there's not enough memory",
-        "What does malloc return on failure?",
-        "Line 6 uses arr without checking if allocation succeeded"
+        "Consider malloc can fail if there's not enough memory",
+        "Remember that what does malloc return on failure?",
+        "Remember that line 6 uses arr without checking if allocation succeeded"
       ],
       "tags": [
         "malloc",
         "NULL",
         "error_handling",
         "segfault"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_010",
@@ -1666,8 +1700,8 @@
       "correct_answer": "B",
       "explanation": "When value < 0, the function returns early on line 7 without freeing the buffer allocated on line 5. This causes a memory leak in the error path. The fix is to add 'free(buffer);' before line 7's return statement.",
       "hints": [
-        "Look at the early return on line 7",
-        "What happens to buffer if we return early?",
+        "Remember that look at the early return on line 7",
+        "Remember that what happens to buffer if we return early?",
         "free(buffer) is only called in the normal path, not the error path"
       ],
       "tags": [
@@ -1675,7 +1709,8 @@
         "free",
         "memory_leak",
         "early_return"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_011",
@@ -1692,17 +1727,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Calling free twice on the same pointer is undefined behavior. It can crash or corrupt memory. Set the pointer to NULL after freeing if you need to guard against this.",
+      "explanation": "Calling free twice on the same pointer is undefined behavior. It can crash or corrupt memory. Set the pointer to NULL after freeing if you need to guard against this. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "free should be called exactly once per allocation",
-        "Second free uses an already-freed pointer",
-        "Undefined behavior may crash"
+        "Consider free should be called exactly once per allocation",
+        "Remember that second free uses an already-freed pointer",
+        "Remember that undefined behavior may crash"
       ],
       "tags": [
         "free",
         "double_free",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_012",
@@ -1719,17 +1755,18 @@
         "Memory leak"
       ],
       "correct_answer": "C",
-      "explanation": "After free, p points to invalid memory. Dereferencing it is undefined behavior. Access memory only while it is allocated.",
+      "explanation": "After free, p points to invalid memory. Dereferencing it is undefined behavior. Access memory only while it is allocated. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "free releases the memory",
-        "Dereferencing after free is unsafe",
-        "Undefined behavior may print garbage or crash"
+        "Consider free releases the memory",
+        "Remember that dereferencing after free is unsafe",
+        "Remember that undefined behavior may print garbage or crash"
       ],
       "tags": [
         "use_after_free",
         "malloc",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "mem_013",
@@ -1748,15 +1785,16 @@
       "correct_answer": "C",
       "explanation": "Calling free on NULL is a no-op in C. It is safe and does nothing.",
       "hints": [
-        "free(NULL) is explicitly allowed",
-        "It does nothing",
+        "Consider free(NULL) is explicitly allowed",
+        "Think about it does nothing",
         "No crash occurs"
       ],
       "tags": [
         "free",
         "NULL",
         "safety"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_014",
@@ -1773,17 +1811,18 @@
         "Memory leak"
       ],
       "correct_answer": "C",
-      "explanation": "sizeof(arr) is the size of the pointer, not the size of int. On 64-bit systems it allocates 10 * 8 bytes, which is larger than needed. The correct expression is sizeof(*arr) or sizeof(int).",
+      "explanation": "Sizeof(arr) is the size of the pointer, not the size of int. On 64-bit systems it allocates 10 * 8 bytes, which is larger than needed. The correct expression is sizeof(*arr) or sizeof(int). malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "arr is a pointer",
-        "sizeof(arr) is not sizeof(int)",
-        "Use sizeof(*arr)"
+        "Consider arr is a pointer",
+        "Think about sizeof(arr) is not sizeof(int)",
+        "Consider using sizeof(*arr)"
       ],
       "tags": [
         "malloc",
         "sizeof",
         "pointer"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "mem_015",
@@ -1802,15 +1841,16 @@
       "correct_answer": "B",
       "explanation": "If realloc fails, it returns NULL but the original pointer is lost because it was overwritten. That leaks the original allocation. Use a temporary pointer for realloc.",
       "hints": [
-        "realloc can return NULL",
-        "Assigning directly can lose the original pointer",
-        "Use a temp variable for realloc"
+        "Consider realloc can return NULL",
+        "Remember that assigning directly can lose the original pointer",
+        "Consider using a temp variable for realloc"
       ],
       "tags": [
         "realloc",
         "memory_leak",
         "error_handling"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_016",
@@ -1827,17 +1867,18 @@
         "calloc only works with integers"
       ],
       "correct_answer": "B",
-      "explanation": "calloc initializes allocated memory to zero, malloc doesn't. calloc(n, size) allocates n*size bytes.",
+      "explanation": "Calloc initializes allocated memory to zero, malloc doesn't. calloc(n, size) allocates n*size bytes. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "calloc = clear + allocate",
-        "Zeros out memory",
+        "Consider calloc = clear + allocate",
+        "Think about zeros out memory",
         "malloc doesn't initialize"
       ],
       "tags": [
         "malloc",
         "calloc",
         "initialization"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_017",
@@ -1856,15 +1897,16 @@
       "correct_answer": "A",
       "explanation": "If realloc fails, it returns NULL and the original pointer remains valid. Must check return value!",
       "hints": [
-        "Check realloc return value",
-        "Original pointer still valid on failure",
-        "Don't overwrite original pointer"
+        "Remember that check realloc return value",
+        "Remember that original pointer still valid on failure",
+        "Remember that don't overwrite original pointer"
       ],
       "tags": [
         "realloc",
         "error_handling",
         "memory"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_018",
@@ -1881,17 +1923,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "free(NULL) is explicitly safe in C. It does nothing. No need to check before freeing.",
+      "explanation": "Free(NULL) is explicitly safe in C. It does nothing. No need to check before freeing.",
       "hints": [
-        "Standard behavior",
-        "No crash",
+        "Consider standard behavior",
+        "Think about no crash",
         "Safe to free NULL"
       ],
       "tags": [
         "free",
         "NULL",
         "safety"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_019",
@@ -1910,15 +1953,16 @@
       "correct_answer": "B",
       "explanation": "First malloc(100) is leaked when p is reassigned. Second malloc(200) is freed. 100 bytes leaked.",
       "hints": [
-        "First allocation lost",
-        "Pointer reassigned",
-        "Only second allocation freed"
+        "Remember that first allocation lost",
+        "Think about pointer reassigned",
+        "Remember that only second allocation freed"
       ],
       "tags": [
         "memory_leak",
         "pointer_reassignment",
         "malloc"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_020",
@@ -1937,15 +1981,16 @@
       "correct_answer": "C",
       "explanation": "Stack allocation is faster (just pointer adjustment). Stack auto-frees, heap needs manual free. Both are limited.",
       "hints": [
-        "Stack is automatic",
-        "Heap needs malloc/free",
-        "Stack allocation is just pointer move"
+        "Consider stack is automatic",
+        "Remember that heap needs malloc/free",
+        "Remember that stack allocation is pointer move"
       ],
       "tags": [
         "stack",
         "heap",
         "performance"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_021",
@@ -1962,16 +2007,17 @@
         "Always fails if size is 0"
       ],
       "correct_answer": "B",
-      "explanation": "calloc allocates memory and sets it to zero. malloc does not initialize memory.",
+      "explanation": "Calloc allocates memory and sets it to zero. malloc does not initialize memory. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "calloc = clear allocation",
-        "Memory is zeroed",
+        "Consider calloc = clear allocation",
+        "Think about memory is zeroed",
         "malloc leaves garbage"
       ],
       "tags": [
         "calloc",
         "initialization"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_022",
@@ -1988,16 +2034,17 @@
         "Both B and C are correct"
       ],
       "correct_answer": "D",
-      "explanation": "Both 'malloc(10 * sizeof(int))' and 'malloc(sizeof(int[10]))' correctly allocate memory for 10 integers. The first explicitly multiplies the count by the size of int, while the second uses sizeof on an array type. Both produce the same result and are commonly used patterns.",
+      "explanation": "Both 'malloc(10 * sizeof(int))' and 'malloc(sizeof(int[10]))' correctly allocate memory for 10 integers. The first explicitly multiplies the count by the size of int, while the second uses sizeof on an array type. Both produce the same result and are commonly used patterns. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc() takes the number of bytes as an argument",
-        "You need to multiply the number of elements by the size of each element",
+        "Consider malloc() takes the number of bytes as an argument",
+        "Remember that you need to multiply the number of elements by the size of each element",
         "sizeof(int[10]) returns the total size of an array of 10 integers"
       ],
       "tags": [
         "malloc",
         "array_allocation"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_022",
@@ -2014,16 +2061,17 @@
         "delete p;"
       ],
       "correct_answer": "B",
-      "explanation": "You free the pointer returned by malloc using free(p).",
+      "explanation": "You free the pointer returned by malloc using free(p). malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Use free on the pointer",
-        "No & and no *",
+        "Consider using free on the pointer",
+        "Think about no & and no *",
         "delete is C++"
       ],
       "tags": [
         "free",
         "malloc"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_023",
@@ -2042,15 +2090,16 @@
       "correct_answer": "B",
       "explanation": "The first allocation of 100 integers is leaked. When ptr is reassigned to point to the second allocation, the reference to the first allocated block is lost without being freed. The second allocation is properly freed before the program ends, but the first allocation remains in memory with no way to free it.",
       "hints": [
-        "What happens to the first pointer when ptr is reassigned?",
-        "Can you free memory if you've lost the pointer to it?",
-        "Only one free() call is made, but two allocations occurred"
+        "Remember that what happens to the first pointer when ptr is reassigned?",
+        "Remember that can you free memory if you've lost the pointer to it?",
+        "Remember that only one free() call is made, but two allocations occurred"
       ],
       "tags": [
         "memory_leak",
         "malloc",
         "pointer_reassignment"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_023",
@@ -2069,14 +2118,15 @@
       "correct_answer": "B",
       "explanation": "Using a temp pointer prevents losing the original allocation if realloc fails.",
       "hints": [
-        "realloc can return NULL",
-        "Don't overwrite p immediately",
-        "Use a temp pointer"
+        "Consider realloc can return NULL",
+        "Remember that don't overwrite p immediately",
+        "Consider using a temp pointer"
       ],
       "tags": [
         "realloc",
         "error_handling"
-      ]
+      ],
+      "hint": "Think about: using a temp pointer prevents losing the original allocation if realloc fails."
     },
     {
       "id": "pnm_mem_024",
@@ -2093,17 +2143,18 @@
         "calloc cannot be freed with free()"
       ],
       "correct_answer": "B",
-      "explanation": "calloc initializes all allocated memory to zero, while malloc leaves the memory uninitialized with garbage values. calloc also takes two parameters (number of elements and size of each element) whereas malloc takes one parameter (total bytes). Both allocate on the heap and both should be freed with free().",
+      "explanation": "Calloc initializes all allocated memory to zero, while malloc leaves the memory uninitialized with garbage values. calloc also takes two parameters (number of elements and size of each element) whereas malloc takes one parameter (total bytes). Both allocate on the heap and both should be freed with free(). malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
         "Think about the initial values in the allocated memory",
-        "calloc stands for 'contiguous allocation'",
-        "One function sets memory to zero, the other doesn't"
+        "Think about calloc stands for 'contiguous allocation'",
+        "Remember that one function sets memory to zero, the other doesn't"
       ],
       "tags": [
         "calloc",
         "malloc",
         "initialization"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_024",
@@ -2120,16 +2171,17 @@
         "malloc cannot be used for arrays"
       ],
       "correct_answer": "C",
-      "explanation": "sizeof(p) is the size of the pointer, not the size of int. Use sizeof(*p).",
+      "explanation": "Sizeof(p) is the size of the pointer, not the size of int. Use sizeof(*p). sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "p is a pointer",
-        "sizeof(p) is pointer size",
-        "Use sizeof(*p)"
+        "Consider p is a pointer",
+        "Think about sizeof(p) is pointer size",
+        "Consider using sizeof(*p)"
       ],
       "tags": [
         "sizeof",
         "malloc"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "pnm_mem_025",
@@ -2146,18 +2198,19 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "This is undefined behavior due to use-after-free. After free(ptr), the memory is returned to the heap but ptr still points to that address (dangling pointer). Dereferencing it may print 42 if the memory hasn't been overwritten, print garbage if it has, or cause a segmentation fault. The behavior is unpredictable and compiler/system dependent.",
+      "explanation": "This is undefined behavior due to use-after-free. After free(ptr), the memory is returned to the heap but ptr still points to that address (dangling pointer). Dereferencing it may print 42 if the memory hasn't been overwritten, print garbage if it has, or cause a segmentation fault. The behavior is unpredictable and compiler/system dependent. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "What happens to a pointer after the memory it points to is freed?",
-        "The pointer value doesn't change, but the memory is no longer yours",
-        "Accessing freed memory is dangerous"
+        "Remember that what happens to a pointer after the memory it points to is freed?",
+        "Remember that the pointer value doesn't change, but the memory is no longer yours",
+        "Remember that accessing freed memory is dangerous"
       ],
       "tags": [
         "dangling_pointer",
         "use_after_free",
         "free",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "mem_025",
@@ -2174,16 +2227,17 @@
         "Stack overflow"
       ],
       "correct_answer": "B",
-      "explanation": "free should be called once. Freeing repeatedly causes undefined behavior.",
+      "explanation": "Free should be called once. Freeing repeatedly causes undefined behavior.",
       "hints": [
-        "Only free once",
-        "Free inside loop is repeated",
+        "Consider only free once",
+        "Remember that free inside loop is repeated",
         "Undefined behavior"
       ],
       "tags": [
         "free",
         "double_free"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "pnm_mem_026",
@@ -2200,18 +2254,19 @@
         "The memory pointed to by c"
       ],
       "correct_answer": "D",
-      "explanation": "The memory allocated by malloc and pointed to by c is on the heap. Variable a and array b are local variables on the stack. The pointer c itself is also on the stack (it's a local variable), but the memory it points to is on the heap. Static variable d is in the data segment, not on the stack or heap.",
+      "explanation": "The memory allocated by malloc and pointed to by c is on the heap. Variable a and array b are local variables on the stack. The pointer c itself is also on the stack (it's a local variable), but the memory it points to is on the heap. Static variable d is in the data segment, not on the stack or heap. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc always allocates on the heap",
-        "Local variables go on the stack",
-        "The pointer is different from the memory it points to"
+        "Consider malloc always allocates on the heap",
+        "Remember that local variables go on the stack",
+        "Remember that the pointer is different from the memory it points to"
       ],
       "tags": [
         "stack",
         "heap",
         "malloc",
         "allocation"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_026",
@@ -2228,16 +2283,17 @@
         "malloc throws exceptions"
       ],
       "correct_answer": "B",
-      "explanation": "malloc can fail and return NULL; you must check before use.",
+      "explanation": "Malloc can fail and return NULL; you must check before use. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Allocation can fail",
-        "malloc returns NULL",
-        "Check before dereference"
+        "Consider allocation can fail",
+        "Think about malloc returns NULL",
+        "Remember that check before dereference"
       ],
       "tags": [
         "malloc",
         "NULL"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_027",
@@ -2254,17 +2310,18 @@
         "realloc fails and returns NULL"
       ],
       "correct_answer": "B",
-      "explanation": "realloc preserves the contents of the original memory up to the minimum of old and new sizes. When expanding, the existing data (ptr[0] to ptr[9]) is preserved, but the newly allocated space (ptr[10] to ptr[19]) is uninitialized and contains garbage values. If you need zeroed memory, you must explicitly set it.",
+      "explanation": "Realloc preserves the contents of the original memory up to the minimum of old and new sizes. When expanding, the existing data (ptr[0] to ptr[9]) is preserved, but the newly allocated space (ptr[10] to ptr[19]) is uninitialized and contains garbage values. If you need zeroed memory, you must explicitly set it.",
       "hints": [
-        "realloc tries to preserve existing data",
-        "Only the new portion needs consideration",
+        "Consider realloc tries to preserve existing data",
+        "Remember that only the new portion needs consideration",
         "realloc doesn't initialize new memory like calloc does"
       ],
       "tags": [
         "realloc",
         "memory_expansion",
         "data_preservation"
-      ]
+      ],
+      "hint": "Think about: realloc preserves the contents of the original memory up to the minimum of old and new sizes."
     },
     {
       "id": "mem_027",
@@ -2281,16 +2338,17 @@
         "Double free"
       ],
       "correct_answer": "C",
-      "explanation": "The heap allocation is returned and freed in main. This is correct.",
+      "explanation": "The heap allocation is returned and freed in main. This is correct. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "p points to heap memory",
-        "Free is called once",
+        "Consider p points to heap memory",
+        "Think about free is called once",
         "No leak"
       ],
       "tags": [
         "malloc",
         "free"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_028",
@@ -2309,15 +2367,16 @@
       "correct_answer": "B",
       "explanation": "Double free is undefined behavior and a serious error. It can corrupt the heap data structures maintained by the memory allocator, potentially leading to crashes, security vulnerabilities, or subtle bugs. Modern systems may detect this and crash immediately, but the behavior is not guaranteed. Always set pointers to NULL after freeing to help avoid this.",
       "hints": [
-        "The heap maintains internal data structures",
-        "Freeing already-freed memory corrupts these structures",
-        "This is a common security vulnerability"
+        "Remember that the heap maintains internal data structures",
+        "Remember that freeing already-freed memory corrupts these structures",
+        "Remember that this is a common security vulnerability"
       ],
       "tags": [
         "double_free",
         "undefined_behavior",
         "heap_corruption"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_028",
@@ -2334,16 +2393,17 @@
         "Stack allocation"
       ],
       "correct_answer": "B",
-      "explanation": "Incrementing p loses the original pointer. free must be called on the original address.",
+      "explanation": "Incrementing p loses the original pointer. free must be called on the original address. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "free requires original pointer",
-        "Pointer arithmetic changes address",
-        "Original allocation is lost"
+        "Consider free requires original pointer",
+        "Remember that pointer arithmetic changes address",
+        "Remember that original allocation is lost"
       ],
       "tags": [
         "free",
         "pointer_arithmetic"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_029",
@@ -2360,17 +2420,18 @@
         "malloc returns NULL for zero-sized allocations only"
       ],
       "correct_answer": "B",
-      "explanation": "malloc returns NULL if it cannot allocate the requested memory (e.g., not enough memory available, requested size too large). Dereferencing a NULL pointer causes undefined behavior, typically a segmentation fault. Always check malloc's return value before using the pointer to ensure the allocation succeeded.",
+      "explanation": "Malloc returns NULL if it cannot allocate the requested memory (e.g., not enough memory available, requested size too large). Dereferencing a NULL pointer causes undefined behavior, typically a segmentation fault. Always check malloc's return value before using the pointer to ensure the allocation succeeded.",
       "hints": [
-        "What if the system runs out of memory?",
-        "malloc can fail under certain conditions",
-        "Using a NULL pointer will crash your program"
+        "Remember that what if the system runs out of memory?",
+        "Think about malloc can fail under certain conditions",
+        "Remember that using a NULL pointer will crash your program"
       ],
       "tags": [
         "malloc",
         "null_check",
         "error_handling"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_029",
@@ -2387,16 +2448,17 @@
         "Causes a crash immediately"
       ],
       "correct_answer": "C",
-      "explanation": "malloc(0) may return NULL or a unique pointer that can be passed to free.",
+      "explanation": "Malloc(0) may return NULL or a unique pointer that can be passed to free. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Implementation-defined",
-        "May return NULL",
+        "Remember that implementation-defined",
+        "Think about may return NULL",
         "free is safe on returned pointer"
       ],
       "tags": [
         "malloc",
         "edge_cases"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_030",
@@ -2413,18 +2475,19 @@
         "strcpy cannot be used with malloc'd memory"
       ],
       "correct_answer": "B",
-      "explanation": "This is a buffer overflow. The string \"Hello, World!\" is 13 characters plus 1 null terminator (14 bytes total), but only 10 bytes were allocated. strcpy will write beyond the allocated buffer, corrupting adjacent heap memory. This can cause crashes, security vulnerabilities, or subtle bugs. Use strncpy or ensure sufficient buffer size.",
+      "explanation": "This is a buffer overflow. The string \"Hello, World!\" is 13 characters plus 1 null terminator (14 bytes total), but only 10 bytes were allocated. strcpy will write beyond the allocated buffer, corrupting adjacent heap memory. This can cause crashes, security vulnerabilities, or subtle bugs. Use strncpy or ensure sufficient buffer size. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Count the characters in \"Hello, World!\" including the null terminator",
-        "How many bytes were allocated?",
-        "Writing beyond allocated memory is dangerous"
+        "Remember that count the characters in \"Hello, World!\" including the null terminator",
+        "Remember that how many bytes were allocated?",
+        "Remember that writing beyond allocated memory is dangerous"
       ],
       "tags": [
         "buffer_overflow",
         "strcpy",
         "malloc",
         "security"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "mem_030",
@@ -2441,16 +2504,17 @@
         "malloc(10 * sizeof(int*));"
       ],
       "correct_answer": "B",
-      "explanation": "Use number of elements times sizeof(int).",
+      "explanation": "Use number of elements times sizeof(int). malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Need bytes, not elements",
-        "sizeof(int) gives bytes per int",
+        "Remember that need bytes, not elements",
+        "Think about sizeof(int) gives bytes per int",
         "Multiply by 10"
       ],
       "tags": [
         "malloc",
         "arrays"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "pnm_mem_031",
@@ -2467,18 +2531,19 @@
         "16 bytes"
       ],
       "correct_answer": "C",
-      "explanation": "Due to memory alignment requirements, the struct is likely 12 bytes. After char a (1 byte), 3 bytes of padding are added to align int b on a 4-byte boundary. After int b (4 bytes), char c takes 1 byte, followed by 3 bytes of trailing padding to ensure the struct size is a multiple of its largest member's alignment (4 bytes). Layout: [a][pad][pad][pad][b][b][b][b][c][pad][pad][pad].",
+      "explanation": "Due to memory alignment requirements, the struct is likely 12 bytes. After char a (1 byte), 3 bytes of padding are added to align int b on a 4-byte boundary. After int b (4 bytes), char c takes 1 byte, followed by 3 bytes of trailing padding to ensure the struct size is a multiple of its largest member's alignment (4 bytes). Layout: [a][pad][pad][pad][b][b][b][b][c][pad][pad][pad]. Structs group related data together. Access members with the dot operator (.) or arrow operator (->) for pointers.",
       "hints": [
-        "Compilers add padding for alignment",
-        "int typically needs 4-byte alignment",
-        "The struct size must be a multiple of its alignment"
+        "Remember that compilers add padding for alignment",
+        "Think about int typically needs 4-byte alignment",
+        "Remember that the struct size must be a multiple of its alignment"
       ],
       "tags": [
         "memory_alignment",
         "padding",
         "struct",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about: due to memory alignment requirements, the struct is likely 12 bytes."
     },
     {
       "id": "mem_031",
@@ -2495,16 +2560,17 @@
         "Double free"
       ],
       "correct_answer": "B",
-      "explanation": "free(NULL) is a no-op and safe.",
+      "explanation": "Free(NULL) is a no-op and safe.",
       "hints": [
-        "Standard allows free(NULL)",
-        "No effect",
+        "Remember that standard allows free(NULL)",
+        "Think about no effect",
         "Safe call"
       ],
       "tags": [
         "free",
         "NULL"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_032",
@@ -2521,18 +2587,19 @@
         "ptr = realloc(ptr, 20 * sizeof(int)); if(!ptr) exit(1);"
       ],
       "correct_answer": "B",
-      "explanation": "Option B is safest. If realloc fails, it returns NULL but the original pointer remains valid. If you directly assign to ptr (option A or D), you lose the original pointer and cannot free the memory, causing a leak. Using a temporary pointer lets you handle failure while preserving the original pointer. Option C works but is inefficient as it doesn't preserve data.",
+      "explanation": "Option B is safest. If realloc fails, it returns NULL but the original pointer remains valid. If you directly assign to ptr (option A or D), you lose the original pointer and cannot free the memory, causing a leak. Using a temporary pointer lets you handle failure while preserving the original pointer. Option C works but is inefficient as it doesn't preserve data. Memory leaks occur when dynamically allocated memory is not freed. Always free() what you malloc().",
       "hints": [
-        "What happens to the original pointer if realloc fails?",
-        "realloc returns NULL on failure",
-        "You don't want to lose access to your memory"
+        "Remember that what happens to the original pointer if realloc fails?",
+        "Think about realloc returns NULL on failure",
+        "Remember that you don't want to lose access to your memory"
       ],
       "tags": [
         "realloc",
         "error_handling",
         "memory_leak",
         "best_practices"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_032",
@@ -2551,14 +2618,15 @@
       "correct_answer": "B",
       "explanation": "Heap allocations remain valid until you free them.",
       "hints": [
-        "Heap needs manual free",
-        "Lifetime is not tied to scope",
+        "Remember that heap needs manual free",
+        "Remember that lifetime is not tied to scope",
         "Manual management"
       ],
       "tags": [
         "heap",
         "lifetime"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_033",
@@ -2577,15 +2645,16 @@
       "correct_answer": "C",
       "explanation": "According to the C standard, calling free(NULL) is explicitly safe and does nothing. This is a convenient feature that simplifies cleanup code - you don't need to check if a pointer is NULL before freeing it. This is why setting pointers to NULL after freeing is a good practice: it makes double-free safe.",
       "hints": [
-        "The C standard defines this behavior",
-        "This is intentionally designed to be safe",
-        "It's a convenience feature for cleanup code"
+        "Remember that the C standard defines this behavior",
+        "Remember that this is intentionally designed to be safe",
+        "Remember that it's a convenience feature for cleanup code"
       ],
       "tags": [
         "free",
         "null_pointer",
         "safe_practice"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "mem_033",
@@ -2604,14 +2673,15 @@
       "correct_answer": "A",
       "explanation": "This is correct: if realloc fails, original p is still valid and should be freed.",
       "hints": [
-        "realloc failure preserves original pointer",
-        "free original on failure",
+        "Consider realloc failure preserves original pointer",
+        "Think about free original on failure",
         "This is safe"
       ],
       "tags": [
         "realloc",
         "error_handling"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_034",
@@ -2630,15 +2700,16 @@
       "correct_answer": "B",
       "explanation": "External fragmentation occurs when free memory is scattered in small, non-contiguous blocks. Allocating varying sizes in random order and freeing in different order creates the most fragmentation. This leaves the heap with many small holes that may be too small for future allocations, even though total free memory might be sufficient. Same-sized allocations or FIFO freeing tend to reduce fragmentation.",
       "hints": [
-        "Fragmentation means free space is scattered",
-        "Random sizes and order create irregular patterns",
+        "Remember that fragmentation means free space is scattered",
+        "Remember that random sizes and order create irregular patterns",
         "Think about what creates many small gaps"
       ],
       "tags": [
         "memory_fragmentation",
         "heap",
         "allocation_patterns"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_034",
@@ -2655,16 +2726,17 @@
         "Segmentation fault guaranteed"
       ],
       "correct_answer": "B",
-      "explanation": "malloc does not initialize memory, so *p is indeterminate.",
+      "explanation": "Malloc does not initialize memory, so *p is indeterminate. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc does not zero memory",
-        "Value is indeterminate",
-        "Use calloc or assign"
+        "Consider malloc does not zero memory",
+        "Remember that value is indeterminate",
+        "Consider using calloc or assign"
       ],
       "tags": [
         "malloc",
         "uninitialized"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_035",
@@ -2683,16 +2755,17 @@
       "correct_answer": "B",
       "explanation": "Use-after-free is a serious security vulnerability. After free(), the memory may be reallocated for a different purpose. Writing to the freed pointer can corrupt data structures, potentially allowing attackers to manipulate program behavior, bypass security checks, or execute arbitrary code. The memory might contain sensitive data or function pointers that can be exploited.",
       "hints": [
-        "Freed memory can be reused by other allocations",
+        "Remember that freed memory can be reused by other allocations",
         "Think about what happens if that memory holds important data",
-        "Attackers can control what gets allocated in that space"
+        "Remember that attackers can control what gets allocated in that space"
       ],
       "tags": [
         "use_after_free",
         "security",
         "vulnerability",
         "exploitation"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_035",
@@ -2709,16 +2782,17 @@
         "pointer, bytes"
       ],
       "correct_answer": "B",
-      "explanation": "calloc takes the number of elements and size of each element.",
+      "explanation": "Calloc takes the number of elements and size of each element.",
       "hints": [
-        "Two arguments",
-        "count and size",
-        "Allocates count * size"
+        "Consider two arguments",
+        "Think about count and size",
+        "Remember that allocates count * size"
       ],
       "tags": [
         "calloc",
         "allocation"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_036",
@@ -2737,16 +2811,17 @@
       "correct_answer": "B",
       "explanation": "Stack overflow occurs when the stack runs out of space. Deep recursion with large local arrays (option B) consumes stack space rapidly because each function call allocates its local variables on the stack. The stack is typically much smaller than the heap (often 1-8 MB), so deep recursion can exhaust it. malloc uses the heap, which is much larger, and globals are in a separate data segment.",
       "hints": [
-        "The stack has limited size",
-        "Each recursive call adds to the stack",
-        "Local variables are on the stack"
+        "Remember that the stack has limited size",
+        "Remember that each recursive call adds to the stack",
+        "Remember that local variables are on the stack"
       ],
       "tags": [
         "stack_overflow",
         "recursion",
         "stack",
         "local_variables"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_036",
@@ -2763,16 +2838,17 @@
         "Invalid free"
       ],
       "correct_answer": "B",
-      "explanation": "q points to the same allocation as p. Freeing q is valid, but p becomes dangling.",
+      "explanation": "Q points to the same allocation as p. Freeing q is valid, but p becomes dangling.",
       "hints": [
-        "p and q alias",
-        "freeing once is OK",
+        "Consider p and q alias",
+        "Think about freeing once is OK",
         "p becomes dangling"
       ],
       "tags": [
         "aliasing",
         "free"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_037",
@@ -2789,11 +2865,11 @@
         "Reordering doesn't affect size"
       ],
       "correct_answer": "B",
-      "explanation": "Option B minimizes padding by placing members in descending order of alignment requirements: double (8-byte aligned), int (4-byte aligned), then chars (1-byte aligned). This gives: [double:8][int:4][char][char][pad:2] = 16 bytes. Original order would be: [char][pad:7][double:8][char][pad:3][int:4][pad:4] = 32 bytes. Grouping same-sized types and ordering by size reduces padding.",
+      "explanation": "Option B minimizes padding by placing members in descending order of alignment requirements: double (8-byte aligned), int (4-byte aligned), then chars (1-byte aligned). This gives: [double:8][int:4][char][char][pad:2] = 16 bytes. Original order would be: [char][pad:7][double:8][char][pad:3][int:4][pad:4] = 32 bytes. Grouping same-sized types and ordering by size reduces padding. Structs group related data together. Access members with the dot operator (.) or arrow operator (->) for pointers.",
       "hints": [
-        "Larger types usually have stricter alignment requirements",
-        "Group similar-sized members together",
-        "Start with the largest alignment requirement"
+        "Remember that larger types usually have stricter alignment requirements",
+        "Remember that group similar-sized members together",
+        "Remember that start with the largest alignment requirement"
       ],
       "tags": [
         "memory_alignment",
@@ -2817,16 +2893,17 @@
         "Use-after-free"
       ],
       "correct_answer": "B",
-      "explanation": "Each allocation is lost at the end of the loop iteration without being freed.",
+      "explanation": "Each allocation is lost at the end of the loop iteration without being freed. Memory leaks occur when dynamically allocated memory is not freed. Always free() what you malloc().",
       "hints": [
-        "malloc in loop",
-        "No free",
+        "Consider malloc in loop",
+        "Think about no free",
         "Leaks 10 allocations"
       ],
       "tags": [
         "memory_leak",
         "loop"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "pnm_mem_038",
@@ -2843,18 +2920,19 @@
         "100 * 1024 bytes (100 KB)"
       ],
       "correct_answer": "C",
-      "explanation": "99 allocations are leaked (99 KB). Each iteration allocates 1024 bytes and assigns the pointer to ptr, losing the reference to the previous allocation. After 100 iterations, ptr points only to the last allocation, which is freed. The first 99 allocations are lost and cannot be freed. To fix this, either free ptr in each iteration before reallocating, or use an array to track all allocations.",
+      "explanation": "99 allocations are leaked (99 KB). Each iteration allocates 1024 bytes and assigns the pointer to ptr, losing the reference to the previous allocation. After 100 iterations, ptr points only to the last allocation, which is freed. The first 99 allocations are lost and cannot be freed. To fix this, either free ptr in each iteration before reallocating, or use an array to track all allocations. Memory leaks occur when dynamically allocated memory is not freed. Always free() what you malloc().",
       "hints": [
-        "Each malloc call creates a new allocation",
-        "What happens to previous allocations when ptr is reassigned?",
-        "Only the last allocation can be freed"
+        "Remember that each malloc call creates a new allocation",
+        "Remember that what happens to previous allocations when ptr is reassigned?",
+        "Remember that only the last allocation can be freed"
       ],
       "tags": [
         "memory_leak",
         "malloc",
         "loop",
         "pointer_reassignment"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_038",
@@ -2871,16 +2949,17 @@
         "8 bytes on stack"
       ],
       "correct_answer": "A",
-      "explanation": "malloc allocates bytes. This allocates 8 bytes.",
+      "explanation": "Malloc allocates bytes. This allocates 8 bytes. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "malloc argument is bytes",
-        "char is 1 byte",
+        "Consider malloc argument is bytes",
+        "Think about char is 1 byte",
         "Allocates 8 bytes"
       ],
       "tags": [
         "malloc",
         "bytes"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "pnm_mem_039",
@@ -2899,16 +2978,17 @@
       "correct_answer": "B",
       "explanation": "This returns a dangling pointer to stack memory. The local array 'arr' is allocated on the stack and is destroyed when create_array() returns. The pointer points to memory that is no longer valid and may be overwritten by subsequent function calls. This is undefined behavior. Solution: allocate with malloc in the function, or pass a buffer from the caller.",
       "hints": [
-        "Where is the local array allocated?",
-        "What happens to stack memory when a function returns?",
-        "The lifetime of local variables is limited to the function"
+        "Remember that where is the local array allocated?",
+        "Remember that what happens to stack memory when a function returns?",
+        "Remember that the lifetime of local variables is limited to the function"
       ],
       "tags": [
         "dangling_pointer",
         "stack",
         "lifetime",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_039",
@@ -2925,16 +3005,17 @@
         "Moves to stack memory"
       ],
       "correct_answer": "B",
-      "explanation": "realloc can resize to a smaller block, possibly returning the same pointer.",
+      "explanation": "Realloc can resize to a smaller block, possibly returning the same pointer.",
       "hints": [
-        "realloc can shrink",
-        "Still heap memory",
-        "May return same pointer"
+        "Consider realloc can shrink",
+        "Think about still heap memory",
+        "Remember that may return same pointer"
       ],
       "tags": [
         "realloc",
         "resize"
-      ]
+      ],
+      "hint": "Think about: realloc can resize to a smaller block, possibly returning the same pointer."
     },
     {
       "id": "pnm_mem_040",
@@ -2951,18 +3032,19 @@
         "10 8"
       ],
       "correct_answer": "B",
-      "explanation": "sizeof(arr) returns 40 bytes (10 integers * 4 bytes each) because arr is a true array and sizeof returns the total array size. sizeof(ptr) returns 8 bytes (the size of a pointer on a 64-bit system), not the size of the allocated memory. This is a common mistake - sizeof cannot determine the size of dynamically allocated memory.",
+      "explanation": "Sizeof(arr) returns 40 bytes (10 integers * 4 bytes each) because arr is a true array and sizeof returns the total array size. sizeof(ptr) returns 8 bytes (the size of a pointer on a 64-bit system), not the size of the allocated memory. This is a common mistake - sizeof cannot determine the size of dynamically allocated memory.",
       "hints": [
-        "sizeof on an array gives the total size",
-        "sizeof on a pointer gives the pointer size",
-        "Pointers are 8 bytes on 64-bit systems"
+        "Consider sizeof on an array gives the total size",
+        "Think about sizeof on a pointer gives the pointer size",
+        "Remember that pointers are 8 bytes on 64-bit systems"
       ],
       "tags": [
         "sizeof",
         "array",
         "pointer",
         "malloc"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "mem_040",
@@ -2981,14 +3063,15 @@
       "correct_answer": "B",
       "explanation": "After free, p points to invalid memory. Dereferencing it is undefined behavior.",
       "hints": [
-        "free invalidates the pointer",
-        "Dereferencing after free is unsafe",
+        "Consider free invalidates the pointer",
+        "Remember that dereferencing after free is unsafe",
         "Undefined behavior"
       ],
       "tags": [
         "use_after_free",
         "free"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "pnm_mem_041",
@@ -3005,18 +3088,19 @@
         "Return a pointer to a static array instead"
       ],
       "correct_answer": "A",
-      "explanation": "Returning NULL and letting the caller handle the error is the best practice. This follows the principle of separation of concerns - the allocation function reports failure, and the caller decides how to handle it (retry, use alternative, exit gracefully, etc.). Exiting immediately (B) doesn't allow cleanup or recovery. Infinite retry (C) can hang the program. Static array (D) has different lifetime semantics.",
+      "explanation": "Returning NULL and letting the caller handle the error is the best practice. This follows the principle of separation of concerns - the allocation function reports failure, and the caller decides how to handle it (retry, use alternative, exit gracefully, etc.). Exiting immediately (B) doesn't allow cleanup or recovery. Infinite retry (C) can hang the program. Static array (D) has different lifetime semantics. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "Who should decide what to do on failure?",
-        "Different callers might want to handle errors differently",
-        "Library functions typically return error codes/NULL"
+        "Remember that who should decide what to do on failure?",
+        "Remember that different callers might want to handle errors differently",
+        "Remember that library functions typically return error codes/NULL"
       ],
       "tags": [
         "malloc",
         "error_handling",
         "best_practices",
         "null_check"
-      ]
+      ],
+      "hint": "Think about: returning null and letting the caller handle the error is the best practice."
     },
     {
       "id": "mem_041",
@@ -3035,16 +3119,17 @@
       "correct_answer": "B",
       "explanation": "Memory alignment is a hardware requirement. Many CPU architectures cannot access misaligned data (e.g., reading a 4-byte int from an odd address) and will fault. Others can access misaligned data but with significant performance penalties, often requiring multiple memory accesses. Alignment ensures data is at addresses that match the CPU's natural word boundaries for optimal performance.",
       "hints": [
-        "This is about CPU architecture, not just compiler choice",
+        "Remember that this is about CPU architecture, not compiler choice",
         "Think about how CPUs fetch data from memory",
-        "Misaligned access can cause crashes on some systems"
+        "Remember that misaligned access can cause crashes on some systems"
       ],
       "tags": [
         "memory_alignment",
         "hardware",
         "performance",
         "cpu_architecture"
-      ]
+      ],
+      "hint": "Think about: memory alignment is a hardware requirement."
     },
     {
       "id": "mem_042",
@@ -3061,18 +3146,19 @@
         "Causes a segmentation fault"
       ],
       "correct_answer": "C",
-      "explanation": "realloc(NULL, size) is equivalent to malloc(size). This is defined by the C standard and allows realloc to be used uniformly without special-casing the first allocation. Similarly, realloc(ptr, 0) is equivalent to free(ptr) on many systems (though this is implementation-defined). This makes realloc flexible for dynamic array growth.",
+      "explanation": "Realloc(NULL, size) is equivalent to malloc(size). This is defined by the C standard and allows realloc to be used uniformly without special-casing the first allocation. Similarly, realloc(ptr, 0) is equivalent to free(ptr) on many systems (though this is implementation-defined). This makes realloc flexible for dynamic array growth. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "The C standard defines this behavior",
+        "Remember that the C standard defines this behavior",
         "Think about what makes sense for a NULL pointer",
-        "This allows realloc to handle the first allocation"
+        "Remember that this allows realloc to handle the first allocation"
       ],
       "tags": [
         "realloc",
         "malloc",
         "null_pointer",
         "standard_behavior"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_043",
@@ -3089,11 +3175,11 @@
         "None are initialized"
       ],
       "correct_answer": "B",
-      "explanation": "calloc initializes memory to zero, so b is zero. Static and global variables are initialized to zero by the C standard, so d is zero. malloc leaves memory uninitialized (a has garbage). Automatic local variables like c are uninitialized (garbage). Understanding initialization is crucial for avoiding bugs from reading uninitialized memory.",
+      "explanation": "Calloc initializes memory to zero, so b is zero. Static and global variables are initialized to zero by the C standard, so d is zero. malloc leaves memory uninitialized (a has garbage). Automatic local variables like c are uninitialized (garbage). Understanding initialization is crucial for avoiding bugs from reading uninitialized memory. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "calloc zeros memory, malloc doesn't",
-        "Static and global variables have special initialization",
-        "Local variables are not automatically initialized"
+        "Consider calloc zeros memory, malloc doesn't",
+        "Remember that static and global variables have special initialization",
+        "Remember that local variables are not automatically initialized"
       ],
       "tags": [
         "initialization",
@@ -3101,7 +3187,8 @@
         "calloc",
         "static",
         "local_variables"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "mem_044",
@@ -3120,16 +3207,17 @@
       "correct_answer": "C",
       "explanation": "Option C is safest. strncpy(buffer, input, 31) copies at most 31 characters, leaving room for the null terminator which is explicitly added. strncpy doesn't always null-terminate (if input is >= n characters), so explicit termination is needed. strcpy (A) can overflow. Option B might not null-terminate. memcpy (D) doesn't handle strings properly and doesn't stop at null terminators.",
       "hints": [
-        "You need room for the null terminator",
-        "strncpy doesn't always add a null terminator",
-        "Always ensure strings are null-terminated"
+        "Remember that you need room for the null terminator",
+        "Think about strncpy doesn't always add a null terminator",
+        "Remember that always ensure strings are null-terminated"
       ],
       "tags": [
         "buffer_overflow",
         "strncpy",
         "string_safety",
         "security"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "mem_045",
@@ -3148,16 +3236,17 @@
       "correct_answer": "B",
       "explanation": "Internal fragmentation is wasted space within an allocated block (e.g., requesting 7 bytes but getting 16, wasting 9 bytes). External fragmentation is unusable free space scattered in small gaps between allocated blocks. Both reduce memory efficiency. Internal fragmentation is caused by allocation granularity and alignment; external by varying allocation sizes and free patterns.",
       "hints": [
-        "Internal = inside allocated blocks",
-        "External = between allocated blocks",
-        "Both waste memory but in different ways"
+        "Remember that internal = inside allocated blocks",
+        "Remember that external = between allocated blocks",
+        "Remember that both waste memory but in different ways"
       ],
       "tags": [
         "memory_fragmentation",
         "internal_fragmentation",
         "external_fragmentation",
         "heap"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_046",
@@ -3165,28 +3254,29 @@
       "type": "multiple_select",
       "difficulty": "medium",
       "title": "Mark ALL places where free() should be called",
-      "description": "Marker ALLE de steder i koden nedenfor, hvor free() skal kaldes for at undg\u00e5 memory leaks:",
+      "description": "Marker ALLE de steder i koden nedenfor, hvor free() skal kaldes for at undgå memory leaks:",
       "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *p1 = malloc(sizeof(int));       // Line 5\n    int *p2 = malloc(sizeof(int) * 10);  // Line 6\n    char *str = malloc(100);             // Line 7\n    \n    *p1 = 42;\n    p2[0] = 10;\n    sprintf(str, \"Hello\");\n    \n    printf(\"%d %d %s\\n\", *p1, p2[0], str);\n    return 0;\n}",
       "options": [
         "Efter linje 5 (p1)",
         "Efter linje 6 (p2)",
         "Efter linje 7 (str)",
-        "F\u00f8r linje 14 (return statement)"
+        "Før linje 14 (return statement)"
       ],
       "correct_answer": [
         "D"
       ],
-      "explanation": "Alle tre pointere (p1, p2, og str) skal frigives f\u00f8r programmet slutter. Det korrekte sted er f\u00f8r return-statement (option D). Man skal kalde free(p1), free(p2), og free(str) alle sammen f\u00f8r linje 14. Options A, B, og C er ikke korrekte fordi vi stadig bruger variablerne senere i programmet.",
+      "explanation": "Alle tre pointere (p1, p2, og str) skal frigives før programmet slutter. Det korrekte sted er før return-statement (option D). Man skal kalde free(p1), free(p2), og free(str) alle sammen før linje 14. Options A, B, og C er ikke korrekte fordi vi stadig bruger variablerne senere i programmet. Memory leaks occur when dynamically allocated memory is not freed. Always free() what you malloc().",
       "hints": [
-        "Alle malloc-kald skal have en tilsvarende free",
-        "free skal kaldes f\u00f8r programmet slutter",
-        "Men vi skal stadig bruge variablerne til printf"
+        "Remember that alle malloc-kald skal have en tilsvarende free",
+        "Think about free skal kaldes før programmet slutter",
+        "Remember that men vi skal stadig bruge variablerne til printf"
       ],
       "tags": [
         "free",
         "memory_leak",
         "malloc"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_047",
@@ -3197,27 +3287,28 @@
       "description": "Marker ALLE de steder i funktionen nedenfor, hvor free() skal kaldes:",
       "code_template": "#include <stdio.h>\n#include <stdlib.h>\n\nint process(int n) {\n    int *data = malloc(n * sizeof(int));  // Line 5\n    if (data == NULL) {\n        return -1;                         // Line 7\n    }\n    \n    char *buffer = malloc(100);            // Line 10\n    if (buffer == NULL) {\n        return -1;                         // Line 12\n    }\n    \n    // Use data and buffer\n    sprintf(buffer, \"Processing %d items\", n);\n    \n    free(buffer);                          // Line 18\n    free(data);                            // Line 19\n    return 0;                              // Line 20\n}",
       "options": [
-        "P\u00e5 linje 7 skal free(data) kaldes",
-        "P\u00e5 linje 12 skal free(data) kaldes",
-        "P\u00e5 linje 12 skal free(buffer) kaldes",
+        "På linje 7 skal free(data) kaldes",
+        "På linje 12 skal free(data) kaldes",
+        "På linje 12 skal free(buffer) kaldes",
         "Linje 18 og 19 er korrekte"
       ],
       "correct_answer": [
         "B",
         "D"
       ],
-      "explanation": "P\u00e5 linje 12 skal free(data) kaldes f\u00f8r return, fordi data allerede er allokeret men buffer allocation fejlede. Dette er et klassisk memory leak i error-handling paths. Linje 18 og 19 er korrekte for den normale path. Linje 7 er OK fordi data==NULL p\u00e5 det tidspunkt (ingen allocation skete). Option C er forkert fordi buffer ikke blev allokeret successfully.",
+      "explanation": "På linje 12 skal free(data) kaldes før return, fordi data allerede er allokeret men buffer allocation fejlede. Dette er et klassisk memory leak i error-handling paths. Linje 18 og 19 er korrekte for den normale path. Linje 7 er OK fordi data==NULL på det tidspunkt (ingen allocation skete). Option C er forkert fordi buffer ikke blev allokeret successfully. Memory leaks occur when dynamically allocated memory is not freed. Always free() what you malloc().",
       "hints": [
-        "Tjek alle early return paths",
-        "Hvad er allokeret n\u00e5r hver return bliver n\u00e5et?",
-        "Error handling skal ogs\u00e5 frigive hukommelse"
+        "Remember that tjek alle early return paths",
+        "Remember that hvad er allokeret når hver return bliver nået?",
+        "Remember that error handling skal også frigive hukommelse"
       ],
       "tags": [
         "free",
         "memory_leak",
         "error_handling",
         "early_return"
-      ]
+      ],
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
     },
     {
       "id": "mem_048",
@@ -3225,25 +3316,25 @@
       "type": "multiple_select",
       "difficulty": "medium",
       "title": "Marker ALLE korrekte udsagn om memory management",
-      "description": "V\u00e6lg ALLE korrekte udsagn om dynamisk hukommelsesallokering i C:",
+      "description": "Vælg ALLE korrekte udsagn om dynamisk hukommelsesallokering i C:",
       "code_template": "",
       "options": [
         "malloc() initialiserer allokeret hukommelse til 0",
         "calloc() initialiserer allokeret hukommelse til 0",
         "free(NULL) er lovligt og sikkert",
-        "realloc() bevarer eksisterende data n\u00e5r st\u00f8rrelsen \u00f8ges",
-        "sizeof(pointer) giver st\u00f8rrelsen af allokeret hukommelse"
+        "realloc() bevarer eksisterende data når størrelsen øges",
+        "sizeof(pointer) giver størrelsen af allokeret hukommelse"
       ],
       "correct_answer": [
         "B",
         "C",
         "D"
       ],
-      "explanation": "B er korrekt: calloc() nulstiller hukommelsen. C er korrekt: free(NULL) er eksplicit tilladt i C-standarden og g\u00f8r ingenting. D er korrekt: realloc() bevarer data op til minimum af gammel og ny st\u00f8rrelse. A er forkert: malloc() efterlader hukommelsen uinitialiseret. E er forkert: sizeof(pointer) giver st\u00f8rrelsen af selve pointeren (8 bytes p\u00e5 64-bit systemer), ikke det allokerede omr\u00e5de.",
+      "explanation": "B er korrekt: calloc() nulstiller hukommelsen. C er korrekt: free(NULL) er eksplicit tilladt i C-standarden og gør ingenting. D er korrekt: realloc() bevarer data op til minimum af gammel og ny størrelse. A er forkert: malloc() efterlader hukommelsen uinitialiseret. E er forkert: sizeof(pointer) giver størrelsen af selve pointeren (8 bytes på 64-bit systemer), ikke det allokerede område. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
-        "calloc st\u00e5r for 'clear allocation'",
-        "C-standarden tillader free(NULL)",
-        "sizeof p\u00e5 en pointer giver pointer-st\u00f8rrelsen"
+        "Consider calloc står for 'clear allocation'",
+        "Remember that c-standarden tillader free(NULL)",
+        "sizeof på en pointer giver pointer-størrelsen"
       ],
       "tags": [
         "malloc",
@@ -3251,7 +3342,8 @@
         "free",
         "realloc",
         "sizeof"
-      ]
+      ],
+      "hint": "Consider what value malloc() returns when memory allocation fails."
     },
     {
       "id": "ptr_001",
@@ -3270,15 +3362,16 @@
       "correct_answer": "C",
       "explanation": "Line 5 dereferences a NULL pointer, causing a segmentation fault. Always check if a pointer is NULL before dereferencing. Fix: Add a NULL check before using the pointer, or initialize it to point to valid memory.",
       "hints": [
-        "ptr is NULL on line 4",
-        "Dereferencing NULL causes a crash",
-        "Line 5 tries to write to address 0"
+        "Consider ptr is NULL on line 4",
+        "Remember that dereferencing NULL causes a crash",
+        "Remember that line 5 tries to write to address 0"
       ],
       "tags": [
         "NULL",
         "segfault",
         "pointer_safety"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "ptr_002",
@@ -3295,16 +3388,17 @@
         "20 20"
       ],
       "correct_answer": "B",
-      "explanation": "Pointer arithmetic advances by elements. p + 1 points to arr[1] (20), and arr + 2 points to arr[2] (30).",
+      "explanation": "Pointer arithmetic advances by elements. p + 1 points to arr[1] (20), and arr + 2 points to arr[2] (30). Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "p + 1 points to the second element",
-        "arr + 2 points to the third element",
-        "Dereference to get the values"
+        "Consider p + 1 points to the second element",
+        "Think about arr + 2 points to the third element",
+        "Remember that dereference to get the values"
       ],
       "tags": [
         "pointer_arithmetic",
         "arrays"
-      ]
+      ],
+      "hint": "Think about how pointer arithmetic works with the size of the data type being pointed to."
     },
     {
       "id": "ptr_003",
@@ -3321,17 +3415,18 @@
         "Memory leak"
       ],
       "correct_answer": "C",
-      "explanation": "x is a local variable. Returning &x returns a pointer to a stack variable that goes out of scope. Dereferencing it is undefined behavior.",
+      "explanation": "X is a local variable. Returning &x returns a pointer to a stack variable that goes out of scope. Dereferencing it is undefined behavior. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "x is local to get_value",
-        "The pointer outlives x",
-        "Dereferencing a dangling pointer is undefined"
+        "Consider x is local to get_value",
+        "Remember that the pointer outlives x",
+        "Remember that dereferencing a dangling pointer is undefined"
       ],
       "tags": [
         "dangling_pointer",
         "lifetime",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "ptr_004",
@@ -3350,14 +3445,15 @@
       "correct_answer": "B",
       "explanation": "**pp dereferences twice to reach x, which is 1.",
       "hints": [
-        "pp points to p",
-        "p points to x",
+        "Consider pp points to p",
+        "Think about p points to x",
         "**pp is x"
       ],
       "tags": [
         "pointer_to_pointer",
         "dereference"
-      ]
+      ],
+      "hint": "Think about: **pp dereferences twice to reach x, which is 1."
     },
     {
       "id": "ptr_005",
@@ -3374,17 +3470,18 @@
         "4"
       ],
       "correct_answer": "C",
-      "explanation": "arr decays to int* when passed to f. sizeof(p) is the size of a pointer (8 on 64-bit).",
+      "explanation": "Arr decays to int* when passed to f. sizeof(p) is the size of a pointer (8 on 64-bit).",
       "hints": [
-        "Function parameter is a pointer",
-        "Array decays to pointer",
-        "Pointer size is 8 on 64-bit"
+        "Remember that function parameter is a pointer",
+        "Remember that array decays to pointer",
+        "The solution involves remember that pointer size is 8 on 64-bit"
       ],
       "tags": [
         "array_decay",
         "sizeof",
         "pointers"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "ptr_006",
@@ -3401,16 +3498,17 @@
         "1"
       ],
       "correct_answer": "B",
-      "explanation": "Pointer subtraction gives the element offset: index 4 minus index 1 is 3.",
+      "explanation": "Pointer subtraction gives the element offset: index 4 minus index 1 is 3. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "Subtracting pointers gives element difference",
-        "Indices are 4 and 1",
-        "4 - 1 = 3"
+        "Remember that subtracting pointers gives element difference",
+        "Think about indices are 4 and 1",
+        "The solution involves 4 - 1 = 3"
       ],
       "tags": [
         "pointer_arithmetic",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: pointer subtraction gives the element offset: index 4 minus index 1 is 3."
     },
     {
       "id": "ptr_007",
@@ -3427,17 +3525,18 @@
         "Prints 6"
       ],
       "correct_answer": "B",
-      "explanation": "p points to const int, so assigning through *p is not allowed and fails to compile.",
+      "explanation": "P points to const int, so assigning through *p is not allowed and fails to compile. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "const int prevents modification",
-        "p is pointer to const",
-        "Assignment through p is illegal"
+        "Consider const int prevents modification",
+        "Think about p is pointer to const",
+        "Remember that assignment through p is illegal"
       ],
       "tags": [
         "const",
         "pointers",
         "compilation"
-      ]
+      ],
+      "hint": "Think about: p points to const int, so assigning through *p is not allowed and fails to compile."
     },
     {
       "id": "ptr_008",
@@ -3454,16 +3553,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "The void pointer is cast back to int*, then dereferenced to read 7.",
+      "explanation": "The void pointer is cast back to int*, then dereferenced to read 7. Type casting in C converts a value from one type to another. Casting happens before the operation when you cast an operand.",
       "hints": [
-        "void* needs casting",
-        "Cast to int*",
-        "Dereference yields 7"
+        "Consider void* needs casting",
+        "Think about cast to int*",
+        "The solution involves dereference yields 7"
       ],
       "tags": [
         "void_pointer",
         "casting"
-      ]
+      ],
+      "hint": "Think about: the void pointer is cast back to int*, then dereferenced to read 7."
     },
     {
       "id": "ptr_009",
@@ -3480,17 +3580,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "Pointers within the same array can be compared. p points to arr[0], which is before arr[1], so p < q is true (1).",
+      "explanation": "Pointers within the same array can be compared. p points to arr[0], which is before arr[1], so p < q is true (1). Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointers into the same array can be compared",
-        "p is arr[0]",
+        "Remember that pointers into the same array can be compared",
+        "Think about p is arr[0]",
         "p is before q"
       ],
       "tags": [
         "pointers",
         "comparison",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: pointers within the same array can be compared."
     },
     {
       "id": "ptr_010",
@@ -3507,17 +3608,18 @@
         "2 3"
       ],
       "correct_answer": "B",
-      "explanation": "*p++ yields the current value (1) and then increments p. The next *p is 2.",
+      "explanation": "*p++ yields the current value (1) and then increments p. The next *p is 2. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Post-increment uses the old pointer",
-        "First value is 1",
-        "Pointer moves to arr[1]"
+        "Remember that post-increment uses the old pointer",
+        "Think about first value is 1",
+        "Remember that pointer moves to arr[1]"
       ],
       "tags": [
         "pointers",
         "increment",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: *p++ yields the current value (1) and then increments p."
     },
     {
       "id": "ptr_011",
@@ -3534,17 +3636,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "s + 1 points to the second character, which is 'i'.",
+      "explanation": "S + 1 points to the second character, which is 'i'. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Index 0 is 'h'",
-        "Index 1 is 'i'",
-        "Dereference yields 'i'"
+        "Consider index 0 is 'h'",
+        "Think about index 1 is 'i'",
+        "The solution involves remember that dereference yields 'i'"
       ],
       "tags": [
         "strings",
         "pointers",
         "arithmetic"
-      ]
+      ],
+      "hint": "Think about: s + 1 points to the second character, which is 'i'."
     },
     {
       "id": "ptr_012",
@@ -3561,17 +3664,18 @@
         "4 4"
       ],
       "correct_answer": "B",
-      "explanation": "sizeof(p) is the pointer size (8). sizeof(*p) is the size of int (4).",
+      "explanation": "Sizeof(p) is the pointer size (8). sizeof(*p) is the size of int (4). sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Pointer size is 8 on 64-bit",
-        "int size is 4",
-        "Prints 8 4"
+        "Remember that pointer size is 8 on 64-bit",
+        "Think about int size is 4",
+        "The solution involves prints 8 4"
       ],
       "tags": [
         "sizeof",
         "pointers",
         "types"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "ptr_013",
@@ -3588,11 +3692,11 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "p points to arr[1]. p - 1 points to arr[0], which is 4.",
+      "explanation": "P points to arr[1]. p - 1 points to arr[0], which is 4. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "p points to arr[1]",
-        "p - 1 points to arr[0]",
-        "arr[0] is 4"
+        "Consider p points to arr[1]",
+        "Think about p - 1 points to arr[0]",
+        "The solution involves arr[0] is 4"
       ],
       "tags": [
         "pointer_arithmetic",
@@ -3614,17 +3718,18 @@
         "Memory leak"
       ],
       "correct_answer": "C",
-      "explanation": "p is uninitialized and points to an indeterminate address. Dereferencing it is undefined behavior.",
+      "explanation": "P is uninitialized and points to an indeterminate address. Dereferencing it is undefined behavior. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "p is not initialized",
-        "It does not point to valid memory",
-        "Dereferencing is unsafe"
+        "Consider p is not initialized",
+        "Remember that it does not point to valid memory",
+        "Remember that dereferencing is unsafe"
       ],
       "tags": [
         "uninitialized",
         "undefined_behavior",
         "pointers"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "ptr_015",
@@ -3641,11 +3746,11 @@
         "Undefined behavior"
       ],
       "correct_answer": "C",
-      "explanation": "p points to arr[2]. p[1] is *(p + 1), which is arr[3] = 40.",
+      "explanation": "P points to arr[2]. p[1] is *(p + 1), which is arr[3] = 40. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "p points to arr[2]",
-        "p[1] is arr[3]",
-        "arr[3] is 40"
+        "Consider p points to arr[2]",
+        "Think about p[1] is arr[3]",
+        "The solution involves arr[3] is 40"
       ],
       "tags": [
         "pointers",
@@ -3668,17 +3773,18 @@
         "Address of function"
       ],
       "correct_answer": "B",
-      "explanation": "fp is a function pointer to add. fp(3, 4) calls add(3, 4) which returns 7.",
+      "explanation": "Fp is a function pointer to add. fp(3, 4) calls add(3, 4) which returns 7. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Function pointer syntax",
-        "fp points to add",
+        "Remember that function pointer syntax",
+        "Think about fp points to add",
         "Calls add(3, 4)"
       ],
       "tags": [
         "function_pointers",
         "pointers",
         "advanced"
-      ]
+      ],
+      "hint": "Think about: fp is a function pointer to add."
     },
     {
       "id": "ptr_017",
@@ -3695,17 +3801,18 @@
         "Depends on type"
       ],
       "correct_answer": "B",
-      "explanation": "All pointers are same size (8 bytes on 64-bit), regardless of what they point to.",
+      "explanation": "All pointers are same size (8 bytes on 64-bit), regardless of what they point to. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Pointer size independent of type",
-        "64-bit = 8 byte pointers",
-        "All pointers same size"
+        "Remember that pointer size independent of type",
+        "Think about 64-bit = 8 byte pointers",
+        "Remember that all pointers same size"
       ],
       "tags": [
         "pointers",
         "sizeof",
         "types"
-      ]
+      ],
+      "hint": "Think about: all pointers are same size (8 bytes on 64-bit), regardless of what they point to."
     },
     {
       "id": "ptr_018",
@@ -3722,17 +3829,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p and q both point to x (aliasing). Changing *p changes x, so *q also sees 20.",
+      "explanation": "P and q both point to x (aliasing). Changing *p changes x, so *q also sees 20. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Both point to same variable",
-        "Changing through p affects q",
-        "x becomes 20"
+        "Remember that both point to same variable",
+        "Remember that changing through p affects q",
+        "The solution involves x becomes 20"
       ],
       "tags": [
         "pointers",
         "aliasing",
         "dereference"
-      ]
+      ],
+      "hint": "Think about: p and q both point to x (aliasing)."
     },
     {
       "id": "ptr_019",
@@ -3749,17 +3857,18 @@
         "const int * const p"
       ],
       "correct_answer": "C",
-      "explanation": "int * const p makes pointer constant (can't change where it points). const int *p makes pointee constant.",
+      "explanation": "Int * const p makes pointer constant (can't change where it points). const int *p makes pointee constant. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "const position matters",
-        "After * means pointer is const",
-        "Before * means data is const"
+        "Consider const position matters",
+        "Remember that after * means pointer is const",
+        "Remember that before * means data is const"
       ],
       "tags": [
         "pointers",
         "const",
         "syntax"
-      ]
+      ],
+      "hint": "Think about: int * const p makes pointer constant (can't change where it points)."
     },
     {
       "id": "ptr_020",
@@ -3776,11 +3885,11 @@
         "4"
       ],
       "correct_answer": "C",
-      "explanation": "p+1 points to arr[1]. (p+1)->x accesses arr[1].x which is 3.",
+      "explanation": "P+1 points to arr[1]. (p+1)->x accesses arr[1].x which is 3. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "p+1 is arr[1]",
-        "Pointer arithmetic by struct size",
-        "arr[1].x = 3"
+        "Consider p+1 is arr[1]",
+        "Remember that pointer arithmetic by struct size",
+        "The solution involves arr[1].x = 3"
       ],
       "tags": [
         "pointers",
@@ -3803,16 +3912,17 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "arr[1][2] accesses row 1, column 2, which is 6.",
+      "explanation": "Arr[1][2] accesses row 1, column 2, which is 6. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "arr[1] is second row",
-        "arr[1][2] is third element",
-        "Value is 6"
+        "Consider arr[1] is second row",
+        "Think about arr[1][2] is third element",
+        "The solution involves value is 6"
       ],
       "tags": [
         "arrays",
         "multidimensional"
-      ]
+      ],
+      "hint": "Think about: arr[1][2] accesses row 1, column 2, which is 6."
     },
     {
       "id": "ptr_022",
@@ -3829,11 +3939,11 @@
         "99"
       ],
       "correct_answer": "D",
-      "explanation": "p+2 points to arr[2]. *(p+2) = 99 sets arr[2] to 99.",
+      "explanation": "P+2 points to arr[2]. *(p+2) = 99 sets arr[2] to 99. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "p+2 is arr[2]",
-        "Modifies arr[2]",
-        "arr[2] becomes 99"
+        "Consider p+2 is arr[2]",
+        "Think about modifies arr[2]",
+        "The solution involves arr[2] becomes 99"
       ],
       "tags": [
         "pointers",
@@ -3856,17 +3966,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "Arrays are passed by reference (decay to pointer). modify changes the original array.",
+      "explanation": "Arrays are passed by reference (decay to pointer). modify changes the original array. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Arrays passed as pointers",
-        "Modifications affect original",
-        "arr[0] becomes 100"
+        "Remember that arrays passed as pointers",
+        "Remember that modifications affect original",
+        "The solution involves arr[0] becomes 100"
       ],
       "tags": [
         "arrays",
         "functions",
         "pass_by_reference"
-      ]
+      ],
+      "hint": "Remember that arrays decay to pointers when passed to functions."
     },
     {
       "id": "ptr_024",
@@ -3883,16 +3994,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p points to x, so *p is 5.",
+      "explanation": "P points to x, so *p is 5.",
       "hints": [
-        "& gets address",
-        "* dereferences",
-        "Value is 5"
+        "Consider & gets address",
+        "Think about * dereferences",
+        "The solution involves value is 5"
       ],
       "tags": [
         "address_of",
         "dereference"
-      ]
+      ],
+      "hint": "Think about: p points to x, so *p is 5."
     },
     {
       "id": "pnm_ptr_025",
@@ -3909,16 +4021,17 @@
         "40"
       ],
       "correct_answer": "C",
-      "explanation": "The pointer p initially points to arr[0] (10). Adding 2 to p moves it forward by 2 * sizeof(int) bytes, making it point to arr[2], which contains 30.",
+      "explanation": "The pointer p initially points to arr[0] (10). Adding 2 to p moves it forward by 2 * sizeof(int) bytes, making it point to arr[2], which contains 30. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "Pointer arithmetic scales by the size of the pointed-to type",
-        "p + 2 moves the pointer two elements forward",
+        "Remember that pointer arithmetic scales by the size of the pointed-to type",
+        "Think about p + 2 moves the pointer two elements forward",
         "arr[2] is the third element"
       ],
       "tags": [
         "pointer_arithmetic",
         "arrays"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "ptr_025",
@@ -3935,16 +4048,17 @@
         "Both B and C"
       ],
       "correct_answer": "D",
-      "explanation": "A const pointer cannot change its address, but the value it points to can change.",
+      "explanation": "A const pointer cannot change its address, but the value it points to can change. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "const applies to pointer",
-        "Address is fixed",
+        "Consider const applies to pointer",
+        "Think about address is fixed",
         "Value can change"
       ],
       "tags": [
         "const",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: a const pointer cannot change its address, but the value it points to can change."
     },
     {
       "id": "pnm_ptr_026",
@@ -3961,16 +4075,17 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "Pointer subtraction returns the number of elements between two pointers, not bytes. p2 - p1 = 4 - 1 = 3 elements. The result is independent of sizeof(long).",
+      "explanation": "Pointer subtraction returns the number of elements between two pointers, not bytes. p2 - p1 = 4 - 1 = 3 elements. The result is independent of sizeof(long). Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "Pointer subtraction gives element count, not byte count",
-        "Count the array positions between p1 and p2",
-        "The result is (4 - 1)"
+        "Remember that pointer subtraction gives element count, not byte count",
+        "Remember that count the array positions between p1 and p2",
+        "Remember that the result is (4 - 1)"
       ],
       "tags": [
         "pointer_arithmetic",
         "pointer_subtraction"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "ptr_026",
@@ -3987,16 +4102,17 @@
         "p cannot point to y"
       ],
       "correct_answer": "A",
-      "explanation": "Pointer to const can change address, but cannot modify the pointed value.",
+      "explanation": "Pointer to const can change address, but cannot modify the pointed value. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "const applies to value",
-        "Pointer can change",
+        "Consider const applies to value",
+        "Think about pointer can change",
         "*p is read-only"
       ],
       "tags": [
         "const",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: pointer to const can change address, but cannot modify the pointed value."
     },
     {
       "id": "pnm_ptr_027",
@@ -4013,16 +4129,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "pp is a pointer to pointer. **pp dereferences twice: *pp gives p, and **pp gives the value p points to (x). Setting **pp = 10 changes x to 10.",
+      "explanation": "Pp is a pointer to pointer. **pp dereferences twice: *pp gives p, and **pp gives the value p points to (x). Setting **pp = 10 changes x to 10.",
       "hints": [
-        "**pp dereferences twice to reach x",
-        "The assignment modifies the original variable x",
-        "Follow the pointer chain: pp -> p -> x"
+        "Consider **pp dereferences twice to reach x",
+        "Remember that the assignment modifies the original variable x",
+        "Remember that follow the pointer chain: pp -> p -> x"
       ],
       "tags": [
         "double_pointers",
         "indirection"
-      ]
+      ],
+      "hint": "Think about: pp is a pointer to pointer."
     },
     {
       "id": "ptr_027",
@@ -4039,16 +4156,17 @@
         "Undefined"
       ],
       "correct_answer": "C",
-      "explanation": "p points to arr[0], so p[2] is arr[2] = 6.",
+      "explanation": "P points to arr[0], so p[2] is arr[2] = 6. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "p points to arr[0]",
-        "p[2] is arr[2]",
-        "Value is 6"
+        "Consider p points to arr[0]",
+        "Think about p[2] is arr[2]",
+        "The solution involves value is 6"
       ],
       "tags": [
         "arrays",
         "pointer_arithmetic"
-      ]
+      ],
+      "hint": "Think about: p points to arr[0], so p[2] is arr[2] = 6."
     },
     {
       "id": "pnm_ptr_028",
@@ -4067,14 +4185,15 @@
       "correct_answer": "B",
       "explanation": "First, ***ppp = 5 changes a to 5. Then **ppp = p2 makes pp point to p2 instead of p1. The final values are: a = 5, b = 2.",
       "hints": [
-        "Follow each operation step by step",
-        "***ppp dereferences three times to reach a",
+        "Remember that follow each operation step by step",
+        "Think about ***ppp dereferences three times to reach a",
         "**ppp = p2 reassigns what pp points to"
       ],
       "tags": [
         "triple_pointers",
         "indirection"
-      ]
+      ],
+      "hint": "Think about: first, ***ppp = 5 changes a to 5."
     },
     {
       "id": "ptr_028",
@@ -4091,16 +4210,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "p++ moves to the next element, so *p is 2.",
+      "explanation": "P++ moves to the next element, so *p is 2. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "p starts at arr[0]",
-        "p++ moves to arr[1]",
-        "*p is 2"
+        "Consider p starts at arr[0]",
+        "Think about p++ moves to arr[1]",
+        "The solution involves *p is 2"
       ],
       "tags": [
         "pointer_arithmetic",
         "increment"
-      ]
+      ],
+      "hint": "Think about: p++ moves to the next element, so *p is 2."
     },
     {
       "id": "pnm_ptr_029",
@@ -4117,15 +4237,16 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "fp is a pointer to a function that takes two ints and returns an int. It's assigned to point to 'add', so fp(10, 3) calls add(10, 3) which returns 13.",
+      "explanation": "Fp is a pointer to a function that takes two ints and returns an int. It's assigned to point to 'add', so fp(10, 3) calls add(10, 3) which returns 13.",
       "hints": [
-        "fp points to the add function",
-        "fp(10, 3) is equivalent to add(10, 3)",
-        "10 + 3 = 13"
+        "Consider fp points to the add function",
+        "Think about fp(10, 3) is equivalent to add(10, 3)",
+        "The solution involves 10 + 3 = 13"
       ],
       "tags": [
         "function_pointers"
-      ]
+      ],
+      "hint": "Think about: fp is a pointer to a function that takes two ints and returns an int."
     },
     {
       "id": "ptr_029",
@@ -4142,16 +4263,17 @@
         "1"
       ],
       "correct_answer": "A",
-      "explanation": "Pointer subtraction yields element difference: 9 - 4 = 5.",
+      "explanation": "Pointer subtraction yields element difference: 9 - 4 = 5. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "Subtract indices",
-        "9 - 4 = 5",
-        "Result is 5"
+        "Consider subtract indices",
+        "Think about 9 - 4 = 5",
+        "The solution involves result is 5"
       ],
       "tags": [
         "pointer_arithmetic",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: pointer subtraction yields element difference: 9 - 4 = 5."
     },
     {
       "id": "pnm_ptr_030",
@@ -4168,16 +4290,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "arr is an array of function pointers. arr[1] points to f2, so arr[1](5) calls f2(5) which returns 5 * 3 = 15.",
+      "explanation": "Arr is an array of function pointers. arr[1] points to f2, so arr[1](5) calls f2(5) which returns 5 * 3 = 15. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "arr[1] is the second element, pointing to f2",
-        "f2 multiplies its argument by 3",
-        "5 * 3 = 15"
+        "Consider arr[1] is the second element, pointing to f2",
+        "Think about f2 multiplies its argument by 3",
+        "The solution involves 5 * 3 = 15"
       ],
       "tags": [
         "function_pointers",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: arr is an array of function pointers."
     },
     {
       "id": "ptr_030",
@@ -4194,16 +4317,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p is NULL, so the comparison is true and prints 1.",
+      "explanation": "P is NULL, so the comparison is true and prints 1.",
       "hints": [
-        "p is NULL",
-        "NULL == NULL is true",
-        "True prints 1"
+        "Consider p is NULL",
+        "Think about nULL == NULL is true",
+        "The solution involves true prints 1"
       ],
       "tags": [
         "NULL",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: p is null, so the comparison is true and prints 1."
     },
     {
       "id": "pnm_ptr_031",
@@ -4220,15 +4344,16 @@
         "Address of c"
       ],
       "correct_answer": "C",
-      "explanation": "arr is an array of pointers to int. arr[2] contains the address of c (&c), and *arr[2] dereferences it to get the value 3.",
+      "explanation": "Arr is an array of pointers to int. arr[2] contains the address of c (&c), and *arr[2] dereferences it to get the value 3.",
       "hints": [
-        "arr is an array of three pointers",
-        "arr[2] points to variable c",
+        "Consider arr is an array of three pointers",
+        "Think about arr[2] points to variable c",
         "*arr[2] dereferences to get c's value"
       ],
       "tags": [
         "array_of_pointers"
-      ]
+      ],
+      "hint": "Think about: arr is an array of pointers to int."
     },
     {
       "id": "ptr_031",
@@ -4245,16 +4370,17 @@
         "Memory leak"
       ],
       "correct_answer": "C",
-      "explanation": "arr is local and goes out of scope. Returning its address is undefined behavior.",
+      "explanation": "Arr is local and goes out of scope. Returning its address is undefined behavior. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Local array lives on stack",
-        "Returned pointer dangles",
+        "Remember that local array lives on stack",
+        "Remember that returned pointer dangles",
         "Undefined behavior"
       ],
       "tags": [
         "dangling_pointer",
         "arrays"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "pnm_ptr_032",
@@ -4271,15 +4397,16 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p is a pointer to an array of 3 ints. *p dereferences to get the array, and (*p)[1] accesses the second element, which is 20.",
+      "explanation": "P is a pointer to an array of 3 ints. *p dereferences to get the array, and (*p)[1] accesses the second element, which is 20.",
       "hints": [
-        "p points to the entire array",
-        "*p gives you the array itself",
+        "Consider p points to the entire array",
+        "Think about *p gives you the array itself",
         "(*p)[1] is the second element"
       ],
       "tags": [
         "pointer_to_array"
-      ]
+      ],
+      "hint": "Think about: p is a pointer to an array of 3 ints."
     },
     {
       "id": "ptr_032",
@@ -4296,16 +4423,17 @@
         "5 4"
       ],
       "correct_answer": "A",
-      "explanation": "sizeof(arr) is 5 * sizeof(int) = 20. sizeof(p) is 8 on 64-bit.",
+      "explanation": "Sizeof(arr) is 5 * sizeof(int) = 20. sizeof(p) is 8 on 64-bit. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Array size includes all elements",
-        "Pointer size is fixed",
+        "Remember that array size includes all elements",
+        "Remember that pointer size is fixed",
         "20 and 8"
       ],
       "tags": [
         "sizeof",
         "arrays"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "pnm_ptr_033",
@@ -4322,17 +4450,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p1 is an array of 3 pointers (size = 3 * sizeof(pointer)), while p2 is a single pointer to an array (size = sizeof(pointer)). On most systems, p1 is 3 times larger.",
+      "explanation": "P1 is an array of 3 pointers (size = 3 * sizeof(pointer)), while p2 is a single pointer to an array (size = sizeof(pointer)). On most systems, p1 is 3 times larger. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "p1 is an array containing 3 pointers",
-        "p2 is a single pointer",
-        "Count how many pointer-sized objects each holds"
+        "Consider p1 is an array containing 3 pointers",
+        "Think about p2 is a single pointer",
+        "Remember that count how many pointer-sized objects each holds"
       ],
       "tags": [
         "array_of_pointers",
         "pointer_to_array",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "ptr_033",
@@ -4349,16 +4478,17 @@
         "d"
       ],
       "correct_answer": "C",
-      "explanation": "p + 2 points to the third character, which is 'c'.",
+      "explanation": "P + 2 points to the third character, which is 'c'. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string. Pointer arithmetic moves by multiples of the type size, not individual bytes.",
       "hints": [
-        "Index 2 is third char",
-        "String is abc",
-        "Result is c"
+        "Remember that index 2 is third char",
+        "Think about string is abc",
+        "The solution involves result is c"
       ],
       "tags": [
         "strings",
         "pointer_arithmetic"
-      ]
+      ],
+      "hint": "Think about: p + 2 points to the third character, which is 'c'."
     },
     {
       "id": "pnm_ptr_034",
@@ -4375,16 +4505,17 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "A void pointer can hold any pointer type. To dereference it, we must cast it to the correct type. (int *)p casts p to int*, then * dereferences it to get 42.",
+      "explanation": "A void pointer can hold any pointer type. To dereference it, we must cast it to the correct type. (int *)p casts p to int*, then * dereferences it to get 42. Type casting in C converts a value from one type to another. Casting happens before the operation when you cast an operand.",
       "hints": [
-        "void* can point to any type",
-        "Must cast before dereferencing",
+        "Consider void* can point to any type",
+        "Remember that must cast before dereferencing",
         "(int *)p converts to int pointer"
       ],
       "tags": [
         "void_pointers",
         "casting"
-      ]
+      ],
+      "hint": "Think about: a void pointer can hold any pointer type."
     },
     {
       "id": "ptr_034",
@@ -4401,16 +4532,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "inc increments the pointer, so p points to arr[1] (6).",
+      "explanation": "Inc increments the pointer, so p points to arr[1] (6). In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "pp points to p",
-        "*pp is p",
+        "Consider pp points to p",
+        "Think about *pp is p",
         "p moves to arr[1]"
       ],
       "tags": [
         "double_pointer",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: inc increments the pointer, so p points to arr[1] (6)."
     },
     {
       "id": "pnm_ptr_035",
@@ -4429,14 +4561,15 @@
       "correct_answer": "D",
       "explanation": "Pointer arithmetic on void* is not allowed in standard C because void has no size. GCC allows it as an extension (treating void as 1 byte), but it's not standard-compliant.",
       "hints": [
-        "What is sizeof(void)?",
-        "Can you do arithmetic on a type with no size?",
-        "This is a compiler extension, not standard C"
+        "Remember that what is sizeof(void)?",
+        "Remember that can you do arithmetic on a type with no size?",
+        "Remember that this is a compiler extension, not standard C"
       ],
       "tags": [
         "void_pointers",
         "pointer_arithmetic"
-      ]
+      ],
+      "hint": "Think about how pointer arithmetic works with the size of the data type being pointed to."
     },
     {
       "id": "ptr_035",
@@ -4453,16 +4586,17 @@
         "Pointer to pointer"
       ],
       "correct_answer": "B",
-      "explanation": "int (*p)[3] is a pointer to an array of 3 ints.",
+      "explanation": "Int (*p)[3] is a pointer to an array of 3 ints.",
       "hints": [
-        "Parentheses bind * to p",
-        "Size 3 array",
+        "Remember that parentheses bind * to p",
+        "Think about size 3 array",
         "Pointer to array"
       ],
       "tags": [
         "pointer_to_array",
         "types"
-      ]
+      ],
+      "hint": "Think about: int (*p)[3] is a pointer to an array of 3 ints."
     },
     {
       "id": "pnm_ptr_036",
@@ -4479,17 +4613,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "This code casts a double* to int* and dereferences it. The bit pattern of a double interpreted as an int produces undefined/system-dependent results due to different representations.",
+      "explanation": "This code casts a double* to int* and dereferences it. The bit pattern of a double interpreted as an int produces undefined/system-dependent results due to different representations. Type casting in C converts a value from one type to another. Casting happens before the operation when you cast an operand.",
       "hints": [
-        "double and int have different memory representations",
-        "Reinterpreting bytes of a double as int is undefined",
+        "Consider double and int have different memory representations",
+        "Remember that reinterpreting bytes of a double as int is undefined",
         "This is type punning"
       ],
       "tags": [
         "void_pointers",
         "casting",
         "type_punning"
-      ]
+      ],
+      "hint": "Consider what happens when you cast an operand to a floating-point type before performing the operation."
     },
     {
       "id": "ptr_036",
@@ -4506,16 +4641,17 @@
         "Memory leak"
       ],
       "correct_answer": "C",
-      "explanation": "p is uninitialized and points to an unknown address. Dereferencing it is undefined behavior.",
+      "explanation": "P is uninitialized and points to an unknown address. Dereferencing it is undefined behavior. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "p has no valid address",
-        "Dereferencing is unsafe",
+        "Consider p has no valid address",
+        "Remember that dereferencing is unsafe",
         "Undefined behavior"
       ],
       "tags": [
         "uninitialized",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "pnm_ptr_037",
@@ -4532,16 +4668,17 @@
         "No error"
       ],
       "correct_answer": "A",
-      "explanation": "const int *p means p points to a const int. You cannot modify the value through p (*p = 15 is invalid), but you can change where p points (p = &y is valid).",
+      "explanation": "Const int *p means p points to a const int. You cannot modify the value through p (*p = 15 is invalid), but you can change where p points (p = &y is valid).",
       "hints": [
-        "const int* means the pointed-to value is const",
-        "Can you change what p points to?",
-        "Can you change the value through p?"
+        "Consider const int* means the pointed-to value is const",
+        "Remember that can you change what p points to?",
+        "Remember that can you change the value through p?"
       ],
       "tags": [
         "const_pointers",
         "const_correctness"
-      ]
+      ],
+      "hint": "Think about: const int *p means p points to a const int."
     },
     {
       "id": "ptr_037",
@@ -4558,11 +4695,11 @@
         "8"
       ],
       "correct_answer": "D",
-      "explanation": "p points to arr[1]. p+2 points to arr[3] = 8.",
+      "explanation": "P points to arr[1]. p+2 points to arr[3] = 8. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "p is arr[1]",
-        "p+2 is arr[3]",
-        "Value is 8"
+        "Consider p is arr[1]",
+        "Think about p+2 is arr[3]",
+        "The solution involves value is 8"
       ],
       "tags": [
         "pointer_arithmetic",
@@ -4584,16 +4721,17 @@
         "No error"
       ],
       "correct_answer": "B",
-      "explanation": "int *const p means p is a const pointer to int. You can modify the value through p (*p = 15 is valid), but you cannot change where p points (p = &y is invalid).",
+      "explanation": "Int *const p means p is a const pointer to int. You can modify the value through p (*p = 15 is valid), but you cannot change where p points (p = &y is invalid).",
       "hints": [
-        "int* const means the pointer itself is const",
-        "Can you change the value at the pointed-to location?",
-        "Can you reassign p to point elsewhere?"
+        "Consider how pointers relate to memory addresses and values",
+        "Remember that can you change the value at the pointed-to location?",
+        "Remember that can you reassign p to point elsewhere?"
       ],
       "tags": [
         "const_pointers",
         "const_correctness"
-      ]
+      ],
+      "hint": "Think about: int *const p means p is a const pointer to int."
     },
     {
       "id": "ptr_038",
@@ -4610,16 +4748,17 @@
         "1 1"
       ],
       "correct_answer": "B",
-      "explanation": "swap uses pass-by-value. It does not change x and y in main.",
+      "explanation": "Swap uses pass-by-value. It does not change x and y in main.",
       "hints": [
-        "Values are copied",
-        "Originals unchanged",
-        "Prints 1 2"
+        "Consider values are copied",
+        "Think about originals unchanged",
+        "The solution involves prints 1 2"
       ],
       "tags": [
         "pass_by_value",
         "functions"
-      ]
+      ],
+      "hint": "Think about: swap uses pass-by-value."
     },
     {
       "id": "pnm_ptr_039",
@@ -4636,16 +4775,17 @@
         "No error"
       ],
       "correct_answer": "C",
-      "explanation": "const int *const p means p is a const pointer to a const int. Both the pointer and the pointed-to value are const, so neither *p = 15 nor p = &y is allowed.",
+      "explanation": "Const int *const p means p is a const pointer to a const int. Both the pointer and the pointed-to value are const, so neither *p = 15 nor p = &y is allowed.",
       "hints": [
-        "Both const keywords apply restrictions",
-        "The first const protects the value",
-        "The second const protects the pointer"
+        "Remember that both const keywords apply restrictions",
+        "Remember that the first const protects the value",
+        "Remember that the second const protects the pointer"
       ],
       "tags": [
         "const_pointers",
         "const_correctness"
-      ]
+      ],
+      "hint": "Think about: const int *const p means p is a const pointer to a const int."
     },
     {
       "id": "ptr_039",
@@ -4664,14 +4804,15 @@
       "correct_answer": "B",
       "explanation": "Parentheses make f a pointer to a function: int (*f)(int).",
       "hints": [
-        "Parentheses around *f",
-        "Takes int, returns int",
-        "Function pointer syntax"
+        "Remember that parentheses around *f",
+        "Remember that takes int, returns int",
+        "Remember that function pointer syntax"
       ],
       "tags": [
         "function_pointer",
         "types"
-      ]
+      ],
+      "hint": "Think about: parentheses make f a pointer to a function: int (*f)(int)."
     },
     {
       "id": "pnm_ptr_040",
@@ -4690,13 +4831,14 @@
       "correct_answer": "B",
       "explanation": "Pointers to elements of the same array can be compared. p2 points to arr[3] and p1 points to arr[1]. Since arr[3] is at a higher address, p2 > p1 is true (1).",
       "hints": [
-        "Both pointers point into the same array",
-        "Higher index means higher address",
-        "p2 is at arr[3], p1 is at arr[1]"
+        "Remember that both pointers point into the same array",
+        "Remember that higher index means higher address",
+        "The solution involves p2 is at arr[3], p1 is at arr[1]"
       ],
       "tags": [
         "pointer_comparison"
-      ]
+      ],
+      "hint": "Think about: pointers to elements of the same array can be compared."
     },
     {
       "id": "ptr_040",
@@ -4713,16 +4855,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "p[1] is the same as *(p + 1), which is arr[1] = 8.",
+      "explanation": "P[1] is the same as *(p + 1), which is arr[1] = 8. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "p[1] equals arr[1]",
-        "arr[1] is 8",
-        "Prints 8"
+        "Consider p[1] equals arr[1]",
+        "Think about arr[1] is 8",
+        "The solution involves prints 8"
       ],
       "tags": [
         "arrays",
         "indexing"
-      ]
+      ],
+      "hint": "Think about: p[1] is the same as *(p + 1), which is arr[1] = 8."
     },
     {
       "id": "pnm_ptr_041",
@@ -4739,16 +4882,17 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Comparing pointers to different objects (not part of the same array or object) using relational operators (<, >, <=, >=) is undefined behavior in C. Only equality comparison (==, !=) is well-defined.",
+      "explanation": "Comparing pointers to different objects (not part of the same array or object) using relational operators (<, >, <=, >=) is undefined behavior in C. Only equality comparison (==, !=) is well-defined. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "x and y are separate objects",
-        "Relational comparison requires pointers to the same object/array",
-        "Only == and != are well-defined for unrelated pointers"
+        "Consider x and y are separate objects",
+        "Remember that relational comparison requires pointers to the same object/array",
+        "Remember that only == and != are well-defined for unrelated pointers"
       ],
       "tags": [
         "pointer_comparison",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "ptr_041",
@@ -4765,16 +4909,17 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "Pointer subtraction returns the number of elements between pointers. p2 points to str[4] and p1 points to str[1], so p2 - p1 = 4 - 1 = 3.",
+      "explanation": "Pointer subtraction returns the number of elements between pointers. p2 points to str[4] and p1 points to str[1], so p2 - p1 = 4 - 1 = 3. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "Subtraction gives element count, not bytes",
-        "p2 is at index 4, p1 is at index 1",
-        "4 - 1 = 3"
+        "Remember that subtraction gives element count, not bytes",
+        "Think about p2 is at index 4, p1 is at index 1",
+        "The solution involves 4 - 1 = 3"
       ],
       "tags": [
         "pointer_subtraction",
         "pointer_arithmetic"
-      ]
+      ],
+      "hint": "Think about: pointer subtraction returns the number of elements between pointers."
     },
     {
       "id": "ptr_042",
@@ -4791,16 +4936,17 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Pointer subtraction is only defined for pointers to elements of the same array (or one past the end). Subtracting pointers to different objects (a and b) is undefined behavior.",
+      "explanation": "Pointer subtraction is only defined for pointers to elements of the same array (or one past the end). Subtracting pointers to different objects (a and b) is undefined behavior. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "a and b are separate objects, not array elements",
-        "Pointer arithmetic requires pointers to the same array/object",
-        "This violates the rules of pointer subtraction"
+        "Consider a and b are separate objects, not array elements",
+        "Remember that pointer arithmetic requires pointers to the same array/object",
+        "Remember that this violates the rules of pointer subtraction"
       ],
       "tags": [
         "pointer_subtraction",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "ptr_043",
@@ -4819,13 +4965,14 @@
       "correct_answer": "A",
       "explanation": "NULL is a null pointer constant. p is initialized to NULL, so the condition p == NULL is true and it prints 'Null pointer'.",
       "hints": [
-        "NULL represents a null pointer",
-        "p is assigned NULL",
-        "The comparison checks if p is null"
+        "Remember that nULL represents a null pointer",
+        "Think about p is assigned NULL",
+        "Remember that the comparison checks if p is null"
       ],
       "tags": [
         "null_pointers"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "ptr_044",
@@ -4842,16 +4989,17 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Dereferencing a NULL pointer (*p) is undefined behavior and typically causes a segmentation fault or program crash at runtime.",
+      "explanation": "Dereferencing a NULL pointer (*p) is undefined behavior and typically causes a segmentation fault or program crash at runtime. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "NULL points to invalid memory",
-        "What happens when you access invalid memory?",
-        "This is a runtime error, not compile-time"
+        "Remember that nULL points to invalid memory",
+        "Remember that what happens when you access invalid memory?",
+        "Remember that this is a runtime error, not compile-time"
       ],
       "tags": [
         "null_pointers",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "ptr_045",
@@ -4868,16 +5016,17 @@
         "Nothing"
       ],
       "correct_answer": "A",
-      "explanation": "pp points to p, which is NULL. *pp dereferences pp to get the value of p (NULL), so *pp == NULL is true. pp itself is not NULL (it points to p), so pp == NULL is false.",
+      "explanation": "Pp points to p, which is NULL. *pp dereferences pp to get the value of p (NULL), so *pp == NULL is true. pp itself is not NULL (it points to p), so pp == NULL is false.",
       "hints": [
-        "pp points to p, not NULL",
-        "*pp gives the value of p",
+        "Consider pp points to p, not NULL",
+        "Think about *pp gives the value of p",
         "p is NULL, but pp is not"
       ],
       "tags": [
         "double_pointers",
         "null_pointers"
-      ]
+      ],
+      "hint": "Think about: pp points to p, which is null."
     },
     {
       "id": "ptr_046",
@@ -4894,16 +5043,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "p initially points to arr[0]. p++ increments p by sizeof(struct Point), making it point to arr[1]. arr[1].x is 3.",
+      "explanation": "P initially points to arr[0]. p++ increments p by sizeof(struct Point), making it point to arr[1]. arr[1].x is 3. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "p++ moves to the next struct in the array",
-        "p starts at arr[0], then moves to arr[1]",
-        "arr[1].x is 3"
+        "Consider p++ moves to the next struct in the array",
+        "Think about p starts at arr[0], then moves to arr[1]",
+        "The solution involves arr[1].x is 3"
       ],
       "tags": [
         "pointer_arithmetic",
         "structs"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "ptr_047",
@@ -4920,16 +5070,17 @@
         "Syntax error"
       ],
       "correct_answer": "A",
-      "explanation": "func is a function that takes an int and returns a pointer to a function. The returned function takes two ints and returns an int. Read inside-out: func(int x) is a function, (*...) makes it return a pointer, (int, int) are parameters, and int is the final return type.",
+      "explanation": "Func is a function that takes an int and returns a pointer to a function. The returned function takes two ints and returns an int. Read inside-out: func(int x) is a function, (*. .) makes it return a pointer, (int, int) are parameters, and int is the final return type.",
       "hints": [
-        "Read the declaration inside-out",
-        "func(int x) is a function taking int",
-        "The * means it returns a pointer to a function"
+        "Remember that read the declaration inside-out",
+        "Think about func(int x) is a function taking int",
+        "Remember that the * means it returns a pointer to a function"
       ],
       "tags": [
         "function_pointers",
         "complex_declarations"
-      ]
+      ],
+      "hint": "Think about: func is a function that takes an int and returns a pointer to a function."
     },
     {
       "id": "ptr_048",
@@ -4946,17 +5097,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "C",
-      "explanation": "p + 2 moves 2 ints forward (8 bytes if sizeof(int) = 4). Casting to char* and subtracting gives the byte difference: 2 * 4 = 8 bytes.",
+      "explanation": "P + 2 moves 2 ints forward (8 bytes if sizeof(int) = 4). Casting to char* and subtracting gives the byte difference: 2 * 4 = 8 bytes. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "p + 2 moves forward by 2 * sizeof(int)",
-        "Casting to char* allows byte-level calculation",
-        "2 * 4 = 8 bytes"
+        "Consider p + 2 moves forward by 2 * sizeof(int)",
+        "Remember that casting to char* allows byte-level calculation",
+        "The solution involves 2 * 4 = 8 bytes"
       ],
       "tags": [
         "pointer_arithmetic",
         "casting",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     }
   ]
 }

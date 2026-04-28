@@ -17,3 +17,10 @@ instance/
 *.swo
 temp/
 *.log
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/worktrees/
+
+# Ad-hoc bug-screenshot scratch
+problems/

@@ -19,16 +19,17 @@
           ]
         }
       },
-      "explanation": "Factorial stops when n <= 1.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Factorial stops when n <= 1.",
       "hints": [
-        "Base case at 1",
-        "Use <=",
+        "Consider base case at 1",
+        "Consider using <=",
         "Stops recursion"
       ],
       "tags": [
         "recursion",
         "base_case"
-      ]
+      ],
+      "hint": "Think about: factorial stops when n <= 1."
     },
     {
       "id": "drag_036",
@@ -94,17 +95,18 @@
           ]
         }
       },
-      "explanation": "Recursive power: base case is exp == 0 returns 1, recursive case is base * power(base, exp-1).",
+      "explanation": "Recursive power: base case is exp == 0 returns 1, recursive case is base * power(base, exp-1). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case: any number to power 0 is 1",
-        "Recursive case: base * power(base, exp-1)",
-        "Decrement exponent each recursion"
+        "Remember that base case: any number to power 0 is 1",
+        "Remember that recursive case: base * power(base, exp-1)",
+        "Remember that decrement exponent each recursion"
       ],
       "tags": [
         "recursion",
         "power",
         "base_case"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "fill_010",
@@ -146,16 +148,17 @@
           ]
         }
       ],
-      "explanation": "Recursion requires a base case and progress toward it, here by subtracting 1.",
+      "explanation": "Recursion requires a base case and progress toward it, here by subtracting 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case stops recursion",
-        "n decreases by 1",
+        "Remember that base case stops recursion",
+        "Think about n decreases by 1",
         "Eventually n <= 1"
       ],
       "tags": [
         "recursion",
         "base_case"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "fill_020",
@@ -197,16 +200,17 @@
           ]
         }
       ],
-      "explanation": "Recursion needs a base case and a step that moves toward it.",
+      "explanation": "Recursion needs a base case and a step that moves toward it. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case stops recursion",
-        "n is reduced by 1",
+        "Remember that base case stops recursion",
+        "Think about n is reduced by 1",
         "Eventually reaches 0"
       ],
       "tags": [
         "recursion",
         "terminology"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "fill_da_010",
@@ -215,7 +219,7 @@
       "difficulty": "medium",
       "title": "Rekursions Koncepter (Danish)",
       "description": "Udfyld felterne om rekursion:",
-      "code_template": "int factorial(int n) {\n    if (n <= 1) return 1;  // Basistilf\u00e6lde\n    return n * factorial(n - 1);  // Rekursivt tilf\u00e6lde\n}",
+      "code_template": "int factorial(int n) {\n    if (n <= 1) return 1;  // Basistilfælde\n    return n * factorial(n - 1);  // Rekursivt tilfælde\n}",
       "questions": [
         {
           "id": 0,
@@ -223,24 +227,24 @@
           "blanks": [
             {
               "options": [
-                "basistilf\u00e6ldet",
-                "rekursive tilf\u00e6lde",
+                "basistilfældet",
+                "rekursive tilfælde",
                 "return statement",
                 "betingelse"
               ],
-              "correct": "basistilf\u00e6ldet"
+              "correct": "basistilfældet"
             }
           ]
         },
         {
           "id": 1,
-          "text": "N\u00e5r en funktion kalder sig selv, kaldes det ___",
+          "text": "Når en funktion kalder sig selv, kaldes det ___",
           "blanks": [
             {
               "options": [
                 "rekursion",
                 "iteration",
-                "l\u00f8kke",
+                "løkke",
                 "cyklus"
               ],
               "correct": "rekursion"
@@ -249,7 +253,7 @@
         },
         {
           "id": 2,
-          "text": "Hvert rekursivt kald opretter en ny ___ p\u00e5 stakken",
+          "text": "Hvert rekursivt kald opretter en ny ___ på stakken",
           "blanks": [
             {
               "options": [
@@ -264,7 +268,7 @@
         },
         {
           "id": 3,
-          "text": "For mange rekursive kald kan for\u00e5rsage ___",
+          "text": "For mange rekursive kald kan forårsage ___",
           "blanks": [
             {
               "options": [
@@ -278,18 +282,19 @@
           ]
         }
       ],
-      "explanation": "Rekursion: funktion kalder sig selv. Basistilf\u00e6lde stopper rekursion. Hvert kald opretter stakramme. For dybt for\u00e5rsager stak overflow.",
+      "explanation": "Rekursion: funktion kalder sig selv. Basistilfælde stopper rekursion. Hvert kald opretter stakramme. For dybt forårsager stak overflow.",
       "hints": [
-        "Basistilf\u00e6lde er stopbetingelsen",
-        "Rekursion = selv-kaldende",
-        "Stakrammer hober sig op",
-        "Stak har begr\u00e6nset st\u00f8rrelse"
+        "Remember that basistilfælde er stopbetingelsen",
+        "Remember that rekursion = selv-kaldende",
+        "Remember that stakrammer hober sig op",
+        "Remember that stak har begrænset størrelse"
       ],
       "tags": [
         "rekursion",
         "terminologi",
         "koncepter"
-      ]
+      ],
+      "hint": "Think about: rekursion: funktion kalder sig selv."
     },
     {
       "id": "fill_en_010",
@@ -361,18 +366,19 @@
           ]
         }
       ],
-      "explanation": "Recursion: function calls itself. Base case stops recursion. Each call creates stack frame. Too deep causes stack overflow.",
+      "explanation": "Recursion: function calls itself. Base case stops recursion. Each call creates stack frame. Too deep causes stack overflow. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case is the stopping condition",
-        "Recursion = self-calling",
+        "Remember that base case is the stopping condition",
+        "Remember that recursion = self-calling",
         "Stack frames pile up",
-        "Stack has limited size"
+        "Remember that stack has limited size"
       ],
       "tags": [
         "recursion",
         "terminology",
         "concepts"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "int_028",
@@ -391,14 +397,15 @@
       "correct_answer": "A",
       "explanation": "12 in binary is 1100, 10 in binary is 1010. Bitwise OR: 1100 | 1010 = 1110 = 14.",
       "hints": [
-        "OR returns 1 when at least one bit is 1",
-        "12 = 1100, 10 = 1010",
-        "Combine the bits where either has a 1"
+        "Remember that oR returns 1 when at least one bit is 1",
+        "Think about 12 = 1100, 10 = 1010",
+        "Remember that combine the bits where either has a 1"
       ],
       "tags": [
         "bitwise",
         "or_operator"
-      ]
+      ],
+      "hint": "Think about: 12 in binary is 1100, 10 in binary is 1010."
     },
     {
       "id": "int_029",
@@ -417,15 +424,16 @@
       "correct_answer": "A",
       "explanation": "Any number XORed with itself equals 0 because XOR returns 1 only when bits differ. Since all bits are identical, all result bits are 0.",
       "hints": [
-        "XOR returns 1 when bits are different",
-        "What happens when you compare identical bits?",
-        "This is a useful property for clearing values"
+        "Remember that xOR returns 1 when bits are different",
+        "Remember that what happens when you compare identical bits?",
+        "Remember that this is a useful property for clearing values"
       ],
       "tags": [
         "bitwise",
         "xor_operator",
         "properties"
-      ]
+      ],
+      "hint": "Think about: any number xored with itself equals 0 because xor returns 1 only when bits differ."
     },
     {
       "id": "int_038",
@@ -444,14 +452,15 @@
       "correct_answer": "A",
       "explanation": "In two's complement, -x = ~x + 1. Here: ~5 = -6, then -6 + 1 = -5. This is how negation works at the bit level.",
       "hints": [
-        "Two's complement negation: invert all bits and add 1",
-        "This is how computers represent negative numbers",
+        "Remember that two's complement negation: invert all bits and add 1",
+        "Remember that this is how computers represent negative numbers",
         "~5 gives -6, then add 1"
       ],
       "tags": [
         "twos_complement",
         "negation"
-      ]
+      ],
+      "hint": "Think about: in two's complement, -x = ~x + 1."
     },
     {
       "id": "int_048",
@@ -468,17 +477,18 @@
         "0"
       ],
       "correct_answer": "A",
-      "explanation": "Signed integer overflow is undefined behavior in C. In practice, on two's complement systems, it typically wraps to INT_MIN (-2147483648), but the standard doesn't guarantee this.",
+      "explanation": "Signed integer overflow is undefined behavior in C. In practice, on two's complement systems, it typically wraps to INT_MIN (-2147483648), but the standard doesn't guarantee this. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "INT_MAX + 1 exceeds the maximum value",
-        "Signed overflow is undefined by the C standard",
-        "Most systems use two's complement wrapping"
+        "Remember that iNT_MAX + 1 exceeds the maximum value",
+        "Remember that signed overflow is undefined by the C standard",
+        "Remember that most systems use two's complement wrapping"
       ],
       "tags": [
         "integer_overflow",
         "undefined_behavior",
         "twos_complement"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "rec_001",
@@ -495,11 +505,11 @@
         "120"
       ],
       "correct_answer": "C",
-      "explanation": "factorial(4) = 4 * factorial(3) = 4 * 3 * factorial(2) = 4 * 3 * 2 * factorial(1) = 4 * 3 * 2 * 1 * factorial(0) = 4 * 3 * 2 * 1 * 1 = 24",
+      "explanation": "Factorial(4) = 4 * factorial(3) = 4 * 3 * factorial(2) = 4 * 3 * 2 * factorial(1) = 4 * 3 * 2 * 1 * factorial(0) = 4 * 3 * 2 * 1 * 1 = 24. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Trace the recursion: 4 * 3 * 2 * 1",
-        "Base case: factorial(0) = 1",
-        "4! = 24"
+        "Remember that trace the recursion: 4 * 3 * 2 * 1",
+        "Remember that base case: factorial(0) = 1",
+        "The solution involves 4! = 24"
       ],
       "tags": [
         "recursion",
@@ -522,17 +532,18 @@
         "742"
       ],
       "correct_answer": "B",
-      "explanation": "sum_digits(742) = 2 + sum_digits(74) = 2 + (4 + sum_digits(7)) = 2 + 4 + 7 = 13.",
+      "explanation": "Sum_digits(742) = 2 + sum_digits(74) = 2 + (4 + sum_digits(7)) = 2 + 4 + 7 = 13. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Split the last digit with n % 10",
-        "Reduce the number with n / 10",
+        "Remember that split the last digit with n % 10",
+        "Remember that reduce the number with n / 10",
         "Add each digit"
       ],
       "tags": [
         "recursion",
         "modulo",
         "digits"
-      ]
+      ],
+      "hint": "Think about: sum_digits(742) = 2 + sum_digits(74) = 2 + (4 + sum_digits(7)) = 2 + 4 + 7 = 13."
     },
     {
       "id": "rec_003",
@@ -549,17 +560,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "There is no base case. f keeps calling itself with decreasing n until the stack overflows.",
+      "explanation": "There is no base case. f keeps calling itself with decreasing n until the stack overflows. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "There is no stopping condition",
-        "Recursion must have a base case",
-        "The stack grows until it crashes"
+        "Remember that there is no stopping condition",
+        "Remember that recursion must have a base case",
+        "Remember that the stack grows until it crashes"
       ],
       "tags": [
         "recursion",
         "base_case",
         "stack_overflow"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_004",
@@ -576,16 +588,17 @@
         "20"
       ],
       "correct_answer": "C",
-      "explanation": "sum_n(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Sum_n(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15.",
       "hints": [
-        "Sum of 1..5 is 15",
-        "Base case returns 0",
+        "Consider sum of 1..5 is 15",
+        "Think about base case returns 0",
         "Adds n down to 0"
       ],
       "tags": [
         "recursion",
         "summation"
-      ]
+      ],
+      "hint": "Think about: sum_n(5) = 5 + 4 + 3 + 2 + 1 + 0 = 15."
     },
     {
       "id": "rec_005",
@@ -602,17 +615,18 @@
         "No output"
       ],
       "correct_answer": "B",
-      "explanation": "The print happens before the recursive call, so it prints 3, then 2, then 1.",
+      "explanation": "The print happens before the recursive call, so it prints 3, then 2, then 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Print happens before recursion",
-        "n decreases each call",
-        "Outputs 3 then 2 then 1"
+        "Remember that print happens before recursion",
+        "Think about n decreases each call",
+        "Remember that outputs 3 then 2 then 1"
       ],
       "tags": [
         "recursion",
         "printing",
         "order"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_006",
@@ -629,17 +643,18 @@
         "No output"
       ],
       "correct_answer": "A",
-      "explanation": "The print happens after the recursive call, so it prints 1, then 2, then 3.",
+      "explanation": "The print happens after the recursive call, so it prints 1, then 2, then 3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Print happens after recursion",
-        "Unwinding prints in ascending order",
-        "Outputs 1 then 2 then 3"
+        "Remember that print happens after recursion",
+        "Remember that unwinding prints in ascending order",
+        "Remember that outputs 1 then 2 then 3"
       ],
       "tags": [
         "recursion",
         "printing",
         "order"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_007",
@@ -656,16 +671,17 @@
         "24"
       ],
       "correct_answer": "C",
-      "explanation": "2^4 = 2 * 2 * 2 * 2 = 16.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. 2^4 = 2 * 2 * 2 * 2 = 16.",
       "hints": [
-        "Multiply 2 by itself 4 times",
-        "Base case exp == 0 returns 1",
-        "Result is 16"
+        "Remember that multiply 2 by itself 4 times",
+        "Remember that base case exp == 0 returns 1",
+        "The solution involves result is 16"
       ],
       "tags": [
         "recursion",
         "power"
-      ]
+      ],
+      "hint": "Think about: 2^4 = 2 * 2 * 2 * 2 = 16."
     },
     {
       "id": "rec_008",
@@ -682,17 +698,18 @@
         "18"
       ],
       "correct_answer": "B",
-      "explanation": "gcd(48,18) is 6 using Euclid's algorithm.",
+      "explanation": "Gcd(48,18) is 6 using Euclid's algorithm. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Use Euclid's algorithm",
-        "48 % 18 = 12",
-        "gcd(18,12) -> gcd(12,6) -> 6"
+        "Consider using Euclid's algorithm",
+        "Think about 48 % 18 = 12",
+        "The solution involves gcd(18,12) -> gcd(12,6) -> 6"
       ],
       "tags": [
         "recursion",
         "gcd",
         "modulo"
-      ]
+      ],
+      "hint": "Think about: gcd(48,18) is 6 using euclid's algorithm."
     },
     {
       "id": "rec_009",
@@ -709,11 +726,11 @@
         "10"
       ],
       "correct_answer": "B",
-      "explanation": "1000 has 4 digits. The function counts one digit per division by 10.",
+      "explanation": "1000 has 4 digits. The function counts one digit per division by 10. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Divide by 10 each call",
-        "Stop when n < 10",
-        "1000 has 4 digits"
+        "Remember that divide by 10 each call",
+        "Think about stop when n < 10",
+        "The solution involves 1000 has 4 digits"
       ],
       "tags": [
         "recursion",
@@ -736,17 +753,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "fact(0) never reaches the base case n == 1, so it recurses indefinitely until the stack overflows.",
+      "explanation": "Fact(0) never reaches the base case n == 1, so it recurses indefinitely until the stack overflows.",
       "hints": [
-        "Base case does not handle n == 0",
-        "n keeps decreasing",
+        "Remember that base case does not handle n == 0",
+        "Think about n keeps decreasing",
         "Stack overflows"
       ],
       "tags": [
         "recursion",
         "base_case",
         "stack_overflow"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_011",
@@ -763,17 +781,18 @@
         "7"
       ],
       "correct_answer": "C",
-      "explanation": "The function adds 1 + 2 + 3 = 6.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. The function adds 1 + 2 + 3 = 6.",
       "hints": [
-        "Sum all elements",
-        "Base case is n == 0",
-        "1 + 2 + 3 = 6"
+        "Consider sum all elements",
+        "Think about base case is n == 0",
+        "The solution involves 1 + 2 + 3 = 6"
       ],
       "tags": [
         "recursion",
         "arrays",
         "sum"
-      ]
+      ],
+      "hint": "Think about: the function adds 1 + 2 + 3 = 6."
     },
     {
       "id": "rec_012",
@@ -790,16 +809,17 @@
         "6"
       ],
       "correct_answer": "D",
-      "explanation": "add_two(3) adds 2 three times: 2 + 2 + 2 = 6.",
+      "explanation": "Add_two(3) adds 2 three times: 2 + 2 + 2 = 6. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case returns 0",
-        "Adds 2 each call",
-        "3 calls yield 6"
+        "Consider base case returns 0",
+        "Think about adds 2 each call",
+        "The solution involves 3 calls yield 6"
       ],
       "tags": [
         "recursion",
         "addition"
-      ]
+      ],
+      "hint": "Think about: add_two(3) adds 2 three times: 2 + 2 + 2 = 6."
     },
     {
       "id": "rec_013",
@@ -816,16 +836,17 @@
         "21"
       ],
       "correct_answer": "B",
-      "explanation": "Fibonacci sequence: 0,1,1,2,3,5,8. fib(6) is 8.",
+      "explanation": "Fibonacci sequence: 0,1,1,2,3,5,8. fib(6) is 8. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Compute fib(6)",
-        "Sequence starts 0,1",
-        "fib(6) = 8"
+        "Consider compute fib(6)",
+        "Think about sequence starts 0,1",
+        "The solution involves fib(6) = 8"
       ],
       "tags": [
         "recursion",
         "fibonacci"
-      ]
+      ],
+      "hint": "Think about: fibonacci sequence: 0,1,1,2,3,5,8."
     },
     {
       "id": "rec_014",
@@ -842,16 +863,17 @@
         "6"
       ],
       "correct_answer": "B",
-      "explanation": "The function adds 1 four times, so it returns 4.",
+      "explanation": "The function adds 1 four times, so it returns 4. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "One is added each call",
-        "Base case at n == 0",
-        "Four calls yield 4"
+        "Remember that one is added each call",
+        "Think about base case at n == 0",
+        "The solution involves four calls yield 4"
       ],
       "tags": [
         "recursion",
         "counting"
-      ]
+      ],
+      "hint": "Think about: the function adds 1 four times, so it returns 4."
     },
     {
       "id": "rec_015",
@@ -868,17 +890,18 @@
         "5"
       ],
       "correct_answer": "B",
-      "explanation": "f(5) -> 1 + f(3) -> 1 + 1 + f(1) -> 1 + 1 + 1 + f(-1) = 3.",
+      "explanation": "F(5) -> 1 + f(3) -> 1 + 1 + f(1) -> 1 + 1 + 1 + f(-1) = 3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "n decreases by 2",
-        "Count how many calls until n <= 0",
-        "Result is 3"
+        "Consider n decreases by 2",
+        "Remember that count how many calls until n <= 0",
+        "The solution involves result is 3"
       ],
       "tags": [
         "recursion",
         "counting",
         "step"
-      ]
+      ],
+      "hint": "Think about: f(5) -> 1 + f(3) -> 1 + 1 + f(1) -> 1 + 1 + 1 + f(-1) = 3."
     },
     {
       "id": "rec_016",
@@ -895,17 +918,18 @@
         "To initialize variables"
       ],
       "correct_answer": "B",
-      "explanation": "Base case is the stopping condition that prevents infinite recursion.",
+      "explanation": "Base case is the stopping condition that prevents infinite recursion. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Prevents infinite calls",
-        "Stopping condition",
-        "Returns without recursing"
+        "Remember that prevents infinite calls",
+        "Think about stopping condition",
+        "Remember that returns without recursing"
       ],
       "tags": [
         "recursion",
         "base_case",
         "concepts"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_017",
@@ -922,17 +946,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Each recursive call uses stack space. Too many calls cause stack overflow.",
+      "explanation": "Each recursive call uses stack space. Too many calls cause stack overflow. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Each call creates stack frame",
-        "Stack has limited size",
-        "Very deep recursion dangerous"
+        "Remember that each call creates stack frame",
+        "Remember that stack has limited size",
+        "Remember that very deep recursion dangerous"
       ],
       "tags": [
         "recursion",
         "stack_overflow",
         "limits"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_018",
@@ -949,17 +974,18 @@
         "Neither"
       ],
       "correct_answer": "A",
-      "explanation": "Option A is tail-recursive (recursive call is last operation). Option B adds after recursion.",
+      "explanation": "Option A is tail-recursive (recursive call is last operation). Option B adds after recursion. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Tail recursion = recursive call is last thing",
-        "Option A: nothing after recursive call",
-        "Option B: addition after recursive call"
+        "Remember that tail recursion = recursive call is last thing",
+        "Remember that option A: nothing after recursive call",
+        "Remember that option B: addition after recursive call"
       ],
       "tags": [
         "recursion",
         "tail_recursion",
         "optimization"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_019",
@@ -976,17 +1002,18 @@
         "Stack overflow"
       ],
       "correct_answer": "B",
-      "explanation": "Mutual recursion: is_even calls is_odd, is_odd calls is_even. is_even(4) \u2192 is_odd(3) \u2192 is_even(2) \u2192 is_odd(1) \u2192 is_even(0) \u2192 1.",
+      "explanation": "Mutual recursion: is_even calls is_odd, is_odd calls is_even. is_even(4) → is_odd(3) → is_even(2) → is_odd(1) → is_even(0) → 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Functions call each other",
-        "Trace: 4\u21923\u21922\u21921\u21920",
-        "4 is even, returns 1"
+        "Remember that functions call each other",
+        "Think about trace: 4→3→2→1→0",
+        "The solution involves 4 is even, returns 1"
       ],
       "tags": [
         "recursion",
         "mutual_recursion",
         "tracing"
-      ]
+      ],
+      "hint": "Think about: mutual recursion: is_even calls is_odd, is_odd calls is_even."
     },
     {
       "id": "rec_020",
@@ -1003,17 +1030,18 @@
         "No base case needed"
       ],
       "correct_answer": "C",
-      "explanation": "Recursion is often more natural and elegant for tree, graph, and divide-and-conquer problems. But uses more memory.",
+      "explanation": "Recursion is often more natural and elegant for tree, graph, and divide-and-conquer problems. But uses more memory. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Not about speed or memory",
+        "Remember that not about speed or memory",
         "Think about problem structure",
-        "Trees naturally recursive"
+        "Remember that trees naturally recursive"
       ],
       "tags": [
         "recursion",
         "iteration",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: recursion is often more natural and elegant for tree, graph, and divide-and-conquer problems."
     },
     {
       "id": "rec_021",
@@ -1030,17 +1058,18 @@
         "No output"
       ],
       "correct_answer": "B",
-      "explanation": "Prints from last char to first: c, b, a. Output is \"cba\".",
+      "explanation": "Prints from last char to first: c, b, a. Output is \"cba\". Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Starts at last index",
-        "Decrements each call",
+        "Consider starts at last index",
+        "Think about decrements each call",
         "Prints backwards"
       ],
       "tags": [
         "recursion",
         "strings",
         "reverse"
-      ]
+      ],
+      "hint": "Think about: prints from last char to first: c, b, a."
     },
     {
       "id": "rec_022",
@@ -1057,17 +1086,18 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "Recursively searches array for target. Finds 5, returns 1 (true).",
+      "explanation": "Recursively searches array for target. Finds 5, returns 1 (true). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Searches from end",
-        "Finds 5 in array",
-        "Returns 1 (found)"
+        "Consider searches from end",
+        "Think about finds 5 in array",
+        "The solution involves returns 1 (found)"
       ],
       "tags": [
         "recursion",
         "arrays",
         "search"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_023",
@@ -1084,10 +1114,10 @@
         "Prime factorization"
       ],
       "correct_answer": "B",
-      "explanation": "Euclid's algorithm finds greatest common divisor using modulo and recursion.",
+      "explanation": "Euclid's algorithm finds greatest common divisor using modulo and recursion. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Classic GCD algorithm",
-        "Uses modulo",
+        "Remember that classic GCD algorithm",
+        "Think about uses modulo",
         "Very efficient"
       ],
       "tags": [
@@ -1095,7 +1125,8 @@
         "gcd",
         "euclid",
         "algorithms"
-      ]
+      ],
+      "hint": "Think about what the modulo operator (%) returns - the remainder of division."
     },
     {
       "id": "rec_024",
@@ -1112,16 +1143,17 @@
         "No output"
       ],
       "correct_answer": "A",
-      "explanation": "The recursive call happens before printing, so it prints 1,2,3.",
+      "explanation": "The recursive call happens before printing, so it prints 1,2,3. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Print after recursion",
-        "Unwinds in ascending order",
-        "Outputs 123"
+        "Remember that print after recursion",
+        "Remember that unwinds in ascending order",
+        "The solution involves outputs 123"
       ],
       "tags": [
         "recursion",
         "printing"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_025",
@@ -1138,16 +1170,17 @@
         "No output"
       ],
       "correct_answer": "B",
-      "explanation": "The function prints before the recursive call, so it prints 3,2,1.",
+      "explanation": "The function prints before the recursive call, so it prints 3,2,1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Print before recursion",
-        "Outputs descending",
-        "321"
+        "Remember that print before recursion",
+        "Think about outputs descending",
+        "The solution involves 321"
       ],
       "tags": [
         "recursion",
         "printing"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_026",
@@ -1164,16 +1197,17 @@
         "15"
       ],
       "correct_answer": "C",
-      "explanation": "sum_sq(3) = 9 + 4 + 1 = 14.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Sum_sq(3) = 9 + 4 + 1 = 14.",
       "hints": [
-        "Add 3^2, 2^2, 1^2",
-        "9+4+1",
-        "14"
+        "Consider add 3^2, 2^2, 1^2",
+        "Think about 9+4+1",
+        "The solution involves 14"
       ],
       "tags": [
         "recursion",
         "math"
-      ]
+      ],
+      "hint": "Think about: sum_sq(3) = 9 + 4 + 1 = 14."
     },
     {
       "id": "rec_027",
@@ -1190,16 +1224,17 @@
         "No output"
       ],
       "correct_answer": "B",
-      "explanation": "Each call prints the last digit, then recurses on the rest. 123 prints 3,2,1.",
+      "explanation": "Each call prints the last digit, then recurses on the rest. 123 prints 3,2,1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "n % 10 gives last digit",
-        "Recurse on n/10",
-        "Outputs 321"
+        "Consider n % 10 gives last digit",
+        "Think about recurse on n/10",
+        "The solution involves outputs 321"
       ],
       "tags": [
         "recursion",
         "digits"
-      ]
+      ],
+      "hint": "Think about: each call prints the last digit, then recurses on the rest."
     },
     {
       "id": "rec_028",
@@ -1216,16 +1251,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "Any number to the power of 0 is 1, and the base case returns 1.",
+      "explanation": "Any number to the power of 0 is 1, and the base case returns 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "exp == 0 base case",
-        "Return 1",
-        "5^0 = 1"
+        "Consider exp == 0 base case",
+        "Think about return 1",
+        "The solution involves 5^0 = 1"
       ],
       "tags": [
         "recursion",
         "power"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_029",
@@ -1242,16 +1278,17 @@
         "It returns incorrect sums"
       ],
       "correct_answer": "B",
-      "explanation": "The recursive call is the last operation, so it is tail-recursive.",
+      "explanation": "The recursive call is the last operation, so it is tail-recursive. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Return is the recursive call",
-        "No work after call",
+        "Remember that return is the recursive call",
+        "Think about no work after call",
         "Tail recursion"
       ],
       "tags": [
         "recursion",
         "tail_recursion"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_030",
@@ -1268,16 +1305,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "The base case returns 1 when n <= 1.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. The base case returns 1 when n <= 1.",
       "hints": [
-        "n <= 1 returns 1",
-        "fact(1) = 1",
+        "Consider n <= 1 returns 1",
+        "Think about fact(1) = 1",
         "Base case"
       ],
       "tags": [
         "recursion",
         "factorial"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_031",
@@ -1294,11 +1332,11 @@
         "12"
       ],
       "correct_answer": "D",
-      "explanation": "2 + 4 + 6 = 12.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. 2 + 4 + 6 = 12.",
       "hints": [
-        "Sum all elements",
-        "2+4+6",
-        "Result is 12"
+        "Consider sum all elements",
+        "Think about 2+4+6",
+        "The solution involves result is 12"
       ],
       "tags": [
         "recursion",
@@ -1320,16 +1358,17 @@
         "13"
       ],
       "correct_answer": "B",
-      "explanation": "Fibonacci sequence: 0,1,1,2,3,5. fib(5) = 5.",
+      "explanation": "Fibonacci sequence: 0,1,1,2,3,5. fib(5) = 5. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Sequence starts 0,1",
-        "fib(5)=5",
+        "Consider sequence starts 0,1",
+        "Think about fib(5)=5",
         "Compute recursively"
       ],
       "tags": [
         "recursion",
         "fibonacci"
-      ]
+      ],
+      "hint": "Think about: fibonacci sequence: 0,1,1,2,3,5."
     },
     {
       "id": "rec_033",
@@ -1346,11 +1385,11 @@
         "5"
       ],
       "correct_answer": "B",
-      "explanation": "999 has 3 digits.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. 999 has 3 digits.",
       "hints": [
-        "Divide by 10 each step",
-        "999 -> 99 -> 9",
-        "Count is 3"
+        "Remember that divide by 10 each step",
+        "Think about 999 -> 99 -> 9",
+        "The solution involves count is 3"
       ],
       "tags": [
         "recursion",
@@ -1372,16 +1411,17 @@
         "Returns 1"
       ],
       "correct_answer": "C",
-      "explanation": "There is no base case, so it recurses forever until the stack overflows.",
+      "explanation": "There is no base case, so it recurses forever until the stack overflows. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "No base case",
-        "Recurses indefinitely",
+        "Consider no base case",
+        "Remember that recurses indefinitely",
         "Stack overflow"
       ],
       "tags": [
         "recursion",
         "base_case"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_035",
@@ -1398,11 +1438,11 @@
         "12"
       ],
       "correct_answer": "C",
-      "explanation": "4 + 3 + 2 + 1 = 10.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. 4 + 3 + 2 + 1 = 10.",
       "hints": [
-        "Sum from 1 to 4",
-        "4+3+2+1",
-        "Result is 10"
+        "Consider sum from 1 to 4",
+        "Think about 4+3+2+1",
+        "The solution involves result is 10"
       ],
       "tags": [
         "recursion",
@@ -1424,16 +1464,17 @@
         "0"
       ],
       "correct_answer": "A",
-      "explanation": "min2 returns the smaller value: 3.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Min2 returns the smaller value: 3.",
       "hints": [
-        "Compare 7 and 3",
-        "Return smaller",
-        "Result is 3"
+        "Consider compare 7 and 3",
+        "Think about return smaller",
+        "The solution involves result is 3"
       ],
       "tags": [
         "recursion",
         "min"
-      ]
+      ],
+      "hint": "Think about: min2 returns the smaller value: 3."
     },
     {
       "id": "rec_037",
@@ -1450,16 +1491,17 @@
         "5"
       ],
       "correct_answer": "B",
-      "explanation": "The length of \"hey\" is 3.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. The length of \"hey\" is 3.",
       "hints": [
-        "Count characters",
-        "hey has 3 letters",
-        "Result is 3"
+        "Consider count characters",
+        "Think about hey has 3 letters",
+        "The solution involves result is 3"
       ],
       "tags": [
         "recursion",
         "strings"
-      ]
+      ],
+      "hint": "Think about: the length of \"hey\" is 3."
     },
     {
       "id": "rec_038",
@@ -1476,16 +1518,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "4 is even, so is_even(4) returns 1.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. 4 is even, so is_even(4) returns 1.",
       "hints": [
-        "Even numbers return 1",
-        "Mutual recursion",
+        "Remember that even numbers return 1",
+        "Think about mutual recursion",
         "is_even(4) is true"
       ],
       "tags": [
         "recursion",
         "mutual_recursion"
-      ]
+      ],
+      "hint": "Think about: 4 is even, so is_even(4) returns 1."
     },
     {
       "id": "rec_039",
@@ -1502,16 +1545,17 @@
         "Number of recursive calls"
       ],
       "correct_answer": "B",
-      "explanation": "The function returns the index if found, otherwise -1.",
+      "explanation": "The function returns the index if found, otherwise -1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Classic binary search",
-        "Returns index",
-        "Returns -1 when not found"
+        "Remember that classic binary search",
+        "Think about returns index",
+        "Remember that returns -1 when not found"
       ],
       "tags": [
         "recursion",
         "binary_search"
-      ]
+      ],
+      "hint": "Think about: the function returns the index if found, otherwise -1."
     },
     {
       "id": "rec_040",
@@ -1528,16 +1572,17 @@
         "0"
       ],
       "correct_answer": "B",
-      "explanation": "max2 returns the larger value: 9.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Max2 returns the larger value: 9.",
       "hints": [
-        "Compare 5 and 9",
-        "Return larger",
-        "Result is 9"
+        "Consider compare 5 and 9",
+        "Think about return larger",
+        "The solution involves result is 9"
       ],
       "tags": [
         "recursion",
         "max"
-      ]
+      ],
+      "hint": "Think about: max2 returns the larger value: 9."
     },
     {
       "id": "rec_041",
@@ -1554,17 +1599,18 @@
         "15"
       ],
       "correct_answer": "B",
-      "explanation": "Tower of Hanoi with 3 disks requires 2^3 - 1 = 7 moves. hanoi_moves(3) = 2*hanoi_moves(2) + 1 = 2*(2*hanoi_moves(1) + 1) + 1 = 2*(2*1 + 1) + 1 = 2*3 + 1 = 7.",
+      "explanation": "Tower of Hanoi with 3 disks requires 2^3 - 1 = 7 moves. hanoi_moves(3) = 2*hanoi_moves(2) + 1 = 2*(2*hanoi_moves(1) + 1) + 1 = 2*(2*1 + 1) + 1 = 2*3 + 1 = 7. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Formula: 2^n - 1 moves for n disks",
-        "Recursive relation: T(n) = 2*T(n-1) + 1",
-        "For 3 disks: 7 moves"
+        "Remember that formula: 2^n - 1 moves for n disks",
+        "Remember that recursive relation: T(n) = 2*T(n-1) + 1",
+        "The solution involves for 3 disks: 7 moves"
       ],
       "tags": [
         "recursion",
         "tower_of_hanoi",
         "divide_and_conquer"
-      ]
+      ],
+      "hint": "Think about: tower of hanoi with 3 disks requires 2^3 - 1 = 7 moves."
     },
     {
       "id": "rec_046",
@@ -1581,18 +1627,19 @@
         "No improvement"
       ],
       "correct_answer": "C",
-      "explanation": "Regular recursive Fibonacci is O(2^n) due to repeated calculations. Memoization stores results, reducing it to O(n) as each fib(i) is computed only once.",
+      "explanation": "Regular recursive Fibonacci is O(2^n) due to repeated calculations. Memoization stores results, reducing it to O(n) as each fib(i) is computed only once. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Regular Fibonacci is exponential",
-        "Memoization avoids recomputation",
-        "Each subproblem solved once"
+        "Remember that regular Fibonacci is exponential",
+        "Remember that memoization avoids recomputation",
+        "Remember that each subproblem solved once"
       ],
       "tags": [
         "recursion",
         "memoization",
         "dynamic_programming",
         "fibonacci"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_047",
@@ -1609,17 +1656,18 @@
         "Finds the median element"
       ],
       "correct_answer": "B",
-      "explanation": "This is the classic divide-and-conquer merge sort: divide array in half, recursively sort each half, then merge the sorted halves.",
+      "explanation": "This is the classic divide-and-conquer merge sort: divide array in half, recursively sort each half, then merge the sorted halves. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Divide and conquer strategy",
-        "Recursive calls on halves",
-        "Merge combines results"
+        "Remember that divide and conquer strategy",
+        "Remember that recursive calls on halves",
+        "Remember that merge combines results"
       ],
       "tags": [
         "recursion",
         "merge_sort",
         "divide_and_conquer"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_048",
@@ -1636,17 +1684,18 @@
         "Count array elements"
       ],
       "correct_answer": "A",
-      "explanation": "Quick sort partitions array around pivot, then recursively sorts elements smaller than pivot (left) and larger than pivot (right).",
+      "explanation": "Quick sort partitions array around pivot, then recursively sorts elements smaller than pivot (left) and larger than pivot (right). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Partition divides by pivot",
-        "Recursive calls on sub-arrays",
+        "Remember that partition divides by pivot",
+        "Remember that recursive calls on sub-arrays",
         "Divide and conquer"
       ],
       "tags": [
         "recursion",
         "quick_sort",
         "divide_and_conquer"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_050",
@@ -1663,11 +1712,11 @@
         "Divide and conquer"
       ],
       "correct_answer": "C",
-      "explanation": "This is classic backtracking: try placing queen, recurse; if it fails, undo (backtrack) and try next position.",
+      "explanation": "This is classic backtracking: try placing queen, recurse; if it fails, undo (backtrack) and try next position. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Tries options recursively",
-        "Undoes choices that fail",
-        "Backtracking pattern"
+        "Remember that tries options recursively",
+        "Remember that undoes choices that fail",
+        "The solution involves backtracking pattern"
       ],
       "tags": [
         "recursion",
@@ -1690,10 +1739,10 @@
         "Number of subsets"
       ],
       "correct_answer": "B",
-      "explanation": "This checks if any subset of array elements sums to the target sum, using recursive backtracking to try including/excluding each element.",
+      "explanation": "This checks if any subset of array elements sums to the target sum, using recursive backtracking to try including/excluding each element. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Tries including/excluding elements",
-        "Checks if sum achievable",
+        "Remember that tries including/excluding elements",
+        "Remember that checks if sum achievable",
         "Returns true/false"
       ],
       "tags": [
@@ -1701,7 +1750,8 @@
         "backtracking",
         "subset_sum",
         "dynamic_programming"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_052",
@@ -1718,17 +1768,18 @@
         "Neither version"
       ],
       "correct_answer": "A",
-      "explanation": "Version A is tail recursive (recursive call is last operation), allowing tail call optimization to reuse stack frame. Version B performs addition after recursion, preventing optimization.",
+      "explanation": "Version A is tail recursive (recursive call is last operation), allowing tail call optimization to reuse stack frame. Version B performs addition after recursion, preventing optimization. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Tail recursion = last operation is recursive call",
-        "Version A has nothing after recursion",
-        "Version B adds after returning"
+        "Remember that tail recursion = last operation is recursive call",
+        "Remember that version A has nothing after recursion",
+        "Remember that version B adds after returning"
       ],
       "tags": [
         "recursion",
         "tail_recursion",
         "optimization"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_053",
@@ -1745,17 +1796,18 @@
         "720"
       ],
       "correct_answer": "C",
-      "explanation": "This is tail-recursive factorial with accumulator. fact_tail(5,1) = fact_tail(4,5) = fact_tail(3,20) = fact_tail(2,60) = fact_tail(1,120) = 120.",
+      "explanation": "This is tail-recursive factorial with accumulator. fact_tail(5,1) = fact_tail(4,5) = fact_tail(3,20) = fact_tail(2,60) = fact_tail(1,120) = 120. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Accumulator pattern",
-        "Tail recursive",
-        "5! = 120"
+        "Consider accumulator pattern",
+        "Think about tail recursive",
+        "The solution involves 5! = 120"
       ],
       "tags": [
         "recursion",
         "tail_recursion",
         "factorial"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_054",
@@ -1772,17 +1824,18 @@
         "int s=0; for(int i=0; i<n; i++) s=i;"
       ],
       "correct_answer": "A",
-      "explanation": "The recursive function sums from n down to 1. The equivalent iteration is: s=0; for(i=n; i>0; i--) s+=i;",
+      "explanation": "The recursive function sums from n down to 1. The equivalent iteration is: s=0; for(i=n; i>0; i--) s+=i;. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Recursion sums n + (n-1) + ... + 1",
-        "Loop should add each value",
-        "Start from n, decrement"
+        "Remember that recursion sums n + (n-1) + ... + 1",
+        "Remember that loop should add each value",
+        "Remember that start from n, decrement"
       ],
       "tags": [
         "recursion",
         "iteration",
         "conversion"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_055",
@@ -1799,17 +1852,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Each recursive call consumes stack space. With 100,000 calls, the stack will overflow, causing segmentation fault or stack overflow error.",
+      "explanation": "Each recursive call consumes stack space. With 100,000 calls, the stack will overflow, causing segmentation fault or stack overflow error. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Each call uses stack frame",
-        "Stack has size limit",
+        "Remember that each call uses stack frame",
+        "Think about stack has size limit",
         "Too many calls crash"
       ],
       "tags": [
         "recursion",
         "stack_overflow",
         "limits"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_056",
@@ -1826,17 +1880,18 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "\"racecar\" is a palindrome. The function compares characters from both ends moving inward, returns 1 (true) for palindrome.",
+      "explanation": "\"racecar\" is a palindrome. The function compares characters from both ends moving inward, returns 1 (true) for palindrome. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Compare from both ends",
-        "racecar reads same forwards/backwards",
-        "Returns 1 for palindrome"
+        "Remember that compare from both ends",
+        "Think about racecar reads same forwards/backwards",
+        "The solution involves remember that returns 1 for palindrome"
       ],
       "tags": [
         "recursion",
         "strings",
         "palindrome"
-      ]
+      ],
+      "hint": "Think about: \"racecar\" is a palindrome."
     },
     {
       "id": "rec_057",
@@ -1853,10 +1908,10 @@
         "9"
       ],
       "correct_answer": "C",
-      "explanation": "Ackermann(2,2) = Ackermann(1, Ackermann(2,1)) = Ackermann(1, Ackermann(1, Ackermann(2,0))) = Ackermann(1, Ackermann(1, Ackermann(1,1))) = ... = 7.",
+      "explanation": "Ackermann(2,2) = Ackermann(1, Ackermann(2,1)) = Ackermann(1, Ackermann(1, Ackermann(2,0))) = Ackermann(1, Ackermann(1, Ackermann(1,1))) = . . = 7. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Double recursion",
-        "Very fast growing function",
+        "Consider double recursion",
+        "Remember that very fast growing function",
         "Trace carefully"
       ],
       "tags": [
@@ -1880,17 +1935,18 @@
         "Counts tree nodes"
       ],
       "correct_answer": "C",
-      "explanation": "Recursively inserts value into BST: if empty, create node; if value < root, insert left; if value >= root, insert right.",
+      "explanation": "Recursively inserts value into BST: if empty, create node; if value < root, insert left; if value >= root, insert right. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Creates new node when NULL",
-        "Chooses left/right based on comparison",
-        "Maintains BST ordering"
+        "Remember that creates new node when NULL",
+        "Remember that chooses left/right based on comparison",
+        "Remember that maintains BST ordering"
       ],
       "tags": [
         "recursion",
         "tree_traversal",
         "binary_search_tree"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_059",
@@ -1907,17 +1963,18 @@
         "Undefined"
       ],
       "correct_answer": "A",
-      "explanation": "Base case: if n <= 1 return n. So fib(0) returns 0.",
+      "explanation": "Base case: if n <= 1 return n. So fib(0) returns 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Check base case condition",
-        "n=0 is <= 1",
-        "Returns n which is 0"
+        "Remember that check base case condition",
+        "Think about n=0 is <= 1",
+        "The solution involves returns n which is 0"
       ],
       "tags": [
         "recursion",
         "fibonacci",
         "base_case"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "rec_060",
@@ -1934,11 +1991,11 @@
         "INT_MAX"
       ],
       "correct_answer": "B",
-      "explanation": "Memoization arrays should be initialized to a sentinel value (typically -1) that cannot be a valid result, to distinguish computed from uncomputed values.",
+      "explanation": "Memoization arrays should be initialized to a sentinel value (typically -1) that cannot be a valid result, to distinguish computed from uncomputed values. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Need to detect uncomputed values",
-        "Fibonacci never returns negative",
-        "Use -1 as sentinel"
+        "Remember that need to detect uncomputed values",
+        "Remember that fibonacci never returns negative",
+        "The solution involves consider using -1 as sentinel"
       ],
       "tags": [
         "recursion",
@@ -1961,11 +2018,11 @@
         "Sorted output"
       ],
       "correct_answer": "B",
-      "explanation": "This generates all permutations using backtracking: swap elements, recurse, then backtrack (undo swap) to try next permutation.",
+      "explanation": "This generates all permutations using backtracking: swap elements, recurse, then backtrack (undo swap) to try next permutation. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Swaps to try different arrangements",
-        "Backtracks after each try",
-        "Generates all orderings"
+        "Remember that swaps to try different arrangements",
+        "Remember that backtracks after each try",
+        "Remember that generates all orderings"
       ],
       "tags": [
         "recursion",
@@ -1988,16 +2045,17 @@
         "Stack overflow"
       ],
       "correct_answer": "B",
-      "explanation": "5 is odd, so is_odd(5) should return 1. Trace: is_odd(5) -> is_even(4) -> is_odd(3) -> is_even(2) -> is_odd(1) -> is_even(0) -> 1.",
+      "explanation": "5 is odd, so is_odd(5) should return 1. Trace: is_odd(5) -> is_even(4) -> is_odd(3) -> is_even(2) -> is_odd(1) -> is_even(0) -> 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Mutual recursion pattern",
-        "5 is odd",
-        "Returns 1 (true)"
+        "Remember that mutual recursion pattern",
+        "Think about 5 is odd",
+        "The solution involves returns 1 (true)"
       ],
       "tags": [
         "recursion",
         "mutual_recursion"
-      ]
+      ],
+      "hint": "Think about: 5 is odd, so is_odd(5) should return 1."
     },
     {
       "id": "rec_064",
@@ -2014,11 +2072,11 @@
         "int a=n; while(n>0) n--; return a;"
       ],
       "correct_answer": "A",
-      "explanation": "Iterative Fibonacci maintains two previous values (a, b) and computes next as their sum, similar to the recurrence fib(n) = fib(n-1) + fib(n-2).",
+      "explanation": "Iterative Fibonacci maintains two previous values (a, b) and computes next as their sum, similar to the recurrence fib(n) = fib(n-1) + fib(n-2). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Fibonacci needs two previous values",
-        "Update a and b each iteration",
-        "Option A matches pattern"
+        "Remember that fibonacci needs two previous values",
+        "Remember that update a and b each iteration",
+        "Remember that option A matches pattern"
       ],
       "tags": [
         "recursion",
@@ -2042,10 +2100,10 @@
         "Greedy algorithm"
       ],
       "correct_answer": "C",
-      "explanation": "This uses backtracking: mark cell as part of path, try moving right/down, if both fail, unmark cell (backtrack) and return false.",
+      "explanation": "This uses backtracking: mark cell as part of path, try moving right/down, if both fail, unmark cell (backtrack) and return false. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Tries moves recursively",
-        "Undoes failed attempts",
+        "Remember that tries moves recursively",
+        "Remember that undoes failed attempts",
         "Classic backtracking"
       ],
       "tags": [
@@ -2104,17 +2162,18 @@
           ]
         }
       ],
-      "explanation": "This function recursively computes a value by adding 2*x at each level until reaching the base case (x < 0). The base case returns -1, then each level adds 2*x as it unwinds.",
+      "explanation": "This function recursively computes a value by adding 2*x at each level until reaching the base case (x < 0). The base case returns -1, then each level adds 2*x as it unwinds. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Start with the base case: what happens when x < 0?",
-        "For each recursive call, x decreases by 1",
-        "The function adds 2*x as it returns from each level"
+        "Remember that start with the base case: what happens when x < 0?",
+        "Remember that for each recursive call, x decreases by 1",
+        "Remember that the function adds 2*x as it returns from each level"
       ],
       "tags": [
         "recursion",
         "tracing",
         "base_case"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_002",
@@ -2159,17 +2218,18 @@
           ]
         }
       ],
-      "explanation": "Factorial is a classic recursive function. It multiplies n by the factorial of (n-1) until reaching the base case where n <= 1, which returns 1.",
+      "explanation": "Factorial is a classic recursive function. It multiplies n by the factorial of (n-1) until reaching the base case where n <= 1, which returns 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case: factorial(0) = factorial(1) = 1",
-        "Recursive case: n! = n * (n-1)!",
+        "Remember that base case: factorial(0) = factorial(1) = 1",
+        "Remember that recursive case: n! = n * (n-1)!",
         "5! = 5 * 4 * 3 * 2 * 1 = 120"
       ],
       "tags": [
         "recursion",
         "factorial",
         "base_case"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_003",
@@ -2214,17 +2274,18 @@
           ]
         }
       ],
-      "explanation": "Fibonacci recursively computes by adding the two previous numbers. Base cases are fib(0)=0 and fib(1)=1. Note how fib(2) is calculated twice - this is inefficient but demonstrates the recursive structure.",
+      "explanation": "Fibonacci recursively computes by adding the two previous numbers. Base cases are fib(0)=0 and fib(1)=1. Note how fib(2) is calculated twice - this is inefficient but demonstrates the recursive structure. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base cases: fib(0) = 0, fib(1) = 1",
-        "Recursive case: fib(n) = fib(n-1) + fib(n-2)",
-        "The function branches into two recursive calls at each step"
+        "Remember that base cases: fib(0) = 0, fib(1) = 1",
+        "Remember that recursive case: fib(n) = fib(n-1) + fib(n-2)",
+        "Remember that the function branches into two recursive calls at each step"
       ],
       "tags": [
         "recursion",
         "fibonacci",
         "multiple_recursion"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_004",
@@ -2273,17 +2334,18 @@
           ]
         }
       ],
-      "explanation": "The function adds n to the sum of numbers below it until reaching 0. It accumulates the total as the recursion unwinds.",
+      "explanation": "The function adds n to the sum of numbers below it until reaching 0. It accumulates the total as the recursion unwinds. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case returns 0",
-        "Each call adds n and decreases by 1",
+        "Consider base case returns 0",
+        "Remember that each call adds n and decreases by 1",
         "Sum of 1..5 is 15"
       ],
       "tags": [
         "recursion",
         "tracing",
         "summation"
-      ]
+      ],
+      "hint": "Think about: the function adds n to the sum of numbers below it until reaching 0."
     },
     {
       "id": "fnr_trace_005",
@@ -2332,17 +2394,18 @@
           ]
         }
       ],
-      "explanation": "This function sums numbers from 1 to n. Base case: sum_to_n(0) = 0. Recursive: n + sum_to_n(n-1).",
+      "explanation": "This function sums numbers from 1 to n. Base case: sum_to_n(0) = 0. Recursive: n + sum_to_n(n-1). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case returns 0",
-        "Each level adds n to the sum of smaller numbers",
+        "Consider base case returns 0",
+        "Remember that each level adds n to the sum of smaller numbers",
         "sum_to_n(3) = 3 + 2 + 1 + 0 = 6"
       ],
       "tags": [
         "recursion",
         "sum",
         "tracing"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_005",
@@ -2378,17 +2441,18 @@
           ]
         }
       ],
-      "explanation": "pow2 computes 2^n by multiplying by 2 on each recursive step until it reaches n = 0.",
+      "explanation": "Pow2 computes 2^n by multiplying by 2 on each recursive step until it reaches n = 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case returns 1",
-        "Each call multiplies by 2",
+        "Consider base case returns 1",
+        "Remember that each call multiplies by 2",
         "2^4 = 16"
       ],
       "tags": [
         "recursion",
         "tracing",
         "power"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "fnr_trace_006",
@@ -2433,17 +2497,18 @@
           ]
         }
       ],
-      "explanation": "Euclidean algorithm for GCD. Base case: if b is 0, return a. Recursive: gcd(b, a mod b).",
+      "explanation": "Euclidean algorithm for GCD. Base case: if b is 0, return a. Recursive: gcd(b, a mod b). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case: when b is 0, a is the GCD",
-        "Recursive case swaps parameters: gcd(b, a % b)",
-        "Each step reduces the problem size"
+        "Remember that base case: when b is 0, a is the GCD",
+        "Remember that recursive case swaps parameters: gcd(b, a % b)",
+        "Remember that each step reduces the problem size"
       ],
       "tags": [
         "recursion",
         "gcd",
         "euclidean"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_006",
@@ -2473,17 +2538,18 @@
           ]
         }
       ],
-      "explanation": "The function adds 2 for each step down to 0.",
+      "explanation": "The function adds 2 for each step down to 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case returns 0",
-        "Each call adds 2",
+        "Consider base case returns 0",
+        "Think about each call adds 2",
         "double_n(2) = 4"
       ],
       "tags": [
         "recursion",
         "tracing",
         "addition"
-      ]
+      ],
+      "hint": "Think about: the function adds 2 for each step down to 0."
     },
     {
       "id": "fnr_trace_007",
@@ -2523,17 +2589,18 @@
           ]
         }
       ],
-      "explanation": "Ackermann function has multiple base cases and nested recursion. Grows extremely fast.",
+      "explanation": "Ackermann function has multiple base cases and nested recursion. Grows extremely fast. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Three cases: m==0, n==0, or nested recursion",
-        "Base case: m==0 returns n+1",
-        "Very deep recursion for larger inputs"
+        "Remember that three cases: m==0, n==0, or nested recursion",
+        "Remember that base case: m==0 returns n+1",
+        "Remember that very deep recursion for larger inputs"
       ],
       "tags": [
         "recursion",
         "ackermann",
         "nested"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_007",
@@ -2565,17 +2632,18 @@
           ]
         }
       ],
-      "explanation": "The function multiplies base by itself exp times until exp reaches 0.",
+      "explanation": "The function multiplies base by itself exp times until exp reaches 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case exp == 0",
-        "Each call multiplies by base",
+        "Consider base case exp == 0",
+        "Remember that each call multiplies by base",
         "2^3 = 8"
       ],
       "tags": [
         "recursion",
         "tracing",
         "power"
-      ]
+      ],
+      "hint": "Think about: the function multiplies base by itself exp times until exp reaches 0."
     },
     {
       "id": "fnr_trace_008",
@@ -2613,17 +2681,18 @@
           ]
         }
       ],
-      "explanation": "Recursive string reversal: recurse to end, then print characters as stack unwinds.",
+      "explanation": "Recursive string reversal: recurse to end, then print characters as stack unwinds. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case: null terminator",
-        "Print happens AFTER recursive call",
-        "Stack unwinds in reverse order"
+        "Remember that base case: null terminator",
+        "Remember that print happens AFTER recursive call",
+        "Remember that stack unwinds in reverse order"
       ],
       "tags": [
         "recursion",
         "strings",
         "reverse"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_008",
@@ -2651,17 +2720,18 @@
           ]
         }
       ],
-      "explanation": "The function splits the last digit using % 10 and recurses on n / 10.",
+      "explanation": "The function splits the last digit using % 10 and recurses on n / 10. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case is n < 10",
-        "Add last digit each step",
+        "Consider base case is n < 10",
+        "Remember that add last digit each step",
         "42 -> 2 + 4"
       ],
       "tags": [
         "recursion",
         "tracing",
         "digits"
-      ]
+      ],
+      "hint": "Think about: the function splits the last digit using % 10 and recurses on n / 10."
     },
     {
       "id": "fnr_trace_009",
@@ -2704,17 +2774,18 @@
           ]
         }
       ],
-      "explanation": "Recursive power: base case is exp == 0 returns 1. Recursive: base * power(base, exp-1).",
+      "explanation": "Recursive power: base case is exp == 0 returns 1. Recursive: base * power(base, exp-1). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Any number to power 0 is 1",
-        "power(b, n) = b * power(b, n-1)",
+        "Remember that any number to power 0 is 1",
+        "Think about power(b, n) = b * power(b, n-1)",
         "2^3 = 2 * 2 * 2 = 8"
       ],
       "tags": [
         "recursion",
         "power",
         "exponentiation"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_009",
@@ -2744,17 +2815,18 @@
           ]
         }
       ],
-      "explanation": "Each call removes one digit by dividing by 10 and adds 1 to the count.",
+      "explanation": "Each call removes one digit by dividing by 10 and adds 1 to the count. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Stop when n < 10",
-        "Divide by 10 each time",
+        "Consider stop when n < 10",
+        "Remember that divide by 10 each time",
         "507 has 3 digits"
       ],
       "tags": [
         "recursion",
         "tracing",
         "digits"
-      ]
+      ],
+      "hint": "Think about: each call removes one digit by dividing by 10 and adds 1 to the count."
     },
     {
       "id": "fnr_trace_010",
@@ -2793,17 +2865,18 @@
           ]
         }
       ],
-      "explanation": "Sum of digits: base case is single digit. Recursive: last digit + sum of remaining digits.",
+      "explanation": "Sum of digits: base case is single digit. Recursive: last digit + sum of remaining digits. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "n % 10 gets last digit",
-        "n / 10 removes last digit",
-        "Base case: single digit returns itself"
+        "Consider n % 10 gets last digit",
+        "Think about n / 10 removes last digit",
+        "Remember that base case: single digit returns itself"
       ],
       "tags": [
         "recursion",
         "digits",
         "modulo"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_010",
@@ -2833,17 +2906,18 @@
           ]
         }
       ],
-      "explanation": "Multiplication is repeated addition until b reaches 0.",
+      "explanation": "Multiplication is repeated addition until b reaches 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case b == 0",
-        "Add a each step",
+        "Consider base case b == 0",
+        "Think about add a each step",
         "3 * 2 = 6"
       ],
       "tags": [
         "recursion",
         "tracing",
         "multiplication"
-      ]
+      ],
+      "hint": "Think about: multiplication is repeated addition until b reaches 0."
     },
     {
       "id": "fnr_trace_011",
@@ -2886,17 +2960,18 @@
           ]
         }
       ],
-      "explanation": "Binary search: divide array in half, compare middle element, search left or right half recursively.",
+      "explanation": "Binary search: divide array in half, compare middle element, search left or right half recursively. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case: left > right means not found",
-        "Compare target with middle element",
-        "Search left half if target smaller, right half if larger"
+        "Remember that base case: left > right means not found",
+        "Remember that compare target with middle element",
+        "Remember that search left half if target smaller, right half if larger"
       ],
       "tags": [
         "recursion",
         "binary_search",
         "divide_conquer"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_011",
@@ -2932,17 +3007,18 @@
           ]
         }
       ],
-      "explanation": "Euclid's algorithm recurses with (b, a % b) until b becomes 0.",
+      "explanation": "Euclid's algorithm recurses with (b, a % b) until b becomes 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Use the modulo step",
-        "Stop when b == 0",
+        "Consider using the modulo step",
+        "Think about stop when b == 0",
         "Results are 4 and 3"
       ],
       "tags": [
         "recursion",
         "tracing",
         "gcd"
-      ]
+      ],
+      "hint": "Think about: euclid's algorithm recurses with (b, a % b) until b becomes 0."
     },
     {
       "id": "fnr_trace_012",
@@ -2983,17 +3059,18 @@
           ]
         }
       ],
-      "explanation": "Count digits: base case is single digit. Recursive: 1 + count_digits(n/10).",
+      "explanation": "Count digits: base case is single digit. Recursive: 1 + count_digits(n/10). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Single digit has count 1",
-        "Divide by 10 to remove last digit",
-        "Add 1 for each recursion level"
+        "Remember that single digit has count 1",
+        "Remember that divide by 10 to remove last digit",
+        "Remember that add 1 for each recursion level"
       ],
       "tags": [
         "recursion",
         "digits",
         "counting"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_012",
@@ -3016,17 +3093,18 @@
           ]
         }
       ],
-      "explanation": "The function adds elements from the end toward the start until n reaches 0.",
+      "explanation": "The function adds elements from the end toward the start until n reaches 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case n == 0",
-        "Use arr[n-1]",
+        "Consider base case n == 0",
+        "Consider using arr[n-1]",
         "1 + 2 = 3"
       ],
       "tags": [
         "recursion",
         "tracing",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: the function adds elements from the end toward the start until n reaches 0."
     },
     {
       "id": "fnr_trace_013",
@@ -3074,17 +3152,18 @@
           ]
         }
       ],
-      "explanation": "Check even by subtracting 2 until reaching 0 (even) or 1 (odd). Two base cases.",
+      "explanation": "Check even by subtracting 2 until reaching 0 (even) or 1 (odd). Two base cases. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "0 is even, 1 is odd",
-        "Subtract 2 each time",
-        "Eventually reach 0 or 1"
+        "Consider 0 is even, 1 is odd",
+        "Think about subtract 2 each time",
+        "Remember that eventually reach 0 or 1"
       ],
       "tags": [
         "recursion",
         "even_odd",
         "base_cases"
-      ]
+      ],
+      "hint": "Think about the base case and how the function calls itself with modified arguments."
     },
     {
       "id": "trace_013",
@@ -3118,17 +3197,18 @@
           ]
         }
       ],
-      "explanation": "The function subtracts 2 until it reaches 0 (even) or 1 (odd).",
+      "explanation": "The function subtracts 2 until it reaches 0 (even) or 1 (odd). Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Even numbers reach 0",
-        "Odd numbers reach 1",
+        "Consider even numbers reach 0",
+        "Think about odd numbers reach 1",
         "is_even(4) = 1"
       ],
       "tags": [
         "recursion",
         "tracing",
         "parity"
-      ]
+      ],
+      "hint": "Think about: the function subtracts 2 until it reaches 0 (even) or 1 (odd)."
     },
     {
       "id": "fnr_trace_014",
@@ -3160,16 +3240,17 @@
           ]
         }
       ],
-      "explanation": "Factorial multiplies n by factorial(n-1) until n <= 1.",
+      "explanation": "Factorial multiplies n by factorial(n-1) until n <= 1. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case: n <= 1",
-        "Multiply on the way back",
+        "Consider base case: n <= 1",
+        "Remember that multiply on the way back",
         "4! = 24"
       ],
       "tags": [
         "recursion",
         "factorial"
-      ]
+      ],
+      "hint": "Think about: factorial multiplies n by factorial(n-1) until n <= 1."
     },
     {
       "id": "trace_014",
@@ -3203,17 +3284,18 @@
           ]
         }
       ],
-      "explanation": "The function adds 1 for each odd number from 1 to n.",
+      "explanation": "The function adds 1 for each odd number from 1 to n. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Even numbers add 0",
-        "Odd numbers add 1",
+        "Consider even numbers add 0",
+        "Think about odd numbers add 1",
         "sum_odds(4) counts 1 and 3"
       ],
       "tags": [
         "recursion",
         "tracing",
         "modulo"
-      ]
+      ],
+      "hint": "Think about: the function adds 1 for each odd number from 1 to n."
     },
     {
       "id": "fnr_trace_015",
@@ -3236,16 +3318,17 @@
           ]
         }
       ],
-      "explanation": "The function adds n down to 0.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. The function adds n down to 0.",
       "hints": [
-        "Base case returns 0",
-        "Add n each call",
+        "Consider base case returns 0",
+        "Think about add n each call",
         "2+1=3"
       ],
       "tags": [
         "recursion",
         "summation"
-      ]
+      ],
+      "hint": "Think about: the function adds n down to 0."
     },
     {
       "id": "trace_015",
@@ -3275,17 +3358,18 @@
           ]
         }
       ],
-      "explanation": "The function counts characters until it reaches the null terminator.",
+      "explanation": "The function counts characters until it reaches the null terminator. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case is '\\0'",
-        "Advance the pointer each call",
+        "Consider base case is '\\0'",
+        "Remember that advance the pointer each call",
         "Length of \"hi\" is 2"
       ],
       "tags": [
         "recursion",
         "tracing",
         "strings"
-      ]
+      ],
+      "hint": "Think about: the function counts characters until it reaches the null terminator."
     },
     {
       "id": "fnr_trace_016",
@@ -3308,16 +3392,17 @@
           ]
         }
       ],
-      "explanation": "Each call multiplies by the base until exp reaches 0.",
+      "explanation": "Each call multiplies by the base until exp reaches 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case exp == 0",
-        "Multiply on unwind",
+        "Consider base case exp == 0",
+        "Think about multiply on unwind",
         "3^2 = 9"
       ],
       "tags": [
         "recursion",
         "power"
-      ]
+      ],
+      "hint": "Think about: each call multiplies by the base until exp reaches 0."
     },
     {
       "id": "trace_016",
@@ -3342,16 +3427,17 @@
           ]
         }
       ],
-      "explanation": "Each call removes one digit by dividing by 10.",
+      "explanation": "Each call removes one digit by dividing by 10. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Divide by 10 each step",
-        "Stop when n < 10",
+        "Remember that divide by 10 each step",
+        "Think about stop when n < 10",
         "1200 has 4 digits"
       ],
       "tags": [
         "recursion",
         "digits"
-      ]
+      ],
+      "hint": "Think about: each call removes one digit by dividing by 10."
     },
     {
       "id": "trace_017",
@@ -3374,16 +3460,17 @@
           ]
         }
       ],
-      "explanation": "Use modulo to peel off digits and recurse on n/10.",
+      "explanation": "Use modulo to peel off digits and recurse on n/10. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Last digit is n % 10",
-        "Divide by 10 each step",
+        "Consider last digit is n % 10",
+        "Remember that divide by 10 each step",
         "5+0+7=12"
       ],
       "tags": [
         "recursion",
         "digits"
-      ]
+      ],
+      "hint": "Think about what the modulo operator (%) returns - the remainder of division."
     },
     {
       "id": "trace_018",
@@ -3408,16 +3495,17 @@
           ]
         }
       ],
-      "explanation": "Fibonacci adds the two previous numbers.",
+      "explanation": "Fibonacci adds the two previous numbers. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base cases fib(0)=0, fib(1)=1",
-        "fib(2)=1",
+        "Remember that base cases fib(0)=0, fib(1)=1",
+        "Think about fib(2)=1",
         "fib(3)=2"
       ],
       "tags": [
         "recursion",
         "fibonacci"
-      ]
+      ],
+      "hint": "Think about: fibonacci adds the two previous numbers."
     },
     {
       "id": "trace_019",
@@ -3442,16 +3530,17 @@
           ]
         }
       ],
-      "explanation": "Euclid's algorithm uses repeated modulo until b is 0.",
+      "explanation": "Euclid's algorithm uses repeated modulo until b is 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Use a % b",
-        "Stop when b == 0",
+        "Consider using a % b",
+        "Think about stop when b == 0",
         "Result is 2"
       ],
       "tags": [
         "recursion",
         "gcd"
-      ]
+      ],
+      "hint": "Think about what the modulo operator (%) returns - the remainder of division."
     },
     {
       "id": "trace_020",
@@ -3474,16 +3563,17 @@
           ]
         }
       ],
-      "explanation": "Multiplication is repeated addition until b is 0.",
+      "explanation": "Multiplication is repeated addition until b is 0. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Add a each call",
-        "Stop at b == 0",
+        "Consider add a each call",
+        "Think about stop at b == 0",
         "4 * 2 = 8"
       ],
       "tags": [
         "recursion",
         "multiplication"
-      ]
+      ],
+      "hint": "Think about: multiplication is repeated addition until b is 0."
     },
     {
       "id": "trace_021",
@@ -3508,16 +3598,17 @@
           ]
         }
       ],
-      "explanation": "The function adds elements from the end toward the start.",
+      "explanation": "The function adds elements from the end toward the start. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Base case n == 0",
-        "Use a[n-1]",
+        "Consider base case n == 0",
+        "Consider using a[n-1]",
         "1+2+3=6"
       ],
       "tags": [
         "recursion",
         "arrays"
-      ]
+      ],
+      "hint": "Think about: the function adds elements from the end toward the start."
     },
     {
       "id": "trace_022",
@@ -3542,16 +3633,17 @@
           ]
         }
       ],
-      "explanation": "The function counts characters until it reaches '\\0'.",
+      "explanation": "The function counts characters until it reaches '\\0'. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Advance pointer each call",
-        "Base case at '\\0'",
+        "Remember that advance pointer each call",
+        "Think about base case at '\\0'",
         "Length of cat is 3"
       ],
       "tags": [
         "recursion",
         "strings"
-      ]
+      ],
+      "hint": "Think about: the function counts characters until it reaches '\\0'."
     },
     {
       "id": "trace_023",
@@ -3578,16 +3670,17 @@
           ]
         }
       ],
-      "explanation": "Adds 1 for even numbers and 0 for odd numbers.",
+      "explanation": "Adds 1 for even numbers and 0 for odd numbers. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Even numbers add 1",
-        "Odd numbers add 0",
-        "Count of evens up to 4 is 2"
+        "Consider even numbers add 1",
+        "Think about odd numbers add 0",
+        "Remember that count of evens up to 4 is 2"
       ],
       "tags": [
         "recursion",
         "modulo"
-      ]
+      ],
+      "hint": "Think about: adds 1 for even numbers and 0 for odd numbers."
     },
     {
       "id": "trace_024",
@@ -3612,16 +3705,17 @@
           ]
         }
       ],
-      "explanation": "Each call adds 1 until n reaches 0.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Each call adds 1 until n reaches 0.",
       "hints": [
-        "Base case n == 0",
-        "Adds 1 per call",
+        "Consider base case n == 0",
+        "Think about adds 1 per call",
         "Result equals n"
       ],
       "tags": [
         "recursion",
         "counting"
-      ]
+      ],
+      "hint": "Think about: each call adds 1 until n reaches 0."
     },
     {
       "id": "trace_025",
@@ -3647,16 +3741,17 @@
           ]
         }
       ],
-      "explanation": "The function returns the smaller of the two values.",
+      "explanation": "The function returns the smaller of the two values. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Compare a and b",
-        "Return smaller value",
+        "Consider compare a and b",
+        "Think about return smaller value",
         "Simple conditional"
       ],
       "tags": [
         "recursion",
         "conditionals"
-      ]
+      ],
+      "hint": "Think about: the function returns the smaller of the two values."
     },
     {
       "id": "trace_026",
@@ -3678,16 +3773,17 @@
           ]
         }
       ],
-      "explanation": "Each call prints the last digit then recurses on the remaining number.",
+      "explanation": "Each call prints the last digit then recurses on the remaining number. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Use n % 10",
-        "Divide by 10 each call",
-        "Prints reversed digits"
+        "Consider using n % 10",
+        "Remember that divide by 10 each call",
+        "Remember that prints reversed digits"
       ],
       "tags": [
         "recursion",
         "digits"
-      ]
+      ],
+      "hint": "Think about: each call prints the last digit then recurses on the remaining number."
     },
     {
       "id": "trace_027",
@@ -3711,16 +3807,17 @@
           ]
         }
       ],
-      "explanation": "Binary search halves the range until it finds the target or fails.",
+      "explanation": "Binary search halves the range until it finds the target or fails. Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow.",
       "hints": [
-        "Compute mid each step",
-        "Go left or right",
-        "Return index when found"
+        "Remember that compute mid each step",
+        "Think about go left or right",
+        "Remember that return index when found"
       ],
       "tags": [
         "recursion",
         "binary_search"
-      ]
+      ],
+      "hint": "Think about: binary search halves the range until it finds the target or fails."
     },
     {
       "id": "trace_028",
@@ -3743,16 +3840,17 @@
           ]
         }
       ],
-      "explanation": "Adds squares from n down to 0.",
+      "explanation": "Recursive functions call themselves. They need a base case to stop recursion and prevent stack overflow. Adds squares from n down to 0.",
       "hints": [
-        "2^2 + 1^2",
-        "4 + 1 = 5",
+        "Consider 2^2 + 1^2",
+        "Think about 4 + 1 = 5",
         "Base case returns 0"
       ],
       "tags": [
         "recursion",
         "math"
-      ]
+      ],
+      "hint": "Think about: adds squares from n down to 0."
     }
   ]
 }

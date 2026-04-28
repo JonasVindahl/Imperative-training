@@ -55,17 +55,18 @@
           ]
         }
       },
-      "explanation": "Initialize sum to 0, loop from i=0 to n-1, add each element to sum, and return it.",
+      "explanation": "Initialize sum to 0, loop from i=0 to n-1, add each element to sum, and return it. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Start sum at 0",
-        "Loop over all indices",
-        "Use += to accumulate"
+        "Consider start sum at 0",
+        "Remember that loop over all indices",
+        "Consider using += to accumulate"
       ],
       "tags": [
         "arrays",
         "loops",
         "sum"
-      ]
+      ],
+      "hint": "Think about: initialize sum to 0, loop from i=0 to n-1, add each element to sum, and return it."
     },
     {
       "id": "drag_006",
@@ -104,17 +105,18 @@
           ]
         }
       },
-      "explanation": "Start at index 0 and increment until the null terminator is reached.",
+      "explanation": "Start at index 0 and increment until the null terminator is reached. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Strings end at '\\0'",
-        "Start from index 0",
-        "Increment i each loop"
+        "Consider strings end at '\\0'",
+        "Think about start from index 0",
+        "Remember that increment i each loop"
       ],
       "tags": [
         "strings",
         "loops",
         "null_terminator"
-      ]
+      ],
+      "hint": "Think about: start at index 0 and increment until the null terminator is reached."
     },
     {
       "id": "drag_010",
@@ -153,17 +155,18 @@
           ]
         }
       },
-      "explanation": "Start at the last index n-1, print while i >= 0, and decrement.",
+      "explanation": "Start at the last index n-1, print while i >= 0, and decrement. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Last index is n-1",
-        "Use >= to include index 0",
-        "Decrement i each step"
+        "Consider last index is n-1",
+        "Consider using >= to include index 0",
+        "Remember that decrement i each step"
       ],
       "tags": [
         "arrays",
         "loops",
         "reverse"
-      ]
+      ],
+      "hint": "Think about: start at the last index n-1, print while i >= 0, and decrement."
     },
     {
       "id": "drag_013",
@@ -211,17 +214,18 @@
           ]
         }
       },
-      "explanation": "Copy characters until the null terminator, then append a null terminator to the destination.",
+      "explanation": "Copy characters until the null terminator, then append a null terminator to the destination. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Stop at '\\0'",
-        "Increment both pointers",
+        "Consider stop at '\\0'",
+        "Remember that increment both pointers",
         "Write the terminator"
       ],
       "tags": [
         "strings",
         "pointers",
         "copy"
-      ]
+      ],
+      "hint": "Think about: copy characters until the null terminator, then append a null terminator to the destination."
     },
     {
       "id": "drag_018",
@@ -251,17 +255,18 @@
           ]
         }
       },
-      "explanation": "strcmp returns 0 when strings are equal.",
+      "explanation": "Strcmp returns 0 when strings are equal. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Use strcmp",
-        "Equal means return 0",
+        "Consider using strcmp",
+        "Think about equal means return 0",
         "Compare with =="
       ],
       "tags": [
         "strings",
         "strcmp",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: strcmp returns 0 when strings are equal."
     },
     {
       "id": "drag_025",
@@ -291,16 +296,17 @@
           ]
         }
       },
-      "explanation": "Store arr[i], then assign arr[j], then restore tmp.",
+      "explanation": "Store arr[i], then assign arr[j], then restore tmp. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Temp holds arr[i]",
-        "Assign arr[j] to arr[i]",
-        "Store tmp into arr[j]"
+        "Consider temp holds arr[i]",
+        "Remember that assign arr[j] to arr[i]",
+        "Remember that store tmp into arr[j]"
       ],
       "tags": [
         "arrays",
         "swap"
-      ]
+      ],
+      "hint": "Think about: store arr[i], then assign arr[j], then restore tmp."
     },
     {
       "id": "drag_027",
@@ -330,16 +336,17 @@
           ]
         }
       },
-      "explanation": "Count characters until the null terminator.",
+      "explanation": "Count characters until the null terminator. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Stop at '\\0'",
-        "Use !=",
+        "Consider stop at '\\0'",
+        "Consider using !=",
         "Increment i"
       ],
       "tags": [
         "strings",
         "loops"
-      ]
+      ],
+      "hint": "Think about: count characters until the null terminator."
     },
     {
       "id": "drag_029",
@@ -380,14 +387,15 @@
       },
       "explanation": "Initialize min to arr[0] and update it when a smaller value appears.",
       "hints": [
-        "Start with arr[0]",
-        "Increment i",
+        "Consider start with arr[0]",
+        "Think about increment i",
         "Assign arr[i] to min"
       ],
       "tags": [
         "arrays",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: initialize min to arr[0] and update it when a smaller value appears."
     },
     {
       "id": "drag_032",
@@ -453,11 +461,11 @@
           ]
         }
       },
-      "explanation": "Array sum: array parameter with [], initialize sum to 0, loop from 0 to size-1, use += to accumulate.",
+      "explanation": "Array sum: array parameter with [], initialize sum to 0, loop from 0 to size-1, use += to accumulate. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Arrays are passed with [] syntax",
-        "Start sum at 0",
-        "Loop from 0 to size (exclusive)",
+        "Remember that arrays are passed with [] syntax",
+        "Think about start sum at 0",
+        "Remember that loop from 0 to size (exclusive)",
         "+= adds to sum"
       ],
       "tags": [
@@ -521,18 +529,19 @@
           ]
         }
       },
-      "explanation": "String length: iterate through characters until null terminator '\\0', count characters, increment len.",
+      "explanation": "String length: iterate through characters until null terminator '\\0', count characters, increment len. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Strings are char pointers",
-        "Start at 0",
-        "Check for null terminator '\\0'",
-        "Increment the counter"
+        "Remember that strings are char pointers",
+        "Think about start at 0",
+        "Remember that check for null terminator '\\0'",
+        "Remember that increment the counter"
       ],
       "tags": [
         "strings",
         "null_terminator",
         "loops"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "fill_003",
@@ -589,17 +598,18 @@
           ]
         }
       ],
-      "explanation": "Arrays are zero-indexed. An array of size 4 has indices 0 through 3. arr[2] refers to the third element, which is 3.",
+      "explanation": "Arrays are zero-indexed. An array of size 4 has indices 0 through 3. arr[2] refers to the third element, which is 3. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Arrays start at index 0",
-        "Size 4 means indices 0-3",
+        "Remember that arrays start at index 0",
+        "Remember that size 4 means indices 0-3",
         "arr[2] is the third element"
       ],
       "tags": [
         "arrays",
         "indexing",
         "basics"
-      ]
+      ],
+      "hint": "Think about: arrays are zero-indexed."
     },
     {
       "id": "fill_005",
@@ -641,16 +651,17 @@
           ]
         }
       ],
-      "explanation": "Arrays are zero-indexed. nums[1] is the second element, which is 8.",
+      "explanation": "Arrays are zero-indexed. nums[1] is the second element, which is 8. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Index 0 is the first element",
-        "Index 1 is the second element",
+        "Remember that index 0 is the first element",
+        "Remember that index 1 is the second element",
         "nums[1] is 8"
       ],
       "tags": [
         "arrays",
         "indexing"
-      ]
+      ],
+      "hint": "Think about: arrays are zero-indexed."
     },
     {
       "id": "fill_006",
@@ -692,17 +703,18 @@
           ]
         }
       ],
-      "explanation": "\"Hi\" uses 3 bytes: 'H', 'i', and '\\0'.",
+      "explanation": "C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string. \"Hi\" uses 3 bytes: 'H', 'i', and '\\0'.",
       "hints": [
-        "String literals include '\\0'",
-        "Two letters plus terminator",
+        "Remember that string literals include '\\0'",
+        "Remember that two letters plus terminator",
         "Total is 3"
       ],
       "tags": [
         "strings",
         "null_terminator",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about: \"hi\" uses 3 bytes: 'h', 'i', and '\\0'."
     },
     {
       "id": "fill_014",
@@ -744,17 +756,18 @@
           ]
         }
       ],
-      "explanation": "strlen counts characters before '\\0'. sizeof includes the null terminator.",
+      "explanation": "Strlen counts characters before '\\0'. sizeof includes the null terminator. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "\"abc\" has 3 letters",
-        "Add 1 for '\\0'",
+        "Consider \"abc\" has 3 letters",
+        "Think about add 1 for '\\0'",
         "sizeof includes the terminator"
       ],
       "tags": [
         "strings",
         "strlen",
         "sizeof"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "fill_017",
@@ -796,16 +809,17 @@
           ]
         }
       ],
-      "explanation": "The string literal includes a '\\0' at index 3, which prints as an empty character.",
+      "explanation": "The string literal includes a '\\0' at index 3, which prints as an empty character. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "String length is 3",
-        "Index 3 is '\\0'",
+        "Consider string length is 3",
+        "Think about index 3 is '\\0'",
         "Null prints as empty"
       ],
       "tags": [
         "strings",
         "null_terminator"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "fill_da_008",
@@ -818,14 +832,14 @@
       "questions": [
         {
           "id": 0,
-          "text": "Et array navn ___ til en pointer n\u00e5r det sendes til en funktion",
+          "text": "Et array navn ___ til en pointer når det sendes til en funktion",
           "blanks": [
             {
               "options": [
                 "decays",
                 "konverterer",
                 "transformerer",
-                "\u00e6ndrer"
+                "ændrer"
               ],
               "correct": "decays"
             }
@@ -861,27 +875,28 @@
           "blanks": [
             {
               "options": [
-                "sammenh\u00e6ngende",
-                "tilf\u00e6ldige",
+                "sammenhængende",
+                "tilfældige",
                 "adskilte",
                 "fordelte"
               ],
-              "correct": "sammenh\u00e6ngende"
+              "correct": "sammenhængende"
             }
           ]
         }
       ],
-      "explanation": "Arrays: nul-indekseret (starter ved 0), gemt sammenh\u00e6ngende i hukommelse, navn decays til pointer n\u00e5r sendt til funktioner.",
+      "explanation": "Arrays: nul-indekseret (starter ved 0), gemt sammenhængende i hukommelse, navn decays til pointer når sendt til funktioner. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "F\u00f8rste element er arr[0]",
-        "Elementer er ved siden af hinanden",
-        "Array navn bliver pointer"
+        "Remember that første element er arr[0]",
+        "Remember that elementer er ved siden af hinanden",
+        "Remember that array navn bliver pointer"
       ],
       "tags": [
         "arrays",
         "terminologi",
-        "grundl\u00e6ggende"
-      ]
+        "grundlæggende"
+      ],
+      "hint": "Remember that arrays decay to pointers when passed to functions."
     },
     {
       "id": "fill_en_008",
@@ -949,15 +964,16 @@
       ],
       "explanation": "Arrays: zero-indexed (start at 0), stored contiguously in memory, name decays to pointer when passed to functions.",
       "hints": [
-        "First element is arr[0]",
-        "Elements are next to each other",
-        "Array name becomes pointer"
+        "Remember that first element is arr[0]",
+        "Remember that elements are next to each other",
+        "Remember that array name becomes pointer"
       ],
       "tags": [
         "arrays",
         "terminology",
         "basics"
-      ]
+      ],
+      "hint": "Remember that arrays decay to pointers when passed to functions."
     },
     {
       "id": "str_001",
@@ -974,17 +990,18 @@
         "Runtime error (crash)"
       ],
       "correct_answer": "B",
-      "explanation": "The array has no null terminator. When printf tries to print it as a string (%s), it will continue reading past the array until it finds a '\\0', potentially printing garbage. Fix: Use char str[4] = {'A', 'B', 'C', '\\0'}; or char str[] = \"ABC\";",
+      "explanation": "The array has no null terminator. When printf tries to print it as a string (%s), it will continue reading past the array until it finds a '\\0', potentially printing garbage. Fix: Use char str[4] = {'A', 'B', 'C', '\\0'}; or char str[] = \"ABC\";.",
       "hints": [
-        "Strings in C must end with '\\0'",
-        "The array has no null terminator",
+        "Remember that strings in C must end with '\\0'",
+        "Remember that the array has no null terminator",
         "%s expects a null-terminated string"
       ],
       "tags": [
         "string",
         "null_terminator",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_002",
@@ -1001,17 +1018,18 @@
         "6 5"
       ],
       "correct_answer": "B",
-      "explanation": "strlen(str) counts characters until '\\0', giving 5. sizeof(str) gives the total array size including the null terminator, giving 6. Remember: sizeof includes the '\\0', strlen doesn't count it.",
+      "explanation": "Strlen(str) counts characters until '\\0', giving 5. sizeof(str) gives the total array size including the null terminator, giving 6. Remember: sizeof includes the '\\0', strlen doesn't count it. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "strlen counts visible characters",
-        "sizeof counts total bytes in the array",
+        "Consider strlen counts visible characters",
+        "Think about sizeof counts total bytes in the array",
         "\"Hello\" has 5 characters plus null terminator"
       ],
       "tags": [
         "strlen",
         "sizeof",
         "null_terminator"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "str_003",
@@ -1028,17 +1046,18 @@
         "dest needs to be initialized first"
       ],
       "correct_answer": "B",
-      "explanation": "strcpy copies 14 characters (13 + null terminator) into a 5-byte buffer, causing a buffer overflow. This is dangerous and can crash the program or create security vulnerabilities. Fix: Use strncpy or make dest larger.",
+      "explanation": "Strcpy copies 14 characters (13 + null terminator) into a 5-byte buffer, causing a buffer overflow. This is dangerous and can crash the program or create security vulnerabilities. Fix: Use strncpy or make dest larger.",
       "hints": [
-        "How many bytes does src need?",
-        "dest is only 5 bytes",
+        "Remember that how many bytes does src need?",
+        "Think about dest is only 5 bytes",
         "strcpy doesn't check buffer size"
       ],
       "tags": [
         "strcpy",
         "buffer_overflow",
         "security"
-      ]
+      ],
+      "hint": "Think about: strcpy copies 14 characters (13 + null terminator) into a 5-byte buffer, causing a buffer overflow."
     },
     {
       "id": "str_004",
@@ -1057,15 +1076,16 @@
       "correct_answer": "D",
       "explanation": "Option B automatically allocates 6 bytes and adds '\\0'. Option C explicitly allocates 6 bytes for the 5 characters plus '\\0'. Option A is missing the null terminator and will cause issues.",
       "hints": [
-        "String literals automatically include '\\0'",
-        "\"Hello\" needs 6 bytes total",
-        "Option A has no null terminator"
+        "Remember that string literals automatically include '\\0'",
+        "Think about \"Hello\" needs 6 bytes total",
+        "Remember that option A has no null terminator"
       ],
       "tags": [
         "string",
         "initialization",
         "null_terminator"
-      ]
+      ],
+      "hint": "Think about: option b automatically allocates 6 bytes and adds '\\0'."
     },
     {
       "id": "str_005",
@@ -1082,17 +1102,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "Both str1 and str2 are initialized with the same content. str1[0] and str2[0] both contain 'A', so the comparison is true, printing 1.",
+      "explanation": "Both str1 and str2 are initialized with the same content. str1[0] and str2[0] both contain 'A', so the comparison is true, printing 1. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "Both arrays start with 'A'",
-        "The comparison checks if they're equal",
+        "Remember that both arrays start with 'A'",
+        "Remember that the comparison checks if they're equal",
         "1 means true in C"
       ],
       "tags": [
         "array",
         "initialization",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: both str1 and str2 are initialized with the same content."
     },
     {
       "id": "str_006",
@@ -1111,15 +1132,16 @@
       "correct_answer": "B",
       "explanation": "\"Hello\" is 6 bytes, \"World\" is 6 bytes, so \"HelloWorld\" needs 11 bytes total. But str1 is only 10 bytes, causing a buffer overflow by 1 byte. Fix: Make str1 larger, e.g., char str1[20].",
       "hints": [
-        "\"Hello\" is 6 bytes (including null terminator)",
-        "\"World\" is 6 bytes",
+        "Consider \"Hello\" is 6 bytes (including null terminator)",
+        "Think about \"World\" is 6 bytes",
         "str1 needs to fit both strings"
       ],
       "tags": [
         "strcat",
         "buffer_overflow",
         "concatenation"
-      ]
+      ],
+      "hint": "Think about: \"hello\" is 6 bytes, \"world\" is 6 bytes, so \"helloworld\" needs 11 bytes total."
     },
     {
       "id": "str_007",
@@ -1138,15 +1160,16 @@
       "correct_answer": "B",
       "explanation": "First: str1 == str2 compares pointer addresses (which are different), so it prints 0 (false). Second: strcmp compares string contents, which are equal, so it returns 0 (strings are equal).",
       "hints": [
-        "== compares pointers, not string contents",
-        "strcmp compares actual string contents",
+        "Consider == compares pointers, not string contents",
+        "Think about strcmp compares actual string contents",
         "strcmp returns 0 when strings are equal"
       ],
       "tags": [
         "strcmp",
         "pointer_comparison",
         "string_comparison"
-      ]
+      ],
+      "hint": "Think about: first: str1 == str2 compares pointer addresses (which are different), so it prints 0 (false)."
     },
     {
       "id": "str_008",
@@ -1163,17 +1186,18 @@
         "dest = src;"
       ],
       "correct_answer": "B",
-      "explanation": "strncpy with size limit and manual null termination is the safest. It prevents buffer overflow and ensures null termination. strcpy has no bounds checking, memcpy doesn't add '\\0', and assignment doesn't copy content.",
+      "explanation": "Strncpy with size limit and manual null termination is the safest. It prevents buffer overflow and ensures null termination. strcpy has no bounds checking, memcpy doesn't add ''\\0'', and assignment doesn't copy content.",
       "hints": [
-        "Use strncpy for bounded copying",
-        "Reserve one byte for null terminator",
-        "Always null-terminate the destination"
+        "Consider using strncpy for bounded copying",
+        "Remember that reserve one byte for null terminator",
+        "Remember that always null-terminate the destination"
       ],
       "tags": [
         "strncpy",
         "bounds_checking",
         "safety"
-      ]
+      ],
+      "hint": "Think about: strncpy with size limit and manual null termination is the safest."
     },
     {
       "id": "str_009",
@@ -1190,17 +1214,18 @@
         "Prints: Hello"
       ],
       "correct_answer": "C",
-      "explanation": "Attempting to modify a string literal is undefined behavior. String literals are typically stored in read-only memory. Fix: Use char str[] = \"Hello\"; instead of char* str = \"Hello\";",
+      "explanation": "Attempting to modify a string literal is undefined behavior. String literals are typically stored in read-only memory. Fix: Use char str[] = \"Hello\"; instead of char* str = \"Hello\";. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "String literals are read-only",
-        "char* points to read-only memory",
-        "Use char[] to get a modifiable copy"
+        "Remember that string literals are read-only",
+        "Think about char* points to read-only memory",
+        "Consider using char[] to get a modifiable copy"
       ],
       "tags": [
         "string_literal",
         "undefined_behavior",
         "const"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "str_010",
@@ -1219,15 +1244,16 @@
       "correct_answer": "A",
       "explanation": "An empty string \"\" contains only the null terminator '\\0'. strlen counts characters before '\\0', so it returns 0.",
       "hints": [
-        "An empty string has no visible characters",
-        "It only contains the null terminator",
-        "strlen returns 0 for empty strings"
+        "Remember that an empty string has no visible characters",
+        "Remember that it only contains the null terminator",
+        "The solution involves strlen returns 0 for empty strings"
       ],
       "tags": [
         "strlen",
         "empty_string",
         "null_terminator"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_011",
@@ -1244,17 +1270,18 @@
         "Undefined"
       ],
       "correct_answer": "C",
-      "explanation": "The string literal \"abcd\" includes a null terminator. With size 5, str[4] is '\\0', which prints as 0 with %d.",
+      "explanation": "The string literal \"abcd\" includes a null terminator. With size 5, str[4] is '\\0', which prints as 0 with %d. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "\"abcd\" uses 5 bytes including '\\0'",
-        "str[4] is the null terminator",
-        "Printing '\\0' as int gives 0"
+        "Consider \"abcd\" uses 5 bytes including '\\0'",
+        "Think about str[4] is the null terminator",
+        "The solution involves remember that printing '\\0' as int gives 0"
       ],
       "tags": [
         "null_terminator",
         "arrays",
         "strings"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_012",
@@ -1271,17 +1298,18 @@
         "a\\0b"
       ],
       "correct_answer": "B",
-      "explanation": "printf with %s stops at the first '\\0'. The embedded null ends the string, so it prints only 'a'.",
+      "explanation": "Printf with %s stops at the first '\\0'. The embedded null ends the string, so it prints only 'a'. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "%s prints until the first null terminator",
-        "The first '\\0' is at index 1",
-        "Only 'a' is printed"
+        "Consider %s prints until the first null terminator",
+        "Remember that the first '\\0' is at index 1",
+        "The solution involves only 'a' is printed"
       ],
       "tags": [
         "null_terminator",
         "embedded_null",
         "strings"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_013",
@@ -1298,17 +1326,18 @@
         "2"
       ],
       "correct_answer": "A",
-      "explanation": "strncmp compares only the first 2 characters. \"ca\" == \"ca\", so it returns 0.",
+      "explanation": "Strncmp compares only the first 2 characters. \"ca\" == \"ca\", so it returns 0. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Only the first 2 chars are compared",
-        "\"c\" and \"a\" match",
-        "Equal prefixes yield 0"
+        "Remember that only the first 2 chars are compared",
+        "Think about \"c\" and \"a\" match",
+        "The solution involves remember that equal prefixes yield 0"
       ],
       "tags": [
         "strncmp",
         "comparison",
         "strings"
-      ]
+      ],
+      "hint": "Think about: strncmp compares only the first 2 characters."
     },
     {
       "id": "str_014",
@@ -1325,17 +1354,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "fgets keeps the newline if there's room. The buffer contains \"hi\\n\\0\", so printf prints the newline too.",
+      "explanation": "Fgets keeps the newline if there's room. The buffer contains \"hi\\n\\0\", so printf prints the newline too.",
       "hints": [
-        "fgets includes the newline when possible",
-        "The input is short enough",
-        "The output includes the newline"
+        "Consider fgets includes the newline when possible",
+        "Remember that the input is short enough",
+        "Remember that the output includes the newline"
       ],
       "tags": [
         "fgets",
         "input",
         "newline"
-      ]
+      ],
+      "hint": "Think about: fgets keeps the newline if there's room."
     },
     {
       "id": "str_015",
@@ -1352,17 +1382,18 @@
         "5 8"
       ],
       "correct_answer": "C",
-      "explanation": "sizeof(str) is the array size including '\\0' (6). sizeof(p) is the size of a pointer on 64-bit (8).",
+      "explanation": "Sizeof(str) is the array size including '\\0' (6). sizeof(p) is the size of a pointer on 64-bit (8). sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Arrays include the null terminator",
-        "Pointers have fixed size",
+        "Remember that arrays include the null terminator",
+        "Remember that pointers have fixed size",
         "64-bit pointer size is 8"
       ],
       "tags": [
         "sizeof",
         "arrays",
         "pointers"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "str_016",
@@ -1379,17 +1410,18 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "strlen counts characters before null terminator. \"Hello\" has 5 characters.",
+      "explanation": "Strlen counts characters before null terminator. \"Hello\" has 5 characters. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Count the letters",
-        "Don't count null terminator",
-        "H-e-l-l-o = 5"
+        "Consider count the letters",
+        "Remember that don't count null terminator",
+        "The solution involves h-e-l-l-o = 5"
       ],
       "tags": [
         "strings",
         "strlen",
         "length"
-      ]
+      ],
+      "hint": "Think about: strlen counts characters before null terminator."
     },
     {
       "id": "str_017",
@@ -1406,17 +1438,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "== compares pointers, not contents. Compiler may optimize identical literals to same address.",
+      "explanation": "== compares pointers, not contents. Compiler may optimize identical literals to same address. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "== compares addresses",
-        "Use strcmp for content comparison",
-        "Result depends on compiler"
+        "Consider == compares addresses",
+        "Consider using strcmp for content comparison",
+        "Remember that result depends on compiler"
       ],
       "tags": [
         "strings",
         "comparison",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: == compares pointers, not contents."
     },
     {
       "id": "str_018",
@@ -1433,17 +1466,18 @@
         "strcpy is deprecated"
       ],
       "correct_answer": "B",
-      "explanation": "dest is uninitialized pointer. strcpy writes to random address. Need to allocate memory first.",
+      "explanation": "Dest is uninitialized pointer. strcpy writes to random address. Need to allocate memory first. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "Where does dest point?",
-        "Need to allocate memory",
-        "Uninitialized pointer"
+        "Remember that where does dest point?",
+        "Remember that need to allocate memory",
+        "Remember that uninitialized pointer"
       ],
       "tags": [
         "strings",
         "strcpy",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Think about: dest is uninitialized pointer."
     },
     {
       "id": "str_019",
@@ -1460,17 +1494,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "strcat appends s2 to s1. s1 becomes \"Hello World\".",
+      "explanation": "Strcat appends s2 to s1. s1 becomes \"Hello World\". C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "strcat concatenates strings",
-        "Appends to first string",
+        "Consider strcat concatenates strings",
+        "Remember that appends to first string",
         "s1 has enough space"
       ],
       "tags": [
         "strings",
         "strcat",
         "concatenation"
-      ]
+      ],
+      "hint": "Think about: strcat appends s2 to s1."
     },
     {
       "id": "str_020",
@@ -1487,17 +1522,18 @@
         "Prints: Hello"
       ],
       "correct_answer": "C",
-      "explanation": "String literals are typically in read-only memory. Modifying causes undefined behavior.",
+      "explanation": "String literals are typically in read-only memory. Modifying causes undefined behavior. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "String literals are read-only",
-        "Cannot modify literal",
-        "Causes crash or undefined behavior"
+        "Remember that string literals are read-only",
+        "Remember that cannot modify literal",
+        "Remember that causes crash or undefined behavior"
       ],
       "tags": [
         "strings",
         "literals",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "str_026",
@@ -1514,17 +1550,18 @@
         "The sum of x and y"
       ],
       "correct_answer": "C",
-      "explanation": "scanf returns the number of successfully read items. Here 2 integers were read, so it returns 2.",
+      "explanation": "Scanf returns the number of successfully read items. Here 2 integers were read, so it returns 2.",
       "hints": [
-        "scanf returns number of items read",
-        "Two %d means two integers",
-        "Both 10 and 20 read successfully"
+        "Consider scanf returns number of items read",
+        "Remember that two %d means two integers",
+        "The solution involves remember that both 10 and 20 read successfully"
       ],
       "tags": [
         "scanf",
         "return_value",
         "io"
-      ]
+      ],
+      "hint": "Think about: scanf returns the number of successfully read items."
     },
     {
       "id": "str_027",
@@ -1543,15 +1580,16 @@
       "correct_answer": "B",
       "explanation": "The format %5s reads maximum 5 characters. scanf reads \"Hello\" from \"HelloWorld\".",
       "hints": [
-        "Width specifier limits characters",
-        "%5s reads 5 chars max",
-        "Stops after 5 characters"
+        "Remember that width specifier limits characters",
+        "Think about %5s reads 5 chars max",
+        "Remember that stops after 5 characters"
       ],
       "tags": [
         "scanf",
         "format",
         "width_specifier"
-      ]
+      ],
+      "hint": "Think about: the format %5s reads maximum 5 characters."
     },
     {
       "id": "str_028",
@@ -1570,8 +1608,8 @@
       "correct_answer": "B",
       "explanation": "%5.2f means minimum 5 chars width, 2 decimal places. \"3.14\" is 4 chars, padded with 1 space: \" 3.14\".",
       "hints": [
-        "Width 5 = minimum total chars",
-        "Precision .2 = 2 decimals",
+        "Remember that width 5 = minimum total chars",
+        "Remember that precision .2 = 2 decimals",
         "Padding adds space"
       ],
       "tags": [
@@ -1595,16 +1633,17 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "Partial initialization zeros remaining elements. arr[2] and arr[4] are 0.",
+      "explanation": "Partial initialization zeros remaining elements. arr[2] and arr[4] are 0. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Partial initialization",
-        "Rest becomes 0",
+        "Remember that partial initialization",
+        "Think about rest becomes 0",
         "arr[2]=0, arr[4]=0"
       ],
       "tags": [
         "arrays",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: partial initialization zeros remaining elements."
     },
     {
       "id": "str_030",
@@ -1621,16 +1660,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "strcmp returns 0 when strings are equal. 0 == 0 is true (1).",
+      "explanation": "Strcmp returns 0 when strings are equal. 0 == 0 is true (1).",
       "hints": [
-        "strcmp returns 0 for equal strings",
-        "0 == 0 is true",
-        "Prints 1"
+        "Consider strcmp returns 0 for equal strings",
+        "Think about 0 == 0 is true",
+        "The solution involves prints 1"
       ],
       "tags": [
         "strcmp",
         "string_comparison"
-      ]
+      ],
+      "hint": "Think about: strcmp returns 0 when strings are equal."
     },
     {
       "id": "str_031",
@@ -1647,16 +1687,17 @@
         "Positive number"
       ],
       "correct_answer": "B",
-      "explanation": "strcmp returns negative when first string is less. \"abc\" < \"xyz\", so result < 0 is true (1).",
+      "explanation": "Strcmp returns negative when first string is less. \"abc\" < \"xyz\", so result < 0 is true (1).",
       "hints": [
-        "'a' < 'x' in ASCII",
-        "strcmp returns negative",
+        "Consider 'a' < 'x' in ASCII",
+        "Think about strcmp returns negative",
         "Result < 0 is true"
       ],
       "tags": [
         "strcmp",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: strcmp returns negative when first string is less."
     },
     {
       "id": "str_032",
@@ -1673,16 +1714,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "strcpy copies the string including null terminator. dest becomes \"hello\".",
+      "explanation": "Strcpy copies the string including null terminator. dest becomes \"hello\".",
       "hints": [
-        "strcpy copies string",
-        "Includes null terminator",
-        "dest = \"hello\""
+        "Consider strcpy copies string",
+        "Remember that includes null terminator",
+        "The solution involves dest = \"hello\""
       ],
       "tags": [
         "strcpy",
         "string_copy"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_033",
@@ -1699,16 +1741,17 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "strcat appends the second string to the first. Result is \"Hello World\".",
+      "explanation": "Strcat appends the second string to the first. Result is \"Hello World\".",
       "hints": [
-        "strcat appends",
-        "Concatenates strings",
-        "Result: Hello World"
+        "Consider strcat appends",
+        "Think about concatenates strings",
+        "The solution involves result: hello world"
       ],
       "tags": [
         "strcat",
         "concatenation"
-      ]
+      ],
+      "hint": "Think about: strcat appends the second string to the first."
     },
     {
       "id": "str_034",
@@ -1725,16 +1768,17 @@
         "65"
       ],
       "correct_answer": "B",
-      "explanation": "isupper returns non-zero for uppercase letters. 'A' is uppercase.",
+      "explanation": "Isupper returns non-zero for uppercase letters. 'A' is uppercase.",
       "hints": [
-        "isupper checks uppercase",
-        "'A' is uppercase",
+        "Consider isupper checks uppercase",
+        "Think about 'A' is uppercase",
         "Returns non-zero"
       ],
       "tags": [
         "ctype",
         "character_functions"
-      ]
+      ],
+      "hint": "Think about: isupper returns non-zero for uppercase letters."
     },
     {
       "id": "str_035",
@@ -1753,14 +1797,15 @@
       "correct_answer": "B",
       "explanation": "The string \"C\" has length 1 (excluding the null terminator).",
       "hints": [
-        "strlen excludes '\\0'",
-        "\"C\" is one character",
-        "Result is 1"
+        "Consider strlen excludes '\\0'",
+        "Think about \"C\" is one character",
+        "The solution involves result is 1"
       ],
       "tags": [
         "strlen",
         "basics"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "ars_str_036",
@@ -1777,16 +1822,17 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "strlen() returns the number of characters in the string excluding the null terminator. 'Hello' has 5 characters, so strlen(str) returns 5.",
+      "explanation": "Strlen() returns the number of characters in the string excluding the null terminator. 'Hello' has 5 characters, so strlen(str) returns 5.",
       "hints": [
-        "strlen counts characters until the null terminator",
-        "The null terminator is not counted",
-        "Count the letters in 'Hello'"
+        "Consider strlen counts characters until the null terminator",
+        "Remember that the null terminator is not counted",
+        "Remember that count the letters in 'Hello'"
       ],
       "tags": [
         "strlen",
         "string_basics"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_036",
@@ -1803,16 +1849,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "String literals include the null terminator, so \"hi\" has size 3.",
+      "explanation": "String literals include the null terminator, so \"hi\" has size 3. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "Includes '\\0'",
-        "h and i plus terminator",
-        "Size is 3"
+        "Consider includes '\\0'",
+        "Think about h and i plus terminator",
+        "The solution involves size is 3"
       ],
       "tags": [
         "sizeof",
         "string_literals"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "ars_str_037",
@@ -1829,16 +1876,17 @@
         "Segmentation fault"
       ],
       "correct_answer": "A",
-      "explanation": "strcpy() copies the string from src to dest including the null terminator. Since dest has enough space (10 bytes) to hold 'World' (6 bytes including null terminator), it prints 'World'.",
+      "explanation": "Strcpy() copies the string from src to dest including the null terminator. Since dest has enough space (10 bytes) to hold 'World' (6 bytes including null terminator), it prints 'World'.",
       "hints": [
-        "strcpy copies the entire string including null terminator",
-        "Check if dest has enough space",
+        "Consider strcpy copies the entire string including null terminator",
+        "Remember that check if dest has enough space",
         "src is 6 bytes including the null terminator"
       ],
       "tags": [
         "strcpy",
         "string_copy"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_037",
@@ -1855,16 +1903,17 @@
         "strncpy always null-terminates"
       ],
       "correct_answer": "B",
-      "explanation": "strncpy does not guarantee a null terminator if the source is longer than the buffer.",
+      "explanation": "Strncpy does not guarantee a null terminator if the source is longer than the buffer.",
       "hints": [
-        "Buffer size is 4",
-        "Source is longer",
+        "Consider buffer size is 4",
+        "Think about source is longer",
         "No guaranteed '\\0'"
       ],
       "tags": [
         "strncpy",
         "null_terminator"
-      ]
+      ],
+      "hint": "Think about: strncpy does not guarantee a null terminator if the source is longer than the buffer."
     },
     {
       "id": "ars_str_038",
@@ -1881,17 +1930,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "C",
-      "explanation": "strncpy() copies up to n characters. If the source is shorter than n, it pads the remaining space with null bytes. Here, 'Hi' (2 chars + 1 null = 3 bytes) is copied, then strncpy pads with 2 more null bytes to reach 5 total. The remaining 'XXXXX' stays. However, the string prints as 'Hi' because printf stops at the first null terminator.",
+      "explanation": "Strncpy() copies up to n characters. If the source is shorter than n, it pads the remaining space with null bytes. Here, 'Hi' (2 chars + 1 null = 3 bytes) is copied, then strncpy pads with 2 more null bytes to reach 5 total. The remaining 'XXXXX' stays. However, the string prints as 'Hi' because printf stops at the first null terminator.",
       "hints": [
-        "strncpy pads with null bytes if src is shorter than n",
-        "strncpy may not null-terminate if src is longer than n",
+        "Consider strncpy pads with null bytes if src is shorter than n",
+        "Think about strncpy may not null-terminate if src is longer than n",
         "printf stops at the first null terminator"
       ],
       "tags": [
         "strncpy",
         "string_copy",
         "null_terminator"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_038",
@@ -1908,16 +1958,17 @@
         "Undefined"
       ],
       "correct_answer": "A",
-      "explanation": "strcmp returns 0 when strings are equal.",
+      "explanation": "Strcmp returns 0 when strings are equal.",
       "hints": [
-        "strcmp returns 0 on equality",
-        "Equal strings",
-        "Result is 0"
+        "Consider strcmp returns 0 on equality",
+        "Think about equal strings",
+        "The solution involves result is 0"
       ],
       "tags": [
         "strcmp",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: strcmp returns 0 when strings are equal."
     },
     {
       "id": "ars_str_039",
@@ -1934,16 +1985,17 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "strcat() appends the string src to the end of dest. It finds the null terminator in dest and starts copying src from that position. The result is 'Hello World'.",
+      "explanation": "Strcat() appends the string src to the end of dest. It finds the null terminator in dest and starts copying src from that position. The result is 'Hello World'.",
       "hints": [
-        "strcat stands for string concatenate",
-        "It appends src to the end of dest",
-        "The original content of dest is preserved"
+        "Consider strcat stands for string concatenate",
+        "Remember that it appends src to the end of dest",
+        "Remember that the original content of dest is preserved"
       ],
       "tags": [
         "strcat",
         "string_concatenation"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_039",
@@ -1962,14 +2014,15 @@
       "correct_answer": "B",
       "explanation": "\"Hi\" has length 2 and \"There\" has length 5, so total is 7 plus one null terminator = 8 bytes.",
       "hints": [
-        "Hi is 3 bytes incl. '\\0'",
-        "There is 6 bytes incl. '\\0'",
+        "Remember that hi is 3 bytes incl. '\\0'",
+        "Remember that there is 6 bytes incl. '\\0'",
         "Need 2+5+1 = 8"
       ],
       "tags": [
         "strcat",
         "buffer_size"
-      ]
+      ],
+      "hint": "Think about: \"hi\" has length 2 and \"there\" has length 5, so total is 7 plus one null terminator = 8 bytes."
     },
     {
       "id": "ars_str_040",
@@ -1986,16 +2039,17 @@
         "123"
       ],
       "correct_answer": "B",
-      "explanation": "strncat() appends at most n characters from src to dest. Here it appends 3 characters ('1', '2', '3') to 'Test', resulting in 'Test123'. Unlike strncpy, strncat always null-terminates the result.",
+      "explanation": "Strncat() appends at most n characters from src to dest. Here it appends 3 characters ('1', '2', '3') to 'Test', resulting in 'Test123'. Unlike strncpy, strncat always null-terminates the result.",
       "hints": [
-        "strncat appends at most n characters",
-        "strncat always adds a null terminator",
-        "Count how many characters are appended"
+        "Consider strncat appends at most n characters",
+        "Think about strncat always adds a null terminator",
+        "Remember that count how many characters are appended"
       ],
       "tags": [
         "strncat",
         "string_concatenation"
-      ]
+      ],
+      "hint": "Think about: strncat() appends at most n characters from src to dest."
     },
     {
       "id": "str_040",
@@ -2012,16 +2066,17 @@
         "Undefined"
       ],
       "correct_answer": "B",
-      "explanation": "toupper converts lowercase to uppercase. 'b' becomes 'B'.",
+      "explanation": "Toupper converts lowercase to uppercase. 'b' becomes 'B'.",
       "hints": [
-        "toupper uppercases",
-        "b -> B",
-        "Prints B"
+        "Consider toupper uppercases",
+        "Think about b -> b",
+        "The solution involves prints b"
       ],
       "tags": [
         "ctype",
         "toupper"
-      ]
+      ],
+      "hint": "Think about: toupper converts lowercase to uppercase."
     },
     {
       "id": "ars_str_041",
@@ -2038,16 +2093,17 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "strcmp() compares two strings lexicographically. It returns 0 if the strings are identical. Since both str1 and str2 contain 'apple', strcmp returns 0 and 'Equal' is printed.",
+      "explanation": "Strcmp() compares two strings lexicographically. It returns 0 if the strings are identical. Since both str1 and str2 contain 'apple', strcmp returns 0 and 'Equal' is printed.",
       "hints": [
-        "strcmp returns 0 when strings are equal",
-        "strcmp compares strings character by character",
-        "Both strings contain 'apple'"
+        "Consider strcmp returns 0 when strings are equal",
+        "Think about strcmp compares strings character by character",
+        "Remember that both strings contain 'apple'"
       ],
       "tags": [
         "strcmp",
         "string_comparison"
-      ]
+      ],
+      "hint": "Think about: strcmp() compares two strings lexicographically."
     },
     {
       "id": "str_041",
@@ -2064,16 +2120,17 @@
         "Length of the string"
       ],
       "correct_answer": "B",
-      "explanation": "strchr returns a pointer to the first occurrence of the character.",
+      "explanation": "Strchr returns a pointer to the first occurrence of the character. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
-        "Returns pointer",
-        "First match",
+        "Consider returns pointer",
+        "Think about first match",
         "Not an index"
       ],
       "tags": [
         "strchr",
         "pointers"
-      ]
+      ],
+      "hint": "Think about: strchr returns a pointer to the first occurrence of the character."
     },
     {
       "id": "ars_str_042",
@@ -2090,17 +2147,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "strcmp() returns a positive value if str1 is lexicographically greater than str2. Since 'b' (in 'banana') comes after 'a' (in 'apple') in ASCII order, strcmp returns a positive value and 'Greater' is printed.",
+      "explanation": "Strcmp() returns a positive value if str1 is lexicographically greater than str2. Since 'b' (in 'banana') comes after 'a' (in 'apple') in ASCII order, strcmp returns a positive value and 'Greater' is printed.",
       "hints": [
-        "strcmp returns positive if str1 > str2",
-        "Compare the first differing character",
+        "Consider strcmp returns positive if str1 > str2",
+        "Remember that compare the first differing character",
         "'b' comes after 'a' in ASCII order"
       ],
       "tags": [
         "strcmp",
         "string_comparison",
         "lexicographic"
-      ]
+      ],
+      "hint": "Think about: strcmp() returns a positive value if str1 is lexicographically greater than str2."
     },
     {
       "id": "str_042",
@@ -2117,16 +2175,17 @@
         "3 hel"
       ],
       "correct_answer": "A",
-      "explanation": "snprintf returns the full length (5) and writes up to 3 chars plus null, so buf is \"hel\".",
+      "explanation": "Snprintf returns the full length (5) and writes up to 3 chars plus null, so buf is \"hel\".",
       "hints": [
-        "Return value is full length",
-        "Buffer holds 3 chars + '\\0'",
+        "Remember that return value is full length",
+        "Remember that buffer holds 3 chars + '\\0'",
         "buf is \"hel\""
       ],
       "tags": [
         "snprintf",
         "buffer_size"
-      ]
+      ],
+      "hint": "Think about: snprintf returns the full length (5) and writes up to 3 chars plus null, so buf is \"hel\"."
     },
     {
       "id": "ars_str_043",
@@ -2143,16 +2202,17 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "strncmp() compares at most the first n characters of two strings. Here it compares the first 7 characters. Both strings have 'testing' (7 characters) in common, so strncmp returns 0 and 'Match' is printed.",
+      "explanation": "Strncmp() compares at most the first n characters of two strings. Here it compares the first 7 characters. Both strings have 'testing' (7 characters) in common, so strncmp returns 0 and 'Match' is printed.",
       "hints": [
-        "strncmp compares only the first n characters",
-        "Count the first 7 characters of each string",
-        "The digits are beyond the 7th position"
+        "Consider strncmp compares only the first n characters",
+        "Remember that count the first 7 characters of each string",
+        "Remember that the digits are beyond the 7th position"
       ],
       "tags": [
         "strncmp",
         "string_comparison"
-      ]
+      ],
+      "hint": "Think about: strncmp() compares at most the first n characters of two strings."
     },
     {
       "id": "str_043",
@@ -2169,16 +2229,17 @@
         "9"
       ],
       "correct_answer": "B",
-      "explanation": "fgets reads at most size-1 characters and adds a null terminator.",
+      "explanation": "Fgets reads at most size-1 characters and adds a null terminator.",
       "hints": [
-        "Leaves space for '\\0'",
-        "size-1 characters",
-        "8-1 = 7"
+        "Remember that leaves space for '\\0'",
+        "Think about size-1 characters",
+        "The solution involves 8-1 = 7"
       ],
       "tags": [
         "fgets",
         "buffer_size"
-      ]
+      ],
+      "hint": "Think about: fgets reads at most size-1 characters and adds a null terminator."
     },
     {
       "id": "ars_str_044",
@@ -2195,17 +2256,18 @@
         "Depends on locale"
       ],
       "correct_answer": "A",
-      "explanation": "strcasecmp() performs a case-insensitive comparison. It treats 'Hello' and 'HELLO' as the same string, returning 0. Therefore, 'Same' is printed. Note that strcasecmp is in <strings.h>, not <string.h>.",
+      "explanation": "Strcasecmp() performs a case-insensitive comparison. It treats 'Hello' and 'HELLO' as the same string, returning 0. Therefore, 'Same' is printed. Note that strcasecmp is in <strings.h>, not <string.h>.",
       "hints": [
-        "strcasecmp ignores case differences",
+        "Consider strcasecmp ignores case differences",
         "'H' and 'h' are considered equal",
-        "The function is in <strings.h>"
+        "Remember that the function is in <strings.h>"
       ],
       "tags": [
         "strcasecmp",
         "string_comparison",
         "case_insensitive"
-      ]
+      ],
+      "hint": "Think about: strcasecmp() performs a case-insensitive comparison."
     },
     {
       "id": "str_044",
@@ -2224,14 +2286,15 @@
       "correct_answer": "B",
       "explanation": "\"cat\" comes before \"dog\", so strcmp returns a negative value.",
       "hints": [
-        "Lexicographical order",
-        "c comes before d",
+        "Remember that lexicographical order",
+        "Think about c comes before d",
         "Negative result"
       ],
       "tags": [
         "strcmp",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: \"cat\" comes before \"dog\", so strcmp returns a negative value."
     },
     {
       "id": "ars_str_045",
@@ -2248,16 +2311,17 @@
         "Hello World"
       ],
       "correct_answer": "A",
-      "explanation": "strchr() returns a pointer to the first occurrence of the character 'o' in the string. The first 'o' is at index 4 in 'Hello World'. Printing from that pointer prints 'o World'.",
+      "explanation": "Strchr() returns a pointer to the first occurrence of the character 'o' in the string. The first 'o' is at index 4 in 'Hello World'. Printing from that pointer prints 'o World'.",
       "hints": [
-        "strchr returns a pointer to the first occurrence",
-        "It returns a pointer, not just the character",
-        "What comes after the first 'o'?"
+        "Consider strchr returns a pointer to the first occurrence",
+        "Remember that it returns a pointer, not the character",
+        "Remember that what comes after the first 'o'?"
       ],
       "tags": [
         "strchr",
         "string_search"
-      ]
+      ],
+      "hint": "Think about: strchr() returns a pointer to the first occurrence of the character 'o' in the string."
     },
     {
       "id": "str_045",
@@ -2276,14 +2340,15 @@
       "correct_answer": "C",
       "explanation": "\"hi\" (2 chars) + \"abc\" (3 chars) + '\\0' requires 6 bytes.",
       "hints": [
-        "Total length 2+3+1",
-        "Needs 6 bytes",
+        "Consider total length 2+3+1",
+        "Think about needs 6 bytes",
         "Buffer must fit all"
       ],
       "tags": [
         "strncat",
         "buffer_size"
-      ]
+      ],
+      "hint": "Think about: \"hi\" (2 chars) + \"abc\" (3 chars) + '\\0' requires 6 bytes."
     },
     {
       "id": "ars_str_046",
@@ -2300,17 +2365,18 @@
         "NULL"
       ],
       "correct_answer": "C",
-      "explanation": "strrchr() returns a pointer to the last occurrence of 'g' in the string. In 'programming', the last 'g' is at index 10. ptr - str gives the offset from the start of the string, which is 10.",
+      "explanation": "Strrchr() returns a pointer to the last occurrence of 'g' in the string. In 'programming', the last 'g' is at index 10. ptr - str gives the offset from the start of the string, which is 10. Pointer arithmetic in C moves the pointer by multiples of the pointed-to type's size, not by bytes.",
       "hints": [
-        "strrchr finds the last occurrence",
-        "Count from the beginning to find the index",
-        "The string is 'programming'"
+        "Consider strrchr finds the last occurrence",
+        "Remember that count from the beginning to find the index",
+        "Remember that the string is 'programming'"
       ],
       "tags": [
         "strrchr",
         "string_search",
         "pointer_arithmetic"
-      ]
+      ],
+      "hint": "Think about: strrchr() returns a pointer to the last occurrence of 'g' in the string."
     },
     {
       "id": "str_046",
@@ -2327,17 +2393,18 @@
         "Not found"
       ],
       "correct_answer": "A",
-      "explanation": "strstr() returns a pointer to the first occurrence of the substring 'quick' in str. It finds 'quick' starting at index 4 and returns a pointer to that position. Printing from that pointer prints 'quick brown fox'.",
+      "explanation": "Strstr() returns a pointer to the first occurrence of the substring 'quick' in str. It finds 'quick' starting at index 4 and returns a pointer to that position. Printing from that pointer prints 'quick brown fox'.",
       "hints": [
-        "strstr finds the first occurrence of a substring",
-        "It returns a pointer to where the substring starts",
-        "What comes after 'quick' in the string?"
+        "Consider strstr finds the first occurrence of a substring",
+        "Remember that it returns a pointer to where the substring starts",
+        "Remember that what comes after 'quick' in the string?"
       ],
       "tags": [
         "strstr",
         "string_search",
         "substring"
-      ]
+      ],
+      "hint": "Think about: strstr() returns a pointer to the first occurrence of the substring 'quick' in str."
     },
     {
       "id": "str_047",
@@ -2354,17 +2421,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "strstr() returns NULL if the substring is not found in the string. Since 'world' is not present in 'Hello', strstr returns NULL and 'Not found' is printed.",
+      "explanation": "Strstr() returns NULL if the substring is not found in the string. Since 'world' is not present in 'Hello', strstr returns NULL and 'Not found' is printed.",
       "hints": [
-        "strstr returns NULL if substring is not found",
-        "Check if 'world' exists in 'Hello'",
-        "NULL indicates failure"
+        "Consider strstr returns NULL if substring is not found",
+        "Remember that check if 'world' exists in 'Hello'",
+        "Remember that nULL indicates failure"
       ],
       "tags": [
         "strstr",
         "string_search",
         "null_pointer"
-      ]
+      ],
+      "hint": "Think about: strstr() returns null if the substring is not found in the string."
     },
     {
       "id": "str_048",
@@ -2381,16 +2449,17 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "strtok() breaks a string into tokens based on delimiters. The first call returns a pointer to the first token 'one'. It replaces the delimiter ',' with a null terminator internally.",
+      "explanation": "Strtok() breaks a string into tokens based on delimiters. The first call returns a pointer to the first token 'one'. It replaces the delimiter ',' with a null terminator internally.",
       "hints": [
-        "strtok splits the string by delimiters",
-        "The first call returns the first token",
+        "Consider strtok splits the string by delimiters",
+        "Remember that the first call returns the first token",
         "The delimiter is ','"
       ],
       "tags": [
         "strtok",
         "tokenization"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "str_049",
@@ -2409,14 +2478,15 @@
       "correct_answer": "B",
       "explanation": "The first strtok call returns 'red'. Subsequent calls with NULL as the first argument continue tokenizing the same string. The second call returns 'green'.",
       "hints": [
-        "strtok(NULL, delim) continues from where it left off",
-        "The first call returns 'red'",
-        "The second call returns the next token"
+        "Consider strtok(NULL, delim) continues from where it left off",
+        "Remember that the first call returns 'red'",
+        "Remember that the second call returns the next token"
       ],
       "tags": [
         "strtok",
         "tokenization"
-      ]
+      ],
+      "hint": "Think about: the first strtok call returns 'red'."
     },
     {
       "id": "str_050",
@@ -2433,17 +2503,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "B",
-      "explanation": "strtok() modifies the original string by replacing delimiters with null terminators. After the first call, the first '-' is replaced with '\\0', so printing str prints only 'a' (up to the null terminator).",
+      "explanation": "Strtok() modifies the original string by replacing delimiters with null terminators. After the first call, the first '-' is replaced with '\\0', so printing str prints only 'a' (up to the null terminator).",
       "hints": [
-        "strtok modifies the original string",
-        "It replaces delimiters with null terminators",
-        "printf stops at the first null terminator"
+        "Consider strtok modifies the original string",
+        "Remember that it replaces delimiters with null terminators",
+        "The solution involves printf stops at the first null terminator"
       ],
       "tags": [
         "strtok",
         "tokenization",
         "string_modification"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_051",
@@ -2460,16 +2531,17 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "sprintf() formats and stores a string in a buffer instead of printing to stdout. It works like printf but writes to the buffer. Here it formats 'The answer is 42' into the buffer.",
+      "explanation": "Sprintf() formats and stores a string in a buffer instead of printing to stdout. It works like printf but writes to the buffer. Here it formats 'The answer is 42' into the buffer.",
       "hints": [
-        "sprintf writes formatted output to a string",
-        "It works like printf but to a buffer",
+        "Consider sprintf writes formatted output to a string",
+        "Remember that it works like printf but to a buffer",
         "%d is replaced with the value of num"
       ],
       "tags": [
         "sprintf",
         "string_formatting"
-      ]
+      ],
+      "hint": "Think about: sprintf() formats and stores a string in a buffer instead of printing to stdout."
     },
     {
       "id": "str_052",
@@ -2486,17 +2558,18 @@
         "Buffer overflow"
       ],
       "correct_answer": "C",
-      "explanation": "snprintf() writes at most n-1 characters to the buffer (leaving room for null terminator). With a 10-byte buffer, it writes 'Hello Wor' (9 chars + null). However, it returns 12, the length of the string that would have been written if the buffer were large enough.",
+      "explanation": "Snprintf() writes at most n-1 characters to the buffer (leaving room for null terminator). With a 10-byte buffer, it writes 'Hello Wor' (9 chars + null). However, it returns 12, the length of the string that would have been written if the buffer were large enough.",
       "hints": [
-        "snprintf truncates output to fit the buffer",
-        "It returns the length that would have been written",
-        "The buffer can hold 9 characters plus null terminator"
+        "Consider snprintf truncates output to fit the buffer",
+        "Remember that it returns the length that would have been written",
+        "Remember that the buffer can hold 9 characters plus null terminator"
       ],
       "tags": [
         "snprintf",
         "string_formatting",
         "buffer_safety"
-      ]
+      ],
+      "hint": "Remember that C strings are null-terminated arrays of characters."
     },
     {
       "id": "str_053",
@@ -2513,17 +2586,18 @@
         "Neither can be modified"
       ],
       "correct_answer": "B",
-      "explanation": "str1 is a pointer to a string literal stored in read-only memory and should not be modified (undefined behavior). str2 is a character array initialized with a copy of the string, stored on the stack, and can be modified.",
+      "explanation": "Str1 is a pointer to a string literal stored in read-only memory and should not be modified (undefined behavior). str2 is a character array initialized with a copy of the string, stored on the stack, and can be modified.",
       "hints": [
-        "String literals are stored in read-only memory",
-        "Arrays store their own copy of data",
-        "Modifying string literals is undefined behavior"
+        "Remember that string literals are stored in read-only memory",
+        "Remember that arrays store their own copy of data",
+        "Remember that modifying string literals is undefined behavior"
       ],
       "tags": [
         "string_literals",
         "char_arrays",
         "memory"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "str_054",
@@ -2540,17 +2614,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "String literals are stored in read-only memory. Attempting to modify a string literal through a pointer results in undefined behavior, which may cause a segmentation fault or other runtime errors.",
+      "explanation": "String literals are stored in read-only memory. Attempting to modify a string literal through a pointer results in undefined behavior, which may cause a segmentation fault or other runtime errors. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "String literals are read-only",
-        "Modifying read-only memory is undefined behavior",
-        "This may crash at runtime"
+        "Remember that string literals are read-only",
+        "Remember that modifying read-only memory is undefined behavior",
+        "Remember that this may crash at runtime"
       ],
       "tags": [
         "string_literals",
         "undefined_behavior",
         "memory"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "str_055",
@@ -2567,17 +2642,18 @@
         "Prints garbage"
       ],
       "correct_answer": "B",
-      "explanation": "The buffer has space for 5 characters, but 'Hello' requires 6 bytes (5 characters + null terminator). strcpy will write beyond the buffer boundaries, causing a buffer overflow and undefined behavior.",
+      "explanation": "The buffer has space for 5 characters, but 'Hello' requires 6 bytes (5 characters + null terminator). strcpy will write beyond the buffer boundaries, causing a buffer overflow and undefined behavior. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "Count the bytes needed including null terminator",
-        "strcpy doesn't check buffer size",
-        "Writing beyond buffer boundaries is dangerous"
+        "Remember that count the bytes needed including null terminator",
+        "Think about strcpy doesn't check buffer size",
+        "Remember that writing beyond buffer boundaries is dangerous"
       ],
       "tags": [
         "buffer_overflow",
         "strcpy",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "str_056",
@@ -2594,17 +2670,18 @@
         "Depends on system"
       ],
       "correct_answer": "B",
-      "explanation": "sizeof() returns the total size of the array in bytes, not the string length. The array is declared with size 6, so sizeof(str) returns 6, regardless of the content.",
+      "explanation": "Sizeof() returns the total size of the array in bytes, not the string length. The array is declared with size 6, so sizeof(str) returns 6, regardless of the content. sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "sizeof returns the size of the array, not string length",
-        "The array size is specified as 6",
+        "Consider sizeof returns the size of the array, not string length",
+        "Remember that the array size is specified as 6",
         "sizeof is compile-time, not runtime"
       ],
       "tags": [
         "sizeof",
         "char_arrays",
         "array_bounds"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "str_057",
@@ -2621,17 +2698,18 @@
         "10 10"
       ],
       "correct_answer": "B",
-      "explanation": "strlen() returns the number of characters before the null terminator (4 for 'Test'). sizeof() returns the total allocated size of the array (10 bytes).",
+      "explanation": "Strlen() returns the number of characters before the null terminator (4 for 'Test'). sizeof() returns the total allocated size of the array (10 bytes). sizeof returns the size in bytes at compile time. For arrays, it only works on the original array, not a pointer parameter.",
       "hints": [
-        "strlen counts characters until null terminator",
-        "sizeof returns total array size",
-        "Array was declared with size 10"
+        "Consider strlen counts characters until null terminator",
+        "Think about sizeof returns total array size",
+        "Remember that array was declared with size 10"
       ],
       "tags": [
         "strlen",
         "sizeof",
         "char_arrays"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "str_058",
@@ -2648,17 +2726,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "strncpy copies exactly 5 bytes from src to dest. Since 'Hello' is 5 characters, there's no room for the null terminator in the 5 bytes copied. dest is not null-terminated, causing undefined behavior when printf tries to print it.",
+      "explanation": "Strncpy copies exactly 5 bytes from src to dest. Since 'Hello' is 5 characters, there's no room for the null terminator in the 5 bytes copied. dest is not null-terminated, causing undefined behavior when printf tries to print it.",
       "hints": [
-        "strncpy doesn't guarantee null termination",
-        "src has exactly 5 characters plus null terminator",
-        "Only 5 bytes are copied"
+        "Consider strncpy doesn't guarantee null termination",
+        "Think about src has exactly 5 characters plus null terminator",
+        "Remember that only 5 bytes are copied"
       ],
       "tags": [
         "strncpy",
         "null_terminator",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     },
     {
       "id": "str_059",
@@ -2675,17 +2754,18 @@
         "a b : :"
       ],
       "correct_answer": "B",
-      "explanation": "strtok() treats consecutive delimiters as a single delimiter and skips them. It only returns non-empty tokens. Leading and trailing delimiters are also ignored. So it prints 'a b'.",
+      "explanation": "Strtok() treats consecutive delimiters as a single delimiter and skips them. It only returns non-empty tokens. Leading and trailing delimiters are also ignored. So it prints 'a b'.",
       "hints": [
-        "strtok skips empty tokens",
-        "Consecutive delimiters are treated as one",
-        "Leading/trailing delimiters are ignored"
+        "Consider strtok skips empty tokens",
+        "Remember that consecutive delimiters are treated as one",
+        "Remember that leading/trailing delimiters are ignored"
       ],
       "tags": [
         "strtok",
         "tokenization",
         "edge_cases"
-      ]
+      ],
+      "hint": "Think about: strtok() treats consecutive delimiters as a single delimiter and skips them."
     },
     {
       "id": "str_060",
@@ -2702,17 +2782,18 @@
         "20"
       ],
       "correct_answer": "C",
-      "explanation": "sprintf() returns the number of characters written to the buffer (excluding the null terminator). 'Count: 123' has 10 characters, so sprintf returns 10.",
+      "explanation": "Sprintf() returns the number of characters written to the buffer (excluding the null terminator). 'Count: 123' has 10 characters, so sprintf returns 10.",
       "hints": [
-        "sprintf returns the number of characters written",
-        "Count the characters in 'Count: 123'",
-        "The null terminator is not counted"
+        "Consider sprintf returns the number of characters written",
+        "Remember that count the characters in 'Count: 123'",
+        "Remember that the null terminator is not counted"
       ],
       "tags": [
         "sprintf",
         "return_value",
         "string_formatting"
-      ]
+      ],
+      "hint": "Think about: sprintf() returns the number of characters written to the buffer (excluding the null terminator)."
     },
     {
       "id": "str_061",
@@ -2729,17 +2810,18 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "strchr() can find the null terminator. Every C string ends with '\\0', so strchr(str, '\\0') returns a pointer to the null terminator, not NULL. Therefore, 'Found' is printed.",
+      "explanation": "Strchr() can find the null terminator. Every C string ends with '\\0', so strchr(str, '\\0') returns a pointer to the null terminator, not NULL. Therefore, 'Found' is printed.",
       "hints": [
-        "strchr can search for the null terminator",
-        "All C strings end with '\\0'",
-        "It returns a pointer to the terminator, not NULL"
+        "Consider strchr can search for the null terminator",
+        "Remember that all C strings end with '\\0'",
+        "Remember that it returns a pointer to the terminator, not NULL"
       ],
       "tags": [
         "strchr",
         "null_terminator",
         "string_search"
-      ]
+      ],
+      "hint": "Think about what happens when you dereference a NULL pointer."
     },
     {
       "id": "str_062",
@@ -2756,10 +2838,10 @@
         "src is not null-terminated"
       ],
       "correct_answer": "B",
-      "explanation": "dest has 10 bytes. 'Hello' takes 6 bytes (including null). ' World' takes 7 bytes (including null). Together they need 12 bytes (5+6+1), exceeding the 10-byte buffer. strcat causes a buffer overflow.",
+      "explanation": "Dest has 10 bytes. 'Hello' takes 6 bytes (including null). ' World' takes 7 bytes (including null). Together they need 12 bytes (5+6+1), exceeding the 10-byte buffer. strcat causes a buffer overflow. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "Count total bytes needed including null terminator",
-        "dest has only 10 bytes",
+        "Remember that count total bytes needed including null terminator",
+        "Think about dest has only 10 bytes",
         "strcat doesn't check buffer size"
       ],
       "tags": [
@@ -2783,17 +2865,18 @@
         "Buffer overflow"
       ],
       "correct_answer": "C",
-      "explanation": "dest has 10 bytes, 'Hi' uses 3 (including null). Remaining space is 7 bytes. We calculate sizeof(dest) - strlen(dest) - 1 = 10 - 2 - 1 = 7. strncat appends at most 7 chars, but always null-terminates. So it appends 'Hi' + '123456' (6 chars) to fit in 9 total + null.",
+      "explanation": "Dest has 10 bytes, 'Hi' uses 3 (including null). Remaining space is 7 bytes. We calculate sizeof(dest) - strlen(dest) - 1 = 10 - 2 - 1 = 7. strncat appends at most 7 chars, but always null-terminates. So it appends 'Hi' + '123456' (6 chars) to fit in 9 total + null.",
       "hints": [
-        "Calculate available space correctly",
-        "strncat always adds null terminator",
-        "Account for existing content and null byte"
+        "Remember that calculate available space correctly",
+        "Think about strncat always adds null terminator",
+        "Remember that account for existing content and null byte"
       ],
       "tags": [
         "strncat",
         "buffer_safety",
         "string_concatenation"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "str_064",
@@ -2810,11 +2893,11 @@
         "1 1"
       ],
       "correct_answer": "B",
-      "explanation": "strcmp compares the entire strings and finds them different ('test' vs 'testing'), returning non-zero (r1 == 0 is false, prints 0). strncmp compares only the first 4 characters ('test' vs 'test'), which match, returning 0 (r2 == 0 is true, prints 1).",
+      "explanation": "Strcmp compares the entire strings and finds them different ('test' vs 'testing'), returning non-zero (r1 == 0 is false, prints 0). strncmp compares only the first 4 characters ('test' vs 'test'), which match, returning 0 (r2 == 0 is true, prints 1).",
       "hints": [
-        "strcmp compares entire strings",
-        "strncmp compares only n characters",
-        "First 4 characters are the same"
+        "Consider strcmp compares entire strings",
+        "Think about strncmp compares only n characters",
+        "Remember that first 4 characters are the same"
       ],
       "tags": [
         "strcmp",

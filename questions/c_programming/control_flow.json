@@ -17,15 +17,16 @@
       "correct_answer": "C",
       "explanation": "No break statements, so execution falls through from case 2 to case 3 to default. Prints BCD.",
       "hints": [
-        "Missing break statements",
-        "Falls through to next cases",
-        "Prints B, then C, then D"
+        "Remember that missing break statements",
+        "Remember that falls through to next cases",
+        "Remember that prints B, then C, then D"
       ],
       "tags": [
         "switch",
         "fallthrough",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: no break statements, so execution falls through from case 2 to case 3 to default."
     },
     {
       "id": "cf_017",
@@ -44,15 +45,16 @@
       "correct_answer": "D",
       "explanation": "Outer loop runs 3 times, inner loop runs 2 times each. 3 * 2 = 6.",
       "hints": [
-        "Outer loop: 3 iterations",
-        "Inner loop: 2 iterations each",
+        "Remember that outer loop: 3 iterations",
+        "Remember that inner loop: 2 iterations each",
         "Multiply them"
       ],
       "tags": [
         "loops",
         "nested",
         "count"
-      ]
+      ],
+      "hint": "Think about: outer loop runs 3 times, inner loop runs 2 times each."
     },
     {
       "id": "cf_018",
@@ -71,15 +73,16 @@
       "correct_answer": "A",
       "explanation": "Loop breaks when i == 3, so only prints 0, 1, 2.",
       "hints": [
-        "break exits the loop",
-        "Stops at i == 3",
+        "Consider break exits the loop",
+        "Think about stops at i == 3",
         "Doesn't print 3"
       ],
       "tags": [
         "break",
         "loops",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: loop breaks when i == 3, so only prints 0, 1, 2."
     },
     {
       "id": "cf_019",
@@ -96,17 +99,18 @@
         "2"
       ],
       "correct_answer": "A",
-      "explanation": "continue skips the rest of iteration when i == 2, so doesn't print 2.",
+      "explanation": "Continue skips the rest of iteration when i == 2, so doesn't print 2.",
       "hints": [
-        "continue skips to next iteration",
-        "Skips printing when i == 2",
+        "Consider continue skips to next iteration",
+        "Remember that skips printing when i == 2",
         "Prints all except 2"
       ],
       "tags": [
         "continue",
         "loops",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: continue skips the rest of iteration when i == 2, so doesn't print 2."
     },
     {
       "id": "cf_020",
@@ -123,17 +127,18 @@
         "Infinite loop"
       ],
       "correct_answer": "B",
-      "explanation": "do-while executes body once before checking condition. Prints 5, then condition fails.",
+      "explanation": "Do-while executes body once before checking condition. Prints 5, then condition fails.",
       "hints": [
-        "do-while runs at least once",
-        "Body executes before condition check",
-        "Prints 5, then stops"
+        "Consider do-while runs at least once",
+        "Remember that body executes before condition check",
+        "The solution involves prints 5, then stops"
       ],
       "tags": [
         "do_while",
         "loops",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: do-while executes body once before checking condition."
     },
     {
       "id": "cf_021",
@@ -150,17 +155,18 @@
         "10 20"
       ],
       "correct_answer": "C",
-      "explanation": "Local variable x in func() shadows global x. func() prints 20, main() prints global x = 10.",
+      "explanation": "Local variable x in func() shadows global x. func() prints 20, main() prints global x = 10. Variable scope determines where a variable can be accessed. Local variables are only accessible within their block.",
       "hints": [
-        "Local variables shadow globals",
-        "Each x is in different scope",
+        "Remember that local variables shadow globals",
+        "Remember that each x is in different scope",
         "func has local x=20"
       ],
       "tags": [
         "scope",
         "shadowing",
         "variables"
-      ]
+      ],
+      "hint": "Think about: local variable x in func() shadows global x."
     },
     {
       "id": "cf_022",
@@ -177,17 +183,18 @@
         "Compilation error"
       ],
       "correct_answer": "C",
-      "explanation": "Block inside if creates new scope. Inner x=10 shadows outer x=5 within block. Outside block, outer x=5 is used.",
+      "explanation": "Block inside if creates new scope. Inner x=10 shadows outer x=5 within block. Outside block, outer x=5 is used. Variable scope determines where a variable can be accessed. Local variables are only accessible within their block.",
       "hints": [
-        "Blocks create new scope",
-        "Inner x shadows outer",
-        "After block, outer x visible"
+        "Remember that blocks create new scope",
+        "Remember that inner x shadows outer",
+        "Remember that after block, outer x visible"
       ],
       "tags": [
         "scope",
         "blocks",
         "shadowing"
-      ]
+      ],
+      "hint": "Think about variable scope and lifetime in C."
     },
     {
       "id": "cf_023",
@@ -206,14 +213,15 @@
       "correct_answer": "B",
       "explanation": "Enum values start at 0 by default. RED=0, GREEN=1, BLUE=2.",
       "hints": [
-        "Enums start at 0",
-        "GREEN is second value",
-        "Prints 1"
+        "Consider enums start at 0",
+        "Remember that gREEN is second value",
+        "The solution involves prints 1"
       ],
       "tags": [
         "enum",
         "constants"
-      ]
+      ],
+      "hint": "Think about: enum values start at 0 by default."
     },
     {
       "id": "cf_024",
@@ -232,14 +240,15 @@
       "correct_answer": "C",
       "explanation": "Enum values can be explicitly assigned. NOT_FOUND is 404.",
       "hints": [
-        "Enum values can be custom",
-        "NOT_FOUND = 404",
-        "Prints 404"
+        "Remember that enum values can be custom",
+        "Think about nOT_FOUND = 404",
+        "The solution involves prints 404"
       ],
       "tags": [
         "enum",
         "constants"
-      ]
+      ],
+      "hint": "Think about: enum values can be explicitly assigned."
     },
     {
       "id": "cf_026",
@@ -256,16 +265,17 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "Casting double to int truncates (doesn't round). 9.7 becomes 9.",
+      "explanation": "Casting double to int truncates (doesn't round). 9.7 becomes 9. Type casting in C converts a value from one type to another. Casting happens before the operation when you cast an operand.",
       "hints": [
-        "Type cast truncates",
-        "No rounding",
-        "9.7 -> 9"
+        "Consider type cast truncates",
+        "Think about no rounding",
+        "The solution involves 9.7 -> 9"
       ],
       "tags": [
         "casting",
         "truncation"
-      ]
+      ],
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
     },
     {
       "id": "cf_027",
@@ -284,15 +294,16 @@
       "correct_answer": "C",
       "explanation": "Ternary operator: condition ? true_value : false_value. x > 5 is true, so y = 100.",
       "hints": [
-        "Condition is x > 5",
-        "10 > 5 is true",
-        "Returns first value: 100"
+        "Consider condition is x > 5",
+        "Think about 10 > 5 is true",
+        "The solution involves remember that returns first value: 100"
       ],
       "tags": [
         "ternary",
         "operators",
         "conditional"
-      ]
+      ],
+      "hint": "Think about: ternary operator: condition ? true_value : false_value."
     },
     {
       "id": "cf_028",
@@ -311,14 +322,15 @@
       "correct_answer": "A",
       "explanation": "Short-circuit: x is 0 (false), so (y = 10) is never evaluated. y remains 5.",
       "hints": [
-        "&& short-circuits on false",
-        "x is 0 (false)",
+        "Consider && short-circuits on false",
+        "Think about x is 0 (false)",
         "y assignment skipped"
       ],
       "tags": [
         "logical_operators",
         "short_circuit"
-      ]
+      ],
+      "hint": "Remember that logical operators use short-circuit evaluation."
     },
     {
       "id": "cf_029",
@@ -335,17 +347,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "assert checks condition. If false, program aborts with error message. b=0 fails assertion.",
+      "explanation": "Assert checks condition. If false, program aborts with error message. b=0 fails assertion.",
       "hints": [
-        "assert verifies conditions",
-        "b != 0 is false",
+        "Consider assert verifies conditions",
+        "Think about b != 0 is false",
         "Program aborts"
       ],
       "tags": [
         "assert",
         "debugging",
         "testing"
-      ]
+      ],
+      "hint": "Think about: assert checks condition."
     },
     {
       "id": "cf_030",
@@ -364,15 +377,16 @@
       "correct_answer": "C",
       "explanation": "NDEBUG disables all assertions. assert(0) is removed, program continues normally.",
       "hints": [
-        "NDEBUG disables asserts",
-        "Used in production",
+        "Remember that nDEBUG disables asserts",
+        "Think about used in production",
         "Program continues"
       ],
       "tags": [
         "assert",
         "NDEBUG",
         "debugging"
-      ]
+      ],
+      "hint": "Think about: ndebug disables all assertions."
     },
     {
       "id": "cf_031",
@@ -389,17 +403,18 @@
         "Loop A is infinite"
       ],
       "correct_answer": "B",
-      "explanation": "do-while checks condition after body, so executes at least once. while checks before.",
+      "explanation": "Do-while checks condition after body, so executes at least once. while checks before.",
       "hints": [
-        "do-while: condition checked after",
-        "while: condition checked before",
-        "Different first iteration"
+        "Consider do-while: condition checked after",
+        "Think about while: condition checked before",
+        "Remember that different first iteration"
       ],
       "tags": [
         "loops",
         "do_while",
         "while"
-      ]
+      ],
+      "hint": "Think about: do-while checks condition after body, so executes at least once."
     },
     {
       "id": "cf_032",
@@ -418,14 +433,15 @@
       "correct_answer": "C",
       "explanation": "Comma operator allows multiple expressions. j starts at 10 and decrements. Prints: 10 9 8.",
       "hints": [
-        "Comma operator in for loop",
-        "j starts at 10",
+        "Remember that comma operator in for loop",
+        "Think about j starts at 10",
         "j decrements each iteration"
       ],
       "tags": [
         "for_loop",
         "comma_operator"
-      ]
+      ],
+      "hint": "Think about: comma operator allows multiple expressions."
     },
     {
       "id": "cf_033",
@@ -444,14 +460,15 @@
       "correct_answer": "B",
       "explanation": "The loop breaks when i reaches 2, so it prints 2.",
       "hints": [
-        "Break stops the loop",
-        "Break at i == 2",
-        "Prints 2"
+        "Consider break stops the loop",
+        "Think about break at i == 2",
+        "The solution involves prints 2"
       ],
       "tags": [
         "break",
         "while_loop"
-      ]
+      ],
+      "hint": "Think about: the loop breaks when i reaches 2, so it prints 2."
     },
     {
       "id": "cf_034",
@@ -470,14 +487,15 @@
       "correct_answer": "B",
       "explanation": "Odd values are 1, 3, 5, so count is 3.",
       "hints": [
-        "Even numbers are skipped",
-        "Odd numbers: 1,3,5",
-        "Count increments 3 times"
+        "Remember that even numbers are skipped",
+        "Think about odd numbers: 1,3,5",
+        "The solution involves remember that count increments 3 times"
       ],
       "tags": [
         "continue",
         "for_loop"
-      ]
+      ],
+      "hint": "Think about: odd values are 1, 3, 5, so count is 3."
     },
     {
       "id": "cf_035",
@@ -496,14 +514,15 @@
       "correct_answer": "C",
       "explanation": "The loop adds 1 + 3 + 5 = 9.",
       "hints": [
-        "i runs 1,3,5",
-        "Sum those values",
-        "1+3+5=9"
+        "Consider i runs 1,3,5",
+        "Think about sum those values",
+        "The solution involves 1+3+5=9"
       ],
       "tags": [
         "for_loop",
         "increment"
-      ]
+      ],
+      "hint": "Think about: the loop adds 1 + 3 + 5 = 9."
     },
     {
       "id": "cf_036",
@@ -522,14 +541,15 @@
       "correct_answer": "A",
       "explanation": "&& has higher precedence than ||. y && z is 0, then x || 0 is 0.",
       "hints": [
-        "&& evaluated first",
-        "y && z is 0",
-        "0 || 0 = 0"
+        "Consider && evaluated first",
+        "Think about y && z is 0",
+        "The solution involves 0 || 0 = 0"
       ],
       "tags": [
         "precedence",
         "logical"
-      ]
+      ],
+      "hint": "Consider the order of operations and operator precedence in C."
     },
     {
       "id": "cf_037",
@@ -548,14 +568,15 @@
       "correct_answer": "B",
       "explanation": "2 outer iterations * 3 inner iterations = 6.",
       "hints": [
-        "Outer runs 2 times",
-        "Inner runs 3 times",
-        "2*3=6"
+        "Consider outer runs 2 times",
+        "Think about inner runs 3 times",
+        "The solution involves 2*3=6"
       ],
       "tags": [
         "nested_loops",
         "counting"
-      ]
+      ],
+      "hint": "Think about: 2 outer iterations * 3 inner iterations = 6."
     },
     {
       "id": "cf_038",
@@ -574,14 +595,15 @@
       "correct_answer": "C",
       "explanation": "The outer if is false, so the inner if/else is skipped and nothing prints.",
       "hints": [
-        "a is false",
-        "Outer if skips inner block",
-        "No output"
+        "Consider a is false",
+        "Remember that outer if skips inner block",
+        "The solution involves no output"
       ],
       "tags": [
         "if_else",
         "dangling_else"
-      ]
+      ],
+      "hint": "Think about: the outer if is false, so the inner if/else is skipped and nothing prints."
     },
     {
       "id": "cf_039",
@@ -598,16 +620,17 @@
         "No output"
       ],
       "correct_answer": "C",
-      "explanation": "x is 4, so default executes and prints D.",
+      "explanation": "X is 4, so default executes and prints D.",
       "hints": [
-        "No case matches 4",
-        "Default runs",
-        "Prints D"
+        "Consider no case matches 4",
+        "Think about default runs",
+        "The solution involves prints d"
       ],
       "tags": [
         "switch",
         "default"
-      ]
+      ],
+      "hint": "Think about: x is 4, so default executes and prints d."
     },
     {
       "id": "cf_040",
@@ -624,16 +647,17 @@
         "2"
       ],
       "correct_answer": "B",
-      "explanation": "x goes 2 -> 1 -> 0, then stops. Prints 0.",
+      "explanation": "X goes 2 -> 1 -> 0, then stops. Prints 0.",
       "hints": [
-        "Do-while runs at least once",
-        "x decrements until 0",
-        "Prints 0"
+        "Remember that do-while runs at least once",
+        "Think about x decrements until 0",
+        "The solution involves prints 0"
       ],
       "tags": [
         "do_while",
         "loops"
-      ]
+      ],
+      "hint": "Think about: x goes 2 -> 1 -> 0, then stops."
     },
     {
       "id": "cf_041",
@@ -650,10 +674,10 @@
         "ABCD"
       ],
       "correct_answer": "C",
-      "explanation": "Switch jumps to case 1, prints 'A', then falls through to case 2 (prints 'B'), then falls through to case 3 (prints 'C'), then hits break. Output: ABC",
+      "explanation": "Switch jumps to case 1, prints 'A', then falls through to case 2 (prints 'B'), then falls through to case 3 (prints 'C'), then hits break. Output: ABC.",
       "hints": [
-        "No break statements in case 1 and 2",
-        "Execution falls through each case",
+        "Remember that no break statements in case 1 and 2",
+        "Remember that execution falls through each case",
         "Breaks at case 3"
       ],
       "tags": [
@@ -678,14 +702,15 @@
       "correct_answer": "A",
       "explanation": "Break only exits the inner loop when i=1 and j=1. Iteration i=0: prints 00 01 02. i=1: prints 10, then breaks at j=1. i=2: prints 20 21 22.",
       "hints": [
-        "Break only affects the innermost loop",
-        "Break occurs at i=1, j=1",
-        "Outer loop continues after break"
+        "Remember that break only affects the innermost loop",
+        "Remember that break occurs at i=1, j=1",
+        "Remember that outer loop continues after break"
       ],
       "tags": [
         "nested_loops",
         "break"
-      ]
+      ],
+      "hint": "Think about: break only exits the inner loop when i=1 and j=1."
     },
     {
       "id": "cf_043",
@@ -702,16 +727,17 @@
         "C"
       ],
       "correct_answer": "B",
-      "explanation": "Prints 'A', then goto jumps to label 'skip', skipping 'B', then prints 'C'. Output: AC",
+      "explanation": "Prints 'A', then goto jumps to label 'skip', skipping 'B', then prints 'C'. Output: AC.",
       "hints": [
-        "goto jumps to the label",
-        "Code between goto and label is skipped",
+        "Consider goto jumps to the label",
+        "Remember that code between goto and label is skipped",
         "Prints A then C"
       ],
       "tags": [
         "goto",
         "labels"
-      ]
+      ],
+      "hint": "Think about: prints 'a', then goto jumps to label 'skip', skipping 'b', then prints 'c'."
     },
     {
       "id": "cf_044",
@@ -728,17 +754,18 @@
         "1 1"
       ],
       "correct_answer": "B",
-      "explanation": "The assignment a = 1 evaluates to 1 (true), so the OR short-circuits and b = 1 is never executed. Output: 1 0",
+      "explanation": "The assignment a = 1 evaluates to 1 (true), so the OR short-circuits and b = 1 is never executed. Output: 1 0.",
       "hints": [
-        "|| short-circuits when left side is true",
-        "a = 1 evaluates to 1 (true)",
+        "Consider || short-circuits when left side is true",
+        "Think about a = 1 evaluates to 1 (true)",
         "b = 1 is never executed"
       ],
       "tags": [
         "short_circuit",
         "logical_or",
         "side_effects"
-      ]
+      ],
+      "hint": "Remember that logical operators use short-circuit evaluation."
     },
     {
       "id": "cf_045",
@@ -755,16 +782,17 @@
         "5 5"
       ],
       "correct_answer": "B",
-      "explanation": "Comma operator evaluates left to right and returns the rightmost value. y = 3 sets y to 3, then y + 2 evaluates to 5, which is assigned to x. Output: 5 3",
+      "explanation": "Comma operator evaluates left to right and returns the rightmost value. y = 3 sets y to 3, then y + 2 evaluates to 5, which is assigned to x. Output: 5 3.",
       "hints": [
-        "Comma operator evaluates both expressions",
-        "Returns the value of the right expression",
+        "Remember that comma operator evaluates both expressions",
+        "Remember that returns the value of the right expression",
         "y becomes 3, x becomes 5"
       ],
       "tags": [
         "comma_operator",
         "expressions"
-      ]
+      ],
+      "hint": "Think about: comma operator evaluates left to right and returns the rightmost value."
     },
     {
       "id": "cf_046",
@@ -781,16 +809,17 @@
         "5"
       ],
       "correct_answer": "B",
-      "explanation": "x > 10 is false, so evaluates the second ternary. x > 3 is true, so y = 2. Output: 2",
+      "explanation": "X > 10 is false, so evaluates the second ternary. x > 3 is true, so y = 2. Output: 2.",
       "hints": [
-        "First condition x > 10 is false",
-        "Second condition x > 3 is true",
-        "Returns 2"
+        "Remember that first condition x > 10 is false",
+        "Remember that second condition x > 3 is true",
+        "The solution involves returns 2"
       ],
       "tags": [
         "ternary",
         "nested"
-      ]
+      ],
+      "hint": "Think about: x > 10 is false, so evaluates the second ternary."
     },
     {
       "id": "cf_047",
@@ -809,9 +838,9 @@
       "correct_answer": "B",
       "explanation": "Duff's device is an advanced loop unrolling technique that combines a switch statement with a loop to optimize memory copy operations by reducing loop overhead.",
       "hints": [
-        "Combines switch and loop",
-        "Reduces loop iterations",
-        "Optimization technique"
+        "Remember that combines switch and loop",
+        "Remember that reduces loop iterations",
+        "Remember that optimization technique"
       ],
       "tags": [
         "duffs_device",
@@ -834,16 +863,17 @@
         "0011"
       ],
       "correct_answer": "B",
-      "explanation": "Continue skips j=1 in the inner loop. For i=0: prints 0, 2. For i=1: prints 0, 2. Output: 0202",
+      "explanation": "Continue skips j=1 in the inner loop. For i=0: prints 0, 2. For i=1: prints 0, 2. Output: 0202.",
       "hints": [
-        "Continue only affects inner loop",
-        "Skips when j equals 1",
-        "Outer loop runs twice"
+        "Remember that continue only affects inner loop",
+        "Remember that skips when j equals 1",
+        "Remember that outer loop runs twice"
       ],
       "tags": [
         "continue",
         "nested_loops"
-      ]
+      ],
+      "hint": "Think about: continue skips j=1 in the inner loop."
     },
     {
       "id": "cf_049",
@@ -860,16 +890,17 @@
         "No output"
       ],
       "correct_answer": "B",
-      "explanation": "While loop condition is false initially, so it doesn't run. Do-while executes once before checking condition. Output: B",
+      "explanation": "While loop condition is false initially, so it doesn't run. Do-while executes once before checking condition. Output: B.",
       "hints": [
-        "While checks condition first",
-        "Do-while checks condition after",
+        "Remember that while checks condition first",
+        "Remember that do-while checks condition after",
         "x starts at 5"
       ],
       "tags": [
         "while",
         "do_while"
-      ]
+      ],
+      "hint": "Think about: while loop condition is false initially, so it doesn't run."
     },
     {
       "id": "cf_050",
@@ -886,17 +917,18 @@
         "Undefined behavior"
       ],
       "correct_answer": "A",
-      "explanation": "Expression: (a && b) || (c && !b). First part: 1 && 0 = 0. Second part: 1 && 1 = 1. Result: 0 || 1 = 1 (True). Output: True",
+      "explanation": "Expression: (a && b) || (c && !b). First part: 1 && 0 = 0. Second part: 1 && 1 = 1. Result: 0 || 1 = 1 (True). Output: True.",
       "hints": [
-        "&& has higher precedence than ||",
-        "Evaluate left to right with precedence",
+        "Consider && has higher precedence than ||",
+        "Remember that evaluate left to right with precedence",
         "Second part is true"
       ],
       "tags": [
         "boolean",
         "operators",
         "precedence"
-      ]
+      ],
+      "hint": "Consider the difference between logical operators (&&, ||) and bitwise operators (&, |)."
     },
     {
       "id": "cf_051",
@@ -913,17 +945,18 @@
         "Infinite loop"
       ],
       "correct_answer": "A",
-      "explanation": "Goto creates a loop-like structure. Prints 0, 1, 2, then exits when i reaches 3. Output: 0 1 2",
+      "explanation": "Goto creates a loop-like structure. Prints 0, 1, 2, then exits when i reaches 3. Output: 0 1 2.",
       "hints": [
-        "goto jumps back to label",
-        "Condition i < 3 controls exit",
+        "Consider goto jumps back to label",
+        "Remember that condition i < 3 controls exit",
         "Prints 0, 1, 2"
       ],
       "tags": [
         "goto",
         "labels",
         "loops"
-      ]
+      ],
+      "hint": "Think about: goto creates a loop-like structure."
     },
     {
       "id": "cf_052",
@@ -940,16 +973,17 @@
         "DB"
       ],
       "correct_answer": "B",
-      "explanation": "Default position doesn't matter. Switch jumps to case 2, prints 'B'. No break, so execution ends. Output: B",
+      "explanation": "Default position doesn't matter. Switch jumps to case 2, prints 'B'. No break, so execution ends. Output: B.",
       "hints": [
-        "Switch jumps directly to matching case",
-        "Default position is irrelevant",
+        "Remember that switch jumps directly to matching case",
+        "Remember that default position is irrelevant",
         "case 2 matches x"
       ],
       "tags": [
         "switch",
         "default"
-      ]
+      ],
+      "hint": "Think about: default position doesn't matter."
     },
     {
       "id": "cf_053",
@@ -966,16 +1000,17 @@
         "0 1 2 10"
       ],
       "correct_answer": "B",
-      "explanation": "For loop reinitializes i to 0, prints 0 1 2, then i becomes 3 when loop exits. Output: 0 1 2 3",
+      "explanation": "For loop reinitializes i to 0, prints 0 1 2, then i becomes 3 when loop exits. Output: 0 1 2 3. Always initialize variables before using them to avoid undefined behavior.",
       "hints": [
-        "For loop initialization resets i",
-        "Loop exits when i reaches 3",
+        "Remember that for loop initialization resets i",
+        "Remember that loop exits when i reaches 3",
         "Final value is 3"
       ],
       "tags": [
         "for_loop",
         "initialization"
-      ]
+      ],
+      "hint": "Think about: for loop reinitializes i to 0, prints 0 1 2, then i becomes 3 when loop exits."
     },
     {
       "id": "cf_054",
@@ -992,16 +1027,17 @@
         "5 0"
       ],
       "correct_answer": "A",
-      "explanation": "Condition x > 3 is true, so y = 10 is executed and its value (10) is assigned to result. Output: 10 10",
+      "explanation": "Condition x > 3 is true, so y = 10 is executed and its value (10) is assigned to result. Output: 10 10.",
       "hints": [
-        "Condition is true",
-        "First branch executes",
-        "Assignment returns assigned value"
+        "Consider condition is true",
+        "Remember that first branch executes",
+        "Remember that assignment returns assigned value"
       ],
       "tags": [
         "ternary",
         "side_effects"
-      ]
+      ],
+      "hint": "Consider the C language rule: condition x > 3 is true, so y = 10 is executed and its value (10) is assigned to result."
     },
     {
       "id": "cf_055",
@@ -1018,16 +1054,17 @@
         "6 5"
       ],
       "correct_answer": "B",
-      "explanation": "First iteration: x=0, y=5, prints 5. Second iteration: x=1, y=4, prints 4. Output: 5 4",
+      "explanation": "First iteration: x=0, y=5, prints 5. Second iteration: x=1, y=4, prints 4. Output: 5 4.",
       "hints": [
-        "Both x and y change each iteration",
-        "x increments, y decrements",
+        "Remember that both x and y change each iteration",
+        "Think about x increments, y decrements",
         "Print their sum"
       ],
       "tags": [
         "comma_operator",
         "for_loop"
-      ]
+      ],
+      "hint": "Think about: first iteration: x=0, y=5, prints 5."
     },
     {
       "id": "cf_056",
@@ -1044,16 +1081,17 @@
         "10"
       ],
       "correct_answer": "C",
-      "explanation": "x is 0 (false), so && short-circuits and y = 10 is never executed. y remains 5. Output: 5",
+      "explanation": "X is 0 (false), so && short-circuits and y = 10 is never executed. y remains 5. Output: 5.",
       "hints": [
-        "&& short-circuits on false",
-        "Left side is false",
+        "Consider && short-circuits on false",
+        "Think about left side is false",
         "y assignment is skipped"
       ],
       "tags": [
         "short_circuit",
         "logical_and"
-      ]
+      ],
+      "hint": "Consider the difference between logical operators (&&, ||) and bitwise operators (&, |)."
     },
     {
       "id": "cf_057",
@@ -1072,14 +1110,15 @@
       "correct_answer": "B",
       "explanation": "A: for(;;) is infinite (no condition means always true). B: Missing condition means always true. C: i never increments but will eventually be optimized or timeout, but technically finite if broken. A and B are infinite.",
       "hints": [
-        "Missing condition defaults to true",
-        "for(;;) is classic infinite loop",
-        "C doesn't increment but has a condition"
+        "Remember that missing condition defaults to true",
+        "Think about for(;;) is classic infinite loop",
+        "Remember that c doesn't increment but has a condition"
       ],
       "tags": [
         "for_loop",
         "infinite_loop"
-      ]
+      ],
+      "hint": "Think about: a: for(;;) is infinite (no condition means always true)."
     },
     {
       "id": "cf_058",
@@ -1096,17 +1135,18 @@
         "20"
       ],
       "correct_answer": "B",
-      "explanation": "Ternary is right-associative but the first one evaluates first. x is 1 (true), so result = y = 2. The second ternary is never evaluated. Output: 2",
+      "explanation": "Ternary is right-associative but the first one evaluates first. x is 1 (true), so result = y = 2. The second ternary is never evaluated. Output: 2.",
       "hints": [
-        "First ternary: x ? y : (rest)",
-        "x is true (1)",
-        "Returns y which is 2"
+        "Remember that first ternary: x ? y : (rest)",
+        "Think about x is true (1)",
+        "The solution involves returns y which is 2"
       ],
       "tags": [
         "ternary",
         "precedence",
         "associativity"
-      ]
+      ],
+      "hint": "Think about: ternary is right-associative but the first one evaluates first."
     },
     {
       "id": "cf_059",
@@ -1123,17 +1163,18 @@
         "AAABBBCCC"
       ],
       "correct_answer": "C",
-      "explanation": "Loop runs 3 times: i=0 prints 'A', i=1 prints 'B', i=2 prints 'C' (default). Break only exits switch, not loop. Output: ABC",
+      "explanation": "Loop runs 3 times: i=0 prints 'A', i=1 prints 'B', i=2 prints 'C' (default). Break only exits switch, not loop. Output: ABC.",
       "hints": [
-        "Break only exits the switch",
-        "Loop continues for all iterations",
-        "Each iteration prints one letter"
+        "Remember that break only exits the switch",
+        "Remember that loop continues for all iterations",
+        "Remember that each iteration prints one letter"
       ],
       "tags": [
         "switch",
         "break",
         "loops"
-      ]
+      ],
+      "hint": "Think about: loop runs 3 times: i=0 prints 'a', i=1 prints 'b', i=2 prints 'c' (default)."
     },
     {
       "id": "cf_060",
@@ -1150,16 +1191,17 @@
         "1 2 3 4"
       ],
       "correct_answer": "B",
-      "explanation": "x++ returns old value for comparison, but x is already incremented when printed. Compares 0, 1, 2 but prints 1, 2, 3. Output: 1 2 3",
+      "explanation": "X++ returns old value for comparison, but x is already incremented when printed. Compares 0, 1, 2 but prints 1, 2, 3. Output: 1 2 3.",
       "hints": [
-        "Post-increment happens after comparison",
-        "But before printing",
-        "Prints incremented values"
+        "Remember that post-increment happens after comparison",
+        "Think about but before printing",
+        "Remember that prints incremented values"
       ],
       "tags": [
         "post_increment",
         "while_loop"
-      ]
+      ],
+      "hint": "Think about: x++ returns old value for comparison, but x is already incremented when printed."
     },
     {
       "id": "cf_061",
@@ -1176,16 +1218,17 @@
         "No output"
       ],
       "correct_answer": "B",
-      "explanation": "error is true, so goto jumps to cleanup label, skipping 'Success' print. Only prints 'Cleanup'. Output: Cleanup",
+      "explanation": "Error is true, so goto jumps to cleanup label, skipping 'Success' print. Only prints 'Cleanup'. Output: Cleanup.",
       "hints": [
-        "goto skips code to the label",
-        "error is true",
-        "Only cleanup executes"
+        "Consider goto skips code to the label",
+        "Think about error is true",
+        "Remember that only cleanup executes"
       ],
       "tags": [
         "goto",
         "error_handling"
-      ]
+      ],
+      "hint": "Think about: error is true, so goto jumps to cleanup label, skipping 'success' print."
     },
     {
       "id": "cf_062",
@@ -1204,9 +1247,9 @@
       "correct_answer": "B",
       "explanation": "Loop unrolling reduces the number of iterations, decreasing loop overhead (increment, comparison, branch) and improving CPU pipeline efficiency.",
       "hints": [
-        "Fewer loop control operations",
-        "Better CPU pipeline utilization",
-        "Performance optimization"
+        "Remember that fewer loop control operations",
+        "Remember that better CPU pipeline utilization",
+        "Remember that performance optimization"
       ],
       "tags": [
         "loop_unrolling",
@@ -1228,10 +1271,10 @@
         "5 3 2"
       ],
       "correct_answer": "B",
-      "explanation": "Comma operator evaluates b = 2 (b becomes 2), c = 3 (c becomes 3), then b + c (returns 5), which is assigned to a. Output: 5 2 3",
+      "explanation": "Comma operator evaluates b = 2 (b becomes 2), c = 3 (c becomes 3), then b + c (returns 5), which is assigned to a. Output: 5 2 3.",
       "hints": [
-        "Comma evaluates left to right",
-        "Returns rightmost value",
+        "Remember that comma evaluates left to right",
+        "Remember that returns rightmost value",
         "a gets the final expression value"
       ],
       "tags": [
@@ -1254,16 +1297,17 @@
         "No output"
       ],
       "correct_answer": "C",
-      "explanation": "An empty switch statement is valid. It does nothing and execution continues. Output: Done",
+      "explanation": "An empty switch statement is valid. It does nothing and execution continues. Output: Done.",
       "hints": [
-        "Empty switch is valid",
-        "No cases to match",
-        "Continues to next statement"
+        "Remember that empty switch is valid",
+        "Think about no cases to match",
+        "Remember that continues to next statement"
       ],
       "tags": [
         "switch",
         "edge_cases"
-      ]
+      ],
+      "hint": "Think about: an empty switch statement is valid."
     },
     {
       "id": "cf_065",
@@ -1280,17 +1324,18 @@
         "1 1 1 0"
       ],
       "correct_answer": "A",
-      "explanation": "a is 1 (true), so || short-circuits. The entire right side (b = 1) && (c = 1) is not evaluated. b and c remain 0. result is 1. Output: 1 1 0 0",
+      "explanation": "A is 1 (true), so || short-circuits. The entire right side (b = 1) && (c = 1) is not evaluated. b and c remain 0. result is 1. Output: 1 1 0 0.",
       "hints": [
-        "|| short-circuits on true",
-        "Left side (a) is true",
-        "Right side never executes"
+        "Consider || short-circuits on true",
+        "Remember that left side (a) is true",
+        "Remember that right side never executes"
       ],
       "tags": [
         "short_circuit",
         "logical_operators",
         "side_effects"
-      ]
+      ],
+      "hint": "Consider the difference between logical operators (&&, ||) and bitwise operators (&, |)."
     },
     {
       "id": "ctrl_001",
@@ -1307,17 +1352,18 @@
         "5 6 7"
       ],
       "correct_answer": "B",
-      "explanation": "i++ returns 5 then increments to 6. ++i increments to 7 then returns 7. Final value of i is 7. Output: 5 7 7",
+      "explanation": "I++ returns 5 then increments to 6. ++i increments to 7 then returns 7. Final value of i is 7. Output: 5 7 7.",
       "hints": [
-        "i++ uses the value then increments",
-        "++i increments then uses the value",
-        "After i++, i becomes 6. After ++i, i becomes 7"
+        "Consider i++ uses the value then increments",
+        "Think about ++i increments then uses the value",
+        "Remember that after i++, i becomes 6. After ++i, i becomes 7"
       ],
       "tags": [
         "increment",
         "prefix",
         "postfix"
-      ]
+      ],
+      "hint": "Think about: i++ returns 5 then increments to 6."
     },
     {
       "id": "ctrl_002",
@@ -1336,15 +1382,16 @@
       "correct_answer": "B",
       "explanation": "The left side of && is false (x != 0), so the right side is never evaluated. That prevents division by zero, and the else branch prints B.",
       "hints": [
-        "&& short-circuits when the left side is false",
-        "The division is skipped",
+        "Consider && short-circuits when the left side is false",
+        "Remember that the division is skipped",
         "The else branch runs"
       ],
       "tags": [
         "short_circuit",
         "logical_and",
         "control_flow"
-      ]
+      ],
+      "hint": "Consider the difference between logical operators (&&, ||) and bitwise operators (&, |)."
     },
     {
       "id": "ctrl_003",
@@ -1363,15 +1410,16 @@
       "correct_answer": "B",
       "explanation": "Execution jumps to case 2 and prints B, then breaks. Case 1 is not executed because the switch matches case 2 directly.",
       "hints": [
-        "The switch jumps directly to case 2",
-        "Only case 2 executes before break",
-        "No fallthrough occurs from case 1"
+        "Remember that the switch jumps directly to case 2",
+        "Remember that only case 2 executes before break",
+        "Remember that no fallthrough occurs from case 1"
       ],
       "tags": [
         "switch",
         "fallthrough",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: execution jumps to case 2 and prints b, then breaks."
     },
     {
       "id": "ctrl_004",
@@ -1390,14 +1438,15 @@
       "correct_answer": "B",
       "explanation": "The else binds to the nearest if (the inner one). Since b is 0, it prints Y.",
       "hints": [
-        "Else pairs with the closest unmatched if",
-        "The inner if checks b",
+        "Remember that else pairs with the closest unmatched if",
+        "Remember that the inner if checks b",
         "b is 0"
       ],
       "tags": [
         "if_else",
         "dangling_else"
-      ]
+      ],
+      "hint": "Think about: the else binds to the nearest if (the inner one)."
     },
     {
       "id": "ctrl_005",
@@ -1416,14 +1465,15 @@
       "correct_answer": "C",
       "explanation": "The loop adds 0 + 1 + 2, which is 3.",
       "hints": [
-        "i runs 0, 1, 2",
-        "Sum is 0+1+2",
-        "Total is 3"
+        "Consider i runs 0, 1, 2",
+        "Think about sum is 0+1+2",
+        "The solution involves total is 3"
       ],
       "tags": [
         "for_loop",
         "sum"
-      ]
+      ],
+      "hint": "Think about: the loop adds 0 + 1 + 2, which is 3."
     },
     {
       "id": "ctrl_006",
@@ -1442,14 +1492,15 @@
       "correct_answer": "A",
       "explanation": "The odd numbers between 0 and 4 are 1 and 3, so count increments twice.",
       "hints": [
-        "Even numbers are skipped",
-        "Odd numbers are 1 and 3",
-        "Count increments twice"
+        "Remember that even numbers are skipped",
+        "Remember that odd numbers are 1 and 3",
+        "Remember that count increments twice"
       ],
       "tags": [
         "continue",
         "for_loop"
-      ]
+      ],
+      "hint": "Think about: the odd numbers between 0 and 4 are 1 and 3, so count increments twice."
     },
     {
       "id": "ctrl_007",
@@ -1468,15 +1519,16 @@
       "correct_answer": "C",
       "explanation": "Case 3 prints C, then falls through to default and prints D.",
       "hints": [
-        "No break after case 3",
-        "Default executes after case 3",
+        "Remember that no break after case 3",
+        "Remember that default executes after case 3",
         "Both C and D print"
       ],
       "tags": [
         "switch",
         "fallthrough",
         "default"
-      ]
+      ],
+      "hint": "Think about: case 3 prints c, then falls through to default and prints d."
     },
     {
       "id": "ctrl_008",
@@ -1495,14 +1547,15 @@
       "correct_answer": "B",
       "explanation": "Since x > 3 is true, y becomes x - 1, which is 4.",
       "hints": [
-        "Condition is true",
-        "Use the first branch",
-        "5 - 1 = 4"
+        "Consider condition is true",
+        "Consider using the first branch",
+        "The solution involves 5 - 1 = 4"
       ],
       "tags": [
         "ternary",
         "conditionals"
-      ]
+      ],
+      "hint": "Think about: since x > 3 is true, y becomes x - 1, which is 4."
     },
     {
       "id": "ctrl_009",
@@ -1521,14 +1574,15 @@
       "correct_answer": "B",
       "explanation": "The do-while loop executes once before checking the condition, so x becomes 1.",
       "hints": [
-        "do-while runs at least once",
-        "x increments once",
-        "x is 1"
+        "Consider do-while runs at least once",
+        "Think about x increments once",
+        "The solution involves x is 1"
       ],
       "tags": [
         "do_while",
         "loops"
-      ]
+      ],
+      "hint": "Think about: the do-while loop executes once before checking the condition, so x becomes 1."
     },
     {
       "id": "ctrl_010",
@@ -1547,14 +1601,15 @@
       "correct_answer": "C",
       "explanation": "The semicolon makes the loop body empty. The loop runs until i == 5, then prints 5.",
       "hints": [
-        "The semicolon ends the loop body",
-        "i increments until 5",
-        "Prints 5"
+        "Remember that the semicolon ends the loop body",
+        "Think about i increments until 5",
+        "The solution involves prints 5"
       ],
       "tags": [
         "for_loop",
         "pitfall"
-      ]
+      ],
+      "hint": "Think about: the semicolon makes the loop body empty."
     },
     {
       "id": "ctrl_011",
@@ -1573,14 +1628,15 @@
       "correct_answer": "A",
       "explanation": "The left side of || is true, so the right side is not evaluated. It prints A.",
       "hints": [
-        "|| short-circuits on true",
-        "Division is skipped",
-        "A is printed"
+        "Consider || short-circuits on true",
+        "Think about division is skipped",
+        "The solution involves a is printed"
       ],
       "tags": [
         "short_circuit",
         "logical_or"
-      ]
+      ],
+      "hint": "Think about: the left side of || is true, so the right side is not evaluated."
     },
     {
       "id": "ctrl_012",
@@ -1599,14 +1655,15 @@
       "correct_answer": "C",
       "explanation": "The inner loop runs 1 + 2 + 3 times, so count becomes 6.",
       "hints": [
-        "Add the iterations: 1+2+3",
-        "Count increments each inner loop",
-        "Total is 6"
+        "Remember that add the iterations: 1+2+3",
+        "Remember that count increments each inner loop",
+        "The solution involves total is 6"
       ],
       "tags": [
         "nested_loops",
         "counting"
-      ]
+      ],
+      "hint": "Think about: the inner loop runs 1 + 2 + 3 times, so count becomes 6."
     },
     {
       "id": "ctrl_013",
@@ -1625,14 +1682,15 @@
       "correct_answer": "B",
       "explanation": "The switch matches case 'b' and prints B.",
       "hints": [
-        "c is 'b'",
-        "Case 'b' matches",
-        "Prints B"
+        "Consider c is 'b'",
+        "Think about case 'b' matches",
+        "The solution involves prints b"
       ],
       "tags": [
         "switch",
         "char"
-      ]
+      ],
+      "hint": "Think about: the switch matches case 'b' and prints b."
     },
     {
       "id": "ctrl_014",
@@ -1649,17 +1707,18 @@
         "Compilation error"
       ],
       "correct_answer": "A",
-      "explanation": "x = 5 assigns 5 to x, and the expression is nonzero, so the if condition is true.",
+      "explanation": "X = 5 assigns 5 to x, and the expression is nonzero, so the if condition is true.",
       "hints": [
-        "This is assignment, not comparison",
-        "The expression value is 5",
+        "Remember that this is assignment, not comparison",
+        "Remember that the expression value is 5",
         "Nonzero is true"
       ],
       "tags": [
         "assignment",
         "if_else",
         "pitfall"
-      ]
+      ],
+      "hint": "Think about: x = 5 assigns 5 to x, and the expression is nonzero, so the if condition is true."
     },
     {
       "id": "ctrl_015",
@@ -1676,16 +1735,17 @@
         "0"
       ],
       "correct_answer": "B",
-      "explanation": "i-- returns 3, 2, 1, then 0. The loop runs three times, so count is 3.",
+      "explanation": "I-- returns 3, 2, 1, then 0. The loop runs three times, so count is 3.",
       "hints": [
-        "The condition uses the old value of i",
-        "Loop runs while the value is nonzero",
+        "Remember that the condition uses the old value of i",
+        "Remember that loop runs while the value is nonzero",
         "Three iterations"
       ],
       "tags": [
         "while_loop",
         "post_decrement"
-      ]
+      ],
+      "hint": "Think about: i-- returns 3, 2, 1, then 0."
     },
     {
       "id": "drag_002",
@@ -1746,8 +1806,8 @@
       },
       "explanation": "Initialize sum to 0, start i at 1, loop while i <= n, add i to sum each iteration, and increment i by 1.",
       "hints": [
-        "Sum starts at 0",
-        "Loop from 1 to n inclusive",
+        "Consider sum starts at 0",
+        "Remember that loop from 1 to n inclusive",
         "+= adds to the sum",
         "++ increments by 1"
       ],
@@ -1821,17 +1881,18 @@
           ]
         }
       },
-      "explanation": "Initialize max with arr[0], then scan from i=1 to n-1. If a larger element is found, update max. Return max at the end.",
+      "explanation": "Initialize max with arr[0], then scan from i=1 to n-1. If a larger element is found, update max. Return max at the end. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Start max with the first element",
-        "Loop from index 1 to n-1",
-        "Update max when a bigger value appears"
+        "Remember that start max with the first element",
+        "Remember that loop from index 1 to n-1",
+        "Remember that update max when a bigger value appears"
       ],
       "tags": [
         "arrays",
         "loops",
         "comparison"
-      ]
+      ],
+      "hint": "Think about: initialize max with arr[0], then scan from i=1 to n-1."
     },
     {
       "id": "drag_007",
@@ -1863,15 +1924,16 @@
       },
       "explanation": "A number is even when x % 2 equals 0.",
       "hints": [
-        "Use modulo to check remainder",
-        "Even numbers leave remainder 0",
+        "Consider using modulo to check remainder",
+        "Remember that even numbers leave remainder 0",
         "Compare with =="
       ],
       "tags": [
         "operators",
         "control_flow",
         "modulo"
-      ]
+      ],
+      "hint": "Think about: a number is even when x % 2 equals 0."
     },
     {
       "id": "drag_008",
@@ -1930,15 +1992,16 @@
       },
       "explanation": "Start result at 1 and multiply by each i from 1 to n.",
       "hints": [
-        "Factorial multiplies numbers",
-        "Loop from 1 to n inclusive",
-        "Use *= to accumulate"
+        "Remember that factorial multiplies numbers",
+        "Remember that loop from 1 to n inclusive",
+        "Consider using *= to accumulate"
       ],
       "tags": [
         "loops",
         "factorial",
         "multiplication"
-      ]
+      ],
+      "hint": "Consider the C language rule: start result at 1 and multiply by each i from 1 to n."
     },
     {
       "id": "drag_012",
@@ -1968,17 +2031,18 @@
           ]
         }
       },
-      "explanation": "Increment count when the element is greater than 0.",
+      "explanation": "Increment count when the element is greater than 0. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Positive means greater than 0",
-        "Increment count on a match",
-        "Use ++"
+        "Remember that positive means greater than 0",
+        "Remember that increment count on a match",
+        "Consider using ++"
       ],
       "tags": [
         "arrays",
         "comparison",
         "loops"
-      ]
+      ],
+      "hint": "Think about: increment count when the element is greater than 0."
     },
     {
       "id": "drag_014",
@@ -2010,15 +2074,16 @@
       },
       "explanation": "Return the index when a match is found; otherwise return -1.",
       "hints": [
-        "Compare for equality",
-        "Return -1 when not found",
-        "First match stops the loop"
+        "Consider compare for equality",
+        "Remember that return -1 when not found",
+        "Remember that first match stops the loop"
       ],
       "tags": [
         "arrays",
         "search",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: return the index when a match is found; otherwise return -1."
     },
     {
       "id": "drag_016",
@@ -2093,17 +2158,18 @@
           ]
         }
       },
-      "explanation": "Loop over all elements and add those with arr[i] % 2 == 0.",
+      "explanation": "Loop over all elements and add those with arr[i] % 2 == 0. In C, arrays decay to pointers when passed to functions, losing size information.",
       "hints": [
-        "Even numbers have remainder 0",
-        "Use % and ==",
+        "Remember that even numbers have remainder 0",
+        "Consider using % and ==",
         "Accumulate with +="
       ],
       "tags": [
         "arrays",
         "loops",
         "modulo"
-      ]
+      ],
+      "hint": "Think about: loop over all elements and add those with arr[i] % 2 == 0."
     },
     {
       "id": "drag_019",
@@ -2135,14 +2201,15 @@
       },
       "explanation": "Return -1 for negative, 1 for positive, else 0.",
       "hints": [
-        "Negative uses < 0",
-        "Positive uses > 0",
+        "Consider negative uses < 0",
+        "Think about positive uses > 0",
         "Else 0"
       ],
       "tags": [
         "control_flow",
         "comparisons"
-      ]
+      ],
+      "hint": "Think about: return -1 for negative, 1 for positive, else 0."
     },
     {
       "id": "drag_021",
@@ -2172,16 +2239,17 @@
           ]
         }
       },
-      "explanation": "Loop from 0 to n-1 using i < n and ++.",
+      "explanation": "In C, arrays decay to pointers when passed to functions, losing size information. Loop from 0 to n-1 using i < n and ++.",
       "hints": [
-        "Stop before n",
-        "Use <",
+        "Consider stop before n",
+        "Consider using <",
         "Increment with ++"
       ],
       "tags": [
         "arrays",
         "loops"
-      ]
+      ],
+      "hint": "Think about: loop from 0 to n-1 using i < n and ++."
     },
     {
       "id": "drag_024",
@@ -2204,14 +2272,15 @@
       },
       "explanation": "The loop continues while x <= 0 and stops when x is positive.",
       "hints": [
-        "Continue for negative and zero",
-        "Use <=",
+        "Remember that continue for negative and zero",
+        "Consider using <=",
         "Stop when positive"
       ],
       "tags": [
         "loops",
         "do_while"
-      ]
+      ],
+      "hint": "Think about: the loop continues while x <= 0 and stops when x is positive."
     },
     {
       "id": "drag_028",
@@ -2252,14 +2321,15 @@
       },
       "explanation": "Return 10 for case 1, 20 for case 2, else 0.",
       "hints": [
-        "Case 1 returns 10",
-        "Case 2 returns 20",
+        "Consider case 1 returns 10",
+        "Think about case 2 returns 20",
         "Default returns 0"
       ],
       "tags": [
         "switch",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: return 10 for case 1, 20 for case 2, else 0."
     },
     {
       "id": "fill_009",
@@ -2303,14 +2373,15 @@
       ],
       "explanation": "The loop starts at 0 and continues while i < 3.",
       "hints": [
-        "Initialization runs once",
-        "Condition controls the loop",
+        "Remember that initialization runs once",
+        "Remember that condition controls the loop",
         "i increments each time"
       ],
       "tags": [
         "for_loop",
         "control_flow"
-      ]
+      ],
+      "hint": "Think about: the loop starts at 0 and continues while i < 3."
     },
     {
       "id": "fill_013",
@@ -2354,14 +2425,15 @@
       ],
       "explanation": "The body runs once before checking the condition, so x becomes 1.",
       "hints": [
-        "Do-while checks after the body",
-        "x increments once",
+        "Remember that do-while checks after the body",
+        "Think about x increments once",
         "Printed value is 1"
       ],
       "tags": [
         "do_while",
         "loops"
-      ]
+      ],
+      "hint": "Think about: the body runs once before checking the condition, so x becomes 1."
     },
     {
       "id": "fill_016",
@@ -2403,16 +2475,17 @@
           ]
         }
       ],
-      "explanation": "x is 3, so the condition is true and the message prints.",
+      "explanation": "X is 3, so the condition is true and the message prints.",
       "hints": [
-        "3 is greater than 0",
-        "If condition is true",
+        "Consider 3 is greater than 0",
+        "Think about if condition is true",
         "Message is positive"
       ],
       "tags": [
         "if",
         "conditions"
-      ]
+      ],
+      "hint": "Think about: x is 3, so the condition is true and the message prints."
     },
     {
       "id": "int_030",
@@ -2431,14 +2504,15 @@
       "correct_answer": "A",
       "explanation": "Left shifting by n positions multiplies by 2^n. 5 << 2 = 5 * 4 = 20. In binary: 101 << 2 = 10100 = 20.",
       "hints": [
-        "Left shift is equivalent to multiplying by powers of 2",
-        "Each shift left doubles the value",
+        "Remember that left shift is equivalent to multiplying by powers of 2",
+        "Remember that each shift left doubles the value",
         "5 in binary is 101"
       ],
       "tags": [
         "bit_shifting",
         "left_shift"
-      ]
+      ],
+      "hint": "Think about: left shifting by n positions multiplies by 2^n."
     },
     {
       "id": "int_031",
@@ -2457,14 +2531,15 @@
       "correct_answer": "A",
       "explanation": "Right shifting by n positions divides by 2^n (for positive integers). 20 >> 2 = 20 / 4 = 5. In binary: 10100 >> 2 = 101 = 5.",
       "hints": [
-        "Right shift is equivalent to dividing by powers of 2",
-        "Each shift right halves the value",
+        "Remember that right shift is equivalent to dividing by powers of 2",
+        "Remember that each shift right halves the value",
         "20 in binary is 10100"
       ],
       "tags": [
         "bit_shifting",
         "right_shift"
-      ]
+      ],
+      "hint": "Think about: right shifting by n positions divides by 2^n (for positive integers)."
     },
     {
       "id": "int_032",
@@ -2483,16 +2558,17 @@
       "correct_answer": "A",
       "explanation": "For signed integers, right shift is arithmetic (sign-extending). -16 >> 2 = -4. The sign bit is preserved, filling leftmost bits with 1s.",
       "hints": [
-        "Arithmetic right shift preserves the sign",
-        "Sign bits are copied into the vacated positions",
-        "This maintains the negative value"
+        "Remember that arithmetic right shift preserves the sign",
+        "Remember that sign bits are copied into the vacated positions",
+        "Remember that this maintains the negative value"
       ],
       "tags": [
         "bit_shifting",
         "right_shift",
         "negative_numbers",
         "arithmetic_shift"
-      ]
+      ],
+      "hint": "Think about: for signed integers, right shift is arithmetic (sign-extending)."
     },
     {
       "id": "int_033",
@@ -2511,14 +2587,15 @@
       "correct_answer": "A",
       "explanation": "To set bit n, use x | (1 << n). Here: 8 (1000) | 2 (0010) = 10 (1010). Bit 1 is now set.",
       "hints": [
-        "OR operation can set bits without clearing others",
-        "1 << 1 creates a mask with only bit 1 set",
-        "8 in binary is 1000"
+        "Remember that oR operation can set bits without clearing others",
+        "Think about 1 << 1 creates a mask with only bit 1 set",
+        "The solution involves 8 in binary is 1000"
       ],
       "tags": [
         "bit_manipulation",
         "set_bit"
-      ]
+      ],
+      "hint": "Think about: to set bit n, use x | (1 << n)."
     },
     {
       "id": "int_035",
@@ -2537,14 +2614,15 @@
       "correct_answer": "A",
       "explanation": "To toggle bit n, use x ^ (1 << n). Here: 10 (1010) ^ 4 (0100) = 14 (1110). Bit 2 flipped from 0 to 1.",
       "hints": [
-        "XOR flips bits: 0 becomes 1, 1 becomes 0",
-        "1 << 2 creates a mask with only bit 2 set",
+        "Remember that xOR flips bits: 0 becomes 1, 1 becomes 0",
+        "Think about 1 << 2 creates a mask with only bit 2 set",
         "10 in binary is 1010"
       ],
       "tags": [
         "bit_manipulation",
         "toggle_bit"
-      ]
+      ],
+      "hint": "Think about: to toggle bit n, use x ^ (1 << n)."
     },
     {
       "id": "int_041",
@@ -2563,15 +2641,16 @@
       "correct_answer": "A",
       "explanation": "1 << 31 sets the most significant bit of a 32-bit unsigned int. This equals 2^31 = 2147483648. No overflow occurs with unsigned types.",
       "hints": [
-        "Left shift by n multiplies by 2^n",
-        "2^31 = 2147483648",
-        "Unsigned integers wrap around on overflow"
+        "Remember that left shift by n multiplies by 2^n",
+        "Think about 2^31 = 2147483648",
+        "Remember that unsigned integers wrap around on overflow"
       ],
       "tags": [
         "bit_shifting",
         "overflow",
         "unsigned"
-      ]
+      ],
+      "hint": "Think about: 1 << 31 sets the most significant bit of a 32-bit unsigned int."
     },
     {
       "id": "int_045",
@@ -2590,15 +2669,16 @@
       "correct_answer": "A",
       "explanation": "XOR swap trick: after the three operations, a and b are swapped without a temporary variable. Final result: a=7, b=5.",
       "hints": [
-        "This is a classic XOR swap technique",
-        "XOR properties allow swapping without temp variable",
-        "Trace through each step carefully"
+        "Remember that this is a classic XOR swap technique",
+        "Remember that xOR properties allow swapping without temp variable",
+        "Remember that trace through each step carefully"
       ],
       "tags": [
         "bitwise",
         "xor_operator",
         "swap"
-      ]
+      ],
+      "hint": "Think about: xor swap trick: after the three operations, a and b are swapped without a temporary variable."
     },
     {
       "id": "int_047",
@@ -2615,16 +2695,17 @@
         "160"
       ],
       "correct_answer": "A",
-      "explanation": "Shifting by an amount greater than or equal to the width of the type is undefined behavior in C. On a 32-bit int, shifting by 32 is undefined.",
+      "explanation": "Shifting by an amount greater than or equal to the width of the type is undefined behavior in C. On a 32-bit int, shifting by 32 is undefined. Undefined behavior means the C standard doesn't specify what should happen. Avoid it by following language rules carefully.",
       "hints": [
-        "Check the bit width of the type",
-        "Shifting by width or more is problematic",
-        "The C standard leaves this undefined"
+        "Remember that check the bit width of the type",
+        "Remember that shifting by width or more is problematic",
+        "Remember that the C standard leaves this undefined"
       ],
       "tags": [
         "bit_shifting",
         "undefined_behavior"
-      ]
+      ],
+      "hint": "Remember that this code exhibits undefined behavior. Consider what C standard says about this operation."
     }
   ]
 }

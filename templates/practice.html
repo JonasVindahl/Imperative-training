@@ -200,7 +200,7 @@
 
 <script>
     const questionId = "{{ question.id }}";
-    const hints = {{ question.hints | tojson }};
+    const hints = {{ question.hints | default([], true) | tojson }};
     let currentHintIndex = 0;
     let hintsUsed = 0;
 

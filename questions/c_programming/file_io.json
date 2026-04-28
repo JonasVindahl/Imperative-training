@@ -66,16 +66,17 @@
       },
       "explanation": "File reading: fopen with \"r\" for read, check for NULL, fgets reads lines while != NULL, fclose closes file.",
       "hints": [
-        "\"r\" mode opens for reading",
-        "Check if fopen returned NULL",
+        "Consider \"r\" mode opens for reading",
+        "Remember that check if fopen returned NULL",
         "fgets returns NULL at end of file",
-        "Always fclose the file"
+        "Remember that always fclose the file"
       ],
       "tags": [
         "file_io",
         "fopen",
         "fgets"
-      ]
+      ],
+      "hint": "Consider proper file handling - always check if fopen() succeeded and close files when done."
     },
     {
       "id": "io_001",
@@ -94,15 +95,16 @@
       "correct_answer": "C",
       "explanation": "\"a\" mode opens for append. \"w\" truncates file. \"r\" reads only. \"r+\" reads and writes.",
       "hints": [
-        "a = append",
-        "w = write (overwrites)",
+        "Consider a = append",
+        "Think about w = write (overwrites)",
         "r = read only"
       ],
       "tags": [
         "file_io",
         "fopen",
         "modes"
-      ]
+      ],
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
     },
     {
       "id": "io_002",
@@ -119,17 +121,18 @@
         "fgets only works with files"
       ],
       "correct_answer": "B",
-      "explanation": "fgets reads entire line (including \\n), scanf stops at first whitespace. fgets is safer (limit specified).",
+      "explanation": "Fgets reads entire line (including \\n), scanf stops at first whitespace. fgets is safer (limit specified).",
       "hints": [
-        "fgets reads whole line",
-        "scanf stops at space/tab/newline",
+        "Consider fgets reads whole line",
+        "Think about scanf stops at space/tab/newline",
         "fgets includes newline character"
       ],
       "tags": [
         "file_io",
         "fgets",
         "scanf"
-      ]
+      ],
+      "hint": "Think about: fgets reads entire line (including \\n), scanf stops at first whitespace."
     },
     {
       "id": "io_003",
@@ -146,17 +149,18 @@
         "Check if c == '\\0'"
       ],
       "correct_answer": "B",
-      "explanation": "fgetc returns EOF (typically -1) when end of file is reached. Must compare with EOF macro.",
+      "explanation": "Fgetc returns EOF (typically -1) when end of file is reached. Must compare with EOF macro.",
       "hints": [
-        "EOF = end of file",
-        "fgetc returns EOF",
-        "EOF is a macro, typically -1"
+        "Consider eOF = end of file",
+        "Think about fgetc returns EOF",
+        "Remember that eOF is a macro, typically -1"
       ],
       "tags": [
         "file_io",
         "EOF",
         "fgetc"
-      ]
+      ],
+      "hint": "Think about: fgetc returns eof (typically -1) when end of file is reached."
     },
     {
       "id": "io_004",
@@ -175,15 +179,16 @@
       "correct_answer": "B",
       "explanation": "Always close files with fclose(fp) to flush buffers and release resources.",
       "hints": [
-        "Files must be closed",
-        "Use fclose",
-        "Prevents resource leaks"
+        "Consider files must be closed",
+        "Consider using fclose",
+        "Remember that prevents resource leaks"
       ],
       "tags": [
         "file_io",
         "fclose",
         "cleanup"
-      ]
+      ],
+      "hint": "Consider proper file handling - always check if fopen() succeeded and close files when done."
     },
     {
       "id": "io_005",
@@ -200,17 +205,18 @@
         "Appends to out.txt"
       ],
       "correct_answer": "B",
-      "explanation": "fprintf writes formatted output to a file. Mode \"w\" creates/overwrites the file.",
+      "explanation": "Fprintf writes formatted output to a file. Mode \"w\" creates/overwrites the file.",
       "hints": [
-        "fprintf writes to file",
-        "Similar to printf",
-        "Mode \"w\" creates file"
+        "Consider fprintf writes to file",
+        "Think about similar to printf",
+        "Remember that mode \"w\" creates file"
       ],
       "tags": [
         "file_io",
         "fprintf",
         "output"
-      ]
+      ],
+      "hint": "Think about: fprintf writes formatted output to a file."
     },
     {
       "id": "io_006",
@@ -227,17 +233,18 @@
         "Compilation error"
       ],
       "correct_answer": "B",
-      "explanation": "fscanf reads formatted input from a file, like scanf but from file instead of stdin.",
+      "explanation": "Fscanf reads formatted input from a file, like scanf but from file instead of stdin.",
       "hints": [
-        "fscanf reads from file",
-        "Similar to scanf",
+        "Consider fscanf reads from file",
+        "Think about similar to scanf",
         "Reads into num"
       ],
       "tags": [
         "file_io",
         "fscanf",
         "input"
-      ]
+      ],
+      "hint": "Think about: fscanf reads formatted input from a file, like scanf but from file instead of stdin."
     },
     {
       "id": "io_007",
@@ -256,14 +263,15 @@
       "correct_answer": "A",
       "explanation": "\"r+\" opens for read/write and does not truncate. \"w+\" truncates.",
       "hints": [
-        "r+ keeps existing content",
-        "w+ truncates",
+        "Consider r+ keeps existing content",
+        "Think about w+ truncates",
         "a is append only"
       ],
       "tags": [
         "fopen",
         "modes"
-      ]
+      ],
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
     },
     {
       "id": "io_008",
@@ -282,14 +290,15 @@
       "correct_answer": "C",
       "explanation": "\"w+\" truncates the file and opens it for read/write.",
       "hints": [
-        "w means write",
-        "w truncates",
+        "Consider w means write",
+        "Think about w truncates",
         "+ adds reading"
       ],
       "tags": [
         "fopen",
         "modes"
-      ]
+      ],
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
     },
     {
       "id": "io_009",
@@ -306,16 +315,17 @@
         "When the file is opened"
       ],
       "correct_answer": "B",
-      "explanation": "feof becomes true only after a read fails due to EOF.",
+      "explanation": "Feof becomes true only after a read fails due to EOF.",
       "hints": [
-        "EOF flag is set after failure",
-        "Read past EOF triggers it",
-        "Check read return value"
+        "Remember that eOF flag is set after failure",
+        "Remember that read past EOF triggers it",
+        "Remember that check read return value"
       ],
       "tags": [
         "feof",
         "EOF"
-      ]
+      ],
+      "hint": "Think about: feof becomes true only after a read fails due to eof."
     },
     {
       "id": "io_010",
@@ -334,14 +344,15 @@
       "correct_answer": "B",
       "explanation": "SEEK_SET with offset 0 moves to the start of the file.",
       "hints": [
-        "SEEK_SET is absolute",
-        "Offset 0 means beginning",
+        "Consider sEEK_SET is absolute",
+        "Remember that offset 0 means beginning",
         "SEEK_END is end"
       ],
       "tags": [
         "fseek",
         "position"
-      ]
+      ],
+      "hint": "Think about: seek_set with offset 0 moves to the start of the file."
     },
     {
       "id": "io_011",
@@ -358,16 +369,17 @@
         "Number of bytes remaining"
       ],
       "correct_answer": "B",
-      "explanation": "ftell returns the current file offset in bytes.",
+      "explanation": "Ftell returns the current file offset in bytes.",
       "hints": [
-        "ftell = file tell",
-        "Position offset",
+        "Consider ftell = file tell",
+        "Think about position offset",
         "Measured in bytes"
       ],
       "tags": [
         "ftell",
         "position"
-      ]
+      ],
+      "hint": "Think about: ftell returns the current file offset in bytes."
     },
     {
       "id": "io_012",
@@ -384,16 +396,17 @@
         "Flushes output only"
       ],
       "correct_answer": "B",
-      "explanation": "rewind sets the position to the start and clears error/EOF flags.",
+      "explanation": "Rewind sets the position to the start and clears error/EOF flags.",
       "hints": [
-        "Rewind = go to start",
-        "Clears EOF",
+        "Consider rewind = go to start",
+        "Think about clears eof",
         "Also clears errors"
       ],
       "tags": [
         "rewind",
         "position"
-      ]
+      ],
+      "hint": "Think about: rewind sets the position to the start and clears error/eof flags."
     },
     {
       "id": "io_013",
@@ -410,16 +423,17 @@
         "File size"
       ],
       "correct_answer": "B",
-      "explanation": "fread returns the number of elements successfully read.",
+      "explanation": "Fread returns the number of elements successfully read.",
       "hints": [
-        "Returns count of elements",
-        "Not bytes",
-        "Compare with requested count"
+        "Remember that returns count of elements",
+        "Think about not bytes",
+        "Remember that compare with requested count"
       ],
       "tags": [
         "fread",
         "binary"
-      ]
+      ],
+      "hint": "Think about: fread returns the number of elements successfully read."
     },
     {
       "id": "io_014",
@@ -438,14 +452,15 @@
       "correct_answer": "B",
       "explanation": "\"rb\" opens a file for reading in binary mode.",
       "hints": [
-        "b means binary",
-        "r means read",
+        "Consider b means binary",
+        "Think about r means read",
         "rb = read binary"
       ],
       "tags": [
         "binary",
         "fopen"
-      ]
+      ],
+      "hint": "Think about: \"rb\" opens a file for reading in binary mode."
     },
     {
       "id": "io_015",
@@ -462,16 +477,17 @@
         "if (fp == -1)"
       ],
       "correct_answer": "B",
-      "explanation": "fopen returns NULL on failure.",
+      "explanation": "Fopen returns NULL on failure.",
       "hints": [
-        "NULL indicates failure",
-        "EOF is for reads",
+        "Remember that nULL indicates failure",
+        "Think about eOF is for reads",
         "Check pointer"
       ],
       "tags": [
         "fopen",
         "error_handling"
-      ]
+      ],
+      "hint": "Consider proper file handling - always check if fopen() succeeded and close files when done."
     },
     {
       "id": "io_016",
@@ -488,16 +504,17 @@
         "Closes the file"
       ],
       "correct_answer": "B",
-      "explanation": "perror prints a message based on the current errno value.",
+      "explanation": "Perror prints a message based on the current errno value.",
       "hints": [
-        "Uses errno",
-        "Prints message",
-        "Helpful for debugging"
+        "Consider uses errno",
+        "Think about prints message",
+        "Remember that helpful for debugging"
       ],
       "tags": [
         "perror",
         "errors"
-      ]
+      ],
+      "hint": "Think about: perror prints a message based on the current errno value."
     },
     {
       "id": "io_017",
@@ -514,16 +531,17 @@
         "The integer read"
       ],
       "correct_answer": "A",
-      "explanation": "fscanf returns the count of successfully read items, or EOF on end of file.",
+      "explanation": "Fscanf returns the count of successfully read items, or EOF on end of file.",
       "hints": [
-        "Return is count",
-        "EOF on failure",
-        "Use in loops"
+        "Consider return is count",
+        "Think about eof on failure",
+        "Consider using in loops"
       ],
       "tags": [
         "fscanf",
         "return_value"
-      ]
+      ],
+      "hint": "Think about: fscanf returns the count of successfully read items, or eof on end of file."
     },
     {
       "id": "io_018",
@@ -540,16 +558,17 @@
         "Never reads newline"
       ],
       "correct_answer": "B",
-      "explanation": "fgets keeps the newline if it is read before the buffer fills.",
+      "explanation": "Fgets keeps the newline if it is read before the buffer fills.",
       "hints": [
-        "Keeps newline",
-        "Only if it fits",
+        "Consider keeps newline",
+        "Think about only if it fits",
         "Buffer includes \\n"
       ],
       "tags": [
         "fgets",
         "newline"
-      ]
+      ],
+      "hint": "Think about: fgets keeps the newline if it is read before the buffer fills."
     },
     {
       "id": "io_019",
@@ -566,16 +585,17 @@
         "fprintf"
       ],
       "correct_answer": "B",
-      "explanation": "fputc writes a single character to a file.",
+      "explanation": "Fputc writes a single character to a file.",
       "hints": [
-        "put = write",
-        "get = read",
+        "Consider put = write",
+        "Think about get = read",
         "Single char"
       ],
       "tags": [
         "fputc",
         "output"
-      ]
+      ],
+      "hint": "Think about: fputc writes a single character to a file."
     },
     {
       "id": "io_020",
@@ -592,16 +612,17 @@
         "Keyboard input"
       ],
       "correct_answer": "C",
-      "explanation": "fprintf writes formatted output to the given file stream.",
+      "explanation": "Fprintf writes formatted output to the given file stream.",
       "hints": [
-        "First argument is stream",
-        "fp points to file",
+        "Remember that first argument is stream",
+        "Think about fp points to file",
         "Writes to file"
       ],
       "tags": [
         "fprintf",
         "output"
-      ]
+      ],
+      "hint": "Think about: fprintf writes formatted output to the given file stream."
     },
     {
       "id": "io_021",
@@ -620,14 +641,15 @@
       "correct_answer": "B",
       "explanation": "Append mode writes at the end of the file.",
       "hints": [
-        "Append = add to end",
-        "No truncation",
+        "Consider append = add to end",
+        "Think about no truncation",
         "Write at end"
       ],
       "tags": [
         "append",
         "fopen"
-      ]
+      ],
+      "hint": "Think about: append mode writes at the end of the file."
     },
     {
       "id": "io_022",
@@ -646,14 +668,15 @@
       "correct_answer": "C",
       "explanation": "\"a+\" allows reading and appending (writes go to end).",
       "hints": [
-        "a+ includes reading",
-        "Writes append",
+        "Consider a+ includes reading",
+        "Think about writes append",
         "Does not overwrite"
       ],
       "tags": [
         "fopen",
         "append"
-      ]
+      ],
+      "hint": "Think about: \"a+\" allows reading and appending (writes go to end)."
     },
     {
       "id": "io_023",
@@ -670,16 +693,17 @@
         "erase(\"a.txt\")"
       ],
       "correct_answer": "B",
-      "explanation": "remove deletes a file in standard C.",
+      "explanation": "Remove deletes a file in standard C.",
       "hints": [
-        "Standard C function",
-        "remove(\"file\")",
+        "Consider standard C function",
+        "Think about remove(\"file\")",
         "Not delete"
       ],
       "tags": [
         "remove",
         "files"
-      ]
+      ],
+      "hint": "Think about: remove deletes a file in standard c."
     },
     {
       "id": "io_024",
@@ -696,16 +720,17 @@
         "change(\"old.txt\", \"new.txt\")"
       ],
       "correct_answer": "A",
-      "explanation": "rename is the standard C function for renaming files.",
+      "explanation": "Rename is the standard C function for renaming files.",
       "hints": [
-        "rename is standard C",
-        "Takes old and new names",
+        "Consider rename is standard C",
+        "Remember that takes old and new names",
         "Returns 0 on success"
       ],
       "tags": [
         "rename",
         "files"
-      ]
+      ],
+      "hint": "Think about: rename is the standard c function for renaming files."
     },
     {
       "id": "io_025",
@@ -722,16 +747,17 @@
         "It returns pointers"
       ],
       "correct_answer": "B",
-      "explanation": "int can represent all unsigned char values and EOF.",
+      "explanation": "Int can represent all unsigned char values and EOF.",
       "hints": [
-        "EOF is -1",
-        "char may not hold EOF",
+        "Consider eOF is -1",
+        "Think about char may not hold EOF",
         "int can"
       ],
       "tags": [
         "fgetc",
         "EOF"
-      ]
+      ],
+      "hint": "Think about: int can represent all unsigned char values and eof."
     },
     {
       "id": "io_026",
@@ -748,16 +774,17 @@
         "Moves to end of file"
       ],
       "correct_answer": "B",
-      "explanation": "ungetc pushes a character back so it can be read again.",
+      "explanation": "Ungetc pushes a character back so it can be read again.",
       "hints": [
-        "Push back",
-        "Next read returns same char",
+        "Consider push back",
+        "Remember that next read returns same char",
         "Useful for parsing"
       ],
       "tags": [
         "ungetc",
         "streams"
-      ]
+      ],
+      "hint": "Think about: ungetc pushes a character back so it can be read again."
     },
     {
       "id": "io_027",
@@ -774,16 +801,17 @@
         "A line of text"
       ],
       "correct_answer": "A",
-      "explanation": "fread reads 1 element of size sizeof(x) into x.",
+      "explanation": "Fread reads 1 element of size sizeof(x) into x.",
       "hints": [
-        "count is 1",
-        "size is sizeof(x)",
+        "Consider count is 1",
+        "Think about size is sizeof(x)",
         "Reads one struct"
       ],
       "tags": [
         "fread",
         "binary"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "io_028",
@@ -802,14 +830,15 @@
       "correct_answer": "C",
       "explanation": "\"rb+\" opens for reading and writing in binary mode without truncating.",
       "hints": [
-        "r+ = read/write",
-        "b = binary",
+        "Consider r+ = read/write",
+        "Think about b = binary",
         "No truncation"
       ],
       "tags": [
         "fopen",
         "binary"
-      ]
+      ],
+      "hint": "Think about: \"rb+\" opens for reading and writing in binary mode without truncating."
     },
     {
       "id": "io_029",
@@ -828,14 +857,15 @@
       "correct_answer": "B",
       "explanation": "SEEK_END with offset -1 positions the stream at the last byte.",
       "hints": [
-        "SEEK_END is end",
-        "Use negative offset",
+        "Consider sEEK_END is end",
+        "Consider using negative offset",
         "-1 moves to last byte"
       ],
       "tags": [
         "fseek",
         "position"
-      ]
+      ],
+      "hint": "Think about: seek_end with offset -1 positions the stream at the last byte."
     },
     {
       "id": "io_030",
@@ -852,16 +882,17 @@
         "fputs"
       ],
       "correct_answer": "B",
-      "explanation": "fflush forces buffered output to be written.",
+      "explanation": "Fflush forces buffered output to be written.",
       "hints": [
-        "flush = write buffer",
-        "fflush does that",
-        "Used with output streams"
+        "Consider flush = write buffer",
+        "Think about fflush does that",
+        "Remember that used with output streams"
       ],
       "tags": [
         "fflush",
         "buffering"
-      ]
+      ],
+      "hint": "Think about: fflush forces buffered output to be written."
     },
     {
       "id": "io_031",
@@ -878,16 +909,17 @@
         "Changes permissions"
       ],
       "correct_answer": "B",
-      "explanation": "fclose flushes buffers and releases the file handle.",
+      "explanation": "Fclose flushes buffers and releases the file handle.",
       "hints": [
-        "Flushes output",
-        "Closes stream",
+        "Consider flushes output",
+        "Think about closes stream",
         "Releases resources"
       ],
       "tags": [
         "fclose",
         "buffering"
-      ]
+      ],
+      "hint": "Consider proper file handling - always check if fopen() succeeded and close files when done."
     },
     {
       "id": "io_032",
@@ -904,16 +936,17 @@
         "fscanf(fp, \"%s\", buf)"
       ],
       "correct_answer": "B",
-      "explanation": "fgets limits input by buffer size and is safer than gets/scanf.",
+      "explanation": "Fgets limits input by buffer size and is safer than gets/scanf.",
       "hints": [
-        "Use size to limit input",
-        "fgets takes size",
+        "Consider using size to limit input",
+        "Think about fgets takes size",
         "gets is unsafe"
       ],
       "tags": [
         "fgets",
         "safety"
-      ]
+      ],
+      "hint": "Think about: fgets limits input by buffer size and is safer than gets/scanf."
     },
     {
       "id": "io_033",
@@ -930,16 +963,17 @@
         "Reads only numbers"
       ],
       "correct_answer": "B",
-      "explanation": "%s stops at whitespace when reading strings.",
+      "explanation": "%s stops at whitespace when reading strings. C strings are null-terminated character arrays. The null terminator '\\0' marks the end of the string.",
       "hints": [
-        "%s stops at space",
-        "Use fgets for full line",
-        "Whitespace ends input"
+        "Consider %s stops at space",
+        "Consider using fgets for full line",
+        "Remember that whitespace ends input"
       ],
       "tags": [
         "fscanf",
         "strings"
-      ]
+      ],
+      "hint": "Think about: %s stops at whitespace when reading strings."
     },
     {
       "id": "io_034",
@@ -958,14 +992,15 @@
       "correct_answer": "B",
       "explanation": "\"r\" requires an existing file. fopen returns NULL if it doesn't exist.",
       "hints": [
-        "r does not create files",
-        "Check for NULL",
+        "Consider r does not create files",
+        "Think about check for null",
         "Missing file fails"
       ],
       "tags": [
         "fopen",
         "errors"
-      ]
+      ],
+      "hint": "Consider proper file handling - always check if fopen() succeeded and close files when done."
     },
     {
       "id": "io_035",
@@ -984,14 +1019,15 @@
       "correct_answer": "B",
       "explanation": "\"w\" creates the file if it doesn't exist (and truncates if it does).",
       "hints": [
-        "w = write",
-        "Creates if missing",
+        "Consider w = write",
+        "Think about creates if missing",
         "Truncates if exists"
       ],
       "tags": [
         "fopen",
         "modes"
-      ]
+      ],
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
     },
     {
       "id": "io_036",
@@ -1010,14 +1046,15 @@
       "correct_answer": "B",
       "explanation": "\"r+\" requires an existing file and fails if missing.",
       "hints": [
-        "r+ needs file to exist",
-        "No creation",
-        "Returns NULL"
+        "Consider r+ needs file to exist",
+        "Think about no creation",
+        "The solution involves returns null"
       ],
       "tags": [
         "fopen",
         "modes"
-      ]
+      ],
+      "hint": "Think about: \"r+\" requires an existing file and fails if missing."
     },
     {
       "id": "io_037",
@@ -1036,14 +1073,15 @@
       "correct_answer": "B",
       "explanation": "Append mode creates the file if it doesn't exist.",
       "hints": [
-        "a = append",
-        "Creates file if missing",
+        "Consider a = append",
+        "Remember that creates file if missing",
         "Write at end"
       ],
       "tags": [
         "fopen",
         "append"
-      ]
+      ],
+      "hint": "Think about: append mode creates the file if it doesn't exist."
     },
     {
       "id": "io_038",
@@ -1062,14 +1100,15 @@
       "correct_answer": "A",
       "explanation": "Check fscanf return value to read until EOF.",
       "hints": [
-        "fscanf returns count",
-        "1 means integer read",
+        "Consider fscanf returns count",
+        "Think about 1 means integer read",
         "Stop on EOF"
       ],
       "tags": [
         "fscanf",
         "EOF"
-      ]
+      ],
+      "hint": "Think about: check fscanf return value to read until eof."
     },
     {
       "id": "io_039",
@@ -1086,16 +1125,17 @@
         "fread"
       ],
       "correct_answer": "A",
-      "explanation": "fputs writes a string to a file stream.",
+      "explanation": "Fputs writes a string to a file stream.",
       "hints": [
-        "puts writes a string",
-        "fputs is file version",
+        "Consider puts writes a string",
+        "Think about fputs is file version",
         "fgets is for reading"
       ],
       "tags": [
         "fputs",
         "output"
-      ]
+      ],
+      "hint": "Think about: fputs writes a string to a file stream."
     },
     {
       "id": "io_040",
@@ -1114,14 +1154,15 @@
       "correct_answer": "C",
       "explanation": "4 elements * sizeof(int). With int=4 bytes, that's 16 bytes.",
       "hints": [
-        "count is 4",
-        "size is sizeof(int)",
+        "Consider count is 4",
+        "Think about size is sizeof(int)",
         "4 * 4 = 16"
       ],
       "tags": [
         "fwrite",
         "binary"
-      ]
+      ],
+      "hint": "Think about what sizeof returns - the size in bytes, not the number of elements."
     },
     {
       "id": "prog_016",
@@ -1130,7 +1171,7 @@
       "difficulty": "hard",
       "points": 10,
       "title": "Implementer fil skrivning",
-      "description": "Skriv en funktion med signaturen `int write_numbers(const char *filename, int *arr, int n)` der skriver tallene i arrayet til en fil (et tal per linje).\n\nReturn\u00e9r 0 hvis succesfuld, -1 hvis filen ikke kan \u00e5bnes.\n\nBrug fopen, fprintf og fclose.",
+      "description": "Skriv en funktion med signaturen `int write_numbers(const char *filename, int *arr, int n)` der skriver tallene i arrayet til en fil (et tal per linje).\n\nReturnér 0 hvis succesfuld, -1 hvis filen ikke kan åbnes.\n\nBrug fopen, fprintf og fclose.",
       "code_template": "#include <stdio.h>\n\n/* YOUR CODE HERE */\n\n\nint main() {\n    int numbers[] = {10, 20, 30, 40};\n    int result = write_numbers(\"output.txt\", numbers, 4);\n    printf(\"Result: %d\\n\", result);  // 0 if successful\n    return 0;\n}",
       "expected_output": "Result: 0",
       "test_cases": [
@@ -1140,10 +1181,10 @@
         }
       ],
       "hints": [
-        "Brug fopen(filename, \"w\") til at \u00e5bne filen for skrivning",
-        "Check om fopen returnerede NULL",
-        "Loop gennem arrayet og brug fprintf(file, \"%d\\n\", arr[i])",
-        "Husk at kalde fclose(file)"
+        "Remember that brug fopen(filename, \"w\") til at åbne filen for skrivning",
+        "Remember that check om fopen returnerede NULL",
+        "Remember that loop gennem arrayet og brug fprintf(file, \"%d\\n\", arr[i])",
+        "Remember that husk at kalde fclose(file)"
       ],
       "tags": [
         "file_io",
