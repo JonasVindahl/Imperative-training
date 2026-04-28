@@ -1,5 +1,5 @@
 import re
-from typing import Dict, List, Any
+
 from services.compiler import CompilerService
 
 
@@ -17,7 +17,7 @@ class GraderService:
         cleaned = [line.rstrip() for line in lines]
         return '\n'.join(cleaned).strip()
 
-    def grade_output_prediction(self, question: Dict, user_answer: str) -> Dict:
+    def grade_output_prediction(self, question: dict, user_answer: str) -> dict:
         """Grade output prediction exercises"""
         correct_output = question['correct_answer'].strip()
         user_output = user_answer.strip()
@@ -35,7 +35,7 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def grade_bug_finding(self, question: Dict, user_answer: str) -> Dict:
+    def grade_bug_finding(self, question: dict, user_answer: str) -> dict:
         """Grade bug finding exercises (user identifies line numbers)"""
         correct_lines = set(question['correct_answer'])  # Set of line numbers
         user_lines = self._parse_line_numbers(user_answer)
@@ -49,7 +49,7 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def grade_code_completion(self, question: Dict, user_code: str, test_cases: List[Dict]) -> Dict:
+    def grade_code_completion(self, question: dict, user_code: str, test_cases: list[dict]) -> dict:
         """Grade code completion exercises by running test cases"""
         results = []
         all_passed = True
@@ -116,12 +116,12 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def grade_code_writing(self, question: Dict, user_code: str) -> Dict:
+    def grade_code_writing(self, question: dict, user_code: str) -> dict:
         """Grade full code writing exercises"""
         test_cases = question.get('test_cases', [])
         return self.grade_code_completion(question, user_code, test_cases)
 
-    def grade_multiple_choice(self, question: Dict, user_answer: str) -> Dict:
+    def grade_multiple_choice(self, question: dict, user_answer: str) -> dict:
         """Grade multiple choice questions"""
         correct = question['correct_answer']
         is_correct = user_answer.strip().upper() == correct.strip().upper()
@@ -140,13 +140,13 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def grade_multiple_select(self, question: Dict, user_answer: str) -> Dict:
+    def grade_multiple_select(self, question: dict, user_answer: str) -> dict:
         """Grade multiple select (checkbox) questions - select ALL correct answers"""
         import json
         try:
             # user_answer is JSON array: ["A", "B", "D"]
             user_selections = set(json.loads(user_answer))
-        except:
+        except (json.JSONDecodeError, TypeError, ValueError):
             user_selections = set()
 
         # correct_answer can be string "A,B,D" or list ["A", "B", "D"]
@@ -178,7 +178,7 @@ class GraderService:
             'user_selections': list(user_selections)
         }
 
-    def grade_memory_tracing(self, question: Dict, user_answer: str) -> Dict:
+    def grade_memory_tracing(self, question: dict, user_answer: str) -> dict:
         """Grade memory allocation/deallocation tracing"""
         correct_trace = question['correct_answer']
         user_trace = user_answer.strip()
@@ -193,7 +193,7 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def grade_struct_size(self, question: Dict, user_answer: str) -> Dict:
+    def grade_struct_size(self, question: dict, user_answer: str) -> dict:
         """Grade struct size calculation"""
         try:
             user_size = int(user_answer.strip())
@@ -216,13 +216,13 @@ class GraderService:
                 'memory_layout': question.get('memory_layout', '')
             }
 
-    def grade_fill_blanks(self, question: Dict, user_answer: str) -> Dict:
+    def grade_fill_blanks(self, question: dict, user_answer: str) -> dict:
         """Grade fill-in-the-blanks questions"""
         import json
         try:
             # user_answer is JSON: {"blank1": "answer1", "blank2": "answer2"}
             user_answers = json.loads(user_answer)
-        except:
+        except (json.JSONDecodeError, TypeError, ValueError):
             user_answers = {}
 
         questions_data = question.get('questions', [])
@@ -253,13 +253,13 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def grade_drag_drop(self, question: Dict, user_answer: str) -> Dict:
+    def grade_drag_drop(self, question: dict, user_answer: str) -> dict:
         """Grade drag-and-drop code assembly"""
         import json
         try:
             # user_answer is JSON: {"blank1": "token", "blank2": "token"}
             user_placements = json.loads(user_answer)
-        except:
+        except (json.JSONDecodeError, TypeError, ValueError):
             user_placements = {}
 
         blanks = question.get('blanks', {})
@@ -298,13 +298,13 @@ class GraderService:
             'correct_code': self._build_code_from_blanks(question, blanks)
         }
 
-    def grade_recursive_trace(self, question: Dict, user_answer: str) -> Dict:
+    def grade_recursive_trace(self, question: dict, user_answer: str) -> dict:
         """Grade recursive function tracing"""
         import json
         try:
             # user_answer is JSON: {"test_0": "result", "test_1": "result"}
             user_results = json.loads(user_answer)
-        except:
+        except (json.JSONDecodeError, TypeError, ValueError):
             user_results = {}
 
         test_cases = question.get('test_cases', [])
@@ -337,14 +337,14 @@ class GraderService:
             'explanation': question.get('explanation', '')
         }
 
-    def _build_code_from_blanks(self, question: Dict, blanks: Dict) -> str:
+    def _build_code_from_blanks(self, question: dict, blanks: dict) -> str:
         """Build the complete code with correct answers"""
         code_template = question.get('code_template', '')
         for blank_id, blank_data in blanks.items():
             code_template = code_template.replace(f'{{{blank_id}}}', blank_data.get('correct', ''))
         return code_template
 
-    def grade(self, question: Dict, user_answer: str) -> Dict:
+    def grade(self, question: dict, user_answer: str) -> dict:
         """Main grading method that dispatches to specific graders"""
         question_type = question.get('type', 'code_output')
 

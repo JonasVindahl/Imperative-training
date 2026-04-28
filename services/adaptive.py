@@ -1,5 +1,5 @@
-from typing import List, Dict
 import random
+
 from models import Progress, db
 
 
@@ -18,12 +18,12 @@ class AdaptiveLearningService:
         'programming_challenges'
     ]
 
-    def __init__(self, user_id: int, categories: List[str] = None, exam_id: str = None):
+    def __init__(self, user_id: int, categories: list[str] = None, exam_id: str = None):
         self.user_id = user_id
         self.categories = categories or self.DEFAULT_CATEGORIES
         self.exam_id = exam_id
 
-    def get_recommended_categories(self, categories: List[str] = None) -> List[str]:
+    def get_recommended_categories(self, categories: list[str] = None) -> list[str]:
         """
         Get the 3 weakest categories for the user
 
@@ -56,7 +56,7 @@ class AdaptiveLearningService:
         # Return top 3 weakest
         return [cat for cat, score in sorted_categories[:3]]
 
-    def generate_practice_session(self, questions_pool: Dict, session_size: int = 10) -> List[Dict]:
+    def generate_practice_session(self, questions_pool: dict, session_size: int = 10) -> list[dict]:
         """
         Generate an adaptive practice session
 
@@ -78,7 +78,7 @@ class AdaptiveLearningService:
         used_ids = set()
         remaining = {cat: list(questions) for cat, questions in questions_pool.items()}
 
-        def pick_unique(categories: List[str], count: int) -> List[Dict]:
+        def pick_unique(categories: list[str], count: int) -> list[dict]:
             picks = []
             available = [cat for cat in categories if remaining.get(cat)]
             while len(picks) < count and available:
@@ -113,7 +113,7 @@ class AdaptiveLearningService:
 
         return session_questions[:session_size]
 
-    def get_progress_summary(self, categories: List[str] = None) -> Dict:
+    def get_progress_summary(self, categories: list[str] = None) -> dict:
         """
         Get overall progress summary for the user
 
@@ -165,7 +165,7 @@ class AdaptiveLearningService:
             'recommendations': self._generate_recommendations(weak_areas, category_progress)
         }
 
-    def _generate_recommendations(self, weak_areas: List[str], category_progress: Dict) -> List[str]:
+    def _generate_recommendations(self, weak_areas: list[str], category_progress: dict) -> list[str]:
         """Generate personalized recommendations"""
         recommendations = []
 

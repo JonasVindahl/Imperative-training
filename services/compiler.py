@@ -1,8 +1,6 @@
+import os
 import subprocess
 import tempfile
-import os
-import signal
-from typing import Dict, Optional
 
 
 class CompilerService:
@@ -12,7 +10,7 @@ class CompilerService:
         self.timeout = timeout
         self.max_memory_mb = max_memory_mb
 
-    def compile_and_run(self, code: str, input_data: str = "") -> Dict:
+    def compile_and_run(self, code: str, input_data: str = "") -> dict:
         """
         Safely compile and run C code with resource limits
 
@@ -46,7 +44,7 @@ class CompilerService:
             # Run the compiled program
             return self._run(exec_file, input_data)
 
-    def _compile(self, code_file: str, exec_file: str) -> Dict:
+    def _compile(self, code_file: str, exec_file: str) -> dict:
         """Compile C code with gcc"""
         try:
             result = subprocess.run(
@@ -88,7 +86,7 @@ class CompilerService:
                 'error': f'Compilation error: {str(e)}'
             }
 
-    def _run(self, exec_file: str, input_data: str = "") -> Dict:
+    def _run(self, exec_file: str, input_data: str = "") -> dict:
         """Run compiled program with resource limits"""
         try:
             # Set resource limits (Unix-like systems)
@@ -98,7 +96,7 @@ class CompilerService:
                     import resource
                     max_memory = self.max_memory_mb * 1024 * 1024
                     resource.setrlimit(resource.RLIMIT_AS, (max_memory, max_memory))
-                except:
+                except (ImportError, ValueError, OSError):
                     pass  # Resource limits not available on all systems
 
             result = subprocess.run(
@@ -135,7 +133,7 @@ class CompilerService:
                 'stderr': ''
             }
 
-    def validate_syntax(self, code: str) -> Dict:
+    def validate_syntax(self, code: str) -> dict:
         """Quick syntax validation without running"""
         with tempfile.TemporaryDirectory() as tmpdir:
             code_file = os.path.join(tmpdir, 'code.c')

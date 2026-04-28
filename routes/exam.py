@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, request, session, flash, url_for, current_app
+from flask import Blueprint, current_app, flash, redirect, request, session, url_for
 from flask_login import login_required
 
 exam_bp = Blueprint('exam', __name__, url_prefix='/exam')

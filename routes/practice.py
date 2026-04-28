@@ -1,12 +1,14 @@
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, current_app
-from flask_login import login_required, current_user
-from services.question_loader import QuestionLoader
-from services.grader import GraderService
+from datetime import datetime
+
+from flask import Blueprint, current_app, flash, jsonify, redirect, render_template, request, session, url_for
+from flask_login import current_user, login_required
+
+from config import Config
+from models import Attempt, db
 from services.adaptive import AdaptiveLearningService
 from services.compiler import CompilerService
-from models import db, Attempt
-from config import Config
-from datetime import datetime
+from services.grader import GraderService
+from services.question_loader import QuestionLoader
 
 practice_bp = Blueprint('practice', __name__, url_prefix='/practice')
 

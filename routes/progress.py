@@ -1,9 +1,10 @@
-from flask import Blueprint, render_template, jsonify, current_app
-from flask_login import login_required, current_user
-from services.adaptive import AdaptiveLearningService
-from services.question_loader import QuestionLoader
-from models import Attempt, Progress
 from datetime import datetime, timedelta
+
+from flask import Blueprint, current_app, jsonify, render_template
+from flask_login import current_user, login_required
+
+from models import Attempt
+from services.adaptive import AdaptiveLearningService
 
 progress_bp = Blueprint('progress', __name__, url_prefix='/progress')
 

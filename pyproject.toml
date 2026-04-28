@@ -1,0 +1,35 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers --strict-config"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["scripts/legacy", "venv", "instance", "problems", "temp"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = [
+    "E501",  # line length is handled by formatter
+    "E402",  # blueprint imports after Flask app init are intentional
+    "B008",  # function-call-in-default-arg can be intentional in Flask
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S105", "S106", "PLR2004"]
+"app.py" = ["E402"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+implicit_optional = true
+warn_unused_ignores = true
+follow_imports = "silent"
+exclude = ["scripts/legacy/", "venv/", "instance/", "tests/"]
+
+[[tool.mypy.overrides]]
+module = ["models.*", "services.grader", "services.question_loader", "services.exam_service", "services.adaptive"]
+disable_error_code = ["name-defined", "var-annotated", "operator", "arg-type", "return-value"]
