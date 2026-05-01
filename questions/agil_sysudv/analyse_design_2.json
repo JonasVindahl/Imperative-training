@@ -7,12 +7,12 @@
       "difficulty": "easy",
       "title": "Hvad er et sekvensdiagram?",
       "description": "Hvad viser et sekvensdiagram i UML?",
-      "options": {
-        "A": "Interaktionen mellem objekter over tid via beskeder",
-        "B": "Klassernes statiske struktur",
-        "C": "Systemets deployment",
-        "D": "Databasens relationer"
-      },
+      "options": [
+        "Interaktionen mellem objekter over tid via beskeder",
+        "Klassernes statiske struktur",
+        "Systemets deployment",
+        "Databasens relationer"
+      ],
       "correct_answer": "A",
       "explanation": "Et sekvensdiagram viser interaktionen mellem objekter som en sekvens af beskeder ordnet i tid, med tiden løbende fra top til bund.",
       "hints": [
@@ -32,12 +32,12 @@
       "difficulty": "medium",
       "title": "Hvad repræsenterer en livslinje (lifeline) i et sekvensdiagram?",
       "description": "Hvad viser den lodrette stiplede linje under et objekt i et sekvensdiagram?",
-      "options": {
-        "A": "En fejl i systemet",
-        "B": "Objektets eksistens over tid",
-        "C": "En database-forbindelse",
-        "D": "En use case"
-      },
+      "options": [
+        "En fejl i systemet",
+        "Objektets eksistens over tid",
+        "En database-forbindelse",
+        "En use case"
+      ],
       "correct_answer": "B",
       "explanation": "En livslinje er den lodrette stiplede linje der repræsenterer et objekts eksistens over tid i sekvensdiagrammet.",
       "hints": [
@@ -57,12 +57,12 @@
       "difficulty": "medium",
       "title": "Hvad er en aktiveringsbar i et sekvensdiagram?",
       "description": "Hvad repræsenterer det tynde rektangel på en livslinje?",
-      "options": {
-        "A": "At objektet venter på input",
-        "B": "At objektet er slettet",
-        "C": "At objektet er aktivt og udfører en operation",
-        "D": "At der er en fejl"
-      },
+      "options": [
+        "At objektet venter på input",
+        "At objektet er slettet",
+        "At objektet er aktivt og udfører en operation",
+        "At der er en fejl"
+      ],
       "correct_answer": "C",
       "explanation": "Aktiveringsbarren (execution specification) er det tynde rektangel på livslinjen der viser at objektet er aktivt og behandler en besked.",
       "hints": [
@@ -82,12 +82,12 @@
       "difficulty": "medium",
       "title": "Hvad er en synkron besked i et sekvensdiagram?",
       "description": "Hvordan vises en synkron besked i et sekvensdiagram?",
-      "options": {
-        "A": "En dobbelt streg",
-        "B": "En stiplet linje med åben pilespids",
-        "C": "En bølget linje",
-        "D": "En hel linje med fyldt pilespids"
-      },
+      "options": [
+        "En dobbelt streg",
+        "En stiplet linje med åben pilespids",
+        "En bølget linje",
+        "En hel linje med fyldt pilespids"
+      ],
       "correct_answer": "D",
       "explanation": "En synkron besked vises med en hel linje og fyldt (solid) pilespids. Afsenderen venter på svar før den fortsætter.",
       "hints": [
@@ -107,12 +107,12 @@
       "difficulty": "medium",
       "title": "Hvad er en asynkron besked i et sekvensdiagram?",
       "description": "Hvordan vises en asynkron besked i UML sekvensdiagram?",
-      "options": {
-        "A": "En hel linje med åben pilespids",
-        "B": "En hel linje med fyldt pilespids",
-        "C": "En stiplet linje med fyldt pil",
-        "D": "En dobbelt streg"
-      },
+      "options": [
+        "En hel linje med åben pilespids",
+        "En hel linje med fyldt pilespids",
+        "En stiplet linje med fyldt pil",
+        "En dobbelt streg"
+      ],
       "correct_answer": "A",
       "explanation": "En asynkron besked vises med en hel linje og åben pilespids. Afsenderen fortsætter uden at vente på svar.",
       "hints": [
@@ -132,12 +132,12 @@
       "difficulty": "medium",
       "title": "Hvad er et return-besked i et sekvensdiagram?",
       "description": "Hvordan vises en return-besked (svar) i et sekvensdiagram?",
-      "options": {
-        "A": "En hel linje med fyldt pilespids",
-        "B": "En stiplet linje med åben pilespids",
-        "C": "En bølget linje",
-        "D": "En dobbelt streg med kryds"
-      },
+      "options": [
+        "En hel linje med fyldt pilespids",
+        "En stiplet linje med åben pilespids",
+        "En bølget linje",
+        "En dobbelt streg med kryds"
+      ],
       "correct_answer": "B",
       "explanation": "En return-besked vises med en stiplet linje og åben pilespids, der viser svaret/returværdien fra en operation.",
       "hints": [
@@ -157,12 +157,12 @@
       "difficulty": "medium",
       "title": "Hvad er et combined fragment i et sekvensdiagram?",
       "description": "Hvad bruges combined fragments til i sekvensdiagrammer?",
-      "options": {
-        "A": "At definere databasetabeller",
-        "B": "At vise klassernes struktur",
-        "C": "At modellere betingelser, loops og alternative flows",
-        "D": "At teste kode"
-      },
+      "options": [
+        "At definere databasetabeller",
+        "At vise klassernes struktur",
+        "At modellere betingelser, loops og alternative flows",
+        "At teste kode"
+      ],
       "correct_answer": "C",
       "explanation": "Combined fragments bruges til at modellere kontrollogik i sekvensdiagrammer: alt (alternative), opt (valgfri), loop (gentagelse), osv.",
       "hints": [
@@ -182,12 +182,12 @@
       "difficulty": "easy",
       "title": "Hvad betyder \"alt\" fragmentet i et sekvensdiagram?",
       "description": "Hvad repræsenterer et alt-fragment?",
-      "options": {
-        "A": "En parallel operation",
-        "B": "En loop der gentages",
-        "C": "En valgfri sekvens",
-        "D": "Alternative flows - enten/eller betingelser"
-      },
+      "options": [
+        "En parallel operation",
+        "En loop der gentages",
+        "En valgfri sekvens",
+        "Alternative flows - enten/eller betingelser"
+      ],
       "correct_answer": "D",
       "explanation": "Alt-fragmentet (alternative) viser mutual exclusive alternativer - forskellige veje baseret på betingelser, adskilt af en stiplet linje.",
       "hints": [
@@ -207,12 +207,12 @@
       "difficulty": "medium",
       "title": "Hvad betyder \"opt\" fragmentet i et sekvensdiagram?",
       "description": "Hvad repræsenterer et opt-fragment?",
-      "options": {
-        "A": "En valgfri sekvens der kun udføres hvis betingelsen er sand",
-        "B": "En loop der gentages",
-        "C": "Alternative flows",
-        "D": "En parallel operation"
-      },
+      "options": [
+        "En valgfri sekvens der kun udføres hvis betingelsen er sand",
+        "En loop der gentages",
+        "Alternative flows",
+        "En parallel operation"
+      ],
       "correct_answer": "A",
       "explanation": "Opt-fragmentet (optional) viser en sekvens der kun udføres hvis den givne betingelse er opfyldt. Det er som en if-sætning uden else.",
       "hints": [
@@ -232,12 +232,12 @@
       "difficulty": "medium",
       "title": "Hvad betyder \"loop\" fragmentet i et sekvensdiagram?",
       "description": "Hvad repræsenterer et loop-fragment?",
-      "options": {
-        "A": "Et valg mellem alternativer",
-        "B": "En sekvens der gentages så længe betingelsen er sand",
-        "C": "En valgfri sekvens",
-        "D": "En fejlhåndtering"
-      },
+      "options": [
+        "Et valg mellem alternativer",
+        "En sekvens der gentages så længe betingelsen er sand",
+        "En valgfri sekvens",
+        "En fejlhåndtering"
+      ],
       "correct_answer": "B",
       "explanation": "Loop-fragmentet viser en sekvens der gentages (itererer) så længe den angivne betingelse er opfyldt. Det er som en while-loop.",
       "hints": [
@@ -257,12 +257,12 @@
       "difficulty": "easy",
       "title": "Hvad er et aktivitetsdiagram?",
       "description": "Hvad viser et aktivitetsdiagram i UML?",
-      "options": {
-        "A": "Objekters tilstande",
-        "B": "Klassernes struktur",
-        "C": "Flowet af aktiviteter og handlinger i en proces",
-        "D": "Databasens tabeller"
-      },
+      "options": [
+        "Objekters tilstande",
+        "Klassernes struktur",
+        "Flowet af aktiviteter og handlinger i en proces",
+        "Databasens tabeller"
+      ],
       "correct_answer": "C",
       "explanation": "Et aktivitetsdiagram viser flowet af aktiviteter, handlinger, beslutninger og parallelle processer. Det ligner et avanceret flowchart.",
       "hints": [
@@ -282,12 +282,12 @@
       "difficulty": "easy",
       "title": "Hvad er startnoden i et aktivitetsdiagram?",
       "description": "Hvordan vises startpunktet i et aktivitetsdiagram?",
-      "options": {
-        "A": "Et rektangel",
-        "B": "En cirkel med en ring omkring",
-        "C": "En diamant",
-        "D": "En fyldt sort cirkel"
-      },
+      "options": [
+        "Et rektangel",
+        "En cirkel med en ring omkring",
+        "En diamant",
+        "En fyldt sort cirkel"
+      ],
       "correct_answer": "D",
       "explanation": "Startnoden (initial node) vises som en fyldt sort cirkel og angiver hvor flowet begynder.",
       "hints": [
@@ -307,12 +307,12 @@
       "difficulty": "easy",
       "title": "Hvad er slutnoden i et aktivitetsdiagram?",
       "description": "Hvordan vises slutpunktet i et aktivitetsdiagram?",
-      "options": {
-        "A": "En fyldt sort cirkel omgivet af en ring (bullseye)",
-        "B": "En fyldt sort cirkel",
-        "C": "En diamant",
-        "D": "Et rektangel med afrundede hjørner"
-      },
+      "options": [
+        "En fyldt sort cirkel omgivet af en ring (bullseye)",
+        "En fyldt sort cirkel",
+        "En diamant",
+        "Et rektangel med afrundede hjørner"
+      ],
       "correct_answer": "A",
       "explanation": "Slutnoden (activity final node) vises som en fyldt sort cirkel omgivet af en ring - som et bullseye/måltavle.",
       "hints": [
@@ -332,12 +332,12 @@
       "difficulty": "medium",
       "title": "Hvad repræsenterer en decision node i et aktivitetsdiagram?",
       "description": "Hvordan vises en beslutning i et aktivitetsdiagram?",
-      "options": {
-        "A": "En rektangel",
-        "B": "En diamant (rombe) med betingelser på udgående pile",
-        "C": "En cirkel",
-        "D": "En streg"
-      },
+      "options": [
+        "En rektangel",
+        "En diamant (rombe) med betingelser på udgående pile",
+        "En cirkel",
+        "En streg"
+      ],
       "correct_answer": "B",
       "explanation": "En decision node vises som en diamant (rombe) og repræsenterer et valg mellem to eller flere udgående veje baseret på betingelser (guards).",
       "hints": [
@@ -357,12 +357,12 @@
       "difficulty": "medium",
       "title": "Hvad er en fork/join i et aktivitetsdiagram?",
       "description": "Hvad bruges fork og join til i aktivitetsdiagrammer?",
-      "options": {
-        "A": "At markere start og slut",
-        "B": "At vise beslutninger",
-        "C": "At modellere parallelle aktiviteter (start/slut)",
-        "D": "At vise loops"
-      },
+      "options": [
+        "At markere start og slut",
+        "At vise beslutninger",
+        "At modellere parallelle aktiviteter (start/slut)",
+        "At vise loops"
+      ],
       "correct_answer": "C",
       "explanation": "Fork splitter flowet i parallelle tråde (en ind, flere ud), og join samler dem igen (flere ind, en ud). Vises som tykke vandrette/lodrette streger.",
       "hints": [
@@ -383,12 +383,12 @@
       "difficulty": "medium",
       "title": "Hvad er swimlanes i et aktivitetsdiagram?",
       "description": "Hvad bruges swimlanes (partitioner) til i aktivitetsdiagrammer?",
-      "options": {
-        "A": "At vise database-operationer",
-        "B": "At vise tidszoner",
-        "C": "At adskille fejl fra succes",
-        "D": "At vise hvilken aktør eller afdeling der er ansvarlig for hver aktivitet"
-      },
+      "options": [
+        "At vise database-operationer",
+        "At vise tidszoner",
+        "At adskille fejl fra succes",
+        "At vise hvilken aktør eller afdeling der er ansvarlig for hver aktivitet"
+      ],
       "correct_answer": "D",
       "explanation": "Swimlanes opdeler aktivitetsdiagrammet i baner der viser hvem (aktør, rolle, afdeling) der er ansvarlig for de forskellige aktiviteter.",
       "hints": [
@@ -408,12 +408,12 @@
       "difficulty": "medium",
       "title": "Hvad er et tilstandsdiagram (state machine)?",
       "description": "Hvad viser et tilstandsdiagram i UML?",
-      "options": {
-        "A": "Et objekts mulige tilstande og overgange mellem dem",
-        "B": "Klassernes arvehierarki",
-        "C": "Sekvensen af metodekald",
-        "D": "Systemets deployment"
-      },
+      "options": [
+        "Et objekts mulige tilstande og overgange mellem dem",
+        "Klassernes arvehierarki",
+        "Sekvensen af metodekald",
+        "Systemets deployment"
+      ],
       "correct_answer": "A",
       "explanation": "Et tilstandsdiagram viser de forskellige tilstande et objekt kan befinde sig i og de hændelser/betingelser der forårsager overgange mellem tilstandene.",
       "hints": [
@@ -434,12 +434,12 @@
       "difficulty": "medium",
       "title": "Hvad er en tilstand i et tilstandsdiagram?",
       "description": "Hvad repræsenterer en tilstand (state) i et tilstandsdiagram?",
-      "options": {
-        "A": "En fejl i programmet",
-        "B": "En bestemt situation/betingelse i et objekts livscyklus",
-        "C": "En klasse i systemet",
-        "D": "En database-tabel"
-      },
+      "options": [
+        "En fejl i programmet",
+        "En bestemt situation/betingelse i et objekts livscyklus",
+        "En klasse i systemet",
+        "En database-tabel"
+      ],
       "correct_answer": "B",
       "explanation": "En tilstand repræsenterer en bestemt situation i et objekts livscyklus, defineret af de attributværdier objektet har på det tidspunkt.",
       "hints": [
@@ -459,12 +459,12 @@
       "difficulty": "medium",
       "title": "Hvad er en transition i et tilstandsdiagram?",
       "description": "Hvad repræsenterer en transition?",
-      "options": {
-        "A": "En ny klasse",
-        "B": "En fejl i systemet",
-        "C": "En overgang fra én tilstand til en anden, udløst af en hændelse",
-        "D": "En database-query"
-      },
+      "options": [
+        "En ny klasse",
+        "En fejl i systemet",
+        "En overgang fra én tilstand til en anden, udløst af en hændelse",
+        "En database-query"
+      ],
       "correct_answer": "C",
       "explanation": "En transition er overgangen fra én tilstand til en anden, typisk udløst af en hændelse (event) og evt. betinget af en guard-betingelse.",
       "hints": [
@@ -484,12 +484,12 @@
       "difficulty": "medium",
       "title": "Hvad er en guard condition?",
       "description": "Hvad er en guard condition på en transition i et tilstandsdiagram?",
-      "options": {
-        "A": "En type af tilstand",
-        "B": "En sikkerhedsprotokol",
-        "C": "En fejlhåndtering",
-        "D": "En betingelse der skal være sand for at transitionen kan finde sted"
-      },
+      "options": [
+        "En type af tilstand",
+        "En sikkerhedsprotokol",
+        "En fejlhåndtering",
+        "En betingelse der skal være sand for at transitionen kan finde sted"
+      ],
       "correct_answer": "D",
       "explanation": "En guard condition er en boolsk betingelse (skrevet i firkantede parenteser []) der skal være sand for at transitionen udløses af hændelsen.",
       "hints": [
@@ -509,12 +509,12 @@
       "difficulty": "medium",
       "title": "Hvad er entry/exit actions i en tilstand?",
       "description": "Hvad er entry og exit actions i et tilstandsdiagram?",
-      "options": {
-        "A": "Handlinger der automatisk udføres ved ind- og udgang af tilstanden",
-        "B": "Metoder i en klasse",
-        "C": "Sikkerhedstjek",
-        "D": "Database-operationer"
-      },
+      "options": [
+        "Handlinger der automatisk udføres ved ind- og udgang af tilstanden",
+        "Metoder i en klasse",
+        "Sikkerhedstjek",
+        "Database-operationer"
+      ],
       "correct_answer": "A",
       "explanation": "Entry actions udføres automatisk når objektet går ind i tilstanden, og exit actions udføres automatisk når objektet forlader tilstanden.",
       "hints": [
@@ -535,12 +535,12 @@
       "difficulty": "hard",
       "title": "Hvad er en komposittilstand?",
       "description": "Hvad er en komposit (nested) tilstand i et tilstandsdiagram?",
-      "options": {
-        "A": "En tilstand med to navne",
-        "B": "En tilstand der indeholder andre sub-tilstande",
-        "C": "En fejltilstand",
-        "D": "En tilstand uden transitions"
-      },
+      "options": [
+        "En tilstand med to navne",
+        "En tilstand der indeholder andre sub-tilstande",
+        "En fejltilstand",
+        "En tilstand uden transitions"
+      ],
       "correct_answer": "B",
       "explanation": "En komposittilstand er en tilstand der indeholder et internt tilstandsdiagram med sub-tilstande, hvilket muliggør hierarkisk modellering.",
       "hints": [
@@ -560,12 +560,12 @@
       "difficulty": "medium",
       "title": "Hvad er et kommunikationsdiagram?",
       "description": "Hvad viser et kommunikationsdiagram i UML?",
-      "options": {
-        "A": "Systemets deployment",
-        "B": "Klassernes arvehierarki",
-        "C": "Interaktionen mellem objekter med fokus på strukturelle relationer",
-        "D": "Databasens tabeller"
-      },
+      "options": [
+        "Systemets deployment",
+        "Klassernes arvehierarki",
+        "Interaktionen mellem objekter med fokus på strukturelle relationer",
+        "Databasens tabeller"
+      ],
       "correct_answer": "C",
       "explanation": "Et kommunikationsdiagram viser interaktionen mellem objekter som et netværk, med nummererede beskeder der viser rækkefølgen.",
       "hints": [
@@ -585,12 +585,12 @@
       "difficulty": "medium",
       "title": "Forskel på sekvens- og kommunikationsdiagram",
       "description": "Hvad er den primære forskel mellem sekvens- og kommunikationsdiagrammer?",
-      "options": {
-        "A": "Sekvensdiagram viser kun klasser",
-        "B": "De er identiske",
-        "C": "Kommunikationsdiagram har ingen beskeder",
-        "D": "Sekvensdiagram fokuserer på tid, kommunikationsdiagram på struktur"
-      },
+      "options": [
+        "Sekvensdiagram viser kun klasser",
+        "De er identiske",
+        "Kommunikationsdiagram har ingen beskeder",
+        "Sekvensdiagram fokuserer på tid, kommunikationsdiagram på struktur"
+      ],
       "correct_answer": "D",
       "explanation": "Sekvensdiagrammet fokuserer på tidsmæssig rækkefølge (tid løber nedad), mens kommunikationsdiagrammet fokuserer på de strukturelle relationer mellem objekter.",
       "hints": [
@@ -611,12 +611,12 @@
       "difficulty": "easy",
       "title": "Hvad er et flowchart?",
       "description": "Hvad bruges et flowchart til?",
-      "options": {
-        "A": "At visualisere en proces eller algoritme med standardiserede symboler",
-        "B": "At vise klassers struktur",
-        "C": "At definere databasetabeller",
-        "D": "At teste kode"
-      },
+      "options": [
+        "At visualisere en proces eller algoritme med standardiserede symboler",
+        "At vise klassers struktur",
+        "At definere databasetabeller",
+        "At teste kode"
+      ],
       "correct_answer": "A",
       "explanation": "Et flowchart er en grafisk repræsentation af en proces eller algoritme med standardiserede symboler for start/slut, beslutninger, processer og data.",
       "hints": [
@@ -635,12 +635,12 @@
       "difficulty": "easy",
       "title": "Hvad repræsenterer en diamant i et flowchart?",
       "description": "Hvad betyder diamant-symbolet i et flowchart?",
-      "options": {
-        "A": "En proces/handling",
-        "B": "En beslutning/betingelse med ja/nej udgange",
-        "C": "Start eller slut",
-        "D": "Data input/output"
-      },
+      "options": [
+        "En proces/handling",
+        "En beslutning/betingelse med ja/nej udgange",
+        "Start eller slut",
+        "Data input/output"
+      ],
       "correct_answer": "B",
       "explanation": "Diamanten (romben) i et flowchart repræsenterer en beslutning eller betingelse, typisk med to udgange: ja og nej.",
       "hints": [
@@ -660,12 +660,12 @@
       "difficulty": "easy",
       "title": "Hvad repræsenterer et rektangel i et flowchart?",
       "description": "Hvad betyder rektangel-symbolet i et flowchart?",
-      "options": {
-        "A": "Start eller slut",
-        "B": "En beslutning",
-        "C": "En proces eller handling",
-        "D": "Data input/output"
-      },
+      "options": [
+        "Start eller slut",
+        "En beslutning",
+        "En proces eller handling",
+        "Data input/output"
+      ],
       "correct_answer": "C",
       "explanation": "Rektanglet i et flowchart repræsenterer en proces, handling eller operation der skal udføres.",
       "hints": [
@@ -685,12 +685,12 @@
       "difficulty": "easy",
       "title": "Hvad repræsenterer en oval i et flowchart?",
       "description": "Hvad bruges oval-symbolet til i et flowchart?",
-      "options": {
-        "A": "Data lagring",
-        "B": "En beslutning",
-        "C": "En proces",
-        "D": "Start eller slut (terminator)"
-      },
+      "options": [
+        "Data lagring",
+        "En beslutning",
+        "En proces",
+        "Start eller slut (terminator)"
+      ],
       "correct_answer": "D",
       "explanation": "Ovalen (terminatoren) bruges til at markere start og slut i et flowchart.",
       "hints": [
@@ -710,12 +710,12 @@
       "difficulty": "medium",
       "title": "Hvad repræsenterer et parallelogram i et flowchart?",
       "description": "Hvad bruges parallelogram-symbolet til?",
-      "options": {
-        "A": "Input eller output af data",
-        "B": "En beslutning",
-        "C": "En proces",
-        "D": "Start eller slut"
-      },
+      "options": [
+        "Input eller output af data",
+        "En beslutning",
+        "En proces",
+        "Start eller slut"
+      ],
       "correct_answer": "A",
       "explanation": "Parallelogrammet i et flowchart repræsenterer input eller output af data - f.eks. brugerinput eller visning af resultater.",
       "hints": [
@@ -735,12 +735,12 @@
       "difficulty": "medium",
       "title": "Hvornår vælger man et sekvensdiagram?",
       "description": "I hvilken situation er et sekvensdiagram mest hensigtsmæssigt?",
-      "options": {
-        "A": "Når man vil vise klassers struktur",
-        "B": "Når man vil vise den tidsmæssige rækkefølge af interaktioner",
-        "C": "Når man vil vise parallelle processer",
-        "D": "Når man vil vise systemets deployment"
-      },
+      "options": [
+        "Når man vil vise klassers struktur",
+        "Når man vil vise den tidsmæssige rækkefølge af interaktioner",
+        "Når man vil vise parallelle processer",
+        "Når man vil vise systemets deployment"
+      ],
       "correct_answer": "B",
       "explanation": "Sekvensdiagrammet er bedst når fokus er på den tidsmæssige rækkefølge af beskeder og interaktioner mellem objekter.",
       "hints": [
@@ -760,12 +760,12 @@
       "difficulty": "medium",
       "title": "Hvornår vælger man et aktivitetsdiagram?",
       "description": "I hvilken situation er et aktivitetsdiagram mest hensigtsmæssigt?",
-      "options": {
-        "A": "Når man vil vise objekters tilstande",
-        "B": "Når man vil vise klassers attributter",
-        "C": "Når man vil modellere en forretningsproces eller workflow",
-        "D": "Når man vil vise systemets klasser"
-      },
+      "options": [
+        "Når man vil vise objekters tilstande",
+        "Når man vil vise klassers attributter",
+        "Når man vil modellere en forretningsproces eller workflow",
+        "Når man vil vise systemets klasser"
+      ],
       "correct_answer": "C",
       "explanation": "Aktivitetsdiagrammet er bedst til at modellere forretningsprocesser, workflows og processer med beslutninger og parallelitet.",
       "hints": [
@@ -785,12 +785,12 @@
       "difficulty": "medium",
       "title": "Hvornår vælger man et tilstandsdiagram?",
       "description": "I hvilken situation er et tilstandsdiagram mest hensigtsmæssigt?",
-      "options": {
-        "A": "Når man vil vise systemets deployment",
-        "B": "Når man vil vise procesflow",
-        "C": "Når man vil vise klassers relationer",
-        "D": "Når man vil modellere et objekts livscyklus med forskellige tilstande"
-      },
+      "options": [
+        "Når man vil vise systemets deployment",
+        "Når man vil vise procesflow",
+        "Når man vil vise klassers relationer",
+        "Når man vil modellere et objekts livscyklus med forskellige tilstande"
+      ],
       "correct_answer": "D",
       "explanation": "Tilstandsdiagrammet er bedst når et objekt har tydelige tilstande med definerede overgange, f.eks. en ordre (oprettet, betalt, sendt, leveret).",
       "hints": [
@@ -810,12 +810,12 @@
       "difficulty": "medium",
       "title": "Hvornår vælger man et klassediagram?",
       "description": "I hvilken situation er et klassediagram mest hensigtsmæssigt?",
-      "options": {
-        "A": "Når man vil vise den statiske struktur af klasser og relationer",
-        "B": "Når man vil vise procesflow",
-        "C": "Når man vil vise tidsmæssig interaktion",
-        "D": "Når man vil vise tilstande"
-      },
+      "options": [
+        "Når man vil vise den statiske struktur af klasser og relationer",
+        "Når man vil vise procesflow",
+        "Når man vil vise tidsmæssig interaktion",
+        "Når man vil vise tilstande"
+      ],
       "correct_answer": "A",
       "explanation": "Klassediagrammet er bedst til at vise den statiske struktur - klasser, attributter, metoder og relationer mellem klasser.",
       "hints": [
@@ -835,12 +835,12 @@
       "difficulty": "easy",
       "title": "Hvad er et design pattern?",
       "description": "Hvad er et design pattern i software-udvikling?",
-      "options": {
-        "A": "En specifik kodeimplementering",
-        "B": "En genbrugelig løsning på et almindeligt designproblem",
-        "C": "Et UML-diagram",
-        "D": "En type test"
-      },
+      "options": [
+        "En specifik kodeimplementering",
+        "En genbrugelig løsning på et almindeligt designproblem",
+        "Et UML-diagram",
+        "En type test"
+      ],
       "correct_answer": "B",
       "explanation": "Et design pattern er en afprøvet, genbrugelig løsningsskabelon for et tilbagevendende designproblem i software-udvikling.",
       "hints": [
@@ -859,12 +859,12 @@
       "difficulty": "hard",
       "title": "Hvad er Observer pattern?",
       "description": "Hvad gør Observer design pattern?",
-      "options": {
-        "A": "Sikrer kun ét objekt af en klasse",
-        "B": "Opretter objekter via en fabrik",
-        "C": "Lader objekter abonnere på og reagere på hændelser fra et andet objekt",
-        "D": "Tilpasser et interface"
-      },
+      "options": [
+        "Sikrer kun ét objekt af en klasse",
+        "Opretter objekter via en fabrik",
+        "Lader objekter abonnere på og reagere på hændelser fra et andet objekt",
+        "Tilpasser et interface"
+      ],
       "correct_answer": "C",
       "explanation": "Observer pattern lader et \"subject\" objekt notificere en liste af \"observers\" når dets tilstand ændres, uden tæt kobling.",
       "hints": [
@@ -884,12 +884,12 @@
       "difficulty": "hard",
       "title": "Hvad er Singleton pattern?",
       "description": "Hvad sikrer Singleton design pattern?",
-      "options": {
-        "A": "At objekter oprettes via en fabrik",
-        "B": "At objekter kan abonnere på hændelser",
-        "C": "At klasser kan udveksle interfaces",
-        "D": "At en klasse kun har én instans med global adgang"
-      },
+      "options": [
+        "At objekter oprettes via en fabrik",
+        "At objekter kan abonnere på hændelser",
+        "At klasser kan udveksle interfaces",
+        "At en klasse kun har én instans med global adgang"
+      ],
       "correct_answer": "D",
       "explanation": "Singleton pattern sikrer at en klasse kun har præcis én instans og giver et globalt adgangspunkt til den instans.",
       "hints": [
@@ -909,12 +909,12 @@
       "difficulty": "hard",
       "title": "Hvad er Factory pattern?",
       "description": "Hvad gør Factory design pattern?",
-      "options": {
-        "A": "Delegerer objektoprettelse til en fabriksmetode",
-        "B": "Sikrer kun ét objekt",
-        "C": "Lader objekter abonnere på hændelser",
-        "D": "Tilpasser et interface til et andet"
-      },
+      "options": [
+        "Delegerer objektoprettelse til en fabriksmetode",
+        "Sikrer kun ét objekt",
+        "Lader objekter abonnere på hændelser",
+        "Tilpasser et interface til et andet"
+      ],
       "correct_answer": "A",
       "explanation": "Factory pattern bruger en fabriksmetode til at oprette objekter uden at specificere den konkrete klasse, hvilket øger fleksibiliteten.",
       "hints": [
@@ -934,12 +934,12 @@
       "difficulty": "medium",
       "title": "Hvad er et objektdiagram?",
       "description": "Hvad viser et objektdiagram i UML?",
-      "options": {
-        "A": "Klassernes generelle struktur",
-        "B": "Et snapshot af objekter og deres relationer på et bestemt tidspunkt",
-        "C": "Procesflow",
-        "D": "Systemets deployment"
-      },
+      "options": [
+        "Klassernes generelle struktur",
+        "Et snapshot af objekter og deres relationer på et bestemt tidspunkt",
+        "Procesflow",
+        "Systemets deployment"
+      ],
       "correct_answer": "B",
       "explanation": "Et objektdiagram viser konkrete objekter (instanser af klasser) og deres relationer på et specifikt tidspunkt - et \"snapshot\" af systemet.",
       "hints": [
@@ -959,12 +959,12 @@
       "difficulty": "medium",
       "title": "Forskel på klasse- og objektdiagram",
       "description": "Hvad er forskellen mellem et klassediagram og et objektdiagram?",
-      "options": {
-        "A": "Objektdiagram er mere abstrakt",
-        "B": "De er identiske",
-        "C": "Klassediagram viser typer/klasser, objektdiagram viser konkrete instanser",
-        "D": "Klassediagram viser kun metoder"
-      },
+      "options": [
+        "Objektdiagram er mere abstrakt",
+        "De er identiske",
+        "Klassediagram viser typer/klasser, objektdiagram viser konkrete instanser",
+        "Klassediagram viser kun metoder"
+      ],
       "correct_answer": "C",
       "explanation": "Klassediagrammet viser klasser (typer) og deres relationer generelt, mens objektdiagrammet viser konkrete objekter (instanser) med specifikke værdier.",
       "hints": [
@@ -985,12 +985,12 @@
       "difficulty": "medium",
       "title": "Hvad er et pakkediagram?",
       "description": "Hvad viser et pakkediagram (package diagram) i UML?",
-      "options": {
-        "A": "Databasens tabeller",
-        "B": "Sekvensen af beskeder",
-        "C": "Objekters tilstande",
-        "D": "Organiseringen af systemet i logiske grupper/pakker"
-      },
+      "options": [
+        "Databasens tabeller",
+        "Sekvensen af beskeder",
+        "Objekters tilstande",
+        "Organiseringen af systemet i logiske grupper/pakker"
+      ],
       "correct_answer": "D",
       "explanation": "Et pakkediagram viser hvordan systemets elementer (klasser, interfaces, etc.) er organiseret i logiske pakker og afhængigheder mellem pakkerne.",
       "hints": [
@@ -1010,12 +1010,12 @@
       "difficulty": "medium",
       "title": "Hvad er et deployment diagram?",
       "description": "Hvad viser et deployment diagram i UML?",
-      "options": {
-        "A": "Den fysiske fordeling af software på hardware-noder",
-        "B": "Klassernes relationer",
-        "C": "Procesflow",
-        "D": "Brugerinteraktion"
-      },
+      "options": [
+        "Den fysiske fordeling af software på hardware-noder",
+        "Klassernes relationer",
+        "Procesflow",
+        "Brugerinteraktion"
+      ],
       "correct_answer": "A",
       "explanation": "Et deployment diagram viser hvordan software-artefakter er fordelt på fysiske hardware-noder (servere, klienter) og kommunikation mellem dem.",
       "hints": [
@@ -1035,12 +1035,12 @@
       "difficulty": "medium",
       "title": "Hvad er et komponentdiagram?",
       "description": "Hvad viser et komponentdiagram i UML?",
-      "options": {
-        "A": "Klassernes attributter",
-        "B": "Systemets softwarekomponenter og deres interfaces/afhængigheder",
-        "C": "Procesflow",
-        "D": "Objekters tilstande"
-      },
+      "options": [
+        "Klassernes attributter",
+        "Systemets softwarekomponenter og deres interfaces/afhængigheder",
+        "Procesflow",
+        "Objekters tilstande"
+      ],
       "correct_answer": "B",
       "explanation": "Et komponentdiagram viser de fysiske softwarekomponenter i systemet, deres interfaces og afhængigheder mellem dem.",
       "hints": [
@@ -1060,12 +1060,12 @@
       "difficulty": "medium",
       "title": "Hvilke diagrammer bruges typisk i analysefasen?",
       "description": "Hvilke UML-diagrammer bruges primært i analysefasen?",
-      "options": {
-        "A": "Kun klassediagram",
-        "B": "Deployment og komponentdiagram",
-        "C": "Use Case diagram, domænemodel og SSD",
-        "D": "Kun aktivitetsdiagram"
-      },
+      "options": [
+        "Kun klassediagram",
+        "Deployment og komponentdiagram",
+        "Use Case diagram, domænemodel og SSD",
+        "Kun aktivitetsdiagram"
+      ],
       "correct_answer": "C",
       "explanation": "I analysefasen bruges typisk Use Case diagrammer (funktionelle krav), domænemodellen (forretningsbegreber) og SSD (system-interaktion).",
       "hints": [
@@ -1085,12 +1085,12 @@
       "difficulty": "medium",
       "title": "Hvilke diagrammer bruges typisk i designfasen?",
       "description": "Hvilke UML-diagrammer bruges primært i designfasen?",
-      "options": {
-        "A": "Kun deployment diagram",
-        "B": "Kun Use Case diagram",
-        "C": "Kun domænemodel",
-        "D": "Klassediagram, sekvensdiagram og tilstandsdiagram"
-      },
+      "options": [
+        "Kun deployment diagram",
+        "Kun Use Case diagram",
+        "Kun domænemodel",
+        "Klassediagram, sekvensdiagram og tilstandsdiagram"
+      ],
       "correct_answer": "D",
       "explanation": "I designfasen bruges typisk klassediagrammer (struktur), sekvensdiagrammer (interaktion) og tilstandsdiagrammer (objekters livscyklus).",
       "hints": [
@@ -1110,12 +1110,12 @@
       "difficulty": "medium",
       "title": "Hvad er CRC kort?",
       "description": "Hvad bruges CRC (Class-Responsibility-Collaboration) kort til?",
-      "options": {
-        "A": "At identificere klasser, deres ansvar og samarbejdspartnere",
-        "B": "At teste kode",
-        "C": "At vise procesflow",
-        "D": "At definere databasetabeller"
-      },
+      "options": [
+        "At identificere klasser, deres ansvar og samarbejdspartnere",
+        "At teste kode",
+        "At vise procesflow",
+        "At definere databasetabeller"
+      ],
       "correct_answer": "A",
       "explanation": "CRC kort bruges i tidlig designfase til at identificere klasser (Class), hvad de er ansvarlige for (Responsibility), og hvem de samarbejder med (Collaboration).",
       "hints": [
@@ -1135,12 +1135,12 @@
       "difficulty": "medium",
       "title": "Hvad er forskellen mellem statiske og dynamiske diagrammer?",
       "description": "I UML, hvad kendetegner statiske vs. dynamiske diagrammer?",
-      "options": {
-        "A": "Statiske bruges kun i test",
-        "B": "Statiske viser struktur, dynamiske viser adfærd over tid",
-        "C": "Dynamiske viser kun klasser",
-        "D": "Der er ingen forskel"
-      },
+      "options": [
+        "Statiske bruges kun i test",
+        "Statiske viser struktur, dynamiske viser adfærd over tid",
+        "Dynamiske viser kun klasser",
+        "Der er ingen forskel"
+      ],
       "correct_answer": "B",
       "explanation": "Statiske diagrammer (klasse, objekt, komponent) viser systemets struktur, mens dynamiske diagrammer (sekvens, aktivitet, tilstand) viser adfærd og interaktion over tid.",
       "hints": [
@@ -1161,12 +1161,12 @@
       "difficulty": "hard",
       "title": "Hvad er et \"par\" fragmentet i et sekvensdiagram?",
       "description": "Hvad repræsenterer par-fragmentet i et sekvensdiagram?",
-      "options": {
-        "A": "En valgfri sekvens",
-        "B": "Alternative flows",
-        "C": "Parallelle aktiviteter der udføres samtidigt",
-        "D": "En loop"
-      },
+      "options": [
+        "En valgfri sekvens",
+        "Alternative flows",
+        "Parallelle aktiviteter der udføres samtidigt",
+        "En loop"
+      ],
       "correct_answer": "C",
       "explanation": "Par-fragmentet (parallel) viser at to eller flere sekvenser udføres parallelt/samtidigt.",
       "hints": [
@@ -1187,12 +1187,12 @@
       "difficulty": "medium",
       "title": "Hvad er stereotyper i UML?",
       "description": "Hvad bruges stereotyper (<<stereotype>>) til i UML?",
-      "options": {
-        "A": "At specificere databasetype",
-        "B": "At markere fejl",
-        "C": "At angive kodesprog",
-        "D": "At udvide UML-elementer med nye typer/betydninger"
-      },
+      "options": [
+        "At specificere databasetype",
+        "At markere fejl",
+        "At angive kodesprog",
+        "At udvide UML-elementer med nye typer/betydninger"
+      ],
       "correct_answer": "D",
       "explanation": "Stereotyper (vist i guillements <<>>) bruges til at udvide UML med nye meninger, f.eks. <<interface>>, <<abstract>>, <<entity>>.",
       "hints": [

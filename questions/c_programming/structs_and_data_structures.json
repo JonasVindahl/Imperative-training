@@ -696,40 +696,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Dot vs Arrow",
-      "description": "Fill in the blanks about struct access:",
+      "description": "Fill in the blanks about struct access:\n\n1. Use the {blank1} operator to access members via a pointer\n2. Use the {blank2} operator to access members of a value",
       "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nint main() {\n    struct Point p = {1, 2};\n    struct Point *ptr = &p;\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "Use the ___ operator to access members via a pointer",
-          "blanks": [
-            {
-              "options": [
-                "->",
-                ".",
-                "&",
-                "*"
-              ],
-              "correct": "->"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Use the ___ operator to access members of a value",
-          "blanks": [
-            {
-              "options": [
-                ".",
-                "->",
-                "&",
-                "*"
-              ],
-              "correct": "."
-            }
-          ]
-        }
-      ],
       "explanation": "Use -> for pointers and . for struct values. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
         "Consider how pointers relate to memory addresses and values",
@@ -741,7 +709,27 @@
         "pointers",
         "member_access"
       ],
-      "hint": "Remember that remember: use '.' for struct variables and '->' for struct pointers."
+      "hint": "Remember that remember: use '.' for struct variables and '->' for struct pointers.",
+      "blanks": {
+        "blank1": {
+          "correct": "->",
+          "options": [
+            "->",
+            ".",
+            "&",
+            "*"
+          ]
+        },
+        "blank2": {
+          "correct": ".",
+          "options": [
+            ".",
+            "->",
+            "&",
+            "*"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_009",
@@ -749,64 +737,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Struktur Terminologi (Danish)",
-      "description": "Udfyld felterne om strukturer:",
+      "description": "Udfyld felterne om strukturer:\n\n1. {blank1} operatoren får adgang til struct medlemmer gennem en variabel, {blank2} gennem en pointer\n2. Variabler inde i en struct kaldes {blank3}\n3. Ekstra bytes tilføjet for alignment kaldes {blank4}",
       "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nstruct Point p;\np.x = 10;  // Member adgang\n\nstruct Point *ptr = &p;\nptr->x = 20;  // Pil operator",
-      "questions": [
-        {
-          "id": 0,
-          "text": "___ operatoren får adgang til struct medlemmer gennem en variabel, ___ gennem en pointer",
-          "blanks": [
-            {
-              "options": [
-                "punktum (.)",
-                "pil (->)",
-                "stjerne (*)",
-                "og-tegn (&)"
-              ],
-              "correct": "punktum (.)"
-            },
-            {
-              "options": [
-                "pil (->)",
-                "punktum (.)",
-                "stjerne (*)",
-                "og-tegn (&)"
-              ],
-              "correct": "pil (->)"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Variabler inde i en struct kaldes ___",
-          "blanks": [
-            {
-              "options": [
-                "medlemmer eller felter",
-                "egenskaber",
-                "attributter",
-                "elementer"
-              ],
-              "correct": "medlemmer eller felter"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Ekstra bytes tilføjet for alignment kaldes ___",
-          "blanks": [
-            {
-              "options": [
-                "padding",
-                "mellemrum",
-                "huller",
-                "gaps"
-              ],
-              "correct": "padding"
-            }
-          ]
-        }
-      ],
       "explanation": "Struct terminologi: medlemmer/felter (variabler indeni), punktum operator (direkte adgang), pil operator (pointer adgang), padding (alignment bytes).",
       "hints": [
         "Remember that brug . til direkte adgang",
@@ -817,7 +749,45 @@
         "strukturer",
         "terminologi",
         "operatorer"
-      ]
+      ],
+      "blanks": {
+        "blank1": {
+          "correct": "punktum (.)",
+          "options": [
+            "punktum (.)",
+            "pil (->)",
+            "stjerne (*)",
+            "og-tegn (&)"
+          ]
+        },
+        "blank2": {
+          "correct": "pil (->)",
+          "options": [
+            "pil (->)",
+            "punktum (.)",
+            "stjerne (*)",
+            "og-tegn (&)"
+          ]
+        },
+        "blank3": {
+          "correct": "medlemmer eller felter",
+          "options": [
+            "medlemmer eller felter",
+            "egenskaber",
+            "attributter",
+            "elementer"
+          ]
+        },
+        "blank4": {
+          "correct": "padding",
+          "options": [
+            "padding",
+            "mellemrum",
+            "huller",
+            "gaps"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_009",
@@ -825,64 +795,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Structure Terminology",
-      "description": "Fill in the blanks about structures:",
+      "description": "Fill in the blanks about structures:\n\n1. The {blank1} operator accesses struct members through a variable, {blank2} through a pointer\n2. Variables inside a struct are called {blank3}\n3. Extra bytes added for alignment are called {blank4}",
       "code_template": "struct Point {\n    int x;\n    int y;\n};\n\nstruct Point p;\np.x = 10;  // Member access\n\nstruct Point *ptr = &p;\nptr->x = 20;  // Arrow operator",
-      "questions": [
-        {
-          "id": 0,
-          "text": "The ___ operator accesses struct members through a variable, ___ through a pointer",
-          "blanks": [
-            {
-              "options": [
-                "dot (.)",
-                "arrow (->)",
-                "star (*)",
-                "ampersand (&)"
-              ],
-              "correct": "dot (.)"
-            },
-            {
-              "options": [
-                "arrow (->)",
-                "dot (.)",
-                "star (*)",
-                "ampersand (&)"
-              ],
-              "correct": "arrow (->)"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Variables inside a struct are called ___",
-          "blanks": [
-            {
-              "options": [
-                "members or fields",
-                "properties",
-                "attributes",
-                "elements"
-              ],
-              "correct": "members or fields"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Extra bytes added for alignment are called ___",
-          "blanks": [
-            {
-              "options": [
-                "padding",
-                "spacing",
-                "gaps",
-                "holes"
-              ],
-              "correct": "padding"
-            }
-          ]
-        }
-      ],
       "explanation": "Struct terminology: members/fields (variables inside), dot operator (direct access), arrow operator (pointer access), padding (alignment bytes).",
       "hints": [
         "Consider using . for direct access",
@@ -893,7 +807,45 @@
         "structs",
         "terminology",
         "operators"
-      ]
+      ],
+      "blanks": {
+        "blank1": {
+          "correct": "dot (.)",
+          "options": [
+            "dot (.)",
+            "arrow (->)",
+            "star (*)",
+            "ampersand (&)"
+          ]
+        },
+        "blank2": {
+          "correct": "arrow (->)",
+          "options": [
+            "arrow (->)",
+            "dot (.)",
+            "star (*)",
+            "ampersand (&)"
+          ]
+        },
+        "blank3": {
+          "correct": "members or fields",
+          "options": [
+            "members or fields",
+            "properties",
+            "attributes",
+            "elements"
+          ]
+        },
+        "blank4": {
+          "correct": "padding",
+          "options": [
+            "padding",
+            "spacing",
+            "gaps",
+            "holes"
+          ]
+        }
+      }
     },
     {
       "id": "prog_021",

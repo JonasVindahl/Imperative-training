@@ -1,38 +1,53 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard - {{ active_exam.name }}{% endblock %}
+{% block title %}Dashboard — {{ active_exam.name }}{% endblock %}
 
 {% block content %}
 <div class="dashboard">
-    <div class="dashboard-header">
-        <h1>Welcome, {{ user.name }}!</h1>
-        <div class="streak-badge">
+
+    <header class="dashboard-header">
+        <div class="dashboard-meta">
+            <span class="kicker">{{ active_exam.name }}</span>
+            <h1>God morgen, {{ user.name }}.</h1>
+            <p class="dashboard-subhead">
+                {% if progress.total_attempted == 0 %}
+                    Sæt i gang når du er klar.
+                {% else %}
+                    {{ progress.total_correct }} korrekte ud af {{ progress.total_attempted }} forsøg.
+                {% endif %}
+            </p>
+        </div>
+        <div class="dashboard-streak">
             {% if streak > 0 %}
-            <span class="streak-icon">🔥</span>
-            <span class="streak-count">{{ streak }}-day streak</span>
+            <span class="streak-icon" aria-hidden="true">●</span>
+            <span class="streak-count">{{ streak }}</span>
+            <span class="streak-label">{{ 'dag' if streak == 1 else 'dage' }} stribe</span>
             {% else %}
-            <span>Start practicing to build your streak!</span>
+            <span class="streak-label streak-label--cold">Ingen stribe endnu</span>
             {% endif %}
         </div>
-    </div>
+    </header>
 
-    <div class="progress-overview">
-        <h2>Your Progress</h2>
-        <div class="progress-bar">
-            <div class="progress-fill" style="width: {{ progress.overall_accuracy }}%">
-                {{ progress.overall_accuracy }}%
+    <section class="progress-overview">
+        <h2>Overall accuracy</h2>
+        <div class="overall-accuracy">
+            <span class="overall-accuracy__value">{{ progress.overall_accuracy }}<small>%</small></span>
+            <div class="overall-accuracy__bar">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ progress.overall_accuracy }}%"></div>
+                </div>
+                <p class="progress-stats">
+                    {{ progress.total_correct }} correct · {{ progress.total_attempted }} attempted
+                </p>
             </div>
         </div>
-        <p class="progress-stats">
-            {{ progress.total_correct }} correct out of {{ progress.total_attempted }} attempted
-        </p>
-    </div>
+    </section>
 
-    <div class="categories-grid">
+    <section class="categories-grid">
         <h2>Categories</h2>
         <div class="grid">
             {% for category, data in progress.category_progress.items() %}
-            <div class="category-card">
+            <a href="{{ url_for('practice.start_practice') }}" class="category-card">
                 <h3>{{ exam_service.get_category_name(active_exam.id, category) }}</h3>
                 <div class="category-progress">
                     <div class="progress-bar-small">
@@ -40,25 +55,25 @@
                     </div>
                     <span class="accuracy">{{ data.accuracy }}%</span>
                 </div>
-                <p class="category-stats">
-                    {{ data.correct }}/{{ data.attempted }} questions
-                </p>
-            </div>
+                <p class="category-stats">{{ data.correct }} / {{ data.attempted }} questions</p>
+            </a>
             {% endfor %}
         </div>
-    </div>
+    </section>
 
-    <div class="recommendations">
+    {% if progress.recommendations %}
+    <section class="recommendations">
         <h2>Recommendations</h2>
         <ul>
             {% for recommendation in progress.recommendations %}
             <li>{{ recommendation }}</li>
             {% endfor %}
         </ul>
-    </div>
+    </section>
+    {% endif %}
 
-    <div class="recent-activity">
-        <h2>Recent Activity</h2>
+    <section class="recent-activity">
+        <h2>Recent activity</h2>
         {% if recent_attempts %}
         <table class="attempts-table">
             <thead>
@@ -87,16 +102,16 @@
             </tbody>
         </table>
         {% else %}
-        <p>No practice attempts yet. Start practicing to see your progress!</p>
+        <p class="empty-state">No attempts yet — start a session to populate this.</p>
         {% endif %}
-    </div>
+    </section>
 
     <div class="action-buttons">
         <a href="{{ url_for('practice.start_practice') }}" class="btn-primary btn-large">
-            Start Smart Practice
+            Start smart practice
         </a>
         <a href="{{ url_for('progress.stats') }}" class="btn-secondary btn-large">
-            View Detailed Stats
+            View detailed stats
         </a>
     </div>
 </div>

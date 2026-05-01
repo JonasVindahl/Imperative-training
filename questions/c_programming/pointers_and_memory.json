@@ -454,64 +454,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Pointer Declaration and Dereferencing",
-      "description": "Fill in the blanks about pointers:",
+      "description": "Fill in the blanks about pointers:\n\n1. The & operator is used to get the {blank1} of a variable\n2. The * operator when used before a pointer {blank2} the pointer\n3. ptr stores the {blank3} of x, not its {blank4}",
       "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 42;\n    int* ptr = &x;\n    printf(\"%d\\n\", *ptr);\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "The & operator is used to get the ___ of a variable",
-          "blanks": [
-            {
-              "options": [
-                "address",
-                "value",
-                "type",
-                "size"
-              ],
-              "correct": "address"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The * operator when used before a pointer ___ the pointer",
-          "blanks": [
-            {
-              "options": [
-                "dereferences",
-                "declares",
-                "allocates",
-                "frees"
-              ],
-              "correct": "dereferences"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "ptr stores the ___ of x, not its ___",
-          "blanks": [
-            {
-              "options": [
-                "address",
-                "value",
-                "type",
-                "name"
-              ],
-              "correct": "address"
-            },
-            {
-              "options": [
-                "value",
-                "address",
-                "type",
-                "name"
-              ],
-              "correct": "value"
-            }
-          ]
-        }
-      ],
       "explanation": "The & operator gets the memory address of a variable. The * operator dereferences a pointer (accesses the value at that address). Pointers store addresses, not values. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
         "Consider & is the address-of operator",
@@ -523,7 +467,45 @@
         "operators",
         "addresses"
       ],
-      "hint": "Think about: the & operator gets the memory address of a variable."
+      "hint": "Think about: the & operator gets the memory address of a variable.",
+      "blanks": {
+        "blank1": {
+          "correct": "address",
+          "options": [
+            "address",
+            "value",
+            "type",
+            "size"
+          ]
+        },
+        "blank2": {
+          "correct": "dereferences",
+          "options": [
+            "dereferences",
+            "declares",
+            "allocates",
+            "frees"
+          ]
+        },
+        "blank3": {
+          "correct": "address",
+          "options": [
+            "address",
+            "value",
+            "type",
+            "name"
+          ]
+        },
+        "blank4": {
+          "correct": "value",
+          "options": [
+            "value",
+            "address",
+            "type",
+            "name"
+          ]
+        }
+      }
     },
     {
       "id": "fill_004",
@@ -531,55 +513,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Dynamic Allocation",
-      "description": "Fill in the blanks about malloc:",
+      "description": "Fill in the blanks about malloc:\n\n1. malloc returns a {blank1}\n2. The total bytes allocated is {blank2}\n3. The memory should be released with {blank3}",
       "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(5 * sizeof(int));\n    if (!p) return 1;\n    free(p);\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "malloc returns a ___",
-          "blanks": [
-            {
-              "options": [
-                "void pointer",
-                "int",
-                "int pointer",
-                "size"
-              ],
-              "correct": "void pointer"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The total bytes allocated is ___",
-          "blanks": [
-            {
-              "options": [
-                "5 * sizeof(int)",
-                "5",
-                "sizeof(int)",
-                "10"
-              ],
-              "correct": "5 * sizeof(int)"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "The memory should be released with ___",
-          "blanks": [
-            {
-              "options": [
-                "free(p)",
-                "delete p",
-                "malloc(p)",
-                "realloc(p)"
-              ],
-              "correct": "free(p)"
-            }
-          ]
-        }
-      ],
       "explanation": "Malloc returns a void pointer to allocated memory. The size is calculated in bytes, and the memory must be released with free. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
         "Consider malloc returns void*",
@@ -591,7 +526,36 @@
         "free",
         "memory_management"
       ],
-      "hint": "Consider what value malloc() returns when memory allocation fails."
+      "hint": "Consider what value malloc() returns when memory allocation fails.",
+      "blanks": {
+        "blank1": {
+          "correct": "void pointer",
+          "options": [
+            "void pointer",
+            "int",
+            "int pointer",
+            "size"
+          ]
+        },
+        "blank2": {
+          "correct": "5 * sizeof(int)",
+          "options": [
+            "5 * sizeof(int)",
+            "5",
+            "sizeof(int)",
+            "10"
+          ]
+        },
+        "blank3": {
+          "correct": "free(p)",
+          "options": [
+            "free(p)",
+            "delete p",
+            "malloc(p)",
+            "realloc(p)"
+          ]
+        }
+      }
     },
     {
       "id": "fill_007",
@@ -599,40 +563,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "free Basics",
-      "description": "Fill in the blanks about free:",
+      "description": "Fill in the blanks about free:\n\n1. The function used to release memory is {blank1}\n2. After freeing, p points to {blank2}",
       "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(sizeof(int));\n    if (!p) return 1;\n    free(p);\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "The function used to release memory is ___",
-          "blanks": [
-            {
-              "options": [
-                "free",
-                "malloc",
-                "calloc",
-                "realloc"
-              ],
-              "correct": "free"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "After freeing, p points to ___",
-          "blanks": [
-            {
-              "options": [
-                "invalid memory",
-                "valid memory",
-                "the stack",
-                "the heap start"
-              ],
-              "correct": "invalid memory"
-            }
-          ]
-        }
-      ],
       "explanation": "Free releases heap memory. After freeing, the pointer becomes invalid until reassigned. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
         "Consider free releases allocated memory",
@@ -644,7 +576,27 @@
         "memory_management",
         "pointers"
       ],
-      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks.",
+      "blanks": {
+        "blank1": {
+          "correct": "free",
+          "options": [
+            "free",
+            "malloc",
+            "calloc",
+            "realloc"
+          ]
+        },
+        "blank2": {
+          "correct": "invalid memory",
+          "options": [
+            "invalid memory",
+            "valid memory",
+            "the stack",
+            "the heap start"
+          ]
+        }
+      }
     },
     {
       "id": "fill_008",
@@ -652,40 +604,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "NULL Check",
-      "description": "Fill in the blanks about NULL pointers:",
+      "description": "Fill in the blanks about NULL pointers:\n\n1. NULL represents a {blank1} pointer\n2. Dereferencing NULL causes a {blank2}",
       "code_template": "#include <stdio.h>\n\nint main() {\n    int *p = NULL;\n    if (p == NULL) {\n        printf(\"NULL\\n\");\n    }\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "NULL represents a ___ pointer",
-          "blanks": [
-            {
-              "options": [
-                "null",
-                "valid",
-                "stack",
-                "dangling"
-              ],
-              "correct": "null"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Dereferencing NULL causes a ___",
-          "blanks": [
-            {
-              "options": [
-                "crash",
-                "compile error",
-                "warning",
-                "memory leak"
-              ],
-              "correct": "crash"
-            }
-          ]
-        }
-      ],
       "explanation": "NULL is a special pointer value. Dereferencing it is undefined behavior and typically crashes. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
         "Remember that nULL means no valid address",
@@ -697,7 +617,27 @@
         "NULL",
         "safety"
       ],
-      "hint": "Think about what happens when you dereference a NULL pointer."
+      "hint": "Think about what happens when you dereference a NULL pointer.",
+      "blanks": {
+        "blank1": {
+          "correct": "null",
+          "options": [
+            "null",
+            "valid",
+            "stack",
+            "dangling"
+          ]
+        },
+        "blank2": {
+          "correct": "crash",
+          "options": [
+            "crash",
+            "compile error",
+            "warning",
+            "memory leak"
+          ]
+        }
+      }
     },
     {
       "id": "fill_015",
@@ -705,40 +645,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Pointer Arithmetic",
-      "description": "Fill in the blanks about pointer arithmetic:",
+      "description": "Fill in the blanks about pointer arithmetic:\n\n1. p + 2 points to arr[{blank1}]\n2. The value printed is {blank2}",
       "code_template": "#include <stdio.h>\n\nint main() {\n    int arr[] = {1, 2, 3};\n    int *p = arr;\n    printf(\"%d\\n\", *(p + 2));\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "p + 2 points to arr[___]",
-          "blanks": [
-            {
-              "options": [
-                "2",
-                "1",
-                "0",
-                "3"
-              ],
-              "correct": "2"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The value printed is ___",
-          "blanks": [
-            {
-              "options": [
-                "3",
-                "2",
-                "1",
-                "0"
-              ],
-              "correct": "3"
-            }
-          ]
-        }
-      ],
       "explanation": "Pointer arithmetic advances by elements. p + 2 points to the third element, which is 3. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
         "Consider p + 1 is second element",
@@ -750,7 +658,27 @@
         "arrays",
         "arithmetic"
       ],
-      "hint": "Think about how pointer arithmetic works with the size of the data type being pointed to."
+      "hint": "Think about how pointer arithmetic works with the size of the data type being pointed to.",
+      "blanks": {
+        "blank1": {
+          "correct": "2",
+          "options": [
+            "2",
+            "1",
+            "0",
+            "3"
+          ]
+        },
+        "blank2": {
+          "correct": "3",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "0"
+          ]
+        }
+      }
     },
     {
       "id": "fill_018",
@@ -758,40 +686,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "malloc Check",
-      "description": "Fill in the blanks about malloc failure:",
+      "description": "Fill in the blanks about malloc failure:\n\n1. malloc returns {blank1} on failure\n2. The pointer should be released with {blank2}",
       "code_template": "#include <stdlib.h>\n\nint main() {\n    int *p = malloc(100 * sizeof(int));\n    if (!p) return 1;\n    free(p);\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "malloc returns ___ on failure",
-          "blanks": [
-            {
-              "options": [
-                "NULL",
-                "0",
-                "-1",
-                "false"
-              ],
-              "correct": "NULL"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The pointer should be released with ___",
-          "blanks": [
-            {
-              "options": [
-                "free(p)",
-                "delete p",
-                "malloc(p)",
-                "realloc(p)"
-              ],
-              "correct": "free(p)"
-            }
-          ]
-        }
-      ],
       "explanation": "Malloc can return NULL. Always free successful allocations. malloc() allocates memory dynamically on the heap and returns NULL if allocation fails. Always check for NULL before dereferencing.",
       "hints": [
         "Remember that nULL indicates failure",
@@ -802,7 +698,27 @@
         "malloc",
         "free"
       ],
-      "hint": "Consider what value malloc() returns when memory allocation fails."
+      "hint": "Consider what value malloc() returns when memory allocation fails.",
+      "blanks": {
+        "blank1": {
+          "correct": "NULL",
+          "options": [
+            "NULL",
+            "0",
+            "-1",
+            "false"
+          ]
+        },
+        "blank2": {
+          "correct": "free(p)",
+          "options": [
+            "free(p)",
+            "delete p",
+            "malloc(p)",
+            "realloc(p)"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_002",
@@ -810,55 +726,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Hukommelsessegmenter (Danish)",
-      "description": "Udfyld felterne om hukommelsessegmenter i C:",
+      "description": "Udfyld felterne om hukommelsessegmenter i C:\n\n1. Globale variabler gemmes i {blank1}\n2. Lokale variabler gemmes på {blank2}\n3. Dynamisk allokeret hukommelse er i {blank3}",
       "code_template": "int global = 10;          // Data segment\nstatic int statisk;       // BSS segment\n\nint main() {\n    int lokal = 5;         // Stak\n    char* heap = malloc(100); // Heap\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "Globale variabler gemmes i ___",
-          "blanks": [
-            {
-              "options": [
-                "datasegmentet",
-                "stakken",
-                "heapen",
-                "kodesegmentet"
-              ],
-              "correct": "datasegmentet"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Lokale variabler gemmes på ___",
-          "blanks": [
-            {
-              "options": [
-                "stakken",
-                "heapen",
-                "datasegmentet",
-                "BSS-segmentet"
-              ],
-              "correct": "stakken"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Dynamisk allokeret hukommelse er i ___",
-          "blanks": [
-            {
-              "options": [
-                "heapen",
-                "stakken",
-                "datasegmentet",
-                "kodesegmentet"
-              ],
-              "correct": "heapen"
-            }
-          ]
-        }
-      ],
       "explanation": "C-programmer bruger forskellige hukommelsessegmenter: stak (lokale variabler), heap (malloc), data (initialiserede globale), BSS (uinitialiserede globale), tekst (kode).",
       "hints": [
         "Remember that stakken vokser med funktionskald",
@@ -870,7 +739,36 @@
         "segmenter",
         "terminologi"
       ],
-      "hint": "Consider what value malloc() returns when memory allocation fails."
+      "hint": "Consider what value malloc() returns when memory allocation fails.",
+      "blanks": {
+        "blank1": {
+          "correct": "datasegmentet",
+          "options": [
+            "datasegmentet",
+            "stakken",
+            "heapen",
+            "kodesegmentet"
+          ]
+        },
+        "blank2": {
+          "correct": "stakken",
+          "options": [
+            "stakken",
+            "heapen",
+            "datasegmentet",
+            "BSS-segmentet"
+          ]
+        },
+        "blank3": {
+          "correct": "heapen",
+          "options": [
+            "heapen",
+            "stakken",
+            "datasegmentet",
+            "kodesegmentet"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_004",
@@ -878,73 +776,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Pointer Terminologi (Danish)",
-      "description": "Udfyld felterne om pointer operationer:",
+      "description": "Udfyld felterne om pointer operationer:\n\n1. {blank1} operatoren får adressen, {blank2} operatoren får værdien\n2. At få værdien på en pointer-adresse kaldes {blank3}\n3. En pointer gemmer en {blank4} ikke en {blank5}",
       "code_template": "int x = 42;\nint *p = &x;   // p gemmer adressen til x\nint y = *p;    // y får værdien på adressen p",
-      "questions": [
-        {
-          "id": 0,
-          "text": "___ operatoren får adressen, ___ operatoren får værdien",
-          "blanks": [
-            {
-              "options": [
-                "adresse-af (&)",
-                "dereferering (*)",
-                "pil (->)",
-                "punkt (.)"
-              ],
-              "correct": "adresse-af (&)"
-            },
-            {
-              "options": [
-                "dereferering (*)",
-                "adresse-af (&)",
-                "pil (->)",
-                "punkt (.)"
-              ],
-              "correct": "dereferering (*)"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "At få værdien på en pointer-adresse kaldes ___",
-          "blanks": [
-            {
-              "options": [
-                "dereferering",
-                "adressering",
-                "pointing",
-                "allokering"
-              ],
-              "correct": "dereferering"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "En pointer gemmer en ___ ikke en ___",
-          "blanks": [
-            {
-              "options": [
-                "hukommelsesadresse",
-                "værdi",
-                "type",
-                "funktion"
-              ],
-              "correct": "hukommelsesadresse"
-            },
-            {
-              "options": [
-                "værdi",
-                "hukommelsesadresse",
-                "type",
-                "funktion"
-              ],
-              "correct": "værdi"
-            }
-          ]
-        }
-      ],
       "explanation": "Pointer operationer: & får adresse, * derefererer (får værdi). Pointere gemmer adresser, ikke værdier. Dereferering betyder at få værdien på en adresse.",
       "hints": [
         "Consider & er adresse-af operator",
@@ -956,7 +789,54 @@
         "operatorer",
         "terminologi"
       ],
-      "hint": "Think about: pointer operationer: & får adresse, * derefererer (får værdi)."
+      "hint": "Think about: pointer operationer: & får adresse, * derefererer (får værdi).",
+      "blanks": {
+        "blank1": {
+          "correct": "adresse-af (&)",
+          "options": [
+            "adresse-af (&)",
+            "dereferering (*)",
+            "pil (->)",
+            "punkt (.)"
+          ]
+        },
+        "blank2": {
+          "correct": "dereferering (*)",
+          "options": [
+            "dereferering (*)",
+            "adresse-af (&)",
+            "pil (->)",
+            "punkt (.)"
+          ]
+        },
+        "blank3": {
+          "correct": "dereferering",
+          "options": [
+            "dereferering",
+            "adressering",
+            "pointing",
+            "allokering"
+          ]
+        },
+        "blank4": {
+          "correct": "hukommelsesadresse",
+          "options": [
+            "hukommelsesadresse",
+            "værdi",
+            "type",
+            "funktion"
+          ]
+        },
+        "blank5": {
+          "correct": "værdi",
+          "options": [
+            "værdi",
+            "hukommelsesadresse",
+            "type",
+            "funktion"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_006",
@@ -964,70 +844,8 @@
       "type": "fill_blanks",
       "difficulty": "hard",
       "title": "Almindelige Hukommelsesfejl (Danish)",
-      "description": "Udfyld felterne om hukommelsesfejl:",
+      "description": "Udfyld felterne om hukommelsesfejl:\n\n1. Et {blank1} opstår når allokeret hukommelse aldrig frigives\n2. En {blank2} peger på hukommelse der er blevet frigivet\n3. At skrive ud over et arrays grænser forårsager {blank3}\n4. At kalde free() to gange på samme pointer er en {blank4}",
       "code_template": "// Almindelige fejl:\n// 1. Memory leak: malloc uden free\n// 2. Dangling pointer: pointer til frigivet hukommelse\n// 3. Use after free: brug af frigivet hukommelse\n// 4. Double free: frigiver samme hukommelse to gange\n// 5. Buffer overflow: skriver ud over array grænser",
-      "questions": [
-        {
-          "id": 0,
-          "text": "Et ___ opstår når allokeret hukommelse aldrig frigives",
-          "blanks": [
-            {
-              "options": [
-                "memory leak",
-                "dangling pointer",
-                "buffer overflow",
-                "segmentation fault"
-              ],
-              "correct": "memory leak"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "En ___ peger på hukommelse der er blevet frigivet",
-          "blanks": [
-            {
-              "options": [
-                "dinglende pointer",
-                "null pointer",
-                "vild pointer",
-                "smart pointer"
-              ],
-              "correct": "dinglende pointer"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "At skrive ud over et arrays grænser forårsager ___",
-          "blanks": [
-            {
-              "options": [
-                "buffer overflow",
-                "memory leak",
-                "dangling pointer",
-                "double free"
-              ],
-              "correct": "buffer overflow"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "At kalde free() to gange på samme pointer er en ___",
-          "blanks": [
-            {
-              "options": [
-                "double free fejl",
-                "memory leak",
-                "buffer overflow",
-                "segmentation fault"
-              ],
-              "correct": "double free fejl"
-            }
-          ]
-        }
-      ],
       "explanation": "Hukommelsesfejl: leaks (ingen free), dinglende pointere (frigivet men stadig brugt), buffer overflow (skriv ud over grænser), double free (frigør to gange).",
       "hints": [
         "Remember that leak = glem at frigøre",
@@ -1040,7 +858,45 @@
         "fejl",
         "terminologi"
       ],
-      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks.",
+      "blanks": {
+        "blank1": {
+          "correct": "memory leak",
+          "options": [
+            "memory leak",
+            "dangling pointer",
+            "buffer overflow",
+            "segmentation fault"
+          ]
+        },
+        "blank2": {
+          "correct": "dinglende pointer",
+          "options": [
+            "dinglende pointer",
+            "null pointer",
+            "vild pointer",
+            "smart pointer"
+          ]
+        },
+        "blank3": {
+          "correct": "buffer overflow",
+          "options": [
+            "buffer overflow",
+            "memory leak",
+            "dangling pointer",
+            "double free"
+          ]
+        },
+        "blank4": {
+          "correct": "double free fejl",
+          "options": [
+            "double free fejl",
+            "memory leak",
+            "buffer overflow",
+            "segmentation fault"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_002",
@@ -1048,70 +904,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Memory Segments",
-      "description": "Fill in the blanks about memory segments in C:",
+      "description": "Fill in the blanks about memory segments in C:\n\n1. Global variables are stored in the {blank1}\n2. Local variables are stored on the {blank2}\n3. Dynamically allocated memory is in the {blank3}\n4. Uninitialized global variables go in the {blank4} segment",
       "code_template": "int global_var = 10;      // Data segment\nstatic int static_var;    // BSS segment\n\nint main() {\n    int local = 5;         // Stack\n    char* heap = malloc(100); // Heap\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "Global variables are stored in the ___",
-          "blanks": [
-            {
-              "options": [
-                "data segment",
-                "stack",
-                "heap",
-                "code segment"
-              ],
-              "correct": "data segment"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Local variables are stored on the ___",
-          "blanks": [
-            {
-              "options": [
-                "stack",
-                "heap",
-                "data segment",
-                "BSS segment"
-              ],
-              "correct": "stack"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Dynamically allocated memory is in the ___",
-          "blanks": [
-            {
-              "options": [
-                "heap",
-                "stack",
-                "data segment",
-                "code segment"
-              ],
-              "correct": "heap"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "Uninitialized global variables go in the ___ segment",
-          "blanks": [
-            {
-              "options": [
-                "BSS",
-                "data",
-                "text",
-                "stack"
-              ],
-              "correct": "BSS"
-            }
-          ]
-        }
-      ],
       "explanation": "C programs use different memory segments: stack (local vars), heap (malloc), data (initialized globals), BSS (uninitialized globals), text (code).",
       "hints": [
         "Remember that stack grows with function calls",
@@ -1123,7 +917,45 @@
         "segments",
         "terminology"
       ],
-      "hint": "Consider what value malloc() returns when memory allocation fails."
+      "hint": "Consider what value malloc() returns when memory allocation fails.",
+      "blanks": {
+        "blank1": {
+          "correct": "data segment",
+          "options": [
+            "data segment",
+            "stack",
+            "heap",
+            "code segment"
+          ]
+        },
+        "blank2": {
+          "correct": "stack",
+          "options": [
+            "stack",
+            "heap",
+            "data segment",
+            "BSS segment"
+          ]
+        },
+        "blank3": {
+          "correct": "heap",
+          "options": [
+            "heap",
+            "stack",
+            "data segment",
+            "code segment"
+          ]
+        },
+        "blank4": {
+          "correct": "BSS",
+          "options": [
+            "BSS",
+            "data",
+            "text",
+            "stack"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_004",
@@ -1131,73 +963,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Pointer Terminology",
-      "description": "Fill in the blanks about pointer operations:",
+      "description": "Fill in the blanks about pointer operations:\n\n1. The {blank1} operator gets the address, the {blank2} operator gets the value\n2. Accessing the value at a pointer address is called {blank3}\n3. A pointer stores a {blank4} not a {blank5}",
       "code_template": "int x = 42;\nint *p = &x;   // p stores the address of x\nint y = *p;    // y gets the value at address p",
-      "questions": [
-        {
-          "id": 0,
-          "text": "The ___ operator gets the address, the ___ operator gets the value",
-          "blanks": [
-            {
-              "options": [
-                "address-of (&)",
-                "dereference (*)",
-                "arrow (->)",
-                "dot (.)"
-              ],
-              "correct": "address-of (&)"
-            },
-            {
-              "options": [
-                "dereference (*)",
-                "address-of (&)",
-                "arrow (->)",
-                "dot (.)"
-              ],
-              "correct": "dereference (*)"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Accessing the value at a pointer address is called ___",
-          "blanks": [
-            {
-              "options": [
-                "dereferencing",
-                "addressing",
-                "pointing",
-                "allocating"
-              ],
-              "correct": "dereferencing"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "A pointer stores a ___ not a ___",
-          "blanks": [
-            {
-              "options": [
-                "memory address",
-                "value",
-                "type",
-                "function"
-              ],
-              "correct": "memory address"
-            },
-            {
-              "options": [
-                "value",
-                "memory address",
-                "type",
-                "function"
-              ],
-              "correct": "value"
-            }
-          ]
-        }
-      ],
       "explanation": "Pointer operations: & gets address, * dereferences (gets value). Pointers store addresses, not values. Dereferencing means accessing the value at an address. Pointers store memory addresses. The * operator dereferences a pointer to access the value at that address.",
       "hints": [
         "Consider & is address-of operator",
@@ -1209,7 +976,54 @@
         "operators",
         "terminology"
       ],
-      "hint": "Think about: pointer operations: & gets address, * dereferences (gets value)."
+      "hint": "Think about: pointer operations: & gets address, * dereferences (gets value).",
+      "blanks": {
+        "blank1": {
+          "correct": "address-of (&)",
+          "options": [
+            "address-of (&)",
+            "dereference (*)",
+            "arrow (->)",
+            "dot (.)"
+          ]
+        },
+        "blank2": {
+          "correct": "dereference (*)",
+          "options": [
+            "dereference (*)",
+            "address-of (&)",
+            "arrow (->)",
+            "dot (.)"
+          ]
+        },
+        "blank3": {
+          "correct": "dereferencing",
+          "options": [
+            "dereferencing",
+            "addressing",
+            "pointing",
+            "allocating"
+          ]
+        },
+        "blank4": {
+          "correct": "memory address",
+          "options": [
+            "memory address",
+            "value",
+            "type",
+            "function"
+          ]
+        },
+        "blank5": {
+          "correct": "value",
+          "options": [
+            "value",
+            "memory address",
+            "type",
+            "function"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_006",
@@ -1217,70 +1031,8 @@
       "type": "fill_blanks",
       "difficulty": "hard",
       "title": "Common Memory Errors",
-      "description": "Fill in the blanks about memory errors:",
+      "description": "Fill in the blanks about memory errors:\n\n1. A {blank1} occurs when allocated memory is never freed\n2. A {blank2} points to memory that has been freed\n3. Writing beyond an array's bounds causes {blank3}\n4. Calling free() twice on the same pointer is a {blank4}",
       "code_template": "// Common errors:\n// 1. Memory leak: malloc without free\n// 2. Dangling pointer: pointer to freed memory\n// 3. Use after free: using freed memory\n// 4. Double free: freeing same memory twice\n// 5. Buffer overflow: writing beyond array bounds",
-      "questions": [
-        {
-          "id": 0,
-          "text": "A ___ occurs when allocated memory is never freed",
-          "blanks": [
-            {
-              "options": [
-                "memory leak",
-                "dangling pointer",
-                "buffer overflow",
-                "segmentation fault"
-              ],
-              "correct": "memory leak"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "A ___ points to memory that has been freed",
-          "blanks": [
-            {
-              "options": [
-                "dangling pointer",
-                "null pointer",
-                "wild pointer",
-                "smart pointer"
-              ],
-              "correct": "dangling pointer"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Writing beyond an array's bounds causes ___",
-          "blanks": [
-            {
-              "options": [
-                "buffer overflow",
-                "memory leak",
-                "dangling pointer",
-                "double free"
-              ],
-              "correct": "buffer overflow"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "Calling free() twice on the same pointer is a ___",
-          "blanks": [
-            {
-              "options": [
-                "double free error",
-                "memory leak",
-                "buffer overflow",
-                "segmentation fault"
-              ],
-              "correct": "double free error"
-            }
-          ]
-        }
-      ],
       "explanation": "Memory errors: leaks (no free), dangling pointers (freed but still used), buffer overflow (write beyond bounds), double free (free twice), use after free.",
       "hints": [
         "Remember that leak = forget to free",
@@ -1293,7 +1045,45 @@
         "errors",
         "terminology"
       ],
-      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks."
+      "hint": "Remember that remember to free dynamically allocated memory to avoid memory leaks.",
+      "blanks": {
+        "blank1": {
+          "correct": "memory leak",
+          "options": [
+            "memory leak",
+            "dangling pointer",
+            "buffer overflow",
+            "segmentation fault"
+          ]
+        },
+        "blank2": {
+          "correct": "dangling pointer",
+          "options": [
+            "dangling pointer",
+            "null pointer",
+            "wild pointer",
+            "smart pointer"
+          ]
+        },
+        "blank3": {
+          "correct": "buffer overflow",
+          "options": [
+            "buffer overflow",
+            "memory leak",
+            "dangling pointer",
+            "double free"
+          ]
+        },
+        "blank4": {
+          "correct": "double free error",
+          "options": [
+            "double free error",
+            "memory leak",
+            "buffer overflow",
+            "segmentation fault"
+          ]
+        }
+      }
     },
     {
       "id": "int_027",

@@ -92,8 +92,8 @@
             {% for area in progress.weak_areas %}
             <li class="weak-area-item">
                 <strong>{{ area.replace('_', ' ').title() }}</strong>
-                {% if area in category_stats %}
-                - {{ ((category_stats[area].correct / category_stats[area].total) * 100) | int }}% accuracy
+                {% if area in category_stats and category_stats[area].total > 0 %}
+                — {{ ((category_stats[area].correct / category_stats[area].total) * 100) | int }}% accuracy
                 {% endif %}
             </li>
             {% endfor %}
@@ -128,10 +128,13 @@
                 datasets: [{
                     label: 'Accuracy (%)',
                     data: trendAccuracy,
-                    borderColor: '#2563eb',
-                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    borderColor: '#0a0a0a',
+                    backgroundColor: 'rgba(29, 43, 83, 0.10)',
+                    pointBackgroundColor: '#1d2b53',
+                    pointBorderColor: '#0a0a0a',
                     tension: 0.3,
-                    spanGaps: true
+                    spanGaps: true,
+                    fill: true,
                 }]
             },
             options: {
@@ -159,7 +162,10 @@
                 datasets: [{
                     label: 'Accuracy (%)',
                     data: categoryAccuracy,
-                    backgroundColor: '#38bdf8'
+                    backgroundColor: '#1d2b53',
+                    borderColor: '#0a0a0a',
+                    borderWidth: 1,
+                    borderRadius: 4,
                 }]
             },
             options: {

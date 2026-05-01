@@ -22,18 +22,6 @@ def _strict_validation_enabled() -> bool:
 _SAFE_ID = re.compile(r'^[a-zA-Z0-9_\-]+$')
 
 
-def _normalize_options(question: dict) -> None:
-    """Some question files store `options` as a dict {"A": "...", "B": "..."}
-    instead of the canonical list ["...", "..."]. Convert to a list ordered by
-    sorted letter key so the template (which iterates and assigns letters by
-    position) and the grader (which compares against `correct_answer` letter)
-    keep working with one canonical shape.
-    """
-    options = question.get('options')
-    if isinstance(options, dict):
-        question['options'] = [options[key] for key in sorted(options.keys())]
-
-
 class QuestionLoader:
     """Service for loading and managing questions from JSON files.
 
@@ -181,7 +169,6 @@ class QuestionLoader:
                     )
                 # Skip the broken question rather than crashing the loader.
                 continue
-            _normalize_options(q)
             validated.append(q)
         return validated
 

@@ -44,7 +44,7 @@ jobs:
         run: mypy --ignore-missing-imports app.py services routes config.py models
 
       - name: Validate question schema
-        run: python scripts/validate_questions.py
+        run: python scripts/validate_questions.py --strict
 
       - name: Run tests
         env:

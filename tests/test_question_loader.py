@@ -122,26 +122,6 @@ class TestLoading:
 
 
 class TestOptionsNormalisation:
-    def test_dict_options_become_list_in_letter_order(self, tmp_path: Path):
-        exam_dir = tmp_path / 'demo'
-        exam_dir.mkdir()
-        (exam_dir / 'cat.json').write_text(json.dumps({
-            'questions': [{
-                'id': 'q1',
-                'type': 'multiple_choice',
-                'title': 'Demo',
-                'description': 'Pick one.',
-                'options': {'B': 'second', 'A': 'first', 'D': 'fourth', 'C': 'third'},
-                'correct_answer': 'B',
-            }]
-        }))
-        loader = QuestionLoader(str(tmp_path))
-        q = loader.load_category('cat', exam_id='demo')[0]
-        assert q['options'] == ['first', 'second', 'third', 'fourth']
-        # correct_answer 'B' must still index to 'second'
-        idx = ord(q['correct_answer']) - ord('A')
-        assert q['options'][idx] == 'second'
-
     def test_list_options_pass_through_unchanged(self, tmp_path: Path):
         exam_dir = tmp_path / 'demo'
         exam_dir.mkdir()

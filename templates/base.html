@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
     <title>{% block title %}Exam Practice{% endblock %}</title>
+
+    {# Preconnect to font origins so the first paint isn't blocked on DNS. #}
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
@@ -11,25 +17,27 @@
 </head>
 <body>
     {% if current_user.is_authenticated %}
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="container">
             <div class="nav-brand">
-                <a href="{{ url_for('progress.dashboard') }}">{{ active_exam.icon }} {{ active_exam.name }}</a>
+                <a href="{{ url_for('progress.dashboard') }}" aria-label="Go to dashboard">
+                    <span aria-hidden="true">{{ active_exam.icon }}</span> {{ active_exam.name }}
+                </a>
                 <div class="exam-switcher">
-                    <button class="exam-switcher-btn" aria-label="Switch exam">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <button class="exam-switcher-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Switch exam">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                             <path d="M3 5L6 8L9 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <div class="exam-dropdown">
+                    <div class="exam-dropdown" role="menu">
                         {% for exam in all_exams %}
                         <form method="POST" action="{{ url_for('exam.switch_exam') }}">
                             <input type="hidden" name="exam_id" value="{{ exam.id }}">
-                            <button type="submit" class="exam-dropdown-item {% if exam.id == active_exam.id %}active{% endif %}">
-                                <span class="exam-dropdown-icon">{{ exam.icon }}</span>
+                            <button type="submit" class="exam-dropdown-item {% if exam.id == active_exam.id %}active{% endif %}" role="menuitem">
+                                <span class="exam-dropdown-icon" aria-hidden="true">{{ exam.icon }}</span>
                                 <span class="exam-dropdown-name">{{ exam.name }}</span>
                                 {% if exam.id == active_exam.id %}
-                                <span class="exam-dropdown-check">
+                                <span class="exam-dropdown-check" aria-label="Current exam">
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                         <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
@@ -57,24 +65,24 @@
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-            <div class="toast-container">
+            <div class="toast-container" role="region" aria-label="Notifications">
                 {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
+                    <div class="alert alert-{{ category }}" role="status">
                         <span>{{ message }}</span>
-                        <button type="button" class="toast-close" aria-label="Close notification">×</button>
+                        <button type="button" class="toast-close" aria-label="Close notification">&times;</button>
                     </div>
                 {% endfor %}
             </div>
         {% endif %}
     {% endwith %}
 
-    <div class="container main-content">
+    <main class="container main-content" id="main">
         {% block content %}{% endblock %}
-    </div>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>Exam Practice System | Built for learning</p>
+            <p>Exam Practice · Built for learning</p>
         </div>
     </footer>
 
@@ -83,7 +91,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
     <script>
-    // Exam switcher dropdown toggle
+    // Exam switcher dropdown — keep DOM contract identical to the previous shell.
     document.addEventListener('DOMContentLoaded', function() {
         var switcher = document.querySelector('.exam-switcher');
         var btn = document.querySelector('.exam-switcher-btn');
@@ -92,14 +100,34 @@
                 e.preventDefault();
                 e.stopPropagation();
                 switcher.classList.toggle('open');
+                btn.setAttribute('aria-expanded', switcher.classList.contains('open') ? 'true' : 'false');
             });
-            // Close when clicking outside
             document.addEventListener('click', function(e) {
                 if (!switcher.contains(e.target)) {
                     switcher.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && switcher.classList.contains('open')) {
+                    switcher.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.focus();
                 }
             });
         }
+
+        // Toast dismiss buttons
+        document.querySelectorAll('.toast-close').forEach(function(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                var alert = closeBtn.closest('.alert');
+                if (alert) {
+                    alert.style.opacity = '0';
+                    alert.style.transition = 'opacity 200ms ease';
+                    setTimeout(function() { alert.remove(); }, 200);
+                }
+            });
+        });
     });
     </script>
     {% block extra_js %}{% endblock %}

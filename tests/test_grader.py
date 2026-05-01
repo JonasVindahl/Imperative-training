@@ -86,17 +86,25 @@ class TestFillBlanks:
     def test_all_blanks_correct(self, grader):
         q = {
             'type': 'fill_blanks',
-            'questions': [{'id': 1, 'blanks': [{'correct': 'foo'}, {'correct': 'bar'}]}],
+            'description': 'foo={blank1}, bar={blank2}',
+            'blanks': {
+                'blank1': {'correct': 'foo'},
+                'blank2': {'correct': 'bar'},
+            },
         }
-        answer = json.dumps({'blank_1_0': 'foo', 'blank_1_1': 'bar'})
+        answer = json.dumps({'blank1': 'foo', 'blank2': 'bar'})
         assert grader.grade(q, answer)['correct'] is True
 
     def test_one_blank_wrong(self, grader):
         q = {
             'type': 'fill_blanks',
-            'questions': [{'id': 1, 'blanks': [{'correct': 'foo'}, {'correct': 'bar'}]}],
+            'description': 'foo={blank1}, bar={blank2}',
+            'blanks': {
+                'blank1': {'correct': 'foo'},
+                'blank2': {'correct': 'bar'},
+            },
         }
-        answer = json.dumps({'blank_1_0': 'foo', 'blank_1_1': 'baz'})
+        answer = json.dumps({'blank1': 'foo', 'blank2': 'baz'})
         result = grader.grade(q, answer)
         assert result['correct'] is False
         assert any(not r['correct'] for r in result['blank_results'])

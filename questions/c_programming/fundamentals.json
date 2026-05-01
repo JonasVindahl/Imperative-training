@@ -1150,64 +1150,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Function Parameters and Variables",
-      "description": "Fill in the blanks about function parameters and local variables:",
+      "description": "Fill in the blanks about function parameters and local variables:\n\n1. p1 and p2 are {blank1} in {blank2}\n2. In print_example, a, b, and c are the {blank3}\n3. From the type, we know that a can contain {blank4}",
       "code_template": "#include <stdio.h>\n\nint print_example(int a, double b, char* c) {\n    int p1 = 10;\n    int p2 = 2 * a;\n    if (c != NULL) {\n        p1 = 20;\n    }\n    printf(\"%d, %lf\\n\", p1 + p2, a + b);\n    return p2 - p1;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "p1 and p2 are ___ in ___",
-          "blanks": [
-            {
-              "options": [
-                "local variables",
-                "formal parameters",
-                "global variables",
-                "constants"
-              ],
-              "correct": "local variables"
-            },
-            {
-              "options": [
-                "the function",
-                "the module",
-                "the struct",
-                "the header"
-              ],
-              "correct": "the function"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "In print_example, a, b, and c are the ___",
-          "blanks": [
-            {
-              "options": [
-                "formal parameters",
-                "local variables",
-                "return values",
-                "global variables"
-              ],
-              "correct": "formal parameters"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "From the type, we know that a can contain ___",
-          "blanks": [
-            {
-              "options": [
-                "integers",
-                "floating-point numbers",
-                "characters",
-                "strings"
-              ],
-              "correct": "integers"
-            }
-          ]
-        }
-      ],
       "explanation": "Local variables are declared inside a function. Formal parameters are the variables declared in the function signature. The type 'int' indicates integer values.",
       "hints": [
         "Remember that variables declared inside the function are local to that function",
@@ -1220,7 +1164,45 @@
         "parameters",
         "types"
       ],
-      "hint": "Think about: local variables are declared inside a function."
+      "hint": "Think about: local variables are declared inside a function.",
+      "blanks": {
+        "blank1": {
+          "correct": "local variables",
+          "options": [
+            "local variables",
+            "formal parameters",
+            "global variables",
+            "constants"
+          ]
+        },
+        "blank2": {
+          "correct": "the function",
+          "options": [
+            "the function",
+            "the module",
+            "the struct",
+            "the header"
+          ]
+        },
+        "blank3": {
+          "correct": "formal parameters",
+          "options": [
+            "formal parameters",
+            "local variables",
+            "return values",
+            "global variables"
+          ]
+        },
+        "blank4": {
+          "correct": "integers",
+          "options": [
+            "integers",
+            "floating-point numbers",
+            "characters",
+            "strings"
+          ]
+        }
+      }
     },
     {
       "id": "fill_012",
@@ -1228,40 +1210,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Modulo Meaning",
-      "description": "Fill in the blanks about modulo:",
+      "description": "Fill in the blanks about modulo:\n\n1. The % operator returns the {blank1}\n2. 17 % 5 equals {blank2}",
       "code_template": "#include <stdio.h>\n\nint main() {\n    int r = 17 % 5;\n    printf(\"%d\\n\", r);\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "The % operator returns the ___",
-          "blanks": [
-            {
-              "options": [
-                "remainder",
-                "quotient",
-                "sum",
-                "product"
-              ],
-              "correct": "remainder"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "17 % 5 equals ___",
-          "blanks": [
-            {
-              "options": [
-                "2",
-                "3",
-                "1",
-                "0"
-              ],
-              "correct": "2"
-            }
-          ]
-        }
-      ],
       "explanation": "Modulo returns the remainder after integer division. 17 / 5 leaves remainder 2. In C, when both operands of the division operator are integers, the result is truncated toward zero, discarding any fractional part.",
       "hints": [
         "Consider 17 = 5 * 3 + 2",
@@ -1272,7 +1222,27 @@
         "modulo",
         "integer_division"
       ],
-      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part.",
+      "blanks": {
+        "blank1": {
+          "correct": "remainder",
+          "options": [
+            "remainder",
+            "quotient",
+            "sum",
+            "product"
+          ]
+        },
+        "blank2": {
+          "correct": "2",
+          "options": [
+            "2",
+            "3",
+            "1",
+            "0"
+          ]
+        }
+      }
     },
     {
       "id": "fill_019",
@@ -1280,40 +1250,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Integer Division",
-      "description": "Fill in the blanks about integer division:",
+      "description": "Fill in the blanks about integer division:\n\n1. 7 / 2 equals {blank1} in integer division\n2. Integer division {blank2} the fractional part",
       "code_template": "#include <stdio.h>\n\nint main() {\n    int x = 7 / 2;\n    printf(\"%d\\n\", x);\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "7 / 2 equals ___ in integer division",
-          "blanks": [
-            {
-              "options": [
-                "3",
-                "3.5",
-                "4",
-                "2"
-              ],
-              "correct": "3"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Integer division ___ the fractional part",
-          "blanks": [
-            {
-              "options": [
-                "truncates",
-                "rounds",
-                "keeps",
-                "doubles"
-              ],
-              "correct": "truncates"
-            }
-          ]
-        }
-      ],
       "explanation": "Integer division truncates toward zero, so 7/2 is 3. In C, when both operands of the division operator are integers, the result is truncated toward zero, discarding any fractional part.",
       "hints": [
         "Consider 7/2 is 3 in int",
@@ -1324,7 +1262,27 @@
         "integer_division",
         "basics"
       ],
-      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part."
+      "hint": "Remember that when both operands are integers, C performs integer division which truncates the decimal part.",
+      "blanks": {
+        "blank1": {
+          "correct": "3",
+          "options": [
+            "3",
+            "3.5",
+            "4",
+            "2"
+          ]
+        },
+        "blank2": {
+          "correct": "truncates",
+          "options": [
+            "truncates",
+            "rounds",
+            "keeps",
+            "doubles"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_001",
@@ -1332,55 +1290,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "C Programmering - Oversættelsesprocessen (Danish)",
-      "description": "Udfyld felterne om C-oversættelsesprocessen:",
+      "description": "Udfyld felterne om C-oversættelsesprocessen:\n\n1. Præprocessoren håndterer {blank1} som #include og #define\n2. Linkeren kombinerer {blank2} til en eksekverbar fil\n3. Compileren oversætter C-kode til {blank3}",
       "code_template": "// C oversættelses trin:\n// 1. Forbehandling\n// 2. Kompilering\n// 3. Assemblering\n// 4. Linking",
-      "questions": [
-        {
-          "id": 0,
-          "text": "Præprocessoren håndterer ___ som #include og #define",
-          "blanks": [
-            {
-              "options": [
-                "direktiver",
-                "funktioner",
-                "variabler",
-                "konstanter"
-              ],
-              "correct": "direktiver"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Linkeren kombinerer ___ til en eksekverbar fil",
-          "blanks": [
-            {
-              "options": [
-                "objektfiler",
-                "kildefiler",
-                "headerfiler",
-                "biblioteker"
-              ],
-              "correct": "objektfiler"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Compileren oversætter C-kode til ___",
-          "blanks": [
-            {
-              "options": [
-                "assemblykode",
-                "maskinkode",
-                "bytekode",
-                "objektkode"
-              ],
-              "correct": "assemblykode"
-            }
-          ]
-        }
-      ],
       "explanation": "Oversættelsesprocessen har 4 trin: forbehandling (#include, #define), kompilering (C til assembly), assemblering (assembly til objekt), linking (objekter til eksekverbar).",
       "hints": [
         "Remember that præprocessoren behandler # direktiver",
@@ -1391,7 +1302,36 @@
         "kompilering",
         "terminologi",
         "grundlæggende"
-      ]
+      ],
+      "blanks": {
+        "blank1": {
+          "correct": "direktiver",
+          "options": [
+            "direktiver",
+            "funktioner",
+            "variabler",
+            "konstanter"
+          ]
+        },
+        "blank2": {
+          "correct": "objektfiler",
+          "options": [
+            "objektfiler",
+            "kildefiler",
+            "headerfiler",
+            "biblioteker"
+          ]
+        },
+        "blank3": {
+          "correct": "assemblykode",
+          "options": [
+            "assemblykode",
+            "maskinkode",
+            "bytekode",
+            "objektkode"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_003",
@@ -1399,82 +1339,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Datatyper og Lagring (Danish)",
-      "description": "Udfyld felterne om C datatyper:",
+      "description": "Udfyld felterne om C datatyper:\n\n1. En {blank1} type kan gemme negative tal, en {blank2} kan ikke\n2. {blank3} typen har mere præcision end {blank4}\n3. En {blank5} bruger typisk 1 byte og repræsenterer {blank6}",
       "code_template": "int x;      // Fortegnet heltal\nunsigned y; // Ufortegnet heltal\nchar c;     // Tegn\nfloat f;    // Kommatal\ndouble d;   // Dobbelt præcision",
-      "questions": [
-        {
-          "id": 0,
-          "text": "En ___ type kan gemme negative tal, en ___ kan ikke",
-          "blanks": [
-            {
-              "options": [
-                "fortegnet",
-                "ufortegnet",
-                "char",
-                "float"
-              ],
-              "correct": "fortegnet"
-            },
-            {
-              "options": [
-                "ufortegnet",
-                "fortegnet",
-                "double",
-                "pointer"
-              ],
-              "correct": "ufortegnet"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "___ typen har mere præcision end ___",
-          "blanks": [
-            {
-              "options": [
-                "double",
-                "float",
-                "int",
-                "char"
-              ],
-              "correct": "double"
-            },
-            {
-              "options": [
-                "float",
-                "double",
-                "int",
-                "long"
-              ],
-              "correct": "float"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "En ___ bruger typisk 1 byte og repræsenterer ___",
-          "blanks": [
-            {
-              "options": [
-                "char",
-                "int",
-                "float",
-                "double"
-              ],
-              "correct": "char"
-            },
-            {
-              "options": [
-                "et tegn eller lille heltal",
-                "kommatal",
-                "pointere",
-                "store heltal"
-              ],
-              "correct": "et tegn eller lille heltal"
-            }
-          ]
-        }
-      ],
       "explanation": "C har forskellige datatyper med forskellige størrelser og muligheder. Fortegnede typer kan være negative, ufortegnede kan ikke. Double har mere præcision end float.",
       "hints": [
         "Remember that fortegnet betyder kan være negativ",
@@ -1486,7 +1352,63 @@
         "data",
         "terminologi"
       ],
-      "hint": "Think about: c har forskellige datatyper med forskellige størrelser og muligheder."
+      "hint": "Think about: c har forskellige datatyper med forskellige størrelser og muligheder.",
+      "blanks": {
+        "blank1": {
+          "correct": "fortegnet",
+          "options": [
+            "fortegnet",
+            "ufortegnet",
+            "char",
+            "float"
+          ]
+        },
+        "blank2": {
+          "correct": "ufortegnet",
+          "options": [
+            "ufortegnet",
+            "fortegnet",
+            "double",
+            "pointer"
+          ]
+        },
+        "blank3": {
+          "correct": "double",
+          "options": [
+            "double",
+            "float",
+            "int",
+            "char"
+          ]
+        },
+        "blank4": {
+          "correct": "float",
+          "options": [
+            "float",
+            "double",
+            "int",
+            "long"
+          ]
+        },
+        "blank5": {
+          "correct": "char",
+          "options": [
+            "char",
+            "int",
+            "float",
+            "double"
+          ]
+        },
+        "blank6": {
+          "correct": "et tegn eller lille heltal",
+          "options": [
+            "et tegn eller lille heltal",
+            "kommatal",
+            "pointere",
+            "store heltal"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_005",
@@ -1494,64 +1416,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Funktions Terminologi (Danish)",
-      "description": "Udfyld felterne om C funktioner:",
+      "description": "Udfyld felterne om C funktioner:\n\n1. En funktions {blank1} fortæller compileren at funktionen eksisterer, en {blank2} giver implementeringen\n2. Variablerne i funktionssignaturen kaldes {blank3}\n3. Værdierne der sendes når funktionen kaldes hedder {blank4}",
       "code_template": "int add(int a, int b);  // Erklæring/Prototype\n\nint add(int a, int b) { // Definition\n    return a + b;       // Return statement\n}\n\nint main() {\n    int x = add(5, 3);  // Funktionskald\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "En funktions ___ fortæller compileren at funktionen eksisterer, en ___ giver implementeringen",
-          "blanks": [
-            {
-              "options": [
-                "erklæring",
-                "definition",
-                "kald",
-                "invokation"
-              ],
-              "correct": "erklæring"
-            },
-            {
-              "options": [
-                "definition",
-                "erklæring",
-                "kald",
-                "prototype"
-              ],
-              "correct": "definition"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "Variablerne i funktionssignaturen kaldes ___",
-          "blanks": [
-            {
-              "options": [
-                "formelle parametre",
-                "aktuelle parametre",
-                "argumenter",
-                "lokale variabler"
-              ],
-              "correct": "formelle parametre"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Værdierne der sendes når funktionen kaldes hedder ___",
-          "blanks": [
-            {
-              "options": [
-                "argumenter",
-                "parametre",
-                "variabler",
-                "konstanter"
-              ],
-              "correct": "argumenter"
-            }
-          ]
-        }
-      ],
       "explanation": "Funktionserklæring (prototype) annoncerer funktionen. Definition giver kroppen. Parametre er i signaturen, argumenter sendes ved kald.",
       "hints": [
         "Remember that erklæring = løfte, Definition = implementering",
@@ -1563,7 +1429,45 @@
         "terminologi",
         "grundlæggende"
       ],
-      "hint": "Think about: funktionserklæring (prototype) annoncerer funktionen."
+      "hint": "Think about: funktionserklæring (prototype) annoncerer funktionen.",
+      "blanks": {
+        "blank1": {
+          "correct": "erklæring",
+          "options": [
+            "erklæring",
+            "definition",
+            "kald",
+            "invokation"
+          ]
+        },
+        "blank2": {
+          "correct": "definition",
+          "options": [
+            "definition",
+            "erklæring",
+            "kald",
+            "prototype"
+          ]
+        },
+        "blank3": {
+          "correct": "formelle parametre",
+          "options": [
+            "formelle parametre",
+            "aktuelle parametre",
+            "argumenter",
+            "lokale variabler"
+          ]
+        },
+        "blank4": {
+          "correct": "argumenter",
+          "options": [
+            "argumenter",
+            "parametre",
+            "variabler",
+            "konstanter"
+          ]
+        }
+      }
     },
     {
       "id": "fill_da_007",
@@ -1571,79 +1475,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Variabel Scope og Levetid (Danish)",
-      "description": "Udfyld felterne om scope og levetid:",
+      "description": "Udfyld felterne om scope og levetid:\n\n1. {blank1} variabler eksisterer hele programmets varighed\n2. {blank2} variabler oprettes når funktionen kaldes og destrueres når den returnerer\n3. Variabler erklæret med {blank3} nøgleord bevarer deres værdi mellem funktionskald\n4. {blank4} bestemmer hvor en variabel kan tilgås, {blank5} bestemmer hvor længe den eksisterer",
       "code_template": "int global = 1;         // Fil scope, statisk levetid\n\nvoid func() {\n    static int s = 0;   // Blok scope, statisk levetid\n    int lokal = 2;      // Blok scope, automatisk levetid\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "___ variabler eksisterer hele programmets varighed",
-          "blanks": [
-            {
-              "options": [
-                "Globale",
-                "Lokale",
-                "Register",
-                "Midlertidige"
-              ],
-              "correct": "Globale"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "___ variabler oprettes når funktionen kaldes og destrueres når den returnerer",
-          "blanks": [
-            {
-              "options": [
-                "Automatiske (lokale)",
-                "Statiske",
-                "Globale",
-                "Eksterne"
-              ],
-              "correct": "Automatiske (lokale)"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Variabler erklæret med ___ nøgleord bevarer deres værdi mellem funktionskald",
-          "blanks": [
-            {
-              "options": [
-                "static",
-                "const",
-                "extern",
-                "volatile"
-              ],
-              "correct": "static"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "___ bestemmer hvor en variabel kan tilgås, ___ bestemmer hvor længe den eksisterer",
-          "blanks": [
-            {
-              "options": [
-                "Scope",
-                "Levetid",
-                "Type",
-                "Lagring"
-              ],
-              "correct": "Scope"
-            },
-            {
-              "options": [
-                "Levetid",
-                "Scope",
-                "Type",
-                "Varighed"
-              ],
-              "correct": "Levetid"
-            }
-          ]
-        }
-      ],
       "explanation": "Scope er hvor variablen er synlig. Levetid er hvor længe den eksisterer. Global = hele programmet. Lokal = kun funktion. Static = beholder værdi mellem kald. Variable scope determines where a variable can be accessed. Local variables are only accessible within their block.",
       "hints": [
         "Remember that globale variabler lever evigt",
@@ -1656,7 +1489,54 @@
         "levetid",
         "terminologi"
       ],
-      "hint": "Think about variable scope and lifetime in C."
+      "hint": "Think about variable scope and lifetime in C.",
+      "blanks": {
+        "blank1": {
+          "correct": "Globale",
+          "options": [
+            "Globale",
+            "Lokale",
+            "Register",
+            "Midlertidige"
+          ]
+        },
+        "blank2": {
+          "correct": "Automatiske (lokale)",
+          "options": [
+            "Automatiske (lokale)",
+            "Statiske",
+            "Globale",
+            "Eksterne"
+          ]
+        },
+        "blank3": {
+          "correct": "static",
+          "options": [
+            "static",
+            "const",
+            "extern",
+            "volatile"
+          ]
+        },
+        "blank4": {
+          "correct": "Scope",
+          "options": [
+            "Scope",
+            "Levetid",
+            "Type",
+            "Lagring"
+          ]
+        },
+        "blank5": {
+          "correct": "Levetid",
+          "options": [
+            "Levetid",
+            "Scope",
+            "Type",
+            "Varighed"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_001",
@@ -1664,55 +1544,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "C Programming Basics - Compilation Process",
-      "description": "Fill in the blanks about the C compilation process:",
+      "description": "Fill in the blanks about the C compilation process:\n\n1. The {blank1} processes directives like #include and #define\n2. The {blank2} combines object files into an executable\n3. The compiler translates C code to {blank3}",
       "code_template": "// C compilation stages:\n// 1. Preprocessing\n// 2. Compilation\n// 3. Assembly\n// 4. Linking",
-      "questions": [
-        {
-          "id": 0,
-          "text": "The ___ processes directives like #include and #define",
-          "blanks": [
-            {
-              "options": [
-                "preprocessor",
-                "compiler",
-                "linker",
-                "assembler"
-              ],
-              "correct": "preprocessor"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The ___ combines object files into an executable",
-          "blanks": [
-            {
-              "options": [
-                "linker",
-                "compiler",
-                "preprocessor",
-                "assembler"
-              ],
-              "correct": "linker"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "The compiler translates C code to ___",
-          "blanks": [
-            {
-              "options": [
-                "assembly code",
-                "machine code",
-                "bytecode",
-                "object code"
-              ],
-              "correct": "assembly code"
-            }
-          ]
-        }
-      ],
       "explanation": "The compilation process has 4 stages: preprocessing (#include, #define), compilation (C to assembly), assembly (assembly to object), linking (objects to executable).",
       "hints": [
         "Remember that preprocessing handles # directives",
@@ -1723,7 +1556,36 @@
         "compilation",
         "terminology",
         "basics"
-      ]
+      ],
+      "blanks": {
+        "blank1": {
+          "correct": "preprocessor",
+          "options": [
+            "preprocessor",
+            "compiler",
+            "linker",
+            "assembler"
+          ]
+        },
+        "blank2": {
+          "correct": "linker",
+          "options": [
+            "linker",
+            "compiler",
+            "preprocessor",
+            "assembler"
+          ]
+        },
+        "blank3": {
+          "correct": "assembly code",
+          "options": [
+            "assembly code",
+            "machine code",
+            "bytecode",
+            "object code"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_003",
@@ -1731,82 +1593,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Data Types and Storage",
-      "description": "Fill in the blanks about C data types:",
+      "description": "Fill in the blanks about C data types:\n\n1. An {blank1} can store negative numbers, a {blank2} cannot\n2. The {blank3} type has more precision than {blank4}\n3. A {blank5} typically stores 1 byte and represents {blank6}",
       "code_template": "int x;      // Signed integer\nunsigned y; // Unsigned integer\nchar c;     // Character\nfloat f;    // Floating point\ndouble d;   // Double precision",
-      "questions": [
-        {
-          "id": 0,
-          "text": "An ___ can store negative numbers, a ___ cannot",
-          "blanks": [
-            {
-              "options": [
-                "signed integer",
-                "unsigned integer",
-                "char",
-                "float"
-              ],
-              "correct": "signed integer"
-            },
-            {
-              "options": [
-                "unsigned integer",
-                "signed integer",
-                "double",
-                "pointer"
-              ],
-              "correct": "unsigned integer"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The ___ type has more precision than ___",
-          "blanks": [
-            {
-              "options": [
-                "double",
-                "float",
-                "int",
-                "char"
-              ],
-              "correct": "double"
-            },
-            {
-              "options": [
-                "float",
-                "double",
-                "int",
-                "long"
-              ],
-              "correct": "float"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "A ___ typically stores 1 byte and represents ___",
-          "blanks": [
-            {
-              "options": [
-                "char",
-                "int",
-                "float",
-                "double"
-              ],
-              "correct": "char"
-            },
-            {
-              "options": [
-                "a character or small integer",
-                "floating-point numbers",
-                "pointers",
-                "large integers"
-              ],
-              "correct": "a character or small integer"
-            }
-          ]
-        }
-      ],
       "explanation": "C has various data types with different sizes and capabilities. Signed types store negative numbers, unsigned don't. Double has more precision than float.",
       "hints": [
         "Remember that signed means can be negative",
@@ -1818,7 +1606,63 @@
         "data",
         "terminology"
       ],
-      "hint": "Think about: c has various data types with different sizes and capabilities."
+      "hint": "Think about: c has various data types with different sizes and capabilities.",
+      "blanks": {
+        "blank1": {
+          "correct": "signed integer",
+          "options": [
+            "signed integer",
+            "unsigned integer",
+            "char",
+            "float"
+          ]
+        },
+        "blank2": {
+          "correct": "unsigned integer",
+          "options": [
+            "unsigned integer",
+            "signed integer",
+            "double",
+            "pointer"
+          ]
+        },
+        "blank3": {
+          "correct": "double",
+          "options": [
+            "double",
+            "float",
+            "int",
+            "char"
+          ]
+        },
+        "blank4": {
+          "correct": "float",
+          "options": [
+            "float",
+            "double",
+            "int",
+            "long"
+          ]
+        },
+        "blank5": {
+          "correct": "char",
+          "options": [
+            "char",
+            "int",
+            "float",
+            "double"
+          ]
+        },
+        "blank6": {
+          "correct": "a character or small integer",
+          "options": [
+            "a character or small integer",
+            "floating-point numbers",
+            "pointers",
+            "large integers"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_005",
@@ -1826,64 +1670,8 @@
       "type": "fill_blanks",
       "difficulty": "easy",
       "title": "Function Terminology",
-      "description": "Fill in the blanks about C functions:",
+      "description": "Fill in the blanks about C functions:\n\n1. A function {blank1} tells the compiler the function exists, a {blank2} provides the implementation\n2. The variables in the function signature are called {blank3}\n3. The values passed when calling a function are called {blank4}",
       "code_template": "int add(int a, int b);  // Declaration/Prototype\n\nint add(int a, int b) { // Definition\n    return a + b;       // Return statement\n}\n\nint main() {\n    int x = add(5, 3);  // Function call\n    return 0;\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "A function ___ tells the compiler the function exists, a ___ provides the implementation",
-          "blanks": [
-            {
-              "options": [
-                "declaration",
-                "definition",
-                "call",
-                "invocation"
-              ],
-              "correct": "declaration"
-            },
-            {
-              "options": [
-                "definition",
-                "declaration",
-                "call",
-                "prototype"
-              ],
-              "correct": "definition"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "The variables in the function signature are called ___",
-          "blanks": [
-            {
-              "options": [
-                "formal parameters",
-                "actual parameters",
-                "arguments",
-                "local variables"
-              ],
-              "correct": "formal parameters"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "The values passed when calling a function are called ___",
-          "blanks": [
-            {
-              "options": [
-                "arguments",
-                "parameters",
-                "variables",
-                "constants"
-              ],
-              "correct": "arguments"
-            }
-          ]
-        }
-      ],
       "explanation": "Function declaration (prototype) announces the function. Definition provides the body. Parameters are in the signature, arguments are passed at call time.",
       "hints": [
         "Remember that declaration = promise, Definition = implementation",
@@ -1895,7 +1683,45 @@
         "terminology",
         "basics"
       ],
-      "hint": "Think about: function declaration (prototype) announces the function."
+      "hint": "Think about: function declaration (prototype) announces the function.",
+      "blanks": {
+        "blank1": {
+          "correct": "declaration",
+          "options": [
+            "declaration",
+            "definition",
+            "call",
+            "invocation"
+          ]
+        },
+        "blank2": {
+          "correct": "definition",
+          "options": [
+            "definition",
+            "declaration",
+            "call",
+            "prototype"
+          ]
+        },
+        "blank3": {
+          "correct": "formal parameters",
+          "options": [
+            "formal parameters",
+            "actual parameters",
+            "arguments",
+            "local variables"
+          ]
+        },
+        "blank4": {
+          "correct": "arguments",
+          "options": [
+            "arguments",
+            "parameters",
+            "variables",
+            "constants"
+          ]
+        }
+      }
     },
     {
       "id": "fill_en_007",
@@ -1903,79 +1729,8 @@
       "type": "fill_blanks",
       "difficulty": "medium",
       "title": "Variable Scope and Lifetime",
-      "description": "Fill in the blanks about scope and lifetime:",
+      "description": "Fill in the blanks about scope and lifetime:\n\n1. {blank1} variables exist for the entire program duration\n2. {blank2} variables are created when function is called and destroyed when it returns\n3. Variables declared with {blank3} keyword retain their value between function calls\n4. {blank4} determines where a variable can be accessed, {blank5} determines how long it exists",
       "code_template": "int global = 1;         // File scope, static lifetime\n\nvoid func() {\n    static int s = 0;   // Block scope, static lifetime\n    int local = 2;      // Block scope, automatic lifetime\n}",
-      "questions": [
-        {
-          "id": 0,
-          "text": "___ variables exist for the entire program duration",
-          "blanks": [
-            {
-              "options": [
-                "Global",
-                "Local",
-                "Register",
-                "Temporary"
-              ],
-              "correct": "Global"
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "text": "___ variables are created when function is called and destroyed when it returns",
-          "blanks": [
-            {
-              "options": [
-                "Automatic (local)",
-                "Static",
-                "Global",
-                "Extern"
-              ],
-              "correct": "Automatic (local)"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Variables declared with ___ keyword retain their value between function calls",
-          "blanks": [
-            {
-              "options": [
-                "static",
-                "const",
-                "extern",
-                "volatile"
-              ],
-              "correct": "static"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "___ determines where a variable can be accessed, ___ determines how long it exists",
-          "blanks": [
-            {
-              "options": [
-                "Scope",
-                "Lifetime",
-                "Type",
-                "Storage"
-              ],
-              "correct": "Scope"
-            },
-            {
-              "options": [
-                "Lifetime",
-                "Scope",
-                "Type",
-                "Duration"
-              ],
-              "correct": "Lifetime"
-            }
-          ]
-        }
-      ],
       "explanation": "Scope is where variable is visible. Lifetime is how long it exists. Global = entire program. Local = function only. Static = keeps value between calls. Variable scope determines where a variable can be accessed. Local variables are only accessible within their block.",
       "hints": [
         "Remember that global variables live forever",
@@ -1988,7 +1743,54 @@
         "lifetime",
         "terminology"
       ],
-      "hint": "Think about variable scope and lifetime in C."
+      "hint": "Think about variable scope and lifetime in C.",
+      "blanks": {
+        "blank1": {
+          "correct": "Global",
+          "options": [
+            "Global",
+            "Local",
+            "Register",
+            "Temporary"
+          ]
+        },
+        "blank2": {
+          "correct": "Automatic (local)",
+          "options": [
+            "Automatic (local)",
+            "Static",
+            "Global",
+            "Extern"
+          ]
+        },
+        "blank3": {
+          "correct": "static",
+          "options": [
+            "static",
+            "const",
+            "extern",
+            "volatile"
+          ]
+        },
+        "blank4": {
+          "correct": "Scope",
+          "options": [
+            "Scope",
+            "Lifetime",
+            "Type",
+            "Storage"
+          ]
+        },
+        "blank5": {
+          "correct": "Lifetime",
+          "options": [
+            "Lifetime",
+            "Scope",
+            "Type",
+            "Duration"
+          ]
+        }
+      }
     },
     {
       "id": "int_021",

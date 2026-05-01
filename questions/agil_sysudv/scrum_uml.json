@@ -7,12 +7,12 @@
       "difficulty": "medium",
       "title": "Hvornår bruges UML i SCRUM?",
       "description": "I hvilke situationer bruges UML-modellering i en SCRUM-kontekst?",
-      "options": {
-        "A": "Ved backlog refinement, sprint planning og design-diskussioner",
-        "B": "Aldrig - SCRUM bruger ikke UML",
-        "C": "Kun efter alle sprints er afsluttet",
-        "D": "Kun i den første sprint"
-      },
+      "options": [
+        "Ved backlog refinement, sprint planning og design-diskussioner",
+        "Aldrig - SCRUM bruger ikke UML",
+        "Kun efter alle sprints er afsluttet",
+        "Kun i den første sprint"
+      ],
       "correct_answer": "A",
       "explanation": "UML bruges i SCRUM som kommunikationsværktøj under backlog refinement, sprint planning og design-diskussioner. Det er \"just enough\" modellering.",
       "hints": [
@@ -33,12 +33,12 @@
       "difficulty": "easy",
       "title": "Hvad er \"just enough\" modellering i agil kontekst?",
       "description": "Hvad menes med \"just enough\" modellering i agile processer?",
-      "options": {
-        "A": "Lave så mange diagrammer som muligt",
-        "B": "Kun lave den mængde modellering der skaber værdi og forståelse",
-        "C": "Aldrig lave nogen form for modellering",
-        "D": "Kun lave modeller efter implementering"
-      },
+      "options": [
+        "Lave så mange diagrammer som muligt",
+        "Kun lave den mængde modellering der skaber værdi og forståelse",
+        "Aldrig lave nogen form for modellering",
+        "Kun lave modeller efter implementering"
+      ],
       "correct_answer": "B",
       "explanation": "Just enough modellering betyder at man kun laver den modellering der er nødvendig for at skabe forståelse og kommunikere, uden at overmodellere.",
       "hints": [
@@ -58,12 +58,12 @@
       "difficulty": "medium",
       "title": "Hvordan bruges Use Cases i SCRUM?",
       "description": "Hvad er sammenhængen mellem Use Cases og User Stories i SCRUM?",
-      "options": {
-        "A": "User Stories kan ikke relateres til Use Cases",
-        "B": "Use Cases erstatter helt User Stories",
-        "C": "Use Cases kan opdeles i flere User Stories til Product Backlog",
-        "D": "Use Cases bruges kun i Waterfall"
-      },
+      "options": [
+        "User Stories kan ikke relateres til Use Cases",
+        "Use Cases erstatter helt User Stories",
+        "Use Cases kan opdeles i flere User Stories til Product Backlog",
+        "Use Cases bruges kun i Waterfall"
+      ],
       "correct_answer": "C",
       "explanation": "Use Cases kan bruges som udgangspunkt for at identificere og opdele funktionalitet i User Stories, der placeres i Product Backlog.",
       "hints": [
@@ -84,12 +84,12 @@
       "difficulty": "medium",
       "title": "Hvordan bruges klassediagrammer i sprints?",
       "description": "Hvornår er klassediagrammer nyttige i en sprint?",
-      "options": {
-        "A": "Kun som erstatning for kode",
-        "B": "Aldrig i sprints",
-        "C": "Kun som endelig dokumentation",
-        "D": "Under design-diskussioner for at afklare domænemodel og relationer"
-      },
+      "options": [
+        "Kun som erstatning for kode",
+        "Aldrig i sprints",
+        "Kun som endelig dokumentation",
+        "Under design-diskussioner for at afklare domænemodel og relationer"
+      ],
       "correct_answer": "D",
       "explanation": "Klassediagrammer bruges i sprints til at afklare domænemodellen, diskutere relationer mellem klasser og planlægge implementering af User Stories.",
       "hints": [
@@ -110,12 +110,12 @@
       "difficulty": "medium",
       "title": "Hvordan bruges sekvensdiagrammer i SCRUM?",
       "description": "Hvornår er sekvensdiagrammer nyttige i en SCRUM-proces?",
-      "options": {
-        "A": "Til at forstå og kommunikere interaktion mellem komponenter i en User Story",
-        "B": "Aldrig i agile processer",
-        "C": "Kun i Sprint Review",
-        "D": "Kun som erstatning for kode-review"
-      },
+      "options": [
+        "Til at forstå og kommunikere interaktion mellem komponenter i en User Story",
+        "Aldrig i agile processer",
+        "Kun i Sprint Review",
+        "Kun som erstatning for kode-review"
+      ],
       "correct_answer": "A",
       "explanation": "Sekvensdiagrammer bruges til at forstå og kommunikere hvordan objekter interagerer for at realisere en User Story eller feature.",
       "hints": [
@@ -136,12 +136,12 @@
       "difficulty": "medium",
       "title": "Hvad er Agile Modeling?",
       "description": "Hvad er principperne bag Agile Modeling (AM)?",
-      "options": {
-        "A": "Kun at bruge UML diagrammer",
-        "B": "Letvægtsmodellering der værdisætter kommunikation over dokumentation",
-        "C": "At modellere alt i detaljer før kodning",
-        "D": "At undgå al modellering"
-      },
+      "options": [
+        "Kun at bruge UML diagrammer",
+        "Letvægtsmodellering der værdisætter kommunikation over dokumentation",
+        "At modellere alt i detaljer før kodning",
+        "At undgå al modellering"
+      ],
       "correct_answer": "B",
       "explanation": "Agile Modeling er en praksis der fokuserer på letvægts, iterativ modellering som kommunikationsværktøj, med vægt på \"model with a purpose\".",
       "hints": [
@@ -161,12 +161,12 @@
       "difficulty": "medium",
       "title": "Hvad er \"model storming\" i agil kontekst?",
       "description": "Hvad er model storming?",
-      "options": {
-        "A": "At slette alle eksisterende modeller",
-        "B": "Langvarige, formelle modelleringsmøder",
-        "C": "Korte, improviserede modelleringssessioner for at afklare design",
-        "D": "At storme ud af et modelleringsmøde"
-      },
+      "options": [
+        "At slette alle eksisterende modeller",
+        "Langvarige, formelle modelleringsmøder",
+        "Korte, improviserede modelleringssessioner for at afklare design",
+        "At storme ud af et modelleringsmøde"
+      ],
       "correct_answer": "C",
       "explanation": "Model storming er korte (5-30 min) ad-hoc modelleringssessioner hvor teamet hurtigt skitserer diagrammer for at afklare et designspørgsmål.",
       "hints": [
@@ -186,12 +186,12 @@
       "difficulty": "medium",
       "title": "Hvordan kan UML hjælpe ved backlog refinement?",
       "description": "Hvilken rolle kan UML spille i backlog refinement?",
-      "options": {
-        "A": "Kun bruges efter refinement",
-        "B": "Erstatte alle User Stories",
-        "C": "Kun bruges til at estimere story points",
-        "D": "Visualisere komplekse User Stories og deres afhængigheder"
-      },
+      "options": [
+        "Kun bruges efter refinement",
+        "Erstatte alle User Stories",
+        "Kun bruges til at estimere story points",
+        "Visualisere komplekse User Stories og deres afhængigheder"
+      ],
       "correct_answer": "D",
       "explanation": "UML-diagrammer kan bruges under backlog refinement til at visualisere komplekse User Stories, afklare afhængigheder og forbedre teamets fælles forståelse.",
       "hints": [
@@ -211,12 +211,12 @@
       "difficulty": "medium",
       "title": "Hvad er sammenhængen mellem User Stories og Use Case diagrammer?",
       "description": "Hvordan relaterer User Stories sig til Use Case diagrammer?",
-      "options": {
-        "A": "Et Use Case diagram kan give overblik over alle User Stories inden for en feature",
-        "B": "De har ingen relation",
-        "C": "User Stories erstatter Use Case diagrammer helt",
-        "D": "Use Case diagrammer bruges kun i Waterfall"
-      },
+      "options": [
+        "Et Use Case diagram kan give overblik over alle User Stories inden for en feature",
+        "De har ingen relation",
+        "User Stories erstatter Use Case diagrammer helt",
+        "Use Case diagrammer bruges kun i Waterfall"
+      ],
       "correct_answer": "A",
       "explanation": "Use Case diagrammer kan give et visuelt overblik over funktionaliteten og vise hvordan User Stories relaterer til aktører og systemet.",
       "hints": [
@@ -236,12 +236,12 @@
       "difficulty": "medium",
       "title": "Hvordan bruges aktivitetsdiagrammer i SCRUM?",
       "description": "Hvornår er aktivitetsdiagrammer nyttige i en SCRUM-kontekst?",
-      "options": {
-        "A": "Aldrig i SCRUM",
-        "B": "Til at modellere forretningsprocesser og workflows bag User Stories",
-        "C": "Kun som erstatning for Sprint Board",
-        "D": "Kun til at planlægge sprints"
-      },
+      "options": [
+        "Aldrig i SCRUM",
+        "Til at modellere forretningsprocesser og workflows bag User Stories",
+        "Kun som erstatning for Sprint Board",
+        "Kun til at planlægge sprints"
+      ],
       "correct_answer": "B",
       "explanation": "Aktivitetsdiagrammer er nyttige til at modellere forretningsprocesser, workflows og komplekse beslutningsflows der ligger bag User Stories.",
       "hints": [
@@ -261,12 +261,12 @@
       "difficulty": "medium",
       "title": "Hvordan kan UML bruges i sprint planning?",
       "description": "Hvilken rolle kan UML spille under sprint planning?",
-      "options": {
-        "A": "At lave færdige designdokumenter",
-        "B": "At erstatte planning poker",
-        "C": "At skitsere design for at estimere kompleksitet af User Stories",
-        "D": "At undgå diskussion om design"
-      },
+      "options": [
+        "At lave færdige designdokumenter",
+        "At erstatte planning poker",
+        "At skitsere design for at estimere kompleksitet af User Stories",
+        "At undgå diskussion om design"
+      ],
       "correct_answer": "C",
       "explanation": "UML-skitser kan bruges under sprint planning til at vurdere kompleksiteten af User Stories og afklare teknisk tilgang.",
       "hints": [
@@ -286,12 +286,12 @@
       "difficulty": "hard",
       "title": "Hvad er spike i SCRUM og hvordan relaterer det til UML?",
       "description": "Hvad er en spike og hvornår bruges UML i forbindelse med spikes?",
-      "options": {
-        "A": "En SCRUM-ceremoni",
-        "B": "En fejl i sprinten",
-        "C": "En type UML-diagram",
-        "D": "En tidsafgrænset undersøgelse hvor UML kan bruges til at dokumentere fund"
-      },
+      "options": [
+        "En SCRUM-ceremoni",
+        "En fejl i sprinten",
+        "En type UML-diagram",
+        "En tidsafgrænset undersøgelse hvor UML kan bruges til at dokumentere fund"
+      ],
       "correct_answer": "D",
       "explanation": "En spike er en tidsafgrænset undersøgelse af en teknisk udfordring. UML kan bruges til at dokumentere arkitekturelle fund og designbeslutninger fra spiken.",
       "hints": [
@@ -312,12 +312,12 @@
       "difficulty": "medium",
       "title": "Hvad betyder iterativ modellering?",
       "description": "Hvad kendetegner iterativ modellering i agil systemudvikling?",
-      "options": {
-        "A": "Modeller forfines og opdateres løbende gennem sprints",
-        "B": "Alle modeller laves færdige i første sprint",
-        "C": "Modeller laves kun efter al kode er skrevet",
-        "D": "Modeller ændres aldrig efter oprettelse"
-      },
+      "options": [
+        "Modeller forfines og opdateres løbende gennem sprints",
+        "Alle modeller laves færdige i første sprint",
+        "Modeller laves kun efter al kode er skrevet",
+        "Modeller ændres aldrig efter oprettelse"
+      ],
       "correct_answer": "A",
       "explanation": "Iterativ modellering betyder at modeller ikke er statiske - de forfines, opdateres og uddybes løbende gennem sprints efterhånden som forståelsen øges.",
       "hints": [
@@ -337,12 +337,12 @@
       "difficulty": "medium",
       "title": "Hvad er \"living documents\" i agil kontekst?",
       "description": "Hvad menes med \"living documents\" for UML-modeller?",
-      "options": {
-        "A": "Dokumenter der aldrig ændres",
-        "B": "Modeller der opdateres løbende og reflekterer den aktuelle systemtilstand",
-        "C": "Kun fysiske papirdokumenter",
-        "D": "Dokumenter der slettes efter hver sprint"
-      },
+      "options": [
+        "Dokumenter der aldrig ændres",
+        "Modeller der opdateres løbende og reflekterer den aktuelle systemtilstand",
+        "Kun fysiske papirdokumenter",
+        "Dokumenter der slettes efter hver sprint"
+      ],
       "correct_answer": "B",
       "explanation": "Living documents er modeller og diagrammer der holdes opdaterede løbende, så de altid reflekterer den aktuelle tilstand af systemet.",
       "hints": [
@@ -362,12 +362,12 @@
       "difficulty": "medium",
       "title": "Hvornår er det IKKE værd at lave UML-diagrammer i SCRUM?",
       "description": "I hvilke situationer bør man undlade UML-modellering i SCRUM?",
-      "options": {
-        "A": "Kun når der er teknisk gæld",
-        "B": "Aldrig - man bør altid lave UML",
-        "C": "Når funktionaliteten er simpel og teamet har fælles forståelse",
-        "D": "Når Product Owner beder om det"
-      },
+      "options": [
+        "Kun når der er teknisk gæld",
+        "Aldrig - man bør altid lave UML",
+        "Når funktionaliteten er simpel og teamet har fælles forståelse",
+        "Når Product Owner beder om det"
+      ],
       "correct_answer": "C",
       "explanation": "UML-modellering bør undlades når funktionaliteten er tilstrækkeligt simpel, teamet har fælles forståelse, og diagrammet ikke tilføjer værdi.",
       "hints": [
@@ -388,12 +388,12 @@
       "difficulty": "medium",
       "title": "Hvordan bruges domænemodellen i SCRUM?",
       "description": "Hvilken rolle har domænemodellen i en SCRUM-proces?",
-      "options": {
-        "A": "Den er identisk med klassediagrammet",
-        "B": "Den laves færdig i sprint 0 og ændres aldrig",
-        "C": "Den bruges kun af Product Owner",
-        "D": "Den udvikles iterativt og bruges til at forstå forretningsdomænet"
-      },
+      "options": [
+        "Den er identisk med klassediagrammet",
+        "Den laves færdig i sprint 0 og ændres aldrig",
+        "Den bruges kun af Product Owner",
+        "Den udvikles iterativt og bruges til at forstå forretningsdomænet"
+      ],
       "correct_answer": "D",
       "explanation": "Domænemodellen udvikles iterativt i SCRUM og bruges af hele teamet til at opbygge en fælles forståelse af forretningsdomænet.",
       "hints": [
@@ -413,12 +413,12 @@
       "difficulty": "medium",
       "title": "Hvilken type UML-dokumentation er vigtigst i agile teams?",
       "description": "Hvad bør prioriteres mht. UML-dokumentation i agile teams?",
-      "options": {
-        "A": "Kommunikationsfremmende diagrammer der afklarer design",
-        "B": "Omfattende, detaljerede dokumenter til alle diagrammer",
-        "C": "Kun formelle, godkendte dokumenter",
-        "D": "Ingen dokumentation overhovedet"
-      },
+      "options": [
+        "Kommunikationsfremmende diagrammer der afklarer design",
+        "Omfattende, detaljerede dokumenter til alle diagrammer",
+        "Kun formelle, godkendte dokumenter",
+        "Ingen dokumentation overhovedet"
+      ],
       "correct_answer": "A",
       "explanation": "I agile teams prioriteres UML-diagrammer der fremmer kommunikation og afklarer design over omfattende, detaljeret dokumentation.",
       "hints": [
@@ -439,12 +439,12 @@
       "difficulty": "medium",
       "title": "Hvad er whiteboard modelling?",
       "description": "Hvad er whiteboard modelling i agil kontekst?",
-      "options": {
-        "A": "Kun brug af digitale modelleringsværktøjer",
-        "B": "Uformel UML-skitsering på whiteboard under team-diskussioner",
-        "C": "Formelle UML-diagrammer på print",
-        "D": "At slette alt fra whiteboard"
-      },
+      "options": [
+        "Kun brug af digitale modelleringsværktøjer",
+        "Uformel UML-skitsering på whiteboard under team-diskussioner",
+        "Formelle UML-diagrammer på print",
+        "At slette alt fra whiteboard"
+      ],
       "correct_answer": "B",
       "explanation": "Whiteboard modelling er uformel, hurtig skitsering af UML-lignende diagrammer på whiteboard under team-diskussioner for at afklare design.",
       "hints": [
@@ -465,12 +465,12 @@
       "difficulty": "medium",
       "title": "Kan UML indgå i Definition of Done?",
       "description": "Hvordan kan UML relatere til Definition of Done i SCRUM?",
-      "options": {
-        "A": "DoD må aldrig indeholde modelleringskrav",
-        "B": "UML har ingen relation til DoD",
-        "C": "Teamet kan kræve opdaterede diagrammer som del af DoD",
-        "D": "Kun Product Owner bestemmer om UML indgår"
-      },
+      "options": [
+        "DoD må aldrig indeholde modelleringskrav",
+        "UML har ingen relation til DoD",
+        "Teamet kan kræve opdaterede diagrammer som del af DoD",
+        "Kun Product Owner bestemmer om UML indgår"
+      ],
       "correct_answer": "C",
       "explanation": "Teamet kan inkludere opdatering af relevante UML-diagrammer som en del af Definition of Done, så dokumentationen holdes ajour.",
       "hints": [
@@ -491,12 +491,12 @@
       "difficulty": "medium",
       "title": "Hvem er ansvarlig for arkitektur i SCRUM?",
       "description": "Hvem har ansvar for systemets arkitektur i en SCRUM-kontekst?",
-      "options": {
-        "A": "Kun den mest erfarne udvikler",
-        "B": "Kun SCRUM Master",
-        "C": "Kun Product Owner",
-        "D": "Hele Development Teamet (evt. med en arkitekt som del af teamet)"
-      },
+      "options": [
+        "Kun den mest erfarne udvikler",
+        "Kun SCRUM Master",
+        "Kun Product Owner",
+        "Hele Development Teamet (evt. med en arkitekt som del af teamet)"
+      ],
       "correct_answer": "D",
       "explanation": "I SCRUM er hele Development Teamet ansvarligt for arkitekturen. En arkitekt kan være del af teamet, men beslutninger tages kollektivt.",
       "hints": [
@@ -517,12 +517,12 @@
       "difficulty": "medium",
       "title": "Hvad er emergent design i agil?",
       "description": "Hvad menes med emergent design i agil systemudvikling?",
-      "options": {
-        "A": "Designet udvikler sig gradvist gennem iterationer og refactoring",
-        "B": "Alt design laves upfront",
-        "C": "Der bruges intet design overhovedet",
-        "D": "Designet bestemmes af kunden"
-      },
+      "options": [
+        "Designet udvikler sig gradvist gennem iterationer og refactoring",
+        "Alt design laves upfront",
+        "Der bruges intet design overhovedet",
+        "Designet bestemmes af kunden"
+      ],
       "correct_answer": "A",
       "explanation": "Emergent design betyder at arkitekturen og designet udvikler sig organisk gennem sprints, understøttet af refactoring og kontinuerlig forbedring.",
       "hints": [
@@ -542,12 +542,12 @@
       "difficulty": "medium",
       "title": "Hvordan mappes Use Cases til sprints?",
       "description": "Hvordan oversættes Use Cases til arbejde i sprints?",
-      "options": {
-        "A": "Implementér én hel Use Case per sprint",
-        "B": "Opdel Use Cases i User Stories og prioritér dem i Product Backlog",
-        "C": "Ignorer Use Cases i SCRUM",
-        "D": "Lav alle Use Cases i sprint 0"
-      },
+      "options": [
+        "Implementér én hel Use Case per sprint",
+        "Opdel Use Cases i User Stories og prioritér dem i Product Backlog",
+        "Ignorer Use Cases i SCRUM",
+        "Lav alle Use Cases i sprint 0"
+      ],
       "correct_answer": "B",
       "explanation": "Use Cases opdeles i håndterbare User Stories der prioriteres i Product Backlog og implementeres over en eller flere sprints.",
       "hints": [
@@ -568,12 +568,12 @@
       "difficulty": "medium",
       "title": "Hvad er en User Story Map?",
       "description": "Hvad er en User Story Map og hvad bruges den til?",
-      "options": {
-        "A": "En liste over alle SCRUM-ceremonier",
-        "B": "Et UML-diagram over klasser",
-        "C": "En visuel oversigt over User Stories organiseret efter brugerrejse og prioritet",
-        "D": "Et Gantt-diagram for projektet"
-      },
+      "options": [
+        "En liste over alle SCRUM-ceremonier",
+        "Et UML-diagram over klasser",
+        "En visuel oversigt over User Stories organiseret efter brugerrejse og prioritet",
+        "Et Gantt-diagram for projektet"
+      ],
       "correct_answer": "C",
       "explanation": "En User Story Map er en visuel oversigt der organiserer User Stories langs brugerens rejse (horisontalt) og prioritet (vertikalt) for at give overblik.",
       "hints": [
@@ -593,12 +593,12 @@
       "difficulty": "hard",
       "title": "Hvilket UML-diagram er mest nyttigt til at estimere User Story kompleksitet?",
       "description": "Hvilket UML-diagram giver bedst indsigt i teknisk kompleksitet af en User Story?",
-      "options": {
-        "A": "Pakkediagram - viser kun organisation",
-        "B": "Use Case diagram - viser kun overordnet funktionalitet",
-        "C": "Deployment diagram - viser kun hardware",
-        "D": "Sekvensdiagram - viser antal interaktioner og afhængigheder"
-      },
+      "options": [
+        "Pakkediagram - viser kun organisation",
+        "Use Case diagram - viser kun overordnet funktionalitet",
+        "Deployment diagram - viser kun hardware",
+        "Sekvensdiagram - viser antal interaktioner og afhængigheder"
+      ],
       "correct_answer": "D",
       "explanation": "Sekvensdiagrammet er særligt nyttigt fordi det afslører antal interaktioner, afhængigheder og kompleksiteten af den nødvendige kommunikation.",
       "hints": [
@@ -619,12 +619,12 @@
       "difficulty": "medium",
       "title": "Hvad er forholdet mellem Sprint Review og UML?",
       "description": "Hvordan kan UML indgå i Sprint Review?",
-      "options": {
-        "A": "UML-diagrammer kan bruges til at forklare arkitektoniske beslutninger til stakeholders",
-        "B": "UML bruges aldrig i Sprint Review",
-        "C": "Sprint Review handler kun om at vise kørende software",
-        "D": "Kun Product Owner viser UML"
-      },
+      "options": [
+        "UML-diagrammer kan bruges til at forklare arkitektoniske beslutninger til stakeholders",
+        "UML bruges aldrig i Sprint Review",
+        "Sprint Review handler kun om at vise kørende software",
+        "Kun Product Owner viser UML"
+      ],
       "correct_answer": "A",
       "explanation": "I Sprint Review kan UML-diagrammer bruges til at forklare arkitektoniske beslutninger, visualisere systemets evolution og kommunikere med stakeholders.",
       "hints": [
@@ -644,12 +644,12 @@
       "difficulty": "medium",
       "title": "Hvad er forholdet mellem Sprint Retrospective og modellering?",
       "description": "Hvordan kan modellering diskuteres i Sprint Retrospective?",
-      "options": {
-        "A": "Modellering diskuteres aldrig i retrospective",
-        "B": "Teamet evaluerer om modelleringspraksis var passende og justerer",
-        "C": "Kun SCRUM Master evaluerer modellering",
-        "D": "Retrospective handler kun om kode"
-      },
+      "options": [
+        "Modellering diskuteres aldrig i retrospective",
+        "Teamet evaluerer om modelleringspraksis var passende og justerer",
+        "Kun SCRUM Master evaluerer modellering",
+        "Retrospective handler kun om kode"
+      ],
       "correct_answer": "B",
       "explanation": "I Sprint Retrospective kan teamet evaluere om mængden og typen af modellering var passende og justere praksis for næste sprint.",
       "hints": [
@@ -670,12 +670,12 @@
       "difficulty": "easy",
       "title": "Hvad er forskellen på \"big design up front\" og agil modellering?",
       "description": "Hvordan adskiller BDUF sig fra agil modellering?",
-      "options": {
-        "A": "Agil modellering er mere detaljeret",
-        "B": "De er identiske",
-        "C": "BDUF laver alt design før kodning, agil modellerer iterativt og just-enough",
-        "D": "BDUF er altid bedre"
-      },
+      "options": [
+        "Agil modellering er mere detaljeret",
+        "De er identiske",
+        "BDUF laver alt design før kodning, agil modellerer iterativt og just-enough",
+        "BDUF er altid bedre"
+      ],
       "correct_answer": "C",
       "explanation": "BDUF (Big Design Up Front) forsøger at færdiggøre al modellering før kodning starter, mens agil modellering er iterativ, inkrementel og just-enough.",
       "hints": [
@@ -695,12 +695,12 @@
       "difficulty": "hard",
       "title": "Hvordan håndteres arkitektonisk teknisk gæld i SCRUM med UML?",
       "description": "Hvordan kan UML hjælpe med at identificere teknisk gæld?",
-      "options": {
-        "A": "Kun burndown charts viser teknisk gæld",
-        "B": "UML kan ikke vise teknisk gæld",
-        "C": "Teknisk gæld er ikke relevant i SCRUM",
-        "D": "Ved at visualisere uønskede afhængigheder og strukturproblemer i klassediagrammer"
-      },
+      "options": [
+        "Kun burndown charts viser teknisk gæld",
+        "UML kan ikke vise teknisk gæld",
+        "Teknisk gæld er ikke relevant i SCRUM",
+        "Ved at visualisere uønskede afhængigheder og strukturproblemer i klassediagrammer"
+      ],
       "correct_answer": "D",
       "explanation": "UML-diagrammer, særligt klassediagrammer, kan visualisere uønskede afhængigheder, cirkulære referencer og strukturproblemer der udgør teknisk gæld.",
       "hints": [
@@ -721,12 +721,12 @@
       "difficulty": "medium",
       "title": "Hvilken UML-diagramtype passer bedst til at modellere en SCRUM Sprint workflow?",
       "description": "Hvis du skulle modellere selve SCRUM-processen som et UML-diagram, hvilket passer bedst?",
-      "options": {
-        "A": "Aktivitetsdiagram - viser procesflow, beslutninger og parallelle aktiviteter",
-        "B": "Klassediagram - viser statisk struktur",
-        "C": "Objektdiagram - viser instanser",
-        "D": "Deployment diagram - viser hardware"
-      },
+      "options": [
+        "Aktivitetsdiagram - viser procesflow, beslutninger og parallelle aktiviteter",
+        "Klassediagram - viser statisk struktur",
+        "Objektdiagram - viser instanser",
+        "Deployment diagram - viser hardware"
+      ],
       "correct_answer": "A",
       "explanation": "Et aktivitetsdiagram er ideelt til at modellere SCRUM-processens workflow med beslutninger, parallelle aktiviteter og sekventielle trin.",
       "hints": [
@@ -746,12 +746,12 @@
       "difficulty": "medium",
       "title": "Hvordan kan tilstandsdiagrammer bruges i SCRUM?",
       "description": "I hvilke situationer er tilstandsdiagrammer nyttige i en SCRUM-kontekst?",
-      "options": {
-        "A": "Aldrig i SCRUM",
-        "B": "Til at modellere tilstandene for backlog items (ny, i gang, test, done)",
-        "C": "Kun til at modellere hardware",
-        "D": "Kun som erstatning for burndown charts"
-      },
+      "options": [
+        "Aldrig i SCRUM",
+        "Til at modellere tilstandene for backlog items (ny, i gang, test, done)",
+        "Kun til at modellere hardware",
+        "Kun som erstatning for burndown charts"
+      ],
       "correct_answer": "B",
       "explanation": "Tilstandsdiagrammer kan modellere livscyklussen for backlog items, bugs eller andre entiteter med tydelige tilstande i SCRUM.",
       "hints": [
@@ -772,12 +772,12 @@
       "difficulty": "hard",
       "title": "Hvad er et Walking Skeleton i agil udvikling?",
       "description": "Hvad er et Walking Skeleton og hvordan relaterer det til UML?",
-      "options": {
-        "A": "En SCRUM-ceremoni",
-        "B": "En type UML-diagram",
-        "C": "En minimal end-to-end implementering der kan modelleres med et komponentdiagram",
-        "D": "Et testmønster"
-      },
+      "options": [
+        "En SCRUM-ceremoni",
+        "En type UML-diagram",
+        "En minimal end-to-end implementering der kan modelleres med et komponentdiagram",
+        "Et testmønster"
+      ],
       "correct_answer": "C",
       "explanation": "Et Walking Skeleton er en minimal end-to-end implementering af systemets arkitektur. UML komponent- og deployment-diagrammer kan visualisere det.",
       "hints": [
@@ -798,12 +798,12 @@
       "difficulty": "medium",
       "title": "Hvordan kan Use Case diagrammer understøtte Product Backlog opbygning?",
       "description": "Hvilken fordel giver Use Case diagrammer for Product Backlog?",
-      "options": {
-        "A": "De viser kun tekniske krav",
-        "B": "De erstatter Product Backlog",
-        "C": "De kan kun bruges efter Backlog er færdig",
-        "D": "De sikrer at alle aktørers behov er dækket og at ingen funktionalitet mangler"
-      },
+      "options": [
+        "De viser kun tekniske krav",
+        "De erstatter Product Backlog",
+        "De kan kun bruges efter Backlog er færdig",
+        "De sikrer at alle aktørers behov er dækket og at ingen funktionalitet mangler"
+      ],
       "correct_answer": "D",
       "explanation": "Use Case diagrammer giver et visuelt overblik der hjælper med at identificere alle aktørers behov og sikre at ingen vigtig funktionalitet overses i backlog.",
       "hints": [
@@ -823,12 +823,12 @@
       "difficulty": "hard",
       "title": "Hvad er architectural runway i SAFe/agil kontekst?",
       "description": "Hvad er architectural runway og hvordan relaterer det til UML?",
-      "options": {
-        "A": "Eksisterende infrastruktur og arkitektur der muliggør fremtidig funktionalitet",
-        "B": "En type løbebane for sprints",
-        "C": "Et UML-diagram",
-        "D": "En SCRUM-rolle"
-      },
+      "options": [
+        "Eksisterende infrastruktur og arkitektur der muliggør fremtidig funktionalitet",
+        "En type løbebane for sprints",
+        "Et UML-diagram",
+        "En SCRUM-rolle"
+      ],
       "correct_answer": "A",
       "explanation": "Architectural runway er den tekniske infrastruktur og arkitektur der er på plads for at muliggøre implementering af fremtidige features. UML kan dokumentere det.",
       "hints": [
@@ -848,12 +848,12 @@
       "difficulty": "medium",
       "title": "Hvordan kan component diagrammer understøtte SCRUM teams?",
       "description": "Hvad er fordelen ved component diagrammer i SCRUM?",
-      "options": {
-        "A": "De bruges aldrig i SCRUM",
-        "B": "De viser systemets komponenter og hjælper med at identificere team-ansvarsområder",
-        "C": "De viser kun kode",
-        "D": "De erstatter sprint planning"
-      },
+      "options": [
+        "De bruges aldrig i SCRUM",
+        "De viser systemets komponenter og hjælper med at identificere team-ansvarsområder",
+        "De viser kun kode",
+        "De erstatter sprint planning"
+      ],
       "correct_answer": "B",
       "explanation": "Komponentdiagrammer kan hjælpe SCRUM teams med at forstå systemets overordnede struktur og identificere hvilke komponenter der påvirkes af User Stories.",
       "hints": [
@@ -873,12 +873,12 @@
       "difficulty": "medium",
       "title": "Hvad er Continuous Architecture?",
       "description": "Hvad menes med Continuous Architecture i agil sammenhæng?",
-      "options": {
-        "A": "Arkitektur ignoreres helt",
-        "B": "Al arkitektur defineres inden første sprint",
-        "C": "Arkitekturen udvikles kontinuerligt sideløbende med funktionalitet",
-        "D": "Kun Product Owner bestemmer arkitektur"
-      },
+      "options": [
+        "Arkitektur ignoreres helt",
+        "Al arkitektur defineres inden første sprint",
+        "Arkitekturen udvikles kontinuerligt sideløbende med funktionalitet",
+        "Kun Product Owner bestemmer arkitektur"
+      ],
       "correct_answer": "C",
       "explanation": "Continuous Architecture betyder at arkitektoniske beslutninger tages løbende, når de er nødvendige, i stedet for alt upfront.",
       "hints": [
@@ -898,12 +898,12 @@
       "difficulty": "medium",
       "title": "Hvad er formålet med en arkitektur-spike i SCRUM?",
       "description": "Hvornår bruges en arkitektur-spike?",
-      "options": {
-        "A": "Kun til performance-test",
-        "B": "Til at skrive færdig al kode",
-        "C": "Til at erstatte Sprint Review",
-        "D": "Til at undersøge og afklare arkitektoniske spørgsmål inden implementering"
-      },
+      "options": [
+        "Kun til performance-test",
+        "Til at skrive færdig al kode",
+        "Til at erstatte Sprint Review",
+        "Til at undersøge og afklare arkitektoniske spørgsmål inden implementering"
+      ],
       "correct_answer": "D",
       "explanation": "En arkitektur-spike bruges til tidsafgrænset undersøgelse af arkitektoniske muligheder, ofte med UML-diagrammer som output.",
       "hints": [
@@ -923,12 +923,12 @@
       "difficulty": "medium",
       "title": "Hvordan understøtter UML agil kommunikation i distribuerede teams?",
       "description": "Hvad er fordelen ved UML i distribuerede SCRUM teams?",
-      "options": {
-        "A": "UML giver et fælles visuelt sprog der overskrider sprogbarrierer",
-        "B": "UML virker kun i co-located teams",
-        "C": "Distribuerede teams bruger aldrig UML",
-        "D": "UML erstatter al verbal kommunikation"
-      },
+      "options": [
+        "UML giver et fælles visuelt sprog der overskrider sprogbarrierer",
+        "UML virker kun i co-located teams",
+        "Distribuerede teams bruger aldrig UML",
+        "UML erstatter al verbal kommunikation"
+      ],
       "correct_answer": "A",
       "explanation": "UML er et standardiseret visuelt sprog der fungerer som fælles kommunikationsredskab, særligt værdifuldt i distribuerede teams.",
       "hints": [
@@ -949,12 +949,12 @@
       "difficulty": "medium",
       "title": "Hvad er Minimum Viable Architecture?",
       "description": "Hvad menes med Minimum Viable Architecture i agil?",
-      "options": {
-        "A": "Den mest komplette arkitektur muligt",
-        "B": "Den mindst mulige arkitektur der understøtter de nærmeste sprints",
-        "C": "Ingen arkitektur overhovedet",
-        "D": "Arkitektur der aldrig ændres"
-      },
+      "options": [
+        "Den mest komplette arkitektur muligt",
+        "Den mindst mulige arkitektur der understøtter de nærmeste sprints",
+        "Ingen arkitektur overhovedet",
+        "Arkitektur der aldrig ændres"
+      ],
       "correct_answer": "B",
       "explanation": "Minimum Viable Architecture er den simpleste arkitektur der understøtter de umiddelbare behov, med mulighed for evolution over tid.",
       "hints": [
@@ -975,12 +975,12 @@
       "difficulty": "medium",
       "title": "Hvordan kan UML bruges til at kommunikere med ikke-tekniske stakeholders?",
       "description": "Hvilke UML-diagrammer er bedst til kommunikation med forretningen?",
-      "options": {
-        "A": "Kun deployment diagrammer",
-        "B": "Kun klassediagrammer",
-        "C": "Use Case og aktivitetsdiagrammer - de er lettest at forstå",
-        "D": "Ingen UML er forståelig for ikke-tekniske"
-      },
+      "options": [
+        "Kun deployment diagrammer",
+        "Kun klassediagrammer",
+        "Use Case og aktivitetsdiagrammer - de er lettest at forstå",
+        "Ingen UML er forståelig for ikke-tekniske"
+      ],
       "correct_answer": "C",
       "explanation": "Use Case diagrammer og aktivitetsdiagrammer er mest tilgængelige for ikke-tekniske stakeholders da de viser funktionalitet og processer på et overordnet niveau.",
       "hints": [
@@ -1001,12 +1001,12 @@
       "difficulty": "hard",
       "title": "Hvad er Architectural Decision Records (ADR)?",
       "description": "Hvad er ADR og hvordan relaterer de til UML i SCRUM?",
-      "options": {
-        "A": "Et testdokument",
-        "B": "En type UML-diagram",
-        "C": "En SCRUM-ceremoni",
-        "D": "Dokumentation af arkitekturbeslutninger, ofte illustreret med UML-diagrammer"
-      },
+      "options": [
+        "Et testdokument",
+        "En type UML-diagram",
+        "En SCRUM-ceremoni",
+        "Dokumentation af arkitekturbeslutninger, ofte illustreret med UML-diagrammer"
+      ],
       "correct_answer": "D",
       "explanation": "ADR er korte dokumenter der registrerer vigtige arkitekturbeslutninger, deres kontekst og konsekvenser, ofte suppleret med UML-diagrammer.",
       "hints": [

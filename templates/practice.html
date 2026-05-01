@@ -4,16 +4,44 @@
 
 {% block content %}
 <div class="practice-container">
-    <div class="practice-header">
-        <div class="question-progress">
-            Question {{ question_number }} of {{ total_questions }}
+
+    {# Dot ladder — quick read-at-a-glance progress through the session. #}
+    <nav class="session-rail" aria-label="Session progress">
+        <span class="session-rail__label">Session</span>
+        <span class="session-rail__dots" role="presentation">
+            {% for i in range(1, total_questions + 1) %}
+                {% if i < question_number %}
+                    <span class="session-rail__dot is-done" aria-hidden="true"></span>
+                {% elif i == question_number %}
+                    <span class="session-rail__dot is-current" aria-hidden="true"></span>
+                {% else %}
+                    <span class="session-rail__dot" aria-hidden="true"></span>
+                {% endif %}
+            {% endfor %}
+        </span>
+        <span class="session-rail__label" aria-live="polite">
+            {{ question_number }} / {{ total_questions }}
+        </span>
+    </nav>
+
+    {# Meta strip — chapter heading style. Question.NN ‹kicker› on the left,
+       category tag on the right. #}
+    <header class="practice-header">
+        <div class="question-progress" aria-label="Question {{ question_number }} of {{ total_questions }}">
+            Q.{{ '%02d' % question_number }} / {{ total_questions }}
         </div>
         <div class="question-category">
             {{ question.category.replace('_', ' ').title() }}
         </div>
-    </div>
+    </header>
 
-    <div class="question-card">
+    <article class="question-card">
+        {# Hero number — chapter-mark in the left margin. Subscript counter
+           keeps the relationship clear; redundant on mobile but does no harm. #}
+        <div class="question-mark" aria-hidden="true">
+            {{ '%02d' % question_number }}<sub>/ {{ total_questions }}</sub>
+        </div>
+
         <h2>{{ question.title }}</h2>
         {% if not question.fill_blanks_segments %}
         <p class="question-description">{{ question.description }}</p>
@@ -22,25 +50,19 @@
         {% if question.code_template and question.type != 'drag_drop' %}
         <div class="code-section">
             {% if question.type in ['code_completion', 'code_writing'] %}
-            <h3>Program Template (Read-only):</h3>
+            <h3>Program template (read-only)</h3>
             <p class="instruction-text">This is the complete program. Write your function in the box below where it says <code>/* YOUR CODE HERE */</code>.</p>
             <div class="code-editor-wrapper" data-code-template='{{ question.code_template | tojson }}'>
                 <pre class="code-display code-readonly" data-line-numbers="true"><code class="language-c">{{ question.code_template }}</code></pre>
             </div>
 
-            <h3 style="margin-top: 1.5rem;">Your Code:</h3>
-            <p class="instruction-text">Write your function here (e.g., <code>int gcd(int a, int b) { ... }</code>). Use "Compile & Run" to test.</p>
+            <h3 style="margin-top: 1.5rem;">Your code</h3>
+            <p class="instruction-text">Write your function here (e.g. <code>int gcd(int a, int b) { ... }</code>). Use <em>Compile &amp; Run</em> to test.</p>
             <div class="code-editor-wrapper">
-                <textarea id="user-code-input" class="code-editor" placeholder="// Write your function here...
-// Example:
-// int gcd(int a, int b) {
-//     if (b < 0) return gcd(-b, a);
-//     if (b == 0) return a;
-//     return gcd(b, a % b);
-// }" rows="15"></textarea>
+                <textarea id="user-code-input" class="code-editor" placeholder="// Write your function here..." rows="15" spellcheck="false"></textarea>
             </div>
             {% else %}
-            <h3>Code:</h3>
+            <h3>Code</h3>
             <div class="code-editor-wrapper" data-code-template='{{ question.code_template | tojson }}'>
                 <pre class="code-display" data-line-numbers="true"><code class="language-c">{{ question.code_template }}</code></pre>
             </div>
@@ -49,16 +71,16 @@
         {% endif %}
 
         <div class="answer-section">
-            <h3>Your Answer:</h3>
+            <h3>Your answer</h3>
 
-            {# Type 1a: Fill-in-the-Blanks — inline placeholder schema (description with {blank1} markers + blanks dict) #}
+            {# Type 1a: Fill-in-the-Blanks — canonical inline placeholder schema #}
             {% if question.fill_blanks_segments %}
             <div class="fill-blanks-section fill-blanks-inline">
                 <p class="blank-text">
                     {% for segment in question.fill_blanks_segments %}
                         {%- if segment.blank_id -%}
-                        <select class="blank-dropdown" data-blank-id="{{ segment.blank_id }}" required>
-                            <option value="">-- {{ segment.blank_id }} --</option>
+                        <select class="blank-dropdown" data-blank-id="{{ segment.blank_id }}" required aria-label="{{ segment.blank_id }}">
+                            <option value="">— {{ segment.blank_id }} —</option>
                             {% for option in segment.options %}
                             <option value="{{ option }}">{{ option }}</option>
                             {% endfor %}
@@ -70,7 +92,7 @@
                 </p>
             </div>
 
-            {# Type 1b: Fill-in-the-Blanks — legacy nested questions[] schema #}
+            {# Type 1b: Fill-in-the-Blanks — legacy nested questions[] shape (data-migrated to canonical, kept defensively) #}
             {% elif question.type == 'fill_blanks' %}
             <div class="fill-blanks-section">
                 {% for q_item in question.questions %}
@@ -78,8 +100,8 @@
                     <p class="blank-text">{{ q_item.text }}</p>
                     <div class="blank-dropdowns">
                         {% for blank in q_item.blanks %}
-                        <select class="blank-dropdown" data-blank-id="blank_{{ q_item.id }}_{{ loop.index0 }}" required>
-                            <option value="">-- Select --</option>
+                        <select class="blank-dropdown" data-blank-id="blank_{{ q_item.id }}_{{ loop.index0 }}" required aria-label="Blank {{ loop.index }}">
+                            <option value="">— Vælg —</option>
                             {% for option in blank.options %}
                             <option value="{{ option }}">{{ option }}</option>
                             {% endfor %}
@@ -90,27 +112,25 @@
                 {% endfor %}
             </div>
 
-            {# Type 2: Multiple Choice (Radio - single selection) #}
+            {# Type 2: Multiple Choice (Radio) #}
             {% elif question.options and question.type != 'multiple_select' %}
-            <div class="multiple-choice-options">
+            <div class="multiple-choice-options" role="radiogroup" aria-label="Answer options">
                 {% for option in question.options %}
                 <label class="option-label">
                     <input type="radio" name="answer" value="{{ loop.index0 | string }}" required>
-                    <span class="option-text"><strong>{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }})</strong> {{ option }}</span>
+                    <span class="option-text"><strong aria-hidden="true">{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }}</strong>{{ option }}</span>
                 </label>
                 {% endfor %}
             </div>
 
-            {# Type 2b: Multiple Select (Checkbox - multiple selections) #}
+            {# Type 2b: Multiple Select (Checkbox) #}
             {% elif question.type == 'multiple_select' %}
-            <div class="multiple-select-options">
-                <p class="instruction-text" style="margin-bottom: 1rem; font-weight: 600; color: var(--warning-color);">
-                    ⚠️ Marker ALLE korrekte svar (brug checkboxes):
-                </p>
+            <div class="multiple-select-options" role="group" aria-label="Answer options">
+                <span class="multiselect-tag">Marker alle korrekte svar</span>
                 {% for option in question.options %}
                 <label class="option-label checkbox-label">
                     <input type="checkbox" name="answer_checkbox" value="{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }}" data-index="{{ loop.index0 }}">
-                    <span class="option-text"><strong>{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }})</strong> {{ option }}</span>
+                    <span class="option-text"><strong aria-hidden="true">{{ ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][loop.index0] }}</strong>{{ option }}</span>
                 </label>
                 {% endfor %}
             </div>
@@ -122,12 +142,9 @@
                     <pre class="code-display">{{ question.code_template | safe }}</pre>
                 </div>
                 <div class="draggable-tokens-container">
-                    <h4>Drag these tokens into the blanks above:</h4>
-                    <p style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 0.5rem;">
-                        <strong>How to use:</strong> Try dragging tokens. If dragging doesn't work, click a token to select it (it will turn green), then click the blank to place it.
-                    </p>
-                    <!-- DEBUG: question.blanks exists = {{ question.blanks is defined }} -->
-                    <div class="draggable-tokens" id="token-pool">
+                    <h4>Tokens</h4>
+                    <p class="instruction-text">Træk eller klik en token for at vælge, klik så et felt for at placere den.</p>
+                    <div class="draggable-tokens" id="token-pool" role="listbox" aria-label="Available tokens">
                         {% if question.blanks %}
                             {% set ns = namespace(tokens=[]) %}
                             {% for blank_id, blank_data in question.blanks.items() %}
@@ -135,17 +152,13 @@
                                     {% for option in blank_data.options %}
                                         {% if option not in ns.tokens %}
                                             {% set _ = ns.tokens.append(option) %}
-                        <span class="draggable-token" data-token="{{ option }}">{{ option }}</span>
+                        <span class="draggable-token" data-token="{{ option }}" role="option" tabindex="0">{{ option }}</span>
                                         {% endif %}
                                     {% endfor %}
                                 {% endif %}
                             {% endfor %}
-                        {% else %}
-                        <p style="color: red; padding: 10px;">ERROR: No tokens available. Question data may be malformed.</p>
-                        <p style="font-size: 12px;">Debug: question.blanks = {{ question.blanks }}</p>
                         {% endif %}
                     </div>
-                    <!-- DEBUG: Rendered token-pool -->
                 </div>
             </div>
 
@@ -155,15 +168,18 @@
                 {% for test_case in question.test_cases %}
                 <div class="trace-test-case">
                     <label>
-                        <strong>{{ test_case.input }}</strong> =
+                        <strong>{{ test_case.input }}</strong>
+                        <span aria-hidden="true">=</span>
                         <input type="text" class="trace-input" data-test-id="test_{{ loop.index0 }}"
-                               placeholder="Enter result" required>
+                               placeholder="Resultat" required spellcheck="false" autocomplete="off"
+                               aria-label="Result for {{ test_case.input }}">
                     </label>
-                    <button type="button" class="btn-trace-hint" onclick="showTrace({{ loop.index0 }})">
-                        Show Trace
+                    <button type="button" class="btn-trace-hint" onclick="showTrace({{ loop.index0 }})"
+                            aria-controls="trace_{{ loop.index0 }}">
+                        Vis call stack
                     </button>
                     <div class="trace-display" id="trace_{{ loop.index0 }}" style="display: none;">
-                        <h5>Call Stack Trace:</h5>
+                        <h5>Call stack trace</h5>
                         <ol>
                             {% for step in test_case.trace %}
                             <li>{{ step }}</li>
@@ -177,46 +193,50 @@
             {# Fallback: Text Area (not for code_writing/code_completion) #}
             {% elif question.type not in ['code_writing', 'code_completion'] %}
             <textarea id="user-answer" class="answer-input" rows="10"
-                      placeholder="Enter your answer here..."></textarea>
+                      placeholder="Skriv dit svar her…" spellcheck="false"></textarea>
             {% endif %}
         </div>
 
-        <div class="hint-section" id="hint-section">
-            <h3>Hints:</h3>
+        {# Inline validation message slot — replaces alert() flow.
+           Lives outside .answer-section so it sits between answers and actions. #}
+        <div id="answer-validation" class="answer-validation" role="status" aria-live="polite" aria-atomic="true"></div>
+
+        <aside class="hint-section" id="hint-section" aria-labelledby="hint-label">
+            <h3 id="hint-label">Hints</h3>
             <div id="hints-container"></div>
-        </div>
+        </aside>
 
         <div class="action-buttons">
             {% if question.code_template and question.type in ['code_completion', 'code_writing'] %}
             <button type="button" class="btn-secondary" onclick="compileCode()">
-                Compile & Run
+                Compile &amp; Run
             </button>
             {% endif %}
             <button type="button" id="show-hint-btn" class="btn-secondary{% if has_answered %} is-hidden{% endif %}"
                     onclick="showNextHint()" {% if has_answered %}disabled aria-disabled="true"{% endif %}>
-                Show Hint
+                Show hint
             </button>
             <button type="button" class="btn-primary" onclick="submitAnswer()"
                     {% if has_answered %}disabled aria-disabled="true"{% endif %}>
-                Submit Answer
+                Submit answer
             </button>
-            <div class="shortcut-hint">Shortcuts: 1-4 select, Enter submit</div>
+            <div class="shortcut-hint" aria-hidden="true">1–4 select · Enter submit</div>
         </div>
-    </div>
+    </article>
 
-    <div id="compile-output" class="output-section" style="display: none;">
-        <h3>Output:</h3>
+    <section id="compile-output" class="output-section" style="display: none;" aria-live="polite">
+        <h3>Output</h3>
         <pre id="output-content"></pre>
-    </div>
+    </section>
 
-    <div id="result-section" class="result-section" style="display: none;">
+    <section id="result-section" class="result-section" style="display: none;" aria-live="polite">
         <div id="result-content"></div>
         <div class="result-actions">
             <button type="button" class="btn-primary" onclick="nextQuestion()">
-                Next Question
+                Next question →
             </button>
         </div>
-    </div>
+    </section>
 </div>
 
 <script>
@@ -225,6 +245,38 @@
     let currentHintIndex = 0;
     let hintsUsed = 0;
 
+    /* -------------------------------------------------------------------------
+       Inline validation (defensive — falls back to alert() if the slot is
+       missing for any reason). The original submit flow used alert(); the
+       slot keeps the page non-modal without breaking that contract.
+    ------------------------------------------------------------------------- */
+    function setValidationMessage(text) {
+        const slot = document.getElementById('answer-validation');
+        if (!slot) {
+            if (text) alert(text);
+            return;
+        }
+        if (text) {
+            slot.textContent = text;
+            slot.classList.add('is-visible');
+        } else {
+            slot.textContent = '';
+            slot.classList.remove('is-visible');
+        }
+    }
+
+    document.addEventListener('change', function(e) {
+        // Clear inline validation as soon as the user changes anything
+        // inside the answer section.
+        const t = e.target;
+        if (t && t.closest && t.closest('.answer-section')) {
+            setValidationMessage('');
+        }
+    });
+
+    /* -------------------------------------------------------------------------
+       Hints
+    ------------------------------------------------------------------------- */
     function showNextHint() {
         if (currentHintIndex < hints.length) {
             const hintSection = document.getElementById('hint-section');
@@ -232,27 +284,31 @@
             const hintsContainer = document.getElementById('hints-container');
             const hintDiv = document.createElement('div');
             hintDiv.className = 'hint-item';
-            hintDiv.innerHTML = `<strong>Hint ${currentHintIndex + 1}:</strong> ${hints[currentHintIndex]}`;
+            const label = document.createElement('strong');
+            label.textContent = `Hint ${currentHintIndex + 1}.`;
+            hintDiv.appendChild(label);
+            hintDiv.appendChild(document.createTextNode(' '));
+            hintDiv.appendChild(document.createTextNode(hints[currentHintIndex]));
             hintsContainer.appendChild(hintDiv);
             currentHintIndex++;
             hintsUsed++;
 
             if (currentHintIndex >= hints.length) {
-                document.getElementById('show-hint-btn').disabled = true;
-                document.getElementById('show-hint-btn').textContent = 'No more hints';
+                const btn = document.getElementById('show-hint-btn');
+                btn.disabled = true;
+                btn.textContent = 'No more hints';
             }
         }
     }
 
+    /* -------------------------------------------------------------------------
+       Compile & Run (for code_completion / code_writing)
+    ------------------------------------------------------------------------- */
     function getTemplateCode() {
         const wrapper = document.querySelector('.code-editor-wrapper[data-code-template]');
-        if (!wrapper) {
-            return null;
-        }
+        if (!wrapper) return null;
         const raw = wrapper.getAttribute('data-code-template');
-        if (!raw) {
-            return null;
-        }
+        if (!raw) return null;
         try {
             return JSON.parse(raw);
         } catch (error) {
@@ -265,20 +321,18 @@
         const outputSection = document.getElementById('compile-output');
         const outputContent = document.getElementById('output-content');
 
-        // Get code from appropriate source
         let code;
         const userCodeInput = document.getElementById('user-code-input');
 
         if (userCodeInput) {
-            // New separate input: combine user code with template
             const userCode = userCodeInput.value.trim();
             if (!userCode) {
-                alert('Please write your code in the "Your Code" section first');
+                setValidationMessage('Skriv din kode først.');
                 return;
             }
             const templateCode = getTemplateCode();
             if (!templateCode) {
-                alert('No code template found');
+                setValidationMessage('Ingen kode-template fundet.');
                 return;
             }
             if (templateCode.includes('/* YOUR CODE HERE */')) {
@@ -287,14 +341,14 @@
                 code = `${templateCode}\n\n${userCode}\n`;
             }
         } else {
-            alert('No code editor found');
+            setValidationMessage('Ingen code editor på denne opgave.');
             return;
         }
+        setValidationMessage('');
 
-        outputContent.textContent = 'Compiling...';
+        outputContent.textContent = 'Compiling…';
         outputSection.style.display = 'block';
 
-        // Auto-scroll to output
         setTimeout(() => {
             outputSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 100);
@@ -305,39 +359,42 @@
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({code: code})
             });
-
             const result = await response.json();
 
             if (result.success) {
-                outputContent.textContent = `✅ Compilation Successful!\n\nOutput:\n${result.stdout}\n\n${result.stderr ? 'Warnings:\n' + result.stderr : ''}`;
-                outputContent.style.color = 'var(--success-color)';
+                outputContent.textContent =
+                    `✓ Compilation successful\n\nOutput:\n${result.stdout}` +
+                    (result.stderr ? `\n\nWarnings:\n${result.stderr}` : '');
+                outputContent.style.color = 'var(--good)';
             } else {
-                outputContent.textContent = `❌ Compilation Failed\n\nError (${result.stage}):\n${result.error}`;
-                outputContent.style.color = 'var(--error-color)';
+                outputContent.textContent = `✗ Compilation failed (${result.stage})\n\n${result.error}`;
+                outputContent.style.color = 'var(--bad)';
             }
         } catch (error) {
-            outputContent.textContent = `❌ Error: ${error.message}`;
-            outputContent.style.color = 'var(--error-color)';
+            outputContent.textContent = `✗ Error: ${error.message}`;
+            outputContent.style.color = 'var(--bad)';
         }
     }
 
+    /* -------------------------------------------------------------------------
+       Submit answer — collector + dispatch + safe-DOM result render.
+       The collector branches mirror the previous template's logic verbatim;
+       only the side-effect on validation has changed (inline message instead
+       of alert()), and displayResult is now safe-DOM.
+    ------------------------------------------------------------------------- */
     let hasSubmittedAnswer = {{ 'true' if has_answered else 'false' }};
-    const initialSubmitDisabled = hasSubmittedAnswer;
-    if (initialSubmitDisabled) {
+    if (hasSubmittedAnswer) {
         const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-        }
+        if (submitBtn) submitBtn.disabled = true;
     }
 
     function setSubmitState(button, state) {
-        if (!button) {
-            return;
-        }
+        if (!button) return;
         if (state === 'loading') {
             button.disabled = true;
             button.classList.add('is-loading');
-            button.textContent = 'Submitting...';
+            button.dataset.label = button.textContent;
+            button.textContent = 'Submitting…';
         } else if (state === 'submitted') {
             button.disabled = true;
             button.classList.remove('is-loading');
@@ -345,14 +402,12 @@
         } else {
             button.disabled = false;
             button.classList.remove('is-loading');
-            button.textContent = 'Submit Answer';
+            button.textContent = button.dataset.label || 'Submit answer';
         }
     }
 
     async function submitAnswer() {
-        if (hasSubmittedAnswer) {
-            return;
-        }
+        if (hasSubmittedAnswer) return;
 
         const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
         let answer;
@@ -365,14 +420,11 @@
             fillBlankDropdowns.forEach(dropdown => {
                 const blankId = dropdown.getAttribute('data-blank-id');
                 const value = dropdown.value;
-                if (!value) {
-                    allFilled = false;
-                }
+                if (!value) allFilled = false;
                 blanks[blankId] = value;
             });
             if (!allFilled) {
-                alert('Please fill in all blanks');
-                setSubmitState(submitBtn, 'idle');
+                setValidationMessage('Udfyld alle felter for at fortsætte.');
                 return;
             }
             answer = JSON.stringify(blanks);
@@ -381,26 +433,22 @@
         else if (document.querySelectorAll('input[name="answer_checkbox"]').length > 0) {
             const checkboxes = document.querySelectorAll('input[name="answer_checkbox"]:checked');
             if (checkboxes.length === 0) {
-                alert('Please select at least one answer');
-                setSubmitState(submitBtn, 'idle');
+                setValidationMessage('Vælg mindst ét svar.');
                 return;
             }
-            const selectedValues = Array.from(checkboxes).map(cb => cb.value);
-            answer = JSON.stringify(selectedValues);
+            answer = JSON.stringify(Array.from(checkboxes).map(cb => cb.value));
         }
-        // Type 2b: Multiple Choice (Radio Buttons)
+        // Type 2b: Multiple Choice (Radio)
         else if (document.getElementsByName('answer').length > 0) {
-            const radioButtons = document.getElementsByName('answer');
-            const selected = Array.from(radioButtons).find(rb => rb.checked);
+            const radios = document.getElementsByName('answer');
+            const selected = Array.from(radios).find(rb => rb.checked);
             if (!selected) {
-                alert('Please select an answer');
-                setSubmitState(submitBtn, 'idle');
+                setValidationMessage('Vælg et svar for at fortsætte.');
                 return;
             }
-            // Convert index to letter (0=A, 1=B, 2=C, 3=D, 4=E, 5=F, 6=G, 7=H)
-            answer = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][parseInt(selected.value)];
+            answer = ['A','B','C','D','E','F','G','H'][parseInt(selected.value, 10)];
         }
-        // Type 3: Drag-and-Drop
+        // Type 3: Drag-and-Drop (partial submit allowed by design)
         else if (document.querySelector('.drag-drop-section')) {
             const placements = {};
             document.querySelectorAll('.drop-zone').forEach(zone => {
@@ -415,16 +463,12 @@
             const results = {};
             let allFilled = true;
             document.querySelectorAll('.trace-input').forEach(input => {
-                const testId = input.getAttribute('data-test-id');
-                const value = input.value.trim();
-                if (!value) {
-                    allFilled = false;
-                }
-                results[testId] = value;
+                const v = input.value.trim();
+                if (!v) allFilled = false;
+                results[input.getAttribute('data-test-id')] = v;
             });
             if (!allFilled) {
-                alert('Please answer all test cases');
-                setSubmitState(submitBtn, 'idle');
+                setValidationMessage('Besvar alle test cases.');
                 return;
             }
             answer = JSON.stringify(results);
@@ -433,21 +477,17 @@
         else if (document.getElementById('user-code-input') || document.getElementById('code-editor')) {
             const userCodeInput = document.getElementById('user-code-input');
             const codeEditor = document.getElementById('code-editor');
-
             if (userCodeInput) {
-                // New separate input: combine user code with template
-                const userCode = userCodeInput.value.trim();
-                if (!userCode) {
-                    alert('Please write your code in the "Your Code" section');
-                    setSubmitState(submitBtn, 'idle');
+                const code = userCodeInput.value.trim();
+                if (!code) {
+                    setValidationMessage('Skriv din kode først.');
                     return;
                 }
-                answer = userCode;
+                answer = code;
             } else if (codeEditor) {
                 answer = codeEditor.value;
                 if (!answer.trim()) {
-                    alert('Please enter your code');
-                    setSubmitState(submitBtn, 'idle');
+                    setValidationMessage('Skriv din kode først.');
                     return;
                 }
             }
@@ -458,12 +498,13 @@
             if (textArea) {
                 answer = textArea.value;
                 if (!answer.trim()) {
-                    alert('Please enter an answer');
-                    setSubmitState(submitBtn, 'idle');
+                    setValidationMessage('Skriv et svar for at fortsætte.');
                     return;
                 }
             }
         }
+
+        setValidationMessage('');
 
         try {
             setSubmitState(submitBtn, 'loading');
@@ -489,115 +530,135 @@
             }
 
             const result = await response.json();
-
-            // Show success notification
-            const notification = document.createElement('div');
-            notification.className = 'submit-notification';
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: var(--success-color);
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 0.5rem;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-                z-index: 10000;
-                font-weight: 600;
-                animation: slideIn 0.3s ease-out;
-            `;
-            notification.textContent = '✅ Answer Submitted!';
-            document.body.appendChild(notification);
-
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease-out';
-                setTimeout(() => notification.remove(), 300);
-            }, 2000);
-
             setSubmitState(submitBtn, 'submitted');
             displayResult(result);
         } catch (error) {
             hasSubmittedAnswer = false;
             setSubmitState(submitBtn, 'idle');
-            alert(`Error: ${error.message}`);
+            setValidationMessage(`Kunne ikke indsende: ${error.message}`);
         }
     }
 
-    function escapeHtml(value) {
-        return String(value)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
+    /* -------------------------------------------------------------------------
+       Result render — safe DOM (createElement + textContent only). This
+       closes the latent XSS in result.explanation that the previous
+       innerHTML-based renderer carried.
+    ------------------------------------------------------------------------- */
+    function el(tag, opts) {
+        const node = document.createElement(tag);
+        if (!opts) return node;
+        if (opts.className) node.className = opts.className;
+        if (opts.text !== undefined && opts.text !== null) {
+            node.textContent = String(opts.text);
+        }
+        if (opts.attrs) {
+            for (const k of Object.keys(opts.attrs)) {
+                node.setAttribute(k, opts.attrs[k]);
+            }
+        }
+        if (opts.children) {
+            for (const c of opts.children) if (c) node.appendChild(c);
+        }
+        return node;
+    }
+
+    function buildAnswerBox(label, value, isCorrect) {
+        return el('div', {
+            className: isCorrect ? 'answer-box correct' : 'answer-box',
+            children: [
+                el('strong', { text: label }),
+                el('span', { className: 'answer-value', text: value === undefined || value === null ? '' : String(value) }),
+            ],
+        });
+    }
+
+    function buildBreakdown(headerText, passed, fields) {
+        const children = [el('strong', { text: `${passed ? '✓' : '✗'}  ${headerText}` })];
+        for (const f of fields) {
+            const wrap = el('div');
+            wrap.appendChild(el('span', { text: `${f.label}: ` }));
+            const value = f.value === null || f.value === undefined ? '' : String(f.value);
+            const useBlock = f.label !== 'Input' || (value && value !== '(none)');
+            wrap.appendChild(useBlock
+                ? el('pre', { className: 'result-output', text: value })
+                : el('span', { text: value || '(none)' }));
+            children.push(wrap);
+        }
+        return el('div', {
+            className: passed ? 'test-case passed' : 'test-case failed',
+            children,
+        });
     }
 
     function displayResult(result) {
         const resultSection = document.getElementById('result-section');
         const resultContent = document.getElementById('result-content');
 
-        let html = '<div class="result-card">';
+        const card = el('div', { className: 'result-card' });
 
-        if (result.correct) {
-            html += '<div class="result-header correct" style="font-size: 1.5rem; padding: 1.5rem;">🎉 ✓ Correct!</div>';
-        } else {
-            html += '<div class="result-header incorrect" style="font-size: 1.5rem; padding: 1.5rem;">❌ ✗ Incorrect</div>';
-        }
+        // Verdict — serif kicker, no banner
+        card.appendChild(el('div', {
+            className: result.correct ? 'result-header correct' : 'result-header incorrect',
+            children: [
+                el('span', { text: result.correct ? 'Korrekt.' : 'Ikke helt.' }),
+            ],
+        }));
 
+        // Explanation
         if (result.explanation) {
-            html += `<div class="explanation"><h4>Explanation:</h4><p>${result.explanation}</p></div>`;
+            card.appendChild(el('div', {
+                className: 'explanation',
+                children: [
+                    el('h4', { text: 'Forklaring' }),
+                    el('p', { text: result.explanation }),
+                ],
+            }));
         }
 
-        if (result.expected !== undefined && result.expected !== null && result.received !== null && result.received !== undefined) {
+        // Your-answer / correct-answer comparison
+        if (result.expected !== undefined && result.expected !== null
+            && result.received !== undefined && result.received !== null) {
+            const cmp = el('div', { className: 'answer-comparison' });
             if (result.correct) {
-                html += `<div class="answer-comparison">`;
-                html += `<div class="answer-box correct"><strong>Your Answer:</strong> <span class="answer-value">${escapeHtml(result.received)}</span></div>`;
-                html += `</div>`;
+                cmp.appendChild(buildAnswerBox('Dit svar', result.received, true));
             } else {
-                html += `<div class="answer-comparison">`;
-                html += `<div class="answer-box"><strong>Your Answer:</strong> <span class="answer-value">${escapeHtml(result.received)}</span></div>`;
-                html += `<div class="answer-box correct"><strong>Correct Answer:</strong> <span class="answer-value">${escapeHtml(result.expected)}</span></div>`;
-                html += `</div>`;
+                cmp.appendChild(buildAnswerBox('Dit svar', result.received, false));
+                cmp.appendChild(buildAnswerBox('Korrekt svar', result.expected, true));
             }
+            card.appendChild(cmp);
         }
 
-        if (result.test_results) {
-            html += '<div class="test-results"><h4>Test Results:</h4>';
-            result.test_results.forEach((test, index) => {
-                const status = test.passed ? '✓' : '✗';
-                html += `<div class="test-case ${test.passed ? 'passed' : 'failed'}">`;
-                html += `<strong>${status} Test ${index + 1}:</strong><br>`;
-                const inputText = test.input || '(none)';
-                html += `Input: ${escapeHtml(inputText)}<br>`;
-                html += `Expected:<pre class="result-output">${escapeHtml(test.expected)}</pre>`;
-                html += `Got:<pre class="result-output">${escapeHtml(test.received)}</pre>`;
-                html += `</div>`;
+        // Per-test breakdown
+        if (Array.isArray(result.test_results) && result.test_results.length > 0) {
+            const wrap = el('div', { className: 'test-results' });
+            wrap.appendChild(el('h4', { text: 'Test results' }));
+            result.test_results.forEach((t, i) => {
+                wrap.appendChild(buildBreakdown(`Test ${i + 1}`, !!t.passed, [
+                    { label: 'Input', value: t.input || '(none)' },
+                    { label: 'Expected', value: t.expected },
+                    { label: 'Got', value: t.received },
+                ]));
             });
-            html += '</div>';
+            card.appendChild(wrap);
         }
 
-        if (result.blank_results) {
-            html += '<div class="test-results"><h4>Correct Answers:</h4>';
-            result.blank_results.forEach((blank, index) => {
-                const status = blank.correct ? '✓' : '✗';
-                html += `<div class="test-case ${blank.correct ? 'passed' : 'failed'}">`;
-                html += `<strong>${status} Blank ${index + 1}:</strong><br>`;
-                html += `Your Answer:<pre class="result-output">${escapeHtml(blank.user_answer)}</pre>`;
-                html += `Correct Answer:<pre class="result-output">${escapeHtml(blank.correct_answer)}</pre>`;
-                html += `</div>`;
+        // Per-blank breakdown (fill_blanks / drag_drop)
+        if (Array.isArray(result.blank_results) && result.blank_results.length > 0) {
+            const wrap = el('div', { className: 'test-results' });
+            wrap.appendChild(el('h4', { text: 'Blank results' }));
+            result.blank_results.forEach((b, i) => {
+                wrap.appendChild(buildBreakdown(`Blank ${i + 1}`, !!b.correct, [
+                    { label: 'Your answer', value: b.user_answer },
+                    { label: 'Correct answer', value: b.correct_answer },
+                ]));
             });
-            html += '</div>';
+            card.appendChild(wrap);
         }
 
-        html += '</div>';
-
-        resultContent.innerHTML = html;
+        resultContent.replaceChildren(card);
         resultSection.style.display = 'block';
 
-        // Scroll to result (especially for long code submissions)
-        setTimeout(() => {
-            resultSection.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }, 50);
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         const hintButton = document.getElementById('show-hint-btn');
         if (hintButton) {
@@ -610,27 +671,22 @@
         window.location.href = '/practice/next';
     }
 
-    // Show trace for recursive function
+    /* -------------------------------------------------------------------------
+       Recursive-trace helpers
+    ------------------------------------------------------------------------- */
     function showTrace(testIndex) {
         const traceDiv = document.getElementById(`trace_${testIndex}`);
-        if (traceDiv.style.display === 'none') {
-            traceDiv.style.display = 'block';
-        } else {
-            traceDiv.style.display = 'none';
-        }
+        if (!traceDiv) return;
+        traceDiv.style.display = traceDiv.style.display === 'none' ? 'block' : 'none';
     }
 
-    // Initialize drag-and-drop with fallback to click-to-place
+    /* -------------------------------------------------------------------------
+       Drag-and-drop init (jQuery UI with click-to-place fallback) — kept
+       verbatim from the previous shell so behavior is identical.
+    ------------------------------------------------------------------------- */
     function initializeDragDrop() {
-        console.log('Initializing drag-and-drop...');
-        console.log('jQuery available:', typeof $ !== 'undefined');
-        console.log('jQuery UI available:', typeof $ !== 'undefined' && typeof $.ui !== 'undefined');
-        console.log('Tokens found:', $('.draggable-token').length);
-        console.log('Drop zones found:', $('.drop-zone').length);
-
         if (typeof $ !== 'undefined' && typeof $.ui !== 'undefined') {
             try {
-                // Make tokens draggable
                 $('.draggable-token').draggable({
                     revert: 'invalid',
                     revertDuration: 150,
@@ -640,74 +696,49 @@
                     appendTo: 'body',
                     containment: 'window',
                     scroll: false,
-                    start: function() {
-                        console.log('Drag started');
-                    }
                 });
-
-                // Make drop zones droppable
                 $('.drop-zone').droppable({
                     accept: '.draggable-token',
                     hoverClass: 'drop-zone-hover',
                     drop: function(event, ui) {
                         const token = ui.draggable.data('token');
-                        const blankId = $(this).data('blank-id');
-                        console.log('Dropped token:', token, 'into blank:', blankId);
-
-                        // Update the drop zone
                         $(this).text(token);
                         $(this).attr('data-placed-token', token);
                         $(this).addClass('filled');
                     }
                 });
-
-                console.log('jQuery UI drag-drop initialized successfully');
                 enableClickToPlace();
             } catch (error) {
                 console.error('Error initializing jQuery UI drag-drop:', error);
                 enableClickToPlace();
             }
         } else {
-            console.warn('jQuery UI not available, using click-to-place fallback');
             enableClickToPlace();
         }
     }
 
-    // Fallback: Click-to-place mechanism
     function enableClickToPlace() {
         let selectedToken = null;
-
-        // Click on token to select it
         document.querySelectorAll('.draggable-token').forEach(token => {
             token.addEventListener('click', function() {
-                // Deselect previous
                 document.querySelectorAll('.draggable-token').forEach(t => t.classList.remove('selected'));
-                // Select this token
                 this.classList.add('selected');
                 selectedToken = this.getAttribute('data-token');
-                console.log('Selected token:', selectedToken);
             });
         });
-
-        // Click on drop zone to place selected token
         document.querySelectorAll('.drop-zone').forEach(zone => {
             zone.addEventListener('click', function() {
                 if (selectedToken) {
                     this.textContent = selectedToken;
                     this.setAttribute('data-placed-token', selectedToken);
                     this.classList.add('filled');
-                    console.log('Placed token:', selectedToken, 'into zone');
-
-                    // Deselect token
                     document.querySelectorAll('.draggable-token').forEach(t => t.classList.remove('selected'));
                     selectedToken = null;
                 } else {
-                    alert('Please select a token first by clicking on it');
+                    setValidationMessage('Vælg først en token ved at klikke på den.');
                 }
             });
         });
-
-        console.log('Click-to-place fallback enabled');
     }
 
     function initializeTraceShortcuts() {
@@ -721,22 +752,58 @@
         });
     }
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDragDrop();
-            initializeTraceShortcuts();
+    /* -------------------------------------------------------------------------
+       Keyboard shortcuts: 1–4 select option, Enter submits multiple-choice
+    ------------------------------------------------------------------------- */
+    function initializeNumberShortcuts() {
+        document.addEventListener('keydown', function(e) {
+            // Skip when typing in an input
+            const tag = (e.target.tagName || '').toLowerCase();
+            if (['input', 'textarea', 'select'].includes(tag)) {
+                if (e.key === 'Enter' && tag === 'input') {
+                    const radios = document.getElementsByName('answer');
+                    if (radios.length > 0) {
+                        e.preventDefault();
+                        submitAnswer();
+                    }
+                }
+                return;
+            }
+
+            if (/^[1-9]$/.test(e.key)) {
+                const idx = parseInt(e.key, 10) - 1;
+                const radios = document.getElementsByName('answer');
+                if (radios.length > idx) {
+                    radios[idx].checked = true;
+                    radios[idx].dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            } else if (e.key === 'Enter') {
+                const submitBtn = document.querySelector('button[onclick="submitAnswer()"]');
+                if (submitBtn && !submitBtn.disabled) {
+                    submitAnswer();
+                }
+            }
         });
-    } else {
-        initializeDragDrop();
-        initializeTraceShortcuts();
     }
 
-    // Also try when window loads (as a backup)
+    /* -------------------------------------------------------------------------
+       Boot
+    ------------------------------------------------------------------------- */
+    function boot() {
+        initializeDragDrop();
+        initializeTraceShortcuts();
+        initializeNumberShortcuts();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot);
+    } else {
+        boot();
+    }
+
     window.addEventListener('load', function() {
-        // Reinitialize if drop zones were replaced by line-number rendering
-        if ($('.drop-zone').length > 0 && !$('.drop-zone').hasClass('ui-droppable')) {
-            console.log('Reinitializing on window.load');
+        // Re-init drag-drop in case drop-zones were rendered late by editor.js
+        if (typeof $ !== 'undefined' && $('.drop-zone').length > 0 && !$('.drop-zone').hasClass('ui-droppable')) {
             initializeDragDrop();
         }
     });

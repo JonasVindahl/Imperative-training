@@ -7,12 +7,12 @@
       "difficulty": "easy",
       "title": "Hvad er formålet med software-testning?",
       "description": "Hvorfor tester vi software?",
-      "options": {
-        "A": "At finde fejl, verificere krav og sikre kvalitet",
-        "B": "At bevise at software er fejlfri",
-        "C": "At forsinke leveringen",
-        "D": "At erstatte dokumentation"
-      },
+      "options": [
+        "At finde fejl, verificere krav og sikre kvalitet",
+        "At bevise at software er fejlfri",
+        "At forsinke leveringen",
+        "At erstatte dokumentation"
+      ],
       "correct_answer": "A",
       "explanation": "Software-testning har til formål at finde fejl, verificere at krav er opfyldt og sikre kvaliteten af produktet. Det beviser IKKE fravær af fejl.",
       "hints": [
@@ -32,12 +32,12 @@
       "difficulty": "easy",
       "title": "Kan testning bevise at software er fejlfri?",
       "description": "Er det muligt at bevise gennem testning at der ingen fejl er?",
-      "options": {
-        "A": "Ja - med nok tests er software fejlfri",
-        "B": "Nej - testning kan kun vise tilstedeværelsen af fejl, ikke fraværet",
-        "C": "Ja - hvis alle use cases testes",
-        "D": "Ja - med automatiserede tests"
-      },
+      "options": [
+        "Ja - med nok tests er software fejlfri",
+        "Nej - testning kan kun vise tilstedeværelsen af fejl, ikke fraværet",
+        "Ja - hvis alle use cases testes",
+        "Ja - med automatiserede tests"
+      ],
       "correct_answer": "B",
       "explanation": "Dijkstra sagde: \"Testing can show the presence of bugs, but never their absence.\" Testning reducerer risiko men kan aldrig bevise fejlfrihed.",
       "hints": [
@@ -57,12 +57,12 @@
       "difficulty": "easy",
       "title": "Hvad er verificering vs. validering?",
       "description": "Hvad er forskellen på verificering og validering i test?",
-      "options": {
-        "A": "Verificering kommer efter validering",
-        "B": "De er det samme",
-        "C": "Verificering: bygger vi produktet rigtigt? Validering: bygger vi det rigtige produkt?",
-        "D": "Validering handler kun om performance"
-      },
+      "options": [
+        "Verificering kommer efter validering",
+        "De er det samme",
+        "Verificering: bygger vi produktet rigtigt? Validering: bygger vi det rigtige produkt?",
+        "Validering handler kun om performance"
+      ],
       "correct_answer": "C",
       "explanation": "Verificering tjekker om produktet er bygget korrekt iht. specifikationer. Validering tjekker om vi bygger det rigtige produkt iht. brugerens behov.",
       "hints": [
@@ -82,12 +82,12 @@
       "difficulty": "easy",
       "title": "Hvad er en defekt/bug?",
       "description": "Hvad definerer en defekt i software?",
-      "options": {
-        "A": "En udokumenteret funktion",
-        "B": "En feature der mangler",
-        "C": "En langsom funktion",
-        "D": "En afvigelse mellem forventet og faktisk resultat"
-      },
+      "options": [
+        "En udokumenteret funktion",
+        "En feature der mangler",
+        "En langsom funktion",
+        "En afvigelse mellem forventet og faktisk resultat"
+      ],
       "correct_answer": "D",
       "explanation": "En defekt (bug) er en afvigelse mellem det forventede resultat (fra krav/specifikation) og det faktiske resultat af software-udførelsen.",
       "hints": [
@@ -107,12 +107,12 @@
       "difficulty": "easy",
       "title": "Hvad er unit testing?",
       "description": "Hvad tester unit tests?",
-      "options": {
-        "A": "Individuelle komponenter/funktioner isoleret",
-        "B": "Hele systemet samlet",
-        "C": "Kun brugergrænsefladen",
-        "D": "Kun databasen"
-      },
+      "options": [
+        "Individuelle komponenter/funktioner isoleret",
+        "Hele systemet samlet",
+        "Kun brugergrænsefladen",
+        "Kun databasen"
+      ],
       "correct_answer": "A",
       "explanation": "Unit testing tester individuelle komponenter, funktioner eller metoder isoleret fra resten af systemet. Det er det laveste testniveau.",
       "hints": [
@@ -132,12 +132,12 @@
       "difficulty": "medium",
       "title": "Hvad er integrationstest?",
       "description": "Hvad tester integrationstests?",
-      "options": {
-        "A": "Individuelle funktioner isoleret",
-        "B": "Samspillet mellem flere komponenter/moduler",
-        "C": "Kun brugergrænsefladen",
-        "D": "Systemets performance"
-      },
+      "options": [
+        "Individuelle funktioner isoleret",
+        "Samspillet mellem flere komponenter/moduler",
+        "Kun brugergrænsefladen",
+        "Systemets performance"
+      ],
       "correct_answer": "B",
       "explanation": "Integrationstests tester samspillet og kommunikationen mellem to eller flere komponenter/moduler for at sikre de fungerer korrekt sammen.",
       "hints": [
@@ -157,12 +157,12 @@
       "difficulty": "medium",
       "title": "Hvad er systemtest?",
       "description": "Hvad tester systemtests?",
-      "options": {
-        "A": "Kun databasen",
-        "B": "Kun individuelle funktioner",
-        "C": "Hele det integrerede system mod kravspecifikationen",
-        "D": "Kun brugergrænsefladen"
-      },
+      "options": [
+        "Kun databasen",
+        "Kun individuelle funktioner",
+        "Hele det integrerede system mod kravspecifikationen",
+        "Kun brugergrænsefladen"
+      ],
       "correct_answer": "C",
       "explanation": "Systemtests tester hele det integrerede system som en helhed for at verificere at det opfylder de specificerede krav.",
       "hints": [
@@ -182,12 +182,12 @@
       "difficulty": "medium",
       "title": "Hvad er accepttest?",
       "description": "Hvad er formålet med accepttest?",
-      "options": {
-        "A": "At teste databasen",
-        "B": "At teste individuelle funktioner",
-        "C": "At måle performance",
-        "D": "At verificere at systemet opfylder brugerens/kundens behov og krav"
-      },
+      "options": [
+        "At teste databasen",
+        "At teste individuelle funktioner",
+        "At måle performance",
+        "At verificere at systemet opfylder brugerens/kundens behov og krav"
+      ],
       "correct_answer": "D",
       "explanation": "Accepttest er den endelige test der verificerer at systemet opfylder brugerens/kundens behov og forretningskrav. Ofte udført af kunden selv.",
       "hints": [
@@ -207,12 +207,12 @@
       "difficulty": "medium",
       "title": "Hvad er regressionstest?",
       "description": "Hvad er formålet med regressionstest?",
-      "options": {
-        "A": "At sikre at nye ændringer ikke har ødelagt eksisterende funktionalitet",
-        "B": "At teste nye features",
-        "C": "At teste performance",
-        "D": "At teste sikkerhed"
-      },
+      "options": [
+        "At sikre at nye ændringer ikke har ødelagt eksisterende funktionalitet",
+        "At teste nye features",
+        "At teste performance",
+        "At teste sikkerhed"
+      ],
       "correct_answer": "A",
       "explanation": "Regressionstest genudfører eksisterende tests efter ændringer for at sikre at ændringerne ikke har introduceret nye fejl i eksisterende funktionalitet.",
       "hints": [
@@ -232,12 +232,12 @@
       "difficulty": "easy",
       "title": "Hvad er black box testing?",
       "description": "Hvad kendetegner black box testing?",
-      "options": {
-        "A": "Test med fuld kendskab til intern kode",
-        "B": "Test uden kendskab til intern kode - kun baseret på input/output",
-        "C": "Test af kun den sorte skærm",
-        "D": "Test uden testcases"
-      },
+      "options": [
+        "Test med fuld kendskab til intern kode",
+        "Test uden kendskab til intern kode - kun baseret på input/output",
+        "Test af kun den sorte skærm",
+        "Test uden testcases"
+      ],
       "correct_answer": "B",
       "explanation": "Black box testing tester funktionaliteten uden kendskab til den interne kodestruktur. Fokus er på input, forventet output og kravspecifikation.",
       "hints": [
@@ -257,12 +257,12 @@
       "difficulty": "medium",
       "title": "Hvad er ækvivalenspartitionering?",
       "description": "Hvad er ækvivalenspartitionering som black box testteknik?",
-      "options": {
-        "A": "Kun test med tomme input",
-        "B": "Test af alle mulige input",
-        "C": "Opdeling af input i grupper der forventes at give samme resultat",
-        "D": "Test af tilfældige værdier"
-      },
+      "options": [
+        "Kun test med tomme input",
+        "Test af alle mulige input",
+        "Opdeling af input i grupper der forventes at give samme resultat",
+        "Test af tilfældige værdier"
+      ],
       "correct_answer": "C",
       "explanation": "Ækvivalenspartitionering opdeler input-domænet i klasser (partitioner) der forventes at give samme opførsel, og tester én repræsentant fra hver.",
       "hints": [
@@ -282,12 +282,12 @@
       "difficulty": "medium",
       "title": "Hvad er grænseværdianalyse?",
       "description": "Hvad er grænseværdianalyse (boundary value analysis)?",
-      "options": {
-        "A": "Test uden input",
-        "B": "Test af kun midterværdier",
-        "C": "Test af tilfældige værdier",
-        "D": "Test af værdier på og omkring grænserne mellem ækvivalensklasser"
-      },
+      "options": [
+        "Test uden input",
+        "Test af kun midterværdier",
+        "Test af tilfældige værdier",
+        "Test af værdier på og omkring grænserne mellem ækvivalensklasser"
+      ],
       "correct_answer": "D",
       "explanation": "Grænseværdianalyse tester værdier på, lige under og lige over grænserne mellem ækvivalensklasser, da fejl ofte opstår ved grænser.",
       "hints": [
@@ -307,12 +307,12 @@
       "difficulty": "medium",
       "title": "Hvad er beslutingstabeltest?",
       "description": "Hvad er beslutningsbaseret test (decision table testing)?",
-      "options": {
-        "A": "Test baseret på kombinationer af betingelser og deres resulterende handlinger",
-        "B": "Test af kun én betingelse ad gangen",
-        "C": "Test uden betingelser",
-        "D": "Test af tilfældige kombinationer"
-      },
+      "options": [
+        "Test baseret på kombinationer af betingelser og deres resulterende handlinger",
+        "Test af kun én betingelse ad gangen",
+        "Test uden betingelser",
+        "Test af tilfældige kombinationer"
+      ],
       "correct_answer": "A",
       "explanation": "Beslutningsbaseret test bruger en tabel med alle relevante kombinationer af betingelser og de forventede handlinger/resultater for hver kombination.",
       "hints": [
@@ -332,12 +332,12 @@
       "difficulty": "medium",
       "title": "Hvad er tilstandsbaseret test?",
       "description": "Hvad tester tilstandsbaseret test (state transition testing)?",
-      "options": {
-        "A": "Kun den initielle tilstand",
-        "B": "Overgange mellem tilstande og om systemet reagerer korrekt på hændelser",
-        "C": "Kun den endelige tilstand",
-        "D": "Tilstande uden overgange"
-      },
+      "options": [
+        "Kun den initielle tilstand",
+        "Overgange mellem tilstande og om systemet reagerer korrekt på hændelser",
+        "Kun den endelige tilstand",
+        "Tilstande uden overgange"
+      ],
       "correct_answer": "B",
       "explanation": "Tilstandsbaseret test verificerer at systemet korrekt skifter mellem tilstande som reaktion på hændelser og betingelser.",
       "hints": [
@@ -357,12 +357,12 @@
       "difficulty": "easy",
       "title": "Hvad er white box testing?",
       "description": "Hvad kendetegner white box testing?",
-      "options": {
-        "A": "Test af kun brugergrænsefladen",
-        "B": "Test uden kendskab til koden",
-        "C": "Test baseret på kendskab til intern kodestruktur og logik",
-        "D": "Test af kun performance"
-      },
+      "options": [
+        "Test af kun brugergrænsefladen",
+        "Test uden kendskab til koden",
+        "Test baseret på kendskab til intern kodestruktur og logik",
+        "Test af kun performance"
+      ],
       "correct_answer": "C",
       "explanation": "White box testing (glass box/structural testing) bruger kendskab til den interne kodestruktur til at designe tests der dækker specifik kode og logik.",
       "hints": [
@@ -382,12 +382,12 @@
       "difficulty": "medium",
       "title": "Hvad er statement coverage?",
       "description": "Hvad måler statement coverage?",
-      "options": {
-        "A": "Hastigheden af tests",
-        "B": "Procentdelen af branches der er testet",
-        "C": "Antallet af fejl fundet",
-        "D": "Procentdelen af kodelinjer/statements der er udført under test"
-      },
+      "options": [
+        "Hastigheden af tests",
+        "Procentdelen af branches der er testet",
+        "Antallet af fejl fundet",
+        "Procentdelen af kodelinjer/statements der er udført under test"
+      ],
       "correct_answer": "D",
       "explanation": "Statement coverage måler hvor stor en procentdel af kodens statements (linjer) der er blevet udført mindst én gang under testning.",
       "hints": [
@@ -407,12 +407,12 @@
       "difficulty": "medium",
       "title": "Hvad er branch coverage?",
       "description": "Hvad måler branch coverage?",
-      "options": {
-        "A": "Procentdelen af beslutningsgrene (if/else) der er testet",
-        "B": "Procentdelen af kodelinjer udført",
-        "C": "Antallet af klasser testet",
-        "D": "Antallet af tests udført"
-      },
+      "options": [
+        "Procentdelen af beslutningsgrene (if/else) der er testet",
+        "Procentdelen af kodelinjer udført",
+        "Antallet af klasser testet",
+        "Antallet af tests udført"
+      ],
       "correct_answer": "A",
       "explanation": "Branch coverage måler om begge grene af hver beslutning (if/else, switch) er blevet testet - både true og false paths.",
       "hints": [
@@ -432,12 +432,12 @@
       "difficulty": "hard",
       "title": "Hvad er path coverage?",
       "description": "Hvad måler path coverage?",
-      "options": {
-        "A": "Kun den korteste sti",
-        "B": "Procentdelen af alle mulige stier gennem koden der er testet",
-        "C": "Kun den længste sti",
-        "D": "Filstier i projektet"
-      },
+      "options": [
+        "Kun den korteste sti",
+        "Procentdelen af alle mulige stier gennem koden der er testet",
+        "Kun den længste sti",
+        "Filstier i projektet"
+      ],
       "correct_answer": "B",
       "explanation": "Path coverage måler om alle mulige stier (kombinationer af branches) gennem koden er testet. Det er den stærkeste men ofte upraktiske dækningsmetrik.",
       "hints": [
@@ -457,12 +457,12 @@
       "difficulty": "hard",
       "title": "Hvad er condition coverage?",
       "description": "Hvad måler condition coverage?",
-      "options": {
-        "A": "Om alle klasser er instantieret",
-        "B": "Om koden kompilerer",
-        "C": "Om hver individuel betingelse i sammensatte udtryk evalueres til både true og false",
-        "D": "Om databasen er tilgængelig"
-      },
+      "options": [
+        "Om alle klasser er instantieret",
+        "Om koden kompilerer",
+        "Om hver individuel betingelse i sammensatte udtryk evalueres til både true og false",
+        "Om databasen er tilgængelig"
+      ],
       "correct_answer": "C",
       "explanation": "Condition coverage måler om hver individuel boolsk betingelse i sammensatte betingelser (AND, OR) er evalueret til både true og false.",
       "hints": [
@@ -482,12 +482,12 @@
       "difficulty": "medium",
       "title": "Rangér coverage-typer fra svageste til stærkeste",
       "description": "Hvilken rækkefølge er korrekt fra svageste til stærkeste test coverage?",
-      "options": {
-        "A": "Condition → Path → Statement → Branch",
-        "B": "Path → Condition → Branch → Statement",
-        "C": "Branch → Statement → Path → Condition",
-        "D": "Statement → Branch → Condition → Path"
-      },
+      "options": [
+        "Condition → Path → Statement → Branch",
+        "Path → Condition → Branch → Statement",
+        "Branch → Statement → Path → Condition",
+        "Statement → Branch → Condition → Path"
+      ],
       "correct_answer": "D",
       "explanation": "Fra svageste til stærkeste: Statement (linjedækning) → Branch (grenedækning) → Condition (betingelsesdækning) → Path (stidækning).",
       "hints": [
@@ -507,12 +507,12 @@
       "difficulty": "easy",
       "title": "Hvad er TDD (Test Driven Development)?",
       "description": "Hvad kendetegner TDD-tilgangen?",
-      "options": {
-        "A": "Skriv test FØR kode, så skriv kode der får testen til at bestå",
-        "B": "Skriv kode først, test bagefter",
-        "C": "Undgå automatiserede tests",
-        "D": "Kun test efter deployment"
-      },
+      "options": [
+        "Skriv test FØR kode, så skriv kode der får testen til at bestå",
+        "Skriv kode først, test bagefter",
+        "Undgå automatiserede tests",
+        "Kun test efter deployment"
+      ],
       "correct_answer": "A",
       "explanation": "TDD følger cyklussen: 1) Skriv en fejlende test (Red), 2) Skriv minimal kode der får testen til at bestå (Green), 3) Refaktorér (Refactor).",
       "hints": [
@@ -532,12 +532,12 @@
       "difficulty": "medium",
       "title": "Hvad er Red-Green-Refactor cyklussen?",
       "description": "Hvad er de tre trin i TDD-cyklussen?",
-      "options": {
-        "A": "Red: slet kode, Green: skriv ny kode, Refactor: ignorer tests",
-        "B": "Red: skriv fejlende test, Green: skriv kode der består, Refactor: forbedr koden",
-        "C": "Red: fejl, Green: deploy, Refactor: roll back",
-        "D": "Red: alarm, Green: ok, Refactor: redesign"
-      },
+      "options": [
+        "Red: slet kode, Green: skriv ny kode, Refactor: ignorer tests",
+        "Red: skriv fejlende test, Green: skriv kode der består, Refactor: forbedr koden",
+        "Red: fejl, Green: deploy, Refactor: roll back",
+        "Red: alarm, Green: ok, Refactor: redesign"
+      ],
       "correct_answer": "B",
       "explanation": "Red: skriv en test der fejler. Green: skriv den minimale kode der får testen til at bestå. Refactor: forbedr kodens design uden at ændre funktionalitet.",
       "hints": [
@@ -557,12 +557,12 @@
       "difficulty": "medium",
       "title": "Hvad er fordelene ved TDD?",
       "description": "Hvilke fordele giver TDD?",
-      "options": {
-        "A": "Mindre behov for refactoring",
-        "B": "Hurtigere udvikling uden tests",
-        "C": "Bedre design, hurtigere fejlfinding og høj testdækning",
-        "D": "Eliminerer alle fejl"
-      },
+      "options": [
+        "Mindre behov for refactoring",
+        "Hurtigere udvikling uden tests",
+        "Bedre design, hurtigere fejlfinding og høj testdækning",
+        "Eliminerer alle fejl"
+      ],
       "correct_answer": "C",
       "explanation": "TDD giver bedre software-design (koden designes til testbarhed), hurtigere fejlfinding, høj testdækning og fungerer som levende dokumentation.",
       "hints": [
@@ -582,12 +582,12 @@
       "difficulty": "medium",
       "title": "Hvad er BDD (Behavior Driven Development)?",
       "description": "Hvad kendetegner BDD?",
-      "options": {
-        "A": "Kun performance-tests",
-        "B": "Test baseret kun på kodestruktur",
-        "C": "Ingen automatiserede tests",
-        "D": "Test baseret på forventet adfærd beskrevet i naturligt sprog"
-      },
+      "options": [
+        "Kun performance-tests",
+        "Test baseret kun på kodestruktur",
+        "Ingen automatiserede tests",
+        "Test baseret på forventet adfærd beskrevet i naturligt sprog"
+      ],
       "correct_answer": "D",
       "explanation": "BDD fokuserer på systemets forventede adfærd fra brugerens perspektiv, typisk beskrevet med Given-When-Then format i naturligt sprog.",
       "hints": [
@@ -607,12 +607,12 @@
       "difficulty": "medium",
       "title": "Hvad er Given-When-Then formatet?",
       "description": "Hvad beskriver Given-When-Then i BDD?",
-      "options": {
-        "A": "Given: forudsætning, When: handling, Then: forventet resultat",
-        "B": "Given: kode, When: kompilering, Then: fejl",
-        "C": "Given: sprint, When: review, Then: deploy",
-        "D": "Given: test, When: resultat, Then: rapport"
-      },
+      "options": [
+        "Given: forudsætning, When: handling, Then: forventet resultat",
+        "Given: kode, When: kompilering, Then: fejl",
+        "Given: sprint, When: review, Then: deploy",
+        "Given: test, When: resultat, Then: rapport"
+      ],
       "correct_answer": "A",
       "explanation": "Given beskriver forudsætningerne, When beskriver handlingen der udføres, og Then beskriver det forventede resultat.",
       "hints": [
@@ -632,12 +632,12 @@
       "difficulty": "easy",
       "title": "Hvad er den agile testpyramide?",
       "description": "Hvad viser testpyramiden i agil testning?",
-      "options": {
-        "A": "At UI-tests er vigtigst",
-        "B": "At man bør have mange unit tests, færre integrationstests og få UI-tests",
-        "C": "At man kun behøver unit tests",
-        "D": "At manuelle tests er vigtigst"
-      },
+      "options": [
+        "At UI-tests er vigtigst",
+        "At man bør have mange unit tests, færre integrationstests og få UI-tests",
+        "At man kun behøver unit tests",
+        "At manuelle tests er vigtigst"
+      ],
       "correct_answer": "B",
       "explanation": "Testpyramiden viser at fundamentet bør være mange hurtige unit tests, mellemlaget færre integrationstests, og toppen få langsomme UI/E2E tests.",
       "hints": [
@@ -657,12 +657,12 @@
       "difficulty": "medium",
       "title": "Hvad er continuous integration (CI)?",
       "description": "Hvad er formålet med continuous integration?",
-      "options": {
-        "A": "Kun integration af databaseændringer",
-        "B": "Manuel test én gang om måneden",
-        "C": "Automatisk bygning og testning af kode ved hver commit",
-        "D": "Kun deployment til produktion"
-      },
+      "options": [
+        "Kun integration af databaseændringer",
+        "Manuel test én gang om måneden",
+        "Automatisk bygning og testning af kode ved hver commit",
+        "Kun deployment til produktion"
+      ],
       "correct_answer": "C",
       "explanation": "CI er praksis med automatisk at bygge og køre tests når kode committes, for tidligt at opdage integrationsproblemer.",
       "hints": [
@@ -682,12 +682,12 @@
       "difficulty": "medium",
       "title": "Hvad er continuous delivery (CD)?",
       "description": "Hvad er forskellen på continuous integration og continuous delivery?",
-      "options": {
-        "A": "CI inkluderer deployment",
-        "B": "De er identiske",
-        "C": "CD kommer før CI",
-        "D": "CD sikrer at kode altid er klar til deployment, CI fokuserer på bygning/test"
-      },
+      "options": [
+        "CI inkluderer deployment",
+        "De er identiske",
+        "CD kommer før CI",
+        "CD sikrer at kode altid er klar til deployment, CI fokuserer på bygning/test"
+      ],
       "correct_answer": "D",
       "explanation": "CD udvider CI ved at sikre at kode altid er i en deployerbar tilstand. Deployment til produktion sker manuelt men kan ske når som helst.",
       "hints": [
@@ -707,12 +707,12 @@
       "difficulty": "medium",
       "title": "Hvad er usability testing?",
       "description": "Hvad er formålet med usability testing?",
-      "options": {
-        "A": "At evaluere hvor let og effektivt brugere kan bruge systemet",
-        "B": "At teste kodens performance",
-        "C": "At finde bugs i koden",
-        "D": "At teste databasen"
-      },
+      "options": [
+        "At evaluere hvor let og effektivt brugere kan bruge systemet",
+        "At teste kodens performance",
+        "At finde bugs i koden",
+        "At teste databasen"
+      ],
       "correct_answer": "A",
       "explanation": "Usability testing evaluerer brugervenningen ved at observere rigtige brugere der udfører opgaver, for at identificere brugbarhedsproblemer.",
       "hints": [
@@ -732,12 +732,12 @@
       "difficulty": "medium",
       "title": "Hvad er think-aloud protokol?",
       "description": "Hvad er think-aloud metoden i usability testing?",
-      "options": {
-        "A": "Testeren taler og brugeren lytter",
-        "B": "Brugere taler højt om deres tanker mens de udfører opgaver",
-        "C": "Alle diskuterer testen bagefter",
-        "D": "Brugere skriver deres tanker ned"
-      },
+      "options": [
+        "Testeren taler og brugeren lytter",
+        "Brugere taler højt om deres tanker mens de udfører opgaver",
+        "Alle diskuterer testen bagefter",
+        "Brugere skriver deres tanker ned"
+      ],
       "correct_answer": "B",
       "explanation": "Think-aloud protokollen beder brugere om at verbalisere deres tanker, følelser og beslutninger mens de interagerer med systemet.",
       "hints": [
@@ -757,12 +757,12 @@
       "difficulty": "medium",
       "title": "Hvad er heuristisk evaluering?",
       "description": "Hvad er heuristisk evaluering i usability?",
-      "options": {
-        "A": "Automatisk performance-test",
-        "B": "Brugere tester systemet",
-        "C": "Eksperter evaluerer UI mod anerkendte usability-principper (heuristikker)",
-        "D": "Test af kodestruktur"
-      },
+      "options": [
+        "Automatisk performance-test",
+        "Brugere tester systemet",
+        "Eksperter evaluerer UI mod anerkendte usability-principper (heuristikker)",
+        "Test af kodestruktur"
+      ],
       "correct_answer": "C",
       "explanation": "Heuristisk evaluering er en metode hvor usability-eksperter evaluerer brugergrænsefladen mod et sæt anerkendte heuristikker (f.eks. Nielsens 10).",
       "hints": [
@@ -782,12 +782,12 @@
       "difficulty": "medium",
       "title": "Hvem udførte de 10 usability heuristikker?",
       "description": "Hvem er mest kendt for de 10 usability heuristikker?",
-      "options": {
-        "A": "Martin Fowler",
-        "B": "Donald Norman",
-        "C": "Kent Beck",
-        "D": "Jakob Nielsen"
-      },
+      "options": [
+        "Martin Fowler",
+        "Donald Norman",
+        "Kent Beck",
+        "Jakob Nielsen"
+      ],
       "correct_answer": "D",
       "explanation": "Jakob Nielsen formulerede de 10 usability heuristikker, der er blandt de mest brugte principper til evaluering af brugergrænseflader.",
       "hints": [
@@ -808,12 +808,12 @@
       "difficulty": "medium",
       "title": "Hvad er en af Nielsens heuristikker: Synlighed af systemstatus?",
       "description": "Hvad siger heuristikken om \"Visibility of System Status\"?",
-      "options": {
-        "A": "Systemet bør altid holde brugeren informeret om hvad der sker",
-        "B": "Systemet bør skjule al information",
-        "C": "Kun administratorer ser systemstatus",
-        "D": "Systemstatus er irrelevant"
-      },
+      "options": [
+        "Systemet bør altid holde brugeren informeret om hvad der sker",
+        "Systemet bør skjule al information",
+        "Kun administratorer ser systemstatus",
+        "Systemstatus er irrelevant"
+      ],
       "correct_answer": "A",
       "explanation": "Visibility of System Status siger at systemet altid bør give brugeren passende feedback inden for rimelig tid, så brugeren ved hvad der sker.",
       "hints": [
@@ -833,12 +833,12 @@
       "difficulty": "medium",
       "title": "Hvad er en af Nielsens heuristikker: Fejlforebyggelse?",
       "description": "Hvad siger heuristikken om \"Error Prevention\"?",
-      "options": {
-        "A": "Fejl bør altid vises",
-        "B": "Design der forhindrer fejl er bedre end gode fejlmeddelelser",
-        "C": "Brugere skal lære af fejl",
-        "D": "Fejl er uundgåelige"
-      },
+      "options": [
+        "Fejl bør altid vises",
+        "Design der forhindrer fejl er bedre end gode fejlmeddelelser",
+        "Brugere skal lære af fejl",
+        "Fejl er uundgåelige"
+      ],
       "correct_answer": "B",
       "explanation": "Error Prevention siger at det er bedre at designe systemet så fejl forhindres fra starten, end kun at give gode fejlmeddelelser efterfølgende.",
       "hints": [
@@ -858,12 +858,12 @@
       "difficulty": "easy",
       "title": "Hvad er A/B testing?",
       "description": "Hvad er formålet med A/B testing?",
-      "options": {
-        "A": "At alternere mellem to servere",
-        "B": "At teste version A og ignorere version B",
-        "C": "At sammenligne to versioner af noget for at se hvilken der performer bedst",
-        "D": "At teste i to forskellige lande"
-      },
+      "options": [
+        "At alternere mellem to servere",
+        "At teste version A og ignorere version B",
+        "At sammenligne to versioner af noget for at se hvilken der performer bedst",
+        "At teste i to forskellige lande"
+      ],
       "correct_answer": "C",
       "explanation": "A/B testing sammenligner to versioner (A og B) af f.eks. en webside med tilfældigt fordelte brugergrupper for at måle hvilken version der performer bedst.",
       "hints": [
@@ -883,12 +883,12 @@
       "difficulty": "medium",
       "title": "Hvad er vigtigt ved A/B testing?",
       "description": "Hvad er en vigtig forudsætning for valid A/B testing?",
-      "options": {
-        "A": "Ikke måle nogen metrikker",
-        "B": "Ændre så mange ting som muligt",
-        "C": "Kun teste med én bruger",
-        "D": "Kun ændre én variabel ad gangen for at isolere effekten"
-      },
+      "options": [
+        "Ikke måle nogen metrikker",
+        "Ændre så mange ting som muligt",
+        "Kun teste med én bruger",
+        "Kun ændre én variabel ad gangen for at isolere effekten"
+      ],
       "correct_answer": "D",
       "explanation": "For valid A/B testing bør man kun ændre én variabel ad gangen (ceteris paribus), have tilstrækkeligt mange brugere og klare succeskriterier.",
       "hints": [
@@ -908,12 +908,12 @@
       "difficulty": "medium",
       "title": "Hvad er fordelene ved automatiseret testning?",
       "description": "Hvilke fordele giver automatiserede tests?",
-      "options": {
-        "A": "Hurtig feedback, konsistens, gentagelighed og reduceret manuelt arbejde",
-        "B": "Ingen vedligeholdelse nødvendig",
-        "C": "Finder alle fejl",
-        "D": "Erstatter al manuel test"
-      },
+      "options": [
+        "Hurtig feedback, konsistens, gentagelighed og reduceret manuelt arbejde",
+        "Ingen vedligeholdelse nødvendig",
+        "Finder alle fejl",
+        "Erstatter al manuel test"
+      ],
       "correct_answer": "A",
       "explanation": "Automatiserede tests giver hurtig feedback, kører konsistent hver gang, kan gentages ofte og reducerer manuelt testarbejde betydeligt.",
       "hints": [
@@ -933,12 +933,12 @@
       "difficulty": "medium",
       "title": "Hvornår er manuel testning stadig vigtig?",
       "description": "I hvilke situationer er manuel testning at foretrække?",
-      "options": {
-        "A": "Aldrig - alt bør automatiseres",
-        "B": "Eksplorativ test, usability test og tests der kræver menneskelig vurdering",
-        "C": "Kun til unit tests",
-        "D": "Kun til regressionstest"
-      },
+      "options": [
+        "Aldrig - alt bør automatiseres",
+        "Eksplorativ test, usability test og tests der kræver menneskelig vurdering",
+        "Kun til unit tests",
+        "Kun til regressionstest"
+      ],
       "correct_answer": "B",
       "explanation": "Manuel testning er vigtig for eksplorativ test (opdage uventede fejl), usability test (brugervurdering) og situationer der kræver menneskelig intuition.",
       "hints": [
@@ -958,12 +958,12 @@
       "difficulty": "medium",
       "title": "Hvad er smoke testing?",
       "description": "Hvad er formålet med en smoke test?",
-      "options": {
-        "A": "En test af røgdetektorer",
-        "B": "En grundig test af alle funktioner",
-        "C": "En hurtig test af de vigtigste funktioner for at se om bygget er stabilt nok til videre test",
-        "D": "En performance-test"
-      },
+      "options": [
+        "En test af røgdetektorer",
+        "En grundig test af alle funktioner",
+        "En hurtig test af de vigtigste funktioner for at se om bygget er stabilt nok til videre test",
+        "En performance-test"
+      ],
       "correct_answer": "C",
       "explanation": "Smoke testing er en hurtig, overfladisk test af de mest kritiske funktioner for at afgøre om et nyt build er stabilt nok til mere grundig testning.",
       "hints": [
@@ -983,12 +983,12 @@
       "difficulty": "medium",
       "title": "Hvad er sanity testing?",
       "description": "Hvad er formålet med sanity testing?",
-      "options": {
-        "A": "En performance-test",
-        "B": "En grundig test af hele systemet",
-        "C": "En test af mental sundhed",
-        "D": "En fokuseret test af en specifik funktion efter en ændring"
-      },
+      "options": [
+        "En performance-test",
+        "En grundig test af hele systemet",
+        "En test af mental sundhed",
+        "En fokuseret test af en specifik funktion efter en ændring"
+      ],
       "correct_answer": "D",
       "explanation": "Sanity testing er en fokuseret test der verificerer at en specifik funktionalitet virker korrekt efter en bug-fix eller ændring.",
       "hints": [
@@ -1008,12 +1008,12 @@
       "difficulty": "medium",
       "title": "Hvad er eksplorativ testning?",
       "description": "Hvad kendetegner eksplorativ testning?",
-      "options": {
-        "A": "Samtidig learing, testdesign og testudførelse uden foruddefinerede testscripts",
-        "B": "Kun test med foruddefinerede scripts",
-        "C": "Automatiseret test",
-        "D": "Kun performance-test"
-      },
+      "options": [
+        "Samtidig learing, testdesign og testudførelse uden foruddefinerede testscripts",
+        "Kun test med foruddefinerede scripts",
+        "Automatiseret test",
+        "Kun performance-test"
+      ],
       "correct_answer": "A",
       "explanation": "Eksplorativ testning kombinerer læring, testdesign og testudførelse samtidigt. Testeren udforsker systemet og designer tests baseret på hvad de finder.",
       "hints": [
@@ -1033,12 +1033,12 @@
       "difficulty": "medium",
       "title": "Hvad er acceptance criteria?",
       "description": "Hvad er acceptance criteria i agil systemudvikling?",
-      "options": {
-        "A": "Kriterier for at ansætte nye medarbejdere",
-        "B": "Betingelser en User Story skal opfylde for at blive godkendt",
-        "C": "Kriterier for sprint-længde",
-        "D": "Betingelser for SCRUM-certificering"
-      },
+      "options": [
+        "Kriterier for at ansætte nye medarbejdere",
+        "Betingelser en User Story skal opfylde for at blive godkendt",
+        "Kriterier for sprint-længde",
+        "Betingelser for SCRUM-certificering"
+      ],
       "correct_answer": "B",
       "explanation": "Acceptance criteria er de specifikke betingelser/krav en User Story skal opfylde for at Product Owner kan godkende den som færdig.",
       "hints": [
@@ -1058,12 +1058,12 @@
       "difficulty": "medium",
       "title": "Hvad er forholdet mellem acceptance criteria og tests?",
       "description": "Hvordan relaterer acceptance criteria sig til testning?",
-      "options": {
-        "A": "Tests skrives uafhængigt af criteria",
-        "B": "De har ingen relation",
-        "C": "Acceptance criteria bør direkte kunne oversættes til tests",
-        "D": "Criteria erstatter tests"
-      },
+      "options": [
+        "Tests skrives uafhængigt af criteria",
+        "De har ingen relation",
+        "Acceptance criteria bør direkte kunne oversættes til tests",
+        "Criteria erstatter tests"
+      ],
       "correct_answer": "C",
       "explanation": "Acceptance criteria bør formuleres så de direkte kan oversættes til acceptance tests, hvilket sikrer at kravene er testbare og verificerbare.",
       "hints": [
@@ -1083,12 +1083,12 @@
       "difficulty": "medium",
       "title": "Hvad er performance testing?",
       "description": "Hvad måler performance testing?",
-      "options": {
-        "A": "Om koden er velskrevet",
-        "B": "Om funktionaliteten virker korrekt",
-        "C": "Om UI ser godt ud",
-        "D": "Systemets responstid, gennemstrømning og ressourceforbrug under belastning"
-      },
+      "options": [
+        "Om koden er velskrevet",
+        "Om funktionaliteten virker korrekt",
+        "Om UI ser godt ud",
+        "Systemets responstid, gennemstrømning og ressourceforbrug under belastning"
+      ],
       "correct_answer": "D",
       "explanation": "Performance testing måler systemets ydeevne: responstider, gennemstrømning (throughput), ressourceforbrug under normal og høj belastning.",
       "hints": [
@@ -1108,12 +1108,12 @@
       "difficulty": "medium",
       "title": "Hvad er load testing?",
       "description": "Hvad er formålet med load testing?",
-      "options": {
-        "A": "At teste systemet under forventet brugerbelastning",
-        "B": "At teste med én bruger",
-        "C": "At slette data fra systemet",
-        "D": "At teste uden netværk"
-      },
+      "options": [
+        "At teste systemet under forventet brugerbelastning",
+        "At teste med én bruger",
+        "At slette data fra systemet",
+        "At teste uden netværk"
+      ],
       "correct_answer": "A",
       "explanation": "Load testing simulerer den forventede brugerbelastning for at verificere at systemet kan håndtere det uden uacceptabel forringelse.",
       "hints": [
@@ -1133,12 +1133,12 @@
       "difficulty": "medium",
       "title": "Hvad er stress testing?",
       "description": "Hvordan adskiller stress testing sig fra load testing?",
-      "options": {
-        "A": "Stress testing bruger normal belastning",
-        "B": "Stress testing belaster systemet OVER dets forventede kapacitet",
-        "C": "De er identiske",
-        "D": "Stress testing tester kun CPU"
-      },
+      "options": [
+        "Stress testing bruger normal belastning",
+        "Stress testing belaster systemet OVER dets forventede kapacitet",
+        "De er identiske",
+        "Stress testing tester kun CPU"
+      ],
       "correct_answer": "B",
       "explanation": "Stress testing presser systemet ud over dets normale kapacitet for at se hvordan det håndterer overbelastning og om det fejler gracefully.",
       "hints": [
@@ -1158,12 +1158,12 @@
       "difficulty": "medium",
       "title": "Hvornår testes der i SCRUM?",
       "description": "Hvornår i sprinten bør testning foregå?",
-      "options": {
-        "A": "Kun efter alle sprints",
-        "B": "Kun i slutningen af sprinten",
-        "C": "Løbende gennem hele sprinten - testning er integreret",
-        "D": "Kun i den første sprint"
-      },
+      "options": [
+        "Kun efter alle sprints",
+        "Kun i slutningen af sprinten",
+        "Løbende gennem hele sprinten - testning er integreret",
+        "Kun i den første sprint"
+      ],
       "correct_answer": "C",
       "explanation": "I SCRUM er testning integreret i hele sprinten - ikke en separat fase. Tests skrives og udføres løbende sammen med udviklingen.",
       "hints": [
@@ -1184,12 +1184,12 @@
       "difficulty": "medium",
       "title": "Hvad er Definition of Done i relation til test?",
       "description": "Hvordan relaterer Definition of Done sig til testning?",
-      "options": {
-        "A": "Kun SCRUM Master definerer testkrav",
-        "B": "DoD har ingen relation til test",
-        "C": "DoD erstatter testning",
-        "D": "DoD bør inkludere testkrav der skal være opfyldt før en User Story er \"done\""
-      },
+      "options": [
+        "Kun SCRUM Master definerer testkrav",
+        "DoD har ingen relation til test",
+        "DoD erstatter testning",
+        "DoD bør inkludere testkrav der skal være opfyldt før en User Story er \"done\""
+      ],
       "correct_answer": "D",
       "explanation": "Definition of Done bør inkludere specifikke testkrav, f.eks. unit tests bestået, code review udført, acceptance criteria verificeret.",
       "hints": [

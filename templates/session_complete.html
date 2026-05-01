@@ -1,65 +1,65 @@
 {% extends "base.html" %}
 
-{% block title %}Session Complete - {{ active_exam.name }}{% endblock %}
+{% block title %}Session report — {{ active_exam.name }}{% endblock %}
 
 {% block content %}
+{% set _accuracy = ((correct_count / total_questions) * 100) if total_questions else 0 %}
+{% set _avg_time = (total_time / total_questions) if total_questions else 0 %}
 <div class="session-complete">
-    <div class="completion-header">
-        <h1>Practice Session Complete!</h1>
-        <div class="completion-icon">
-            {% if correct_count == total_questions %}
-            🎉
-            {% elif correct_count >= total_questions * 0.7 %}
-            👍
-            {% else %}
-            💪
-            {% endif %}
-        </div>
-    </div>
 
-    <div class="session-summary">
-        <h2>Your Results</h2>
+    <header class="completion-header">
+        <div class="completion-meta">
+            <span class="kicker">Session report</span>
+            <h1>{{ correct_count }} of {{ total_questions }}</h1>
+            <p class="completion-subhead">
+                {% if correct_count == total_questions %}
+                    Hver eneste rigtig.
+                {% elif correct_count >= total_questions * 0.8 %}
+                    Solidt resultat — nogle huller at lukke.
+                {% elif correct_count >= total_questions * 0.6 %}
+                    Anstændigt — kør gennem de forkerte og prøv igen.
+                {% else %}
+                    Træningsrunde. Det er sådan, det starter.
+                {% endif %}
+            </p>
+        </div>
+        <div class="completion-score" aria-label="{{ _accuracy | int }}% accuracy">
+            <span class="completion-score__value">{{ _accuracy | int }}<small>%</small></span>
+            <span class="completion-score__label">Accuracy</span>
+        </div>
+    </header>
+
+    <section class="session-summary">
+        <h2>Session metrics</h2>
         <div class="summary-stats">
             <div class="stat-card">
-                <div class="stat-value">{{ correct_count }}/{{ total_questions }}</div>
-                <div class="stat-label">Correct Answers</div>
+                <div class="stat-value">{{ correct_count }}<small> / {{ total_questions }}</small></div>
+                <div class="stat-label">Correct</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">{{ ((correct_count / total_questions) * 100) | int }}%</div>
+                <div class="stat-value">{{ _accuracy | int }}<small>%</small></div>
                 <div class="stat-label">Accuracy</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">{{ total_time }}s</div>
-                <div class="stat-label">Total Time</div>
+                <div class="stat-value">{{ total_time }}<small>s</small></div>
+                <div class="stat-label">Total time</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">{{ (total_time / total_questions) | int }}s</div>
-                <div class="stat-label">Avg per Question</div>
+                <div class="stat-value">{{ _avg_time | int }}<small>s</small></div>
+                <div class="stat-label">Avg per question</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="feedback-message">
-        {% if correct_count == total_questions %}
-        <p class="message-excellent">Perfect score! Excellent work! 🌟</p>
-        {% elif correct_count >= total_questions * 0.8 %}
-        <p class="message-good">Great job! You're mastering these concepts! 🚀</p>
-        {% elif correct_count >= total_questions * 0.6 %}
-        <p class="message-okay">Good effort! Keep practicing to improve. 📚</p>
-        {% else %}
-        <p class="message-needs-work">Keep practicing! You'll get better with each session. 💪</p>
-        {% endif %}
-    </div>
-
-    <div class="attempts-breakdown">
-        <h2>Question Breakdown</h2>
+    <section class="attempts-breakdown">
+        <h2>Question breakdown</h2>
         <table class="attempts-table">
             <thead>
                 <tr>
                     <th>Category</th>
                     <th>Result</th>
-                    <th>Time Spent</th>
-                    <th>Hints Used</th>
+                    <th>Time</th>
+                    <th>Hints</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,9 +68,9 @@
                     <td>{{ attempt.category.replace('_', ' ').title() }}</td>
                     <td>
                         {% if attempt.correct %}
-                        <span class="badge badge-success">✓ Correct</span>
+                        <span class="badge badge-success">Correct</span>
                         {% else %}
-                        <span class="badge badge-error">✗ Incorrect</span>
+                        <span class="badge badge-error">Incorrect</span>
                         {% endif %}
                     </td>
                     <td>{{ attempt.time_spent }}s</td>
@@ -79,17 +79,17 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
+    </section>
 
     {% if incorrect_details %}
-    <div class="review-section" id="review-incorrect">
-        <h2>Review Incorrect Answers</h2>
+    <section class="review-section" id="review-incorrect" aria-labelledby="review-heading">
+        <h2 id="review-heading">Review the misses</h2>
         {% for item in incorrect_details %}
-        <div class="review-card">
-            <div class="review-header">
+        <article class="review-card">
+            <header class="review-header">
                 <h3>{{ item.question.title }}</h3>
                 <span class="badge badge-error">Incorrect</span>
-            </div>
+            </header>
             <p class="review-description">{{ item.question.description }}</p>
 
             {% if item.question.code_template %}
@@ -102,37 +102,37 @@
 
             <div class="review-answers">
                 <div>
-                    <strong>Your Answer:</strong>
+                    <strong>Your answer</strong>
                     <span class="answer-value">{{ item.attempt.submitted_answer }}</span>
                 </div>
                 <div>
-                    <strong>Correct Answer:</strong>
+                    <strong>Correct answer</strong>
                     <span class="answer-value">{{ item.question.correct_answer }}</span>
                 </div>
             </div>
 
             {% if item.question.explanation %}
             <div class="review-explanation">
-                <strong>Explanation:</strong>
+                <strong>Forklaring</strong>
                 <p>{{ item.question.explanation }}</p>
             </div>
             {% endif %}
-        </div>
+        </article>
         {% endfor %}
-    </div>
+    </section>
     {% endif %}
 
     <div class="action-buttons">
         <a href="{{ url_for('practice.start_practice') }}" class="btn-primary btn-large">
-            Practice Again
+            Practice again
         </a>
         {% if incorrect_details %}
         <a href="#review-incorrect" class="btn-secondary btn-large">
-            Review Incorrect
+            Review misses ↓
         </a>
         {% endif %}
         <a href="{{ url_for('progress.dashboard') }}" class="btn-secondary btn-large">
-            Back to Dashboard
+            Back to dashboard
         </a>
     </div>
 </div>

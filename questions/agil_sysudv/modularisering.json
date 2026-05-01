@@ -7,12 +7,12 @@
       "difficulty": "easy",
       "title": "Hvad er modularisering?",
       "description": "Hvad betyder modularisering i software-udvikling?",
-      "options": {
-        "A": "At opdele et system i selvstændige, håndterbare moduler",
-        "B": "At skrive al kode i én fil",
-        "C": "At slette ubrugt kode",
-        "D": "At kompilere kode hurtigere"
-      },
+      "options": [
+        "At opdele et system i selvstændige, håndterbare moduler",
+        "At skrive al kode i én fil",
+        "At slette ubrugt kode",
+        "At kompilere kode hurtigere"
+      ],
       "correct_answer": "A",
       "explanation": "Modularisering er princippet om at opdele et komplekst system i mindre, relativt selvstændige moduler der er lettere at forstå, udvikle og vedligeholde.",
       "hints": [
@@ -32,12 +32,12 @@
       "difficulty": "easy",
       "title": "Hvad er fordelene ved modularisering?",
       "description": "Hvilke fordele giver modularisering?",
-      "options": {
-        "A": "Hurtigere kompilering",
-        "B": "Lettere vedligeholdelse, genbrug og parallel udvikling",
-        "C": "Mindre hukommelsesforbrug",
-        "D": "Færre kodefiler"
-      },
+      "options": [
+        "Hurtigere kompilering",
+        "Lettere vedligeholdelse, genbrug og parallel udvikling",
+        "Mindre hukommelsesforbrug",
+        "Færre kodefiler"
+      ],
       "correct_answer": "B",
       "explanation": "Modularisering giver lettere vedligeholdelse (isolerede ændringer), genbrug af moduler, parallel udvikling af forskellige moduler og bedre testbarhed.",
       "hints": [
@@ -57,12 +57,12 @@
       "difficulty": "medium",
       "title": "Hvad er et modul?",
       "description": "Hvad er et modul i software-sammenhæng?",
-      "options": {
-        "A": "En type database",
-        "B": "En fejl i koden",
-        "C": "En selvstændig enhed med defineret interface og skjult implementering",
-        "D": "Et testresultat"
-      },
+      "options": [
+        "En type database",
+        "En fejl i koden",
+        "En selvstændig enhed med defineret interface og skjult implementering",
+        "Et testresultat"
+      ],
       "correct_answer": "C",
       "explanation": "Et modul er en selvstændig software-enhed med et veldefineret interface (hvordan det bruges) og skjult intern implementering (information hiding).",
       "hints": [
@@ -82,12 +82,12 @@
       "difficulty": "easy",
       "title": "Hvad er coupling?",
       "description": "Hvad beskriver coupling (kobling) mellem moduler?",
-      "options": {
-        "A": "Hastigheden af modulet",
-        "B": "Antallet af moduler",
-        "C": "Størrelsen af et modul",
-        "D": "Graden af afhængighed mellem moduler"
-      },
+      "options": [
+        "Hastigheden af modulet",
+        "Antallet af moduler",
+        "Størrelsen af et modul",
+        "Graden af afhængighed mellem moduler"
+      ],
       "correct_answer": "D",
       "explanation": "Coupling (kobling) måler graden af afhængighed mellem to moduler - hvor meget ét moduls ændringer påvirker et andet modul.",
       "hints": [
@@ -107,12 +107,12 @@
       "difficulty": "easy",
       "title": "Er høj eller lav coupling ønskelig?",
       "description": "Hvad bør man tilstræbe mht. coupling mellem moduler?",
-      "options": {
-        "A": "Lav coupling - minimal afhængighed",
-        "B": "Høj coupling - maksimal afhængighed",
-        "C": "Ingen coupling overhovedet",
-        "D": "Det er ligegyldigt"
-      },
+      "options": [
+        "Lav coupling - minimal afhængighed",
+        "Høj coupling - maksimal afhængighed",
+        "Ingen coupling overhovedet",
+        "Det er ligegyldigt"
+      ],
       "correct_answer": "A",
       "explanation": "Lav coupling er ønskelig fordi det betyder minimal afhængighed mellem moduler, hvilket gør systemet lettere at ændre og vedligeholde.",
       "hints": [
@@ -132,12 +132,12 @@
       "difficulty": "medium",
       "title": "Hvad er data coupling?",
       "description": "Hvad kendetegner data coupling mellem moduler?",
-      "options": {
-        "A": "Moduler deler en global datastruktur",
-        "B": "Moduler kommunikerer kun via simple dataparametre",
-        "C": "Moduler kender hinandens interne logik",
-        "D": "Moduler afhænger af eksekveringsrækkefølge"
-      },
+      "options": [
+        "Moduler deler en global datastruktur",
+        "Moduler kommunikerer kun via simple dataparametre",
+        "Moduler kender hinandens interne logik",
+        "Moduler afhænger af eksekveringsrækkefølge"
+      ],
       "correct_answer": "B",
       "explanation": "Data coupling er den laveste (bedste) form for coupling, hvor moduler kun kommunikerer via simple, elementære dataparametre.",
       "hints": [
@@ -157,12 +157,12 @@
       "difficulty": "medium",
       "title": "Hvad er stamp coupling?",
       "description": "Hvad kendetegner stamp coupling?",
-      "options": {
-        "A": "Moduler kender hinandens kildekode",
-        "B": "Moduler kommunikerer kun via simple parametre",
-        "C": "Moduler deler en komposit datastruktur, men bruger kun dele af den",
-        "D": "Moduler deler globale variable"
-      },
+      "options": [
+        "Moduler kender hinandens kildekode",
+        "Moduler kommunikerer kun via simple parametre",
+        "Moduler deler en komposit datastruktur, men bruger kun dele af den",
+        "Moduler deler globale variable"
+      ],
       "correct_answer": "C",
       "explanation": "Stamp coupling opstår når et modul sender en hel datastruktur til et andet modul, men modtageren kun bruger en del af datastrukturen.",
       "hints": [
@@ -182,12 +182,12 @@
       "difficulty": "medium",
       "title": "Hvad er control coupling?",
       "description": "Hvad kendetegner control coupling?",
-      "options": {
-        "A": "Moduler deler kildekode",
-        "B": "Moduler deler kun simple data",
-        "C": "Moduler er helt uafhængige",
-        "D": "Et modul styrer et andet moduls logik via en kontrolparameter"
-      },
+      "options": [
+        "Moduler deler kildekode",
+        "Moduler deler kun simple data",
+        "Moduler er helt uafhængige",
+        "Et modul styrer et andet moduls logik via en kontrolparameter"
+      ],
       "correct_answer": "D",
       "explanation": "Control coupling opstår når ét modul sender en kontrolparameter (f.eks. et flag) der styrer det andet moduls interne logik/flow.",
       "hints": [
@@ -207,12 +207,12 @@
       "difficulty": "medium",
       "title": "Hvad er common coupling?",
       "description": "Hvad kendetegner common coupling?",
-      "options": {
-        "A": "Flere moduler deler de samme globale data",
-        "B": "Moduler kommunikerer via parametre",
-        "C": "Moduler er helt uafhængige",
-        "D": "Et modul arver fra et andet"
-      },
+      "options": [
+        "Flere moduler deler de samme globale data",
+        "Moduler kommunikerer via parametre",
+        "Moduler er helt uafhængige",
+        "Et modul arver fra et andet"
+      ],
       "correct_answer": "A",
       "explanation": "Common coupling (global coupling) opstår når flere moduler tilgår og ændrer de samme globale data/variable, hvilket skaber uforudsigelige afhængigheder.",
       "hints": [
@@ -232,12 +232,12 @@
       "difficulty": "medium",
       "title": "Hvad er content coupling?",
       "description": "Hvad kendetegner content coupling?",
-      "options": {
-        "A": "Moduler deler globale variable",
-        "B": "Et modul direkte tilgår eller ændrer et andet moduls interne data",
-        "C": "Moduler kommunikerer via interfaces",
-        "D": "Moduler bruger simple parametre"
-      },
+      "options": [
+        "Moduler deler globale variable",
+        "Et modul direkte tilgår eller ændrer et andet moduls interne data",
+        "Moduler kommunikerer via interfaces",
+        "Moduler bruger simple parametre"
+      ],
       "correct_answer": "B",
       "explanation": "Content coupling er den værste form for coupling, hvor ét modul direkte tilgår eller modificerer et andet moduls interne data eller kode.",
       "hints": [
@@ -257,12 +257,12 @@
       "difficulty": "medium",
       "title": "Rangér coupling-typer fra bedst til værst",
       "description": "Hvilken rækkefølge er korrekt fra laveste (bedste) til højeste (værste) coupling?",
-      "options": {
-        "A": "Control → Data → Stamp → Content → Common",
-        "B": "Content → Common → Control → Stamp → Data",
-        "C": "Data → Stamp → Control → Common → Content",
-        "D": "Stamp → Data → Common → Control → Content"
-      },
+      "options": [
+        "Control → Data → Stamp → Content → Common",
+        "Content → Common → Control → Stamp → Data",
+        "Data → Stamp → Control → Common → Content",
+        "Stamp → Data → Common → Control → Content"
+      ],
       "correct_answer": "C",
       "explanation": "Fra laveste til højeste coupling: Data (simpleste) → Stamp → Control → Common → Content (værste). Lav coupling er altid at foretrække.",
       "hints": [
@@ -282,12 +282,12 @@
       "difficulty": "easy",
       "title": "Hvad er cohesion?",
       "description": "Hvad beskriver cohesion (sammenhængskraft) i et modul?",
-      "options": {
-        "A": "Modulets eksekveringshastighed",
-        "B": "Afhængigheden mellem moduler",
-        "C": "Antallet af klasser i et modul",
-        "D": "Graden af relateret funktionalitet inden for et modul"
-      },
+      "options": [
+        "Modulets eksekveringshastighed",
+        "Afhængigheden mellem moduler",
+        "Antallet af klasser i et modul",
+        "Graden af relateret funktionalitet inden for et modul"
+      ],
       "correct_answer": "D",
       "explanation": "Cohesion måler hvor stærkt de interne elementer i et modul er relaterede til hinanden og arbejder mod et fælles formål.",
       "hints": [
@@ -307,12 +307,12 @@
       "difficulty": "easy",
       "title": "Er høj eller lav cohesion ønskelig?",
       "description": "Hvad bør man tilstræbe mht. cohesion inden for moduler?",
-      "options": {
-        "A": "Høj cohesion - stærkt relaterede elementer",
-        "B": "Lav cohesion - blandet funktionalitet",
-        "C": "Ingen cohesion",
-        "D": "Det er ligegyldigt"
-      },
+      "options": [
+        "Høj cohesion - stærkt relaterede elementer",
+        "Lav cohesion - blandet funktionalitet",
+        "Ingen cohesion",
+        "Det er ligegyldigt"
+      ],
       "correct_answer": "A",
       "explanation": "Høj cohesion er ønskelig fordi det betyder at modulets elementer er stærkt relaterede og fokuserede, hvilket gør det lettere at forstå og vedligeholde.",
       "hints": [
@@ -332,12 +332,12 @@
       "difficulty": "medium",
       "title": "Hvad er funktionel cohesion?",
       "description": "Hvad kendetegner funktionel cohesion?",
-      "options": {
-        "A": "Elementer deler kun timing",
-        "B": "Alle elementer bidrager til én enkelt, veldefineret funktion",
-        "C": "Elementer er tilfældigt samlet",
-        "D": "Elementer kommunikerer sekventielt"
-      },
+      "options": [
+        "Elementer deler kun timing",
+        "Alle elementer bidrager til én enkelt, veldefineret funktion",
+        "Elementer er tilfældigt samlet",
+        "Elementer kommunikerer sekventielt"
+      ],
       "correct_answer": "B",
       "explanation": "Funktionel cohesion er den højeste (bedste) form, hvor alle elementer i modulet bidrager til at udføre én enkelt, veldefineret opgave.",
       "hints": [
@@ -357,12 +357,12 @@
       "difficulty": "medium",
       "title": "Hvad er sekventiel cohesion?",
       "description": "Hvad kendetegner sekventiel cohesion?",
-      "options": {
-        "A": "Elementer bidrager til én funktion",
-        "B": "Elementer udføres til samme tid",
-        "C": "Output fra ét element er input til det næste",
-        "D": "Elementer er tilfældigt samlet"
-      },
+      "options": [
+        "Elementer bidrager til én funktion",
+        "Elementer udføres til samme tid",
+        "Output fra ét element er input til det næste",
+        "Elementer er tilfældigt samlet"
+      ],
       "correct_answer": "C",
       "explanation": "Sekventiel cohesion opstår når elementerne er relaterede ved at output fra ét element bruges som input til det næste, i en kæde.",
       "hints": [
@@ -382,12 +382,12 @@
       "difficulty": "medium",
       "title": "Hvad er kommunikativ cohesion?",
       "description": "Hvad kendetegner kommunikativ cohesion?",
-      "options": {
-        "A": "Elementer aktiveres på samme tid",
-        "B": "Elementer udføres i rækkefølge",
-        "C": "Elementer har intet til fælles",
-        "D": "Elementer opererer på de samme data"
-      },
+      "options": [
+        "Elementer aktiveres på samme tid",
+        "Elementer udføres i rækkefølge",
+        "Elementer har intet til fælles",
+        "Elementer opererer på de samme data"
+      ],
       "correct_answer": "D",
       "explanation": "Kommunikativ cohesion opstår når elementerne arbejder på de samme data eller den samme datastruktur, men ikke nødvendigvis i rækkefølge.",
       "hints": [
@@ -407,12 +407,12 @@
       "difficulty": "medium",
       "title": "Hvad er tidsmæssig (temporal) cohesion?",
       "description": "Hvad kendetegner temporal cohesion?",
-      "options": {
-        "A": "Elementer udføres på samme tidspunkt men er ellers urelaterede",
-        "B": "Elementer bidrager til én funktion",
-        "C": "Elementer deler data",
-        "D": "Elementer er i en kæde"
-      },
+      "options": [
+        "Elementer udføres på samme tidspunkt men er ellers urelaterede",
+        "Elementer bidrager til én funktion",
+        "Elementer deler data",
+        "Elementer er i en kæde"
+      ],
       "correct_answer": "A",
       "explanation": "Temporal cohesion opstår når elementerne grupperes fordi de udføres på samme tidspunkt (f.eks. initialisering), selvom de ellers er urelaterede.",
       "hints": [
@@ -432,12 +432,12 @@
       "difficulty": "medium",
       "title": "Hvad er tilfældig (coincidental) cohesion?",
       "description": "Hvad kendetegner coincidental cohesion?",
-      "options": {
-        "A": "Elementer bidrager til én funktion",
-        "B": "Elementer er tilfældigt samlet uden logisk relation",
-        "C": "Elementer deler data",
-        "D": "Elementer er i en kæde"
-      },
+      "options": [
+        "Elementer bidrager til én funktion",
+        "Elementer er tilfældigt samlet uden logisk relation",
+        "Elementer deler data",
+        "Elementer er i en kæde"
+      ],
       "correct_answer": "B",
       "explanation": "Coincidental cohesion er den laveste (værste) form, hvor elementerne er tilfældigt samlet i et modul uden nogen meningsfuld relation.",
       "hints": [
@@ -457,12 +457,12 @@
       "difficulty": "medium",
       "title": "Rangér cohesion-typer fra bedst til værst",
       "description": "Hvilken rækkefølge er korrekt fra højeste (bedste) til laveste (værste) cohesion?",
-      "options": {
-        "A": "Kommunikativ → Funktionel → Tilfældig → Temporal → Sekventiel",
-        "B": "Tilfældig → Temporal → Kommunikativ → Sekventiel → Funktionel",
-        "C": "Funktionel → Sekventiel → Kommunikativ → Temporal → Tilfældig",
-        "D": "Temporal → Sekventiel → Funktionel → Kommunikativ → Tilfældig"
-      },
+      "options": [
+        "Kommunikativ → Funktionel → Tilfældig → Temporal → Sekventiel",
+        "Tilfældig → Temporal → Kommunikativ → Sekventiel → Funktionel",
+        "Funktionel → Sekventiel → Kommunikativ → Temporal → Tilfældig",
+        "Temporal → Sekventiel → Funktionel → Kommunikativ → Tilfældig"
+      ],
       "correct_answer": "C",
       "explanation": "Fra højeste til laveste cohesion: Funktionel (bedst) → Sekventiel → Kommunikativ → Procedural → Temporal → Logisk → Tilfældig (værst).",
       "hints": [
@@ -482,12 +482,12 @@
       "difficulty": "medium",
       "title": "Hvad er information hiding?",
       "description": "Hvad er princippet om information hiding?",
-      "options": {
-        "A": "At gemme filer på disk",
-        "B": "At kryptere data",
-        "C": "At slette data efter brug",
-        "D": "At skjule et moduls interne implementeringsdetaljer"
-      },
+      "options": [
+        "At gemme filer på disk",
+        "At kryptere data",
+        "At slette data efter brug",
+        "At skjule et moduls interne implementeringsdetaljer"
+      ],
       "correct_answer": "D",
       "explanation": "Information hiding (Parnas 1972) er princippet om at skjule et moduls interne implementeringsdetaljer bag et interface, så andre moduler kun kender interfacet.",
       "hints": [
@@ -507,12 +507,12 @@
       "difficulty": "medium",
       "title": "Hvad er fordelene ved information hiding?",
       "description": "Hvilke fordele giver information hiding?",
-      "options": {
-        "A": "Intern implementering kan ændres uden at påvirke andre moduler",
-        "B": "Koden kører hurtigere",
-        "C": "Koden fylder mindre",
-        "D": "Kompilering tager kortere tid"
-      },
+      "options": [
+        "Intern implementering kan ændres uden at påvirke andre moduler",
+        "Koden kører hurtigere",
+        "Koden fylder mindre",
+        "Kompilering tager kortere tid"
+      ],
       "correct_answer": "A",
       "explanation": "Information hiding muliggør at den interne implementering kan ændres frit, så længe interfacet forbliver det samme. Det reducerer coupling.",
       "hints": [
@@ -532,12 +532,12 @@
       "difficulty": "medium",
       "title": "Hvad er en software-arkitektur?",
       "description": "Hvad beskriver software-arkitektur?",
-      "options": {
-        "A": "En specifik algoritme",
-        "B": "Den overordnede struktur og organisation af et software-system",
-        "C": "Et testresultat",
-        "D": "En database-query"
-      },
+      "options": [
+        "En specifik algoritme",
+        "Den overordnede struktur og organisation af et software-system",
+        "Et testresultat",
+        "En database-query"
+      ],
       "correct_answer": "B",
       "explanation": "Software-arkitektur beskriver den overordnede struktur, komponenter, relationer og principper der styrer designet og udviklingen af systemet.",
       "hints": [
@@ -557,12 +557,12 @@
       "difficulty": "medium",
       "title": "Hvad er lagdelt arkitektur (layered architecture)?",
       "description": "Hvad kendetegner lagdelt arkitektur?",
-      "options": {
-        "A": "Der er kun ét lag",
-        "B": "Alle komponenter kommunikerer frit",
-        "C": "Systemet opdeles i lag hvor hvert lag kun kommunikerer med naboen",
-        "D": "Lagene kommunikerer kun opad"
-      },
+      "options": [
+        "Der er kun ét lag",
+        "Alle komponenter kommunikerer frit",
+        "Systemet opdeles i lag hvor hvert lag kun kommunikerer med naboen",
+        "Lagene kommunikerer kun opad"
+      ],
       "correct_answer": "C",
       "explanation": "Lagdelt arkitektur opdeler systemet i hierarkiske lag (f.eks. UI, forretningslogik, data), hvor hvert lag kun kommunikerer med laget under sig.",
       "hints": [
@@ -582,12 +582,12 @@
       "difficulty": "easy",
       "title": "Hvad er de typiske lag i en 3-lags arkitektur?",
       "description": "Hvilke tre lag indgår typisk i en 3-lags arkitektur?",
-      "options": {
-        "A": "Test, udvikling og deployment",
-        "B": "Frontend, middleware og backend",
-        "C": "Input, process og output",
-        "D": "Præsentation, forretningslogik og datalag"
-      },
+      "options": [
+        "Test, udvikling og deployment",
+        "Frontend, middleware og backend",
+        "Input, process og output",
+        "Præsentation, forretningslogik og datalag"
+      ],
       "correct_answer": "D",
       "explanation": "De tre lag er: Præsentationslaget (UI), forretningslogiklaget (domænelogik) og datalaget (database-adgang/persistens).",
       "hints": [
@@ -607,12 +607,12 @@
       "difficulty": "medium",
       "title": "Hvad er MVC-mønstret?",
       "description": "Hvad står MVC for og hvad gør det?",
-      "options": {
-        "A": "Model-View-Controller: adskiller data, visning og styring",
-        "B": "Module-Value-Class: organiserer klasser",
-        "C": "Main-Variable-Code: strukturerer variable",
-        "D": "Multi-Version-Control: håndterer versioner"
-      },
+      "options": [
+        "Model-View-Controller: adskiller data, visning og styring",
+        "Module-Value-Class: organiserer klasser",
+        "Main-Variable-Code: strukturerer variable",
+        "Multi-Version-Control: håndterer versioner"
+      ],
       "correct_answer": "A",
       "explanation": "MVC (Model-View-Controller) adskiller applikationen i Model (data/logik), View (brugergrænsefladen) og Controller (håndterer input og koordinerer).",
       "hints": [
@@ -632,12 +632,12 @@
       "difficulty": "medium",
       "title": "Hvad er Model i MVC?",
       "description": "Hvad er Modelens ansvar i MVC-arkitekturen?",
-      "options": {
-        "A": "At vise data til brugeren",
-        "B": "At håndtere data, forretningslogik og regler",
-        "C": "At modtage brugerinput",
-        "D": "At forbinde til databasen"
-      },
+      "options": [
+        "At vise data til brugeren",
+        "At håndtere data, forretningslogik og regler",
+        "At modtage brugerinput",
+        "At forbinde til databasen"
+      ],
       "correct_answer": "B",
       "explanation": "Modellen i MVC er ansvarlig for systemets data, forretningslogik og forretningsregler. Den er uafhængig af brugergrænsefladen.",
       "hints": [
@@ -657,12 +657,12 @@
       "difficulty": "medium",
       "title": "Hvad er View i MVC?",
       "description": "Hvad er Viewets ansvar i MVC-arkitekturen?",
-      "options": {
-        "A": "At modtage og behandle input",
-        "B": "At håndtere forretningslogik",
-        "C": "At præsentere data til brugeren",
-        "D": "At gemme data i databasen"
-      },
+      "options": [
+        "At modtage og behandle input",
+        "At håndtere forretningslogik",
+        "At præsentere data til brugeren",
+        "At gemme data i databasen"
+      ],
       "correct_answer": "C",
       "explanation": "Viewet i MVC er ansvarligt for at præsentere data til brugeren. Det viser Modelens data i et passende format.",
       "hints": [
@@ -682,12 +682,12 @@
       "difficulty": "medium",
       "title": "Hvad er Controller i MVC?",
       "description": "Hvad er Controllerens ansvar i MVC-arkitekturen?",
-      "options": {
-        "A": "At teste systemet",
-        "B": "At gemme data",
-        "C": "At vise data",
-        "D": "At modtage brugerinput og koordinere mellem Model og View"
-      },
+      "options": [
+        "At teste systemet",
+        "At gemme data",
+        "At vise data",
+        "At modtage brugerinput og koordinere mellem Model og View"
+      ],
       "correct_answer": "D",
       "explanation": "Controlleren i MVC modtager brugerinput, fortolker det, og koordinerer interaktionen mellem Model og View.",
       "hints": [
@@ -707,12 +707,12 @@
       "difficulty": "hard",
       "title": "Hvad står SOLID for?",
       "description": "Hvad er SOLID-principperne i objektorienteret design?",
-      "options": {
-        "A": "Five design principles: Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion",
-        "B": "En type database",
-        "C": "Et programmeringssprog",
-        "D": "En testmetode"
-      },
+      "options": [
+        "Five design principles: Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion",
+        "En type database",
+        "Et programmeringssprog",
+        "En testmetode"
+      ],
       "correct_answer": "A",
       "explanation": "SOLID er fem designprincipper: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation og Dependency Inversion.",
       "hints": [
@@ -732,12 +732,12 @@
       "difficulty": "medium",
       "title": "Hvad er Single Responsibility Principle (SRP)?",
       "description": "Hvad siger SRP?",
-      "options": {
-        "A": "En klasse bør have mange ansvarsområder",
-        "B": "En klasse bør kun have ét ansvar/én grund til at ændre sig",
-        "C": "Der bør kun være én klasse i systemet",
-        "D": "En metode må kun kaldes én gang"
-      },
+      "options": [
+        "En klasse bør have mange ansvarsområder",
+        "En klasse bør kun have ét ansvar/én grund til at ændre sig",
+        "Der bør kun være én klasse i systemet",
+        "En metode må kun kaldes én gang"
+      ],
       "correct_answer": "B",
       "explanation": "SRP siger at en klasse kun bør have ét ansvar - dvs. kun én grund til at ændre sig. Det giver høj cohesion.",
       "hints": [
@@ -757,12 +757,12 @@
       "difficulty": "hard",
       "title": "Hvad er Open/Closed Principle (OCP)?",
       "description": "Hvad siger OCP?",
-      "options": {
-        "A": "Filer skal altid lukkes efter brug",
-        "B": "Al kode skal være open source",
-        "C": "Software-entiteter bør være åbne for udvidelse men lukkede for modifikation",
-        "D": "Klasser må ikke have private metoder"
-      },
+      "options": [
+        "Filer skal altid lukkes efter brug",
+        "Al kode skal være open source",
+        "Software-entiteter bør være åbne for udvidelse men lukkede for modifikation",
+        "Klasser må ikke have private metoder"
+      ],
       "correct_answer": "C",
       "explanation": "OCP siger at software-entiteter (klasser, moduler) bør kunne udvides med ny funktionalitet uden at ændre eksisterende kode.",
       "hints": [
@@ -782,12 +782,12 @@
       "difficulty": "hard",
       "title": "Hvad er Liskov Substitution Principle (LSP)?",
       "description": "Hvad siger LSP?",
-      "options": {
-        "A": "Kun abstrakte klasser må nedarves",
-        "B": "Alle klasser skal arve fra Object",
-        "C": "Interfaces må ikke have metoder",
-        "D": "Subklasser skal kunne erstatte superklasser uden at ændre programmets korrekthed"
-      },
+      "options": [
+        "Kun abstrakte klasser må nedarves",
+        "Alle klasser skal arve fra Object",
+        "Interfaces må ikke have metoder",
+        "Subklasser skal kunne erstatte superklasser uden at ændre programmets korrekthed"
+      ],
       "correct_answer": "D",
       "explanation": "LSP siger at objekter af en subklasse skal kunne bruges overalt hvor superklassens objekter forventes, uden at programmet opfører sig forkert.",
       "hints": [
@@ -807,12 +807,12 @@
       "difficulty": "hard",
       "title": "Hvad er Interface Segregation Principle (ISP)?",
       "description": "Hvad siger ISP?",
-      "options": {
-        "A": "Klienter bør ikke tvinges til at afhænge af interfaces de ikke bruger",
-        "B": "Alle klasser skal implementere ét stort interface",
-        "C": "Interfaces må ikke have metoder",
-        "D": "Der bør kun være ét interface"
-      },
+      "options": [
+        "Klienter bør ikke tvinges til at afhænge af interfaces de ikke bruger",
+        "Alle klasser skal implementere ét stort interface",
+        "Interfaces må ikke have metoder",
+        "Der bør kun være ét interface"
+      ],
       "correct_answer": "A",
       "explanation": "ISP siger at det er bedre at have mange små, specifikke interfaces end ét stort, generelt interface. Klienter skal kun kende de metoder de bruger.",
       "hints": [
@@ -832,12 +832,12 @@
       "difficulty": "hard",
       "title": "Hvad er Dependency Inversion Principle (DIP)?",
       "description": "Hvad siger DIP?",
-      "options": {
-        "A": "Konkrete klasser er vigtigere end interfaces",
-        "B": "Afhæng af abstraktioner, ikke af konkrete implementeringer",
-        "C": "Undgå alt brug af interfaces",
-        "D": "Kun afhæng af library-klasser"
-      },
+      "options": [
+        "Konkrete klasser er vigtigere end interfaces",
+        "Afhæng af abstraktioner, ikke af konkrete implementeringer",
+        "Undgå alt brug af interfaces",
+        "Kun afhæng af library-klasser"
+      ],
       "correct_answer": "B",
       "explanation": "DIP siger at high-level moduler ikke bør afhænge af low-level moduler. Begge bør afhænge af abstraktioner (interfaces).",
       "hints": [
@@ -857,12 +857,12 @@
       "difficulty": "medium",
       "title": "Hvad er Separation of Concerns (SoC)?",
       "description": "Hvad er princippet Separation of Concerns?",
-      "options": {
-        "A": "At separere test fra kode",
-        "B": "At samle al logik i én klasse",
-        "C": "At adskille et system i distinkte sektioner med hver sit ansvarsområde",
-        "D": "At adskille udvikling fra deployment"
-      },
+      "options": [
+        "At separere test fra kode",
+        "At samle al logik i én klasse",
+        "At adskille et system i distinkte sektioner med hver sit ansvarsområde",
+        "At adskille udvikling fra deployment"
+      ],
       "correct_answer": "C",
       "explanation": "SoC er princippet om at opdele et system i distinkte sektioner, hvor hver sektion håndterer et specifikt ansvarsområde/concern.",
       "hints": [
@@ -882,12 +882,12 @@
       "difficulty": "easy",
       "title": "Hvad er DRY-princippet?",
       "description": "Hvad står DRY for og hvad betyder det?",
-      "options": {
-        "A": "Debug Run Yield - fejlfindingsmetode",
-        "B": "Deploy Repeatedly Yesterday - hurtig deployment",
-        "C": "Design Requirements Yearly - årlig kravspecifikation",
-        "D": "Dont Repeat Yourself - undgå duplikering af viden/kode"
-      },
+      "options": [
+        "Debug Run Yield - fejlfindingsmetode",
+        "Deploy Repeatedly Yesterday - hurtig deployment",
+        "Design Requirements Yearly - årlig kravspecifikation",
+        "Dont Repeat Yourself - undgå duplikering af viden/kode"
+      ],
       "correct_answer": "D",
       "explanation": "DRY (Dont Repeat Yourself) siger at enhver form for viden eller logik kun bør have én autoritativ repræsentation i systemet.",
       "hints": [
@@ -907,12 +907,12 @@
       "difficulty": "easy",
       "title": "Hvad er KISS-princippet?",
       "description": "Hvad står KISS for og hvad betyder det?",
-      "options": {
-        "A": "Keep It Simple, Stupid - hold det simpelt",
-        "B": "Know Internal System Structures",
-        "C": "Key Integration System Strategy",
-        "D": "Kernel Interface System Setup"
-      },
+      "options": [
+        "Keep It Simple, Stupid - hold det simpelt",
+        "Know Internal System Structures",
+        "Key Integration System Strategy",
+        "Kernel Interface System Setup"
+      ],
       "correct_answer": "A",
       "explanation": "KISS (Keep It Simple, Stupid) siger at systemer fungerer bedst når de holdes simple. Unødvendig kompleksitet bør undgås.",
       "hints": [
@@ -932,12 +932,12 @@
       "difficulty": "medium",
       "title": "Hvad er YAGNI-princippet?",
       "description": "Hvad står YAGNI for?",
-      "options": {
-        "A": "You Always Get New Ideas",
-        "B": "You Arent Gonna Need It - implementér kun det der er nødvendigt nu",
-        "C": "Your Application Gets New Interfaces",
-        "D": "Yesterday All Gone Now Invalid"
-      },
+      "options": [
+        "You Always Get New Ideas",
+        "You Arent Gonna Need It - implementér kun det der er nødvendigt nu",
+        "Your Application Gets New Interfaces",
+        "Yesterday All Gone Now Invalid"
+      ],
       "correct_answer": "B",
       "explanation": "YAGNI (You Arent Gonna Need It) siger at man ikke bør implementere funktionalitet bare fordi man tror man får brug for det i fremtiden.",
       "hints": [
@@ -957,12 +957,12 @@
       "difficulty": "hard",
       "title": "Hvad er Dependency Injection (DI)?",
       "description": "Hvad er formålet med Dependency Injection?",
-      "options": {
-        "A": "At injicere fejl i koden",
-        "B": "At slette afhængigheder mellem klasser",
-        "C": "At give et objekt sine afhængigheder udefra i stedet for at oprette dem selv",
-        "D": "At oprette databaseforbindelser"
-      },
+      "options": [
+        "At injicere fejl i koden",
+        "At slette afhængigheder mellem klasser",
+        "At give et objekt sine afhængigheder udefra i stedet for at oprette dem selv",
+        "At oprette databaseforbindelser"
+      ],
       "correct_answer": "C",
       "explanation": "Dependency Injection er en teknik hvor et objekts afhængigheder gives udefra (injiceres), i stedet for at objektet selv opretter dem. Det reducerer coupling.",
       "hints": [
@@ -982,12 +982,12 @@
       "difficulty": "medium",
       "title": "Hvad er en monolitisk arkitektur?",
       "description": "Hvad kendetegner en monolitisk arkitektur?",
-      "options": {
-        "A": "Applikationen har ingen database",
-        "B": "Applikationen er opdelt i mange små services",
-        "C": "Der bruges kun én klasse",
-        "D": "Hele applikationen er bygget som én samlet enhed"
-      },
+      "options": [
+        "Applikationen har ingen database",
+        "Applikationen er opdelt i mange små services",
+        "Der bruges kun én klasse",
+        "Hele applikationen er bygget som én samlet enhed"
+      ],
       "correct_answer": "D",
       "explanation": "En monolitisk arkitektur er bygget som én stor, sammenhængende enhed hvor alle komponenter er tæt integreret og deployes samlet.",
       "hints": [
@@ -1007,12 +1007,12 @@
       "difficulty": "medium",
       "title": "Hvad er microservices arkitektur?",
       "description": "Hvad kendetegner microservices arkitektur?",
-      "options": {
-        "A": "Applikationen opdeles i små, uafhængige services der kommunikerer via API",
-        "B": "Hele applikationen er i én kodebase",
-        "C": "Der bruges kun én server",
-        "D": "Alle services deler database"
-      },
+      "options": [
+        "Applikationen opdeles i små, uafhængige services der kommunikerer via API",
+        "Hele applikationen er i én kodebase",
+        "Der bruges kun én server",
+        "Alle services deler database"
+      ],
       "correct_answer": "A",
       "explanation": "Microservices opdeler applikationen i små, autonome services der kan udvikles, deployes og skaleres uafhængigt, typisk med kommunikation via REST API.",
       "hints": [
@@ -1032,12 +1032,12 @@
       "difficulty": "medium",
       "title": "Fordele ved microservices",
       "description": "Hvad er en vigtig fordel ved microservices fremfor monolith?",
-      "options": {
-        "A": "Enklere at forstå og fejlfinde",
-        "B": "Services kan udvikles og deployes uafhængigt",
-        "C": "Kræver mindre infrastruktur",
-        "D": "Ingen netværkskommunikation nødvendig"
-      },
+      "options": [
+        "Enklere at forstå og fejlfinde",
+        "Services kan udvikles og deployes uafhængigt",
+        "Kræver mindre infrastruktur",
+        "Ingen netværkskommunikation nødvendig"
+      ],
       "correct_answer": "B",
       "explanation": "En primær fordel er at individuelle services kan udvikles, testes og deployes uafhængigt, hvilket muliggør hurtigere og mere fleksibel udvikling.",
       "hints": [
@@ -1057,12 +1057,12 @@
       "difficulty": "medium",
       "title": "Ulemper ved microservices",
       "description": "Hvad er en vigtig ulempe ved microservices?",
-      "options": {
-        "A": "De kan kun bruges med Java",
-        "B": "De er altid langsommere end monolither",
-        "C": "Øget kompleksitet i distribution, netværk og fejlfinding",
-        "D": "De kræver kun én server"
-      },
+      "options": [
+        "De kan kun bruges med Java",
+        "De er altid langsommere end monolither",
+        "Øget kompleksitet i distribution, netværk og fejlfinding",
+        "De kræver kun én server"
+      ],
       "correct_answer": "C",
       "explanation": "Microservices introducerer kompleksitet: distribueret systemhåndtering, netværkslatens, datakonsekvens mellem services og mere kompleks fejlfinding.",
       "hints": [
@@ -1082,12 +1082,12 @@
       "difficulty": "easy",
       "title": "Hvad er et API?",
       "description": "Hvad er et API (Application Programming Interface)?",
-      "options": {
-        "A": "En testmetode",
-        "B": "En type database",
-        "C": "Et programmeringssprog",
-        "D": "Et defineret interface for kommunikation mellem softwarekomponenter"
-      },
+      "options": [
+        "En testmetode",
+        "En type database",
+        "Et programmeringssprog",
+        "Et defineret interface for kommunikation mellem softwarekomponenter"
+      ],
       "correct_answer": "D",
       "explanation": "Et API er et veldefineret interface der specificerer hvordan softwarekomponenter kan kommunikere med hinanden - kontrakt mellem udbyder og forbruger.",
       "hints": [
@@ -1107,12 +1107,12 @@
       "difficulty": "medium",
       "title": "Hvad er REST API?",
       "description": "Hvad kendetegner et REST API?",
-      "options": {
-        "A": "Bruger HTTP-metoder til at operere på ressourcer via URL",
-        "B": "Bruger kun XML til kommunikation",
-        "C": "Kræver altid en database",
-        "D": "Er kun til interne systemer"
-      },
+      "options": [
+        "Bruger HTTP-metoder til at operere på ressourcer via URL",
+        "Bruger kun XML til kommunikation",
+        "Kræver altid en database",
+        "Er kun til interne systemer"
+      ],
       "correct_answer": "A",
       "explanation": "REST (Representational State Transfer) API bruger standard HTTP-metoder (GET, POST, PUT, DELETE) til at operere på ressourcer identificeret via URLs.",
       "hints": [

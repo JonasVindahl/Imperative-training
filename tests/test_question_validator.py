@@ -7,7 +7,6 @@ from pathlib import Path
 
 from services.question_validator import (
     LEVEL_ERROR,
-    LEVEL_WARNING,
     filter_errors,
     lint_question,
     validate_question,
@@ -49,16 +48,14 @@ class TestCommonFields:
 
 
 class TestMultipleChoice:
-    def test_dict_options_pass_validation(self):
-        # The dict variant is structurally valid (just non-canonical).
+    def test_dict_options_are_now_an_error(self):
+        # Post-migration the dict variant is rejected outright.
         q = _mc(options={'A': 'one', 'B': 'two'}, correct_answer='B')
-        assert filter_errors(validate_question(q)) == []
-
-    def test_dict_options_emit_lint_warning(self):
-        q = _mc(options={'A': 'one', 'B': 'two'}, correct_answer='B')
-        warnings = lint_question(q)
-        assert any(w.code == 'non_canonical_options_dict' for w in warnings)
-        assert all(w.level == LEVEL_WARNING for w in warnings)
+        codes = {i.code for i in validate_question(q)}
+        assert 'non_canonical_options_dict' in codes
+        # The lint hook is retained but no longer flags this shape (it's a
+        # structural error now).
+        assert lint_question(q) == []
 
     def test_correct_answer_out_of_range_is_error(self):
         q = _mc(options=['only'], correct_answer='B')
@@ -109,18 +106,17 @@ class TestFillBlanks:
         }
         assert any(i.code == 'placeholder_mismatch' for i in validate_question(q))
 
-    def test_legacy_nested_shape_warns(self):
+    def test_legacy_nested_shape_is_now_an_error(self):
         q = {
             'id': 'fb3', 'type': 'fill_blanks', 'title': 'T', 'description': 'D',
             'questions': [
                 {'id': 1, 'text': 'foo', 'blanks': [{'correct': 'a'}]},
             ],
         }
-        # Structurally valid …
-        assert filter_errors(validate_question(q)) == []
-        # … but flagged for migration.
-        warnings = lint_question(q)
-        assert any(w.code == 'non_canonical_fill_blanks_nested' for w in warnings)
+        codes = {i.code for i in validate_question(q)}
+        assert 'non_canonical_fill_blanks_nested' in codes
+        # Lint hook retained but no longer flags this shape.
+        assert lint_question(q) == []
 
     def test_neither_shape_is_error(self):
         q = {'id': 'fb4', 'type': 'fill_blanks', 'title': 'T', 'description': 'D'}

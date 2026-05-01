@@ -115,27 +115,24 @@ def _validate_multiple_choice(q: dict, qid: str | None) -> list[Issue]:
     issues: list[Issue] = []
     options = q.get('options')
     if isinstance(options, dict):
-        if not options or not all(isinstance(v, str) for v in options.values()):
-            issues.append(_err('bad_options', 'multiple_choice options dict must be non-empty with string values', qid))
-        # Canonical-shape lint is emitted by lint_question, not here.
-    elif isinstance(options, list):
-        if len(options) < 2:
-            issues.append(_err('bad_options', f'multiple_choice expects ≥2 options, got {len(options)}', qid))
-        if not all(isinstance(o, str) for o in options):
-            issues.append(_err('bad_options', 'multiple_choice options must all be strings', qid))
-    else:
-        issues.append(_err('bad_options', 'multiple_choice missing options (list[str] or dict[str,str])', qid))
+        # Pre-2026-04-28 the loader normalised dict→list at runtime. The data
+        # has since been migrated; reject the dict shape outright.
+        return [_err('non_canonical_options_dict',
+                     'multiple_choice options must be list[str], not dict; run scripts/migrate_questions.py', qid)]
+    if not isinstance(options, list):
+        return [_err('bad_options', 'multiple_choice missing options (list[str])', qid)]
+    if len(options) < 2:
+        issues.append(_err('bad_options', f'multiple_choice expects ≥2 options, got {len(options)}', qid))
+    if not all(isinstance(o, str) for o in options):
+        issues.append(_err('bad_options', 'multiple_choice options must all be strings', qid))
 
     correct = q.get('correct_answer')
     if not isinstance(correct, str) or not _LETTER_RE.match(correct.strip().upper()):
         issues.append(_err('bad_correct_answer', 'multiple_choice correct_answer must be a single A-Z letter', qid))
-    elif isinstance(options, list):
+    else:
         idx = ord(correct.strip().upper()) - ord('A')
         if not (0 <= idx < len(options)):
             issues.append(_err('correct_answer_out_of_range', f'correct_answer {correct!r} indexes outside options[0..{len(options) - 1}]', qid))
-    elif isinstance(options, dict):
-        if correct.strip().upper() not in options:
-            issues.append(_err('correct_answer_out_of_range', f'correct_answer {correct!r} is not a key of options dict', qid))
     return issues
 
 
@@ -172,42 +169,33 @@ def _validate_multiple_select(q: dict, qid: str | None) -> list[Issue]:
 def _validate_fill_blanks(q: dict, qid: str | None) -> list[Issue]:
     issues: list[Issue] = []
     blanks = q.get('blanks')
-    nested = q.get('questions')
     description = q.get('description') or ''
     placeholders = set(_BLANK_PLACEHOLDER_RE.findall(description))
 
-    if isinstance(blanks, dict) and not nested:
-        if not blanks:
-            issues.append(_err('bad_blanks', 'fill_blanks dict shape requires non-empty blanks', qid))
-        for blank_id, blank_data in blanks.items():
-            if not isinstance(blank_data, dict):
-                issues.append(_err('bad_blank_entry', f'blank {blank_id!r} must be an object', qid))
-                continue
-            if 'correct' not in blank_data or not isinstance(blank_data.get('correct'), str):
-                issues.append(_err('bad_blank_entry', f'blank {blank_id!r} missing string field correct', qid))
-            options = blank_data.get('options')
-            if options is not None and (not isinstance(options, list) or not all(isinstance(o, str) for o in options)):
-                issues.append(_err('bad_blank_entry', f'blank {blank_id!r} options must be list[str]', qid))
-        declared = set(blanks.keys())
-        if placeholders and not placeholders.issubset(declared):
-            missing = sorted(placeholders - declared)
-            issues.append(_err('placeholder_mismatch', f'description references blanks not declared: {missing}', qid))
-    elif isinstance(nested, list):
-        if not nested:
-            issues.append(_err('bad_questions', 'fill_blanks legacy shape requires non-empty questions[]', qid))
-        for sub in nested:
-            if not isinstance(sub, dict):
-                issues.append(_err('bad_questions', 'fill_blanks legacy questions[] entries must be objects', qid))
-                continue
-            sub_blanks = sub.get('blanks')
-            if not isinstance(sub_blanks, list) or not sub_blanks:
-                issues.append(_err('bad_questions', 'fill_blanks legacy questions[].blanks must be a non-empty list', qid))
-                continue
-            for idx, blank in enumerate(sub_blanks):
-                if not isinstance(blank, dict) or not isinstance(blank.get('correct'), str):
-                    issues.append(_err('bad_blank_entry', f'questions[].blanks[{idx}] missing string correct', qid))
-    else:
-        issues.append(_err('bad_fill_blanks', 'fill_blanks must define either blanks (dict) or questions[]', qid))
+    if 'questions' in q:
+        # Pre-2026-04-28 the grader handled a legacy nested ``questions[].blanks[]``
+        # shape. Migration flattened those into the canonical dict shape; the
+        # legacy field is now an error.
+        return [_err('non_canonical_fill_blanks_nested',
+                     "fill_blanks must use the dict shape with {blankN} placeholders, not legacy 'questions[]'; "
+                     "run scripts/migrate_questions.py", qid)]
+    if not isinstance(blanks, dict):
+        return [_err('bad_fill_blanks', 'fill_blanks requires a non-empty blanks dict', qid)]
+    if not blanks:
+        issues.append(_err('bad_blanks', 'fill_blanks requires non-empty blanks dict', qid))
+    for blank_id, blank_data in blanks.items():
+        if not isinstance(blank_data, dict):
+            issues.append(_err('bad_blank_entry', f'blank {blank_id!r} must be an object', qid))
+            continue
+        if 'correct' not in blank_data or not isinstance(blank_data.get('correct'), str):
+            issues.append(_err('bad_blank_entry', f'blank {blank_id!r} missing string field correct', qid))
+        options = blank_data.get('options')
+        if options is not None and (not isinstance(options, list) or not all(isinstance(o, str) for o in options)):
+            issues.append(_err('bad_blank_entry', f'blank {blank_id!r} options must be list[str]', qid))
+    declared = set(blanks.keys())
+    if placeholders and not placeholders.issubset(declared):
+        missing = sorted(placeholders - declared)
+        issues.append(_err('placeholder_mismatch', f'description references blanks not declared: {missing}', qid))
     return issues
 
 
@@ -319,25 +307,15 @@ def validate_question(question: dict) -> list[Issue]:
 
 
 def lint_question(question: dict) -> list[Issue]:
-    """Project-style lint. Every returned issue is a WARNING.
+    """Project-style lint hook. Currently a no-op — the previously-warned
+    non-canonical shapes (``multiple_choice`` options dict, ``fill_blanks``
+    legacy nested) are now structural ERRORs in :func:`validate_question`.
 
-    These check non-canonical shapes whose runtime adapters we want to
-    eventually delete (see ``IMPROVEMENT_TASKS.md`` → "Unify question-JSON
-    schemas"). They're intentionally separate from :func:`validate_question`
-    so the loader can keep working while we drive these to zero.
+    This function is retained as a stable extension point for future
+    style checks (e.g. id-namespacing per exam, language consistency).
     """
-    if not isinstance(question, dict):
-        return []
-    qid = question.get('id') if isinstance(question.get('id'), str) else None
-    qtype = question.get('type')
-    issues: list[Issue] = []
-    if qtype == 'multiple_choice' and isinstance(question.get('options'), dict):
-        issues.append(_warn('non_canonical_options_dict',
-                            'multiple_choice options should be list[str]; dict variant requires runtime adaptation', qid))
-    if qtype == 'fill_blanks' and isinstance(question.get('questions'), list):
-        issues.append(_warn('non_canonical_fill_blanks_nested',
-                            'fill_blanks should use the dict-with-placeholders shape; legacy nested questions[] requires runtime adaptation', qid))
-    return issues
+    del question
+    return []
 
 
 def validate_question_file(file_path: str) -> list[Issue]:
