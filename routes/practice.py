@@ -71,20 +71,32 @@ def start_practice():
         elif mode == 'category':
             if not category:
                 flash('Please select a category before starting.', 'error')
-                question_ids = session.get('practice_questions', [])
-                current_index = session.get('current_question_index', 0)
-                has_active_session = bool(question_ids) and current_index < len(question_ids)
-                remaining_questions = max(len(question_ids) - current_index, 0)
-                return render_template(
-                    'start_practice.html',
-                    has_active_session=has_active_session,
-                    remaining_questions=remaining_questions,
-                    categories=categories
-                )
+                return _render_start_practice(exam_id, category_ids, categories)
             # Specific category practice
             questions = question_loader.get_random_questions(
                 category, requested_count, exam_id=exam_id
             )
+        elif mode == 'mistakes':
+            adaptive_service = AdaptiveLearningService(
+                current_user.id, categories=category_ids, exam_id=exam_id
+            )
+            try:
+                lookback_days = int(request.form.get('lookback_days', 30))
+            except (TypeError, ValueError):
+                lookback_days = 30
+            lookback_days = max(1, min(lookback_days, 365))
+            questions = adaptive_service.generate_mistakes_session(
+                all_questions,
+                session_size=requested_count,
+                lookback_days=lookback_days,
+            )
+            if not questions:
+                flash(
+                    'No outstanding mistakes from the last '
+                    f'{lookback_days} days — nothing to drill yet.',
+                    'info',
+                )
+                return _render_start_practice(exam_id, category_ids, categories)
         else:
             # Random mixed practice
             import random
@@ -102,7 +114,12 @@ def start_practice():
 
         return redirect(url_for('practice.question'))
 
-    # Show practice mode selection
+    return _render_start_practice(exam_id, category_ids, categories)
+
+
+def _render_start_practice(exam_id: str, category_ids: list[str], categories: list[dict]):
+    """Shared rendering for the start-practice page so the GET path and the
+    POST validation/empty-state paths return identical context."""
     question_ids = session.get('practice_questions', [])
     current_index = session.get('current_question_index', 0)
     has_active_session = bool(question_ids) and current_index < len(question_ids)
@@ -115,11 +132,19 @@ def start_practice():
     for cat in categories:
         cat['question_count'] = len(all_questions.get(cat['id'], []))
 
+    # Surface the mistakes-mode count up-front so the user can see whether
+    # there's anything to drill before submitting.
+    adaptive_service = AdaptiveLearningService(
+        current_user.id, categories=category_ids, exam_id=exam_id
+    )
+    mistake_count = adaptive_service.get_mistake_count(lookback_days=30)
+
     return render_template(
         'start_practice.html',
         has_active_session=has_active_session,
         remaining_questions=remaining_questions,
-        categories=categories
+        categories=categories,
+        mistake_count=mistake_count,
     )
 
 

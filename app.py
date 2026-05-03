@@ -106,10 +106,13 @@ def inject_exam_context():
     if current_user.is_authenticated:
         active_exam = exam_service.get_active_exam()
         all_exams = exam_service.get_all_exams()
+        active_cct = exam_service.get_cct_for_exam(active_exam['id']) if active_exam else None
         return {
             'active_exam': active_exam,
+            'active_cct': active_cct,
             'all_exams': all_exams,
-            'exam_service': exam_service
+            'cct_groups': exam_service.group_exams_by_cct(),
+            'exam_service': exam_service,
         }
     return {}
 

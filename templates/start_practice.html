@@ -35,6 +35,41 @@
             </div>
         </form>
 
+        <form method="POST" action="{{ url_for('practice.start_practice') }}">
+            <div class="mode-card mistakes-card{% if not mistake_count %} mode-card--disabled{% endif %}">
+                <span class="mode-card__count" aria-label="{{ mistake_count }} mistakes from the last 30 days">
+                    {{ mistake_count or 0 }}<small>{{ '' if mistake_count == 1 else '' }}</small>
+                </span>
+                <h2>Drill Mistakes</h2>
+                <p>
+                    {% if mistake_count == 0 %}
+                        Ingen åbne fejl endnu. Når du svarer forkert, ender det her.
+                    {% elif mistake_count == 1 %}
+                        Ét spørgsmål du sidst svarede forkert på. Tag det igen.
+                    {% else %}
+                        Spørgsmål du sidst svarede forkert på, fra de seneste 30 dage.
+                    {% endif %}
+                </p>
+                <label class="form-label">Lookback window</label>
+                <select name="lookback_days" class="form-control"{% if not mistake_count %} disabled{% endif %}>
+                    <option value="7">Last 7 days</option>
+                    <option value="30" selected>Last 30 days</option>
+                    <option value="90">Last 90 days</option>
+                    <option value="365">Last year</option>
+                </select>
+                <label class="form-label">Questions per session</label>
+                <select name="question_count" class="form-control"{% if not mistake_count %} disabled{% endif %}>
+                    <option value="5">5 questions</option>
+                    <option value="10" selected>10 questions</option>
+                    <option value="15">15 questions</option>
+                </select>
+                <input type="hidden" name="mode" value="mistakes">
+                <button type="submit" class="btn-secondary btn-large"{% if not mistake_count %} disabled aria-disabled="true"{% endif %}>
+                    {% if mistake_count %}Drill {{ mistake_count }} mistake{{ '' if mistake_count == 1 else 's' }}{% else %}No mistakes to drill{% endif %}
+                </button>
+            </div>
+        </form>
+
         <form method="POST" action="{{ url_for('practice.start_practice') }}" class="practice-form">
             <div class="mode-card">
                 <h2>Category Practice</h2>

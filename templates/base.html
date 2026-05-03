@@ -20,8 +20,11 @@
     <nav class="navbar" aria-label="Primary">
         <div class="container">
             <div class="nav-brand">
-                <a href="{{ url_for('progress.dashboard') }}" aria-label="Go to dashboard">
-                    <span aria-hidden="true">{{ active_exam.icon }}</span> {{ active_exam.name }}
+                <a href="{{ url_for('progress.dashboard') }}" class="nav-brand__link" aria-label="Go to dashboard">
+                    {% if active_cct %}<span class="nav-brand__cct">{{ active_cct.name }}</span>{% endif %}
+                    <span class="nav-brand__exam">
+                        <span aria-hidden="true">{{ active_exam.icon }}</span> {{ active_exam.name }}
+                    </span>
                 </a>
                 <div class="exam-switcher">
                     <button class="exam-switcher-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Switch exam">
@@ -30,21 +33,34 @@
                         </svg>
                     </button>
                     <div class="exam-dropdown" role="menu">
-                        {% for exam in all_exams %}
-                        <form method="POST" action="{{ url_for('exam.switch_exam') }}">
-                            <input type="hidden" name="exam_id" value="{{ exam.id }}">
-                            <button type="submit" class="exam-dropdown-item {% if exam.id == active_exam.id %}active{% endif %}" role="menuitem">
-                                <span class="exam-dropdown-icon" aria-hidden="true">{{ exam.icon }}</span>
-                                <span class="exam-dropdown-name">{{ exam.name }}</span>
-                                {% if exam.id == active_exam.id %}
-                                <span class="exam-dropdown-check" aria-label="Current exam">
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                        <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
+                        {% for group in cct_groups %}
+                            {% set has_exams = group.exams | length > 0 %}
+                            <div class="exam-dropdown-group{% if not has_exams %} is-empty{% endif %}">
+                                <div class="exam-dropdown-kicker">
+                                    <span class="exam-dropdown-kicker__name">{{ group.name }}</span>
+                                    {% if group.tagline %}<span class="exam-dropdown-kicker__tagline">{{ group.tagline }}</span>{% endif %}
+                                </div>
+                                {% if has_exams %}
+                                    {% for exam in group.exams %}
+                                    <form method="POST" action="{{ url_for('exam.switch_exam') }}">
+                                        <input type="hidden" name="exam_id" value="{{ exam.id }}">
+                                        <button type="submit" class="exam-dropdown-item {% if exam.id == active_exam.id %}active{% endif %}" role="menuitem">
+                                            <span class="exam-dropdown-icon" aria-hidden="true">{{ exam.icon }}</span>
+                                            <span class="exam-dropdown-name">{{ exam.name }}</span>
+                                            {% if exam.id == active_exam.id %}
+                                            <span class="exam-dropdown-check" aria-label="Current exam">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                    <path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            {% endif %}
+                                        </button>
+                                    </form>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="exam-dropdown-empty">No exams yet</div>
                                 {% endif %}
-                            </button>
-                        </form>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>

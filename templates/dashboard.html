@@ -7,7 +7,13 @@
 
     <header class="dashboard-header">
         <div class="dashboard-meta">
-            <span class="kicker">{{ active_exam.name }}</span>
+            <span class="kicker">
+                {%- if active_cct -%}
+                    {{ active_cct.name }} · {{ active_exam.name }}
+                {%- else -%}
+                    {{ active_exam.name }}
+                {%- endif -%}
+            </span>
             <h1>God morgen, {{ user.name }}.</h1>
             <p class="dashboard-subhead">
                 {% if progress.total_attempted == 0 %}
@@ -42,6 +48,39 @@
             </div>
         </div>
     </section>
+
+    {% if recommended_next %}
+    <section class="recommended-next">
+        <h2>Anbefalet næste</h2>
+        <div class="recommended-grid">
+            {% for rec in recommended_next %}
+            <form method="POST" action="{{ url_for('practice.start_practice') }}" class="recommended-form">
+                <input type="hidden" name="mode" value="category">
+                <input type="hidden" name="category" value="{{ rec.category }}">
+                <input type="hidden" name="question_count" value="10">
+                <button type="submit" class="recommended-card recommended-card--{{ rec.reason | replace('_', '-') }}">
+                    <span class="recommended-card__rank" aria-hidden="true">{{ '%02d' % loop.index }}</span>
+                    <span class="recommended-card__body">
+                        <span class="recommended-card__name">{{ rec.category_name }}</span>
+                        <span class="recommended-card__why">
+                            {% if rec.reason == 'never_practiced' %}
+                                Ikke besvaret endnu — kom i gang.
+                            {% elif rec.reason == 'low_accuracy' %}
+                                <strong>{{ rec.accuracy }}%</strong> korrekt over {{ rec.attempted }} forsøg{% if rec.days_label %} · sidst øvet {{ rec.days_label }}{% endif %}.
+                            {% elif rec.reason == 'getting_rusty' %}
+                                {{ rec.accuracy }}% korrekt — sidst øvet {{ rec.days_label }}. Tag den lige igen.
+                            {% else %}
+                                {{ rec.accuracy }}% korrekt{% if rec.days_label %} · sidst øvet {{ rec.days_label }}{% endif %}. Et par mere.
+                            {% endif %}
+                        </span>
+                    </span>
+                    <span class="recommended-card__cta" aria-hidden="true">→</span>
+                </button>
+            </form>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
 
     <section class="categories-grid">
         <h2>Categories</h2>

@@ -22,6 +22,7 @@ def _get_exam_context():
 def dashboard():
     """Main dashboard showing user progress"""
     exam_id, category_ids = _get_exam_context()
+    exam_service = current_app.config['EXAM_SERVICE']
 
     adaptive_service = AdaptiveLearningService(
         current_user.id, categories=category_ids, exam_id=exam_id
@@ -36,11 +37,32 @@ def dashboard():
     # Calculate streak
     streak = calculate_streak(current_user.id, exam_id)
 
+    # Recommended-next: 1-3 actionable recommendations the user can act on
+    # with one click. Resolve display names + a relative-time string here so
+    # the template stays presentational.
+    recommended_next = adaptive_service.get_recommended_next(limit=3)
+    for rec in recommended_next:
+        rec['category_name'] = exam_service.get_category_name(exam_id, rec['category'])
+        rec['days_label'] = _format_days_since(rec.get('days_since'))
+
     return render_template('dashboard.html',
                          progress=progress_summary,
                          recent_attempts=recent_attempts,
                          streak=streak,
+                         recommended_next=recommended_next,
                          user=current_user)
+
+
+def _format_days_since(days: int | None) -> str | None:
+    """Compact, Danish-friendly relative-time label for the dashboard cards.
+    Returns None when ``days`` is None (i.e. category never practiced)."""
+    if days is None:
+        return None
+    if days == 0:
+        return 'i dag'
+    if days == 1:
+        return 'i går'
+    return f'for {days} dage siden'
 
 
 @progress_bp.route('/stats')

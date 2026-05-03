@@ -251,18 +251,41 @@ p code, li code {
     min-width: 0;
 }
 
-.nav-brand > a {
-    font-family: var(--font-display);
-    font-size: var(--t-lg);
-    font-weight: 500;
+/* Brand stacked into two lines: a tiny CCT kicker on top, the exam name
+   underneath. Compact enough to fit beside nav links, distinctive enough to
+   anchor the page. */
+.nav-brand__link {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.05;
     color: var(--ink);
-    letter-spacing: -0.015em;
+    text-decoration: none;
+    min-width: 0;
+}
+.nav-brand__link:hover { color: var(--ink-2); text-decoration: none; }
+
+.nav-brand__cct {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.nav-brand__exam {
+    font-family: var(--font-display);
+    font-size: var(--t-base);
+    font-weight: 500;
+    letter-spacing: -0.01em;
     font-variation-settings: "opsz" 32;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 26ch;
 }
+
+/* Legacy direct-link selector kept harmless; the above takes precedence. */
 .nav-brand > a:hover { color: var(--ink-2); text-decoration: none; }
 
 /* Exam switcher */
@@ -290,12 +313,14 @@ p code, li code {
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
-    min-width: 280px;
+    min-width: 320px;
+    max-height: min(70vh, 540px);
+    overflow-y: auto;
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: var(--r-2);
     box-shadow: var(--shadow-3);
-    padding: 6px;
+    padding: 4px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4px);
@@ -304,6 +329,45 @@ p code, li code {
 .exam-switcher.open .exam-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 
 .exam-dropdown form { margin: 0; }
+
+/* CCT group within the dropdown — kicker label, then the exams under it.
+   Empty groups (CCTs with no exams yet) render as muted "Coming soon"
+   placeholders so the page communicates the full curriculum shape. */
+.exam-dropdown-group { padding: 6px 4px; }
+.exam-dropdown-group + .exam-dropdown-group { border-top: 1px solid var(--rule); }
+.exam-dropdown-group.is-empty { opacity: 0.55; }
+
+.exam-dropdown-kicker {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem 0.35rem;
+    font-family: var(--font-mono);
+}
+.exam-dropdown-kicker__name {
+    font-size: var(--t-xs);
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.exam-dropdown-kicker__tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 36;
+    font-size: var(--t-xs);
+    color: var(--muted);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.exam-dropdown-empty {
+    padding: 0.4rem 0.6rem 0.6rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--t-xs);
+    color: var(--muted);
+}
 
 .exam-dropdown-item {
     display: flex;
@@ -1657,6 +1721,123 @@ input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="
     padding: var(--s-4) 0;
 }
 
+/* Recommended-next — the dashboard's active study coach. Each card is a
+   <button> wrapped in a form so a single click drills the category. The rank
+   numeral on the left is a chapter-mark in Fraunces; the right side is a
+   ranked CTA that says: "go". */
+.recommended-next > h2 {
+    font-family: var(--font-mono);
+    font-size: var(--t-xs);
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: var(--s-3);
+}
+
+.recommended-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-2);
+}
+
+.recommended-form { display: contents; }
+
+.recommended-card {
+    /* Reset button defaults so it can act as a card link */
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--surface);
+    color: var(--ink);
+    text-align: left;
+    border: 1px solid var(--rule);
+    border-radius: var(--r-2);
+    padding: var(--s-3) var(--s-4);
+    width: 100%;
+    cursor: pointer;
+    font: inherit;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: var(--s-4);
+    transition: border-color var(--d-fast) var(--ease),
+                background var(--d-fast) var(--ease),
+                transform var(--d-fast) var(--ease),
+                box-shadow var(--d-fast) var(--ease);
+}
+.recommended-card:hover {
+    border-color: var(--ink);
+    background: var(--surface-alt);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-2);
+}
+.recommended-card:active { transform: translateY(0); }
+
+.recommended-card__rank {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 360;
+    font-size: 2.25rem;
+    line-height: 0.9;
+    color: var(--muted);
+    letter-spacing: -0.04em;
+    font-feature-settings: "tnum";
+    width: 2.4ch;
+    text-align: right;
+}
+
+.recommended-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+.recommended-card__name {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 60, "SOFT" 40, "wght" 480;
+    font-size: var(--t-lg);
+    line-height: 1.15;
+    color: var(--ink);
+}
+.recommended-card__why {
+    color: var(--muted);
+    font-size: var(--t-sm);
+    line-height: 1.4;
+}
+.recommended-card__why strong {
+    font-family: var(--font-mono);
+    color: var(--ink);
+    font-weight: 600;
+    font-feature-settings: "tnum";
+}
+
+.recommended-card__cta {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    transition: color var(--d-fast) var(--ease), transform var(--d-fast) var(--ease);
+}
+.recommended-card:hover .recommended-card__cta {
+    color: var(--ink);
+    transform: translateX(3px);
+}
+
+/* Reason-coded left rule: a thin colored hairline tells the eye, before the
+   user reads anything, what kind of nudge this is. */
+.recommended-card--low-accuracy   { box-shadow: inset 4px 0 0 var(--bad); }
+.recommended-card--getting-rusty  { box-shadow: inset 4px 0 0 var(--warn); }
+.recommended-card--never-practiced{ box-shadow: inset 4px 0 0 var(--accent); }
+.recommended-card--keep-going     { box-shadow: inset 4px 0 0 var(--good); }
+.recommended-card:hover.recommended-card--low-accuracy   { box-shadow: inset 4px 0 0 var(--bad),   var(--shadow-2); }
+.recommended-card:hover.recommended-card--getting-rusty  { box-shadow: inset 4px 0 0 var(--warn),  var(--shadow-2); }
+.recommended-card:hover.recommended-card--never-practiced{ box-shadow: inset 4px 0 0 var(--accent),var(--shadow-2); }
+.recommended-card:hover.recommended-card--keep-going     { box-shadow: inset 4px 0 0 var(--good),  var(--shadow-2); }
+
+@media (max-width: 540px) {
+    .recommended-card { grid-template-columns: auto 1fr; column-gap: var(--s-3); padding: var(--s-3); }
+    .recommended-card__cta { display: none; }
+    .recommended-card__rank { font-size: 1.75rem; }
+}
+
 /* Make category cards behave as links (entire card hits) */
 a.category-card { color: inherit; display: block; text-decoration: none; }
 a.category-card:hover { text-decoration: none; }
@@ -1890,6 +2071,34 @@ a.category-card:hover { text-decoration: none; }
    stretch the card to fill the grid cell so the row of cards line up. */
 .practice-modes > form { display: flex; }
 .practice-modes > form > .mode-card { flex: 1; }
+
+/* "Drill mistakes" card — hero count up top, like the dashboard's accuracy
+   chapter-mark. Empty state disables the controls but keeps the same shape so
+   the page doesn't jump when mistakes land. */
+.mistakes-card {
+    position: relative;
+    border-color: var(--rule-strong);
+}
+.mistakes-card .mode-card__count {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 360;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    font-feature-settings: "tnum";
+    align-self: flex-start;
+}
+.mode-card--disabled {
+    opacity: 0.7;
+    background: var(--surface-alt);
+}
+.mode-card--disabled .mode-card__count { color: var(--muted-2); }
+.mode-card--disabled .form-control[disabled] {
+    background: var(--surface-sunk);
+    color: var(--muted);
+    cursor: not-allowed;
+}
 
 /* -----------------------------------------------------------------------------
    18. Session complete

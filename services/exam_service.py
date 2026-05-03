@@ -32,6 +32,72 @@ class ExamService:
                 return exam
         return None
 
+    # -------------------------------------------------------------------------
+    # CCTs (course-level grouping above exams). The ``ccts`` block in
+    # ``exams.json`` declares the universe of valid CCT ids; each exam carries
+    # an optional ``cct`` field pointing to one of them. Exams without a CCT
+    # show up in an "unassigned" group rather than disappearing — this lets us
+    # add the dimension without a migration.
+    # -------------------------------------------------------------------------
+
+    def get_all_ccts(self) -> list[dict]:
+        """Return the declared CCT universe (in order). Empty if exams.json
+        doesn't declare a ``ccts`` block, in which case the rest of the CCT
+        API gracefully degrades to a single un-grouped bucket."""
+        data = self._load_exams()
+        return data.get('ccts', [])
+
+    def get_cct(self, cct_id: str) -> dict | None:
+        for cct in self.get_all_ccts():
+            if cct['id'] == cct_id:
+                return cct
+        return None
+
+    def get_cct_for_exam(self, exam_id: str) -> dict | None:
+        """Resolve the CCT object for an exam, or None if the exam doesn't
+        declare one (or declares an unknown id)."""
+        exam = self.get_exam(exam_id)
+        if not exam:
+            return None
+        cct_id = exam.get('cct')
+        if not cct_id:
+            return None
+        return self.get_cct(cct_id)
+
+    def group_exams_by_cct(self) -> list[dict]:
+        """Return CCTs in declaration order, each with their exams attached.
+        CCTs that have no exams yet are still returned (with ``exams: []``)
+        so the UI can render "Coming soon" placeholders for the future
+        slots; exams without a recognised ``cct`` value end up in a final
+        ``{id: None, name: 'Other', exams: [...]}`` bucket."""
+        ccts = list(self.get_all_ccts())
+        groups: dict[str | None, list[dict]] = {cct['id']: [] for cct in ccts}
+        groups[None] = []
+
+        for exam in self.get_all_exams():
+            cct_id = exam.get('cct')
+            if cct_id in groups:
+                groups[cct_id].append(exam)
+            else:
+                groups[None].append(exam)
+
+        result = []
+        for cct in ccts:
+            result.append({
+                'id': cct['id'],
+                'name': cct.get('name', cct['id']),
+                'tagline': cct.get('tagline', ''),
+                'exams': groups.get(cct['id'], []),
+            })
+        if groups.get(None):
+            result.append({
+                'id': None,
+                'name': 'Other',
+                'tagline': '',
+                'exams': groups[None],
+            })
+        return result
+
     def get_default_exam_id(self) -> str:
         """Get the default exam ID from config"""
         data = self._load_exams()

@@ -1,7 +1,16 @@
 {
+  "ccts": [
+    { "id": "cct1", "name": "CCT 1", "tagline": "Imperativ programmering" },
+    { "id": "cct2", "name": "CCT 2", "tagline": "Datalogiske grundbegreber" },
+    { "id": "cct3", "name": "CCT 3", "tagline": "Coming soon" },
+    { "id": "cct4", "name": "CCT 4", "tagline": "Coming soon" },
+    { "id": "cct5", "name": "CCT 5", "tagline": "Coming soon" },
+    { "id": "cct6", "name": "CCT 6", "tagline": "Coming soon" }
+  ],
   "exams": [
     {
       "id": "c_programming",
+      "cct": "cct1",
       "name": "C Programming",
       "short_name": "C Prog",
       "description": "Imperativ programmering i C - grundlæggende begreber, pointers, memory management og mere.",
@@ -52,6 +61,7 @@
     },
     {
       "id": "diskrete_strukturer",
+      "cct": "cct2",
       "name": "Diskrete Strukturer",
       "short_name": "Diskret",
       "description": "Diskrete strukturer - mængder, relationer, talteori, induktion, rekursion og kombinatorik.",
@@ -92,6 +102,7 @@
     },
     {
       "id": "oop_java",
+      "cct": "cct2",
       "name": "OO Analyse, Design & Implementering",
       "short_name": "OOP Java",
       "description": "Objektorienteret analyse, design og implementering i Java - UML, klasser, arv, polymorfi, tråde og test.",
@@ -122,6 +133,7 @@
     },
     {
       "id": "agil_sysudv",
+      "cct": "cct2",
       "name": "Agil Systemudvikling",
       "short_name": "Agil",
       "description": "Agil systemudvikling - SCRUM, kravspecifikation, UML, analyse, design, modularisering og testning.",

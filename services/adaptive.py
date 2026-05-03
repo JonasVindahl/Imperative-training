@@ -1,6 +1,9 @@
 import random
+from datetime import datetime, timedelta
 
-from models import Progress, db
+from sqlalchemy import func
+
+from models import Attempt, Progress, db
 
 
 class AdaptiveLearningService:
@@ -112,6 +115,201 @@ class AdaptiveLearningService:
         random.shuffle(session_questions)
 
         return session_questions[:session_size]
+
+    def get_mistake_question_ids(self, lookback_days: int = 30) -> list[str]:
+        """Return question ids the user got wrong in the last ``lookback_days``,
+        deduped to one entry per question (the most recent attempt). Sorted
+        by recency: most recent mistake first.
+
+        A question is considered "still wrong" only if the user's most recent
+        attempt was incorrect — re-answering it correctly retires it from the
+        drill pool. This matches how a student would think about it ("I keep
+        getting these wrong").
+        """
+        cutoff = datetime.utcnow() - timedelta(days=lookback_days)
+
+        # One row per (user, exam_id?, question_id): the most recent attempt.
+        latest_q = (
+            db.session.query(
+                Attempt.question_id.label('question_id'),
+                func.max(Attempt.id).label('latest_id'),
+            )
+            .filter(Attempt.user_id == self.user_id)
+            .filter(Attempt.timestamp >= cutoff)
+        )
+        if self.exam_id:
+            latest_q = latest_q.filter(Attempt.exam_id == self.exam_id)
+        latest_q = latest_q.group_by(Attempt.question_id).subquery()
+
+        rows = (
+            db.session.query(Attempt.question_id, Attempt.timestamp)
+            .join(latest_q, Attempt.id == latest_q.c.latest_id)
+            .filter(Attempt.correct.is_(False))
+            .order_by(Attempt.timestamp.desc())
+            .all()
+        )
+        return [qid for qid, _ts in rows]
+
+    def get_mistake_count(self, lookback_days: int = 30) -> int:
+        """Cheap counter for surfacing in the UI ("12 mistakes from last 30 days")."""
+        return len(self.get_mistake_question_ids(lookback_days=lookback_days))
+
+    def generate_mistakes_session(
+        self,
+        questions_pool: dict,
+        session_size: int = 10,
+        lookback_days: int = 30,
+    ) -> list[dict]:
+        """Build a session entirely from questions the user has gotten wrong
+        in the last ``lookback_days`` and that are still in the active exam's
+        question pool. Most recent mistakes first; topped up from older ones
+        if needed. Returns at most ``session_size`` questions, possibly fewer
+        if the user simply doesn't have that many outstanding mistakes."""
+        # Flatten the pool to one lookup table; only keep ids from categories
+        # the active exam currently exposes (so a category that was retired
+        # from exams.json doesn't pollute the drill).
+        by_id: dict[str, dict] = {}
+        for cat_questions in questions_pool.values():
+            for q in cat_questions:
+                qid = q.get('id')
+                if isinstance(qid, str) and qid:
+                    by_id[qid] = q
+
+        mistake_ids = self.get_mistake_question_ids(lookback_days=lookback_days)
+        picked: list[dict] = []
+        seen: set[str] = set()
+        for qid in mistake_ids:
+            if qid in seen:
+                continue
+            q = by_id.get(qid)
+            if q is None:
+                # Question existed historically but isn't in the current pool —
+                # skip silently.
+                continue
+            picked.append(q)
+            seen.add(qid)
+            if len(picked) >= session_size:
+                break
+        return picked
+
+    # ------------------------------------------------------------------
+    # Recommended-next: turns the dashboard into an active study coach.
+    #
+    # The dashboard surfaces 1-3 actionable recommendations. Each carries a
+    # *reason code* the template uses to render Danish microcopy, and a
+    # priority score so the top-ranked card is what truly needs attention.
+    #
+    # Heuristic (tunable):
+    #   - Untouched categories rank highest (you can't improve what you
+    #     haven't tried).
+    #   - Among practiced categories, low-accuracy outranks rusty.
+    #   - Rusty = last_practiced > 7 days ago AND accuracy 60..89%.
+    #   - Mastered (≥90%, recent) is filtered out — no recommendation.
+    # ------------------------------------------------------------------
+
+    REASON_NEVER_PRACTICED = 'never_practiced'
+    REASON_LOW_ACCURACY = 'low_accuracy'
+    REASON_GETTING_RUSTY = 'getting_rusty'
+    REASON_KEEP_GOING = 'keep_going'
+
+    def _recommendation_for_category(self, category: str, record: 'Progress | None') -> dict | None:
+        """Score a single category and produce a recommendation object, or
+        None if the category is mastered + recent (don't waste a slot)."""
+        if record is None or record.total_attempted == 0:
+            return {
+                'category': category,
+                'reason': self.REASON_NEVER_PRACTICED,
+                'accuracy': 0,
+                'attempted': 0,
+                'last_practiced': None,
+                'days_since': None,
+                'priority': 90,
+            }
+
+        accuracy = record.accuracy
+        last = record.last_practiced
+        days_since = None
+        if last is not None:
+            delta = datetime.utcnow() - last
+            days_since = max(int(delta.total_seconds() // 86400), 0)
+
+        # Mastered: high accuracy, practiced recently → don't recommend.
+        if accuracy >= 90 and (days_since is None or days_since <= 7):
+            return None
+
+        # Low accuracy is the loudest signal we can pick on.
+        if accuracy < 60 and record.total_attempted >= 3:
+            # Lower accuracy → higher priority. 0% → 100, 59% → 41.
+            priority = 100 - accuracy
+            return {
+                'category': category,
+                'reason': self.REASON_LOW_ACCURACY,
+                'accuracy': accuracy,
+                'attempted': record.total_attempted,
+                'last_practiced': last,
+                'days_since': days_since,
+                'priority': priority,
+            }
+
+        # Rusty: not practiced in a week, accuracy not great.
+        if days_since is not None and days_since >= 7 and accuracy < 90:
+            # Older = higher priority, capped at 80.
+            priority = min(40 + days_since, 80)
+            return {
+                'category': category,
+                'reason': self.REASON_GETTING_RUSTY,
+                'accuracy': accuracy,
+                'attempted': record.total_attempted,
+                'last_practiced': last,
+                'days_since': days_since,
+                'priority': priority,
+            }
+
+        # Practiced recently, mid-pack accuracy: gentle keep-going nudge.
+        if accuracy < 90:
+            return {
+                'category': category,
+                'reason': self.REASON_KEEP_GOING,
+                'accuracy': accuracy,
+                'attempted': record.total_attempted,
+                'last_practiced': last,
+                'days_since': days_since,
+                'priority': 30,
+            }
+
+        return None
+
+    def get_recommended_next(self, limit: int = 3) -> list[dict]:
+        """Return the top ``limit`` actionable recommendations, sorted by
+        priority (most-needs-attention first), then by recency (older = more
+        urgent), then by category id (stable for tests).
+
+        Each entry is a dict with keys ``category``, ``reason``, ``accuracy``,
+        ``attempted``, ``last_practiced`` (datetime|None), ``days_since``
+        (int|None), ``priority`` (int)."""
+        if self.exam_id:
+            records = Progress.query.filter_by(
+                user_id=self.user_id, exam_id=self.exam_id
+            ).all()
+        else:
+            records = Progress.query.filter_by(user_id=self.user_id).all()
+
+        record_by_cat = {r.category: r for r in records if r.category in self.categories}
+
+        candidates: list[dict] = []
+        for category in self.categories:
+            rec = self._recommendation_for_category(category, record_by_cat.get(category))
+            if rec is not None:
+                candidates.append(rec)
+
+        candidates.sort(
+            key=lambda r: (
+                -r['priority'],
+                -(r['days_since'] or 0),
+                r['category'],
+            )
+        )
+        return candidates[:limit]
 
     def get_progress_summary(self, categories: list[str] = None) -> dict:
         """
