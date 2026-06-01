@@ -128,6 +128,26 @@
           "id": "data_structures",
           "name": "Data Structures & Types",
           "file": "data_structures.json"
+        },
+        {
+          "id": "interfaces_polymorphism",
+          "name": "Interfaces & Polymorphism",
+          "file": "interfaces_polymorphism.json"
+        },
+        {
+          "id": "exceptions_io",
+          "name": "Exceptions & I/O",
+          "file": "exceptions_io.json"
+        },
+        {
+          "id": "multithreading",
+          "name": "Multi-threading & Concurrency",
+          "file": "multithreading.json"
+        },
+        {
+          "id": "structured_data",
+          "name": "Structured Data (Enums, Records, Nested Classes)",
+          "file": "structured_data.json"
         }
       ]
     },

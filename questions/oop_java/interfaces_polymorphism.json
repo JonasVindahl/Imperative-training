@@ -1,0 +1,543 @@
+{
+  "questions": [
+    {
+      "id": "oop_intf_001",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Interface Declaration Keyword",
+      "description": "Which keyword is used to declare an interface in Java?",
+      "options": [
+        "abstract class",
+        "interface",
+        "implements",
+        "extends"
+      ],
+      "correct_answer": "B",
+      "explanation": "Interfaces are declared using the 'interface' keyword. A class uses 'implements' to implement an interface, and the 'extends' keyword is used for class inheritance. The 'abstract class' keyword declares an abstract class, not an interface.",
+      "hints": [
+        "This is the keyword that directly precedes the interface name",
+        "It describes the concept of a contract between classes"
+      ],
+      "tags": ["interface", "keyword", "declaration"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_002",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Implements Keyword",
+      "description": "Which keyword does a class use to implement an interface in Java?",
+      "options": [
+        "extends",
+        "implements",
+        "inherits",
+        "realizes"
+      ],
+      "correct_answer": "B",
+      "explanation": "A class uses 'implements' to implement an interface. The 'extends' keyword is for class inheritance. 'inherits' and 'realizes' are not Java keywords. A class can implement multiple interfaces: class A implements X, Y { }.",
+      "hints": [
+        "This keyword establishes a relationship between a class and an interface",
+        "It means the class agrees to fulfill the interface contract"
+      ],
+      "tags": ["implements", "keyword", "interface"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_003",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Interface Method Visibility",
+      "description": "What is the default access modifier for methods in a Java interface?",
+      "options": [
+        "private",
+        "protected",
+        "package-private (default)",
+        "public"
+      ],
+      "correct_answer": "D",
+      "explanation": "All methods in a Java interface are implicitly public, even if not explicitly declared as such. Before Java 9, methods in interfaces could only be public. Interfaces define a contract that must be accessible to implementing classes.",
+      "hints": [
+        "Interface methods are meant to be accessible to all implementors",
+        "The most permissive access modifier is the default"
+      ],
+      "tags": ["interface", "access_modifier", "public"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_004",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Interface vs Abstract Class—Instantiation",
+      "description": "Can you create an instance of an interface using the 'new' keyword?",
+      "options": [
+        "Yes, interfaces have constructors just like classes",
+        "No, neither interfaces nor abstract classes can be instantiated directly",
+        "Yes, but only if the interface has no methods",
+        "No, but abstract classes can be instantiated"
+      ],
+      "correct_answer": "B",
+      "explanation": "Neither interfaces nor abstract classes can be instantiated directly using 'new'. Both are incomplete types that require a concrete implementing/extending class before objects can be created. An interface has no constructors at all.",
+      "hints": [
+        "Both are incomplete definitions that need a concrete class",
+        "They serve as contracts or partial implementations, not as complete blueprints"
+      ],
+      "tags": ["interface", "abstract_class", "instantiation"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_005",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Polymorphism with Interfaces",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Animal {\n    String sound();\n}\n\nclass Dog implements Animal {\n    public String sound() { return \"Woof\"; }\n}\n\nclass Cat implements Animal {\n    public String sound() { return \"Meow\"; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a1 = new Dog();\n        Animal a2 = new Cat();\n        System.out.println(a1.sound() + \" \" + a2.sound());\n    }\n}",
+      "options": [
+        "Woof Meow",
+        "Dog Cat",
+        "A compilation error occurs",
+        "Woof Woof"
+      ],
+      "correct_answer": "A",
+      "explanation": "This demonstrates polymorphism through interfaces. Both Dog and Cat implement the Animal interface. The variables a1 and a2 are declared as type Animal, but they hold references to Dog and Cat objects respectively. When sound() is called, dynamic dispatch invokes the correct implementation based on the actual object type.",
+      "hints": [
+        "The declared type is Animal, but the actual objects are Dog and Cat",
+        "Java uses dynamic dispatch to call the correct method at runtime"
+      ],
+      "tags": ["polymorphism", "interface", "dynamic_dispatch"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_006",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Multiple Interface Implementation",
+      "description": "How can a single Java class implement multiple interfaces?",
+      "options": [
+        "class A implements X, Y { }",
+        "class A implements X and Y { }",
+        "class A implements X, implements Y { }",
+        "Java classes can only implement one interface at a time"
+      ],
+      "correct_answer": "A",
+      "explanation": "Java classes can implement multiple interfaces by listing them separated by commas after the 'implements' keyword. This is how Java achieves multiple inheritance of type (a class can have multiple types), while avoiding the complexities of multiple inheritance of implementation found in C++.",
+      "hints": [
+        "The interface names are separated by a specific character",
+        "This is one of Java's mechanisms for achieving multiple inheritance of type"
+      ],
+      "tags": ["multiple_interfaces", "implements", "syntax"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_007",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Interface Variables are Static Final",
+      "description": "What is true about variables declared in a Java interface?",
+      "options": [
+        "They are instance variables that each implementing class gets its own copy of",
+        "They are implicitly public static final (constants)",
+        "They must be initialized in every implementing class",
+        "They can be modified by implementing classes"
+      ],
+      "correct_answer": "B",
+      "explanation": "All variables declared in an interface are implicitly public, static, and final. They are constants that belong to the interface itself, not to instances. They must be initialized at declaration. Implementing classes cannot modify them.",
+      "hints": [
+        "Interface variables cannot change value",
+        "They belong to the interface, not to instances of implementing classes"
+      ],
+      "tags": ["interface", "variables", "static", "final"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_008",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Default Method in Interface",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Vehicle {\n    default String horn() { return \"Generic beep\"; }\n}\n\nclass Car implements Vehicle {\n    public String horn() { return \"Honk honk!\"; }\n}\n\nclass Bicycle implements Vehicle { }\n\npublic class Main {\n    public static void main(String[] args) {\n        Vehicle v1 = new Car();\n        Vehicle v2 = new Bicycle();\n        System.out.println(v1.horn() + \" \" + v2.horn());\n    }\n}",
+      "options": [
+        "Generic beep Generic beep",
+        "Honk honk! Generic beep",
+        "A compilation error — Bicycle must implement horn()",
+        "Honk honk! Honk honk!"
+      ],
+      "correct_answer": "B",
+      "explanation": "Introduced in Java 8, 'default' methods in interfaces provide a default implementation that subclasses can override. Car overrides horn() to return 'Honk honk!'. Bicycle does not override horn(), so it inherits the default implementation from Vehicle, returning 'Generic beep'. Default methods allow adding new methods to interfaces without breaking existing implementations.",
+      "hints": [
+        "A default method provides a fallback implementation",
+        "Classes can choose to override the default or inherit it"
+      ],
+      "tags": ["default_method", "interface", "java_8"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_009",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Abstract vs Interface—When to Use",
+      "description": "Which of the following is a valid reason to choose an abstract class over an interface?",
+      "options": [
+        "When you want to define a contract that unrelated classes can implement",
+        "When you need to share state (fields) and a partial implementation among related classes",
+        "When you need multiple inheritance of type",
+        "When the methods should be implicitly public"
+      ],
+      "correct_answer": "B",
+      "explanation": "Abstract classes should be used when related classes share common state (fields) and partial implementation. Interfaces are better for defining a contract that unrelated classes can implement (e.g., Comparable, Runnable). Interfaces cannot have instance fields (only static final constants). Use interfaces to define capabilities; use abstract classes to define related hierarchies with shared code.",
+      "hints": [
+        "Think about whether the classes share common state or just common behavior",
+        "Interfaces define WHAT to do; abstract classes can define HOW to do it partially"
+      ],
+      "tags": ["abstract_class", "interface", "design"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_010",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Interface Extending Interface",
+      "description": "Can an interface extend another interface in Java?",
+      "options": [
+        "No, interfaces cannot have inheritance relationships",
+        "Yes, using the 'extends' keyword, and an interface can extend multiple interfaces",
+        "Yes, but only one interface can be extended",
+        "Yes, but only using the 'implements' keyword"
+      ],
+      "correct_answer": "B",
+      "explanation": "Interfaces can extend other interfaces using the 'extends' keyword. Unlike classes, an interface can extend multiple interfaces: interface C extends A, B { }. The extending interface inherits all abstract methods from its parent interfaces. A class implementing the child interface must implement all methods from the entire hierarchy.",
+      "hints": [
+        "Inheritance between interfaces uses the same keyword as class inheritance",
+        "Unlike classes, interfaces support multiple inheritance"
+      ],
+      "tags": ["interface", "extends", "inheritance"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_011",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Functional Interface",
+      "description": "What is a functional interface in Java?",
+      "options": [
+        "An interface that contains only default methods",
+        "An interface with exactly one abstract method",
+        "An interface that extends the Function class",
+        "Any interface declared with the @Functional annotation"
+      ],
+      "correct_answer": "B",
+      "explanation": "A functional interface is an interface that has exactly one abstract method. It can have multiple default or static methods. Functional interfaces are the basis for lambda expressions in Java 8. Examples include Runnable (run), Comparator (compare), and Callable (call). The @FunctionalInterface annotation is optional but recommended to enforce this constraint.",
+      "hints": [
+        "Think about which type of interface can be used with lambda expressions",
+        "The name suggests it relates to functional programming features"
+      ],
+      "tags": ["functional_interface", "lambda", "java_8"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_012",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Lambda with Functional Interface",
+      "description": "Which lambda expression correctly implements a functional interface with method boolean test(int n)?",
+      "options": [
+        "n -> { n > 0 }",
+        "(int n) => n > 0",
+        "n -> n > 0",
+        "int n -> return n > 0"
+      ],
+      "correct_answer": "C",
+      "description": "Given the functional interface: interface Checker { boolean test(int n); }, which lambda is valid?",
+      "explanation": "The lambda 'n -> n > 0' is correct. The parameter n is inferred as int, and the expression 'n > 0' evaluates to a boolean, matching the return type. Option A uses curly braces without a return statement. Option B uses => instead of -> (that's C# syntax). Option D has incorrect syntax with a type before the parameter name in this position (would need parentheses).",
+      "hints": [
+        "Lambda syntax in Java uses -> not =>",
+        "Single-expression lambdas do not need curly braces or a return keyword"
+      ],
+      "tags": ["lambda", "functional_interface", "syntax"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_013",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Polymorphism—Method Parameter",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Shape {\n    double area();\n}\n\nclass Circle implements Shape {\n    private double r;\n    Circle(double r) { this.r = r; }\n    public double area() { return Math.PI * r * r; }\n}\n\nclass Rectangle implements Shape {\n    private double w, h;\n    Rectangle(double w, double h) { this.w = w; this.h = h; }\n    public double area() { return w * h; }\n}\n\npublic class Main {\n    static void printArea(Shape s) {\n        System.out.printf(\"%.1f \", s.area());\n    }\n\n    public static void main(String[] args) {\n        printArea(new Circle(2));\n        printArea(new Rectangle(3, 4));\n    }\n}",
+      "options": [
+        "12.6 12.0",
+        "4.0 12.0",
+        "12.6 12.6",
+        "A compilation error — Shape cannot be used as parameter type"
+      ],
+      "correct_answer": "A",
+      "explanation": "The printArea method accepts any Shape implementation (polymorphism). When called with a Circle(2), area() computes PI * 2 * 2 ≈ 12.566, printed as '12.6'. When called with Rectangle(3,4), area() computes 3 * 4 = 12.0, printed as '12.0'. The method does not need to know the specific type — it only relies on the Shape interface contract.",
+      "hints": [
+        "The method accepts the interface type, so any implementation can be passed",
+        "Each object's own area() implementation is called via dynamic dispatch"
+      ],
+      "tags": ["polymorphism", "interface", "method_parameter"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_014",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Marker Interface",
+      "description": "What is a marker interface in Java?",
+      "options": [
+        "An interface with one abstract method used for functional programming",
+        "An interface with no methods or fields that serves as a tag or flag",
+        "An interface used to mark the start of a code section",
+        "An interface that must be implemented by all classes in a package"
+      ],
+      "correct_answer": "B",
+      "explanation": "A marker interface is an interface that contains no methods or fields. It serves as a tag or flag to indicate that a class has some capability. The most well-known examples are Serializable (marks that objects can be serialized) and Cloneable (marks that objects can be cloned). The JVM or library code checks for these markers using instanceof.",
+      "hints": [
+        "It 'marks' or 'tags' a class with metadata",
+        "It has empty body — no methods to implement"
+      ],
+      "tags": ["marker_interface", "serializable", "cloneable"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_015",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Dynamic Dispatch with Interface Array",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Speaker {\n    String speak();\n}\n\nclass Human implements Speaker {\n    public String speak() { return \"Hello\"; }\n}\n\nclass Robot implements Speaker {\n    public String speak() { return \"Beep boop\"; }\n}\n\nclass Parrot implements Speaker {\n    public String speak() { return \"Hello\"; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Speaker[] speakers = { new Human(), new Robot(), new Parrot() };\n        for (Speaker s : speakers) {\n            if (s.speak().equals(\"Hello\")) {\n                System.out.print(\"Y \");\n            } else {\n                System.out.print(\"N \");\n            }\n        }\n    }\n}",
+      "options": [
+        "Y Y Y",
+        "Y N Y",
+        "N Y N",
+        "Hello Beep boop Hello"
+      ],
+      "correct_answer": "B",
+      "explanation": "The array holds different Speaker implementations. Human.speak() returns 'Hello' → prints 'Y'. Robot.speak() returns 'Beep boop' (not 'Hello') → prints 'N'. Parrot.speak() returns 'Hello' → prints 'Y'. This demonstrates how polymorphism allows uniform treatment of different types when they share a common interface.",
+      "hints": [
+        "The for-each loop iterates over Speaker references",
+        "Each object's own speak() method is called"
+      ],
+      "tags": ["polymorphism", "interface", "array", "dynamic_dispatch"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_016",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Comparable Interface",
+      "description": "What is the output of the following Java code?",
+      "code_template": "import java.util.Arrays;\n\nclass Person implements Comparable<Person> {\n    String name;\n    int age;\n    Person(String name, int age) { this.name = name; this.age = age; }\n    public int compareTo(Person other) {\n        return Integer.compare(this.age, other.age);\n    }\n    public String toString() { return name + \":\" + age; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Person[] people = {\n            new Person(\"Alice\", 30),\n            new Person(\"Bob\", 25),\n            new Person(\"Charlie\", 35)\n        };\n        Arrays.sort(people);\n        System.out.println(Arrays.toString(people));\n    }\n}",
+      "options": [
+        "[Alice:30, Bob:25, Charlie:35]",
+        "[Bob:25, Alice:30, Charlie:35]",
+        "[Charlie:35, Bob:25, Alice:30]",
+        "A ClassCastException is thrown"
+      ],
+      "correct_answer": "B",
+      "explanation": "Person implements Comparable<Person> with compareTo based on age (ascending). Arrays.sort() uses the Comparable interface to sort the array. After sorting by age, the order is Bob:25, Alice:30, Charlie:35. This is a key use of interfaces: defining a natural ordering that works with library methods like sort().",
+      "hints": [
+        "Arrays.sort() relies on the Comparable interface for ordering",
+        "compareTo returns negative, zero, or positive based on this vs other"
+      ],
+      "tags": ["comparable", "sorting", "interface", "arrays"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_017",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Comparator Interface vs Comparable",
+      "description": "What is the key difference between Comparable and Comparator in Java?",
+      "options": [
+        "Comparable uses compare(), Comparator uses compareTo()",
+        "Comparable defines natural ordering within the class; Comparator defines external, custom ordering",
+        "Comparable is an interface, Comparator is a class",
+        "There is no difference — they are the same"
+      ],
+      "correct_answer": "B",
+      "explanation": "Comparable (compareTo) defines the natural ordering within the class itself — the class implements Comparable. Comparator (compare) defines an external ordering strategy — it is a separate class/lambda that can define multiple different orderings. For example, a Person class has natural ordering by name (Comparable), but you can use a Comparator to sort by age, height, etc.",
+      "hints": [
+        "One is 'built-in' to the class, the other is external",
+        "One uses 'this', the other takes two arguments"
+      ],
+      "tags": ["comparable", "comparator", "ordering"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_018",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Interface Static Method",
+      "description": "Since Java 8, interfaces can have static methods. How are they called?",
+      "options": [
+        "Through an instance of the implementing class",
+        "Using the interface name: InterfaceName.staticMethod()",
+        "Using the class name of the implementing class",
+        "Only from within the same package"
+      ],
+      "correct_answer": "B",
+      "explanation": "Static methods in interfaces are called using the interface name, just like static methods in classes: InterfaceName.staticMethod(). They are not inherited by implementing classes and cannot be called through instances or implementing class names. This allows interfaces to provide utility methods related to their functionality.",
+      "hints": [
+        "Static methods belong to the interface itself",
+        "They are not part of the interface contract for implementing classes"
+      ],
+      "tags": ["static_method", "interface", "java_8"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_019",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "instanceof with Interfaces",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Flyable { }\ninterface Swimmable { }\n\nclass Duck implements Flyable, Swimmable { }\nclass Plane implements Flyable { }\n\npublic class Main {\n    public static void main(String[] args) {\n        Flyable f = new Duck();\n        System.out.println(f instanceof Flyable);\n        System.out.println(f instanceof Swimmable);\n        System.out.println(f instanceof Plane);\n    }\n}",
+      "options": [
+        "true false false",
+        "true true false",
+        "false true false",
+        "true true true"
+      ],
+      "correct_answer": "B",
+      "explanation": "f is a Duck object referenced as Flyable. Duck implements both Flyable and Swimmable, so instanceof returns true for both interfaces. Plane is a class, not in Duck's hierarchy, so f instanceof Plane is false. instanceof checks the actual runtime type, not the reference type. It works with both classes and interfaces.",
+      "hints": [
+        "instanceof checks the actual class of the object, not the reference type",
+        "A Duck is both Flyable and Swimmable"
+      ],
+      "tags": ["instanceof", "interface", "runtime_type"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_020",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Polymorphism—List of Interface Types",
+      "description": "What is the output of the following Java code?",
+      "code_template": "import java.util.ArrayList;\nimport java.util.List;\n\ninterface Drawable {\n    void draw();\n}\n\nclass Circle implements Drawable {\n    public void draw() { System.out.print(\"Circle \"); }\n}\n\nclass Square implements Drawable {\n    public void draw() { System.out.print(\"Square \"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        List<Drawable> shapes = new ArrayList<>();\n        shapes.add(new Circle());\n        shapes.add(new Square());\n        shapes.add(new Circle());\n        for (Drawable d : shapes) {\n            d.draw();\n        }\n    }\n}",
+      "options": [
+        "Circle Square Circle",
+        "Circle Circle Square",
+        "Square Circle Square",
+        "A compilation error — List cannot hold different types"
+      ],
+      "correct_answer": "A",
+      "explanation": "A List<Drawable> can hold any object that implements Drawable. This is a common pattern in OOP: storing different implementations of the same interface in a collection and iterating over them polymorphically. The list contains Circle, Square, Circle in that order, and dynamic dispatch ensures each calls its own draw() implementation.",
+      "hints": [
+        "The list type is Drawable, so any implementing class can be added",
+        "The order of iteration follows the order elements were added"
+      ],
+      "tags": ["polymorphism", "list", "interface", "collection"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_021",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Diamond Problem with Default Methods",
+      "description": "What happens if a class implements two interfaces that both have a default method with the same signature?",
+      "code_template": "interface A {\n    default String greet() { return \"Hi from A\"; }\n}\n\ninterface B {\n    default String greet() { return \"Hi from B\"; }\n}\n\nclass MyClass implements A, B { }",
+      "options": [
+        "The class inherits A's default method automatically",
+        "The class inherits B's default method automatically",
+        "A compilation error occurs — the class must override greet() to resolve the conflict",
+        "A runtime exception is thrown"
+      ],
+      "correct_answer": "C",
+      "explanation": "When two interfaces provide a default method with the same signature, the implementing class must override the method to resolve the conflict. Java forces the programmer to make an explicit choice. The class can call a specific parent's version using A.super.greet() or B.super.greet(), or provide entirely new behavior.",
+      "hints": [
+        "Java cannot decide which default implementation to use",
+        "The programmer must explicitly resolve the ambiguity"
+      ],
+      "tags": ["diamond_problem", "default_method", "conflict"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_022",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Interface Reference—No Access to Class-Specific Methods",
+      "description": "What happens when the following Java code is compiled?",
+      "code_template": "interface Playable {\n    void play();\n}\n\nclass Video implements Playable {\n    public void play() { System.out.println(\"Playing video\"); }\n    public void stop() { System.out.println(\"Stopped\"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Playable p = new Video();\n        p.play();\n        p.stop();\n    }\n}",
+      "options": [
+        "Compiles and runs: prints 'Playing video' then 'Stopped'",
+        "Compilation error — stop() is not in the Playable interface",
+        "Runtime error — stop() not found",
+        "Prints only 'Playing video' and ignores stop()"
+      ],
+      "correct_answer": "B",
+      "explanation": "When a variable is declared as a interface type (Playable p), only the methods defined in that interface can be called through that reference. Even though the actual object (Video) has a stop() method, the compiler only checks the declared type. To call stop(), you would need to either declare p as Video or cast it: ((Video) p).stop().",
+      "hints": [
+        "The compiler only knows about the declared type's methods",
+        "The reference type determines which methods are accessible"
+      ],
+      "tags": ["interface", "reference_type", "compilation"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_023",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Runnable Interface",
+      "description": "What is the Runnable interface used for in Java?",
+      "options": [
+        "To define a task that can be executed by a Thread",
+        "To handle keyboard input events",
+        "To force the garbage collector to run",
+        "To make a class serializable so it can be saved to a file"
+      ],
+      "correct_answer": "A",
+      "explanation": "The Runnable interface has a single abstract method: void run(). It is used to define a task that can be executed by a Thread. This is the primary way to create concurrent code in Java: implement Runnable, pass it to a Thread, and call start(). Runnable is a functional interface, so it can also be implemented with a lambda expression.",
+      "hints": [
+        "This interface is part of the java.lang package and has one method: run()",
+        "It represents a unit of work that can be executed in a separate thread"
+      ],
+      "tags": ["runnable", "thread", "concurrency"],
+      "points": 1
+    },
+    {
+      "id": "oop_intf_024",
+      "category": "interfaces_polymorphism",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Interface Downcasting",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Vehicle {\n    void move();\n}\n\nclass Car implements Vehicle {\n    public void move() { System.out.print(\"Driving \"); }\n    void refuel() { System.out.print(\"Refueling \"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Vehicle v = new Car();\n        v.move();\n        if (v instanceof Car) {\n            Car c = (Car) v;\n            c.refuel();\n        }\n    }\n}",
+      "options": [
+        "Driving",
+        "A ClassCastException is thrown",
+        "Refueling Driving",
+        "Driving Refueling"
+      ],
+      "correct_answer": "D",
+      "explanation": "v is declared as Vehicle but holds a Car object. v.move() calls Car's move() → prints 'Driving '. The instanceof check passes (v is a Car), so the cast (Car) v is safe. Through the Car reference c, the class-specific method refuel() is accessible → prints 'Refueling '. Always check with instanceof before downcasting to avoid ClassCastException.",
+      "hints": [
+        "instanceof verifies the actual type before casting",
+        "The cast is safe because the object really is a Car"
+      ],
+      "tags": ["downcasting", "instanceof", "interface", "casting"],
+      "points": 1
+    }
+  ]
+}

@@ -1,0 +1,449 @@
+{
+  "questions": [
+    {
+      "id": "oop_ex_001",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Checked Exception Definition",
+      "description": "What is a checked exception in Java?",
+      "options": [
+        "An exception that is checked by the JVM at runtime",
+        "An exception that the compiler forces you to handle or declare (IOException, SQLException)",
+        "An exception that is automatically handled by the default handler",
+        "An exception that only occurs during compilation"
+      ],
+      "correct_answer": "B",
+      "explanation": "Checked exceptions are exceptions that the Java compiler forces you to either catch (try-catch) or declare in the method signature (throws). Examples include IOException, SQLException, and ClassNotFoundException. If you do not handle or declare them, the code will not compile.",
+      "hints": [
+        "The compiler 'checks' whether you have handled these exceptions",
+        "RuntimeException and its subclasses are NOT checked"
+      ],
+      "tags": ["checked_exception", "compiler", "exception_handling"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_002",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Unchecked Exception",
+      "description": "Which of the following is an unchecked exception in Java?",
+      "options": [
+        "IOException",
+        "FileNotFoundException",
+        "NullPointerException",
+        "SQLException"
+      ],
+      "correct_answer": "C",
+      "explanation": "NullPointerException is an unchecked exception because it extends RuntimeException, which is a subclass of Exception. Unchecked exceptions do not need to be declared or caught. IOException, FileNotFoundException, and SQLException are all checked exceptions that must be handled or declared.",
+      "hints": [
+        "Unchecked exceptions extend RuntimeException",
+        "They are typically programming errors that could have been avoided"
+      ],
+      "tags": ["unchecked_exception", "runtime_exception", "exception_hierarchy"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_003",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Try-Catch Syntax",
+      "description": "What is the correct syntax for a try-catch block in Java?",
+      "options": [
+        "try { ... } catch Exception e { ... }",
+        "try { ... } catch (Exception e) { ... }",
+        "try { ... } catch (Exception e) then { ... }",
+        "try { ... } exception (Exception e) { ... }"
+      ],
+      "correct_answer": "B",
+      "explanation": "The correct syntax is 'try { } catch (ExceptionType variableName) { }'. The catch block must specify the exception type as a parameter in parentheses. The 'then' keyword is not used in Java exception handling. Multiple catch blocks can be chained for different exception types.",
+      "hints": [
+        "The exception type and variable are enclosed in parentheses",
+        "There is no 'then' keyword in Java exception handling"
+      ],
+      "tags": ["try_catch", "syntax", "exception_handling"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_004",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Finally Block",
+      "description": "When does the 'finally' block in a try-catch-finally structure execute?",
+      "options": [
+        "Only if no exception is thrown",
+        "Only if an exception is thrown",
+        "Always, regardless of whether an exception is thrown or caught",
+        "Only if the exception is caught"
+      ],
+      "correct_answer": "C",
+      "explanation": "The finally block always executes, regardless of whether an exception is thrown, caught, or neither. It executes even if there is a return statement in the try or catch block. The finally block is typically used for cleanup operations like closing files, releasing network connections, or freeing resources.",
+      "hints": [
+        "This block is guaranteed to run under all circumstances",
+        "It is typically used for cleanup operations"
+      ],
+      "tags": ["finally", "exception_handling", "cleanup"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_005",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Throws Keyword",
+      "description": "What does the 'throws' keyword in a method signature indicate?",
+      "options": [
+        "The method will definitely throw that exception",
+        "The method might throw the specified exception(s) and callers must handle or declare them",
+        "The method throws away the exception silently",
+        "The exception can be ignored by any caller"
+      ],
+      "correct_answer": "B",
+      "explanation": "The 'throws' keyword in a method signature declares that the method might throw the specified exception(s). It does not mean the exception will be thrown — only that the method could potentially throw it. Callers of the method must either catch these exceptions or declare them in their own throws clause.",
+      "hints": [
+        "This keyword is part of the method declaration, not a statement",
+        "Think of it as a warning to callers: 'be prepared for this exception'"
+      ],
+      "tags": ["throws", "method_signature", "exception_declaration"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_006",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Throw Keyword vs Throws",
+      "description": "What is the difference between 'throw' and 'throws' in Java?",
+      "options": [
+        "throw is used to throw an exception from code; throws declares possible exceptions in a method signature",
+        "throw is used in method signatures; throws is used in code blocks",
+        "There is no difference — they are interchangeable",
+        "throw is for checked exceptions; throws is for unchecked exceptions"
+      ],
+      "correct_answer": "A",
+      "explanation": "throw (without s) is a statement that actually throws an exception object from code: throw new IOException(). throws (with s) is part of the method signature that declares which exceptions the method might throw. throw can only throw one exception at a time; throws can list multiple exception types separated by commas.",
+      "hints": [
+        "One is an action (execution), the other is a declaration (compiler)",
+        "One is a statement inside the method body, the other is in the method signature"
+      ],
+      "tags": ["throw", "throws", "exception", "syntax"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_007",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Multiple Catch Blocks",
+      "description": "What is the output of the following Java code?",
+      "code_template": "public class Main {\n    public static void main(String[] args) {\n        try {\n            int[] arr = {1, 2, 3};\n            System.out.print(arr[5]);\n        } catch (ArrayIndexOutOfBoundsException e) {\n            System.out.print(\"Index \" + e.getMessage());\n        } catch (Exception e) {\n            System.out.print(\"General \" + e.getMessage());\n        }\n    }\n}",
+      "options": [
+        "General null",
+        "Index 5",
+        "Index Index 5 out of bounds for length 3",
+        "A compilation error occurs"
+      ],
+      "correct_answer": "C",
+      "explanation": "arr[5] throws ArrayIndexOutOfBoundsException because the array has only 3 elements (indices 0-2). This exception is caught by the first catch block (ArrayIndexOutOfBoundsException), which is more specific than the general Exception catch block. The getMessage() method returns detail information about the exception: 'Index 5 out of bounds for length 3'. When an exception is caught, only the first matching catch block executes.",
+      "hints": [
+        "Catch blocks are checked in order — the first matching one catches the exception",
+        "More specific exceptions should be caught before more general ones"
+      ],
+      "tags": ["multiple_catch", "exception_handling", "array_index_out_of_bounds"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_008",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Exception Propagation",
+      "description": "What is the output of the following Java code?",
+      "code_template": "public class Main {\n    static void methodA() {\n        System.out.print(\"A \");\n        methodB();\n        System.out.print(\"A2 \");\n    }\n    \n    static void methodB() {\n        System.out.print(\"B \");\n        throw new ArithmeticException(\"error\");\n    }\n    \n    public static void main(String[] args) {\n        try {\n            methodA();\n        } catch (Exception e) {\n            System.out.print(\"Caught \");\n        }\n        System.out.print(\"Done\");\n    }\n}",
+      "options": [
+        "A B A2 Caught Done",
+        "A B Caught Done",
+        "A Caught Done",
+        "A B A2 Done"
+      ],
+      "correct_answer": "B",
+      "explanation": "Execution: main calls methodA() which prints 'A ', then calls methodB() which prints 'B '. methodB then throws an ArithmeticException. The exception propagates up: methodB has no handler, so it goes to methodA. methodA has no handler either, so it propagates to main, where the try-catch catches it (prints 'Caught '). The lines 'A2' in methodA and anything after methodA() call in main never execute. Finally 'Done' is printed. This is called exception propagation — the exception moves up the call stack until caught.",
+      "hints": [
+        "When an exception is thrown, execution jumps to the nearest matching catch block",
+        "Statements after the exception source do not execute"
+      ],
+      "tags": ["exception_propagation", "call_stack", "unwinding"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_009",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Custom Exception",
+      "description": "Which of the following correctly defines a custom checked exception in Java?",
+      "options": [
+        "class MyException extends RuntimeException { }",
+        "class MyException extends Exception { }",
+        "class MyException implements Exception { }",
+        "class MyException { }"
+      ],
+      "correct_answer": "B",
+      "explanation": "To create a custom checked exception, extend the Exception class. To create a custom unchecked exception, extend RuntimeException. Option A creates an unchecked exception. Option C is invalid because Exception is a class, not an interface. Option D creates a plain class that is not an exception type and cannot be thrown.",
+      "hints": [
+        "Checked exceptions extend Exception directly",
+        "Unchecked exceptions extend RuntimeException"
+      ],
+      "tags": ["custom_exception", "exception_class", "inheritance"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_010",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Try-with-Resources",
+      "description": "What is the advantage of try-with-resources introduced in Java 7?",
+      "options": [
+        "It allows multiple resources to be tried in sequence",
+        "It automatically closes resources that implement AutoCloseable, even if an exception occurs",
+        "It replaces the need for the catch block entirely",
+        "It makes resources run faster"
+      ],
+      "correct_answer": "B",
+      "explanation": "Try-with-resources (try (Resource r = new Resource()) { ... }) automatically closes any resource that implements AutoCloseable or Closeable when the try block exits, whether normally or via an exception. This eliminates the need for explicit finally blocks for resource cleanup and prevents resource leaks. Multiple resources can be declared and will be closed in reverse order.",
+      "hints": [
+        "This feature eliminates the need for explicit finally blocks for cleanup",
+        "Resources must implement AutoCloseable"
+      ],
+      "tags": ["try_with_resources", "autocloseable", "java_7", "resource_management"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_011",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Multi-catch Exception",
+      "description": "Which syntax correctly catches multiple exception types in a single catch block (Java 7+)?",
+      "options": [
+        "catch (IOException | SQLException e) { }",
+        "catch (IOException || SQLException e) { }",
+        "catch (IOException, SQLException e) { }",
+        "catch (IOException & SQLException e) { }"
+      ],
+      "correct_answer": "A",
+      "explanation": "Multi-catch uses the pipe symbol '|' to separate exception types in a single catch block: catch (IOException | SQLException e). This reduces code duplication when multiple exceptions should be handled identically. The exceptions in a multi-catch must not be in a parent-child relationship. Option B uses || (logical OR), which is incorrect. Option C uses comma (not valid). Option D uses & (bitwise AND), which is incorrect.",
+      "hints": [
+        "The pipe symbol separates exception types in multi-catch",
+        "The exceptions must be unrelated (not in the same inheritance hierarchy)"
+      ],
+      "tags": ["multi_catch", "java_7", "exception_handling"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_012",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "FileReader Basic Usage",
+      "description": "Which classes are commonly used together to read text files efficiently in Java?",
+      "options": [
+        "FileReader and BufferedReader",
+        "FileInputStream and ObjectOutputStream",
+        "RandomAccessFile and StringReader",
+        "FileWriter and PrintReader"
+      ],
+      "correct_answer": "A",
+      "explanation": "FileReader reads character files, and BufferedReader wraps it to provide efficient reading (buffering) and convenient methods like readLine(). The pattern is: BufferedReader br = new BufferedReader(new FileReader('file.txt')). This is the standard way to read text files in Java.",
+      "hints": [
+        "One class reads raw characters from a file; the other adds buffering and line-by-line reading",
+        "readLine() is a key method for reading text files"
+      ],
+      "tags": ["filereader", "bufferedreader", "file_io"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_013",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "FileWriter and PrintWriter",
+      "description": "Which is the recommended way to write formatted text to a file in Java?",
+      "options": [
+        "FileOutputStream with write() method",
+        "PrintWriter with print(), println(), and printf() methods",
+        "BufferedWriter with writeLine() method",
+        "File class with saveText() method"
+      ],
+      "correct_answer": "B",
+      "explanation": "PrintWriter provides convenient print(), println(), and printf() methods for writing formatted text to a file, similar to System.out. The typical pattern is: PrintWriter pw = new PrintWriter(new FileWriter('file.txt')). PrintWriter's format methods are more convenient than BufferedWriter's write() method for most text writing needs.",
+      "hints": [
+        "This class provides the same convenient methods as System.out",
+        "It supports printf-style formatting"
+      ],
+      "tags": ["printwriter", "filewriter", "writing", "file_io"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_014",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "File Reading with Scanner",
+      "description": "Which of the following correctly opens a file for reading with Scanner?",
+      "options": [
+        "Scanner sc = new Scanner(\"data.txt\");",
+        "Scanner sc = new Scanner(new File(\"data.txt\"));",
+        "Scanner sc = Scanner.open(\"data.txt\");",
+        "Scanner sc = new Scanner(System.file(\"data.txt\"));"
+      ],
+      "correct_answer": "B",
+      "explanation": "To read from a file with Scanner, pass a File object to the Scanner constructor: new Scanner(new File('data.txt')). The String constructor of Scanner reads from a String, not a file. Scanner can also read from InputStream, Path, and Readable sources. Scanner provides convenient methods like next(), nextInt(), nextLine(), and hasNext() for parsing.",
+      "hints": [
+        "Scanner does not have a constructor that takes a file path as a String",
+        "You need to create a File object first"
+      ],
+      "tags": ["scanner", "file_reading", "file_io"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_015",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "File I/O with Try-With-Resources",
+      "description": "Which version correctly reads a file and automatically closes resources?",
+      "code_template": "// Version A:\ntry (BufferedReader br = new BufferedReader(new FileReader(\"file.txt\"))) {\n    String line = br.readLine();\n    System.out.println(line);\n} catch (IOException e) {\n    e.printStackTrace();\n}\n\n// Version B:\nBufferedReader br = new BufferedReader(new FileReader(\"file.txt\"));\nString line = br.readLine();\nSystem.out.println(line);\n\n// Version C:\ntry {\n    BufferedReader br = new BufferedReader(new FileReader(\"file.txt\"));\n    String line = br.readLine();\n    System.out.println(line);\n} finally {\n    br.close();\n}",
+      "options": [
+        "Version A: uses try-with-resources and automatically closes the reader",
+        "Version B: correctly handles file reading with no resource leak risk",
+        "Version C: incorrectly uses finally instead of catch for closing",
+        "All versions are correct"
+      ],
+      "correct_answer": "A",
+      "explanation": "Version A uses try-with-resources, which automatically closes the BufferedReader (and underlying FileReader) when the try block exits, even if an exception occurs. Version B has a resource leak — if readLine() throws an exception, the reader is never closed. Version C has a potential bug: if br is null, br.close() will throw a NullPointerException, and the variable is also not accessible in the finally block if declared inside try. Try-with-resources is the safest and cleanest approach.",
+      "hints": [
+        "Version A declares the resource in the try parentheses",
+        "Resources declared in try-with-resources are automatically closed"
+      ],
+      "tags": ["try_with_resources", "file_io", "bufferedreader", "resource_management"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_016",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Exception Hierarchy—Error vs Exception",
+      "description": "In the Java exception hierarchy, what is the difference between Error and Exception?",
+      "options": [
+        "Error is checked, Exception is unchecked",
+        "Error represents serious system problems (OutOfMemoryError) that should not be caught; Exception represents conditions a program might catch",
+        "Error is for input/output problems; Exception is for logic errors",
+        "Error and Exception are the same thing"
+      ],
+      "correct_answer": "B",
+      "explanation": "Both Error and Exception extend Throwable. Error represents serious system-level problems (OutOfMemoryError, StackOverflowError, VirtualMachineError) that a program should not try to catch — they indicate the JVM is in a state from which recovery is unlikely. Exception represents conditions that a well-written program might reasonably catch and handle. Errors are unchecked (subclasses of Error are not required to be caught/declared), but they are not meant to be caught.",
+      "hints": [
+        "Think of Error as 'JVM-level catastrophe' and Exception as 'application-level problem'",
+        "You should NOT try to catch Errors in normal code"
+      ],
+      "tags": ["error", "exception", "hierarchy", "throwable"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_017",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Finally with Return",
+      "description": "What is the output of the following Java code?",
+      "code_template": "public class Main {\n    static int test() {\n        try {\n            return 1;\n        } catch (Exception e) {\n            return 2;\n        } finally {\n            return 3;\n        }\n    }\n    \n    public static void main(String[] args) {\n        System.out.println(test());\n    }\n}",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "A compilation error occurs"
+      ],
+      "correct_answer": "C",
+      "explanation": "When both try and finally have return statements, the finally return overrides the try return. Before returning 1, the finally block executes and returns 3. The return value from try (1) is discarded. This is a dangerous pattern — it is generally recommended not to use return in finally blocks as it can suppress exceptions and cause unexpected behavior. The code compiles but may not do what was intended.",
+      "hints": [
+        "The finally block always executes, even if there is a return in try",
+        "A return in finally overrides any previous return value"
+      ],
+      "tags": ["finally", "return", "pitfall"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_018",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Suppressed Exceptions",
+      "description": "What happens if both the try block and the implicit close() in try-with-resources throw exceptions?",
+      "options": [
+        "Only the try exception is thrown; the close() exception is ignored",
+        "The try exception is thrown, and the close() exception is added as a suppressed exception",
+        "Both exceptions are thrown simultaneously",
+        "Only the close() exception is thrown"
+      ],
+      "correct_answer": "B",
+      "explanation": "When using try-with-resources, if both the try block and the close() method throw exceptions, the exception from the try block is the one that propagates, and the close() exception is added to it as a 'suppressed' exception. You can retrieve suppressed exceptions using Throwable.getSuppressed(). This is better than the old try-finally pattern where the close() exception would completely hide the try exception.",
+      "hints": [
+        "The primary exception 'wins' and the secondary exception is attached to it",
+        "Use getSuppressed() to retrieve the hidden exception"
+      ],
+      "tags": ["suppressed_exception", "try_with_resources", "exception_handling"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_019",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Try-With-Resources Multiple Resources",
+      "description": "What is the correct way to declare multiple resources in a single try-with-resources statement?",
+      "code_template": "// Which is correct?\n// A:\ntry (BufferedReader br = new BufferedReader(new FileReader(\"a.txt\"));\n     PrintWriter pw = new PrintWriter(new FileWriter(\"b.txt\"))) { ... }\n\n// B:\ntry (BufferedReader br = new BufferedReader(new FileReader(\"a.txt\")),\n     PrintWriter pw = new PrintWriter(new FileWriter(\"b.txt\"))) { ... }\n\n// C:\ntry (BufferedReader br, PrintWriter pw) {\n    br = new BufferedReader(new FileReader(\"a.txt\"));\n    pw = new PrintWriter(new FileWriter(\"b.txt\"));\n}",
+      "options": [
+        "A: semicolons separate resource declarations",
+        "B: commas separate resource declarations",
+        "C: resources are declared inside the try block body",
+        "All are valid syntax"
+      ],
+      "correct_answer": "A",
+      "explanation": "Multiple resources in try-with-resources are separated by semicolons (not commas). Each resource declaration is a complete statement. Resources are closed in the reverse order of their declaration (pw closed first, then br). All resources must implement AutoCloseable. Declaring resources inside the try body (Option C) would not use try-with-resources automatic closing.",
+      "hints": [
+        "Resources are declared with semicolons, similar to variable declarations",
+        "The close order is the reverse of the declaration order"
+      ],
+      "tags": ["try_with_resources", "multiple_resources", "syntax"],
+      "points": 1
+    },
+    {
+      "id": "oop_ex_020",
+      "category": "exceptions_io",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Reading All Lines from a File",
+      "description": "Which Java 8+ method reads all lines from a file into a List<String> in one call?",
+      "options": [
+        "Files.readString()",
+        "Files.readAllLines()",
+        "Scanner.readAll()",
+        "BufferedReader.collectLines()"
+      ],
+      "correct_answer": "B",
+      "explanation": "Files.readAllLines(Path) reads all lines from a file into a List<String>. It is a convenient utility method in java.nio.file.Files introduced in Java 8. Files.readString() (Java 11) reads the entire file content as a single String. For large files, Files.lines() returns a Stream<String> that can be processed lazily without loading everything into memory.",
+      "hints": [
+        "This method is in the java.nio.file.Files class",
+        "It returns a List<String> where each element is one line"
+      ],
+      "tags": ["files", "readAllLines", "nio", "java_8"],
+      "points": 1
+    }
+  ]
+}

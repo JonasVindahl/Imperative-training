@@ -1,0 +1,449 @@
+{
+  "questions": [
+    {
+      "id": "oop_mt_001",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Creating a Thread—Runnable",
+      "description": "Which approach correctly creates and starts a new thread in Java?",
+      "options": [
+        "Thread t = new Thread(); t.run();",
+        "Thread t = new Thread(new Runnable() { public void run() { ... } }); t.start();",
+        "Thread t = new Thread(); t.execute();",
+        "Thread t = Runnable.create(); t.start();"
+      ],
+      "correct_answer": "B",
+      "explanation": "To create and start a thread, create a Thread object with a Runnable (task), then call start(). The start() method creates a new thread of execution and invokes run() on it. Calling run() directly (not start()) would execute the task on the current thread, without creating a new thread.",
+      "hints": [
+        "The Runnable interface defines the task to execute",
+        "start() creates a new thread; run() just calls the method directly"
+      ],
+      "tags": ["thread", "runnable", "start"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_002",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Extending Thread Class",
+      "description": "Which method must be overridden when creating a thread by extending the Thread class?",
+      "options": [
+        "start()",
+        "execute()",
+        "run()",
+        "begin()"
+      ],
+      "correct_answer": "C",
+      "explanation": "When extending the Thread class, you must override the run() method. The run() method contains the code that will execute in the new thread. The start() method (inherited from Thread) is called to launch the new thread and it internally calls run().",
+      "hints": [
+        "This method defines what the thread actually does",
+        "The method name indicates the action performed when the thread is active"
+      ],
+      "tags": ["thread", "run", "override"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_003",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "start() vs run()",
+      "description": "What is the difference between calling start() and run() on a Thread object?",
+      "options": [
+        "start() creates a new thread and calls run(); run() executes on the current thread",
+        "start() and run() do exactly the same thing",
+        "run() creates a new thread; start() executes on the current thread",
+        "start() can only be called once; run() can be called multiple times"
+      ],
+      "correct_answer": "A",
+      "explanation": "start() creates a new thread of execution and calls run() on that new thread. run() just calls the Runnable's run() method directly on the calling thread — no new thread is created. Calling start() twice on the same thread throws IllegalThreadStateException. You CAN call run() multiple times, but it just runs sequentially like any normal method.",
+      "hints": [
+        "Only one of them creates a new thread of execution",
+        "One launches a separate execution path; the other is just a normal method call"
+      ],
+      "tags": ["thread", "start", "run", "concurrency"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_004",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Thread Sleep",
+      "description": "What does Thread.sleep(1000) do?",
+      "options": [
+        "Stops the thread permanently",
+        "Pauses the current thread for approximately 1000 milliseconds",
+        "Makes the thread wait until notified",
+        "Increases the thread priority"
+      ],
+      "correct_answer": "B",
+      "explanation": "Thread.sleep(millis) causes the currently executing thread to pause (sleep) for approximately the specified number of milliseconds. The exact duration depends on system timers and scheduling. Sleep throws InterruptedException (a checked exception), so it must be caught or declared.",
+      "hints": [
+        "The parameter is in milliseconds",
+        "This is a static method that affects the current thread"
+      ],
+      "tags": ["sleep", "thread", "pausing"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_005",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Thread Naming",
+      "description": "What is the output of the following Java code?",
+      "code_template": "public class Main {\n    public static void main(String[] args) {\n        Thread t = new Thread(() -> System.out.print(Thread.currentThread().getName()));\n        t.setName(\"Worker-1\");\n        t.start();\n    }\n}",
+      "options": [
+        "main",
+        "Thread-0",
+        "Worker-1",
+        "A compilation error occurs"
+      ],
+      "correct_answer": "C",
+      "explanation": "Thread.currentThread() returns the thread that is executing the current code. When the Runnable runs inside Thread t (after t.start()), the current thread is t, whose name was set to 'Worker-1'. If not explicitly named, threads get names like 'Thread-0', 'Thread-1', etc. By default, the main thread is named 'main'.",
+      "hints": [
+        "setName() changes the thread's name before it starts",
+        "Thread.currentThread() returns the thread executing the current code block"
+      ],
+      "tags": ["thread_name", "currentthread", "naming"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_006",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Race Condition Example",
+      "description": "What potential problem does this code have?",
+      "code_template": "class Counter {\n    private int count = 0;\n    void increment() { count++; }\n    int getCount() { return count; }\n}\n\n// Two threads call increment() on the same Counter object",
+      "options": [
+        "The code will not compile because count++ is invalid in multithreading",
+        "count++ is not atomic — a race condition can cause the final count to be less than expected",
+        "The threads will deadlock immediately",
+        "There is no problem — the code is thread-safe"
+      ],
+      "correct_answer": "B",
+      "explanation": "count++ is a compound operation: read, increment, write. Two threads can interleave: both read count (say 5), both increment (to 6), and both write back (6). So two increments result in only +1 instead of +2. This is a classic race condition. The solution is to use synchronization (synchronized keyword) or atomic classes (AtomicInteger) to ensure thread safety.",
+      "hints": [
+        "Look for compound operations that are not atomic",
+        "count++ consists of multiple steps that can interleave"
+      ],
+      "tags": ["race_condition", "atomicity", "count++", "thread_safety"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_007",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Synchronized Method",
+      "description": "What does the 'synchronized' keyword on a method ensure?",
+      "options": [
+        "Only one thread can execute the method at a time on the same object",
+        "The method executes faster than normal methods",
+        "The method cannot be overridden",
+        "The method runs on a separate thread automatically"
+      ],
+      "correct_answer": "A",
+      "explanation": "A synchronized method acquires the object's intrinsic lock (monitor) before executing. Only one thread can hold this lock at a time, so only one thread can execute any synchronized method on the same object concurrently. This prevents race conditions on shared mutable state. For static synchronized methods, the lock is on the Class object.",
+      "hints": [
+        "This keyword ensures mutual exclusion",
+        "Think of it as a 'one-at-a-time' mechanism for methods"
+      ],
+      "tags": ["synchronized", "mutual_exclusion", "lock"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_008",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Synchronized Block",
+      "description": "What does the following synchronized block lock on?",
+      "code_template": "public class Shop {\n    private int stock = 0;\n    \n    public void restock(int amount) {\n        synchronized(this) {\n            stock += amount;\n        }\n    }\n}",
+      "options": [
+        "The Shop class object",
+        "The String argument to restock()",
+        "The current Shop instance (this)",
+        "Nothing — the block is not actually synchronized"
+      ],
+      "correct_answer": "C",
+      "explanation": "synchronized(this) locks on the current instance (this) of the Shop object. Only one thread can execute this block (or any other synchronized block/method using the same lock) on the same Shop instance at a time. Synchronized blocks allow finer-grained synchronization compared to synchronized methods.",
+      "hints": [
+        "The expression in parentheses specifies the lock object",
+        "this refers to the current instance"
+      ],
+      "tags": ["synchronized", "lock", "this", "block"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_009",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Join Method",
+      "description": "What does thread.join() do in Java?",
+      "options": [
+        "Terminates the specified thread",
+        "Pauses all threads except the specified one",
+        "The current thread waits for the specified thread to die",
+        "Combines two threads into one"
+      ],
+      "correct_answer": "C",
+      "explanation": "thread.join() causes the calling thread to wait until the referenced thread completes (dies). It is used to coordinate threads: if thread A calls thread B.join(), thread A will block until thread B finishes its execution. join() throws InterruptedException. There is also an overloaded version that accepts a timeout: join(long millis).",
+      "hints": [
+        "This method allows one thread to wait for another to finish",
+        "The name suggests threads 'joining' together in completion order"
+      ],
+      "tags": ["join", "thread_coordination", "waiting"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_010",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Runnable vs Callable",
+      "description": "What is the key difference between Runnable and Callable in Java?",
+      "options": [
+        "Runnable can throw checked exceptions; Callable cannot",
+        "Runnable returns a value; Callable returns void",
+        "Runnable returns void and cannot throw checked exceptions; Callable returns a value and can throw checked exceptions",
+        "Callable is an interface; Runnable is a class"
+      ],
+      "correct_answer": "C",
+      "explanation": "Runnable.run() returns void and cannot throw checked exceptions. Callable.call() returns a value (generic type V) and can throw checked exceptions. Callable is typically used with ExecutorService and Future to obtain results from asynchronous computation. Both are functional interfaces.",
+      "hints": [
+        "One provides a result; the other does not",
+        "One has call() method; the other has run() method"
+      ],
+      "tags": ["runnable", "callable", "future", "exception"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_011",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Deadlock Scenario",
+      "description": "What is a deadlock in multithreading?",
+      "options": [
+        "A thread takes an unusually long time to complete",
+        "Two or more threads are blocked forever, each waiting for a resource held by another",
+        "A thread terminates abnormally due to an unhandled exception",
+        "All threads are running but the program is slow"
+      ],
+      "correct_answer": "B",
+      "explanation": "A deadlock occurs when two or more threads are each waiting for a resource (lock) held by another, creating a cycle of dependency. For example: Thread A holds lock 1 and waits for lock 2. Thread B holds lock 2 and waits for lock 1. Neither thread can proceed. Deadlocks can be prevented by consistent lock ordering, using timeouts, or using higher-level concurrency utilities.",
+      "hints": [
+        "Think of a circular waiting condition",
+        "Thread A waits for B, B waits for A — neither can proceed"
+      ],
+      "tags": ["deadlock", "lock", "thread_synchronization"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_012",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "ExecutorService",
+      "description": "What is the purpose of ExecutorService in Java?",
+      "options": [
+        "To execute code on a single thread only",
+        "To manage a pool of threads and execute submitted tasks",
+        "To replace the need for Runnable and Callable",
+        "To schedule tasks to run at exact times"
+      ],
+      "correct_answer": "B",
+      "explanation": "ExecutorService (part of java.util.concurrent) manages a pool of threads. You submit tasks (Runnable or Callable) and the service handles thread creation, reuse, and scheduling. This is preferred over manual thread management because thread pooling reduces overhead. Common implementations: Executors.newFixedThreadPool(n), Executors.newCachedThreadPool(), Executors.newSingleThreadExecutor().",
+      "hints": [
+        "It decouples task submission from task execution mechanics",
+        "It handles thread lifecycle management internally"
+      ],
+      "tags": ["executorservice", "thread_pool", "concurrency"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_013",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Thread Interference Detection",
+      "description": "What is the most likely output of the following code if multiple threads call increment() on the same Counter?",
+      "code_template": "class Counter {\n    private int count = 0;\n    public void increment() {\n        for (int i = 0; i < 1000; i++) {\n            count++;\n        }\n    }\n    public int getCount() { return count; }\n}\n\n// Three threads each call increment() once on the same Counter object",
+      "options": [
+        "3000 (always)",
+        "A number between 1000 and 3000, but rarely exactly 3000",
+        "1000 (always, because of thread interference)",
+        "An exception is always thrown"
+      ],
+      "correct_answer": "B",
+      "explanation": "Without synchronization, count++ is not atomic and suffers from race conditions. Each thread does 1000 increments, but due to interleaving, increments from different threads can overlap. The result is typically somewhere between 1000 and 3000, but rarely exactly 3000. The exact value depends on timing and is unpredictable. Adding synchronized to increment() would guarantee 3000.",
+      "hints": [
+        "Race conditions lead to lost updates",
+        "The result is non-deterministic and usually less than the expected value"
+      ],
+      "tags": ["race_condition", "thread_interference", "non_atomic"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_014",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Volatile Keyword",
+      "description": "What does the 'volatile' keyword guarantee in Java?",
+      "options": [
+        "Atomicity for compound operations like count++",
+        "That reads and writes to the variable are directly from/to main memory, providing visibility across threads",
+        "That the variable cannot be modified by any thread",
+        "That the variable is thread-safe for all operations"
+      ],
+      "correct_answer": "B",
+      "explanation": "volatile ensures that reads and writes to a variable are directly from/to main memory (not cached in CPU registers or processor caches). This guarantees visibility: changes made by one thread to a volatile variable are immediately visible to other threads. However, volatile does NOT provide atomicity — count++ is still not safe with volatile alone because it is a read-modify-write operation. For atomic operations, use AtomicInteger or synchronization.",
+      "hints": [
+        "This keyword deals with memory visibility, not atomicity",
+        "CPU caches can cause threads to see stale values without this keyword"
+      ],
+      "tags": ["volatile", "visibility", "memory_model"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_015",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "AtomicInteger vs Synchronized",
+      "description": "Which is the recommended way to safely increment a shared integer counter in modern Java?",
+      "options": [
+        "Use a regular int with volatile keyword",
+        "Use AtomicInteger with incrementAndGet()",
+        "Use a static int with no synchronization",
+        "Use a long instead of int"
+      ],
+      "correct_answer": "B",
+      "explanation": "AtomicInteger (java.util.concurrent.atomic) provides thread-safe atomic operations like incrementAndGet(), decrementAndGet(), addAndGet(), and compareAndSet() without using explicit synchronization. These classes use low-level CAS (Compare-And-Swap) instructions for better performance under low-to-moderate contention. This is preferred over synchronized for simple atomic operations.",
+      "hints": [
+        "This class provides atomic read-modify-write operations",
+        "It uses hardware-level CAS instructions for performance"
+      ],
+      "tags": ["atomicinteger", "atomic", "cas", "concurrency"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_016",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Thread States",
+      "description": "Which is NOT a valid thread state in Java?",
+      "options": [
+        "NEW",
+        "RUNNABLE",
+        "WAITING",
+        "PREEMPTED"
+      ],
+      "correct_answer": "D",
+      "explanation": "PREEMPTED is not a Java thread state. The valid Thread.State enum values are: NEW (created but not started), RUNNABLE (executing or ready to execute), BLOCKED (waiting for a monitor lock), WAITING (waiting indefinitely for another thread), TIMED_WAITING (waiting with a timeout), and TERMINATED (completed execution).",
+      "hints": [
+        "There are exactly 6 thread states in the Thread.State enum",
+        "Think about states that describe waiting, running, and finished"
+      ],
+      "tags": ["thread_state", "lifecycle", "enum"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_017",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Wait and Notify",
+      "description": "What does the following combination of wait() and notify() achieve?",
+      "code_template": "synchronized(sharedObject) {\n    while (!condition) {\n        sharedObject.wait();\n    }\n    // do work\n}\n\n// In another thread:\nsynchronized(sharedObject) {\n    condition = true;\n    sharedObject.notify();\n}",
+      "options": [
+        "It creates a deadlock between the two threads",
+        "One thread waits until another thread signals that a condition is true — producer-consumer pattern",
+        "It terminates both threads immediately",
+        "It makes the threads run in parallel without waiting"
+      ],
+      "correct_answer": "B",
+      "explanation": "This is the classic wait-notify pattern. Thread A acquires the lock, checks a condition in a while loop (not if — to guard against spurious wakeups), and if false, calls wait() to release the lock and block. Thread B does some work, sets condition to true, and calls notify() to wake up one waiting thread. Thread A re-acquires the lock, re-checks the condition, and proceeds. This is the foundation of producer-consumer and other coordination patterns. Always use wait() inside a synchronized block.",
+      "hints": [
+        "wait() releases the lock and blocks; notify() wakes up a blocked thread",
+        "The while loop is important — it re-checks the condition after wakeup"
+      ],
+      "tags": ["wait", "notify", "producer_consumer", "coordination"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_018",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "ThreadLocal",
+      "description": "What is ThreadLocal used for in Java?",
+      "options": [
+        "To allow threads to communicate with each other",
+        "To provide each thread with its own independent copy of a variable",
+        "To set the priority of a thread",
+        "To define the local variables inside a method"
+      ],
+      "correct_answer": "B",
+      "explanation": "ThreadLocal provides per-thread variable instances. Each thread accessing a ThreadLocal variable gets its own independent copy, isolated from other threads. This is useful for thread-specific state like user sessions in web applications, database connections, or SimpleDateFormat instances (which are not thread-safe). Each thread automatically gets its own copy when accessing the ThreadLocal for the first time.",
+      "hints": [
+        "The name suggests variables that are 'local' to a thread",
+        "Each thread gets its own independent copy"
+      ],
+      "tags": ["threadlocal", "per_thread", "isolation"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_019",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "CompletableFuture",
+      "description": "What is CompletableFuture used for in Java 8+?",
+      "options": [
+        "To execute tasks synchronously with blocking calls",
+        "To compose asynchronous computations with callbacks and chaining",
+        "To replace the need for threads entirely",
+        "To create fixed-size thread pools"
+      ],
+      "correct_answer": "B",
+      "explanation": "CompletableFuture (java.util.concurrent) enables asynchronous, non-blocking programming using a fluent API for chaining callbacks. You can chain operations like thenApply(), thenAccept(), thenCompose(), and combine multiple futures with allOf() and anyOf(). It represents a future result that can be completed asynchronously, with the ability to attach callbacks that run when the result becomes available.",
+      "hints": [
+        "This class supports functional-style composition of async operations",
+        "It allows you to attach callbacks that execute when results are ready"
+      ],
+      "tags": ["completablefuture", "async", "callback", "java_8"],
+      "points": 1
+    },
+    {
+      "id": "oop_mt_020",
+      "category": "multithreading",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Synchronized Collections",
+      "description": "What is the issue with using a plain ArrayList in a multithreaded environment without external synchronization?",
+      "options": [
+        "ArrayList is thread-safe and works correctly with concurrent access",
+        "ArrayList's internal array can become corrupted if one thread modifies it while another iterates over it (ConcurrentModificationException)",
+        "ArrayList automatically becomes thread-safe when used by multiple threads",
+        "ArrayList throws a NullPointerException when shared between threads"
+      ],
+      "correct_answer": "B",
+      "explanation": "ArrayList is not thread-safe. If one thread modifies the list (adds/removes elements) while another thread iterates over it, the internal state can become corrupted, and ConcurrentModificationException may be thrown (fail-fast behavior). Solutions include: using Collections.synchronizedList(), using CopyOnWriteArrayList (for read-heavy scenarios), or using explicit synchronization around all accesses.",
+      "hints": [
+        "ArrayList uses fail-fast iterators that detect concurrent modification",
+        "Use synchronizedList or CopyOnWriteArrayList for concurrent access"
+      ],
+      "tags": ["arraylist", "concurrent_modification", "thread_safe", "synchronized_list"],
+      "points": 1
+    }
+  ]
+}

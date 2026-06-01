@@ -1,0 +1,409 @@
+{
+  "questions": [
+    {
+      "id": "oop_sd_001",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Enum Declaration",
+      "description": "Which keyword is used to define an enumeration type in Java?",
+      "options": [
+        "enum",
+        "enumeration",
+        "enumerator",
+        "define"
+      ],
+      "correct_answer": "A",
+      "explanation": "Enums in Java are declared using the 'enum' keyword: enum Day { MONDAY, TUESDAY, ... }. Java enums are more powerful than in most other languages — they are full-fledged classes that can have fields, methods, and constructors.",
+      "hints": [
+        "This keyword is shorter than 'enumeration'",
+        "Java enums are full-featured reference types"
+      ],
+      "tags": ["enum", "declaration", "keyword"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_002",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Enum Values Method",
+      "description": "What does the Day.values() method return, given: enum Day { MON, TUE, WED, THU, FRI, SAT, SUN }?",
+      "options": [
+        "A String array containing the enum constant names",
+        "An array of all Day constants in the order they were declared",
+        "A List of Day constants sorted alphabetically",
+        "The number of enum constants (7)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Day.values() returns an array of all Day enum constants in the order they were declared: [MON, TUE, WED, THU, FRI, SAT, SUN]. The values() method is implicitly added by the compiler to every enum class. It is commonly used to iterate over all enum constants.",
+      "hints": [
+        "This method returns an array, not a count",
+        "The order matches the declaration order in the enum definition"
+      ],
+      "tags": ["enum", "values", "iteration"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_003",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Enum with Fields",
+      "description": "What is the output of the following Java code?",
+      "code_template": "enum Size {\n    SMALL(\"S\"), MEDIUM(\"M\"), LARGE(\"L\");\n    \n    private String code;\n    \n    Size(String code) { this.code = code; }\n    \n    public String getCode() { return code; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(Size.MEDIUM.getCode());\n    }\n}",
+      "options": [
+        "MEDIUM",
+        "M",
+        "A compilation error — enums cannot have fields",
+        "Size.MEDIUM"
+      ],
+      "correct_answer": "B",
+      "explanation": "Java enums can have fields, constructors, and methods. Each enum constant is created with the constructor argument specified in parentheses: MEDIUM(\"M\") calls the constructor Size(\"M\") which sets code to \"M\". getCode() returns this value, so Size.MEDIUM.getCode() returns \"M\". Enum constructors are implicitly private.",
+      "hints": [
+        "Enum constants can pass arguments to their constructor",
+        "Look at what value is passed to MEDIUM in the enum definition"
+      ],
+      "tags": ["enum", "fields", "constructor", "getCode"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_004",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Switch with Enum",
+      "description": "Can enums be used in switch statements in Java?",
+      "options": [
+        "No, enums cannot be used in switch statements",
+        "Yes, enums work perfectly in switch statements",
+        "Yes, but only if the enum is declared inside the class",
+        "No, switch only works with primitives and strings"
+      ],
+      "correct_answer": "B",
+      "explanation": "Enums can be used in switch statements. The case labels use the unqualified enum constant names (e.g., case MONDAY: instead of case Day.MONDAY:). The compiler ensures all enum constants are handled (or you need a default branch). This is one of the most common and elegant uses of enums.",
+      "hints": [
+        "Switch cases use the enum constant name without the enum type prefix",
+        "Enums were designed to work well with switch statements"
+      ],
+      "tags": ["enum", "switch", "control_flow"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_005",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "What is a Record?",
+      "description": "What is a Java Record (introduced in Java 16)?",
+      "options": [
+        "A class that saves its state to a database",
+        "A transparent carrier of immutable data with automatically generated constructor, getters, equals, hashCode, and toString",
+        "A file format for storing Java objects",
+        "A type of enum that can have mutable fields"
+      ],
+      "correct_answer": "B",
+      "explanation": "A record is a special kind of class that acts as a transparent carrier for immutable data. Declaring 'record Point(int x, int y) { }' automatically generates: a canonical constructor, accessor methods (x(), y()), equals(), hashCode(), and toString(). Records are implicitly final and cannot be extended. The components are private final fields.",
+      "hints": [
+        "Records eliminate boilerplate for simple data carriers",
+        "Think of them as 'data classes' with auto-generated methods"
+      ],
+      "tags": ["record", "java_16", "immutable", "boilerplate"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_006",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "title": "Nested Class Types",
+      "description": "Which of the following is a type of nested class in Java?",
+      "options": [
+        "Static nested class, inner class (non-static), local class, anonymous class",
+        "Public nested class, private nested class, abstract nested class",
+        "Static inner class, dynamic inner class, inherited class",
+        "Only static nested classes exist in Java"
+      ],
+      "correct_answer": "A",
+      "explanation": "Java has four types of nested classes: (1) Static nested classes — declared static inside another class; (2) Inner classes (non-static nested) — have access to the enclosing instance; (3) Local classes — defined inside a method body; (4) Anonymous classes — defined and instantiated in a single expression, often used for event handlers or functional interfaces.",
+      "hints": [
+        "Two types are static/non-static at the class level",
+        "The other two are defined inside methods"
+      ],
+      "tags": ["nested_class", "inner_class", "anonymous_class"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_007",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Enum with Abstract Method",
+      "description": "What is the output of the following Java code?",
+      "code_template": "enum Operation {\n    ADD { int apply(int a, int b) { return a + b; } },\n    SUBTRACT { int apply(int a, int b) { return a - b; } };\n    \n    abstract int apply(int a, int b);\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(Operation.ADD.apply(5, 3));\n        System.out.println(Operation.SUBTRACT.apply(5, 3));\n    }\n}",
+      "options": [
+        "8 2",
+        "5 3",
+        "A compilation error — enums cannot have abstract methods",
+        "ADD SUBTRACT"
+      ],
+      "correct_answer": "A",
+      "explanation": "Enums can declare abstract methods that each enum constant implements individually. This is a powerful pattern for implementing type-safe behavior without switch statements. ADD implements apply() as addition (5+3=8), SUBTRACT implements it as subtraction (5-3=2). Each constant gets its own behavior. This is essentially the Strategy pattern implemented with enums.",
+      "hints": [
+        "Each enum constant provides its own implementation of the abstract method",
+        "ADD adds, SUBTRACT subtracts"
+      ],
+      "tags": ["enum", "abstract_method", "strategy_pattern"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_008",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Anonymous Class Example",
+      "description": "What is the output of the following Java code?",
+      "code_template": "interface Greeter {\n    String greet(String name);\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Greeter g = new Greeter() {\n            public String greet(String name) {\n                return \"Hello, \" + name;\n            }\n        };\n        System.out.println(g.greet(\"Alice\"));\n    }\n}",
+      "options": [
+        "Hello, Alice",
+        "A compilation error — anonymous classes cannot implement interfaces",
+        "Greeter@1a2b3c",
+        "Alice"
+      ],
+      "correct_answer": "A",
+      "explanation": "This code creates an anonymous class that implements the Greeter interface and overrides its greet() method. Anonymous classes are defined and instantiated in one expression: 'new Interface() { ... }'. They are commonly used for event listeners, callbacks, and, before Java 8, for implementing functional interfaces. In modern Java, this would typically be written as a lambda: Greeter g = name -> \"Hello, \" + name.",
+      "hints": [
+        "Anonymous classes define the implementation inline",
+        "The syntax is: new InterfaceName() { method implementations }"
+      ],
+      "tags": ["anonymous_class", "interface", "implementation"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_009",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Static Nested Class Access",
+      "description": "How do you create an instance of a static nested class?",
+      "code_template": "class Outer {\n    private static String staticMsg = \"Hello\";\n    \n    static class Nested {\n        void print() {\n            System.out.println(staticMsg);\n        }\n    }\n}",
+      "options": [
+        "Outer.Nested n = new Outer.Nested();",
+        "Outer.Nested n = new Outer().new Nested();",
+        "Outer.Nested n = Outer.new Nested();",
+        "Nested n = new Nested();"
+      ],
+      "correct_answer": "A",
+      "explanation": "Static nested classes are instantiated using the enclosing class name: new Outer.Nested(). They do not require an instance of the outer class because they are static. A static nested class can access only static members of the outer class (staticMsg in this case). Non-static inner classes would require an outer instance: new Outer().new Inner().",
+      "hints": [
+        "Static nested classes are like top-level classes grouped under a parent name",
+        "No outer instance is needed — only the outer class name"
+      ],
+      "tags": ["static_nested_class", "instantiation", "access"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_010",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Inner Class Has Outer Reference",
+      "description": "What is true about non-static inner classes in Java?",
+      "options": [
+        "They cannot access private members of the outer class",
+        "They hold an implicit reference to the enclosing outer class instance",
+        "They cannot be instantiated at all",
+        "They are rarely used in Java"
+      ],
+      "correct_answer": "B",
+      "explanation": "Non-static inner classes hold an implicit reference to the enclosing instance (Outer.this). This allows them to access all members of the outer class, including private ones. To create an inner class instance, you need an outer class instance: new Outer().new Inner(). This is useful for classes that logically belong to an enclosing instance, like iterators or views.",
+      "hints": [
+        "The inner class is 'attached' to an outer class instance",
+        "It uses Outer.this to refer to the enclosing instance"
+      ],
+      "tags": ["inner_class", "enclosing_reference", "this"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_011",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Local Class",
+      "description": "Where can a local class be defined in Java?",
+      "options": [
+        "Only at the top level of a file, outside all classes",
+        "Inside a method body, constructor, or initializer block",
+        "Inside an interface only",
+        "Local classes cannot be defined in Java"
+      ],
+      "correct_answer": "B",
+      "explanation": "Local classes are defined inside a method body, constructor, or initializer block. They are scoped to that block and cannot be accessed outside it. Local classes can access effectively final local variables and all members of the enclosing class. They are useful when you need a simple, one-off class within a single method.",
+      "hints": [
+        "The name 'local' suggests scope limited to a code block",
+        "They are defined where local variables are defined — inside methods"
+      ],
+      "tags": ["local_class", "scope", "method"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_012",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "title": "Record Canonical Constructor",
+      "description": "What does the automatically generated constructor for the following record look like?",
+      "code_template": "record Point(int x, int y) { }",
+      "options": [
+        "public Point(int x, int y) { this.x = x; this.y = y; }",
+        "public Point() { this.x = 0; this.y = 0; }",
+        "public Point(int x, int y) { }",
+        "No constructor is generated"
+      ],
+      "correct_answer": "A",
+      "explanation": "The compiler automatically generates the canonical constructor: a constructor with exactly the same parameters as the record components, assigning each to the corresponding private final field. You can also define a compact constructor (without parameters) for validation or normalization without repeating the assignment.",
+      "hints": [
+        "The generated constructor assigns each parameter to the corresponding field",
+        "The fields are private final and match the component names"
+      ],
+      "tags": ["record", "constructor", "canonical"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_013",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Enum Singleton Pattern",
+      "description": "Why is an enum considered the best way to implement the Singleton pattern in Java?",
+      "options": [
+        "Because enum constants are compiled faster than classes",
+        "Because enum singletons provide serialization safety and are immune to reflection attacks",
+        "Because enums can only be instantiated once in the JVM memory",
+        "Because enum constructors can be public"
+      ],
+      "correct_answer": "B",
+      "explanation": "Enum singletons are the recommended approach per Joshua Bloch's Effective Java because: (1) They are inherently serialization-safe — the JVM ensures only one instance exists even after deserialization. (2) They are immune to reflection attacks (reflection cannot create additional enum instances). (3) They provide thread-safety for free. (4) The pattern is concise: public enum Singleton { INSTANCE }.",
+      "hints": [
+        "This pattern protects against two specific JVM-level attacks",
+        "No multi-threading boilerplate is needed"
+      ],
+      "tags": ["enum", "singleton", "design_pattern", "serialization"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_014",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Record with Validation",
+      "description": "How can you add validation to a Java Record's constructor?",
+      "code_template": "record Temperature(double celsius) {\n    // Compact constructor form:\n    Temperature {\n        if (celsius < -273.15) {\n            throw new IllegalArgumentException(\"Below absolute zero\");\n        }\n    }\n}",
+      "options": [
+        "This cannot be done — records cannot have custom constructors",
+        "Use a compact constructor (no parameters) for validation; the assignment is implicit",
+        "Override the constructor with a new signature",
+        "Add validation to the accessor method instead"
+      ],
+      "correct_answer": "B",
+      "explanation": "Records support a 'compact constructor' where parameters are omitted and field assignments are implicit. In this form, you only write the validation logic. The compiler automatically adds 'this.celsius = celsius' at the end. This is the cleanest way to add validation to a record without repeating field assignments.",
+      "hints": [
+        "The compact constructor has no parameter list at all",
+        "Field assignments happen automatically, so you just write validation"
+      ],
+      "tags": ["record", "validation", "compact_constructor"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_015",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Enum Values with Associated Data",
+      "description": "What is the output of the following Java code?",
+      "code_template": "enum Planet {\n    EARTH(5.97e24, 6371),\n    MARS(6.39e23, 3390);\n    \n    private final double mass;\n    private final double radius;\n    \n    Planet(double mass, double radius) {\n        this.mass = mass;\n        this.radius = radius;\n    }\n    \n    double surfaceGravity() {\n        return 6.67e-11 * mass / (radius * radius);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.printf(\"%.2f\", Planet.MARS.surfaceGravity());\n    }\n}",
+      "options": [
+        "3.69",
+        "6.39",
+        "9.81",
+        "0.00"
+      ],
+      "correct_answer": "A",
+      "explanation": "Each Planet constant carries its own mass and radius. MARS.surfaceGravity() computes: G * mass / radius^2 = 6.67e-11 * 6.39e23 / (3390^2) ≈ 3.69 m/s^2. The enum provides a clean way to associate data and behavior with each constant. Each constant (EARTH, MARS) has its own mass and radius values set via the constructor.",
+      "hints": [
+        "Each enum constant has its own values for mass and radius",
+        "Use Mars' values in the formula: G * M / R^2"
+      ],
+      "tags": ["enum", "fields", "computation", "data_association"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_016",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Record Accessor Methods",
+      "description": "For a record 'record Person(String name, int age) { }', what are the accessor method names?",
+      "options": [
+        "getName() and getAge()",
+        "name() and age()",
+        "name and age (direct field access)",
+        "get(0) and get(1)"
+      ],
+      "correct_answer": "B",
+      "explanation": "Records use accessor methods named after the component (not JavaBean getX convention). For record Person(String name, int age), the accessors are name() returning String and age() returning int. This is the same convention as Kotlin data classes. If you prefer JavaBean naming, you can override with getName() and getAge().",
+      "hints": [
+        "Record accessors do NOT follow the JavaBean get/set pattern",
+        "The accessor name matches the component name exactly"
+      ],
+      "tags": ["record", "accessor", "naming"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_017",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Immutable Data with Records",
+      "description": "Can you modify a record's field values after creation?",
+      "code_template": "record RGB(int red, int green, int blue) { }\n\n// Later:\nRGB color = new RGB(255, 0, 0);",
+      "options": [
+        "Yes, records are mutable by default",
+        "No, all record fields are private and final — they cannot be modified after creation",
+        "Yes, but only within the same package",
+        "No, but you can use reflection to change them"
+      ],
+      "correct_answer": "B",
+      "explanation": "Record components are implicitly private final fields. Once a record is created, its values cannot be changed. There are no setter methods. This immutability is a core design goal of records — they are meant to be transparent data carriers that are inherently thread-safe and reliable.",
+      "hints": [
+        "The 'final' keyword on fields prevents reassignment",
+        "Records are designed to be immutable by default"
+      ],
+      "tags": ["record", "immutability", "final"],
+      "points": 1
+    },
+    {
+      "id": "oop_sd_018",
+      "category": "structured_data",
+      "type": "multiple_choice",
+      "difficulty": "hard",
+      "title": "Local Class Accessing Local Variables",
+      "description": "Which local variables can a local class access?",
+      "code_template": "public class Main {\n    void test() {\n        int num = 10;\n        class Local {\n            void print() {\n                System.out.println(num);\n            }\n        }\n    }\n}",
+      "options": [
+        "All local variables in the method",
+        "Only local variables that are declared as final or are effectively final",
+        "Only static local variables",
+        "Local classes cannot access local variables"
+      ],
+      "correct_answer": "B",
+      "explanation": "Local classes can only access local variables that are declared as final or are effectively final (not reassigned after initialization). This is because the local class instance may outlive the method call (if passed elsewhere), and Java creates a copy of the variable in the class. If the variable were reassigned, the copy would not reflect the change, leading to confusing behavior.",
+      "hints": [
+        "The variable must not change after its initial assignment",
+        "The technical term for this is 'effectively final'"
+      ],
+      "tags": ["local_class", "effectively_final", "variable_access"],
+      "points": 1
+    }
+  ]
+}
